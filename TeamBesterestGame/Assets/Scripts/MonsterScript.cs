@@ -5,22 +5,25 @@ using UnityEngine;
 public class MonsterScript : MonoBehaviour {
 
 
-    public int StartingHealth;
+    public int[] StartingHealth;
     public int CurrentHealth;
-    public int Damage;
 
-    public GameObject[] Traits;
+    public int[] PossibleDamage;
+    public int AttackDamage;
+
+    public GameObject[] PossibleTraits;
     public GameObject Trait1;
     public GameObject Trait2;
 
 
     void Awake ()
     {
-        CurrentHealth = StartingHealth;
-        int Trait1Index = Random.Range(0, Traits.Length);
-        int Trait2Index = Random.Range(0, Traits.Length);
-        Trait1 = Traits[Trait1Index];
-        Trait2 = Traits[Trait2Index];
+        CurrentHealth = StartingHealth[Random.Range(0, StartingHealth.Length)];
+        AttackDamage = PossibleDamage[Random.Range(0, PossibleDamage.Length)]; 
+        int Trait1Index = Random.Range(0, PossibleTraits.Length);
+        int Trait2Index = Random.Range(0, PossibleTraits.Length);
+        Trait1 = PossibleTraits[Trait1Index];
+        Trait2 = PossibleTraits[Trait2Index];
 	}
 	
 	void Update ()
