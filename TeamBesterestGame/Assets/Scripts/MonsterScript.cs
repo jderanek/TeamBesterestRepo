@@ -15,6 +15,9 @@ public class MonsterScript : MonoBehaviour {
     public GameObject Trait1;
     public GameObject Trait2;
 
+    private GameObject Resume;
+    private GameObject MonsterInstance;
+    public bool MonsterGrabbed;
 
     void Awake ()
     {
@@ -24,12 +27,29 @@ public class MonsterScript : MonoBehaviour {
         int Trait2Index = Random.Range(0, PossibleTraits.Length);
         Trait1 = PossibleTraits[Trait1Index];
         Trait2 = PossibleTraits[Trait2Index];
-	}
+
+        Resume = GameObject.FindGameObjectWithTag("Resume");
+        MonsterGrabbed = true;
+        MonsterInstance = this.gameObject;
+    }
 	
 	void Update ()
     {
-		
-	}
+        //Monster placement start
+        if (MonsterInstance != null && MonsterGrabbed == true)
+        {
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = transform.position.z - Camera.main.transform.position.z;
+            MonsterInstance.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
+        }
+
+        if (Input.GetMouseButtonDown(1) && MonsterGrabbed == true)
+        {
+            MonsterGrabbed = false;
+            Resume.SetActive(true);
+        }
+        //Monster placement end
+    }
 
 	void TakingDamage(int damageTaken)
 	{

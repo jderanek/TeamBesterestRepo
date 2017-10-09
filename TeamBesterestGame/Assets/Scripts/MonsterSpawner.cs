@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour {
 
-    private bool MonsterGrabbed;
+    public bool MonsterGrabbed;
     private GameObject MonsterInstance;
     public GameObject Monster;
+
+    private GameObject Resume;
 
 	// Use this for initialization
 	void Start ()
@@ -16,7 +18,9 @@ public class MonsterSpawner : MonoBehaviour {
 	
 	void Update ()
     {
-		if (MonsterInstance != null && MonsterGrabbed == true)
+        Resume = GameObject.FindGameObjectWithTag("Resume");
+
+		/*if (MonsterInstance != null && MonsterGrabbed == true)
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = transform.position.z - Camera.main.transform.position.z;
@@ -26,7 +30,8 @@ public class MonsterSpawner : MonoBehaviour {
         if (Input.GetMouseButtonDown(1) && MonsterGrabbed == true)
         {
             MonsterGrabbed = false;
-        }
+            Resume.SetActive(true);
+        }*/
 	}
 
     private void OnMouseOver()
@@ -34,8 +39,9 @@ public class MonsterSpawner : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             MonsterGrabbed = true;
-
             MonsterInstance = Instantiate(Monster, gameObject.transform.position, Quaternion.identity);
+
+            Resume.SetActive(false);
         }
     }
 }

@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\HiringUIScript.cs" />
     <Compile Include="Assets\Scripts\MonsterScript.cs" />
     <Compile Include="Assets\Scripts\MonsterSpawner.cs" />
+    <Compile Include="Assets\Scripts\ResumeExit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
