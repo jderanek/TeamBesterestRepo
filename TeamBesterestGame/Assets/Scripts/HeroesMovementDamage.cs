@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class HeroesMovementDamage : MonoBehaviour {
 
-	/*public int damage;
+	public int damage;
 	public float movement;
 	private bool roomHasMonsters;
 	private GameObject closest;
-	private MonsterScript monsterHealth;
-	private int currHP;
 
 	// Use this for initialization
 	void Start () {
@@ -39,31 +37,17 @@ public class HeroesMovementDamage : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		monsterHealth = closest.GetComponent<MonsterScript>;
-		currHP = monsterHealth.CurrentHealth;
 		if (roomHasMonsters == true) {
 			transform.position = Vector3.MoveTowards(transform.position, closest.transform.position, movement);
 			transform.LookAt(closest.transform);
+			FindClosestMonster ();
 		}
 	}
 
 	void OnCollisionEnter(Collision col){
 		if (col.gameObject.tag == "Monster") {
 			movement = 0;
-			InvokeRepeating ("Damaging", 1f, 5f);
+			InvokeRepeating ("closest.TakingDamage(damage)", 1f, 5f);
 		}
 	}
-
-	void Damaging(){
-		currHP -= damage;
-
-		if (currHP <= 0) {
-			Dead();
-		}
-	}
-
-	void Dead(){
-		Destroy closest;
-		FindClosestMonster;
-	}
-*/}
+}

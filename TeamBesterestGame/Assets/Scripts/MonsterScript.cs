@@ -30,4 +30,9 @@ public class MonsterScript : MonoBehaviour {
     {
 		
 	}
+
+	void TakingDamage(int damageTaken)
+	{
+		CurrentHealth -= damageTaken;
+	}
 }
