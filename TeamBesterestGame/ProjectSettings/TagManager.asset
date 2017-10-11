@@ -7,6 +7,7 @@ TagManager:
   - Monster
   - Resume
   - Hire Button
+  - ResumeButton
   layers:
   - Default
   - TransparentFX

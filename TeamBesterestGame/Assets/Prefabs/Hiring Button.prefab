@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61434925926107486}
   m_Layer: 0
   m_Name: Hiring Button
-  m_TagString: Untagged
+  m_TagString: ResumeButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1288583032079930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.23, y: -3.6, z: 0}
+  m_LocalPosition: {x: 8.87, y: -3.6, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,6 +81,9 @@ MonoBehaviour:
   Resume: {fileID: 1115546190017742, guid: 57b59bb22d2e904488261fe9c0484924, type: 2}
   ResumeSpawn: {fileID: 4193693393613428, guid: 57b59bb22d2e904488261fe9c0484924,
     type: 2}
+  ResumeUp: 0
+  Monster: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c, type: 2}
+  MonsterInstance: {fileID: 0}
 --- !u!212 &212502208665408274
 SpriteRenderer:
   m_ObjectHideFlags: 1

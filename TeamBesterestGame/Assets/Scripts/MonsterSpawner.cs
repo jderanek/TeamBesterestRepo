@@ -10,6 +10,8 @@ public class MonsterSpawner : MonoBehaviour {
 
     private GameObject Resume;
 
+    private GameObject ResumeButton;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -19,6 +21,7 @@ public class MonsterSpawner : MonoBehaviour {
 	void Update ()
     {
         Resume = GameObject.FindGameObjectWithTag("Resume");
+        ResumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
 
 		/*if (MonsterInstance != null && MonsterGrabbed == true)
         {
@@ -38,10 +41,12 @@ public class MonsterSpawner : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            MonsterGrabbed = true;
-            MonsterInstance = Instantiate(Monster, gameObject.transform.position, Quaternion.identity);
+            //MonsterGrabbed = true;
+            //MonsterInstance = Instantiate(Monster, gameObject.transform.position, Quaternion.identity);
 
-            Resume.SetActive(false);
+            ResumeButton.GetComponent<HiringUIScript>().MonsterInstance.SetActive(true);
+            //Resume.SetActive(false);
+            Destroy(Resume);
         }
     }
 }

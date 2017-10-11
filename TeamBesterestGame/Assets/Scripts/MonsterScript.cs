@@ -18,6 +18,7 @@ public class MonsterScript : MonoBehaviour {
     private GameObject Resume;
     private GameObject MonsterInstance;
     public bool MonsterGrabbed;
+    private GameObject ResumeButton;
 
     void Awake ()
     {
@@ -31,6 +32,8 @@ public class MonsterScript : MonoBehaviour {
         Resume = GameObject.FindGameObjectWithTag("Resume");
         MonsterGrabbed = true;
         MonsterInstance = this.gameObject;
+
+        ResumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
     }
 	
 	void Update ()
@@ -46,7 +49,8 @@ public class MonsterScript : MonoBehaviour {
         if (Input.GetMouseButtonDown(1) && MonsterGrabbed == true)
         {
             MonsterGrabbed = false;
-            Resume.SetActive(true);
+            ResumeButton.GetComponent<HiringUIScript>().ResumeUp = false;
+            //Resume.SetActive(true);
         }
         //Monster placement end
     }

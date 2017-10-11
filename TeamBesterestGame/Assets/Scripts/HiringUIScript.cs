@@ -6,7 +6,10 @@ public class HiringUIScript : MonoBehaviour {
 
     public GameObject Resume;
     public Transform ResumeSpawn;
-    private bool ResumeUp;
+    public bool ResumeUp;
+
+    public GameObject Monster;
+    public GameObject MonsterInstance;
 
 	// Use this for initialization
 	void Start ()
@@ -26,6 +29,8 @@ public class HiringUIScript : MonoBehaviour {
         {
             ResumeUp = true;
             Instantiate(Resume, ResumeSpawn.position, Quaternion.identity);
+            MonsterInstance = Instantiate(Monster, this.transform.position, Quaternion.identity);
+            MonsterInstance.SetActive(false);
         }
     }
 }
