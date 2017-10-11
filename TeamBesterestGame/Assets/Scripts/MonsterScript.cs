@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterScript : MonoBehaviour {
+public class MonsterScript : MonoBehaviour
+{
 
 
     public int[] StartingHealth;
@@ -19,11 +20,14 @@ public class MonsterScript : MonoBehaviour {
     private GameObject MonsterInstance;
     public bool MonsterGrabbed;
     private GameObject ResumeButton;
+    private GameObject Hero;
 
-    void Awake ()
+    private bool HeroInRange;
+
+    void Awake()
     {
         CurrentHealth = StartingHealth[Random.Range(0, StartingHealth.Length)];
-        AttackDamage = PossibleDamage[Random.Range(0, PossibleDamage.Length)]; 
+        AttackDamage = PossibleDamage[Random.Range(0, PossibleDamage.Length)];
         int Trait1Index = Random.Range(0, PossibleTraits.Length);
         int Trait2Index = Random.Range(0, PossibleTraits.Length);
         Trait1 = PossibleTraits[Trait1Index];
@@ -34,10 +38,13 @@ public class MonsterScript : MonoBehaviour {
         MonsterInstance = this.gameObject;
 
         ResumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
+        HeroInRange = false;
     }
-	
-	void Update ()
+
+    void Update()
     {
+        Hero = GameObject.FindGameObjectWithTag("Hero");
+
         //Monster placement start
         if (MonsterInstance != null && MonsterGrabbed == true)
         {
@@ -53,10 +60,41 @@ public class MonsterScript : MonoBehaviour {
             //Resume.SetActive(true);
         }
         //Monster placement end
+
+        if (HeroInRange == true)
+        {
+            //Attack();
+        }
+
     }
 
-	void TakingDamage(int damageTaken)
-	{
-		CurrentHealth -= damageTaken;
-	}
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Hero")
+        {
+            Hero = other.gameObject;
+            HeroInRange = true;
+        }
+    }
+
+    /*public void Attack()
+    {
+        Hero.GetComponent<HeroScript>().TakeDamage(AttackDamage);
+
+    }*/
+
+    public void TakeDamage(int damageTaken)
+    {
+        /*heroHp -= damageTaken;
+        if (heroHp <= 0)
+        {
+            Death();
+        }*/
+    }
+
+    private void Death()
+    {
+        Destroy(this);
+    }
 }

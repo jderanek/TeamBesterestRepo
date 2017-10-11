@@ -8,6 +8,7 @@ TagManager:
   - Resume
   - Hire Button
   - ResumeButton
+  - Hero
   layers:
   - Default
   - TransparentFX
