@@ -45,14 +45,14 @@ public class MonsterScript : MonoBehaviour
     {
 
         //Monster placement start
-        if (MonsterInstance != null && MonsterGrabbed == true)
+        if (MonsterInstance != null && MonsterGrabbed)
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = transform.position.z - Camera.main.transform.position.z;
             MonsterInstance.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
         }
 
-        if (Input.GetMouseButtonDown(1) && MonsterGrabbed == true)
+        if (Input.GetMouseButtonDown(1) && MonsterGrabbed)
         {
             MonsterGrabbed = false;
             ResumeButton.GetComponent<HiringUIScript>().ResumeUp = false;
@@ -70,7 +70,7 @@ public class MonsterScript : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Hero")
+        if (other.CompareTag("Hero"))
         {
             Hero = other.gameObject;
             HeroInRange = true;
