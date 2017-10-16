@@ -8,11 +8,11 @@ public class HeroScript : MonoBehaviour {
     public int damage;
     public int attackSpeed;
     public int heroHp;
-    public int movementSpeed;
+	public float movementSpeed;
     public int traits;
-    //public transform monsterPosition;
-
-    private GameObject monster;
+	public Transform monsterPosition;
+	public GameObject[] monsters;
+	private MonsterScript currentMonster;
     
     // Use this for initialization
     void Start ()
@@ -23,21 +23,22 @@ public class HeroScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        ///movement script
-        //transform.position = Vector3.moveTowards(transform.position, monsterPosition.position, movementSpeed * time.deltaTime);
+        //movement script
+		transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed);
     }
 
     
-    /*void OnCollisionEnter(Collider)
+    void OnCollisionEnter(Collider MonsterCollide)
     {
-        monsterCollide = monster.GetComponents<MonsterScript>();
+		currentMonster = MonsterCollide.GetComponent<MonsterScript>();
         movementSpeed =  0;
 
-    }*/
+    }
 
+	//next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
     {
-        heroHp -= damageTaken;
+		heroHp -= damageTaken;
 
         if (heroHp <= 0)
         {

@@ -20,8 +20,8 @@ public class MonsterScript : MonoBehaviour
     private GameObject MonsterInstance;
     public bool MonsterGrabbed;
     private GameObject ResumeButton;
-    private GameObject Hero;
 
+    private GameObject Hero;
     private bool HeroInRange;
 
     void Awake()
@@ -43,7 +43,6 @@ public class MonsterScript : MonoBehaviour
 
     void Update()
     {
-        Hero = GameObject.FindGameObjectWithTag("Hero");
 
         //Monster placement start
         if (MonsterInstance != null && MonsterGrabbed == true)
@@ -61,10 +60,10 @@ public class MonsterScript : MonoBehaviour
         }
         //Monster placement end
 
-        if (HeroInRange == true)
-        {
-            //Attack();
-        }
+		//if HeroInRange is set to true, the Attack function will run
+		if (HeroInRange == true) {
+			Attack ();
+		}
 
     }
 
@@ -78,19 +77,20 @@ public class MonsterScript : MonoBehaviour
         }
     }
 
-    /*public void Attack()
+    public void Attack()
     {
         Hero.GetComponent<HeroScript>().TakeDamage(AttackDamage);
 
-    }*/
+    }
 
+	//next two functions are what the monster will call to take damage
     public void TakeDamage(int damageTaken)
     {
-        /*heroHp -= damageTaken;
-        if (heroHp <= 0)
+		CurrentHealth -= damageTaken;
+		if (CurrentHealth <= 0)
         {
             Death();
-        }*/
+        }
     }
 
     private void Death()
