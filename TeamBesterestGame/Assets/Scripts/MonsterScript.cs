@@ -61,7 +61,7 @@ public class MonsterScript : MonoBehaviour
         //Monster placement end
 
 		//if HeroInRange is set to true, the Attack function will run
-		if (HeroInRange == true) {
+		if (HeroInRange) {
 			Attack ();
 		}
 
