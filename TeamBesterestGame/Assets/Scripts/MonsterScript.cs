@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class MonsterScript : MonoBehaviour
 {
+    public string[] PossibleNames;
+    public string Name;
 
-
-    public int[] StartingHealth;
+    public int[] PossibleHealth;
+    public int StartingHealth;
     public int CurrentHealth;
 
     public int[] PossibleDamage;
@@ -26,7 +28,9 @@ public class MonsterScript : MonoBehaviour
 
     void Awake()
     {
-        CurrentHealth = StartingHealth[Random.Range(0, StartingHealth.Length)];
+        Name = PossibleNames[Random.Range(0, PossibleNames.Length)];
+        StartingHealth = PossibleHealth[Random.Range(0, PossibleHealth.Length)];
+        CurrentHealth = StartingHealth;
         AttackDamage = PossibleDamage[Random.Range(0, PossibleDamage.Length)];
         int Trait1Index = Random.Range(0, PossibleTraits.Length);
         int Trait2Index = Random.Range(0, PossibleTraits.Length);

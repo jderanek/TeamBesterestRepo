@@ -20,6 +20,7 @@ public class ResumeExit : MonoBehaviour {
         {
             var ResumeButtonScript = ResumeButton.GetComponent<HiringUIScript>();
             ResumeButtonScript.ResumeUp = false;
+            Destroy(ResumeButtonScript.MonsterInstance);
             Destroy(Resume);
         }
     }

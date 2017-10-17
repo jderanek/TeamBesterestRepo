@@ -52,10 +52,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fdf9d983b4ce9b4ea65c50f79e37d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingHealth: 0a0000000f00000014000000
+  PossibleNames:
+  - Phillip
+  - Phillip the Annihilator
+  - Phillip the Wicked
+  - Phillip the Destroyer
+  - Terrance
+  Name: 
+  PossibleHealth: 0a0000000f00000014000000
+  StartingHealth: 0
   CurrentHealth: 0
   PossibleDamage: 050000000a0000000f000000
-  Damage: 0
+  AttackDamage: 0
   PossibleTraits:
   - {fileID: 1697822316254730, guid: 190e3a9cc76810146a030511a2c59539, type: 2}
   - {fileID: 1735340626272722, guid: 76616b6788f76aa498ffa5e5607a9d97, type: 2}
@@ -64,6 +72,7 @@ MonoBehaviour:
   - {fileID: 1104624679796314, guid: 117bd00ae29444f498a6afc3a82b29d8, type: 2}
   Trait1: {fileID: 0}
   Trait2: {fileID: 0}
+  MonsterGrabbed: 0
 --- !u!212 &212711985162671844
 SpriteRenderer:
   m_ObjectHideFlags: 1
