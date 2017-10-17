@@ -18,6 +18,9 @@ public class MonsterScript : MonoBehaviour
     public GameObject Trait1;
     public GameObject Trait2;
 
+    public int[] PossibleSalary;
+    public int RequestedSalary;
+
     private GameObject Resume;
     private GameObject MonsterInstance;
     public bool MonsterGrabbed;
@@ -36,6 +39,7 @@ public class MonsterScript : MonoBehaviour
         int Trait2Index = Random.Range(0, PossibleTraits.Length);
         Trait1 = PossibleTraits[Trait1Index];
         Trait2 = PossibleTraits[Trait2Index];
+        RequestedSalary = Random.Range(0, PossibleSalary.Length);
 
         Resume = GameObject.FindGameObjectWithTag("Resume");
         MonsterGrabbed = true;

@@ -17,6 +17,7 @@ public class HiringUIScript : MonoBehaviour {
     public Text Trait2Text;
     public Text HealthText;
     public Text DamageText;
+    public Text SalaryText;
 
 	// Use this for initialization
 	void Start ()
@@ -27,19 +28,7 @@ public class HiringUIScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (ResumeUp)
-        {
-            /*
-            NameText = GameObject.Find("NameText").GetComponent<Text>();
-            Trait1Text = GameObject.Find("Trait1Text").GetComponent<Text>();
-            Trait2Text = GameObject.Find("Trait2Text").GetComponent<Text>();
-            HealthText = GameObject.Find("HealthText").GetComponent<Text>();
-            DamageText = GameObject.Find("DamageText").GetComponent<Text>();
-            NameText.text = MonsterInstance.GetComponent<MonsterScript>().Name;
-            HealthText.text = "Health " + MonsterInstance.GetComponent<MonsterScript>().StartingHealth;
-            DamageText.text = "Damage " + MonsterInstance.GetComponent<MonsterScript>().AttackDamage;
-            //*/
-        }
+        
     }
 
     void OnMouseOver()
@@ -49,15 +38,20 @@ public class HiringUIScript : MonoBehaviour {
             ResumeUp = true;
             Instantiate(Resume, ResumeSpawn.position, Quaternion.identity);
             MonsterInstance = Instantiate(Monster, this.transform.position, Quaternion.identity);
-            ///*
+            var MonsterScript = MonsterInstance.GetComponent<MonsterScript>();
+            ///* Resume Text
             NameText = GameObject.Find("NameText").GetComponent<Text>();
             Trait1Text = GameObject.Find("Trait1Text").GetComponent<Text>();
             Trait2Text = GameObject.Find("Trait2Text").GetComponent<Text>();
             HealthText = GameObject.Find("HealthText").GetComponent<Text>();
             DamageText = GameObject.Find("DamageText").GetComponent<Text>();
-            NameText.text = MonsterInstance.GetComponent<MonsterScript>().Name;
-            HealthText.text = "Health " + MonsterInstance.GetComponent<MonsterScript>().StartingHealth;
-            DamageText.text = "Damage " + MonsterInstance.GetComponent<MonsterScript>().AttackDamage;
+            SalaryText = GameObject.Find("SalaryText").GetComponent<Text>();
+            NameText.text = MonsterScript.Name;
+            Trait1Text.text = MonsterScript.Trait1.transform.name;
+            Trait2Text.text = MonsterScript.Trait2.transform.name;
+            HealthText.text = "Health " + MonsterScript.StartingHealth;
+            DamageText.text = "Damage " + MonsterScript.AttackDamage;
+            SalaryText.text = "Requested Salary: $" + MonsterScript.AttackDamage;
             //*/
             MonsterInstance.SetActive(false);
         }
