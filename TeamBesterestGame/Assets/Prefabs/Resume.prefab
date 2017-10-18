@@ -95,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1172768605020684
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 4892987907859122}
   - component: {fileID: 212886984008798728}
   - component: {fileID: 61821228393732056}
-  - component: {fileID: 114467059756872158}
+  - component: {fileID: 114314392762003572}
   m_Layer: 0
   m_Name: Hire Button
   m_TagString: Hire Button
@@ -810,6 +810,18 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Damage
+--- !u!114 &114314392762003572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1295694598123710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfe46decd77f0545957d0f874e23fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterInstance: {fileID: 0}
 --- !u!114 &114343825409627586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -909,19 +921,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Skills:'
---- !u!114 &114467059756872158
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295694598123710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ba4b378093be3541ad5d728c27d83e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MonsterGrabbed: 0
-  Monster: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c, type: 2}
 --- !u!114 &114522589043935356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1026,7 +1025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11db4318cddbded42b3c3dca47069780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterInstance: {fileID: 0}
 --- !u!212 &212051063363921448
 SpriteRenderer:
   m_ObjectHideFlags: 1

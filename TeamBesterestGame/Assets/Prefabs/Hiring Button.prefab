@@ -78,12 +78,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea21d44003b88bd41a12e38cd18739cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Resume: {fileID: 1115546190017742, guid: 57b59bb22d2e904488261fe9c0484924, type: 2}
-  ResumeSpawn: {fileID: 4193693393613428, guid: 57b59bb22d2e904488261fe9c0484924,
-    type: 2}
-  ResumeUp: 0
-  Monster: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c, type: 2}
-  MonsterInstance: {fileID: 0}
+  resume: {fileID: 0}
+  resumeSpawn: {fileID: 0}
+  resumeUp: 0
+  monster: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c, type: 2}
+  monsterInstance: {fileID: 0}
 --- !u!212 &212502208665408274
 SpriteRenderer:
   m_ObjectHideFlags: 1

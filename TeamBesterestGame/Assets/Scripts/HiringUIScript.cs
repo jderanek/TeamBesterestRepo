@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class HiringUIScript : MonoBehaviour {
 
     public GameObject resume;
+    //public GameObject resumeCanvas;
+    private GameObject resumeButton;
     public Transform resumeSpawn;
     [HideInInspector]
     public bool resumeUp;
@@ -25,7 +27,8 @@ public class HiringUIScript : MonoBehaviour {
 	void Start ()
     {
         resumeUp = false;
-	}
+        resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
+}
 	
 	// Update is called once per frame
 	void Update ()
@@ -38,25 +41,20 @@ public class HiringUIScript : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && !resumeUp)
         {
             resumeUp = true;
-            Instantiate(resume, resumeSpawn.position, Quaternion.identity);
-            monsterInstance = Instantiate(monster, this.transform.position, Quaternion.identity);
-            var monsterScript = monsterInstance.GetComponent<MonsterScript>();
+            resume = Instantiate(resume, resumeSpawn.position, Quaternion.identity);
+            resume.SetActive(true);
 
-            ///* Resume Text
-            nameText = GameObject.Find("NameText").GetComponent<Text>();
-            trait1Text = GameObject.Find("Trait1Text").GetComponent<Text>();
-            trait2Text = GameObject.Find("Trait2Text").GetComponent<Text>();
-            healthText = GameObject.Find("HealthText").GetComponent<Text>();
-            damageText = GameObject.Find("DamageText").GetComponent<Text>();
-            salaryText = GameObject.Find("SalaryText").GetComponent<Text>();
-            nameText.text = monsterScript.monsterName;
-            trait1Text.text = monsterScript.trait1;
-            trait2Text.text = monsterScript.trait2;
-            healthText.text = "Health " + monsterScript.startingHealth;
-            damageText.text = "Damage " + monsterScript.attackDamage;
-            salaryText.text = "Requested Salary: $" + monsterScript.attackDamage;
-            //*/
+            monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(resume);
             monsterInstance.SetActive(false);
+            var monsterInstanceScript = monsterInstance.GetComponent<MonsterScript>();
+            
+            // Resume Text
+            GameObject.Find("NameText").GetComponent<Text>().text = monsterInstanceScript.monsterName;
+            GameObject.Find("Trait1Text").GetComponent<Text>().text = monsterInstanceScript.trait1;
+            GameObject.Find("Trait2Text").GetComponent<Text>().text = monsterInstanceScript.trait2;
+            GameObject.Find("HealthText").GetComponent<Text>().text = "Health " + monsterInstanceScript.startingHealth;
+            GameObject.Find("DamageText").GetComponent<Text>().text = "Damage " + monsterInstanceScript.attackDamage;
+            GameObject.Find("SalaryText").GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.attackDamage;            
         }
     }
 }

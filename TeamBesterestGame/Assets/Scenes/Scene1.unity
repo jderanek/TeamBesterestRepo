@@ -117,11 +117,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4889932808189896, guid: b2b9c617476ffeb42812620204ccd489, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.91
+      value: 9.55
       objectReference: {fileID: 0}
     - target: {fileID: 4889932808189896, guid: b2b9c617476ffeb42812620204ccd489, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.47
+      value: -6.83
       objectReference: {fileID: 0}
     - target: {fileID: 4889932808189896, guid: b2b9c617476ffeb42812620204ccd489, type: 2}
       propertyPath: m_LocalPosition.z
@@ -152,6 +152,12 @@ Prefab:
       propertyPath: resumeSpawn
       value: 
       objectReference: {fileID: 1218565707}
+    - target: {fileID: 114373762584536788, guid: b2b9c617476ffeb42812620204ccd489,
+        type: 2}
+      propertyPath: resume
+      value: 
+      objectReference: {fileID: 1115546190017742, guid: 57b59bb22d2e904488261fe9c0484924,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2b9c617476ffeb42812620204ccd489, type: 2}
   m_IsPrefabParent: 0
@@ -222,6 +228,49 @@ Transform:
   m_PrefabParentObject: {fileID: 4889932808189896, guid: b2b9c617476ffeb42812620204ccd489,
     type: 2}
   m_PrefabInternal: {fileID: 96629996}
+--- !u!1 &1031783963
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1031783965}
+  - component: {fileID: 1031783964}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1031783964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031783963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e107284f5aef1846b5c170995f40d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterInHand: {fileID: 0}
+  isHoldingMonster: 0
+  monster: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c, type: 2}
+--- !u!4 &1031783965
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031783963}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.090346724, y: 0.18071249, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1218565706
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +359,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8.320484
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
