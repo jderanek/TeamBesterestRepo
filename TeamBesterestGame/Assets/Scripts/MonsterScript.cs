@@ -4,73 +4,72 @@ using UnityEngine;
 
 public class MonsterScript : MonoBehaviour
 {
-    public string[] PossibleNames;
-    public string Name;
+    private string[] possibleNames = new string[] { "Larry", "Gary" };
+    public string monsterName;
 
-    public int[] PossibleHealth;
-    public int StartingHealth;
-    public int CurrentHealth;
+    public int averageHealth;
+    public int startingHealth;
+    public int currentHealth;
 
-    public int[] PossibleDamage;
-    public int AttackDamage;
+    public int averageDamage;
+    public int attackDamage;
 
-    public GameObject[] PossibleTraits;
-    public GameObject Trait1;
-    public GameObject Trait2;
+    private string[] possibleTraits = new string[] {"Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
+    public string trait1;
+    public string trait2;
 
-    public int[] PossibleSalary;
-    public int RequestedSalary;
+    public int averageSalary;
+    public int requestedSalary;
 
-    private GameObject Resume;
-    private GameObject MonsterInstance;
-    public bool MonsterGrabbed;
-    private GameObject ResumeButton;
+    private GameObject resume;
+    private GameObject monsterInstance;
+    private bool monsterGrabbed;
+    private GameObject resumeButton;
 
-    private GameObject Hero;
-    private bool HeroInRange;
+    private GameObject hero;
+    private bool heroInRange;
 
     void Awake()
     {
-        Name = PossibleNames[Random.Range(0, PossibleNames.Length)];
-        StartingHealth = PossibleHealth[Random.Range(0, PossibleHealth.Length)];
-        CurrentHealth = StartingHealth;
-        AttackDamage = PossibleDamage[Random.Range(0, PossibleDamage.Length)];
-        int Trait1Index = Random.Range(0, PossibleTraits.Length);
-        int Trait2Index = Random.Range(0, PossibleTraits.Length);
-        Trait1 = PossibleTraits[Trait1Index];
-        Trait2 = PossibleTraits[Trait2Index];
-        RequestedSalary = Random.Range(0, PossibleSalary.Length);
+        print(possibleNames.Length);
+        monsterName = possibleNames[Random.Range(0, possibleNames.Length - 1)];
+        startingHealth = averageHealth + Random.Range(-5, 5);
+        currentHealth = startingHealth;
+        attackDamage = averageDamage + Random.Range(-5, 5);
+        trait1 = possibleTraits[Random.Range(0, possibleTraits.Length - 1)];
+        trait2 = possibleTraits[Random.Range(0, possibleTraits.Length - 1)];
+        requestedSalary = averageSalary + Random.Range(-500, 500);
 
-        Resume = GameObject.FindGameObjectWithTag("Resume");
-        MonsterGrabbed = true;
-        MonsterInstance = this.gameObject;
+        resume = GameObject.FindGameObjectWithTag("Resume");
+        monsterGrabbed = true;
+        monsterInstance = this.gameObject;
 
-        ResumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
-        HeroInRange = false;
+        resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
+        heroInRange = false;
     }
 
     void Update()
     {
 
         //Monster placement start
-        if (MonsterInstance != null && MonsterGrabbed)
+        if (monsterInstance != null && monsterGrabbed)
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = transform.position.z - Camera.main.transform.position.z;
-            MonsterInstance.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
+            monsterInstance.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
         }
 
-        if (Input.GetMouseButtonDown(1) && MonsterGrabbed)
+        if (Input.GetMouseButtonDown(1) && monsterGrabbed)
         {
-            MonsterGrabbed = false;
-            ResumeButton.GetComponent<HiringUIScript>().ResumeUp = false;
+            monsterGrabbed = false;
+            resumeButton.GetComponent<HiringUIScript>().resumeUp = false;
             //Resume.SetActive(true);
         }
         //Monster placement end
 
 		//if HeroInRange is set to true, the Attack function will run
-		if (HeroInRange) {
-			Attack ();
+		if (heroInRange) {
+			Attack();
 		}
 
     }
@@ -80,22 +79,21 @@ public class MonsterScript : MonoBehaviour
     {
         if (other.CompareTag("Hero"))
         {
-            Hero = other.gameObject;
-            HeroInRange = true;
+            hero = other.gameObject;
+            heroInRange = true;
         }
     }
 
     public void Attack()
     {
-        Hero.GetComponent<HeroScript>().TakeDamage(AttackDamage);
-
+        hero.GetComponent<HeroScript>().TakeDamage(attackDamage);
     }
 
 	//next two functions are what the monster will call to take damage
     public void TakeDamage(int damageTaken)
     {
-		CurrentHealth -= damageTaken;
-		if (CurrentHealth <= 0)
+		currentHealth -= damageTaken;
+		if (currentHealth <= 0)
         {
             Death();
         }

@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class ResumeExit : MonoBehaviour {
 
-    private GameObject Resume;
-    private GameObject ResumeButton;
+    private GameObject resume;
+    private GameObject resumeButton;
 
 	// Use this for initialization
 	void Awake ()
     {
-        ResumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
-        Resume = GameObject.FindGameObjectWithTag("Resume");
+        resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
+        resume = GameObject.FindGameObjectWithTag("Resume");
 	}
 
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            var ResumeButtonScript = ResumeButton.GetComponent<HiringUIScript>();
-            ResumeButtonScript.ResumeUp = false;
-            Destroy(ResumeButtonScript.MonsterInstance);
-            Destroy(Resume);
+            var ResumeButtonScript = resumeButton.GetComponent<HiringUIScript>();
+            ResumeButtonScript.resumeUp = false;
+            Destroy(ResumeButtonScript.monsterInstance);
+            Destroy(resume);
         }
     }
 }

@@ -28,9 +28,9 @@ public class HeroScript : MonoBehaviour {
     }
 
     
-    void OnCollisionEnter(Collider MonsterCollide)
+    void OnCollisionEnter(Collider monsterCollide)
     {
-		currentMonster = MonsterCollide.GetComponent<MonsterScript>();
+		currentMonster = monsterCollide.GetComponent<MonsterScript>();
         movementSpeed =  0;
 
     }

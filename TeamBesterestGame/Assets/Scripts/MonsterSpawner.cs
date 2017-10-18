@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour {
 
-    public bool MonsterGrabbed;
-    private GameObject MonsterInstance;
-    public GameObject Monster;
+    public bool monsterGrabbed;
+    private GameObject monsterInstance;
+    public GameObject monster;
 
-    private GameObject Resume;
+    private GameObject resume;
 
-    private GameObject ResumeButton;
+    private GameObject resumeButton;
 
 	// Use this for initialization
 	void Start ()
     {
-        MonsterGrabbed = false;
+        monsterGrabbed = false;
 	}
 	
 	void Update ()
     {
-        Resume = GameObject.FindGameObjectWithTag("Resume");
-        ResumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
+        resume = GameObject.FindGameObjectWithTag("Resume");
+        resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
 	}
 
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            ResumeButton.GetComponent<HiringUIScript>().MonsterInstance.SetActive(true);
+            resumeButton.GetComponent<HiringUIScript>().monsterInstance.SetActive(true);
             //Resume.SetActive(false);
-            Destroy(Resume);
+            Destroy(resume);
         }
     }
 }
