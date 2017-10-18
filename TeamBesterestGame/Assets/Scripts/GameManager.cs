@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour {
 
     [HideInInspector]
     public GameObject monsterInHand;
-    public bool isHoldingMonster;
+    public bool isHoldingObject;
     public GameObject monster;
+    [HideInInspector]
+    private GameObject heldObject;
 
     private GameObject resume;
     private GameObject resumeButton;
@@ -19,16 +21,16 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (isHoldingMonster)
+		if (isHoldingObject)
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = transform.position.z - Camera.main.transform.position.z;
-            monster.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
+            heldObject.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            isHoldingMonster = false;
+            isHoldingObject = false;
         }
     }
 
@@ -39,10 +41,10 @@ public class GameManager : MonoBehaviour {
         return newMonster;
     }
 
-    public void PickUpMonster(GameObject monsterInstance)
+    public void PickUpObject(GameObject otherObject)
     {
-        isHoldingMonster = true;
-        monster = monsterInstance;
-        monsterInstance.SetActive(true);
+        isHoldingObject = true;
+        heldObject = otherObject;
+        otherObject.SetActive(true);
     }
 }

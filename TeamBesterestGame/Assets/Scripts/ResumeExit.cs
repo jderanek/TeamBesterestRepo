@@ -11,13 +11,13 @@ public class ResumeExit : MonoBehaviour {
 	void Awake ()
     {
         resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
-        //resume = GameObject.FindGameObjectWithTag("Resume");
 	}
 
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
         {
+            
             var ResumeButtonScript = resumeButton.GetComponent<HiringUIScript>();
             ResumeButtonScript.resumeUp = false;
             Destroy(ResumeButtonScript.monsterInstance);

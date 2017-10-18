@@ -35,12 +35,12 @@ public class MonsterScript : MonoBehaviour
         averageHealth = 10;
         averageSalary = 500;
 
-        monsterName = possibleNames[Random.Range(0, possibleNames.Length - 1)];
+        monsterName = possibleNames[Random.Range(0, possibleNames.Length)];
         startingHealth = averageHealth + Random.Range(-5, 5);
         currentHealth = startingHealth;
         attackDamage = averageDamage + Random.Range(-3, 3);
-        trait1 = possibleTraits[Random.Range(0, possibleTraits.Length - 1)];
-        trait2 = possibleTraits[Random.Range(0, possibleTraits.Length - 1)];
+        trait1 = possibleTraits[Random.Range(0, possibleTraits.Length)];
+        trait2 = possibleTraits[Random.Range(0, possibleTraits.Length)];
         if (trait1 == trait2)
         {
             trait2 = null;
@@ -69,7 +69,7 @@ public class MonsterScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpMonster(this.gameObject);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
         }
     }
 

@@ -16,19 +16,12 @@ public class HiringUIScript : MonoBehaviour {
     [HideInInspector]
     public GameObject monsterInstance;
 
-    private Text nameText;
-    private Text trait1Text;
-    private Text trait2Text;
-    private Text healthText;
-    private Text damageText;
-    private Text salaryText;
-
 	// Use this for initialization
 	void Start ()
     {
         resumeUp = false;
         resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
-}
+    }
 	
 	// Update is called once per frame
 	void Update ()
