@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea21d44003b88bd41a12e38cd18739cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resume: {fileID: 0}
+  resume: {fileID: 1351344998724748, guid: 57b59bb22d2e904488261fe9c0484924, type: 2}
   resumeSpawn: {fileID: 0}
   resumeUp: 0
   monster: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c, type: 2}

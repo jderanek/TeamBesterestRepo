@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HiringUIScript : MonoBehaviour {
 
     public GameObject resume;
-    //public GameObject resumeCanvas;
+    private GameObject resumeInstance;
     private GameObject resumeButton;
     public Transform resumeSpawn;
     [HideInInspector]
@@ -41,20 +41,20 @@ public class HiringUIScript : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && !resumeUp)
         {
             resumeUp = true;
-            resume = Instantiate(resume, resumeSpawn.position, Quaternion.identity);
-            resume.SetActive(true);
+            resumeInstance = Instantiate(resume, resumeSpawn.position, Quaternion.identity);
+            resumeInstance.SetActive(true);
 
             monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(resume);
             monsterInstance.SetActive(false);
             var monsterInstanceScript = monsterInstance.GetComponent<MonsterScript>();
-            
+
             // Resume Text
-            GameObject.Find("NameText").GetComponent<Text>().text = monsterInstanceScript.monsterName;
-            GameObject.Find("Trait1Text").GetComponent<Text>().text = monsterInstanceScript.trait1;
-            GameObject.Find("Trait2Text").GetComponent<Text>().text = monsterInstanceScript.trait2;
-            GameObject.Find("HealthText").GetComponent<Text>().text = "Health " + monsterInstanceScript.startingHealth;
-            GameObject.Find("DamageText").GetComponent<Text>().text = "Damage " + monsterInstanceScript.attackDamage;
-            GameObject.Find("SalaryText").GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.attackDamage;            
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.monsterName;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.trait1;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(3).GetComponent<Text>().text = monsterInstanceScript.trait2;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Health " + monsterInstanceScript.startingHealth;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Damage " + monsterInstanceScript.attackDamage;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(7).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
         }
     }
 }

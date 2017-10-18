@@ -11,7 +11,7 @@ public class ResumeExit : MonoBehaviour {
 	void Awake ()
     {
         resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
-        resume = GameObject.FindGameObjectWithTag("Resume");
+        //resume = GameObject.FindGameObjectWithTag("Resume");
 	}
 
     void OnMouseOver()
@@ -23,5 +23,10 @@ public class ResumeExit : MonoBehaviour {
             Destroy(ResumeButtonScript.monsterInstance);
             Destroy(resume);
         }
+    }
+
+    public void Register(GameObject resistery)
+    {
+        resume = resistery;
     }
 }

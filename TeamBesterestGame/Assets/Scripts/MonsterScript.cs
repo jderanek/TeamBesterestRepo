@@ -11,14 +11,14 @@ public class MonsterScript : MonoBehaviour
     public int startingHealth;
     public int currentHealth;
 
-    public int averageDamage;
+    public int averageDamage = 5;
     public int attackDamage;
 
     private string[] possibleTraits = new string[] {"Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
     public string trait1;
     public string trait2;
 
-    public int averageSalary;
+    public int averageSalary = 500;
     public int requestedSalary;
 
     private GameObject resume;
@@ -58,28 +58,19 @@ public class MonsterScript : MonoBehaviour
 
     void Update()
     {
-
-        //Monster placement start
-        if (monsterInstance != null && monsterGrabbed)
-        {
-            Vector3 mousePos = Input.mousePosition;
-            mousePos.z = transform.position.z - Camera.main.transform.position.z;
-            monsterInstance.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
-        }
-
-        if (Input.GetMouseButtonDown(1) && monsterGrabbed)
-        {
-            monsterGrabbed = false;
-            resumeButton.GetComponent<HiringUIScript>().resumeUp = false;
-            //Resume.SetActive(true);
-        }
-        //Monster placement end
-
-		//if HeroInRange is set to true, the Attack function will run
-		if (heroInRange) {
+        //if HeroInRange is set to true, the Attack function will run
+        if (heroInRange) {
 			Attack();
 		}
 
+    }
+
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpMonster(this.gameObject);
+        }
     }
 
 

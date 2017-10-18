@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour {
             monster.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
         }
 
-        if (Input.GetMouseButtonDown(1) && isHoldingMonster)
+        if (Input.GetMouseButtonDown(1))
         {
             isHoldingMonster = false;
         }
@@ -39,9 +39,10 @@ public class GameManager : MonoBehaviour {
         return newMonster;
     }
 
-    public void PickUpMonster(GameObject monster)
+    public void PickUpMonster(GameObject monsterInstance)
     {
         isHoldingMonster = true;
-        monster.SetActive(true);
+        monster = monsterInstance;
+        monsterInstance.SetActive(true);
     }
 }
