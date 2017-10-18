@@ -46,3 +46,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Rooms
+    uniqueID: 88320101
+    locked: 0
+  - name: Heroes
+    uniqueID: 3785817129
+    locked: 0
+  - name: Monsters
+    uniqueID: 277715089
+    locked: 0
+  - name: Resume
+    uniqueID: 1017860833
+    locked: 0

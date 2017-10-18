@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4065231696589668}
   - component: {fileID: 212379106673818304}
   m_Layer: 0
-  m_Name: blue square
+  m_Name: Room Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

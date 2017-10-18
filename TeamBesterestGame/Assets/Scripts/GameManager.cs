@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
     public bool isHoldingObject;
     public GameObject monster;
     [HideInInspector]
-    private GameObject heldObject;
+    public GameObject heldObject;
 
     private GameObject resume;
     private GameObject resumeButton;

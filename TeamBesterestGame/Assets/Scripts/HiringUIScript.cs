@@ -36,6 +36,8 @@ public class HiringUIScript : MonoBehaviour {
             resumeUp = true;
             resumeInstance = Instantiate(resume, resumeSpawn.position, Quaternion.identity);
             resumeInstance.SetActive(true);
+            resumeInstance.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
+            resumeInstance.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
 
             monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(resume);
             monsterInstance.SetActive(false);
