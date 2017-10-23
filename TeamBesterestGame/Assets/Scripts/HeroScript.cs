@@ -11,29 +11,46 @@ public class HeroScript : MonoBehaviour {
 	public float movementSpeed;
     public int traits;
 	public Transform monsterPosition;
-	public GameObject[] monsters;
-	private MonsterScript currentMonster;
+	public List<GameObject> monsters;
+	private GameObject currentMonster;
+	private MonsterScript currentMonsterScript;
+	public bool monsterInRange;
     
     // Use this for initialization
     void Start ()
     {
-
+		monsterInRange = false;
 	}
 
     // Update is called once per frame
     void Update()
     {
         //movement script
-		transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed);
+		transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
+
+		if (monsterInRange) {
+			Attack();
+		}
+
     }
 
     
-    void OnCollisionEnter(Collider monsterCollide)
+    void OnTriggerEnter2D(Collider2D other)
     {
-		currentMonster = monsterCollide.GetComponent<MonsterScript>();
-        movementSpeed =  0;
-
+		if (other.CompareTag ("Monster")) 
+		{
+			Debug.Log ("Monster Hit");
+			currentMonsterScript = other.gameObject.GetComponent<MonsterScript>();
+			currentMonster = other.gameObject;
+			movementSpeed = 0;
+			monsterInRange = true;
+		}
     }
+
+	public void Attack()
+	{
+		currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
+	}
 
 	//next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
@@ -48,6 +65,7 @@ public class HeroScript : MonoBehaviour {
 
     private void Death()
     {
+		currentMonsterScript.heroInRange = false; 
         Destroy(this);
     }
 }

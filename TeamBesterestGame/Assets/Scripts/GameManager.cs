@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
     private GameObject resume;
     private GameObject resumeButton;
 
+	public List<GameObject> monsterCollection = new List<GameObject>();
+
     // Use this for initialization
     void Start () {
 		
@@ -39,6 +41,10 @@ public class GameManager : MonoBehaviour {
         GameObject newMonster = Instantiate(monster, resume.transform.position, Quaternion.identity);
         newMonster.SetActive(false);
         return newMonster;
+
+		monsterCollection.Add (newMonster);
+		Debug.Log ("monsterCollection Size = " + monsterCollection.Count);
+
     }
 
     public void PickUpObject(GameObject otherObject)

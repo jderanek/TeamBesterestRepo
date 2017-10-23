@@ -11,6 +11,9 @@ public class MonsterScript : MonoBehaviour
     public int startingHealth;
     public int currentHealth;
 
+	private int[] possibleThreatValue = new int[] {2, 4, 6};
+	public int threatValue;
+
     public int averageDamage = 5;
     public int attackDamage;
 
@@ -27,7 +30,8 @@ public class MonsterScript : MonoBehaviour
     private GameObject resumeButton;
 
     private GameObject hero;
-    private bool heroInRange;
+	private HeroScript heroScript;
+	public bool heroInRange;
 
     void Awake()
     {
@@ -38,7 +42,10 @@ public class MonsterScript : MonoBehaviour
         monsterName = possibleNames[Random.Range(0, possibleNames.Length)];
         startingHealth = averageHealth + Random.Range(-5, 5);
         currentHealth = startingHealth;
+
         attackDamage = averageDamage + Random.Range(-3, 3);
+		threatValue = possibleThreatValue [Random.Range (0, possibleThreatValue.Length)];
+
         trait1 = possibleTraits[Random.Range(0, possibleTraits.Length)];
         trait2 = possibleTraits[Random.Range(0, possibleTraits.Length)];
         if (trait1 == trait2)
@@ -78,6 +85,7 @@ public class MonsterScript : MonoBehaviour
     {
         if (other.CompareTag("Hero"))
         {
+			heroScript = other.gameObject.GetComponent<HeroScript>();
             hero = other.gameObject;
             heroInRange = true;
         }
@@ -92,6 +100,7 @@ public class MonsterScript : MonoBehaviour
     public void TakeDamage(int damageTaken)
     {
 		currentHealth -= damageTaken;
+
 		if (currentHealth <= 0)
         {
             Death();
@@ -100,6 +109,7 @@ public class MonsterScript : MonoBehaviour
 
     private void Death()
     {
+		heroScript.monsterInRange = false;
         Destroy(this);
     }
 }
