@@ -6,6 +6,7 @@ public class RoomScript : MonoBehaviour {
 
     public List<GameObject> roomMembers = new List<GameObject>();
     private GameObject heldObject;
+    
 
     void Awake()
     {

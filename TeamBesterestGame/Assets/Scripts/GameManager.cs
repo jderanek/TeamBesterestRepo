@@ -24,6 +24,10 @@ public class GameManager : MonoBehaviour {
     public float cycleTimer = 100f;
     public float cycleDelay = 2f;
 
+    public bool inConstructionMode;
+
+    public GameObject heresTheFuckingButton;
+
     // Use this for initialization
     void Start () {
 		
@@ -87,5 +91,11 @@ public class GameManager : MonoBehaviour {
         doingSetup = false;
         cycleImage.SetActive(false);
         cycleTimer = 100f;
+    }
+
+    public void ToggleConstruction()
+    {
+        inConstructionMode = !inConstructionMode;
+        heresTheFuckingButton.SetActive(inConstructionMode);
     }
 }

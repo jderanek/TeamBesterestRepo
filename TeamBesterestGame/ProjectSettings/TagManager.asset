@@ -9,6 +9,7 @@ TagManager:
   - Hire Button
   - ResumeButton
   - Hero
+  - Room Button
   layers:
   - Default
   - TransparentFX
