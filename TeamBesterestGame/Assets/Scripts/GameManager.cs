@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -16,6 +17,13 @@ public class GameManager : MonoBehaviour {
 
 	public List<GameObject> monsterCollection = new List<GameObject>();
 
+    public bool doingSetup;
+
+    public Slider cycleSlider;
+    public GameObject cycleImage;
+    public float cycleTimer = 100f;
+    public float cycleDelay = 2f;
+
     // Use this for initialization
     void Start () {
 		
@@ -23,6 +31,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //placement start
 		if (isHoldingObject)
         {
             Vector3 mousePos = Input.mousePosition;
@@ -34,6 +43,21 @@ public class GameManager : MonoBehaviour {
         {
             isHoldingObject = false;
         }
+        //placement end
+
+        cycleSlider.value = cycleTimer;
+
+        if (cycleTimer <= 0)
+        {
+            doingSetup = true;
+            cycleImage.SetActive(true);
+            Invoke("NewCycle", 2);
+        }
+        else
+        {
+            //Time.timeScale = 1;
+            cycleTimer -= Time.deltaTime;
+        }
     }
 
     public GameObject SpawnMonster(GameObject resume)
@@ -42,9 +66,8 @@ public class GameManager : MonoBehaviour {
         newMonster.SetActive(false);
         return newMonster;
 
-		monsterCollection.Add (newMonster);
+		monsterCollection.Add (newMonster); // not working
 		Debug.Log ("monsterCollection Size = " + monsterCollection.Count);
-
     }
 
     public void PickUpObject(GameObject otherObject)
@@ -52,5 +75,12 @@ public class GameManager : MonoBehaviour {
         isHoldingObject = true;
         heldObject = otherObject;
         otherObject.SetActive(true);
+    }
+
+    public void NewCycle()
+    {
+        doingSetup = false;
+        cycleImage.SetActive(false);
+        cycleTimer = 100f;
     }
 }
