@@ -33,6 +33,9 @@ public class MonsterScript : MonoBehaviour
 	private HeroScript heroScript;
 	public bool heroInRange;
 
+    //public List<GameObject> myList = null;
+    public GameObject myRoom;
+
     void Awake()
     {
         averageDamage = 5;

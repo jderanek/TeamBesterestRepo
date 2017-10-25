@@ -25,9 +25,15 @@ public class RoomScript : MonoBehaviour {
     void OnMouseOver()
     {
         heldObject = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().heldObject;
-        if (heldObject.CompareTag("Monster") && Input.GetMouseButtonDown(1)) {
-            roomMembers.Add(heldObject);
-            print(roomMembers[0].GetComponent<MonsterScript>().monsterName);
+        if (heldObject != null)
+        {
+            if (heldObject.CompareTag("Monster") && Input.GetMouseButtonDown(1))
+            {
+                roomMembers.Add(heldObject);
+                //heldObject.GetComponent<MonsterScript>().myList = roomMembers;
+                heldObject.GetComponent<MonsterScript>().myRoom = this.gameObject;
+                print(roomMembers[0].GetComponent<MonsterScript>().monsterName);
+            }
         }
     }
 }

@@ -72,6 +72,11 @@ public class GameManager : MonoBehaviour {
 
     public void PickUpObject(GameObject otherObject)
     {
+        if (otherObject.GetComponent<MonsterScript>().myRoom != null)
+        {
+            print("remove from room");
+            otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Remove(otherObject.gameObject);
+        }
         isHoldingObject = true;
         heldObject = otherObject;
         otherObject.SetActive(true);
