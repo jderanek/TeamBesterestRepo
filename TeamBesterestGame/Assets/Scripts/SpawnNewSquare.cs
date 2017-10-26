@@ -43,4 +43,15 @@ public class SpawnNewSquare : MonoBehaviour {
             inHand = true;
         }
     }
+
+    public void SpawnSquare()
+    {
+        currentSquare = Instantiate(square,
+                new Vector3(Random.Range(-5.0f, 10.0f),
+                    Random.Range(-5.0f, 10.0f),
+                    0.0f),
+                Quaternion.identity);
+        inHand = true;
+    }
+
 }

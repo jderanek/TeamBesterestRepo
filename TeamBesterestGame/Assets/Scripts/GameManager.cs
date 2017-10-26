@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour {
         if (Input.GetMouseButtonDown(1))
         {
             isHoldingObject = false;
+            heldObject = null;
         }
         //placement end
 
