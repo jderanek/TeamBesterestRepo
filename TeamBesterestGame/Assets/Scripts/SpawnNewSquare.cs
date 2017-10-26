@@ -31,7 +31,7 @@ public class SpawnNewSquare : MonoBehaviour {
         }
     }
 
-    private void OnMouseOver()
+    /*private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -42,14 +42,15 @@ public class SpawnNewSquare : MonoBehaviour {
                 Quaternion.identity);
             inHand = true;
         }
-    }
+    }*/
 
     public void SpawnSquare()
     {
         currentSquare = Instantiate(square,
-                new Vector3(Random.Range(-5.0f, 10.0f),
-                    Random.Range(-5.0f, 10.0f),
-                    0.0f),
+                //new Vector3(//Random.Range(-5.0f, 10.0f),
+                    //Random.Range(-5.0f, 10.0f),
+                    //0.0f)
+                    this.transform.position,
                 Quaternion.identity);
         inHand = true;
     }
