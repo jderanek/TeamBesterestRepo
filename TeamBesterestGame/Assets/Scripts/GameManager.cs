@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour {
 
         cycleSlider.value = cycleTimer;
 
-        if (cycleTimer <= 0)
+        if (cycleTimer >= 100)
         {
             doingSetup = true;
             cycleImage.SetActive(true);
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
         else
         {
             //Time.timeScale = 1;
-            cycleTimer -= Time.deltaTime;
+            cycleTimer += Time.deltaTime;
         }
     }
 
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour {
     {
         doingSetup = false;
         cycleImage.SetActive(false);
-        cycleTimer = 100f;
+        cycleTimer = 0f;
     }
 
     public void ToggleConstruction()
