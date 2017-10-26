@@ -5,14 +5,20 @@ using UnityEngine;
 public class PickUpRoom : MonoBehaviour {
 
     private bool inHand = false;
+    public bool inConstructionMode;
+
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Awake ()
+    {
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
+        inConstructionMode = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().inConstructionMode;
+
         if (inHand)
         {
             Vector3 mousePos = Input.mousePosition;
@@ -31,7 +37,7 @@ public class PickUpRoom : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && inConstructionMode)
         {
             inHand = true;
         }
