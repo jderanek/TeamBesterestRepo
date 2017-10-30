@@ -36,5 +36,6 @@ public class RoomScript : MonoBehaviour {
                 print(roomMembers[0].GetComponent<MonsterScript>().monsterName);
             }
         }
+
     }
 }

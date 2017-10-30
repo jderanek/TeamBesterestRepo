@@ -10,6 +10,8 @@ TagManager:
   - ResumeButton
   - Hero
   - Room Button
+  - Door
+  - Wall
   layers:
   - Default
   - TransparentFX
