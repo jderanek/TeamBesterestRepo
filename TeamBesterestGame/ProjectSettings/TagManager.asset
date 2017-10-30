@@ -50,6 +50,9 @@ TagManager:
   - name: Rooms
     uniqueID: 88320101
     locked: 0
+  - name: Blocking Layer
+    uniqueID: 2850376753
+    locked: 0
   - name: Heroes
     uniqueID: 3785817129
     locked: 0
