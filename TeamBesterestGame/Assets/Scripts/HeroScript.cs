@@ -2,60 +2,93 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroScript : MonoBehaviour {
+public class RoomMemberSorter : IComparer<GameObject>
+{
+    public int Compare(GameObject x, GameObject y)
+    {
+        if (x.GetComponent<MonsterScript>().threatLevel > y.GetComponent<MonsterScript>().threatLevel)
+        {
+            return 0;
+        }
+        else return 1;
+    }
+}
+
+public class HeroScript : MonoBehaviour
+{
 
     private int aggro;
     public int damage;
     public int attackSpeed;
     public int heroHp;
-	public float movementSpeed;
+    public float movementSpeed;
     public int traits;
-	public Transform monsterPosition;
-	public List<GameObject> monsters;
-	private GameObject currentMonster;
-	private MonsterScript currentMonsterScript;
-	public bool monsterInRange;
-    
+
+    public Transform monsterPosition;
+    private GameObject currentMonster;
+    private MonsterScript currentMonsterScript;
+    public bool monsterInRange;
+
+    public RoomScript currentRoomScript;
+
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-		monsterInRange = false;
-	}
+        monsterInRange = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //movement script
-		transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
+        checkCurrentRoom();
 
-		if (monsterInRange) {
-			Attack();
-		}
+        //movement script
+        transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
+
+        if (monsterInRange)
+        {
+            Attack();
+        }
 
     }
 
-    
+    public void checkCurrentRoom()
+    {
+        if (currentRoomScript.roomMembers != null)
+        {
+            currentMonster = currentRoomScript.roomMembers[0];
+        }
+        RoomMemberSorter roomSorter = new RoomMemberSorter();
+        currentRoomScript.roomMembers.Sort(roomSorter);
+    }
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
-		if (other.CompareTag ("Monster")) 
-		{
-			Debug.Log ("Monster Hit");
-			currentMonsterScript = other.gameObject.GetComponent<MonsterScript>();
-			currentMonster = other.gameObject;
-			movementSpeed = 0;
-			monsterInRange = true;
-		}
+        if (other.CompareTag("Monster"))
+        {
+            Debug.Log("Monster Hit");
+            currentMonsterScript = other.gameObject.GetComponent<MonsterScript>();
+            currentMonster = other.gameObject;
+            movementSpeed = 0;
+            monsterInRange = true;
+        }
+
+        if (other.CompareTag("Room"))
+        {
+            currentRoomScript = other.GetComponent<RoomScript>();
+        }
     }
 
-	public void Attack()
-	{
-		currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
-	}
+    public void Attack()
+    {
+        currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
+    }
 
-	//next two functions are what monsters will call to damage the hero
+    //next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
     {
-		heroHp -= damageTaken;
+        heroHp -= damageTaken;
 
         if (heroHp <= 0)
         {
@@ -65,7 +98,7 @@ public class HeroScript : MonoBehaviour {
 
     private void Death()
     {
-		currentMonsterScript.heroInRange = false; 
+        currentMonsterScript.heroInRange = false;
         Destroy(this);
     }
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     [HideInInspector]
     public GameObject monsterInHand;
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour {
     private GameObject resume;
     private GameObject resumeButton;
 
-	public List<GameObject> monsterCollection = new List<GameObject>();
+    //public List<GameObject> monsterCollection = new List<GameObject>();
 
     public bool doingSetup;
 
@@ -29,14 +30,16 @@ public class GameManager : MonoBehaviour {
     public GameObject heresTheFuckingButton;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         //placement start
-		if (isHoldingObject)
+        if (isHoldingObject)
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = transform.position.z - Camera.main.transform.position.z;
@@ -71,8 +74,8 @@ public class GameManager : MonoBehaviour {
         newMonster.SetActive(false);
         return newMonster;
 
-		monsterCollection.Add (newMonster); // not working
-		Debug.Log ("monsterCollection Size = " + monsterCollection.Count);
+        //monsterCollection.Add (newMonster); // not working
+        //Debug.Log ("monsterCollection Size = " + monsterCollection.Count);
     }
 
     public void PickUpObject(GameObject otherObject)

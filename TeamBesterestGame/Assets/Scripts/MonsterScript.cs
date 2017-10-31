@@ -11,13 +11,13 @@ public class MonsterScript : MonoBehaviour
     public int startingHealth;
     public int currentHealth;
 
-	private int[] possibleThreatValue = new int[] {2, 4, 6};
-	public int threatValue;
+    private int[] possibleThreatValue = new int[] { 2, 4, 6 };
+    public int threatValue;
 
     public int averageDamage = 5;
     public int attackDamage;
 
-    private string[] possibleTraits = new string[] {"Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
+    private string[] possibleTraits = new string[] { "Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
     public string trait1;
     public string trait2;
 
@@ -30,11 +30,13 @@ public class MonsterScript : MonoBehaviour
     private GameObject resumeButton;
 
     private GameObject hero;
-	private HeroScript heroScript;
-	public bool heroInRange;
+    private HeroScript heroScript;
+    public bool heroInRange;
 
     //public List<GameObject> myList = null;
     public GameObject myRoom;
+
+    public int threatLevel;
 
     void Awake()
     {
@@ -47,7 +49,7 @@ public class MonsterScript : MonoBehaviour
         currentHealth = startingHealth;
 
         attackDamage = averageDamage + Random.Range(-3, 3);
-		threatValue = possibleThreatValue [Random.Range (0, possibleThreatValue.Length)];
+        threatValue = possibleThreatValue[Random.Range(0, possibleThreatValue.Length)];
 
         trait1 = possibleTraits[Random.Range(0, possibleTraits.Length)];
         trait2 = possibleTraits[Random.Range(0, possibleTraits.Length)];
@@ -69,9 +71,10 @@ public class MonsterScript : MonoBehaviour
     void Update()
     {
         //if HeroInRange is set to true, the Attack function will run
-        if (heroInRange) {
-			Attack();
-		}
+        if (heroInRange)
+        {
+            Attack();
+        }
 
     }
 
@@ -88,7 +91,7 @@ public class MonsterScript : MonoBehaviour
     {
         if (other.CompareTag("Hero"))
         {
-			heroScript = other.gameObject.GetComponent<HeroScript>();
+            heroScript = other.gameObject.GetComponent<HeroScript>();
             hero = other.gameObject;
             heroInRange = true;
         }
@@ -99,12 +102,12 @@ public class MonsterScript : MonoBehaviour
         hero.GetComponent<HeroScript>().TakeDamage(attackDamage);
     }
 
-	//next two functions are what the monster will call to take damage
+    //next two functions are what the monster will call to take damage
     public void TakeDamage(int damageTaken)
     {
-		currentHealth -= damageTaken;
+        currentHealth -= damageTaken;
 
-		if (currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Death();
         }
@@ -112,7 +115,7 @@ public class MonsterScript : MonoBehaviour
 
     private void Death()
     {
-		heroScript.monsterInRange = false;
+        heroScript.monsterInRange = false;
         Destroy(this);
     }
 }

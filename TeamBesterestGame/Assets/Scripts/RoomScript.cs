@@ -2,26 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomScript : MonoBehaviour {
+public class RoomScript : MonoBehaviour
+{
 
     public List<GameObject> roomMembers = new List<GameObject>();
     private GameObject heldObject;
-    
+
 
     void Awake()
     {
 
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnMouseOver()
     {
@@ -36,6 +39,5 @@ public class RoomScript : MonoBehaviour {
                 print(roomMembers[0].GetComponent<MonsterScript>().monsterName);
             }
         }
-
     }
 }
