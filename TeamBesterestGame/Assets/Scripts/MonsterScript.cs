@@ -17,7 +17,7 @@ public class MonsterScript : MonoBehaviour
     public int averageDamage = 5;
     public int attackDamage;
 
-    private string[] possibleTraits = new string[] { "Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
+    public string[] possibleTraits = new string[] { "Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
     public string trait1;
     public string trait2;
 
