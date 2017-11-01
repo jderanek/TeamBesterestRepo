@@ -30,6 +30,7 @@ public class HeroScript : MonoBehaviour
     public bool monsterInRange;
 
     public RoomScript currentRoomScript;
+    public GameObject currentRoom;
 
     // Use this for initialization
     void Start()
