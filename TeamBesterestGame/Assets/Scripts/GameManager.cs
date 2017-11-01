@@ -32,10 +32,13 @@ public class GameManager : MonoBehaviour
     public GameObject spawnRoom;
     public GameObject[] heroes;
 
+    private IEnumerator spawnHeroTimer;
+
     // Use this for initialization
     void Start()
     {
-
+        var coroutine = SpawnHeroes(5f);
+        StartCoroutine(coroutine);
     }
 
     // Update is called once per frame
@@ -64,6 +67,7 @@ public class GameManager : MonoBehaviour
             cycleImage.SetActive(true);
             Invoke("NewCycle", 2);
         }
+
         else
         {
             //Time.timeScale = 1;
@@ -100,9 +104,13 @@ public class GameManager : MonoBehaviour
         cycleTimer = 0f;
     }
 
-    public void SpawnHeroes()
+    private IEnumerator SpawnHeroes(float spawnTime)
     {
-
+        while (true)
+        {
+            yield return new WaitForSeconds(spawnTime);
+            Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+        }
     }
 
     public void ToggleConstruction()
