@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject heresTheFuckingButton;
 
+    public GameObject spawnRoom;
+    public GameObject[] heroes;
+
     // Use this for initialization
     void Start()
     {
@@ -95,6 +98,11 @@ public class GameManager : MonoBehaviour
         doingSetup = false;
         cycleImage.SetActive(false);
         cycleTimer = 0f;
+    }
+
+    public void SpawnHeroes()
+    {
+
     }
 
     public void ToggleConstruction()
