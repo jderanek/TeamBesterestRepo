@@ -19,7 +19,7 @@ public class HeroScript : MonoBehaviour
 
     private int aggro;
     public int damage;
-    public int attackSpeed;
+    //public int attackSpeed;
     public int heroHp;
     public float movementSpeed;
     public int traits;
@@ -31,6 +31,8 @@ public class HeroScript : MonoBehaviour
 
     public RoomScript currentRoomScript;
     public GameObject currentRoom;
+
+	private IEnumerator attackRepeater;
 
     // Use this for initialization
     void Start()
@@ -48,22 +50,29 @@ public class HeroScript : MonoBehaviour
 
         if (monsterInRange)
         {
-            Attack();
+            //Attack();
+			var coroutine = attackTimer(2f);
+			StartCoroutine(coroutine);
         }
 
     }
 
     public void checkCurrentRoom()
     {
+
         if (currentRoomScript.roomMembers != null)
         {
             currentMonster = currentRoomScript.roomMembers[0];
         }
         RoomMemberSorter roomSorter = new RoomMemberSorter();
         currentRoomScript.roomMembers.Sort(roomSorter);
+
+		if (currentRoomScript.roomMembers == null) 
+		{
+			
+		}
     }
-
-
+		
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Monster"))
@@ -80,6 +89,16 @@ public class HeroScript : MonoBehaviour
             currentRoomScript = other.GetComponent<RoomScript>();
         }
     }
+
+	private IEnumerator attackTimer(float attackSpeed)
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds(attackSpeed);
+			Attack ();
+		}
+	}
+
 
     public void Attack()
     {

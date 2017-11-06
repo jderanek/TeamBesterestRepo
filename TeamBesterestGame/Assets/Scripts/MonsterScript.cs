@@ -38,6 +38,8 @@ public class MonsterScript : MonoBehaviour
 
     public int threatLevel;
 
+	private IEnumerator attackRepeater;
+
     void Awake()
     {
         averageDamage = 5;
@@ -73,7 +75,9 @@ public class MonsterScript : MonoBehaviour
         //if HeroInRange is set to true, the Attack function will run
         if (heroInRange)
         {
-            Attack();
+			var coroutine = attackTimer(2f);
+			StartCoroutine(coroutine);
+            //Attack();
         }
 
     }
@@ -96,6 +100,15 @@ public class MonsterScript : MonoBehaviour
             heroInRange = true;
         }
     }
+
+	private IEnumerator attackTimer(float attackSpeed)
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds(attackSpeed);
+			Attack ();
+		}
+	}
 
     public void Attack()
     {

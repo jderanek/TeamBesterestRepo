@@ -12,6 +12,7 @@ TagManager:
   - Room Button
   - Door
   - Wall
+  - Room
   layers:
   - Default
   - TransparentFX
