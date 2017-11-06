@@ -9,12 +9,11 @@ public class RoomScript : MonoBehaviour
     private GameObject heldObject;
 
     public List<GameObject> heroesInRoom = new List<GameObject>();
-    
 
-    void Awake()
-    {
-
-    }
+    public GameObject northRoom;
+    public GameObject southRoom;
+    public GameObject eastRoom;
+    public GameObject westRoom;
 
     // Use this for initialization
     void Start()

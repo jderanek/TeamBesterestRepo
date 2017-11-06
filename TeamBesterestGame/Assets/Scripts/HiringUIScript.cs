@@ -16,6 +16,8 @@ public class HiringUIScript : MonoBehaviour {
     [HideInInspector]
     public GameObject monsterInstance;
 
+    public GameObject monsterImage;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -38,6 +40,7 @@ public class HiringUIScript : MonoBehaviour {
             resumeInstance.SetActive(true);
             resumeInstance.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
             resumeInstance.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
+            //resumeInstance.GetComponent<>
 
             monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(resume);
             monsterInstance.SetActive(false);
@@ -52,4 +55,11 @@ public class HiringUIScript : MonoBehaviour {
             resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(7).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
         }
     }
+
+    public void Interview()
+    {
+        print("BEEP");
+        monsterImage.SetActive(true);
+    }
+
 }

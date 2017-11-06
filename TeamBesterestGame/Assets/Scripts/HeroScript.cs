@@ -35,18 +35,20 @@ public class HeroScript : MonoBehaviour
 	private IEnumerator attackRepeater;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         monsterInRange = false;
+        currentRoom = GameObject.FindGameObjectWithTag("Spawn Room");
+        currentRoomScript = currentRoom.GetComponent<RoomScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkCurrentRoom();
+        //CheckCurrentRoom();
 
         //movement script
-        transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
+        //transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
 
         if (monsterInRange)
         {
@@ -57,11 +59,12 @@ public class HeroScript : MonoBehaviour
 
     }
 
-    public void checkCurrentRoom()
+    void CheckCurrentRoom()
     {
 
         if (currentRoomScript.roomMembers != null)
         {
+            print("bye");
             currentMonster = currentRoomScript.roomMembers[0];
         }
         RoomMemberSorter roomSorter = new RoomMemberSorter();
@@ -69,7 +72,7 @@ public class HeroScript : MonoBehaviour
 
 		if (currentRoomScript.roomMembers == null) 
 		{
-			
+            print("hi");
 		}
     }
 		

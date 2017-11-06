@@ -27,4 +27,12 @@ public class HiringButton : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(monsterInstance);
         }
     }
+
+
+    void SpawnMonster()
+    {
+        Destroy(GameObject.FindGameObjectWithTag("Resume")); //.SetActive(false);
+        GameObject.Find("Hiring Button").GetComponent<HiringUIScript>().resumeUp = false;
+        GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(monsterInstance);
+    }
 }

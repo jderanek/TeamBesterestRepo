@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool isHoldingObject;
     public GameObject monster;
     [HideInInspector]
+    public GameObject monsterInstance;
     public GameObject heldObject;
 
     private GameObject resume;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     //public List<GameObject> monsterCollection = new List<GameObject>();
 
     public bool doingSetup;
+    public bool interviewing = false;
 
     public Slider cycleSlider;
     public GameObject cycleImage;
@@ -28,6 +30,8 @@ public class GameManager : MonoBehaviour
     public bool inConstructionMode;
 
     public GameObject heresTheFuckingButton;
+
+    public GameObject heresTheOtherFuckingButtons;
 
     public GameObject spawnRoom;
     public GameObject[] heroes;
@@ -73,6 +77,11 @@ public class GameManager : MonoBehaviour
             //Time.timeScale = 1;
             cycleTimer += Time.deltaTime;
         }
+
+        if (interviewing)
+        {
+            heresTheOtherFuckingButtons.SetActive(interviewing);
+        }
     }
 
     public GameObject SpawnMonster(GameObject resume)
@@ -87,11 +96,14 @@ public class GameManager : MonoBehaviour
 
     public void PickUpObject(GameObject otherObject)
     {
-        if (otherObject.GetComponent<MonsterScript>().myRoom != null)
-        {
-            print("remove from room");
-            otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Remove(otherObject.gameObject);
+        if (otherObject.GetComponent<MonsterScript>() != null ) {
+            if (otherObject.GetComponent<MonsterScript>().myRoom != null)
+            {
+                otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Remove(otherObject.gameObject);
+                otherObject.GetComponent<MonsterScript>().myRoom = null;
+            }
         }
+        
         isHoldingObject = true;
         heldObject = otherObject;
         otherObject.SetActive(true);
@@ -102,6 +114,14 @@ public class GameManager : MonoBehaviour
         doingSetup = false;
         cycleImage.SetActive(false);
         cycleTimer = 0f;
+    }
+
+    public void HireButton()
+    {
+        monsterInstance = GameObject.FindGameObjectWithTag("ResumeButton").GetComponent<HiringUIScript>().monsterInstance;
+        Destroy(GameObject.FindGameObjectWithTag("Resume")); //.SetActive(false);
+        GameObject.Find("Hiring Button").GetComponent<HiringUIScript>().resumeUp = false;
+        PickUpObject(monsterInstance);
     }
 
     private IEnumerator SpawnHeroes(float spawnTime)
@@ -118,4 +138,7 @@ public class GameManager : MonoBehaviour
         inConstructionMode = !inConstructionMode;
         heresTheFuckingButton.SetActive(inConstructionMode);
     }
+
+   
+
 }

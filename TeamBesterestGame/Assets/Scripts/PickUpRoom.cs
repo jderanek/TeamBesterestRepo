@@ -31,6 +31,10 @@ public class PickUpRoom : MonoBehaviour {
             if (Input.GetMouseButtonDown(1))
             {
                 inHand = false;
+                if (this.GetComponent<RoomScript>() != null)
+                {
+                    //his.GetComponent<RoomScript>().
+                }
             }
         }
     }
