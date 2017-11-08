@@ -43,7 +43,6 @@ public class PickUpRoom : MonoBehaviour {
                 roomScript.myX = roundedX;
                 roomScript.myY = roundedY;
                 roomScript.UpdateNeighbors();
-                print(gameManager.roomList[roundedX, roundedY]);
             }
         }
     }
@@ -53,6 +52,8 @@ public class PickUpRoom : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) && inConstructionMode)
         {
             inHand = true;
+            roomScript.ClearNeighbors();
+            gameManager.roomList[roundedX, roundedY] = null;
         }
     }
 }

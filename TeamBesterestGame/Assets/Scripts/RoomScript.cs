@@ -47,7 +47,6 @@ public class RoomScript : MonoBehaviour
 
     public void UpdateNeighbors()
     {
-        
         if (gameManager.roomList[myX, myY + 1] != null)
         {
             northRoom = gameManager.roomList[myX, myY + 1];
@@ -71,6 +70,37 @@ public class RoomScript : MonoBehaviour
             westRoom = gameManager.roomList[myX - 1, myY];
             westRoom.GetComponent<RoomScript>().eastRoom = gameObject;
         }
-        
+    }
+
+    public void ClearNeighbors()
+    {
+        if (northRoom != null)
+        {
+            northRoom = gameManager.roomList[myX, myY + 1];
+            northRoom.GetComponent<RoomScript>().southRoom = null;
+        }
+
+        if (southRoom != null)
+        {
+            southRoom = gameManager.roomList[myX, myY - 1];
+            southRoom.GetComponent<RoomScript>().northRoom = null;
+        }
+
+        if (eastRoom != null)
+        {
+            eastRoom = gameManager.roomList[myX + 1, myY];
+            eastRoom.GetComponent<RoomScript>().westRoom = null;
+        }
+
+        if (westRoom != null)
+        {
+            westRoom = gameManager.roomList[myX - 1, myY];
+            westRoom.GetComponent<RoomScript>().eastRoom = null;
+        }
+
+        northRoom = null;
+        southRoom = null;
+        eastRoom = null;
+        westRoom = null;
     }
 }
