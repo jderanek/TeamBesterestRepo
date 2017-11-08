@@ -38,11 +38,14 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator spawnHeroTimer;
 
+    public GameObject[,] roomList;
+
     // Use this for initialization
     void Start()
     {
         var coroutine = SpawnHeroes(5f);
         StartCoroutine(coroutine);
+        roomList = new GameObject[10, 10];
     }
 
     // Update is called once per frame

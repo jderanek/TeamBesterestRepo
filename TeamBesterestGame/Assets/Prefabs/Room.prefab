@@ -376,8 +376,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696128822791202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.6480002, y: -3.28118, z: 0}
-  m_LocalScale: {x: 9.520806, y: 9.2696905, z: 1}
+  m_LocalPosition: {x: -2, y: -2, z: 0}
+  m_LocalScale: {x: 3.173602, y: 3.089897, z: 1}
   m_Children:
   - {fileID: 4699569941881310}
   - {fileID: 4997586361106940}
@@ -828,6 +828,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomMembers: []
   heroesInRoom: []
+  northRoom: {fileID: 0}
+  southRoom: {fileID: 0}
+  eastRoom: {fileID: 0}
+  westRoom: {fileID: 0}
 --- !u!114 &114568441188808680
 MonoBehaviour:
   m_ObjectHideFlags: 1

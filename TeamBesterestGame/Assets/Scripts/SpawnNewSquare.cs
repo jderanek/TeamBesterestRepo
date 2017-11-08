@@ -50,7 +50,7 @@ public class SpawnNewSquare : MonoBehaviour {
                 //new Vector3(//Random.Range(-5.0f, 10.0f),
                     //Random.Range(-5.0f, 10.0f),
                     //0.0f)
-                    this.transform.position,
+                    new Vector3(7, 3, 0), //this.transform.position,
                 Quaternion.identity);
         inHand = true;
     }

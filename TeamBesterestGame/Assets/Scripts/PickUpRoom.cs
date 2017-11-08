@@ -27,7 +27,7 @@ public class PickUpRoom : MonoBehaviour {
             transform.position = new Vector3(
                 Mathf.Round(transform.position.x),
                 Mathf.Round(transform.position.y),
-                Mathf.Round(transform.position.z));
+                0f); //Mathf.Round(transform.position.z));
             if (Input.GetMouseButtonDown(1))
             {
                 inHand = false;
