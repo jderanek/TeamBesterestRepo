@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class MonsterScript : MonoBehaviour
 {
-    private string[] possibleNames = new string[] { "Larry", "Gary" };
+    public string[] possibleNames;
     public string monsterName;
 
     public int averageHealth;
     public int startingHealth;
     public int currentHealth;
 
-    private int[] possibleThreatValue = new int[] { 2, 4, 6 };
+    public int[] possibleThreatValue = new int[] { 2, 4, 6 };
     public int threatValue;
 
-    public int averageDamage = 5;
+    public int averageDamage;
     public int attackDamage;
 
     public string[] possibleTraits = new string[] { "Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };

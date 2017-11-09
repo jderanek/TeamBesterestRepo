@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject monsterInstance;
     public GameObject heldObject;
 
-    private GameObject resume;
+    public GameObject resume;
     private GameObject resumeButton;
 
     //public List<GameObject> monsterCollection = new List<GameObject>();
@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject interviewButtons;
     public GameObject interviewImage;
+    public GameObject interviewBackground;
+    public GameObject interviewExit;
 
     public GameObject spawnRoom;
     public GameObject[] heroes;
@@ -84,12 +86,27 @@ public class GameManager : MonoBehaviour
 
         if (interviewing)
         {
-            interviewButtons.SetActive(interviewing);
-            interviewImage.SetActive(interviewing);
+            interviewButtons.SetActive(true);
+            interviewImage.SetActive(true);
+            interviewBackground.SetActive(true);
+            interviewExit.SetActive(true);
+            constructionButton.SetActive(false);
+            if (resume != null)
+            {
+                resume.SetActive(false);
+            }
         }
         else
         {
-
+            interviewButtons.SetActive(false);
+            interviewImage.SetActive(false);
+            interviewBackground.SetActive(false);
+            interviewExit.SetActive(false);
+            constructionButton.SetActive(true);
+            if (resume != null)
+            {
+                resume.SetActive(true);
+            }
         }
     }
 

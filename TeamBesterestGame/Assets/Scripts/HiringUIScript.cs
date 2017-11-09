@@ -16,11 +16,13 @@ public class HiringUIScript : MonoBehaviour {
     [HideInInspector]
     public GameObject monsterInstance;
 
-    public GameObject monsterImage;
+    public GameObject gameManager;
+
 
 	// Use this for initialization
 	void Start ()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameController");
         resumeUp = false;
         resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
     }
@@ -37,6 +39,7 @@ public class HiringUIScript : MonoBehaviour {
         {
             resumeUp = true;
             resumeInstance = Instantiate(resume, resumeSpawn.position, Quaternion.identity);
+            gameManager.GetComponent<GameManager>().resume = resumeInstance;
             resumeInstance.SetActive(true);
             resumeInstance.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
             resumeInstance.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
@@ -54,12 +57,6 @@ public class HiringUIScript : MonoBehaviour {
             resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Damage " + monsterInstanceScript.attackDamage;
             resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(7).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
         }
-    }
-
-    public void Interview()
-    {
-        print("BEEP");
-        monsterImage.SetActive(true);
     }
 
 }

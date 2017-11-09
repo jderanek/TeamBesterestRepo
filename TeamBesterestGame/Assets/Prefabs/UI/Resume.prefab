@@ -1033,6 +1033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   monsterInstance: {fileID: 0}
+  resume: {fileID: 0}
 --- !u!114 &114473118088847514
 MonoBehaviour:
   m_ObjectHideFlags: 1

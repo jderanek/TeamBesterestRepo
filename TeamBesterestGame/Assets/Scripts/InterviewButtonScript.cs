@@ -8,9 +8,7 @@ public class InterviewButtonScript : MonoBehaviour {
     public GameObject gameManager;
     public GameObject monsterInstance;
 
-    //UI stuff
-    //public GameObject monsterImage;
-    //public GameObject interviewQuestions;
+    public GameObject resume;
 
 
     // Use this for initialization
@@ -34,8 +32,4 @@ public class InterviewButtonScript : MonoBehaviour {
         }
     }
 
-    void ExitInterview()
-    {
-        gameManager.GetComponent<GameManager>().interviewing = false;
-    }
 }

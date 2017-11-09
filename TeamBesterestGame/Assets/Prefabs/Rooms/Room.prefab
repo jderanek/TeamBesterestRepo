@@ -803,6 +803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inConstructionMode: 0
+  roomScript: {fileID: 0}
 --- !u!114 &114203649846928386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -826,7 +827,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c00b8083336bc44b8a8c4cbd1d3f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   roomMembers: []
+  myX: 0
+  myY: 0
   heroesInRoom: []
   northRoom: {fileID: 0}
   southRoom: {fileID: 0}
