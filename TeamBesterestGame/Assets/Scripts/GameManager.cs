@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public GameObject monsterInHand;
     public bool isHoldingObject;
-    public GameObject monster;
+    public GameObject[] possibleMonsters;
+    //public GameObject monster;
     [HideInInspector]
     public GameObject monsterInstance;
     public GameObject heldObject;
@@ -112,7 +113,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject SpawnMonster(GameObject resume)
     {
-        GameObject newMonster = Instantiate(monster, resume.transform.position, Quaternion.identity);
+        GameObject newMonster = Instantiate(possibleMonsters[Random.Range(0, possibleMonsters.Length)], resume.transform.position, Quaternion.identity);
         newMonster.SetActive(false);
         return newMonster;
 

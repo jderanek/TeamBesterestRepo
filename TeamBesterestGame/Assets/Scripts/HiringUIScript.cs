@@ -51,11 +51,12 @@ public class HiringUIScript : MonoBehaviour {
 
             // Resume Text
             resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.monsterName;
-            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.trait1;
-            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(3).GetComponent<Text>().text = monsterInstanceScript.trait2;
-            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Health " + monsterInstanceScript.startingHealth;
-            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Damage " + monsterInstanceScript.attackDamage;
-            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(7).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
+            //resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.trait1;
+            //resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(3).GetComponent<Text>().text = monsterInstanceScript.trait2;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.monsterType;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(4).GetComponent<Text>().text = "Average Health " + monsterInstanceScript.averageHealth;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Average Damage " + monsterInstanceScript.averageDamage;
+            resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
         }
     }
 

@@ -7,6 +7,8 @@ public class MonsterScript : MonoBehaviour
     public string[] possibleNames;
     public string monsterName;
 
+    public string monsterType;
+
     public int averageHealth;
     public int startingHealth;
     public int currentHealth;
