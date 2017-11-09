@@ -33,4 +33,9 @@ public class InterviewButtonScript : MonoBehaviour {
             gameManager.GetComponent<GameManager>().interviewing = true;
         }
     }
+
+    void ExitInterview()
+    {
+        gameManager.GetComponent<GameManager>().interviewing = false;
+    }
 }

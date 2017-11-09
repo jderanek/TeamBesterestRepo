@@ -29,9 +29,10 @@ public class GameManager : MonoBehaviour
 
     public bool inConstructionMode;
 
-    public GameObject heresTheFuckingButton;
+    public GameObject constructionButton;
 
-    public GameObject heresTheOtherFuckingButtons;
+    public GameObject interviewButtons;
+    public GameObject interviewImage;
 
     public GameObject spawnRoom;
     public GameObject[] heroes;
@@ -83,7 +84,12 @@ public class GameManager : MonoBehaviour
 
         if (interviewing)
         {
-            heresTheOtherFuckingButtons.SetActive(interviewing);
+            interviewButtons.SetActive(interviewing);
+            interviewImage.SetActive(interviewing);
+        }
+        else
+        {
+
         }
     }
 
@@ -139,7 +145,7 @@ public class GameManager : MonoBehaviour
     public void ToggleConstruction()
     {
         inConstructionMode = !inConstructionMode;
-        heresTheFuckingButton.SetActive(inConstructionMode);
+        constructionButton.SetActive(inConstructionMode);
     }
 
    
