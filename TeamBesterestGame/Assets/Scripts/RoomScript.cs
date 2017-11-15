@@ -136,4 +136,13 @@ public class RoomScript : MonoBehaviour
         SurroundingRoomSorter roomSorter = new SurroundingRoomSorter();
         surroundingRooms.Sort(roomSorter);
     }
+
+    public void AddHeroToRoom(GameObject newHero)
+    {
+        heroesInRoom.Add(newHero);
+    }
+    public void RemoveHeroFromRoom(GameObject oldHero)
+    {
+        heroesInRoom.Remove(oldHero);
+    }
 }

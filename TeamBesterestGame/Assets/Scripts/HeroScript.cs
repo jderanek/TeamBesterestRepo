@@ -41,12 +41,13 @@ public class HeroScript : MonoBehaviour
         monsterInRange = false;
         currentRoom = GameObject.FindGameObjectWithTag("Spawn Room");
         currentRoomScript = currentRoom.GetComponent<RoomScript>();
+        currentRoomScript.AddHeroToRoom(gameObject);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //CheckCurrentRoom();
+        CheckCurrentRoom();
 
         //movement script
         //transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
@@ -62,13 +63,14 @@ public class HeroScript : MonoBehaviour
 
     void CheckCurrentRoom()
     {
-
         if (currentRoomScript.roomMembers == null)
         {
             previousRoom = currentRoom;
+            currentRoomScript.RemoveHeroFromRoom(gameObject);
             currentRoom = SearchSurroundingRooms(previousRoom);
             currentRoomScript = currentRoom.GetComponent<RoomScript>();
             gameObject.transform.position = currentRoom.transform.position;
+            currentRoomScript.AddHeroToRoom(gameObject);
         }
         RoomMemberSorter roomSorter = new RoomMemberSorter();
         currentRoomScript.roomMembers.Sort(roomSorter);
