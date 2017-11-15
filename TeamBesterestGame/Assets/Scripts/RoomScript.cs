@@ -2,6 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public class SurroundingRoomSorter : IComparer<GameObject>
+{
+    public int Compare(GameObject x, GameObject y)
+    {
+        if (x.GetComponent<RoomScript>().roomValue == y.GetComponent<RoomScript>().roomValue)
+        {
+            return Mathf.RoundToInt(Random.Range(0f, 1f));
+        }
+        if (x.GetComponent<RoomScript>().roomValue > y.GetComponent<RoomScript>().roomValue) 
+        {
+            return 0;
+        }
+        else return 1;
+    }
+}
+
+
 public class RoomScript : MonoBehaviour
 {
     public GameManager gameManager;
@@ -18,10 +35,20 @@ public class RoomScript : MonoBehaviour
     public GameObject eastRoom;
     public GameObject westRoom;
 
+    public List<GameObject> surroundingRooms = new List<GameObject>();
+
+    public int roomValue;
+
     // Use this for initialization
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        UpdateNeighbors();
+        surroundingRooms.Add(northRoom);
+        surroundingRooms.Add(southRoom);
+        surroundingRooms.Add(eastRoom);
+        surroundingRooms.Add(westRoom);
+        SortSorroundingRooms();
     }
 
     // Update is called once per frame
@@ -102,5 +129,11 @@ public class RoomScript : MonoBehaviour
         southRoom = null;
         eastRoom = null;
         westRoom = null;
+    }
+
+    public void SortSorroundingRooms()
+    {
+        SurroundingRoomSorter roomSorter = new SurroundingRoomSorter();
+        surroundingRooms.Sort(roomSorter);
     }
 }

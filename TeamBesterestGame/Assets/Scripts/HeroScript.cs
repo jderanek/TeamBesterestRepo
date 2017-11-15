@@ -31,8 +31,9 @@ public class HeroScript : MonoBehaviour
 
     public RoomScript currentRoomScript;
     public GameObject currentRoom;
+    private GameObject previousRoom;
 
-	private IEnumerator attackRepeater;
+    private IEnumerator attackRepeater;
 
     // Use this for initialization
     void Awake()
@@ -62,18 +63,24 @@ public class HeroScript : MonoBehaviour
     void CheckCurrentRoom()
     {
 
-        if (currentRoomScript.roomMembers != null)
+        if (currentRoomScript.roomMembers == null)
         {
-            print("bye");
-            currentMonster = currentRoomScript.roomMembers[0];
+            previousRoom = currentRoom;
+            currentRoom = SearchSurroundingRooms(previousRoom);
+            currentRoomScript = currentRoom.GetComponent<RoomScript>();
+            gameObject.transform.position = currentRoom.transform.position;
         }
         RoomMemberSorter roomSorter = new RoomMemberSorter();
         currentRoomScript.roomMembers.Sort(roomSorter);
+    }
 
-		if (currentRoomScript.roomMembers == null) 
-		{
-            print("hi");
-		}
+    GameObject SearchSurroundingRooms(GameObject lastRoom)
+    {
+        if (lastRoom == currentRoomScript.surroundingRooms[0])
+        {
+            return currentRoomScript.surroundingRooms[1];
+        }
+        else return currentRoomScript.surroundingRooms[0];
     }
 		
     void OnTriggerEnter2D(Collider2D other)
