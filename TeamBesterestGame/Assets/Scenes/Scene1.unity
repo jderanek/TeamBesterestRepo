@@ -1745,6 +1745,7 @@ MonoBehaviour:
   cycleDelay: 2
   inConstructionMode: 0
   constructionButton: {fileID: 36520027}
+  roomButton: {fileID: 430025416}
   interviewButtons: {fileID: 1315549498}
   interviewImage: {fileID: 1908929549}
   interviewBackground: {fileID: 146191077}

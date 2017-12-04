@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public bool inConstructionMode;
 
     public GameObject constructionButton;
+    public GameObject roomButton;
 
     public GameObject interviewButtons;
     public GameObject interviewImage;
@@ -164,6 +165,7 @@ public class GameManager : MonoBehaviour
     {
         inConstructionMode = !inConstructionMode;
         constructionButton.SetActive(inConstructionMode);
+        roomButton.SetActive(inConstructionMode);
     }
 
    
