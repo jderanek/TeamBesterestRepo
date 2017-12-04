@@ -53,13 +53,18 @@ public class HeroScript : MonoBehaviour
         if (monsterInRange)
         {
             //Attack();
-			var coroutine = attackTimer(2f);
-			StartCoroutine(coroutine);
+            var coroutine = attackTimer(2f);
+            StartCoroutine(coroutine);
+        }
+        else
+        {
+            var routine = CheckCurrentRoom(5f);
+            StartCoroutine(routine);
         }
 
     }
 
-    void CheckCurrentRoom()
+    /*void CheckCurrentRoom()
     {
 
         if (currentRoomScript.roomMembers != null)
@@ -74,7 +79,7 @@ public class HeroScript : MonoBehaviour
 		{
             print("hi");
 		}
-    }
+    }*/
 		
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -102,6 +107,17 @@ public class HeroScript : MonoBehaviour
 		}
 	}
 
+    private IEnumerator CheckCurrentRoom(float timer)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(timer);
+            print("bye");
+            this.currentRoom = currentRoomScript.northRoom;
+            currentRoomScript = currentRoom.GetComponent<RoomScript>();
+            this.transform.position = currentRoom.transform.position;
+        }
+    }
 
     public void Attack()
     {

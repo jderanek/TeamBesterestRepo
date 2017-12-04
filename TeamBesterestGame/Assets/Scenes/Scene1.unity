@@ -605,9 +605,24 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: westRoom
+      value: 
+      objectReference: {fileID: 1952476467}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northRoom
+      value: 
+      objectReference: {fileID: 1457250936}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &248141530 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 248141529}
 --- !u!1 &279320168
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,9 +1009,19 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southRoom
+      value: 
+      objectReference: {fileID: 1952476467}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &373517983 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 373517982}
 --- !u!1 &430025416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,9 +1676,24 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southRoom
+      value: 
+      objectReference: {fileID: 1893377716}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northRoom
+      value: 
+      objectReference: {fileID: 1952476467}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &959393533 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 959393532}
 --- !u!1 &1031783963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,6 +2431,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1457250936 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1457250935}
 --- !u!1 &1495284374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,6 +2952,11 @@ Prefab:
       propertyPath: m_TagString
       value: Spawn Room
       objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northRoom
+      value: 
+      objectReference: {fileID: 959393533}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
@@ -3038,6 +3088,26 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southRoom
+      value: 
+      objectReference: {fileID: 959393533}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: eastRoom
+      value: 
+      objectReference: {fileID: 248141530}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northRoom
+      value: 
+      objectReference: {fileID: 373517983}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1952476467 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
+    type: 2}
+  m_PrefabInternal: {fileID: 1952476466}
