@@ -6,7 +6,7 @@ public class RoomMemberSorter : IComparer<GameObject>
 {
     public int Compare(GameObject x, GameObject y)
     {
-        if (x.GetComponent<MonsterScript>().threatLevel > y.GetComponent<MonsterScript>().threatLevel)
+        if (x.GetComponent<MonsterScript>().threatValue > y.GetComponent<MonsterScript>().threatValue)
         {
             return 0;
         }
@@ -114,12 +114,20 @@ public class HeroScript : MonoBehaviour
         {
             yield return new WaitForSeconds(timer);
             print("bye");
-            this.currentRoom = currentRoomScript.northRoom;
+           	//this.currentRoom = currentRoomScript.northRoom;
+
+			currentRoom = currentRoomScript.CheckNeighbors ();
+
             currentRoomScript = currentRoom.GetComponent<RoomScript>();
             this.transform.position = currentRoom.transform.position;
             StopAllCoroutines();
         }
     }
+
+	public void Pathfinding()
+	{
+		//currentRoomScript;
+	}
 
     public void Attack()
     {

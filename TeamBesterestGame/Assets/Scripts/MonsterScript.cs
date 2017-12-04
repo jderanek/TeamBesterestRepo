@@ -38,8 +38,6 @@ public class MonsterScript : MonoBehaviour
     //public List<GameObject> myList = null;
     public GameObject myRoom;
 
-    public int threatLevel;
-
 	private IEnumerator attackRepeater;
 
     void Awake()

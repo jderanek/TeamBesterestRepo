@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class RoomScript : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class RoomScript : MonoBehaviour
     public GameObject southRoom;
     public GameObject eastRoom;
     public GameObject westRoom;
+
+	public int roomThreat;
 
     // Use this for initialization
     void Start()
@@ -40,6 +43,7 @@ public class RoomScript : MonoBehaviour
             if (heldObject.CompareTag("Monster") && Input.GetMouseButtonDown(1))
             {
                 roomMembers.Add(heldObject);
+				roomThreat += heldObject.GetComponent<MonsterScript> ().threatValue;
                 monsterInRoom = true;
                 //heldObject.GetComponent<MonsterScript>().myList = roomMembers;
                 heldObject.GetComponent<MonsterScript>().myRoom = this.gameObject;
@@ -106,4 +110,35 @@ public class RoomScript : MonoBehaviour
         eastRoom = null;
         westRoom = null;
     }
+
+	public GameObject CheckNeighbors()
+	{
+		List<GameObject> neighborRooms = new List<GameObject>();
+
+		if (northRoom != null)
+		{
+			neighborRooms.Add(northRoom);
+		}
+
+		if (southRoom != null)
+		{
+			neighborRooms.Add(northRoom);
+		}
+
+		if (eastRoom != null)
+		{
+			neighborRooms.Add(northRoom);
+		}
+
+		if (westRoom != null)
+		{
+			neighborRooms.Add(northRoom);
+		}
+		//Comp comparer = new Comp ();
+		neighborRooms.Sort (delegate(GameObject x, GameObject y) {
+			return x.GetComponent<RoomScript>().roomThreat.CompareTo(y.GetComponent<RoomScript>().roomThreat);
+		});
+		return neighborRooms [0];
+	}
+
 }
