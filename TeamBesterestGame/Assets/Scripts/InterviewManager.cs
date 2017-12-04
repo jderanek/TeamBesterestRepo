@@ -42,21 +42,21 @@ public class InterviewManager : MonoBehaviour {
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "1";
+        responseText.text = "I have " + monsterInstance.GetComponent<MonsterScript>().startingHealth + " health.";
     }
 
     public void Question2Response()
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "2";
+        responseText.text = "My damage is " + monsterInstance.GetComponent<MonsterScript>().attackDamage;
     }
 
     public void Question3Response()
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "3";
+        responseText.text = "I'm " + monsterInstance.GetComponent<MonsterScript>().trait1 + " and " + monsterInstance.GetComponent<MonsterScript>().trait2;
     }
 
     public void InterviewResponse()
