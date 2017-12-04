@@ -7,6 +7,9 @@ public class InterviewManager : MonoBehaviour {
 
     public GameObject gameManager;
     public GameObject resume;
+    public GameObject hiringButton;
+
+    public GameObject monsterInstance;
 
     public GameObject interviewQuestions;
     public GameObject questionOne;
@@ -25,7 +28,14 @@ public class InterviewManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameManager.GetComponent<GameManager>().interviewing)
+        {
+            monsterInstance = hiringButton.GetComponent<HiringUIScript>().monsterInstance;
+        }
+        else
+        {
+            monsterInstance = null;
+        }
     }
 
     public void Question1Response()

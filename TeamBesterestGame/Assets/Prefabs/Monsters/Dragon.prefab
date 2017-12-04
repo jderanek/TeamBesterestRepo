@@ -90,7 +90,7 @@ MonoBehaviour:
   - Hard-Working
   trait1: 
   trait2: 
-  averageSalary: 0
+  averageSalary: 1000
   requestedSalary: 0
   heroInRange: 0
   myRoom: {fileID: 0}

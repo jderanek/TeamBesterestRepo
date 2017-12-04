@@ -466,6 +466,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2b9c617476ffeb42812620204ccd489, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &96629997 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1288583032079930, guid: b2b9c617476ffeb42812620204ccd489,
+    type: 2}
+  m_PrefabInternal: {fileID: 96629996}
 --- !u!1 &146191077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1778,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   resume: {fileID: 0}
+  hiringButton: {fileID: 96629997}
+  monsterInstance: {fileID: 0}
   interviewQuestions: {fileID: 1315549498}
   questionOne: {fileID: 447131214}
   questionTwo: {fileID: 1207427501}

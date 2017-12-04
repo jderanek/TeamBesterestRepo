@@ -44,9 +44,6 @@ public class MonsterScript : MonoBehaviour
 
     void Awake()
     {
-        averageDamage = 5;
-        averageHealth = 10;
-        averageSalary = 500;
 
         monsterName = possibleNames[Random.Range(0, possibleNames.Length)];
         startingHealth = averageHealth + Random.Range(-5, 5);
