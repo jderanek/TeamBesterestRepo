@@ -29,7 +29,10 @@ public class RoomScript : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-
+		//UpdateNeighbors ();
+		//print(gameManager.roomList);
+		//print (myX);
+		//gameManager.roomList [myX, myY] = gameObject;
     }
 
     // Update is called once per frame
@@ -62,6 +65,7 @@ public class RoomScript : MonoBehaviour
         {
             northRoom = gameManager.roomList[myX, myY + 1];
             northRoom.GetComponent<RoomScript>().southRoom = gameObject;
+			print ("stuff");
 			neighborRooms.Add(northRoom);
         }
 
@@ -127,39 +131,4 @@ public class RoomScript : MonoBehaviour
         eastRoom = null;
         westRoom = null;
     }
-
-	/*public GameObject CheckNeighbors()
-	{
-		//List<GameObject> neighborRooms = new List<GameObject>();
-
-		if (northRoom != null)
-		{
-			neighborRooms.Add(northRoom);
-		}
-
-		if (southRoom != null)
-		{
-			neighborRooms.Add(southRoom);
-		}
-
-		if (eastRoom != null)
-		{
-			neighborRooms.Add(eastRoom);
-		}
-
-		if (westRoom != null)
-		{
-			neighborRooms.Add(westRoom);
-		}
-		//Comp comparer = new Comp ();
-		neighborRooms.Sort (delegate(GameObject x, GameObject y) {
-			return x.GetComponent<RoomScript>().roomThreat.CompareTo(y.GetComponent<RoomScript>().roomThreat);
-		});
-
-
-		return neighborRooms [0];
-
-	}
-	*/
-
 }

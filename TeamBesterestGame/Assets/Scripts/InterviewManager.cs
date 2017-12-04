@@ -42,22 +42,36 @@ public class InterviewManager : MonoBehaviour {
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "I have " + monsterInstance.GetComponent<MonsterScript>().startingHealth + " health.";
+		responseText.text = "I've only worked in a few dungeons throughout my career."; //"I have " + monsterInstance.GetComponent<MonsterScript>().startingHealth + " health.";
     }
 
     public void Question2Response()
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "My damage is " + monsterInstance.GetComponent<MonsterScript>().attackDamage;
+		responseText.text = "I haven't killed any legendary heroes, but I've killed a few knights."; //"My damage is " + monsterInstance.GetComponent<MonsterScript>().attackDamage;
     }
 
     public void Question3Response()
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "I'm " + monsterInstance.GetComponent<MonsterScript>().trait1 + " and " + monsterInstance.GetComponent<MonsterScript>().trait2;
+		responseText.text = "I hate fire! Fire can do some serious damage to me!"; //+ monsterInstance.GetComponent<MonsterScript>().trait1 + " and " + monsterInstance.GetComponent<MonsterScript>().trait2;
     }
+
+	public void Question4Response()
+	{
+		interviewQuestions.SetActive(false);
+		interviewResponse.SetActive(true);
+		responseText.text = "I enjoy walking around town and killing humans.";
+	}
+
+	public void Question5Response()
+	{
+		interviewQuestions.SetActive(false);
+		interviewResponse.SetActive(true);
+		responseText.text = "I drink a lot of milk! It's pretty good stuff.";
+	}
 
     public void InterviewResponse()
     {
