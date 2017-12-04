@@ -17,7 +17,6 @@ public class ResumeExit : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            
             var ResumeButtonScript = resumeButton.GetComponent<HiringUIScript>();
             ResumeButtonScript.resumeUp = false;
             Destroy(ResumeButtonScript.monsterInstance);

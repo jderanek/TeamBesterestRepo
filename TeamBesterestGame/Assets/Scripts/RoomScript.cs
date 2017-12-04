@@ -13,6 +13,8 @@ public class RoomScript : MonoBehaviour
 
     public List<GameObject> heroesInRoom = new List<GameObject>();
 
+    public bool monsterInRoom = false;
+
     public GameObject northRoom;
     public GameObject southRoom;
     public GameObject eastRoom;
@@ -38,6 +40,7 @@ public class RoomScript : MonoBehaviour
             if (heldObject.CompareTag("Monster") && Input.GetMouseButtonDown(1))
             {
                 roomMembers.Add(heldObject);
+                monsterInRoom = true;
                 //heldObject.GetComponent<MonsterScript>().myList = roomMembers;
                 heldObject.GetComponent<MonsterScript>().myRoom = this.gameObject;
                 print(roomMembers[0].GetComponent<MonsterScript>().monsterName);
