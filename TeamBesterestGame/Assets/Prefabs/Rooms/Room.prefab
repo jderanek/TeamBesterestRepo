@@ -1056,8 +1056,8 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   neighborRooms: []
   roomMembers: []
-  myX: 1
-  myY: 2
+  myX: 0
+  myY: 0
   heroesInRoom: []
   monsterInRoom: 0
   northRoom: {fileID: 0}

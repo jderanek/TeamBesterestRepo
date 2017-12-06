@@ -54,9 +54,9 @@ public class GameManager : MonoBehaviour
     }
 
 	void Start() {
-		var objects = GameObject.FindGameObjectsWithTag("Room");
-		foreach (var obj in objects) {
-			obj.GetComponent<RoomScript> ().Initialize ();
+		var rooms = GameObject.FindGameObjectsWithTag("Room");
+		foreach (var room in rooms) {
+			room.GetComponent<RoomScript>().Initialize();
 		}
 	}
 

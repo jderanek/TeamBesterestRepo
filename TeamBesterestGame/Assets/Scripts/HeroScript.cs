@@ -50,7 +50,7 @@ public class HeroScript : MonoBehaviour
 
         //movement script
         //transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
-
+		/*
         if (this.currentRoomScript.monsterInRoom == true)
         {
             //Attack();
@@ -58,7 +58,8 @@ public class HeroScript : MonoBehaviour
             //StartCoroutine(coroutine);
             print("attack");
         }
-        else
+        */
+        //else
         {
             var routine = CheckCurrentRoom(5f);
             StartCoroutine(routine);
@@ -97,14 +98,14 @@ public class HeroScript : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(timer);
-            print("bye");
+            //print("bye");
            	//this.currentRoom = currentRoomScript.northRoom;
 
 			//print (currentRoomScript.CheckNeighbors());
 			currentRoom = currentRoomScript.neighborRooms[0];
 
             currentRoomScript = currentRoom.GetComponent<RoomScript>();
-            this.transform.position = currentRoom.transform.position;
+            transform.position = currentRoom.transform.position;
             StopAllCoroutines();
         }
     }
