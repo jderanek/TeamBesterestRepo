@@ -29,6 +29,7 @@ public class HeroScript : MonoBehaviour
     private MonsterScript currentMonsterScript;
     public bool monsterInRange;
 
+	//public GameObject spawnRoom;
     public RoomScript currentRoomScript;
     public GameObject currentRoom;
 
@@ -38,7 +39,7 @@ public class HeroScript : MonoBehaviour
     void Awake()
     {
         monsterInRange = false;
-        currentRoom = GameObject.FindGameObjectWithTag("Spawn Room");
+		currentRoom = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().spawnRoom;
         currentRoomScript = currentRoom.GetComponent<RoomScript>();
     }
 
@@ -50,7 +51,7 @@ public class HeroScript : MonoBehaviour
         //movement script
         //transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
 
-        /*if (this.currentRoomScript.monsterInRoom == true)
+        if (this.currentRoomScript.monsterInRoom == true)
         {
             //Attack();
             //var coroutine = attackTimer(2f);
@@ -61,26 +62,9 @@ public class HeroScript : MonoBehaviour
         {
             var routine = CheckCurrentRoom(5f);
             StartCoroutine(routine);
-        }*/
+        }
 
     }
-
-    /*void CheckCurrentRoom()
-    {
-
-        if (currentRoomScript.roomMembers != null)
-        {
-            print("bye");
-            currentMonster = currentRoomScript.roomMembers[0];
-        }
-        RoomMemberSorter roomSorter = new RoomMemberSorter();
-        currentRoomScript.roomMembers.Sort(roomSorter);
-
-		if (currentRoomScript.roomMembers == null) 
-		{
-            print("hi");
-		}
-    }*/
 		
     void OnTriggerEnter2D(Collider2D other)
     {

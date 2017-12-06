@@ -41,6 +41,20 @@ public class RoomScript : MonoBehaviour
 
     }
 
+	public void Initialize() {
+		
+		if (northRoom != null)
+			neighborRooms.Add(northRoom);
+		if (southRoom != null)
+			neighborRooms.Add(southRoom);
+		if (eastRoom != null)
+			neighborRooms.Add(eastRoom);
+		if (westRoom != null)
+			neighborRooms.Add(westRoom);
+		UpdateNeighbors();
+		//SortSorroundingRooms();
+	}
+
     void OnMouseOver()
     {
         heldObject = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().heldObject;
@@ -61,43 +75,35 @@ public class RoomScript : MonoBehaviour
     public void UpdateNeighbors()
     {
 		//neighborRooms.Clear ();
-        if (gameManager.roomList[myX, myY + 1] != null)
-        {
-            northRoom = gameManager.roomList[myX, myY + 1];
-            northRoom.GetComponent<RoomScript>().southRoom = gameObject;
-			print ("stuff");
-			neighborRooms.Add(northRoom);
-        }
+		if (myY <= 9 && gameManager.roomList[myX, myY + 1] != null)
+		{
+			northRoom = gameManager.roomList[myX, myY + 1];
+			northRoom.GetComponent<RoomScript>().southRoom = gameObject;
+		}
 
-        if (gameManager.roomList[myX, myY - 1] != null)
-        {
-            southRoom = gameManager.roomList[myX, myY - 1];
-            southRoom.GetComponent<RoomScript>().northRoom = gameObject;
-			neighborRooms.Add(southRoom);
-        }
+		if (myY >= 1 && gameManager.roomList[myX, myY - 1] != null)
+		{
+			southRoom = gameManager.roomList[myX, myY - 1];
+			southRoom.GetComponent<RoomScript>().northRoom = gameObject;
+		}
 
-        if (gameManager.roomList[myX + 1, myY] != null)
-        {
-            eastRoom = gameManager.roomList[myX + 1, myY];
-            eastRoom.GetComponent<RoomScript>().westRoom = gameObject;
-			neighborRooms.Add(eastRoom);
-        }
+		if (myX <= 1 && gameManager.roomList[myX + 1, myY] != null)
+		{
+			eastRoom = gameManager.roomList[myX + 1, myY];
+			eastRoom.GetComponent<RoomScript>().westRoom = gameObject;
+		}
 
-        if (gameManager.roomList[myX - 1, myY] != null)
-        {
-            westRoom = gameManager.roomList[myX - 1, myY];
-            westRoom.GetComponent<RoomScript>().eastRoom = gameObject;
-			neighborRooms.Add(westRoom);
-        }
-
+		if (myX >= 9 && gameManager.roomList[myX - 1, myY] != null)
+		{
+			westRoom = gameManager.roomList[myX - 1, myY];
+			westRoom.GetComponent<RoomScript>().eastRoom = gameObject;
+		}
 
 		if (neighborRooms.Count > 2) {
 			neighborRooms.Sort (delegate(GameObject x, GameObject y) {
 				return x.GetComponent<RoomScript> ().roomThreat.CompareTo (y.GetComponent<RoomScript> ().roomThreat);
 			});
 		}
-
-
     }
 
     public void ClearNeighbors()

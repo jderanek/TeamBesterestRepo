@@ -46,12 +46,19 @@ public class GameManager : MonoBehaviour
     public GameObject[,] roomList;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         var coroutine = SpawnHeroes(5f);
         StartCoroutine(coroutine);
         roomList = new GameObject[10, 10];
     }
+
+	void Start() {
+		var objects = GameObject.FindGameObjectsWithTag("Room");
+		foreach (var obj in objects) {
+			obj.GetComponent<RoomScript> ().Initialize ();
+		}
+	}
 
     // Update is called once per frame
     void Update()
