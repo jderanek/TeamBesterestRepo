@@ -133,13 +133,20 @@ public class RoomScript : MonoBehaviour
 		if (neighborRooms.Count >= 2) {
 			neighborRooms.Sort (delegate(GameObject x, GameObject y) {
 				if (x.GetComponent<RoomScript>().roomThreat > y.GetComponent<RoomScript>().roomThreat) {
-					return 0;
+					return -1;
 				}
 				else if (x.GetComponent<RoomScript>().roomThreat < y.GetComponent<RoomScript>().roomThreat) {
 					return 1;
 				}
 				else {//if (x.GetComponent<RoomScript>().roomThreat == y.GetComponent<RoomScript>().roomThreat) {
-					return UnityEngine.Random.Range(0, 1);
+					var rand = UnityEngine.Random.Range(0, 2);
+					if (rand == 0) {
+						print (rand);
+						return -1;
+					} else {
+						print(rand);
+						return 1;
+					}
 				}
 				//return x.GetComponent<RoomScript> ().roomThreat.CompareTo (y.GetComponent<RoomScript> ().roomThreat);
 			});
