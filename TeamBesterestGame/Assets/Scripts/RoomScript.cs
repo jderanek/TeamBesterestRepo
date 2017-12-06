@@ -130,7 +130,7 @@ public class RoomScript : MonoBehaviour
     }
 
 	public void SortNeighbors() {
-		if (neighborRooms.Count > 2) {
+		if (neighborRooms.Count >= 2) {
 			neighborRooms.Sort (delegate(GameObject x, GameObject y) {
 				if (x.GetComponent<RoomScript>().roomThreat > y.GetComponent<RoomScript>().roomThreat) {
 					return 0;

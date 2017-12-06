@@ -102,6 +102,7 @@ public class HeroScript : MonoBehaviour
            	//this.currentRoom = currentRoomScript.northRoom;
 
 			//print (currentRoomScript.CheckNeighbors());
+			currentRoomScript.SortNeighbors();
 			currentRoom = currentRoomScript.neighborRooms[0];
 
             currentRoomScript = currentRoom.GetComponent<RoomScript>();
