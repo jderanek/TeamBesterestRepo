@@ -171,10 +171,17 @@ public class GameManager : MonoBehaviour
     public void ToggleConstruction()
     {
         inConstructionMode = !inConstructionMode;
-        constructionButton.SetActive(inConstructionMode);
+        //constructionButton.SetActive(inConstructionMode);
         roomButton.SetActive(inConstructionMode);
+
+		/*
+		var doorButtons = GameObject. FindGameObjectsWithTag ("DoorButton");
+		//print (doorButtons[0]);
+
+		foreach (GameObject obj in doorButtons)
+		{
+			obj.SetActive(inConstructionMode);
+		}
+		*/
     }
-
-   
-
 }

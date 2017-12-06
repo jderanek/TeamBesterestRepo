@@ -5,6 +5,9 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour {
 
     public bool inConstructionMode;
+	public bool doorClosed = true;
+
+	public GameObject door;
 
 	// Use this for initialization
 	void Start () {
@@ -19,10 +22,12 @@ public class DoorScript : MonoBehaviour {
 
     private void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(1) && inConstructionMode)
-        {
-            this.gameObject.SetActive(false);
-        }
+		if (Input.GetMouseButtonDown (1) && inConstructionMode) 
+		{
+			doorClosed = !doorClosed;
+			door.gameObject.SetActive(doorClosed);
+		} 
+	
     }
 
 }

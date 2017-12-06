@@ -23,6 +23,12 @@ public class RoomScript : MonoBehaviour
     public GameObject eastRoom;
     public GameObject westRoom;
 
+	public GameObject northButton;
+	public GameObject southButton;
+	public GameObject eastButton;
+	public GameObject westButton;
+
+
 	public int roomThreat;
 
     // Use this for initialization
@@ -38,7 +44,11 @@ public class RoomScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		northButton.SetActive(gameManager.inConstructionMode);
+		southButton.SetActive(gameManager.inConstructionMode);
+		westButton.SetActive(gameManager.inConstructionMode);
+		eastButton.SetActive(gameManager.inConstructionMode);
+		
     }
 
 	public void Initialize() {

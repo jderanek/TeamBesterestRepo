@@ -539,7 +539,7 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 146191077}
---- !u!1001 &248141529
+--- !u!1001 &166449420
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -578,62 +578,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_Name
-      value: Room (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1990323659446566, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1136515444940930, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790751065369700, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4285792026923796, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4621736814898840, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4260240997004816, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4489087722701510, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: westRoom
-      value: 
-      objectReference: {fileID: 1952476467}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: northRoom
       value: 
       objectReference: {fileID: 1457250936}
-    - target: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
-      propertyPath: myX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: myY
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: westRoom
+      value: 
+      objectReference: {fileID: 1952476467}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
@@ -641,7 +595,7 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
     type: 2}
-  m_PrefabInternal: {fileID: 248141529}
+  m_PrefabInternal: {fileID: 166449420}
 --- !u!1 &279320168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3403,7 +3357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
       propertyPath: m_TagString
-      value: Spawn Room
+      value: Room
       objectReference: {fileID: 0}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
