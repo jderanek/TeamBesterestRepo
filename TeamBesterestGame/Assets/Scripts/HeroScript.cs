@@ -100,10 +100,19 @@ public class HeroScript : MonoBehaviour
             yield return new WaitForSeconds(timer);
 			currentRoomScript.SortNeighbors();
 
-			currentRoom = currentRoomScript.neighborRooms[0];
-            currentRoomScript = currentRoom.GetComponent<RoomScript>();
-            transform.position = currentRoom.transform.position;
-            StopAllCoroutines();
+            if (currentRoomScript.neighborRooms.Count == 0)
+            {
+                StopAllCoroutines();
+
+            }
+            else
+            {
+                currentRoom = currentRoomScript.neighborRooms[0];
+                currentRoomScript = currentRoom.GetComponent<RoomScript>();
+                transform.position = currentRoom.transform.position;
+                StopAllCoroutines();
+            }
+
         }
     }
 
