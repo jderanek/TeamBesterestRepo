@@ -98,13 +98,9 @@ public class HeroScript : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(timer);
-            //print("bye");
-           	//this.currentRoom = currentRoomScript.northRoom;
-
-			//print (currentRoomScript.CheckNeighbors());
 			currentRoomScript.SortNeighbors();
-			currentRoom = currentRoomScript.neighborRooms[0];
 
+			currentRoom = currentRoomScript.neighborRooms[0];
             currentRoomScript = currentRoom.GetComponent<RoomScript>();
             transform.position = currentRoom.transform.position;
             StopAllCoroutines();

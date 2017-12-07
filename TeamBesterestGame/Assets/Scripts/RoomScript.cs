@@ -23,7 +23,12 @@ public class RoomScript : MonoBehaviour
     public GameObject eastRoom;
     public GameObject westRoom;
 
-	public GameObject northButton;
+    public bool northDoor;
+    public bool southDoor;
+    public bool eastDoor;
+    public bool westDoor;
+
+    public GameObject northButton;
 	public GameObject southButton;
 	public GameObject eastButton;
 	public GameObject westButton;
@@ -35,38 +40,26 @@ public class RoomScript : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-		//UpdateNeighbors ();
-		//print(gameManager.roomList);
-		//print (myX);
-		//gameManager.roomList [myX, myY] = gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-		northButton.SetActive(gameManager.inConstructionMode);
-		southButton.SetActive(gameManager.inConstructionMode);
-		westButton.SetActive(gameManager.inConstructionMode);
-		eastButton.SetActive(gameManager.inConstructionMode);
-		
+        
     }
 
 	public void Initialize() {
-
-		/*
-		if (northRoom != null)
-			neighborRooms.Add(northRoom);
-		if (southRoom != null)
-			neighborRooms.Add(southRoom);
-		if (eastRoom != null)
-			neighborRooms.Add(eastRoom);
-		if (westRoom != null)
-			neighborRooms.Add(westRoom);
-		*/
 		gameManager.roomList[myX, myY] = gameObject;
 		UpdateNeighbors();
-		//SortSorroundingRooms();
 	}
+
+    public void ActivateButtons(bool inConstructionMode)
+    {
+        northButton.SetActive(inConstructionMode);
+        southButton.SetActive(inConstructionMode);
+        westButton.SetActive(inConstructionMode);
+        eastButton.SetActive(inConstructionMode);
+    }
 
     void OnMouseOver()
     {
@@ -78,12 +71,10 @@ public class RoomScript : MonoBehaviour
                 roomMembers.Add(heldObject);
 				roomThreat += heldObject.GetComponent<MonsterScript> ().threatValue;
                 monsterInRoom = true;
-                //heldObject.GetComponent<MonsterScript>().myList = roomMembers;
                 heldObject.GetComponent<MonsterScript>().myRoom = this.gameObject;
 				foreach (GameObject neighbor in neighborRooms) {
 					neighbor.GetComponent<RoomScript>().SortNeighbors();
 				}
-                //print(roomMembers[0].GetComponent<MonsterScript>().monsterName);
             }
         }
     }
@@ -92,40 +83,53 @@ public class RoomScript : MonoBehaviour
     {
 		if (myY <= 9) {
 			if (gameManager.roomList[myX, myY + 1] != null) {
-				northRoom = gameManager.roomList[myX, myY + 1];
-				northRoom.GetComponent<RoomScript>().southRoom = gameObject;
-				northRoom.GetComponent<RoomScript>().neighborRooms.Add (gameObject);
-				neighborRooms.Add (northRoom);
+                if (gameManager.roomList[myX, myY + 1].GetComponent<RoomScript>().southDoor)
+                {
+                    northRoom = gameManager.roomList[myX, myY + 1];
+                    northRoom.GetComponent<RoomScript>().southRoom = gameObject;
+                    northRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
+                    neighborRooms.Add(northRoom);
+                }
 			}
 		}
 
 		if (myY >= 1) {
 			if (gameManager.roomList[myX, myY - 1] != null) {
-				southRoom = gameManager.roomList[myX, myY - 1];
-				southRoom.GetComponent<RoomScript>().northRoom = gameObject;
-				southRoom.GetComponent<RoomScript> ().neighborRooms.Add (gameObject);
-				neighborRooms.Add (southRoom);
+                if (gameManager.roomList[myX, myY - 1].GetComponent<RoomScript>().northDoor)
+                {
+                    southRoom = gameManager.roomList[myX, myY - 1];
+                    southRoom.GetComponent<RoomScript>().northRoom = gameObject;
+                    southRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
+                    neighborRooms.Add(southRoom);
+                }
 			}
 		}
 
 		if (myX <= 9) {
 			if (gameManager.roomList[myX + 1, myY] != null) {
-				eastRoom = gameManager.roomList[myX + 1, myY];
-				eastRoom.GetComponent<RoomScript>().westRoom = gameObject;
-				eastRoom.GetComponent<RoomScript> ().neighborRooms.Add (gameObject);
-				neighborRooms.Add (eastRoom);
+                if (gameManager.roomList[myX + 1, myY].GetComponent<RoomScript>().westDoor)
+                {
+                    eastRoom = gameManager.roomList[myX + 1, myY];
+                    eastRoom.GetComponent<RoomScript>().westRoom = gameObject;
+                    eastRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
+                    neighborRooms.Add(eastRoom);
+                }
 			}
 		}
 
 		if (myX >= 1) {
 			if (gameManager.roomList[myX - 1, myY] != null)
 				{
-				westRoom = gameManager.roomList[myX - 1, myY];
-				westRoom.GetComponent<RoomScript>().eastRoom = gameObject;
-				westRoom.GetComponent<RoomScript> ().neighborRooms.Add (gameObject);
-				neighborRooms.Add (westRoom);
+                if (gameManager.roomList[myX - 1, myY].GetComponent<RoomScript>().eastDoor)
+                {
+                    westRoom = gameManager.roomList[myX - 1, myY];
+                    westRoom.GetComponent<RoomScript>().eastRoom = gameObject;
+                    westRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
+                    neighborRooms.Add(westRoom);
+                }
 			}
 		}
+
 		SortNeighbors ();
     }
 
@@ -138,17 +142,13 @@ public class RoomScript : MonoBehaviour
 				else if (x.GetComponent<RoomScript>().roomThreat < y.GetComponent<RoomScript>().roomThreat) {
 					return 1;
 				}
-				else {//if (x.GetComponent<RoomScript>().roomThreat == y.GetComponent<RoomScript>().roomThreat) {
-					var rand = UnityEngine.Random.Range(0, 2);
-					if (rand == 0) {
-						print (rand);
+				else {
+					if (UnityEngine.Random.Range(0, 2) == 0) {
 						return -1;
 					} else {
-						print(rand);
 						return 1;
 					}
 				}
-				//return x.GetComponent<RoomScript> ().roomThreat.CompareTo (y.GetComponent<RoomScript> ().roomThreat);
 			});
 		}
 	}

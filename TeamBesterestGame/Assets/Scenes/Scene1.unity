@@ -620,6 +620,16 @@ Prefab:
       propertyPath: m_Name
       value: Room (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: westDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northDoor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
@@ -1032,6 +1042,11 @@ Prefab:
         type: 2}
       propertyPath: doorClosed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southDoor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -1935,6 +1950,16 @@ Prefab:
       propertyPath: neighborRooms.Array.data[1]
       value: 
       objectReference: {fileID: 1952476467}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southDoor
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
@@ -2734,7 +2759,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.760666
+  orthographic size: 6.0372877
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2901,6 +2926,11 @@ Prefab:
         type: 2}
       propertyPath: doorClosed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southDoor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -3401,7 +3431,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1997651451872980, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1790751065369700, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
       propertyPath: m_IsActive
@@ -3435,6 +3465,11 @@ Prefab:
         type: 2}
       propertyPath: doorClosed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northDoor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -3605,6 +3640,21 @@ Prefab:
         type: 2}
       propertyPath: doorClosed
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: eastDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northDoor
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}

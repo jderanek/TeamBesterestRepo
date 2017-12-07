@@ -171,17 +171,15 @@ public class GameManager : MonoBehaviour
     public void ToggleConstruction()
     {
         inConstructionMode = !inConstructionMode;
-        //constructionButton.SetActive(inConstructionMode);
         roomButton.SetActive(inConstructionMode);
 
-		/*
-		var doorButtons = GameObject. FindGameObjectsWithTag ("DoorButton");
-		//print (doorButtons[0]);
-
-		foreach (GameObject obj in doorButtons)
-		{
-			obj.SetActive(inConstructionMode);
-		}
-		*/
+        foreach (GameObject room in roomList)
+        {
+           if (room != null)
+            {
+               room.GetComponent<RoomScript>().ActivateButtons(inConstructionMode);
+            }
+        }
     }
+
 }
