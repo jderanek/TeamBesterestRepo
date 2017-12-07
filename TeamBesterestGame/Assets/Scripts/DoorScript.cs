@@ -32,23 +32,22 @@ public class DoorScript : MonoBehaviour {
             if (myName == "NorthDoorButton")
             {
                 myRoomScript.northDoor = !myRoomScript.northDoor;
-
-                myRoomScript.northRoom.GetComponent<RoomScript>().UpdateNeighbors();
+                //myRoomScript.northRoom.GetComponent<RoomScript>().UpdateNeighbors();
             }
             else if (myName == "SouthDoorButton")
             {
                 myRoomScript.southDoor = !myRoomScript.southDoor;
-                myRoomScript.southRoom.GetComponent<RoomScript>().UpdateNeighbors();
+               // myRoomScript.southRoom.GetComponent<RoomScript>().UpdateNeighbors();
             }
            else if (myName == "EastDoorButton")
             {
                 myRoomScript.eastDoor = !myRoomScript.eastDoor;
-                myRoomScript.eastRoom.GetComponent<RoomScript>().UpdateNeighbors();
+                //myRoomScript.eastRoom.GetComponent<RoomScript>().UpdateNeighbors();
             }
             else if (myName == "WestDoorButton")
             {
                 myRoomScript.westDoor = !myRoomScript.westDoor;
-                myRoomScript.westRoom.GetComponent<RoomScript>().UpdateNeighbors();
+               // myRoomScript.westRoom.GetComponent<RoomScript>().UpdateNeighbors();
             }
             myRoomScript.UpdateNeighbors();
             

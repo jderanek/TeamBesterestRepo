@@ -86,52 +86,56 @@ public class RoomScript : MonoBehaviour
 		if (myY <= 9) {
             if (gameManager.roomList[myX, myY + 1] != null)
             {
+                northRoom = gameManager.roomList[myX, myY + 1];
                 if (northDoor && gameManager.roomList[myX, myY + 1].GetComponent<RoomScript>().southDoor)
                 {
-                    northRoom = gameManager.roomList[myX, myY + 1];
                     northRoom.GetComponent<RoomScript>().southRoom = gameObject;
                     northRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
                     neighborRooms.Add(northRoom);
                 }
+                else northRoom.GetComponent<RoomScript>().neighborRooms.Remove(gameObject);
             }
         }
 
 		if (myY >= 1) {
             if (gameManager.roomList[myX, myY - 1] != null)
             {
+                southRoom = gameManager.roomList[myX, myY - 1];
                 if (southDoor && gameManager.roomList[myX, myY - 1].GetComponent<RoomScript>().northDoor)
                 {
-                    southRoom = gameManager.roomList[myX, myY - 1];
-                    southRoom.GetComponent<RoomScript>().northRoom = gameObject;
+                    southRoom.GetComponent<RoomScript>().northRoom = gameObject;                    
                     southRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
                     neighborRooms.Add(southRoom);
                 }
+                else southRoom.GetComponent<RoomScript>().neighborRooms.Remove(gameObject);
             }
         }
 
 		if (myX <= 9) {
             if (gameManager.roomList[myX + 1, myY] != null)
             {
+                eastRoom = gameManager.roomList[myX + 1, myY];
                 if (eastDoor && gameManager.roomList[myX + 1, myY].GetComponent<RoomScript>().westDoor)
-                {
-                    eastRoom = gameManager.roomList[myX + 1, myY];
+                {                    
                     eastRoom.GetComponent<RoomScript>().westRoom = gameObject;
                     eastRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
                     neighborRooms.Add(eastRoom);
                 }
+                else eastRoom.GetComponent<RoomScript>().neighborRooms.Remove(gameObject);
             }
         }
 
 		if (myX >= 1) {
             if (gameManager.roomList[myX - 1, myY] != null)
             {
+                westRoom = gameManager.roomList[myX - 1, myY];
                 if (westDoor && gameManager.roomList[myX - 1, myY].GetComponent<RoomScript>().eastDoor)
                 {
-                    westRoom = gameManager.roomList[myX - 1, myY];
                     westRoom.GetComponent<RoomScript>().eastRoom = gameObject;
                     westRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
                     neighborRooms.Add(westRoom);
                 }
+                else westRoom.GetComponent<RoomScript>().neighborRooms.Remove(gameObject);
             }
         }
 
@@ -185,6 +189,6 @@ public class RoomScript : MonoBehaviour
         eastRoom = null;
         westRoom = null;
 
-		neighborRooms.Clear ();
+		neighborRooms.Clear();
     }
 }
