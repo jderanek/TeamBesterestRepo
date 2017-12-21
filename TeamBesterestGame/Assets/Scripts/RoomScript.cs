@@ -191,4 +191,32 @@ public class RoomScript : MonoBehaviour
 
 		neighborRooms.Clear();
     }
+
+    public void SortMembers()
+    {
+        roomMembers.Sort(delegate (GameObject x, GameObject y)
+        {
+            if (x.GetComponent<MonsterScript>().threatValue > y.GetComponent<MonsterScript>().threatValue)
+            {
+                return -1;
+            }
+
+            else if (x.GetComponent<MonsterScript>().threatValue < y.GetComponent<MonsterScript>().threatValue)
+            {
+                return 1;
+            }
+
+            else
+            {
+                if (UnityEngine.Random.Range(0, 2) == 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+        });
+    }
 }

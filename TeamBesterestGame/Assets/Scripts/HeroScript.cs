@@ -46,19 +46,12 @@ public class HeroScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //CheckCurrentRoom();
 
-        //movement script
-        //transform.position = Vector3.MoveTowards(transform.position, monsterPosition.position, movementSpeed * Time.deltaTime);
-		/*
         if (this.currentRoomScript.monsterInRoom == true)
         {
-            //Attack();
-            //var coroutine = attackTimer(2f);
-            //StartCoroutine(coroutine);
-            print("attack");
+            var coroutine = Attack(2f);
+            StartCoroutine(coroutine);
         }
-        */
         //else
         {
             var routine = CheckCurrentRoom(5f);
@@ -67,6 +60,7 @@ public class HeroScript : MonoBehaviour
 
     }
 		
+   /* 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Monster"))
@@ -83,14 +77,18 @@ public class HeroScript : MonoBehaviour
             currentRoomScript = other.GetComponent<RoomScript>();
         }
     }
+    */
 
-	private IEnumerator attackTimer(float attackSpeed)
+	private IEnumerator Attack(float attackSpeed)
 	{
 		while (true)
 		{
-			yield return new WaitForSeconds(attackSpeed);
-			Attack ();
-		}
+            currentMonster = currentRoomScript.roomMembers[0];
+            yield return new WaitForSeconds(attackSpeed);
+            currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
+            //print(currentMonster.GetComponent<MonsterScript>().currentHealth);
+            StopAllCoroutines();
+        }
 	}
 
     private IEnumerator CheckCurrentRoom(float timer)
@@ -116,11 +114,6 @@ public class HeroScript : MonoBehaviour
         }
     }
 
-    public void Attack()
-    {
-        currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
-    }
-
     //next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
     {
@@ -134,7 +127,7 @@ public class HeroScript : MonoBehaviour
 
     private void Death()
     {
-        currentMonsterScript.heroInRange = false;
+        currentMonsterScript.heroInRoom = false;
         Destroy(this);
     }
 }

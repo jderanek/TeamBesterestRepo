@@ -33,7 +33,7 @@ public class MonsterScript : MonoBehaviour
 
     private GameObject hero;
     private HeroScript heroScript;
-    public bool heroInRange;
+    public bool heroInRoom = false;
 
     //public List<GameObject> myList = null;
     public GameObject myRoom;
@@ -64,19 +64,17 @@ public class MonsterScript : MonoBehaviour
         monsterInstance = this.gameObject;
 
         resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
-        heroInRange = false;
+        heroInRoom = false;
     }
 
     void Update()
     {
-        //if HeroInRange is set to true, the Attack function will run
-        if (heroInRange)
+        //if HeroInRoom is true, the Attack function will run
+        if (heroInRoom)
         {
-			var coroutine = attackTimer(2f);
+			var coroutine = Attack(2f);
 			StartCoroutine(coroutine);
-            //Attack();
         }
-
     }
 
     void OnMouseOver()
@@ -88,7 +86,7 @@ public class MonsterScript : MonoBehaviour
     }
 
 
-    public void OnTriggerEnter2D(Collider2D other)
+    /*public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Hero"))
         {
@@ -96,21 +94,16 @@ public class MonsterScript : MonoBehaviour
             hero = other.gameObject;
             heroInRange = true;
         }
-    }
+    }*/
 
-	private IEnumerator attackTimer(float attackSpeed)
+	private IEnumerator Attack(float attackSpeed)
 	{
 		while (true)
 		{
 			yield return new WaitForSeconds(attackSpeed);
-			Attack ();
-		}
+            hero.GetComponent<HeroScript>().TakeDamage(attackDamage);
+        }
 	}
-
-    public void Attack()
-    {
-        hero.GetComponent<HeroScript>().TakeDamage(attackDamage);
-    }
 
     //next two functions are what the monster will call to take damage
     public void TakeDamage(int damageTaken)
@@ -125,7 +118,11 @@ public class MonsterScript : MonoBehaviour
 
     private void Death()
     {
-        heroScript.monsterInRange = false;
-        Destroy(this);
+        myRoom.GetComponent<RoomScript>().roomMembers.Remove(this.gameObject);
+        if (myRoom.GetComponent<RoomScript>().roomMembers.Count == 0)
+        {
+            myRoom.GetComponent<RoomScript>().monsterInRoom = false;
+        }
+        Destroy(this.gameObject);
     }
 }
