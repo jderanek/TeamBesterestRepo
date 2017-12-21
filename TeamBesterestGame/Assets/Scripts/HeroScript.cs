@@ -85,8 +85,11 @@ public class HeroScript : MonoBehaviour
 		{
             currentMonster = currentRoomScript.roomMembers[0];
             yield return new WaitForSeconds(attackSpeed);
-            currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
-            //print(currentMonster.GetComponent<MonsterScript>().currentHealth);
+            if (currentMonster != null)
+            {
+                currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
+                print(currentMonster.GetComponent<MonsterScript>().currentHealth);
+            }
             StopAllCoroutines();
         }
 	}
