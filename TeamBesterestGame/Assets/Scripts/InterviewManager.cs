@@ -7,6 +7,9 @@ public class InterviewManager : MonoBehaviour {
 
     public GameObject gameManager;
     public GameObject resume;
+    public GameObject hiringButton;
+
+    public GameObject monsterInstance;
 
     public GameObject interviewQuestions;
     public GameObject questionOne;
@@ -25,29 +28,50 @@ public class InterviewManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        
+        if (gameManager.GetComponent<GameManager>().interviewing)
+        {
+            monsterInstance = hiringButton.GetComponent<HiringUIScript>().monsterInstance;
+        }
+        else
+        {
+            monsterInstance = null;
+        }
     }
 
     public void Question1Response()
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "1";
+		responseText.text = "I've only worked in a few dungeons throughout my career."; //"I have " + monsterInstance.GetComponent<MonsterScript>().startingHealth + " health.";
     }
 
     public void Question2Response()
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "2";
+		responseText.text = "I haven't killed any legendary heroes, but I've killed a few knights."; //"My damage is " + monsterInstance.GetComponent<MonsterScript>().attackDamage;
     }
 
     public void Question3Response()
     {
         interviewQuestions.SetActive(false);
         interviewResponse.SetActive(true);
-        responseText.text = "3";
+		responseText.text = "I hate fire! Fire can do some serious damage to me!"; //+ monsterInstance.GetComponent<MonsterScript>().trait1 + " and " + monsterInstance.GetComponent<MonsterScript>().trait2;
     }
+
+	public void Question4Response()
+	{
+		interviewQuestions.SetActive(false);
+		interviewResponse.SetActive(true);
+		responseText.text = "I enjoy walking around town and killing humans.";
+	}
+
+	public void Question5Response()
+	{
+		interviewQuestions.SetActive(false);
+		interviewResponse.SetActive(true);
+		responseText.text = "I drink a lot of milk! It's pretty good stuff.";
+	}
 
     public void InterviewResponse()
     {

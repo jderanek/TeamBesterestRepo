@@ -13,9 +13,9 @@ TagManager:
   - Door
   - Wall
   - Room
-  - Spawn Room
   - Interview Button
   - Interview Questions
+  - DoorButton
   layers:
   - Default
   - TransparentFX

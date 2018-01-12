@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public bool inConstructionMode;
 
     public GameObject constructionButton;
+    public GameObject roomButton;
 
     public GameObject interviewButtons;
     public GameObject interviewImage;
@@ -45,12 +46,19 @@ public class GameManager : MonoBehaviour
     public GameObject[,] roomList;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         var coroutine = SpawnHeroes(5f);
         StartCoroutine(coroutine);
         roomList = new GameObject[10, 10];
     }
+
+	void Start() {
+		var rooms = GameObject.FindGameObjectsWithTag("Room");
+		foreach (var room in rooms) {
+			room.GetComponent<RoomScript>().Initialize();
+		}
+	}
 
     // Update is called once per frame
     void Update()
@@ -127,6 +135,7 @@ public class GameManager : MonoBehaviour
             if (otherObject.GetComponent<MonsterScript>().myRoom != null)
             {
                 otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Remove(otherObject.gameObject);
+                otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomThreat -= otherObject.GetComponent<MonsterScript>().threatValue;
                 otherObject.GetComponent<MonsterScript>().myRoom = null;
             }
         }
@@ -163,9 +172,15 @@ public class GameManager : MonoBehaviour
     public void ToggleConstruction()
     {
         inConstructionMode = !inConstructionMode;
-        constructionButton.SetActive(inConstructionMode);
-    }
+        roomButton.SetActive(inConstructionMode);
 
-   
+        foreach (GameObject room in roomList)
+        {
+           if (room != null)
+            {
+               room.GetComponent<RoomScript>().ActivateButtons(inConstructionMode);
+            }
+        }
+    }
 
 }
