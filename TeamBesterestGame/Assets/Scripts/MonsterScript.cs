@@ -40,9 +40,18 @@ public class MonsterScript : MonoBehaviour
 
 	private IEnumerator attackRepeater;
 
+	//Stress and Morale
+	//Temporarily public for test purposes
+	public float stress = 0;
+	public float morale = .5f;
+
+	//Attack damage after stress and morale modifers
+	public int curDamage;
+
     void Awake()
     {
-
+		stress = 0;
+		morale = .5f;
         monsterName = possibleNames[Random.Range(0, possibleNames.Length)];
         startingHealth = averageHealth + Random.Range(-5, 5);
         currentHealth = startingHealth;
@@ -75,6 +84,13 @@ public class MonsterScript : MonoBehaviour
 			var coroutine = Attack(2f);
 			StartCoroutine(coroutine);
         }
+
+		//Calculation to modify attack damage based on stress and morale
+		curDamage = (int)((attackDamage * (1 - stress))/2) + (int)((attackDamage * (morale * 2))/2);
+		//Makes sure damage is at least 1
+		if (curDamage == 0) {
+			curDamage = 1;
+		}
     }
 
     void OnMouseOver()
@@ -101,7 +117,7 @@ public class MonsterScript : MonoBehaviour
 		while (true)
 		{
 			yield return new WaitForSeconds(attackSpeed);
-            hero.GetComponent<HeroScript>().TakeDamage(attackDamage);
+            hero.GetComponent<HeroScript>().TakeDamage(curDamage);
         }
 	}
 

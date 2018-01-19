@@ -88,7 +88,7 @@ public class HeroScript : MonoBehaviour
             if (currentMonster != null)
             {
                 currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
-                print(currentMonster.GetComponent<MonsterScript>().currentHealth);
+                //print(currentMonster.GetComponent<MonsterScript>().currentHealth);
             }
             StopAllCoroutines();
         }
@@ -121,7 +121,7 @@ public class HeroScript : MonoBehaviour
     public void TakeDamage(int damageTaken)
     {
         heroHp -= damageTaken;
-
+		Debug.Log (heroHp);
         if (heroHp <= 0)
         {
             Death();
