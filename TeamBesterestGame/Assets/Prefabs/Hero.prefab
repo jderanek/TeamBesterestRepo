@@ -78,10 +78,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d6678911b57cd468d4db60159c3de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  possibleThreatValue: 020000000400000006000000
+  threatValue: 0
   damage: 10
-  heroHp: 10
-  movementSpeed: 10
-  traits: 0
+  heroHp: 100
   monsterPosition: {fileID: 0}
   monsterInRange: 0
   currentRoomScript: {fileID: 0}

@@ -68,10 +68,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fdf9d983b4ce9b4ea65c50f79e37d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  possibleNames: []
   monsterName: 
+  monsterType: 
   averageHealth: 0
   startingHealth: 0
   currentHealth: 0
+  possibleThreatValue: 020000000400000006000000
   threatValue: 0
   averageDamage: 0
   attackDamage: 0
@@ -85,9 +88,11 @@ MonoBehaviour:
   trait2: 
   averageSalary: 0
   requestedSalary: 0
-  heroInRange: 0
+  heroInRoom: 0
   myRoom: {fileID: 0}
-  threatLevel: 0
+  stress: 0
+  morale: 0.5
+  curDamage: 0
 --- !u!212 &212711985162671844
 SpriteRenderer:
   m_ObjectHideFlags: 1
