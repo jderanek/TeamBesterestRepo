@@ -81,8 +81,8 @@ public class MonsterScript : MonoBehaviour
         //if HeroInRoom is true, the Attack function will run
 		if (myRoom != null && myRoom.GetComponent<RoomScript>().heroInRoom)
         {
-			var coroutine = Attack(2f);
-			StartCoroutine(coroutine);
+			//var coroutine = Attack(2f);
+			//StartCoroutine(coroutine);
         }
 
 		//Calculation to modify attack damage based on stress and morale
@@ -101,7 +101,7 @@ public class MonsterScript : MonoBehaviour
         }
     }
 
-
+	/*
 	private IEnumerator Attack(float attackSpeed)
 	{
 		while (true)
@@ -125,6 +125,12 @@ public class MonsterScript : MonoBehaviour
 			StopAllCoroutines();
 		}
 	}
+	*/
+
+	public void Attack() {
+		print ("Boop");
+	}
+
 
     //next two functions are what the monster will call to take damage
     public void TakeDamage(int damageTaken)

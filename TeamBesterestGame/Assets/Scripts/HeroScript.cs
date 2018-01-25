@@ -48,17 +48,18 @@ public class HeroScript : MonoBehaviour
 
         if (this.currentRoomScript.monsterInRoom == true)
         {
-            var coroutine = Attack(2f);
-            StartCoroutine(coroutine);
+            //var coroutine = Attack(2f);
+            //StartCoroutine(coroutine);
         }
         //else
         {
-            var routine = CheckCurrentRoom(5f);
-            StartCoroutine(routine);
+            //var routine = CheckCurrentRoom(5f);
+            //StartCoroutine(routine);
         }
 
     }
 
+	/*
 	private IEnumerator Attack(float attackSpeed)
 	{
 		while (true)
@@ -117,7 +118,16 @@ public class HeroScript : MonoBehaviour
 
         }
     }
+    */
 
+	public void Attack() {
+		print ("boop");
+	}
+
+	public void CheckCurrentRoom() {
+		print ("where am i?????");
+	}
+		
     //next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
     {

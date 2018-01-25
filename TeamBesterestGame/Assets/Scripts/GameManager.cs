@@ -45,11 +45,17 @@ public class GameManager : MonoBehaviour
 
     public GameObject[,] roomList;
 
+	private bool paused = true;
+	private int currentTime = 100;
+	public float timeSpeed = 3.0f;
+	public Text timeUnitText;
+	public Text pauseButtonText;
+
     // Use this for initialization
     void Awake()
     {
-        var coroutine = SpawnHeroes(5f);
-        StartCoroutine(coroutine);
+        //var coroutine = SpawnHeroes(5f);
+        //StartCoroutine(coroutine);
         roomList = new GameObject[10, 10];
     }
 
@@ -78,6 +84,7 @@ public class GameManager : MonoBehaviour
         }
         //placement end
 
+		/*
         cycleSlider.value = cycleTimer;
 
         if (cycleTimer >= 100)
@@ -92,6 +99,7 @@ public class GameManager : MonoBehaviour
             //Time.timeScale = 1;
             cycleTimer += Time.deltaTime;
         }
+*/
 
         if (interviewing)
         {
@@ -160,6 +168,7 @@ public class GameManager : MonoBehaviour
         PickUpObject(monsterInstance);
     }
 
+	/*
     private IEnumerator SpawnHeroes(float spawnTime)
     {
         while (true)
@@ -168,6 +177,45 @@ public class GameManager : MonoBehaviour
             Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
         }
     }
+    */
+
+	private void SpawnHeroes(float spawnTime)
+	{
+		Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+	}
+
+	public void TogglePlay() {
+		if (paused) {
+			var coroutine = Play ();
+			StartCoroutine (coroutine);
+			pauseButtonText.text = "Pause";
+
+		} else {
+			StopAllCoroutines();
+			pauseButtonText.text = "Play";
+		}
+		paused = !paused;
+		print (paused);
+	}
+
+	public IEnumerator Play() {
+		while (true) {
+			yield return new WaitForSeconds(timeSpeed);
+			PassTime ();
+		}
+	}
+
+	public void PassTime() {
+		currentTime--;
+		timeUnitText.text = currentTime.ToString();
+		foreach (GameObject Monster in GameObject.FindGameObjectsWithTag("Monster")) {
+			Monster.GetComponent<MonsterScript>().Attack();
+		}
+		foreach (GameObject Hero in GameObject.FindGameObjectsWithTag("Hero")) {
+			Hero.GetComponent<HeroScript> ().Attack ();
+			Hero.GetComponent<HeroScript> ().CheckCurrentRoom ();
+		}
+	}
 
     public void ToggleConstruction()
     {
