@@ -16,17 +16,15 @@ public class RoomMemberSorter : IComparer<GameObject>
 
 public class HeroScript : MonoBehaviour
 {
+	public int[] possibleThreatValue;
+    public int threatValue;
 
-    private int aggro;
     public int damage;
-    //public int attackSpeed;
     public int heroHp;
-    public float movementSpeed;
-    public int traits;
 
     public Transform monsterPosition;
-    private GameObject currentMonster;
-    private MonsterScript currentMonsterScript;
+    private GameObject targetMonster;
+    private MonsterScript targetMonsterScript;
     public bool monsterInRange;
 
 	//public GameObject spawnRoom;
@@ -38,9 +36,10 @@ public class HeroScript : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        monsterInRange = false;
+		threatValue = possibleThreatValue[Random.Range(0, possibleThreatValue.Length)];
 		currentRoom = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().spawnRoom;
         currentRoomScript = currentRoom.GetComponent<RoomScript>();
+		currentRoomScript.heroesInRoom.Add(this.gameObject);
     }
 
     // Update is called once per frame
@@ -59,37 +58,27 @@ public class HeroScript : MonoBehaviour
         }
 
     }
-		
-   /* 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Monster"))
-        {
-            Debug.Log("Monster Hit");
-            currentMonsterScript = other.gameObject.GetComponent<MonsterScript>();
-            currentMonster = other.gameObject;
-            movementSpeed = 0;
-            monsterInRange = true;
-        }
-
-        if (other.CompareTag("Room"))
-        {
-            currentRoomScript = other.GetComponent<RoomScript>();
-        }
-    }
-    */
 
 	private IEnumerator Attack(float attackSpeed)
 	{
 		while (true)
 		{
-            currentMonster = currentRoomScript.roomMembers[0];
-            yield return new WaitForSeconds(attackSpeed);
-            if (currentMonster != null)
+			if (currentRoomScript.monsterInRoom) 
+			{
+				targetMonster = currentRoomScript.roomMembers [0];
+			}
+			else 
+			{
+				StopAllCoroutines ();
+			}
+
+			yield return new WaitForSeconds(attackSpeed);
+            
+			if (targetMonster != null)
             {
-                currentMonster.GetComponent<MonsterScript>().TakeDamage(damage);
-                //print(currentMonster.GetComponent<MonsterScript>().currentHealth);
+                targetMonster.GetComponent<MonsterScript>().TakeDamage(damage);
             }
+
             StopAllCoroutines();
         }
 	}
@@ -104,13 +93,25 @@ public class HeroScript : MonoBehaviour
             if (currentRoomScript.neighborRooms.Count == 0)
             {
                 StopAllCoroutines();
-
             }
             else
             {
                 currentRoom = currentRoomScript.neighborRooms[0];
+
+				currentRoomScript.heroesInRoom.Remove(this.gameObject);
+
+				if (currentRoomScript.heroesInRoom.Count == 0)
+				{
+					currentRoomScript.heroInRoom = false;
+				}
+
                 currentRoomScript = currentRoom.GetComponent<RoomScript>();
+				currentRoomScript.heroInRoom = true;
+				currentRoomScript.heroesInRoom.Add(this.gameObject);
+				currentRoomScript.SortHeroes();
+
                 transform.position = currentRoom.transform.position;
+
                 StopAllCoroutines();
             }
 
@@ -130,7 +131,12 @@ public class HeroScript : MonoBehaviour
 
     private void Death()
     {
-        currentMonsterScript.heroInRoom = false;
-        Destroy(this);
+		currentRoomScript.heroesInRoom.Remove(this.gameObject);
+		if (currentRoomScript.heroesInRoom.Count == 0)
+		{
+			currentRoomScript.heroInRoom = false;
+		}
+        //currentMonsterScript.heroInRoom = false;
+        Destroy(this.gameObject);
     }
 }

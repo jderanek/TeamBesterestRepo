@@ -17,6 +17,7 @@ public class RoomScript : MonoBehaviour
     public List<GameObject> heroesInRoom = new List<GameObject>();
 
     public bool monsterInRoom = false;
+	public bool heroInRoom = false;
 
     public GameObject northRoom;
     public GameObject southRoom;
@@ -219,4 +220,32 @@ public class RoomScript : MonoBehaviour
             }
         });
     }
+
+	public void SortHeroes()
+	{
+		roomMembers.Sort(delegate (GameObject x, GameObject y)
+			{
+				if (x.GetComponent<HeroScript>().threatValue > y.GetComponent<HeroScript>().threatValue)
+				{
+					return -1;
+				}
+
+				else if (x.GetComponent<HeroScript>().threatValue < y.GetComponent<HeroScript>().threatValue)
+				{
+					return 1;
+				}
+
+				else
+				{
+					if (UnityEngine.Random.Range(0, 2) == 0)
+					{
+						return -1;
+					}
+					else
+					{
+						return 1;
+					}
+				}
+			});
+	}
 }

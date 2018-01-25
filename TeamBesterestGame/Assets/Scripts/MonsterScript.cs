@@ -79,7 +79,7 @@ public class MonsterScript : MonoBehaviour
     void Update()
     {
         //if HeroInRoom is true, the Attack function will run
-        if (heroInRoom)
+		if (myRoom != null && myRoom.GetComponent<RoomScript>().heroInRoom)
         {
 			var coroutine = Attack(2f);
 			StartCoroutine(coroutine);
@@ -102,23 +102,28 @@ public class MonsterScript : MonoBehaviour
     }
 
 
-    /*public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Hero"))
-        {
-            heroScript = other.gameObject.GetComponent<HeroScript>();
-            hero = other.gameObject;
-            heroInRange = true;
-        }
-    }*/
-
 	private IEnumerator Attack(float attackSpeed)
 	{
 		while (true)
 		{
+			if (myRoom.GetComponent<RoomScript>().heroInRoom) 
+			{
+				hero = myRoom.GetComponent<RoomScript>().heroesInRoom[0];
+			}
+			else 
+			{
+				StopAllCoroutines ();
+			}
+
 			yield return new WaitForSeconds(attackSpeed);
-            hero.GetComponent<HeroScript>().TakeDamage(curDamage);
-        }
+
+			if (hero != null)
+			{
+				hero.GetComponent<HeroScript>().TakeDamage(curDamage);
+			}
+
+			StopAllCoroutines();
+		}
 	}
 
     //next two functions are what the monster will call to take damage
