@@ -41,19 +41,20 @@ public class GameManager : MonoBehaviour
     public GameObject spawnRoom;
     public GameObject[] heroes;
 
-    private IEnumerator spawnHeroTimer;
+    //private IEnumerator spawnHeroTimer;
 
     public GameObject[,] roomList;
 
     // Use this for initialization
     void Awake()
     {
-        var coroutine = SpawnHeroes(5f);
-        StartCoroutine(coroutine);
+        //var coroutine = SpawnHeroes(5f);
+        //StartCoroutine(coroutine);
         roomList = new GameObject[10, 10];
     }
 
 	void Start() {
+		//Time.timeScale = 1f;
 		var rooms = GameObject.FindGameObjectsWithTag("Room");
 		foreach (var room in rooms) {
 			room.GetComponent<RoomScript>().Initialize();
@@ -90,7 +91,13 @@ public class GameManager : MonoBehaviour
         else
         {
             //Time.timeScale = 1;
-            cycleTimer += Time.deltaTime;
+			cycleTimer +=  Time.deltaTime;
+
+			//This is set in place so you arent spawning heros every frame (from time.deltatime), but instead only on specific values
+			if (cycleTimer % 10 == 0) 
+			{
+				Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+			}
         }
 
         if (interviewing)
@@ -160,14 +167,14 @@ public class GameManager : MonoBehaviour
         PickUpObject(monsterInstance);
     }
 
-    private IEnumerator SpawnHeroes(float spawnTime)
+    /*private IEnumerator SpawnHeroes(float spawnTime)
     {
         while (true)
         {
             yield return new WaitForSeconds(spawnTime);
             Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
         }
-    }
+    }*/
 
     public void ToggleConstruction()
     {
