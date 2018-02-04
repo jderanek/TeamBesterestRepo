@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     //public List<GameObject> monsterCollection = new List<GameObject>();
 
+	public Text currencyText;
+	public int currentCurrency;
+
     public bool doingSetup;
     public bool interviewing = false;
 
@@ -57,6 +60,8 @@ public class GameManager : MonoBehaviour
         //var coroutine = SpawnHeroes(5f);
         //StartCoroutine(coroutine);
         roomList = new GameObject[10, 10];
+		currentCurrency = 0;
+		UpdateCurrency ();
     }
 
 	void Start() {
@@ -181,7 +186,7 @@ public class GameManager : MonoBehaviour
 
 	private void SpawnHeroes(float spawnTime)
 	{
-		Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+		//Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
 	}
 
 	public void TogglePlay() {
@@ -208,6 +213,8 @@ public class GameManager : MonoBehaviour
 	public void PassTime() {
 		currentTime--;
 		timeUnitText.text = currentTime.ToString();
+		Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+
 		foreach (GameObject Monster in GameObject.FindGameObjectsWithTag("Monster")) {
 			Monster.GetComponent<MonsterScript>().Attack();
 		}
@@ -230,5 +237,17 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+
+	public void GoldGainedOnDeath (int goldValue)
+	{
+		currentCurrency += goldValue;
+		UpdateCurrency();
+	}
+
+	public void UpdateCurrency()
+	{
+		currencyText.text = "Gold: " + currentCurrency;
+	}
 
 }

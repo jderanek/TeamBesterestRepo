@@ -33,6 +33,10 @@ public class HeroScript : MonoBehaviour
 
 	private IEnumerator attackRepeater;
 
+	public int currencyValue;
+
+	private GameManager gameManager;
+
     // Use this for initialization
     void Awake()
     {
@@ -40,6 +44,11 @@ public class HeroScript : MonoBehaviour
 		currentRoom = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().spawnRoom;
         currentRoomScript = currentRoom.GetComponent<RoomScript>();
 		currentRoomScript.heroesInRoom.Add(this.gameObject);
+
+		GameObject gameMangerObject = GameObject.FindWithTag ("GameController");
+		if (gameMangerObject != null) {
+			gameManager = gameMangerObject.GetComponent <GameManager> ();
+		}
     }
 
     // Update is called once per frame
@@ -148,5 +157,7 @@ public class HeroScript : MonoBehaviour
 		}
         //currentMonsterScript.heroInRoom = false;
         Destroy(this.gameObject);
+
+		gameManager.GoldGainedOnDeath (currencyValue);
     }
 }

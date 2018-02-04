@@ -86,6 +86,7 @@ MonoBehaviour:
   monsterInRange: 0
   currentRoomScript: {fileID: 0}
   currentRoom: {fileID: 0}
+  currencyValue: 10
 --- !u!212 &212217224592129810
 SpriteRenderer:
   m_ObjectHideFlags: 1
