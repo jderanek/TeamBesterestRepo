@@ -134,34 +134,29 @@ public class HeroScript : MonoBehaviour
 	}
 
 	public void CheckCurrentRoom() {
-		//print ("where am i?????");
-
             currentRoomScript.SortNeighbors();
 
-            if (currentRoomScript.neighborRooms.Count == 0)
+        if (!currentRoomScript.monsterInRoom && currentRoomScript.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
+        {
+            currentRoom = currentRoomScript.neighborRooms[0];
+
+            currentRoomScript.heroesInRoom.Remove(this.gameObject);
+
+            if (currentRoomScript.heroesInRoom.Count == 0)
             {
-                //break;
+                currentRoomScript.heroInRoom = false;
             }
-            else
-            {
-                currentRoom = currentRoomScript.neighborRooms[0];
 
-                currentRoomScript.heroesInRoom.Remove(this.gameObject);
+            currentRoomScript = currentRoom.GetComponent<RoomScript>();
+            currentRoomScript.heroInRoom = true;
+            currentRoomScript.heroesInRoom.Add(this.gameObject);
+            currentRoomScript.SortHeroes();
 
-                if (currentRoomScript.heroesInRoom.Count == 0)
-                {
-                    currentRoomScript.heroInRoom = false;
-                }
-
-                currentRoomScript = currentRoom.GetComponent<RoomScript>();
-                currentRoomScript.heroInRoom = true;
-                currentRoomScript.heroesInRoom.Add(this.gameObject);
-                currentRoomScript.SortHeroes();
-
-                transform.position = currentRoom.transform.position;
-            }
-        
+            transform.position = currentRoom.transform.position;
+        }
     }
+
+           
 		
     //next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
