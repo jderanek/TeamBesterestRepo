@@ -206,23 +206,29 @@ public class GameManager : MonoBehaviour
 	public IEnumerator Play() {
 		while (true) {
 			yield return new WaitForSeconds(timeSpeed);
-			PassTime ();
+			PassTime (1);
 		}
 	}
 
-	public void PassTime() {
-		currentTime--;
-		timeUnitText.text = currentTime.ToString();
-		Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+	public void PassTime(int timeToPass) {
+        for (int i = timeToPass; i > 0; i--)
+        {
+            print("tick tock");
+            currentTime--;
+            timeUnitText.text = currentTime.ToString();
 
-		foreach (GameObject Monster in GameObject.FindGameObjectsWithTag("Monster")) {
-			Monster.GetComponent<MonsterScript>().Attack();
-		}
-		foreach (GameObject Hero in GameObject.FindGameObjectsWithTag("Hero")) {
-			Hero.GetComponent<HeroScript> ().Attack ();
-			Hero.GetComponent<HeroScript> ().CheckCurrentRoom ();
-		}
-	}
+            foreach (GameObject Monster in GameObject.FindGameObjectsWithTag("Monster"))
+            {
+                Monster.GetComponent<MonsterScript>().Attack();
+            }
+            foreach (GameObject Hero in GameObject.FindGameObjectsWithTag("Hero"))
+            {
+                Hero.GetComponent<HeroScript>().Attack();
+                Hero.GetComponent<HeroScript>().CheckCurrentRoom();
+            }
+            Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+        }
+    }
 
     public void ToggleConstruction()
     {

@@ -68,7 +68,7 @@ public class HeroScript : MonoBehaviour
 
     }
 
-	/*
+    /*
 	private IEnumerator Attack(float attackSpeed)
 	{
 		while (true)
@@ -129,13 +129,39 @@ public class HeroScript : MonoBehaviour
     }
     */
 
-	public void Attack() {
-		print ("boop");
+    public void Attack() {
+		//print ("boop");
 	}
 
 	public void CheckCurrentRoom() {
-		print ("where am i?????");
-	}
+		//print ("where am i?????");
+
+            currentRoomScript.SortNeighbors();
+
+            if (currentRoomScript.neighborRooms.Count == 0)
+            {
+                //break;
+            }
+            else
+            {
+                currentRoom = currentRoomScript.neighborRooms[0];
+
+                currentRoomScript.heroesInRoom.Remove(this.gameObject);
+
+                if (currentRoomScript.heroesInRoom.Count == 0)
+                {
+                    currentRoomScript.heroInRoom = false;
+                }
+
+                currentRoomScript = currentRoom.GetComponent<RoomScript>();
+                currentRoomScript.heroInRoom = true;
+                currentRoomScript.heroesInRoom.Add(this.gameObject);
+                currentRoomScript.SortHeroes();
+
+                transform.position = currentRoom.transform.position;
+            }
+        
+    }
 		
     //next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
