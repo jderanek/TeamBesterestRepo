@@ -131,6 +131,16 @@ public class HeroScript : MonoBehaviour
 
     public void Attack() {
 		//print ("boop");
+		if (currentRoomScript.monsterInRoom) 
+		{
+			targetMonster = currentRoomScript.roomMembers [0];
+		}
+		if (targetMonster != null)
+		{
+			targetMonster.GetComponent<MonsterScript>().TakeDamage(damage);
+		}
+
+
 	}
 
 	public void CheckCurrentRoom() {
