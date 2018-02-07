@@ -130,7 +130,6 @@ public class HeroScript : MonoBehaviour
     */
 
     public void Attack() {
-		//print ("boop");
 		if (currentRoomScript.monsterInRoom) 
 		{
 			targetMonster = currentRoomScript.roomMembers [0];

@@ -129,8 +129,6 @@ public class MonsterScript : MonoBehaviour
 
 	public void Attack() {
 
-		print ("Boop");
-
 		if (myRoom.GetComponent<RoomScript>().heroInRoom) 
 		{
 			hero = myRoom.GetComponent<RoomScript>().heroesInRoom[0];
