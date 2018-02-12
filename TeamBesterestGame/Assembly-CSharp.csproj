@@ -65,8 +65,12 @@
      <Compile Include="Assets\Scripts\RoomScript.cs" />
      <Compile Include="Assets\Scripts\SpawnNewSquare.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />
+     <Compile Include="Assets\Scripts\Trait Scripts\FancyTrait.cs" />
+     <Compile Include="Assets\Scripts\Trait Scripts\GrossTrait.cs" />
+     <Compile Include="Assets\Scripts\Trait Scripts\GuardianTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\RecklessTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\TraitBase.cs" />
+     <Compile Include="Assets\Scripts\Trait Scripts\WaryTrait.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

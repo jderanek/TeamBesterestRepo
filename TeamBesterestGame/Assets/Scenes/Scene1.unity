@@ -2012,6 +2012,7 @@ MonoBehaviour:
   cycleImage: {fileID: 297561215}
   cycleTimer: 0
   cycleDelay: 2
+  days: 0
   inConstructionMode: 0
   constructionButton: {fileID: 36520027}
   roomButton: {fileID: 430025416}

@@ -6,19 +6,18 @@ public class RecklessTrait : TraitBase {
 
 	// Use this for initialization
 	void Start () {
-		this.setMorale (25);
 	}
 	
-	//Empty function
+	//Adds nerve to the monster at the start of the day
 	public override void ApplyDayEffects(MonsterScript monster) {
-		return;
+		monster.curNerve = Mathf.Clamp01 (monster.baseNerve + .25f);
 	}
 
 	//Adds morale to monster if hasFought is true
 	public override void ApplyWeekEffects(MonsterScript monster) {
 		if (!monster.hasFought) {
-			monster.morale = Mathf.Clamp (monster.morale - .2f, 0, 100);
-			monster.stress = Mathf.Clamp (monster.stress + 4, 0, 100);
+			monster.morale = Mathf.Clamp01 (monster.morale - .2f);
+			monster.stress = Mathf.Clamp01 (monster.stress + .04f);
 		}
 	}
 }

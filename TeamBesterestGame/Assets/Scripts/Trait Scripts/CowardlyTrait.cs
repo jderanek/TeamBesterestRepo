@@ -10,25 +10,25 @@ public class CowardlyTrait : TraitBase {
 
 		switch (threat) {
 		case 1:
-			monster.morale = Mathf.Clamp (monster.morale - .50f, 0, 100);
+			monster.morale = Mathf.Clamp01 (monster.morale - .50f);
 			break;
 		case 2:
-			monster.morale = Mathf.Clamp (monster.morale - .25f, 0, 100);
+				monster.morale = Mathf.Clamp01 (monster.morale - .25f);
 			break;
 		case 3:
-			monster.morale = Mathf.Clamp (monster.morale - .10f, 0, 100);
+			monster.morale = Mathf.Clamp01 (monster.morale - .10f);
 			break;
 		case 4:
-			monster.morale = Mathf.Clamp (monster.morale, 0, 100);
+			monster.morale = Mathf.Clamp01 (monster.morale);
 			break;
 		case 5:
-			monster.morale = Mathf.Clamp (monster.morale + .10f, 0, 100);
+			monster.morale = Mathf.Clamp01 (monster.morale + .10f);
 			break;
 		case 6:
-			monster.morale = Mathf.Clamp (monster.morale + .25f, 0, 100);
+			monster.morale = Mathf.Clamp01 (monster.morale + .25f);
 			break;
 		default:
-			monster.morale = Mathf.Clamp (monster.morale + .50f, 0, 100);
+			monster.morale = Mathf.Clamp01 (monster.morale + .50f);
 			break;
 		}
 	}

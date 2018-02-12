@@ -40,10 +40,14 @@ public class MonsterScript : MonoBehaviour
 
 	private IEnumerator attackRepeater;
 
-	//Stress and Morale
+	//Stress, Morale, Nerve and Size
 	//Temporarily public for test purposes
 	public float stress = 0;
 	public float morale = .5f;
+	public float baseNerve = .5f;
+	public float curNerve = .5f;
+	public int size;
+	public int curThreat;
 
 	//Attack damage after stress and morale modifers
 	public int curDamage;
@@ -80,6 +84,7 @@ public class MonsterScript : MonoBehaviour
 
         resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
         heroInRoom = false;
+		this.curThreat = threatValue;
     }
 
     void Update()

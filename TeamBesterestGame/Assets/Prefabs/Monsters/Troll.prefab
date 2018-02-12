@@ -92,9 +92,15 @@ MonoBehaviour:
   trait2: 
   averageSalary: 500
   requestedSalary: 0
-  heroInRange: 0
+  heroInRoom: 0
   myRoom: {fileID: 0}
-  threatLevel: 0
+  stress: 0
+  morale: 0.5
+  baseNerve: 0.5
+  curNerve: 0.5
+  size: 2
+  curDamage: 0
+  hasFought: 0
 --- !u!212 &212867608738898780
 SpriteRenderer:
   m_ObjectHideFlags: 1
