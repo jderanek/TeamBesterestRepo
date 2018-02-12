@@ -48,6 +48,12 @@ public class MonsterScript : MonoBehaviour
 	//Attack damage after stress and morale modifers
 	public int curDamage;
 
+	//Monster personality, of type TraitBase
+	public TraitBase personality;
+
+	//Boolean to keep track of whether the monster has fought this week
+	public bool hasFought = false;
+
     void Awake()
     {
 		stress = 0;
@@ -104,6 +110,7 @@ public class MonsterScript : MonoBehaviour
 
 	private IEnumerator Attack(float attackSpeed)
 	{
+		hasFought = true;
 		while (true)
 		{
 			if (myRoom.GetComponent<RoomScript>().heroInRoom) 
