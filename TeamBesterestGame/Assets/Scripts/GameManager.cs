@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     //public List<GameObject> monsterCollection = new List<GameObject>();
 
+	public Text currencyText;
+	public int currentCurrency;
+
     public bool doingSetup;
     public bool interviewing = false;
 
@@ -27,9 +30,6 @@ public class GameManager : MonoBehaviour
     public GameObject cycleImage;
     public float cycleTimer = 100f;
     public float cycleDelay = 2f;
-
-	//Day counter to increase week
-	public int days = 0;
 
     public bool inConstructionMode;
 
@@ -44,9 +44,15 @@ public class GameManager : MonoBehaviour
     public GameObject spawnRoom;
     public GameObject[] heroes;
 
-    //private IEnumerator spawnHeroTimer;
+    private IEnumerator spawnHeroTimer;
 
     public GameObject[,] roomList;
+
+	private bool paused = true;
+	private int currentTime = 100;
+	public float timeSpeed = 3.0f;
+	public Text timeUnitText;
+	public Text pauseButtonText;
 
     // Use this for initialization
     void Awake()
@@ -54,10 +60,11 @@ public class GameManager : MonoBehaviour
         //var coroutine = SpawnHeroes(5f);
         //StartCoroutine(coroutine);
         roomList = new GameObject[10, 10];
+		currentCurrency = 0;
+		UpdateCurrency ();
     }
 
 	void Start() {
-		//Time.timeScale = 1f;
 		var rooms = GameObject.FindGameObjectsWithTag("Room");
 		foreach (var room in rooms) {
 			room.GetComponent<RoomScript>().Initialize();
@@ -82,6 +89,7 @@ public class GameManager : MonoBehaviour
         }
         //placement end
 
+		/*
         cycleSlider.value = cycleTimer;
 
         if (cycleTimer >= 100)
@@ -89,25 +97,14 @@ public class GameManager : MonoBehaviour
             doingSetup = true;
             cycleImage.SetActive(true);
             Invoke("NewCycle", 2);
-			days += 1;
-			DayHandler();
-			if (days == 7) {
-				WeekHandler();
-				days = 0;
-			}
         }
 
         else
         {
             //Time.timeScale = 1;
-			cycleTimer +=  Time.deltaTime;
-
-			//This is set in place so you arent spawning heros every frame (from time.deltatime), but instead only on specific values
-			if (cycleTimer % 10 == 0) 
-			{
-				Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
-			}
+            cycleTimer += Time.deltaTime;
         }
+*/
 
         if (interviewing)
         {
@@ -176,14 +173,62 @@ public class GameManager : MonoBehaviour
         PickUpObject(monsterInstance);
     }
 
-    /*private IEnumerator SpawnHeroes(float spawnTime)
+	/*
+    private IEnumerator SpawnHeroes(float spawnTime)
     {
         while (true)
         {
             yield return new WaitForSeconds(spawnTime);
             Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
         }
-    }*/
+    }
+    */
+
+	private void SpawnHeroes(float spawnTime)
+	{
+		//Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+	}
+
+	public void TogglePlay() {
+		if (paused) {
+			var coroutine = Play ();
+			StartCoroutine (coroutine);
+			pauseButtonText.text = "Pause";
+
+		} else {
+			StopAllCoroutines();
+			pauseButtonText.text = "Play";
+		}
+		paused = !paused;
+		print (paused);
+	}
+
+	public IEnumerator Play() {
+		while (true) {
+			yield return new WaitForSeconds(timeSpeed);
+			PassTime (1);
+		}
+	}
+
+	public void PassTime(int timeToPass) {
+        for (int i = timeToPass; i > 0; i--)
+        {
+            print("tick tock");
+            currentTime--;
+            timeUnitText.text = currentTime.ToString();
+
+            foreach (GameObject Monster in GameObject.FindGameObjectsWithTag("Monster"))
+            {
+                Monster.GetComponent<MonsterScript>().Attack();
+            }
+            foreach (GameObject Hero in GameObject.FindGameObjectsWithTag("Hero"))
+            {
+                Hero.GetComponent<HeroScript>().Attack();
+                Hero.GetComponent<HeroScript>().CheckCurrentRoom();
+            }
+            Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+        }
+    }
 
     public void ToggleConstruction()
     {
@@ -199,35 +244,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-	//New day handler to apply effects on start of day
-	public void DayHandler() {
-		foreach (GameObject room in roomList) {
-			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) {
-				MonsterScript monScript = monster.GetComponent<MonsterScript> ();
-			
-				if (monScript != null) {
-					if (monScript.personality != null) {
-						monScript.personality.ApplyDayEffects (monScript);
-					}
-				}
-			}
-		}
+
+	public void GoldGainedOnDeath (int goldValue)
+	{
+		currentCurrency += goldValue;
+		UpdateCurrency();
 	}
 
-	//New week handler to apply effects on start of week
-	public void WeekHandler() {foreach (GameObject room in roomList) {
-			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) {
-				MonsterScript monScript = monster.GetComponent<MonsterScript> ();
-
-				if (monScript != null) {
-					if (monScript.personality != null) {
-						monScript.personality.ApplyWeekEffects (monScript);
-					}
-				}
-
-				monScript.hasFought = false;
-			}
-		}
-
+	public void UpdateCurrency()
+	{
+		currencyText.text = "Gold: " + currentCurrency;
 	}
+
 }

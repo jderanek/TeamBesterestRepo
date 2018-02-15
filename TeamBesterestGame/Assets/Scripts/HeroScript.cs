@@ -33,6 +33,10 @@ public class HeroScript : MonoBehaviour
 
 	private IEnumerator attackRepeater;
 
+	public int currencyValue;
+
+	private GameManager gameManager;
+
     // Use this for initialization
     void Awake()
     {
@@ -40,6 +44,11 @@ public class HeroScript : MonoBehaviour
 		currentRoom = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().spawnRoom;
         currentRoomScript = currentRoom.GetComponent<RoomScript>();
 		currentRoomScript.heroesInRoom.Add(this.gameObject);
+
+		GameObject gameMangerObject = GameObject.FindWithTag ("GameController");
+		if (gameMangerObject != null) {
+			gameManager = gameMangerObject.GetComponent <GameManager> ();
+		}
     }
 
     // Update is called once per frame
@@ -48,17 +57,18 @@ public class HeroScript : MonoBehaviour
 
         if (this.currentRoomScript.monsterInRoom == true)
         {
-            var coroutine = Attack(2f);
-            StartCoroutine(coroutine);
+            //var coroutine = Attack(2f);
+            //StartCoroutine(coroutine);
         }
         //else
         {
-            var routine = CheckCurrentRoom(5f);
-            StartCoroutine(routine);
+            //var routine = CheckCurrentRoom(5f);
+            //StartCoroutine(routine);
         }
 
     }
 
+    /*
 	private IEnumerator Attack(float attackSpeed)
 	{
 		while (true)
@@ -117,7 +127,46 @@ public class HeroScript : MonoBehaviour
 
         }
     }
+    */
 
+    public void Attack() {
+		if (currentRoomScript.monsterInRoom) 
+		{
+			targetMonster = currentRoomScript.roomMembers [0];
+		}
+		if (targetMonster != null)
+		{
+			targetMonster.GetComponent<MonsterScript>().TakeDamage(damage);
+		}
+
+
+	}
+
+	public void CheckCurrentRoom() {
+            currentRoomScript.SortNeighbors();
+
+        if (!currentRoomScript.monsterInRoom && currentRoomScript.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
+        {
+            currentRoom = currentRoomScript.neighborRooms[0];
+
+            currentRoomScript.heroesInRoom.Remove(this.gameObject);
+
+            if (currentRoomScript.heroesInRoom.Count == 0)
+            {
+                currentRoomScript.heroInRoom = false;
+            }
+
+            currentRoomScript = currentRoom.GetComponent<RoomScript>();
+            currentRoomScript.heroInRoom = true;
+            currentRoomScript.heroesInRoom.Add(this.gameObject);
+            currentRoomScript.SortHeroes();
+
+            transform.position = currentRoom.transform.position;
+        }
+    }
+
+           
+		
     //next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
     {
@@ -138,5 +187,7 @@ public class HeroScript : MonoBehaviour
 		}
         //currentMonsterScript.heroInRoom = false;
         Destroy(this.gameObject);
+
+		gameManager.GoldGainedOnDeath (currencyValue);
     }
 }
