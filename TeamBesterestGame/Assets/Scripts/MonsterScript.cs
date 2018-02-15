@@ -48,6 +48,11 @@ public class MonsterScript : MonoBehaviour
 	public float curNerve = .5f;
 	public int size;
 	public int curThreat;
+	public float stressGain = .02f;
+	public float vacationStressLoss = .15f;
+	//No idea what this should be
+	public int infamyGain = 1;
+	public string gender;
 
 	//Attack damage after stress and morale modifers
 	public int curDamage;
@@ -85,6 +90,10 @@ public class MonsterScript : MonoBehaviour
         resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
         heroInRoom = false;
 		this.curThreat = threatValue;
+
+		if (this.personality != null) {
+			this.personality.ApplyBase (this);
+		}
     }
 
     void Update()

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class FancyTrait : TraitBase {
 
+	//Decreases infamy gain
+	public override void ApplyBase(MonsterScript monster) {
+		monster.infamyGain -= 1;
+		//No idea what this should be either
+	}
+
 	//Empty function
 	public override void ApplyDayEffects(MonsterScript monster) {
 	}

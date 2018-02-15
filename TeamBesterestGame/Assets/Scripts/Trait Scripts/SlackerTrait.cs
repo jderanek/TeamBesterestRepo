@@ -2,26 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GrossTrait : TraitBase {
+public class SlackerTrait : TraitBase {
 
-	//Increases infamy gain
+	//Increases stress gain by 2
 	public override void ApplyBase(MonsterScript monster) {
-		monster.infamyGain += 1;
-		//No idea what this should be either
+		monster.stressGain += .02f;
+		monster.vacationStressLoss = .2f;
 	}
 
 	//Empty function
 	public override void ApplyDayEffects(MonsterScript monster) {
 	}
 
-	//Reduces all other monsters morale by 5
+
+	//Increases morale by 10 with Wprkaholic monsters.
 	public override void ApplyWeekEffects(MonsterScript monster) {
 		RoomScript room = monster.myRoom.GetComponent<RoomScript> ();
 
 		foreach (GameObject mon in room.roomMembers) {
 			MonsterScript monScript = mon.GetComponent<MonsterScript> ();
-			if (monScript != null && monScript != monster) {
-				monster.morale = Mathf.Clamp01 (monster.morale - .05f);
+			if (monScript != null && monScript.personality.GetType() == typeof(WorkaholicTrait)) {
+				monster.morale = Mathf.Clamp01 (monster.morale + .1f);
 			}
 		}
 	}

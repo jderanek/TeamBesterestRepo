@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class WaryTrait : TraitBase {
 
+	//Removes threat from this monster
+	public override void ApplyBase(MonsterScript monster) {
+		monster.threatValue -= 1;
+	}
+
 	//Reduces nerve and threat level
 	public override void ApplyDayEffects(MonsterScript monster) {
 		monster.curNerve = Mathf.Clamp01 (monster.baseNerve - .25f);

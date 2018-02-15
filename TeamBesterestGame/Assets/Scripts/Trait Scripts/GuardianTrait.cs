@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GuardianTrait : TraitBase {
 
+	//Adds threat to this monster
+	public override void ApplyBase(MonsterScript monster) {
+		monster.threatValue += 1;
+	}
+
 
 	//Empty function
 	public override void ApplyWeekEffects(MonsterScript monster) {
@@ -13,7 +18,6 @@ public class GuardianTrait : TraitBase {
 	//Then checks for smaller monsters to change morale
 	public override void ApplyDayEffects(MonsterScript monster) {
 		monster.curNerve = Mathf.Clamp01 (monster.baseNerve + .1f);
-		monster.curThreat = monster.threatValue + 1;
 
 		RoomScript room = monster.myRoom.GetComponent<RoomScript> ();
 

@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class RecklessTrait : TraitBase {
 
-	// Use this for initialization
-	void Start () {
+	//Adds 25% damage increase
+	public override void ApplyBase(MonsterScript monster) {
+		monster.attackDamage = (int)(monster.averageDamage * 1.25);
 	}
-	
+
 	//Adds nerve to the monster at the start of the day
 	public override void ApplyDayEffects(MonsterScript monster) {
 		monster.curNerve = Mathf.Clamp01 (monster.baseNerve + .25f);

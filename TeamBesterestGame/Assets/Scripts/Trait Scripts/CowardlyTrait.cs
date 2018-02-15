@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CowardlyTrait : TraitBase {
 
+	//Empty function
+	public override void ApplyBase(MonsterScript monster) {
+	}
+
 	//Gains morale if room threat is high, loses it if it is low
 	public override void ApplyDayEffects(MonsterScript monster) {
 		int threat = monster.myRoom.GetComponent<RoomScript> ().roomThreat;
