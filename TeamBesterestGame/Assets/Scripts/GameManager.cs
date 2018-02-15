@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     public float cycleTimer = 100f;
     public float cycleDelay = 2f;
 
+	//Day counter to increase week
+	public int days = 0;
+
     public bool inConstructionMode;
 
     public GameObject constructionButton;
@@ -163,6 +166,14 @@ public class GameManager : MonoBehaviour
         doingSetup = false;
         cycleImage.SetActive(false);
         cycleTimer = 0f;
+
+		//Script to run dayhandler and weekhandler
+		days += 1;
+		DayHandler();
+		if (days == 7) {
+			WeekHandler();
+			days = 0;
+		}
     }
 
     public void HireButton()
@@ -256,4 +267,36 @@ public class GameManager : MonoBehaviour
 		currencyText.text = "Gold: " + currentCurrency;
 	}
 
+
+	//New day handler to apply effects on start of day
+	public void DayHandler() {
+		foreach (GameObject room in roomList) {
+			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) {
+				MonsterScript monScript = monster.GetComponent<MonsterScript> ();
+
+				if (monScript != null) {
+					if (monScript.personality != null) {
+						monScript.personality.ApplyDayEffects (monScript);
+					}
+				}
+			}
+		}
+	}
+
+	//New week handler to apply effects on start of week
+	public void WeekHandler() {
+		foreach (GameObject room in roomList) {
+			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) {
+				MonsterScript monScript = monster.GetComponent<MonsterScript> ();
+
+				if (monScript != null) {
+					if (monScript.personality != null) {
+						monScript.personality.ApplyWeekEffects (monScript);
+					}
+				}
+
+				monScript.hasFought = false;
+			}
+		}
+	}
 }

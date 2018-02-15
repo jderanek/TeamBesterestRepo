@@ -202,7 +202,16 @@ MonoBehaviour:
   myRoom: {fileID: 0}
   stress: 0
   morale: 0.5
+  baseNerve: 0.5
+  curNerve: 0.5
+  size: 1
+  curThreat: 0
+  stressGain: 0.02
+  vacationStressLoss: 0.15
+  infamyGain: 1
+  gender: 
   curDamage: 0
+  hasFought: 0
 --- !u!212 &212908011047340260
 SpriteRenderer:
   m_ObjectHideFlags: 1
