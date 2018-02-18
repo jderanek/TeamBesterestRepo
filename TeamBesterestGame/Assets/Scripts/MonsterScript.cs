@@ -81,6 +81,7 @@ public class MonsterScript : MonoBehaviour
             trait2 = null;
             trait1 = "Very " + trait1;
         }
+
         requestedSalary = averageSalary + Random.Range(-500, 500);
 
         resume = GameObject.FindGameObjectWithTag("Resume");
@@ -108,7 +109,7 @@ public class MonsterScript : MonoBehaviour
 		//Calculation to modify attack damage based on stress and morale
 		curDamage = (int)((attackDamage * (1 - stress))/2) + (int)((attackDamage * (morale * 2))/2);
 		//Makes sure damage is at least 1
-		if (curDamage == 0) {
+		if (curDamage < 1) {
 			curDamage = 1;
 		}
     }

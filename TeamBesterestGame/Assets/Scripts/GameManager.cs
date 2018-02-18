@@ -16,7 +16,11 @@ public class GameManager : MonoBehaviour
     public GameObject heldObject;
 
     public GameObject resume;
+    public List<GameObject> currentResumes;
+    public int activeResume;
     private GameObject resumeButton;
+    public Transform resumeSpawn;
+    private bool resumeOpen = false;
 
     //public List<GameObject> monsterCollection = new List<GameObject>();
 
@@ -65,6 +69,29 @@ public class GameManager : MonoBehaviour
         roomList = new GameObject[10, 10];
 		currentCurrency = 0;
 		UpdateCurrency ();
+        currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
+        currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
+        currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
+        foreach (GameObject resume in currentResumes)
+        {
+            monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(resume);
+            resume.GetComponent<ResumeScript>().monster = monsterInstance;
+            monsterInstance.SetActive(false);
+            var monsterInstanceScript = monsterInstance.GetComponent<MonsterScript>();
+
+            //resume pictures
+            resume.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
+            resume.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
+
+            // Resume Text
+            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.monsterName;
+            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.monsterType;
+            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(4).GetComponent<Text>().text = "Average Health " + monsterInstanceScript.averageHealth;
+            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Average Damage " + monsterInstanceScript.averageDamage;
+            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
+
+            resume.SetActive(false);
+        }
     }
 
 	void Start() {
@@ -178,10 +205,58 @@ public class GameManager : MonoBehaviour
 
     public void HireButton()
     {
-        monsterInstance = GameObject.FindGameObjectWithTag("ResumeButton").GetComponent<HiringUIScript>().monsterInstance;
-        Destroy(GameObject.FindGameObjectWithTag("Resume")); //.SetActive(false);
-        GameObject.Find("Hiring Button").GetComponent<HiringUIScript>().resumeUp = false;
+        monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
+        currentResumes[activeResume].SetActive(false);
+        //monsterInstance = GameObject.FindGameObjectWithTag("ResumeButton").GetComponent<HiringUIScript>().monsterInstance;
+        //Destroy(GameObject.FindGameObjectWithTag("Resume")); //.SetActive(false);
+        //GameObject.Find("Hiring Button").GetComponent<HiringUIScript>().resumeUp = false;
+
         PickUpObject(monsterInstance);
+    }
+
+    public void OpenApplications()
+    {
+        resumeOpen = !resumeOpen;
+        if (resumeOpen)
+        {
+            currentResumes[0].SetActive(true);
+            activeResume = 0;
+        }
+        else
+            currentResumes[activeResume].SetActive(false);
+    }
+
+    public void NextApplication()
+    {
+        if (activeResume < currentResumes.Count - 1)
+        {
+            currentResumes[activeResume].SetActive(false);
+            activeResume++;
+            currentResumes[activeResume].SetActive(true);
+        }
+        else
+        {
+            currentResumes[activeResume].SetActive(false);
+            activeResume = 0;
+            currentResumes[activeResume].SetActive(true);
+        }
+    }
+
+    public void PreviousApplication()
+    {
+        if (activeResume > 0)
+        {
+            currentResumes[activeResume].SetActive(false);
+            activeResume--;
+            currentResumes[activeResume].SetActive(true);
+        }
+        else
+        {
+            currentResumes[activeResume].SetActive(false);
+            activeResume = currentResumes.Count - 1;
+            currentResumes[activeResume].SetActive(true);
+        }
+        
     }
 
 	/*
