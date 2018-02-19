@@ -15,6 +15,7 @@ public class ResumeScript : MonoBehaviour {
     public Button interviewButton;
     public Button nextButton;
     public Button previousButton;
+    public int timeTillExpiration;
 
     // Use this for initialization
     void Awake ()
@@ -26,32 +27,7 @@ public class ResumeScript : MonoBehaviour {
         previousButton.onClick.AddListener(gameManager.PreviousApplication);
         hireButton.onClick.AddListener(gameManager.HireButton);
 
-        /*
-        hideButton.onClick.AddListener(OpenApplicationShortcut);
-        nextButton.onClick.AddListener(NextApplicationShortcut);
-        previousButton.onClick.AddListener(PreviousApplicationShortcut);
-        hireButton.onClick.AddListener(HireButtonShortcut);
-        */
-    }
-
-    void HireButtonShortcut()
-    {
-        gameManager.HireButton();
-    }
-    
-    void OpenApplicationShortcut()
-    {
-        gameManager.OpenApplications();        
-    }
-    
-    void NextApplicationShortcut()
-    {
-        gameManager.NextApplication();
-    }
-
-    void PreviousApplicationShortcut()
-    {
-        gameManager.PreviousApplication();
+        timeTillExpiration = 5;
     }
 	
 	// Update is called once per frame

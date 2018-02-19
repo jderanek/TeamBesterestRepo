@@ -5,25 +5,25 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    //Monster Stuff
     [HideInInspector]
     public GameObject monsterInHand;
     public bool isHoldingObject;
     public GameObject[] possibleMonsters;
-    //public GameObject monster;
     [HideInInspector]
     public GameObject monsterInstance;
     public GameObject heldObject;
 
+    //Resume Stuff
     public GameObject resume;
     public List<GameObject> currentResumes;
+    public List<GameObject> expiredResumes;
     public int activeResume;
     private GameObject resumeButton;
     public Transform resumeSpawn;
     private bool resumeOpen = false;
 
-    //public List<GameObject> monsterCollection = new List<GameObject>();
-
+    //Money Stuff
 	public Text currencyText;
 	public int currentCurrency;
 
@@ -51,10 +51,9 @@ public class GameManager : MonoBehaviour
     public GameObject spawnRoom;
     public GameObject[] heroes;
 
-    private IEnumerator spawnHeroTimer;
-
     public GameObject[,] roomList;
 
+    //Time Unit stuff
 	private bool paused = true;
 	private int currentTime = 100;
 	public float timeSpeed = 3.0f;
@@ -64,34 +63,10 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        //var coroutine = SpawnHeroes(5f);
-        //StartCoroutine(coroutine);
         roomList = new GameObject[10, 10];
 		currentCurrency = 0;
 		UpdateCurrency ();
-        currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
-        currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
-        currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
-        foreach (GameObject resume in currentResumes)
-        {
-            monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(resume);
-            resume.GetComponent<ResumeScript>().monster = monsterInstance;
-            monsterInstance.SetActive(false);
-            var monsterInstanceScript = monsterInstance.GetComponent<MonsterScript>();
-
-            //resume pictures
-            resume.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
-            resume.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
-
-            // Resume Text
-            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.monsterName;
-            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.monsterType;
-            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(4).GetComponent<Text>().text = "Average Health " + monsterInstanceScript.averageHealth;
-            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Average Damage " + monsterInstanceScript.averageDamage;
-            resume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
-
-            resume.SetActive(false);
-        }
+        CreateNewResume(3);
     }
 
 	void Start() {
@@ -118,23 +93,6 @@ public class GameManager : MonoBehaviour
             heldObject = null;
         }
         //placement end
-
-		/*
-        cycleSlider.value = cycleTimer;
-
-        if (cycleTimer >= 100)
-        {
-            doingSetup = true;
-            cycleImage.SetActive(true);
-            Invoke("NewCycle", 2);
-        }
-
-        else
-        {
-            //Time.timeScale = 1;
-            cycleTimer += Time.deltaTime;
-        }
-*/
 
         if (interviewing)
         {
@@ -167,9 +125,6 @@ public class GameManager : MonoBehaviour
         GameObject newMonster = Instantiate(possibleMonsters[Random.Range(0, possibleMonsters.Length)], resume.transform.position, Quaternion.identity);
         newMonster.SetActive(false);
         return newMonster;
-
-        //monsterCollection.Add (newMonster); // not working
-        //Debug.Log ("monsterCollection Size = " + monsterCollection.Count);
     }
 
     public void PickUpObject(GameObject otherObject)
@@ -186,6 +141,33 @@ public class GameManager : MonoBehaviour
         isHoldingObject = true;
         heldObject = otherObject;
         otherObject.SetActive(true);
+    }
+
+    public void CreateNewResume(int resumesToCreate)
+    {
+        for (int i = 0; i < resumesToCreate; i++)
+        {
+            currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
+            var thisResume = currentResumes[currentResumes.Count - 1];
+
+            monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(thisResume);
+            thisResume.GetComponent<ResumeScript>().monster = monsterInstance;
+            monsterInstance.SetActive(false);
+            var monsterInstanceScript = monsterInstance.GetComponent<MonsterScript>();
+
+            //resume pictures
+            thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
+            thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
+
+            // Resume Text
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.monsterName;
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.monsterType;
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(4).GetComponent<Text>().text = "Average Health " + monsterInstanceScript.averageHealth;
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Average Damage " + monsterInstanceScript.averageDamage;
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
+
+            thisResume.SetActive(false);
+        }
     }
 
     public void NewCycle()
@@ -206,10 +188,8 @@ public class GameManager : MonoBehaviour
     public void HireButton()
     {
         monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
-        currentResumes[activeResume].SetActive(false);
-        //monsterInstance = GameObject.FindGameObjectWithTag("ResumeButton").GetComponent<HiringUIScript>().monsterInstance;
-        //Destroy(GameObject.FindGameObjectWithTag("Resume")); //.SetActive(false);
-        //GameObject.Find("Hiring Button").GetComponent<HiringUIScript>().resumeUp = false;
+        //currentResumes[activeResume].SetActive(false);
+        Destroy(currentResumes[activeResume]);
 
         PickUpObject(monsterInstance);
     }
@@ -259,22 +239,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-	/*
-    private IEnumerator SpawnHeroes(float spawnTime)
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(spawnTime);
-            Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
-        }
-    }
-    */
-
-	private void SpawnHeroes(float spawnTime)
-	{
-		//Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
-	}
-
 	public void TogglePlay() {
 		if (paused) {
 			var coroutine = Play ();
@@ -286,7 +250,6 @@ public class GameManager : MonoBehaviour
 			pauseButtonText.text = "Play";
 		}
 		paused = !paused;
-		print (paused);
 	}
 
 	public IEnumerator Play() {
@@ -299,7 +262,6 @@ public class GameManager : MonoBehaviour
 	public void PassTime(int timeToPass) {
         for (int i = timeToPass; i > 0; i--)
         {
-            print("tick tock");
             currentTime--;
             timeUnitText.text = currentTime.ToString();
 
@@ -313,6 +275,24 @@ public class GameManager : MonoBehaviour
                 Hero.GetComponent<HeroScript>().CheckCurrentRoom();
             }
             Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+
+            foreach (GameObject resume in currentResumes)
+            {
+                resume.GetComponent<ResumeScript>().timeTillExpiration--;
+                if (resume.GetComponent<ResumeScript>().timeTillExpiration <= 0)
+                    expiredResumes.Add(resume);
+            }
+
+            foreach (GameObject expiredResume in expiredResumes)
+            {
+                currentResumes.Remove(expiredResume);
+                Destroy(expiredResume);
+            }
+
+            if (Random.Range(0, 9) > 4)
+                CreateNewResume(1);
+
+            expiredResumes.Clear();
         }
     }
 
