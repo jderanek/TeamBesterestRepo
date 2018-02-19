@@ -99,19 +99,7 @@ public class MonsterScript : MonoBehaviour
 
     void Update()
     {
-        //if HeroInRoom is true, the Attack function will run
-		if (myRoom != null && myRoom.GetComponent<RoomScript>().heroInRoom)
-        {
-			//var coroutine = Attack(2f);
-			//StartCoroutine(coroutine);
-        }
 
-		//Calculation to modify attack damage based on stress and morale
-		curDamage = (int)((attackDamage * (1 - stress))/2) + (int)((attackDamage * (morale * 2))/2);
-		//Makes sure damage is at least 1
-		if (curDamage < 1) {
-			curDamage = 1;
-		}
     }
 
     void OnMouseOver()
@@ -121,33 +109,6 @@ public class MonsterScript : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
         }
     }
-
-	/*
-	private IEnumerator Attack(float attackSpeed)
-	{
-		hasFought = true;
-		while (true)
-		{
-			if (myRoom.GetComponent<RoomScript>().heroInRoom) 
-			{
-				hero = myRoom.GetComponent<RoomScript>().heroesInRoom[0];
-			}
-			else 
-			{
-				StopAllCoroutines ();
-			}
-
-			yield return new WaitForSeconds(attackSpeed);
-
-			if (hero != null)
-			{
-				hero.GetComponent<HeroScript>().TakeDamage(curDamage);
-			}
-
-			StopAllCoroutines();
-		}
-	}
-	*/
 
 	public void Attack() {
 
@@ -162,7 +123,6 @@ public class MonsterScript : MonoBehaviour
 		}
 
 	}
-
 
     //next two functions are what the monster will call to take damage
     public void TakeDamage(int damageTaken)

@@ -188,7 +188,6 @@ public class GameManager : MonoBehaviour
     public void HireButton()
     {
         monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
-        //currentResumes[activeResume].SetActive(false);
         Destroy(currentResumes[activeResume]);
 
         PickUpObject(monsterInstance);
