@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Base class to store heroes max and current health, damage and money drop
-public abstract class BaseHero : MonoBehaviour {
+public abstract class BaseHero {
 
 	//Private variables for health, damage and value
 	private int maxHealth;
