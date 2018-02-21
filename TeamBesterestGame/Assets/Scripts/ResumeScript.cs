@@ -18,7 +18,7 @@ public class ResumeScript : MonoBehaviour {
     public int timeTillExpiration;
 
     // Use this for initialization
-    void Awake ()
+    void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
@@ -26,6 +26,7 @@ public class ResumeScript : MonoBehaviour {
         nextButton.onClick.AddListener(gameManager.NextApplication);
         previousButton.onClick.AddListener(gameManager.PreviousApplication);
         hireButton.onClick.AddListener(gameManager.HireButton);
+        
 		interviewButton.onClick.AddListener(gameManager.Interview);
 
         timeTillExpiration = 5;
