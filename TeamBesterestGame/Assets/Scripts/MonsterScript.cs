@@ -21,6 +21,7 @@ public class MonsterScript : MonoBehaviour
     public int averageDamage;
     public int attackDamage;
 
+    //possibly obsolete
     public string[] possibleTraits = new string[] { "Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
     public string trait1;
     public string trait2;
@@ -28,16 +29,12 @@ public class MonsterScript : MonoBehaviour
     public int averageSalary = 500;
     public int requestedSalary;
 
-    private GameObject resume;
-    private GameObject monsterInstance;
     private bool monsterGrabbed;
-    private GameObject resumeButton;
 
     private GameObject hero;
-    private HeroScript heroScript;
-    public bool heroInRoom = false;
+    //private HeroScript heroScript; //uneeded?
+    public bool heroInRoom = false; //note to self, have rooms update monsters on inhabitants at on the time pass function
 
-    //public List<GameObject> myList = null;
     public GameObject myRoom;
 
 	private IEnumerator attackRepeater;
@@ -87,12 +84,11 @@ public class MonsterScript : MonoBehaviour
         }
 
         requestedSalary = averageSalary + Random.Range(-500, 500);
+        if (requestedSalary < 0)
+            requestedSalary = 100;
 
-        resume = GameObject.FindGameObjectWithTag("Resume");
         monsterGrabbed = true;
-        monsterInstance = this.gameObject;
-
-        resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
+        
         heroInRoom = false;
 		this.curThreat = threatValue;
 

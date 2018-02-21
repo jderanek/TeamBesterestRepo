@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class ResumeScript : MonoBehaviour {
 
-
     public GameObject monster;
     public GameObject resumeCanvas;
     private bool holdingResume;
-    public GameManager gameManager;
+    private GameManager gameManager;
+
+    //better way to grab these?
     public Button hireButton;
     public Button hideButton;
     public Button interviewButton;
     public Button nextButton;
     public Button previousButton;
+
     public int timeTillExpiration;
 
     // Use this for initialization

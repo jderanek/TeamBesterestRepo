@@ -144,6 +144,7 @@ public class GameManager : MonoBehaviour
         otherObject.SetActive(true);
     }
 
+    //might combine this with creating a new monster and file the resume under the monsters as a child object
     public void CreateNewResume(int resumesToCreate)
     {
         for (int i = 0; i < resumesToCreate; i++)
@@ -189,17 +190,17 @@ public class GameManager : MonoBehaviour
     public void HireButton()
     {
         monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
-        //Destroy(currentResumes[activeResume]);
         currentResumes[activeResume].SetActive(false);
         currentResumes.Remove(currentResumes[activeResume]);
-
-
-
+        
         PickUpObject(monsterInstance);
+        resumeOpen = !resumeOpen;
     }
 
     public void OpenApplications()
     {
+        if (currentResumes.Count == 0)
+            return;
         resumeOpen = !resumeOpen;
         if (resumeOpen)
         {
