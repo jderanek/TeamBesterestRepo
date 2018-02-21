@@ -54,7 +54,7 @@ public class HeroScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		/*
         if (this.currentRoomScript.monsterInRoom == true)
         {
             //var coroutine = Attack(2f);
@@ -65,6 +65,7 @@ public class HeroScript : MonoBehaviour
             //var routine = CheckCurrentRoom(5f);
             //StartCoroutine(routine);
         }
+        */
 
     }
 

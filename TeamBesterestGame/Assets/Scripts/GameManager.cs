@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> currentResumes;
     public List<GameObject> expiredResumes;
     public int activeResume;
-    private GameObject resumeButton;
+    public GameObject applicationsButton;
     public Transform resumeSpawn;
     private bool resumeOpen = false;
 
@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
         }
         //placement end
 
+        /*
         if (interviewing)
         {
             interviewButtons.SetActive(true);
@@ -117,7 +118,7 @@ public class GameManager : MonoBehaviour
             {
                 resume.SetActive(true);
             }
-        }
+        }*/
     }
 
     public GameObject SpawnMonster(GameObject resume)
@@ -319,6 +320,18 @@ public class GameManager : MonoBehaviour
 	public void UpdateCurrency()
 	{
 		currencyText.text = "Gold: " + currentCurrency;
+	}
+
+	public void Interview()//enables interview UI and hides other UI elements that are in the way
+	{
+		interviewing = true;
+		interviewButtons.SetActive(true);
+		interviewImage.SetActive(true);
+		interviewBackground.SetActive(true);
+		interviewExit.SetActive(true);
+		constructionButton.SetActive(false);
+		applicationsButton.SetActive(false);
+
 	}
 
 

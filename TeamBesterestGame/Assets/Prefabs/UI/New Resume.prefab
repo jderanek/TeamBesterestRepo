@@ -618,6 +618,7 @@ MonoBehaviour:
   interviewButton: {fileID: 114856306853936364}
   nextButton: {fileID: 114677193307637598}
   previousButton: {fileID: 114548183319074704}
+  timeTillExpiration: 0
 --- !u!114 &114123184821590492
 MonoBehaviour:
   m_ObjectHideFlags: 1

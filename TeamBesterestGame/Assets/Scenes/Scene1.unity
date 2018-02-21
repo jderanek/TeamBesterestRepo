@@ -470,11 +470,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b2b9c617476ffeb42812620204ccd489, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &96629997 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1288583032079930, guid: b2b9c617476ffeb42812620204ccd489,
-    type: 2}
-  m_PrefabInternal: {fileID: 96629996}
 --- !u!1 &146191077
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 116.400024, y: 0}
+  m_AnchoredPosition: {x: 105.8, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &229560006
@@ -904,7 +899,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &232977736
 RectTransform:
   m_ObjectHideFlags: 0
@@ -920,7 +915,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 176.03, y: -9}
+  m_AnchoredPosition: {x: 155.8, y: -9}
   m_SizeDelta: {x: 182.53998, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &232977737
@@ -2232,11 +2227,11 @@ RectTransform:
   m_Father: {fileID: 1495284378}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 407, y: -303}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -25, y: 71}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &755543642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2680,7 +2675,9 @@ MonoBehaviour:
   heldObject: {fileID: 0}
   resume: {fileID: 1568726820164964, guid: 54ce311e7a474a4449a352248d99c178, type: 2}
   currentResumes: []
+  expiredResumes: []
   activeResume: 0
+  applicationsButton: {fileID: 755543640}
   resumeSpawn: {fileID: 1218565707}
   currencyText: {fileID: 935864226}
   currentCurrency: 0
@@ -2729,8 +2726,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  resume: {fileID: 0}
-  hiringButton: {fileID: 96629997}
   monsterInstance: {fileID: 0}
   interviewQuestions: {fileID: 1315549498}
   questionOne: {fileID: 447131214}
@@ -3464,7 +3459,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.366431
+  orthographic size: 4.475648
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

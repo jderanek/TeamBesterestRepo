@@ -26,6 +26,7 @@ public class ResumeScript : MonoBehaviour {
         nextButton.onClick.AddListener(gameManager.NextApplication);
         previousButton.onClick.AddListener(gameManager.PreviousApplication);
         hireButton.onClick.AddListener(gameManager.HireButton);
+		interviewButton.onClick.AddListener(gameManager.Interview);
 
         timeTillExpiration = 5;
     }
