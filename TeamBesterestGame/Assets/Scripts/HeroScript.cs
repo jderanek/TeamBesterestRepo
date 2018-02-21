@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RoomMemberSorter : IComparer<GameObject>
 {
@@ -21,6 +22,8 @@ public class HeroScript : MonoBehaviour
 
     public int damage;
     public int heroHp;
+
+	private Text damageText;
 
     public Transform monsterPosition;
     private GameObject targetMonster;
@@ -44,6 +47,7 @@ public class HeroScript : MonoBehaviour
 		currentRoom = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().spawnRoom;
         currentRoomScript = currentRoom.GetComponent<RoomScript>();
 		currentRoomScript.heroesInRoom.Add(this.gameObject);
+		damageText = this.gameObject.GetComponentInChildren<Text>();
 
 		GameObject gameMangerObject = GameObject.FindWithTag ("GameController");
 		if (gameMangerObject != null) {
@@ -172,6 +176,8 @@ public class HeroScript : MonoBehaviour
     public void TakeDamage(int damageTaken)
     {
         heroHp -= damageTaken;
+		damageText.text = damageTaken.ToString();
+
 		Debug.Log (heroHp);
         if (heroHp <= 0)
         {

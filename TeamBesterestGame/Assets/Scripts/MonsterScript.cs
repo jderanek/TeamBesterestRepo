@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class MonsterScript : MonoBehaviour
     public int averageHealth;
     public int startingHealth;
     public int currentHealth;
+	private Text damageText;
 
     public int[] possibleThreatValue = new int[] { 2, 4, 6 };
     public int threatValue;
@@ -71,10 +73,12 @@ public class MonsterScript : MonoBehaviour
         startingHealth = averageHealth + Random.Range(-5, 5);
         currentHealth = startingHealth;
 
+		damageText = this.gameObject.GetComponentInChildren<Text>();//fetches DmgText
+
         attackDamage = averageDamage + Random.Range(-3, 3);
         threatValue = possibleThreatValue[Random.Range(0, possibleThreatValue.Length)];
 
-        trait1 = possibleTraits[Random.Range(0, possibleTraits.Length)];
+		trait1 = possibleTraits[Random.Range(0, possibleTraits.Length)];//possibly obsolete
         trait2 = possibleTraits[Random.Range(0, possibleTraits.Length)];
         if (trait1 == trait2)
         {
@@ -128,6 +132,9 @@ public class MonsterScript : MonoBehaviour
     public void TakeDamage(int damageTaken)
     {
         currentHealth -= damageTaken;
+		damageText.text = damageTaken.ToString();
+		//play animation to make damageText appear and disappear
+
 
         if (currentHealth <= 0)
         {
