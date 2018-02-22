@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class InterviewManager : MonoBehaviour {
 
     public GameObject gameManager;
-    public GameObject resume;
-    public GameObject hiringButton;
+    //public GameObject resume;
+    //public GameObject hiringButton;
 
     public GameObject monsterInstance;
 
@@ -30,7 +30,7 @@ public class InterviewManager : MonoBehaviour {
     {
         if (gameManager.GetComponent<GameManager>().interviewing)
         {
-            monsterInstance = hiringButton.GetComponent<HiringUIScript>().monsterInstance;
+			monsterInstance = gameManager.GetComponent<GameManager>().monsterInstance; //takes the gameManagers monsterInstance for questioning
         }
         else
         {
@@ -79,9 +79,20 @@ public class InterviewManager : MonoBehaviour {
         interviewQuestions.SetActive(true);
     }
 
-    public void ExitInterview()
+    public void ExitInterview() //exits interview and hides the interview UI
     {
-        gameManager.GetComponent<GameManager>().interviewing = false;
+		gameManager.GetComponent<GameManager>().interviewButtons.SetActive(false);
+		gameManager.GetComponent<GameManager>().interviewImage.SetActive(false);
+		gameManager.GetComponent<GameManager>().interviewBackground.SetActive(false);
+		gameManager.GetComponent<GameManager>().interviewExit.SetActive(false);
+		gameManager.GetComponent<GameManager>().constructionButton.SetActive(true);
+		gameManager.GetComponent<GameManager>().applicationsButton.SetActive(true);
+
+		/*if (gameManager.GetComponent<GameManager>().resume != null)
+		{
+			gameManager.GetComponent<GameManager>().resume.SetActive(true);
+		}
+        gameManager.GetComponent<GameManager>().interviewing = false;*/
     }
 
 }

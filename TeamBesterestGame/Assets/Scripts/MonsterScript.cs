@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MonsterScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class MonsterScript : MonoBehaviour
     public int averageHealth;
     public int startingHealth;
     public int currentHealth;
+	private Text damageText;
 
     public int[] possibleThreatValue = new int[] { 2, 4, 6 };
     public int threatValue;
@@ -19,6 +21,7 @@ public class MonsterScript : MonoBehaviour
     public int averageDamage;
     public int attackDamage;
 
+    //possibly obsolete
     public string[] possibleTraits = new string[] { "Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
     public string trait1;
     public string trait2;
@@ -26,16 +29,12 @@ public class MonsterScript : MonoBehaviour
     public int averageSalary = 500;
     public int requestedSalary;
 
-    private GameObject resume;
-    private GameObject monsterInstance;
     private bool monsterGrabbed;
-    private GameObject resumeButton;
 
     private GameObject hero;
-    private HeroScript heroScript;
-    public bool heroInRoom = false;
+    //private HeroScript heroScript; //uneeded?
+    public bool heroInRoom = false; //note to self, have rooms update monsters on inhabitants at on the time pass function
 
-    //public List<GameObject> myList = null;
     public GameObject myRoom;
 
 	private IEnumerator attackRepeater;
@@ -71,23 +70,25 @@ public class MonsterScript : MonoBehaviour
         startingHealth = averageHealth + Random.Range(-5, 5);
         currentHealth = startingHealth;
 
+		damageText = this.gameObject.GetComponentInChildren<Text>();//fetches DmgText
+
         attackDamage = averageDamage + Random.Range(-3, 3);
         threatValue = possibleThreatValue[Random.Range(0, possibleThreatValue.Length)];
 
-        trait1 = possibleTraits[Random.Range(0, possibleTraits.Length)];
+		trait1 = possibleTraits[Random.Range(0, possibleTraits.Length)];//possibly obsolete
         trait2 = possibleTraits[Random.Range(0, possibleTraits.Length)];
         if (trait1 == trait2)
         {
             trait2 = null;
             trait1 = "Very " + trait1;
         }
+
         requestedSalary = averageSalary + Random.Range(-500, 500);
+        if (requestedSalary < 0)
+            requestedSalary = 100;
 
-        resume = GameObject.FindGameObjectWithTag("Resume");
         monsterGrabbed = true;
-        monsterInstance = this.gameObject;
-
-        resumeButton = GameObject.FindGameObjectWithTag("ResumeButton");
+        
         heroInRoom = false;
 		this.curThreat = threatValue;
 
@@ -98,19 +99,7 @@ public class MonsterScript : MonoBehaviour
 
     void Update()
     {
-        //if HeroInRoom is true, the Attack function will run
-		if (myRoom != null && myRoom.GetComponent<RoomScript>().heroInRoom)
-        {
-			//var coroutine = Attack(2f);
-			//StartCoroutine(coroutine);
-        }
 
-		//Calculation to modify attack damage based on stress and morale
-		curDamage = (int)((attackDamage * (1 - stress))/2) + (int)((attackDamage * (morale * 2))/2);
-		//Makes sure damage is at least 1
-		if (curDamage == 0) {
-			curDamage = 1;
-		}
     }
 
     void OnMouseOver()
@@ -120,33 +109,6 @@ public class MonsterScript : MonoBehaviour
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
         }
     }
-
-	/*
-	private IEnumerator Attack(float attackSpeed)
-	{
-		hasFought = true;
-		while (true)
-		{
-			if (myRoom.GetComponent<RoomScript>().heroInRoom) 
-			{
-				hero = myRoom.GetComponent<RoomScript>().heroesInRoom[0];
-			}
-			else 
-			{
-				StopAllCoroutines ();
-			}
-
-			yield return new WaitForSeconds(attackSpeed);
-
-			if (hero != null)
-			{
-				hero.GetComponent<HeroScript>().TakeDamage(curDamage);
-			}
-
-			StopAllCoroutines();
-		}
-	}
-	*/
 
 	public void Attack() {
 
@@ -162,11 +124,13 @@ public class MonsterScript : MonoBehaviour
 
 	}
 
-
     //next two functions are what the monster will call to take damage
     public void TakeDamage(int damageTaken)
     {
         currentHealth -= damageTaken;
+		damageText.text = damageTaken.ToString();
+		//play animation to make damageText appear and disappear
+
 
         if (currentHealth <= 0)
         {

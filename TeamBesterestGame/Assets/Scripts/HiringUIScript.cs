@@ -43,7 +43,6 @@ public class HiringUIScript : MonoBehaviour {
             resumeInstance.SetActive(true);
             resumeInstance.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
             resumeInstance.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
-            //resumeInstance.GetComponent<>
 
             monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(resume);
             monsterInstance.SetActive(false);
@@ -51,8 +50,6 @@ public class HiringUIScript : MonoBehaviour {
 
             // Resume Text
             resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.monsterName;
-            //resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.trait1;
-            //resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(3).GetComponent<Text>().text = monsterInstanceScript.trait2;
             resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.monsterType;
             resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(4).GetComponent<Text>().text = "Average Health " + monsterInstanceScript.averageHealth;
             resumeInstance.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Average Damage " + monsterInstanceScript.averageDamage;

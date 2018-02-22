@@ -5,21 +5,25 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-
+    //Monster Stuff
     [HideInInspector]
     public GameObject monsterInHand;
     public bool isHoldingObject;
     public GameObject[] possibleMonsters;
-    //public GameObject monster;
     [HideInInspector]
     public GameObject monsterInstance;
     public GameObject heldObject;
 
+    //Resume Stuff
     public GameObject resume;
-    private GameObject resumeButton;
+    public List<GameObject> currentResumes;
+    public List<GameObject> expiredResumes;
+    public int activeResume;
+    public GameObject applicationsButton;
+    public Transform resumeSpawn;
+    private bool resumeOpen = false;
 
-    //public List<GameObject> monsterCollection = new List<GameObject>();
-
+    //Money Stuff
 	public Text currencyText;
 	public int currentCurrency;
 
@@ -47,10 +51,9 @@ public class GameManager : MonoBehaviour
     public GameObject spawnRoom;
     public GameObject[] heroes;
 
-    private IEnumerator spawnHeroTimer;
-
     public GameObject[,] roomList;
 
+    //Time Unit stuff
 	private bool paused = true;
 	private int currentTime = 100;
 	public float timeSpeed = 3.0f;
@@ -60,11 +63,10 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        //var coroutine = SpawnHeroes(5f);
-        //StartCoroutine(coroutine);
         roomList = new GameObject[10, 10];
 		currentCurrency = 0;
 		UpdateCurrency ();
+        CreateNewResume(3);
     }
 
 	void Start() {
@@ -92,23 +94,7 @@ public class GameManager : MonoBehaviour
         }
         //placement end
 
-		/*
-        cycleSlider.value = cycleTimer;
-
-        if (cycleTimer >= 100)
-        {
-            doingSetup = true;
-            cycleImage.SetActive(true);
-            Invoke("NewCycle", 2);
-        }
-
-        else
-        {
-            //Time.timeScale = 1;
-            cycleTimer += Time.deltaTime;
-        }
-*/
-
+        /*
         if (interviewing)
         {
             interviewButtons.SetActive(true);
@@ -132,7 +118,7 @@ public class GameManager : MonoBehaviour
             {
                 resume.SetActive(true);
             }
-        }
+        }*/
     }
 
     public GameObject SpawnMonster(GameObject resume)
@@ -140,9 +126,6 @@ public class GameManager : MonoBehaviour
         GameObject newMonster = Instantiate(possibleMonsters[Random.Range(0, possibleMonsters.Length)], resume.transform.position, Quaternion.identity);
         newMonster.SetActive(false);
         return newMonster;
-
-        //monsterCollection.Add (newMonster); // not working
-        //Debug.Log ("monsterCollection Size = " + monsterCollection.Count);
     }
 
     public void PickUpObject(GameObject otherObject)
@@ -159,6 +142,34 @@ public class GameManager : MonoBehaviour
         isHoldingObject = true;
         heldObject = otherObject;
         otherObject.SetActive(true);
+    }
+
+    //might combine this with creating a new monster and file the resume under the monsters as a child object
+    public void CreateNewResume(int resumesToCreate)
+    {
+        for (int i = 0; i < resumesToCreate; i++)
+        {
+            currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
+            var thisResume = currentResumes[currentResumes.Count - 1];
+
+            monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(thisResume);
+            thisResume.GetComponent<ResumeScript>().monster = monsterInstance;
+            monsterInstance.SetActive(false);
+            var monsterInstanceScript = monsterInstance.GetComponent<MonsterScript>();
+
+            //resume pictures
+            thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
+            thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
+
+            // Resume Text
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.monsterName;
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.monsterType;
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(4).GetComponent<Text>().text = "Average Health " + monsterInstanceScript.averageHealth;
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Average Damage " + monsterInstanceScript.averageDamage;
+            thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
+
+            thisResume.SetActive(false);
+        }
     }
 
     public void NewCycle()
@@ -178,27 +189,60 @@ public class GameManager : MonoBehaviour
 
     public void HireButton()
     {
-        monsterInstance = GameObject.FindGameObjectWithTag("ResumeButton").GetComponent<HiringUIScript>().monsterInstance;
-        Destroy(GameObject.FindGameObjectWithTag("Resume")); //.SetActive(false);
-        GameObject.Find("Hiring Button").GetComponent<HiringUIScript>().resumeUp = false;
+        monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
+        currentResumes[activeResume].SetActive(false);
+        currentResumes.Remove(currentResumes[activeResume]);
+        
         PickUpObject(monsterInstance);
+        resumeOpen = !resumeOpen;
     }
 
-	/*
-    private IEnumerator SpawnHeroes(float spawnTime)
+    public void OpenApplications()
     {
-        while (true)
+        if (currentResumes.Count == 0)
+            return;
+        resumeOpen = !resumeOpen;
+        if (resumeOpen)
         {
-            yield return new WaitForSeconds(spawnTime);
-            Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+            currentResumes[0].SetActive(true);
+            activeResume = 0;
+        }
+        else
+            currentResumes[activeResume].SetActive(false);
+    }
+
+    public void NextApplication()
+    {
+        if (activeResume < currentResumes.Count - 1)
+        {
+            currentResumes[activeResume].SetActive(false);
+            activeResume++;
+            currentResumes[activeResume].SetActive(true);
+        }
+        else
+        {
+            currentResumes[activeResume].SetActive(false);
+            activeResume = 0;
+            currentResumes[activeResume].SetActive(true);
         }
     }
-    */
 
-	private void SpawnHeroes(float spawnTime)
-	{
-		//Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
-	}
+    public void PreviousApplication()
+    {
+        if (activeResume > 0)
+        {
+            currentResumes[activeResume].SetActive(false);
+            activeResume--;
+            currentResumes[activeResume].SetActive(true);
+        }
+        else
+        {
+            currentResumes[activeResume].SetActive(false);
+            activeResume = currentResumes.Count - 1;
+            currentResumes[activeResume].SetActive(true);
+        }
+        
+    }
 
 	public void TogglePlay() {
 		if (paused) {
@@ -211,7 +255,6 @@ public class GameManager : MonoBehaviour
 			pauseButtonText.text = "Play";
 		}
 		paused = !paused;
-		print (paused);
 	}
 
 	public IEnumerator Play() {
@@ -224,7 +267,6 @@ public class GameManager : MonoBehaviour
 	public void PassTime(int timeToPass) {
         for (int i = timeToPass; i > 0; i--)
         {
-            print("tick tock");
             currentTime--;
             timeUnitText.text = currentTime.ToString();
 
@@ -238,6 +280,24 @@ public class GameManager : MonoBehaviour
                 Hero.GetComponent<HeroScript>().CheckCurrentRoom();
             }
             Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+
+            foreach (GameObject resume in currentResumes)
+            {
+                resume.GetComponent<ResumeScript>().timeTillExpiration--;
+                if (resume.GetComponent<ResumeScript>().timeTillExpiration <= 0)
+                    expiredResumes.Add(resume);
+            }
+
+            foreach (GameObject expiredResume in expiredResumes)
+            {
+                currentResumes.Remove(expiredResume);
+                Destroy(expiredResume);
+            }
+
+            if (Random.Range(0, 9) > 4)
+                CreateNewResume(1);
+
+            expiredResumes.Clear();
         }
     }
 
@@ -265,6 +325,18 @@ public class GameManager : MonoBehaviour
 	public void UpdateCurrency()
 	{
 		currencyText.text = "Gold: " + currentCurrency;
+	}
+
+	public void Interview()//enables interview UI and hides other UI elements that are in the way
+	{
+		interviewing = true;
+		interviewButtons.SetActive(true);
+		interviewImage.SetActive(true);
+		interviewBackground.SetActive(true);
+		interviewExit.SetActive(true);
+		constructionButton.SetActive(false);
+		applicationsButton.SetActive(false);
+
 	}
 
 
