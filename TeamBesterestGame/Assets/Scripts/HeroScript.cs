@@ -178,7 +178,7 @@ public class HeroScript : MonoBehaviour
         heroHp -= damageTaken;
 		damageText.text = damageTaken.ToString();
 
-		Debug.Log (heroHp);
+		//Debug.Log (heroHp);
         if (heroHp <= 0)
         {
             Death();
@@ -193,8 +193,10 @@ public class HeroScript : MonoBehaviour
 			currentRoomScript.heroInRoom = false;
 		}
         //currentMonsterScript.heroInRoom = false;
-        Destroy(this.gameObject);
 
-		gameManager.GoldGainedOnDeath (currencyValue);
+
+        gameManager.GetComponent<GameManager>().IncreaseInfamyXP(threatValue);
+        gameManager.GoldGainedOnDeath(currencyValue);
+        Destroy(this.gameObject);
     }
 }

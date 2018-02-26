@@ -60,12 +60,21 @@ public class GameManager : MonoBehaviour
 	public Text timeUnitText;
 	public Text pauseButtonText;
 
+    //infamy
+    float infamyLevel = 1;
+    float infamyXP = 0;
+    int xpToNextInfamyLevel = 20;
+    int baseXP = 20;
+    public Text infamyLevelText;
+    public Text infamyXPText;
+
     // Use this for initialization
     void Awake()
     {
         roomList = new GameObject[10, 10];
-		currentCurrency = 0;
+		currentCurrency = 5000;
 		UpdateCurrency ();
+        UpdateInfamy();
         CreateNewResume(3);
     }
 
@@ -190,11 +199,21 @@ public class GameManager : MonoBehaviour
     public void HireButton()
     {
         monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
-        currentResumes[activeResume].SetActive(false);
-        currentResumes.Remove(currentResumes[activeResume]);
-        
-        PickUpObject(monsterInstance);
-        resumeOpen = !resumeOpen;
+
+
+        int salary = monsterInstance.GetComponent<MonsterScript>().requestedSalary;
+        float infamyRaise = monsterInstance.GetComponent<MonsterScript>().infamyGain;
+        if (currentCurrency >= salary)
+        {
+            CurrencyChanged(-salary); //this will have to change when the monster inheritance class is set up
+            IncreaseInfamyXP(monsterInstance.GetComponent<MonsterScript>().threatValue);
+
+            currentResumes[activeResume].SetActive(false);
+            currentResumes.Remove(currentResumes[activeResume]);
+
+            PickUpObject(monsterInstance);
+            resumeOpen = !resumeOpen;
+        }
     }
 
     public void OpenApplications()
@@ -322,7 +341,15 @@ public class GameManager : MonoBehaviour
 		UpdateCurrency();
 	}
 
-	public void UpdateCurrency()
+    //changes value of currency and updates UI
+    //Takes: integer (either positive or negative)
+    public void CurrencyChanged(int value)
+    {
+        currentCurrency += value;
+        UpdateCurrency();
+    }
+
+    public void UpdateCurrency()
 	{
 		currencyText.text = "Gold: " + currentCurrency;
 	}
@@ -371,4 +398,41 @@ public class GameManager : MonoBehaviour
 			}
 		}
 	}
+
+    //function to 'level up' player -> aka increase infamy level
+    public void IncreaseInfamyXP(int characterValue)
+    {
+        int high = 25, low = 10;
+        int divNum = Random.Range(low, high);
+        int gain = characterValue / divNum;
+        infamyXP += divNum;
+
+        if (infamyXP >= xpToNextInfamyLevel)
+        {
+            infamyLevel += 1;
+            infamyXP -= xpToNextInfamyLevel;
+            xpToNextInfamyLevel = InfamyXPNeeded();
+        }
+        else
+        {
+            int toNext = (int)xpToNextInfamyLevel - (int)infamyXP;
+            print("xp to next level " + toNext);
+        }
+        UpdateInfamy();
+    }
+
+    public int InfamyXPNeeded()
+    {
+        print("reached new level");
+        float exponent = 1.5f;
+        float xp = baseXP;
+        int xpNeeded = Mathf.FloorToInt(xp * (Mathf.Pow(infamyLevel, exponent)));
+        return xpNeeded;
+    }
+
+    public void UpdateInfamy()
+    {
+        infamyLevelText.text = "InfamyLevel: " + infamyLevel;
+		infamyXPText.text = "InfamyXP: " + infamyXP + "/" + xpToNextInfamyLevel;
+    }
 }
