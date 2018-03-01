@@ -6,6 +6,7 @@ public class CowardlyTrait : TraitBase {
 
 	//Empty function
 	public override void ApplyBase(MonsterScript monster) {
+		this.setName ("Cowardly");
 	}
 
 	//Gains morale if room threat is high, loses it if it is low

@@ -7,6 +7,7 @@ public class RecklessTrait : TraitBase {
 	//Adds 25% damage increase
 	public override void ApplyBase(MonsterScript monster) {
 		monster.attackDamage = (int)(monster.averageDamage * 1.25);
+		this.setName ("Reckless");
 	}
 
 	//Adds nerve to the monster at the start of the day

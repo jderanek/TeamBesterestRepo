@@ -7,6 +7,7 @@ public class WaryTrait : TraitBase {
 	//Removes threat from this monster
 	public override void ApplyBase(MonsterScript monster) {
 		monster.threatValue -= 1;
+		this.setName ("Wary");
 	}
 
 	//Reduces nerve and threat level

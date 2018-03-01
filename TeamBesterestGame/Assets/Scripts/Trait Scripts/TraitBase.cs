@@ -5,7 +5,18 @@ using UnityEngine;
 //Super class for all traits, contains base modifiers for morale and stress
 //As well as functions to apply trait effects to the monster
 public abstract class TraitBase {
-	//Base function to apply morale and stress modifiers
+
+	//Name variable to get from child classes
+	private string name;
+
+	public void setName(string newName) {
+		this.name = newName;
+	}
+	public string getName() {
+		return this.name;
+	}
+
+	//Abstract function to apply base effects
 	public abstract void ApplyBase(MonsterScript monster);
 
 	//Abstract function to apply effects during end of work 'day'

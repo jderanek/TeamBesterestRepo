@@ -7,6 +7,7 @@ public class GrossTrait : TraitBase {
 	//Increases infamy gain
 	public override void ApplyBase(MonsterScript monster) {
 		monster.infamyGain += 1;
+		this.setName ("Gross");
 		//No idea what this should be either
 	}
 

@@ -7,6 +7,7 @@ public class WorkaholicTrait : TraitBase {
 	//Reduces stress gain by 1
 	public override void ApplyBase(MonsterScript monster) {
 		monster.stressGain -= .01f;
+		this.setName ("Workaholic");
 	}
 
 	//Empty function

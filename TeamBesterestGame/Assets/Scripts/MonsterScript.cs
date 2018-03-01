@@ -58,6 +58,11 @@ public class MonsterScript : MonoBehaviour
 
 	//Monster personality, of type TraitBase
 	public TraitBase personality;
+	//String name of personality, for debugging
+	public string traitName;
+
+	//List of all personalities
+	public TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
 
 	//Boolean to keep track of whether the monster has fought this week
 	public bool hasFought = false;
@@ -92,9 +97,9 @@ public class MonsterScript : MonoBehaviour
         heroInRoom = false;
 		this.curThreat = threatValue;
 
-		if (this.personality != null) {
-			this.personality.ApplyBase (this);
-		}
+		this.personality = allTraits [Random.Range (0, allTraits.Length)];
+		this.personality.ApplyBase (this);
+		this.traitName = this.personality.getName ();
     }
 
     void Update()
@@ -111,6 +116,10 @@ public class MonsterScript : MonoBehaviour
     }
 
 	public void Attack() {
+
+		//Updates this monsters attack damage
+		this.curDamage = (int) Mathf.Clamp((int)(this.attackDamage * (((1-stress) + morale/2))), 1, 100);
+		Debug.Log (curDamage);
 
 		if (myRoom.GetComponent<RoomScript>().heroInRoom) 
 		{

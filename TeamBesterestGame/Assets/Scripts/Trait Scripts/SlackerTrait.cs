@@ -8,6 +8,7 @@ public class SlackerTrait : TraitBase {
 	public override void ApplyBase(MonsterScript monster) {
 		monster.stressGain += .02f;
 		monster.vacationStressLoss = .2f;
+		this.setName ("Slacker");
 	}
 
 	//Empty function

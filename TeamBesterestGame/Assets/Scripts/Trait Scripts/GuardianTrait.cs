@@ -7,6 +7,7 @@ public class GuardianTrait : TraitBase {
 	//Adds threat to this monster
 	public override void ApplyBase(MonsterScript monster) {
 		monster.threatValue += 1;
+		this.setName ("Guardian");
 	}
 
 

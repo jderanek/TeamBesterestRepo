@@ -6,6 +6,7 @@ public class FlirtyTrait : TraitBase {
 
 	//Empty Function
 	public override void ApplyBase(MonsterScript monster) {
+		this.setName ("Flirty");
 	}
 
 	//Empty function
