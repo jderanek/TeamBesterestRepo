@@ -61,6 +61,8 @@ public class MonsterScript : MonoBehaviour
 	//String name of personality, for debugging
 	public string traitName;
 
+	public int workEthic;//variable used to fake a workethic value for interviewing
+
 	//List of all personalities
 	public TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
 
@@ -100,6 +102,8 @@ public class MonsterScript : MonoBehaviour
 		this.personality = allTraits [Random.Range (0, allTraits.Length)];
 		this.personality.ApplyBase (this);
 		this.traitName = this.personality.getName ();
+
+		this.workEthic = Random.Range (-1, 1);// see workEthic variable for explanation of why i did this nonsense
     }
 
     void Update()
