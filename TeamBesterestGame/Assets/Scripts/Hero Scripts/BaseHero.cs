@@ -16,7 +16,7 @@ public abstract class BaseHero {
 	private int threat;
 
 	//Function to assign values to script from child class
-	private void AssignStats(int hp, int dmg, int val, int arm, int cap, int thr) {
+	public void AssignStats(int hp, int dmg, int val, int arm, int cap, int thr) {
 		this.maxHealth = hp;
 		this.curHealth = hp;
 		this.damage = dmg;

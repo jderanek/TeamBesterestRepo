@@ -54,6 +54,9 @@
      <Compile Include="Assets\Scripts\DoorScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\BaseHero.cs" />
+     <Compile Include="Assets\Scripts\Hero Scripts\MageHero.cs" />
+     <Compile Include="Assets\Scripts\Hero Scripts\RogueHero.cs" />
+     <Compile Include="Assets\Scripts\Hero Scripts\WarriorHero.cs" />
      <Compile Include="Assets\Scripts\HeroScript.cs" />
      <Compile Include="Assets\Scripts\HiringButton.cs" />
      <Compile Include="Assets\Scripts\HiringUIScript.cs" />
