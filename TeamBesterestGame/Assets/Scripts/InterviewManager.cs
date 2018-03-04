@@ -111,6 +111,7 @@ public class InterviewManager : MonoBehaviour {
 		{
 			responseText.text = "I consider myself more of a lover than a fighter, and you know with me the Bone-Zone is always open.";
 		}
+		gameManager.GetComponent<GameManager>().PassTime(1);
     }
 
 	//work ethic question
@@ -130,6 +131,7 @@ public class InterviewManager : MonoBehaviour {
 		{
 			responseText.text = "I can't live without my work. So please hire me...";
 		}
+		gameManager.GetComponent<GameManager>().PassTime(1);
     }
 
 	//Stat question
@@ -151,6 +153,7 @@ public class InterviewManager : MonoBehaviour {
 			{
 				responseText.text = "Uh... I would prefer not risking a fracture...";
 			}
+
 		}
 		else if (q31 == 1)//attack responses
 		{
@@ -198,7 +201,7 @@ public class InterviewManager : MonoBehaviour {
 			}
 		}
 
-		//responseText.text = "I hate fire! Fire can do some serious damage to me!";
+		gameManager.GetComponent<GameManager>().PassTime(1);
 		UpdateQuestions();
     }
 
@@ -267,6 +270,7 @@ public class InterviewManager : MonoBehaviour {
 				responseText.text = "People don't really notice me all that much. In fact, I'm surprised you notice me right now.";
 			}
 		}
+		gameManager.GetComponent<GameManager>().PassTime(1);
 		UpdateQuestions();
 	}
 
@@ -276,6 +280,7 @@ public class InterviewManager : MonoBehaviour {
 		interviewQuestions.SetActive(false);
 		interviewResponse.SetActive(true);
 		responseText.text = "Archetype question: TBD";
+		gameManager.GetComponent<GameManager>().PassTime(1);
 	}
 
 	//replaces text on the stat questions
