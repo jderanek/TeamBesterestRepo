@@ -16,6 +16,7 @@ TagManager:
   - Interview Button
   - Interview Questions
   - DoorButton
+  - Aggregate Stress
   layers:
   - Default
   - TransparentFX

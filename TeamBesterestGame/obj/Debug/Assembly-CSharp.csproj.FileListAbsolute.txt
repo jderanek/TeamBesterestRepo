@@ -30,3 +30,35 @@ C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unit
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\obj\Debug\Assembly-CSharp.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Analytics.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.HoloLens.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.TestRunner.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Timeline.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\ExCSS.Unity.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.TestRunner.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\nunit.framework.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Timeline.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Analytics.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.HoloLens.xml
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\obj\Debug\Assembly-CSharp.dll
+C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\obj\Debug\Assembly-CSharp.pdb
