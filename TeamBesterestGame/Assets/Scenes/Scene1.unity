@@ -2114,7 +2114,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: How much milk do you drink?
+  m_Text: Archetype Question TBD
 --- !u!222 &516112912
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2629,7 +2629,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 16
 --- !u!222 &968657729
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2698,11 +2698,17 @@ MonoBehaviour:
   spawnRoom: {fileID: 1893377716}
   heroes:
   - {fileID: 1156476052356406, guid: ad8df0eea4c58104b8c2d0f12c834e24, type: 2}
+  timePerDay: 16
   timeSpeed: 3
   timeUnitText: {fileID: 968657728}
   pauseButtonText: {fileID: 1264194216}
   infamyLevelText: {fileID: 1261450294}
   infamyXPText: {fileID: 1321988804}
+  baseHeroSpawnRate: 0.45
+  spawnRateIncrement: 0.1
+  peakHoursSpawnRateBonus: 0.25
+  peakHourStart: 0.5
+  peakHourEnd: 1
 --- !u!4 &1031783965
 Transform:
   m_ObjectHideFlags: 0
@@ -2732,8 +2738,13 @@ MonoBehaviour:
   interviewQuestions: {fileID: 1315549498}
   questionOne: {fileID: 447131214}
   questionTwo: {fileID: 1207427501}
-  questionThree: {fileID: 1670627658}
   interviewResponse: {fileID: 369298016}
+  q31: 0
+  q32: 0
+  q41: 0
+  q42: 0
+  q3Text: {fileID: 279320170}
+  q4Text: {fileID: 1060937998}
   responseText: {fileID: 288586099}
 --- !u!1 &1060937996
 GameObject:

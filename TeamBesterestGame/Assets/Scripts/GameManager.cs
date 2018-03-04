@@ -38,11 +38,13 @@ public class GameManager : MonoBehaviour
 	//Day counter to increase week
 	public int days = 0;
 
+	//construction stuff
 	public bool inConstructionMode;
 
 	public GameObject constructionButton;
 	public GameObject roomButton;
 
+	//interviewing stuff
 	public GameObject interviewButtons;
 	public GameObject interviewImage;
 	public GameObject interviewBackground;
@@ -413,7 +415,7 @@ public class GameManager : MonoBehaviour
 		interviewExit.SetActive(true);
 		constructionButton.SetActive(false);
 		applicationsButton.SetActive(false);
-
+		this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
 	}
 
 
