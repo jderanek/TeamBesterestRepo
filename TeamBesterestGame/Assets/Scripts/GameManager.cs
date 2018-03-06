@@ -217,25 +217,27 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public void HireButton()
-	{
-		monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
+    public void HireButton()
+    {
+        monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
 
 
-		int salary = monsterInstance.GetComponent<MonsterScript>().requestedSalary;
-		float infamyRaise = monsterInstance.GetComponent<MonsterScript>().infamyGain;
-		if (currentCurrency >= salary)
-		{
-			CurrencyChanged(-salary); //this will have to change when the monster inheritance class is set up
-			IncreaseInfamyXP(monsterInstance.GetComponent<MonsterScript>().threatValue);
+        int salary = monsterInstance.GetComponent<MonsterScript>().requestedSalary;
+        float infamyRaise = monsterInstance.GetComponent<MonsterScript>().infamyGain;
+        if (currentCurrency >= salary)
+        {
+            CurrencyChanged(-salary); //this will have to change when the monster inheritance class is set up
+            IncreaseInfamyXP(monsterInstance.GetComponent<MonsterScript>().threatValue);
 
-			currentResumes[activeResume].SetActive(false);
-			currentResumes.Remove(currentResumes[activeResume]);
+            currentResumes[activeResume].SetActive(false);
+            currentResumes.Remove(currentResumes[activeResume]);
 
-			PickUpObject(monsterInstance);
-			resumeOpen = !resumeOpen;
-		}
-	}
+            PickUpObject(monsterInstance);
+            resumeOpen = !resumeOpen;
+        }
+
+        UpdateStressMeter();
+    }
 
 	public void OpenApplications()
 	{
@@ -373,6 +375,7 @@ public class GameManager : MonoBehaviour
 			if (Random.Range(0, 9) > 4)
 				CreateNewResume(1);
 
+            UpdateStressMeter();
 		}
 	}
 
