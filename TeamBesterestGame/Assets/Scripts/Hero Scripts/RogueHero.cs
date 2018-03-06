@@ -30,4 +30,3 @@ public class RogueHero : BaseHero {
 			highThreat.TakeDamage(this.getDamage());
 	}
 }
-}

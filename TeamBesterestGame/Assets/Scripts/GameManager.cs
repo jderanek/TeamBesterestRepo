@@ -24,9 +24,7 @@ public class GameManager : MonoBehaviour
 	private bool resumeOpen = false;
 
 	//Aggregate Stress Stuff
-	public GameObject aggregateStress;
-	public GameObject[] allMonstersStress;
-	public float overallStressValue;
+    public Image stressImage;
 
 	//Money Stuff
 	public Text currencyText;
@@ -97,7 +95,8 @@ public class GameManager : MonoBehaviour
 		modifiedHeroSpawnRate = baseHeroSpawnRate;
 
 		currentTime = timePerDay;
-	}
+        stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
+    }
 
 	void Start() {
 		var rooms = GameObject.FindGameObjectsWithTag("Room");
@@ -149,48 +148,6 @@ public class GameManager : MonoBehaviour
                 resume.SetActive(true);
             }
         }*/
-
-		//aggregate stress calculating
-		aggregateStress = GameObject.FindGameObjectWithTag("Aggregate Stress");
-		Image stressImage = aggregateStress.GetComponent<Image>();
-		allMonstersStress = GameObject.FindGameObjectsWithTag ("Monster");
-
-		foreach (GameObject monster in allMonstersStress) {
-			MonsterScript m = monster.GetComponent<MonsterScript>();
-			overallStressValue += m.stress;
-		}
-
-		if (overallStressValue <= 10f) {
-			stressImage.color = new Color (135, 255, 0, 255);
-		}
-		if (overallStressValue < 20f && overallStressValue > 10f) {
-			stressImage.color = new Color (135, 230, 0, 255);
-		}
-		if (overallStressValue < 30f && overallStressValue > 20f) {
-			stressImage.color = new Color (135, 205, 0, 255);
-		}
-		if (overallStressValue < 40f && overallStressValue > 30f) {
-			stressImage.color = new Color (135, 190, 0, 255);
-		}
-		if (overallStressValue < 50f && overallStressValue > 40f) {
-			stressImage.color = new Color (135, 165, 0, 255);
-		}
-		if (overallStressValue < 60f && overallStressValue > 50f) {
-			stressImage.color = new Color (135, 140, 0, 255);
-		}
-		if (overallStressValue < 70f && overallStressValue > 60f) {
-			stressImage.color = new Color (135, 115, 0, 255);
-		}
-		if (overallStressValue < 80f && overallStressValue > 70f) {
-			stressImage.color = new Color (135, 90, 0, 255);
-		}
-		if (overallStressValue < 90f && overallStressValue > 80f) {
-			stressImage.color = new Color (135, 65, 0, 255);
-		}
-		if (overallStressValue >= 90f) {
-			stressImage.color = new Color (135, 40, 0, 255);
-		}
-
 	}
 
 	public GameObject SpawnMonster(GameObject resume)
@@ -534,4 +491,62 @@ public class GameManager : MonoBehaviour
 		infamyLevelText.text = "InfamyLevel: " + infamyLevel;
 		infamyXPText.text = "InfamyXP: " + infamyXP + "/" + xpToNextInfamyLevel;
 	}
+
+    //aggregate stress calculating
+    public void UpdateStressMeter()
+    {
+        float overallStressValue = 0;
+        int monsterCount = 0;
+
+        foreach (GameObject monster in GameObject.FindGameObjectsWithTag("Monster"))
+        {
+            MonsterScript m = monster.GetComponent<MonsterScript>();
+            overallStressValue += m.stress;
+            monsterCount++;
+        }
+
+        overallStressValue = overallStressValue / monsterCount;
+
+        if (overallStressValue <= 10f)
+        {
+            stressImage.color = new Color(135, 255, 0, 255);
+        }
+        if (overallStressValue < 20f && overallStressValue > 10f)
+        {
+            stressImage.color = new Color(135, 230, 0, 255);
+        }
+        if (overallStressValue < 30f && overallStressValue > 20f)
+        {
+            stressImage.color = new Color(135, 205, 0, 255);
+        }
+        if (overallStressValue < 40f && overallStressValue > 30f)
+        {
+            stressImage.color = new Color(135, 190, 0, 255);
+        }
+        if (overallStressValue < 50f && overallStressValue > 40f)
+        {
+            stressImage.color = new Color(135, 165, 0, 255);
+        }
+        if (overallStressValue < 60f && overallStressValue > 50f)
+        {
+            stressImage.color = new Color(135, 140, 0, 255);
+        }
+        if (overallStressValue < 70f && overallStressValue > 60f)
+        {
+            stressImage.color = new Color(135, 115, 0, 255);
+        }
+        if (overallStressValue < 80f && overallStressValue > 70f)
+        {
+            stressImage.color = new Color(135, 90, 0, 255);
+        }
+        if (overallStressValue < 90f && overallStressValue > 80f)
+        {
+            stressImage.color = new Color(135, 65, 0, 255);
+        }
+        if (overallStressValue >= 90f)
+        {
+            stressImage.color = new Color(135, 40, 0, 255);
+        }
+
+    }
 }
