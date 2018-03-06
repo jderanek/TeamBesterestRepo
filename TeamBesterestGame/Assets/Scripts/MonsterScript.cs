@@ -37,7 +37,7 @@ public class MonsterScript : MonoBehaviour
 
     public GameObject myRoom;
 
-	private IEnumerator attackRepeater;
+	//private IEnumerator attackRepeater;
 
     //Stress, Morale, Nerve and Size
     //Temporarily public for test purposes
@@ -65,6 +65,8 @@ public class MonsterScript : MonoBehaviour
 
 	//List of all personalities
 	public TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
+
+    public bool inCombat;
 
 	//Boolean to keep track of whether the monster has fought this week
 	public bool hasFought = false;
@@ -113,7 +115,7 @@ public class MonsterScript : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !inCombat)
         {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
         }

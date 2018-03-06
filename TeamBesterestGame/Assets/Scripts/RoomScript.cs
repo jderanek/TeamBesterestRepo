@@ -248,4 +248,20 @@ public class RoomScript : MonoBehaviour
 				}
 			});
 	}
+
+    //make this more efficent later by only calling it on necesary rooms rather than all
+    public void RoomMemeberHandler()
+    {
+        foreach (GameObject monster in roomMembers)
+        {
+            if (heroesInRoom.Count != 0)
+            {
+                monster.GetComponent<MonsterScript>().inCombat = true;
+            }
+            else
+            {
+                monster.GetComponent<MonsterScript>().inCombat = false;
+            }
+        }
+    }
 }

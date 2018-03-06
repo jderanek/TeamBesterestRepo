@@ -312,18 +312,24 @@ public class GameManager : MonoBehaviour
 			currentTime--;
 			timeUnitText.text = currentTime.ToString();
 
-			foreach (GameObject Monster in GameObject.FindGameObjectsWithTag("Monster"))
+			foreach (GameObject monster in GameObject.FindGameObjectsWithTag("Monster"))
 			{
-				Monster.GetComponent<MonsterScript>().Attack();
-			}
-			foreach (GameObject Hero in GameObject.FindGameObjectsWithTag("Hero"))
-			{
-				Hero.GetComponent<HeroScript>().Attack();
-				Hero.GetComponent<HeroScript>().CheckCurrentRoom();
+				monster.GetComponent<MonsterScript>().Attack();
 			}
 
-			//This part modifies spawn rates during peak hours
-			float currentRelativeTime = 1f - ((float)currentTime / timePerDay);
+			foreach (GameObject hero in GameObject.FindGameObjectsWithTag("Hero"))
+			{
+				hero.GetComponent<HeroScript>().Attack();
+				hero.GetComponent<HeroScript>().CheckCurrentRoom();
+			}
+
+            foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
+            {
+                room.GetComponent<RoomScript>().RoomMemeberHandler();
+            }
+
+            //This part modifies spawn rates during peak hours
+            float currentRelativeTime = 1f - ((float)currentTime / timePerDay);
 			if ( (currentRelativeTime >= peakHourStart) && (currentRelativeTime <= peakHourEnd) )
 			{
 				peakHours = true;
@@ -509,8 +515,6 @@ public class GameManager : MonoBehaviour
         }
 
         overallStressValue = overallStressValue / monsterCount;
-        print(overallStressValue);
-        stressImage.color = new Color(135, 90, 0, 255);
 
         if (overallStressValue <= 10f)
         {
