@@ -509,46 +509,63 @@ public class GameManager : MonoBehaviour
         }
 
         overallStressValue = overallStressValue / monsterCount;
+        print(overallStressValue);
+        stressImage.color = new Color(135, 90, 0, 255);
 
         if (overallStressValue <= 10f)
         {
-            stressImage.color = new Color(135, 255, 0, 255);
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 255, 0, 255);
         }
-        if (overallStressValue < 20f && overallStressValue > 10f)
+        else if (overallStressValue < 20f && overallStressValue > 10f)
         {
-            stressImage.color = new Color(135, 230, 0, 255);
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 230, 0, 255);
         }
-        if (overallStressValue < 30f && overallStressValue > 20f)
+        else if (overallStressValue < 30f && overallStressValue > 20f)
         {
-            stressImage.color = new Color(135, 205, 0, 255);
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 205, 0, 255);
         }
-        if (overallStressValue < 40f && overallStressValue > 30f)
+        else if (overallStressValue < 40f && overallStressValue > 30f)
         {
-            stressImage.color = new Color(135, 190, 0, 255);
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 190, 0, 255);
         }
-        if (overallStressValue < 50f && overallStressValue > 40f)
+        else if (overallStressValue < 50f && overallStressValue > 40f)
         {
-            stressImage.color = new Color(135, 165, 0, 255);
+            stressImage.color = Color.yellow;
+            //stressImage.color = new Color(135, 165, 0, 255);
         }
-        if (overallStressValue < 60f && overallStressValue > 50f)
+        else if (overallStressValue < 60f && overallStressValue > 50f)
         {
-            stressImage.color = new Color(135, 140, 0, 255);
+            stressImage.color = Color.yellow;
+            //stressImage.color = new Color(135, 140, 0, 255);
         }
-        if (overallStressValue < 70f && overallStressValue > 60f)
+        else if (overallStressValue < 70f && overallStressValue > 60f)
         {
-            stressImage.color = new Color(135, 115, 0, 255);
+            stressImage.color = Color.yellow;
+            //stressImage.color = new Color(135, 115, 0, 255);
         }
-        if (overallStressValue < 80f && overallStressValue > 70f)
+        else if (overallStressValue < 80f && overallStressValue > 70f)
         {
-            stressImage.color = new Color(135, 90, 0, 255);
+            stressImage.color = Color.red;
+            //stressImage.color = new Color(135, 90, 0, 255);
         }
-        if (overallStressValue < 90f && overallStressValue > 80f)
+        else if (overallStressValue < 90f && overallStressValue > 80f)
         {
-            stressImage.color = new Color(135, 65, 0, 255);
+            stressImage.color = Color.red;
+            //stressImage.color = new Color(135, 65, 0, 255);
         }
-        if (overallStressValue >= 90f)
+        else if (overallStressValue >= 90f)
         {
-            stressImage.color = new Color(135, 40, 0, 255);
+            stressImage.color = Color.red;
+            //stressImage.color = new Color(135, 40, 0, 255);
+        }
+        else
+        {
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 255, 0, 255);
         }
 
     }

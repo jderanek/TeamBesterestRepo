@@ -39,10 +39,10 @@ public class MonsterScript : MonoBehaviour
 
 	private IEnumerator attackRepeater;
 
-	//Stress, Morale, Nerve and Size
-	//Temporarily public for test purposes
-	public float stress = 0;
-	public float morale = .5f;
+    //Stress, Morale, Nerve and Size
+    //Temporarily public for test purposes
+    public float stress;
+	public float morale;
 	public float baseNerve = .5f;
 	public float curNerve = .5f;
 	public int size;
@@ -71,7 +71,7 @@ public class MonsterScript : MonoBehaviour
 
     void Awake()
     {
-		stress = 0;
+		stress = 25.0f;
 		morale = .5f;
         monsterName = possibleNames[Random.Range(0, possibleNames.Length)];
         startingHealth = averageHealth + Random.Range(-5, 5);
@@ -149,6 +149,8 @@ public class MonsterScript : MonoBehaviour
         {
             Death();
         }
+
+        //stress += 5.0f;
     }
 
     private void Death()
