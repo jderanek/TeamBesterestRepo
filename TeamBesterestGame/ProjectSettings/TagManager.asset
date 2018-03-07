@@ -17,6 +17,7 @@ TagManager:
   - Interview Questions
   - DoorButton
   - Aggregate Stress
+  - Spawn Room
   layers:
   - Default
   - TransparentFX

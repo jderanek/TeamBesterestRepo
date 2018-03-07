@@ -34,13 +34,35 @@ public class RoomScript : MonoBehaviour
 	public GameObject eastButton;
 	public GameObject westButton;
 
-
 	public int roomThreat;
+
+    public int goldCapacity = 300;
+    public int currentGold;
+    public GameObject coin1;
+    public GameObject coin2;
+    public GameObject coin3;
+    public Sprite emptyCoin;
+    public Sprite filledCoin;
 
     // Use this for initialization
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        if (currentGold == 100)
+        {
+            coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+        }
+        if (currentGold == 200)
+        {
+            coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+            coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
+        }
+        if (currentGold == 300)
+        {
+            coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+            coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
+            coin3.GetComponent<SpriteRenderer>().sprite = filledCoin;
+        }
     }
 
     // Update is called once per frame

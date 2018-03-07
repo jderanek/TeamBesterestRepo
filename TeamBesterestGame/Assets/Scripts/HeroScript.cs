@@ -40,6 +40,10 @@ public class HeroScript : MonoBehaviour
 
 	private GameManager gameManager;
 
+    public int carryCapacity = 100;
+    public bool packFull;
+    public int currentGold;
+
     // Use this for initialization
     void Awake()
     {
@@ -150,7 +154,17 @@ public class HeroScript : MonoBehaviour
 	public void CheckCurrentRoom() {
             currentRoomScript.SortNeighbors();
 
-        if (!currentRoomScript.monsterInRoom && currentRoomScript.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
+        if (!currentRoomScript.monsterInRoom && currentRoomScript.currentGold > 0) //If there isn't a monster in the room and the room has gold
+        {
+            currentGold += currentRoomScript.currentGold;
+            if (currentGold > carryCapacity)
+            {
+                currentGold = carryCapacity;
+                packFull = true;
+            }
+            currentRoomScript.currentGold -= currentGold;
+        }
+        else if (!currentRoomScript.monsterInRoom && currentRoomScript.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
         {
             currentRoom = currentRoomScript.neighborRooms[0];
 

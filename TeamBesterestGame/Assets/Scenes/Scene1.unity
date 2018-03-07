@@ -590,12 +590,12 @@ Prefab:
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: myX
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: myY
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1136515444940930, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
       propertyPath: m_IsActive
@@ -628,6 +628,25 @@ Prefab:
         type: 2}
       propertyPath: northDoor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: currentGold
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: eastDoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997651451872980, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southDoor
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -1502,7 +1521,7 @@ Prefab:
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: myY
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114676208393432986, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
@@ -1513,6 +1532,25 @@ Prefab:
         type: 2}
       propertyPath: southDoor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: currentGold
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northDoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790751065369700, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: myX
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -2517,8 +2555,8 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Gold: ????'
 --- !u!1001 &959393532
@@ -2528,11 +2566,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: neighborRooms.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4807169869807150, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2565,14 +2598,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1790751065369700, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1997651451872980, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northRoom
+      value: 
+      objectReference: {fileID: 1952476467}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: southRoom
@@ -2580,47 +2610,13 @@ Prefab:
       objectReference: {fileID: 1893377716}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
-      propertyPath: northRoom
-      value: 
-      objectReference: {fileID: 1952476467}
-    - target: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: myX
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: myY
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114096946741068544, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: doorClosed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114676208393432986, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: doorClosed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: neighborRooms.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: neighborRooms.Array.data[1]
-      value: 
-      objectReference: {fileID: 1952476467}
-    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: northDoor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
-        type: 2}
-      propertyPath: southDoor
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -2747,11 +2743,10 @@ MonoBehaviour:
   activeResume: 0
   applicationsButton: {fileID: 755543640}
   resumeSpawn: {fileID: 1218565707}
-  aggregateStress: {fileID: 305197056}
-  allMonstersStress: []
-  overallStressValue: 0
+  stressImage: {fileID: 0}
   currencyText: {fileID: 935864226}
   currentCurrency: 0
+  maximumCurrency: 0
   doingSetup: 0
   interviewing: 0
   cycleSlider: {fileID: 431538762}
@@ -3691,7 +3686,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.6373425
+  orthographic size: 3.5020866
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3714,7 +3709,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1345409348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.3, y: 3.17, z: -10}
+  m_LocalPosition: {x: 0, y: 1.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3847,12 +3842,12 @@ Prefab:
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: myX
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: myY
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114676208393432986, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
@@ -3862,6 +3857,20 @@ Prefab:
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: southDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: currentGold
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northDoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790751065369700, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4395,13 +4404,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
       propertyPath: m_TagString
-      value: Room
+      value: Spawn Room
       objectReference: {fileID: 0}
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: northRoom
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 959393533}
     - target: {fileID: 114096946741068544, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: doorClosed
@@ -4411,6 +4420,38 @@ Prefab:
         type: 2}
       propertyPath: northDoor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: goldCapacity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: currentGold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1561782456217856, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925483655582218, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317751065651308, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: southDoor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: myX
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -4565,7 +4606,7 @@ Prefab:
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: myY
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114546644048993580, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
@@ -4596,6 +4637,16 @@ Prefab:
         type: 2}
       propertyPath: northDoor
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: currentGold
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: myX
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}

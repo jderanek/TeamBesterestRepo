@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 	//Money Stuff
 	public Text currencyText;
 	public int currentCurrency;
+    public int maximumCurrency;
 
 	public bool doingSetup;
 	public bool interviewing = false;
@@ -87,7 +88,7 @@ public class GameManager : MonoBehaviour
 	void Awake()
 	{
 		roomList = new GameObject[10, 10];
-		currentCurrency = 5000;
+		currentCurrency = 2500;
 		UpdateCurrency ();
 		UpdateInfamy();
 		CreateNewResume(3);
@@ -96,6 +97,12 @@ public class GameManager : MonoBehaviour
 
 		currentTime = timePerDay;
         stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
+        foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
+        {
+            maximumCurrency += room.GetComponent<RoomScript>().goldCapacity;
+        }
+
+        currencyText.text = "Gold: " + currentCurrency + " / " + maximumCurrency;
     }
 
 	void Start() {
