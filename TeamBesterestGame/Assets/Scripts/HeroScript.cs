@@ -177,7 +177,7 @@ public class HeroScript : MonoBehaviour
             currentRoomScript = currentRoom.GetComponent<RoomScript>();
             currentRoomScript.heroInRoom = true;
             currentRoomScript.heroesInRoom.Add(this.gameObject);
-            currentRoomScript.SortHeroes();
+            //currentRoomScript.SortHeroes(); //somethings wrong here
 
             transform.position = currentRoom.transform.position;
         }

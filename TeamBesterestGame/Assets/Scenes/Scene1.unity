@@ -1292,6 +1292,62 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 288586097}
+--- !u!1001 &293780541
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.174
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_Name
+      value: Gary
+      objectReference: {fileID: 0}
+    - target: {fileID: 114792822318123870, guid: 2bda6a842a515a543a527f9bcc4514c2,
+        type: 2}
+      propertyPath: monsterName
+      value: Gary
+      objectReference: {fileID: 0}
+    - target: {fileID: 114792822318123870, guid: 2bda6a842a515a543a527f9bcc4514c2,
+        type: 2}
+      propertyPath: myRoom
+      value: 
+      objectReference: {fileID: 959393533}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &297561215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1705,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &326449874 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 293780541}
 --- !u!1 &343688352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,6 +3552,67 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &835105987
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.172
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887520611836752, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_Name
+      value: Larry
+      objectReference: {fileID: 0}
+    - target: {fileID: 114792822318123870, guid: 2bda6a842a515a543a527f9bcc4514c2,
+        type: 2}
+      propertyPath: monsterName
+      value: Larry
+      objectReference: {fileID: 0}
+    - target: {fileID: 114792822318123870, guid: 2bda6a842a515a543a527f9bcc4514c2,
+        type: 2}
+      propertyPath: myRoom
+      value: 
+      objectReference: {fileID: 959393533}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &891989949 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2,
+    type: 2}
+  m_PrefabInternal: {fileID: 835105987}
 --- !u!1 &935864223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,7 +3683,7 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Gold: ????'
@@ -3675,6 +3797,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
+      propertyPath: roomMembers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
       propertyPath: neighborRooms.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -3767,6 +3894,16 @@ Prefab:
       propertyPath: southDoor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: roomMembers.Array.data[0]
+      value: 
+      objectReference: {fileID: 326449874}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: roomMembers.Array.data[1]
+      value: 
+      objectReference: {fileID: 891989949}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
@@ -3895,6 +4032,7 @@ MonoBehaviour:
   stressImage: {fileID: 0}
   currencyText: {fileID: 935864226}
   currentCurrency: 0
+  maximumCurrency: 1500
   doingSetup: 0
   interviewing: 0
   cycleSlider: {fileID: 431538762}
@@ -6223,7 +6361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c00b8083336bc44b8a8c4cbd1d3f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
   neighborRooms: []
   roomMembers: []
   myX: 0

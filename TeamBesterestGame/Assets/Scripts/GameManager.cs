@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
 	public Text infamyXPText;
 
 	//spawn stuff
-	public float baseHeroSpawnRate = 0.45f;
+	public float baseHeroSpawnRate = 0.25f;
 	public float spawnRateIncrement = 0.1f;
 	private float modifiedHeroSpawnRate;
 	public float peakHoursSpawnRateBonus = 0.25f; //how much is added on during peak hours
