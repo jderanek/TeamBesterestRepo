@@ -288,7 +288,7 @@ public class RoomScript : MonoBehaviour
                 currentGold = 100;
                 gameManager.UpdateCurrency();
             }
-            else if (currentGold < 100)
+            else if (currentGold < 100 && gameManager.currentCurrency >= 100)
             {
                 gameManager.currentCurrency -= 100;
                 currentGold = 100;
@@ -310,7 +310,7 @@ public class RoomScript : MonoBehaviour
                 currentGold = 200;
                 gameManager.UpdateCurrency();
             }
-            else if (currentGold < 200)
+            else if (currentGold < 200 && gameManager.currentCurrency >= (200 - currentGold))
             {
                 gameManager.currentCurrency -= 200 - currentGold;
                 currentGold = 200;
@@ -325,7 +325,7 @@ public class RoomScript : MonoBehaviour
                 currentGold = 200;
                 gameManager.UpdateCurrency();
             }
-            else if (currentGold < 300)
+            else if (currentGold < 300 && gameManager.currentCurrency >= (300 - currentGold))
             {
                 gameManager.currentCurrency -= 300 - currentGold;
                 currentGold = 300;

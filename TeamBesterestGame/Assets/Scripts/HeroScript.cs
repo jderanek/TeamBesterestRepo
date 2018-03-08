@@ -205,7 +205,10 @@ public class HeroScript : MonoBehaviour
 		}
 
         gameManager.GetComponent<GameManager>().IncreaseInfamyXP(threatValue);
-        gameManager.GoldGainedOnDeath(currencyValue);
+        if (gameManager.currentCurrency < gameManager.maximumCurrency)
+        {
+            gameManager.GoldGainedOnDeath(currencyValue);
+        }
         Destroy(this.gameObject);
     }
 }

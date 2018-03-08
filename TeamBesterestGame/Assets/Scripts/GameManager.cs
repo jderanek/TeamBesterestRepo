@@ -165,8 +165,12 @@ public class GameManager : MonoBehaviour
 			{
 				otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Remove(otherObject.gameObject);
 				otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomThreat -= otherObject.GetComponent<MonsterScript>().threatValue;
-				otherObject.GetComponent<MonsterScript>().myRoom = null;
-			}
+                if (otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Count == 0)
+                {
+                    otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().monsterInRoom = false;
+                }
+                otherObject.GetComponent<MonsterScript>().myRoom = null;
+            }
 		}
 
 		isHoldingObject = true;

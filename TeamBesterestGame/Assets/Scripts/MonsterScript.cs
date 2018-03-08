@@ -118,6 +118,7 @@ public class MonsterScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !inCombat)
         {
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
+          
         }
     }
 
@@ -126,7 +127,7 @@ public class MonsterScript : MonoBehaviour
 		//Updates this monsters attack damage
 		//this.curDamage = (int) Mathf.Clamp((int)(this.attackDamage * (((1-stress) + morale/2))), 1, 100); // this line is causing monsters to never do more than 1 damage, need to take a look at the formula later
 
-		Debug.Log (curDamage);
+		//Debug.Log (curDamage);
 
 		if (myRoom.GetComponent<RoomScript>().heroInRoom) 
 		{
