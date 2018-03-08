@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 	//Money Stuff
 	public Text currencyText;
 	public int currentCurrency;
+    public int maximumCurrency = 1500;
 
 	public bool doingSetup;
 	public bool interviewing = false;
@@ -87,7 +88,7 @@ public class GameManager : MonoBehaviour
 	void Awake()
 	{
 		roomList = new GameObject[10, 10];
-		currentCurrency = 5000;
+        currentCurrency = 1500;
 		UpdateCurrency ();
 		UpdateInfamy();
 		CreateNewResume(3);
@@ -416,7 +417,7 @@ public class GameManager : MonoBehaviour
 
 	public void UpdateCurrency()
 	{
-		currencyText.text = "Gold: " + currentCurrency;
+		currencyText.text = "Gold: " + currentCurrency + " / " + maximumCurrency;
 	}
 
 	public void Interview()//enables interview UI and hides other UI elements that are in the way

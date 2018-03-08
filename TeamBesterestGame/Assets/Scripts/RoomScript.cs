@@ -34,8 +34,15 @@ public class RoomScript : MonoBehaviour
 	public GameObject eastButton;
 	public GameObject westButton;
 
-
 	public int roomThreat;
+
+    public int goldCapacity = 300;
+    public int currentGold;
+    public GameObject coin1;
+    public GameObject coin2;
+    public GameObject coin3;
+    public Sprite emptyCoin;
+    public Sprite filledCoin;
 
     // Use this for initialization
     void Start()
@@ -262,6 +269,96 @@ public class RoomScript : MonoBehaviour
             {
                 monster.GetComponent<MonsterScript>().inCombat = false;
             }
+        }
+    }
+
+    public void AddGoldToRoom(int coinClicked)
+    {
+
+        if (coinClicked == 1)
+        {
+            if (currentGold == 100)
+            {
+                gameManager.currentCurrency += currentGold;
+                currentGold = 0;
+                gameManager.UpdateCurrency();
+                coin1.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+            }
+            else if (currentGold > 100)
+            {
+                gameManager.currentCurrency += currentGold - 100;
+                currentGold = 100;
+                gameManager.UpdateCurrency();
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+            }
+            else if (currentGold < 100)
+            {
+                gameManager.currentCurrency -= 100;
+                currentGold = 100;
+                gameManager.UpdateCurrency();
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+            }
+
+        }
+        else if (coinClicked == 2)
+        {
+            if (currentGold == 200)
+            {
+                gameManager.currentCurrency += currentGold - 100;
+                currentGold = 100;
+                gameManager.UpdateCurrency();
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+            }
+            else if (currentGold > 200)
+            {
+                gameManager.currentCurrency += currentGold - 200;
+                currentGold = 200;
+                gameManager.UpdateCurrency();
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+            }
+            else if (currentGold < 200)
+            {
+                gameManager.currentCurrency -= 200 - currentGold;
+                currentGold = 200;
+                gameManager.UpdateCurrency();
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+            }
+
+
+        }
+        else if (coinClicked == 3)
+        {
+            if (currentGold >= 300)
+            {
+                gameManager.currentCurrency += currentGold - 200;
+                currentGold = 200;
+                gameManager.UpdateCurrency();
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+            }
+            else if (currentGold < 300)
+            {
+                gameManager.currentCurrency -= 300 - currentGold;
+                currentGold = 300;
+                gameManager.UpdateCurrency();
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = filledCoin;
+            }
+
         }
     }
 }
