@@ -40,6 +40,10 @@ public class HeroScript : MonoBehaviour
 
 	private GameManager gameManager;
 
+    private int carryCapacity = 200;
+    private bool packFull;
+    private int currentGold;
+
     // Use this for initialization
     void Awake()
     {
@@ -149,8 +153,17 @@ public class HeroScript : MonoBehaviour
 
 	public void CheckCurrentRoom() {
             currentRoomScript.SortNeighbors();
-
-        if (!currentRoomScript.monsterInRoom && currentRoomScript.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
+        if (!currentRoomScript.monsterInRoom && currentRoomScript.currentGold > 0) //If there isn't a monster in the room with the hero and there is gold to be looted
+        {
+            currentGold += 100;
+            currentRoomScript.currentGold -= 100;
+            currentRoomScript.UpdateCoins();
+            if (currentGold == carryCapacity)
+            {
+                Destroy(gameObject);
+            }
+        }
+        else if (!currentRoomScript.monsterInRoom && currentRoomScript.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
         {
             currentRoom = currentRoomScript.neighborRooms[0];
 
@@ -168,9 +181,7 @@ public class HeroScript : MonoBehaviour
 
             transform.position = currentRoom.transform.position;
         }
-    }
-
-           
+    }       
 		
     //next two functions are what monsters will call to damage the hero
     public void TakeDamage(int damageTaken)
@@ -192,8 +203,6 @@ public class HeroScript : MonoBehaviour
 		{
 			currentRoomScript.heroInRoom = false;
 		}
-        //currentMonsterScript.heroInRoom = false;
-
 
         gameManager.GetComponent<GameManager>().IncreaseInfamyXP(threatValue);
         gameManager.GoldGainedOnDeath(currencyValue);

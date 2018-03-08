@@ -5,44 +5,44 @@ using System;
 
 public class RoomScript : MonoBehaviour
 {
-    public GameManager gameManager;
+    private GameManager gameManager;
 
-	public List<GameObject> neighborRooms = new List<GameObject>();
+    public List<GameObject> neighborRooms = new List<GameObject>(); //public to assign reference in editor
 
-    public List<GameObject> roomMembers = new List<GameObject>();
+    public List<GameObject> roomMembers = new List<GameObject>(); //public to be accessed by hero/monster
     private GameObject heldObject;
-    public int myX;
-    public int myY;
+    public int myX; //public to assign reference in editor
+    public int myY; //public to assign reference in editor
 
     public List<GameObject> heroesInRoom = new List<GameObject>();
 
-    public bool monsterInRoom = false;
-	public bool heroInRoom = false;
+    public bool monsterInRoom = false; //public to be accessed by hero/monster
+    public bool heroInRoom = false; //public to be accessed by hero/monster
 
-    public GameObject northRoom;
-    public GameObject southRoom;
-    public GameObject eastRoom;
-    public GameObject westRoom;
+    public GameObject northRoom; //public to assign reference in editor, should be unnecesary in the future
+    public GameObject southRoom; //public to assign reference in editor
+    public GameObject eastRoom; //public to assign reference in editor
+    public GameObject westRoom; //public to assign reference in editor
 
-    public bool northDoor;
-    public bool southDoor;
-    public bool eastDoor;
-    public bool westDoor;
+    public bool northDoor; //public to be accessed by door script, may replace with trigger events later
+    public bool southDoor; //public to assign reference in editor
+    public bool eastDoor; //public to assign reference in editor
+    public bool westDoor; //public to assign reference in editor
 
-    public GameObject northButton;
-	public GameObject southButton;
-	public GameObject eastButton;
-	public GameObject westButton;
+    public GameObject northButton; //public to assign reference in editor
+    public GameObject southButton; //public to assign reference in editor
+    public GameObject eastButton; //public to assign reference in editor
+    public GameObject westButton; //public to assign reference in editor
 
-	public int roomThreat;
+    public int roomThreat; //public to be accessed by heroes
 
-    public int goldCapacity = 300;
-    public int currentGold;
-    public GameObject coin1;
-    public GameObject coin2;
-    public GameObject coin3;
-    public Sprite emptyCoin;
-    public Sprite filledCoin;
+    public int goldCapacity = 300; //public so it can be tested in editor
+    public int currentGold; //public so it can be tested in editor
+    public GameObject coin1; //public to assign reference in editor
+    public GameObject coin2; //public to assign reference in editor
+    public GameObject coin3; //public to assign reference in editor
+    public Sprite emptyCoin; //public to assign reference in editor
+    public Sprite filledCoin; //public to assign reference in editor
 
     // Use this for initialization
     void Start()
@@ -274,7 +274,6 @@ public class RoomScript : MonoBehaviour
 
     public void AddGoldToRoom(int coinClicked)
     {
-
         if (coinClicked == 1)
         {
             if (currentGold == 100)
@@ -282,27 +281,18 @@ public class RoomScript : MonoBehaviour
                 gameManager.currentCurrency += currentGold;
                 currentGold = 0;
                 gameManager.UpdateCurrency();
-                coin1.GetComponent<SpriteRenderer>().sprite = emptyCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
             }
             else if (currentGold > 100)
             {
                 gameManager.currentCurrency += currentGold - 100;
                 currentGold = 100;
                 gameManager.UpdateCurrency();
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
             }
             else if (currentGold < 100)
             {
                 gameManager.currentCurrency -= 100;
                 currentGold = 100;
                 gameManager.UpdateCurrency();
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
             }
 
         }
@@ -313,30 +303,19 @@ public class RoomScript : MonoBehaviour
                 gameManager.currentCurrency += currentGold - 100;
                 currentGold = 100;
                 gameManager.UpdateCurrency();
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
             }
             else if (currentGold > 200)
             {
                 gameManager.currentCurrency += currentGold - 200;
                 currentGold = 200;
                 gameManager.UpdateCurrency();
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
             }
             else if (currentGold < 200)
             {
                 gameManager.currentCurrency -= 200 - currentGold;
                 currentGold = 200;
                 gameManager.UpdateCurrency();
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
             }
-
-
         }
         else if (coinClicked == 3)
         {
@@ -345,20 +324,44 @@ public class RoomScript : MonoBehaviour
                 gameManager.currentCurrency += currentGold - 200;
                 currentGold = 200;
                 gameManager.UpdateCurrency();
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
             }
             else if (currentGold < 300)
             {
                 gameManager.currentCurrency -= 300 - currentGold;
                 currentGold = 300;
                 gameManager.UpdateCurrency();
+            }
+        }
+        UpdateCoins();
+    }
+
+    public void UpdateCoins()
+    {
+        switch(currentGold)
+        {
+            case 0:
+                coin1.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                break;
+            case 100:
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                break;
+            case 200:
+                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                break;
+            case 300:
                 coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
                 coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
                 coin3.GetComponent<SpriteRenderer>().sprite = filledCoin;
-            }
-
+                break;
+            default:
+                Debug.Log("You shouldn't be seeing this message");
+                break;
         }
     }
 }
