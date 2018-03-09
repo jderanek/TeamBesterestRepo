@@ -17,30 +17,30 @@ public class RoomMemberSorter : IComparer<GameObject>
 
 public class HeroScript : MonoBehaviour
 {
-	public int[] possibleThreatValue;
-    public int threatValue;
+	public int[] possibleThreatValue; //public to be assigned in editor
+    public int threatValue; //public to be accessed by other scripts
 
-    public int damage;
-    public int heroHp;
+    public int damage; //public to be edited in editor
+    public int heroHp; //public to be edited in editor
 
-	private Text damageText;
+	private Text damageText; //public to be assigned in editor
 
-    public Transform monsterPosition;
-    private GameObject targetMonster;
-    private MonsterScript targetMonsterScript;
-    public bool monsterInRange;
+    public Transform monsterPosition; //public to be assigned in editor
+    private GameObject targetMonster; //public to be assigned in editor
+    private MonsterScript targetMonsterScript; //public to be assigned in editor
+    //public bool monsterInRange;
 
 	//public GameObject spawnRoom;
-    public RoomScript currentRoomScript;
-    public GameObject currentRoom;
+    private RoomScript currentRoomScript; 
+    private GameObject currentRoom;
 
 	private IEnumerator attackRepeater;
 
-	public int currencyValue;
+	public int currencyValue; //public to edited in editor
 
 	private GameManager gameManager;
 
-    private int carryCapacity = 200;
+    public int carryCapacity = 200; //public to be edited in editor
     private bool packFull;
     private int currentGold;
 

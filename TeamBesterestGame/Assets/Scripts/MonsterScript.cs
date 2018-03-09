@@ -5,29 +5,30 @@ using UnityEngine.UI;
 
 public class MonsterScript : MonoBehaviour
 {
-    public string[] possibleNames;
-    public string monsterName;
+    public string[] possibleNames; //public to be edited in editor
+    public string monsterName; //public to be accessed by UI stuff
 
-    public string monsterType;
+    public string monsterType; //public to be accessed by UI stuff
 
-    public int averageHealth;
-    public int startingHealth;
-    public int currentHealth;
-	private Text damageText;
+    //this stuff needs to be reworked, specifically how it interacts with the Resume menu... since the resume technically shouldnt have this stuff listed on them?
+    public int averageHealth; //public to be accessed by UI stuff
+    public int startingHealth; //public to be accessed by UI stuff
+    public int currentHealth; //public to be accessed by tyrant script?
+	private Text damageText; //public to be assigned in editor
 
-    public int[] possibleThreatValue = new int[] { 2, 4, 6 };
-    public int threatValue;
+    private int[] possibleThreatValue = new int[] { 2, 4, 6 }; 
+    public int threatValue; //public to be accessed by hero script
 
-    public int averageDamage;
-    public int attackDamage;
+    public int averageDamage; //public to be accessed by scripts
+    public int attackDamage; //public to be accessed by scripts
 
     //possibly obsolete
     public string[] possibleTraits = new string[] { "Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
     public string trait1;
     public string trait2;
 
-    public int averageSalary = 500;
-    public int requestedSalary;
+    public int averageSalary = 500; //public to be edited in editor
+    public int requestedSalary; //public to be accessed by scripts
 
     private bool monsterGrabbed;
 
@@ -35,41 +36,39 @@ public class MonsterScript : MonoBehaviour
     //private HeroScript heroScript; //uneeded?
     public bool heroInRoom = false; //note to self, have rooms update monsters on inhabitants at on the time pass function
 
-    public GameObject myRoom;
-
-	//private IEnumerator attackRepeater;
+    public GameObject myRoom; //public to be assigned in editor
 
     //Stress, Morale, Nerve and Size
     //Temporarily public for test purposes
-    public float stress;
-	public float morale;
-	public float baseNerve = .5f;
-	public float curNerve = .5f;
-	public int size;
-	public int curThreat;
-	public float stressGain = .02f;
-	public float vacationStressLoss = .15f;
+    public float stress; //public to be accessed by scripts
+	public float morale; //public to be accessed by scripts
+	public float baseNerve = .5f; //public to be edited in editor
+	public float curNerve = .5f; //public to be edited in editor
+	public int size; //public to be accessed by scripts
+	public int curThreat; //public to be accessed by scripts
+	public float stressGain = .02f; //public to be edited in editor
+	public float vacationStressLoss = .15f; //public to be edited in editor
 	//No idea what this should be
-	public int infamyGain = 1;
-	public string gender;
+	public int infamyGain = 1; //public to be edited in editor
+	public string gender; //maybe make this bool later, would be kinda funny but more efficent... doesnt do anything right now
 
 	//Attack damage after stress and morale modifers
-	public int curDamage;
+	public int curDamage; //public to be accessed by other scripts... maybe
 
 	//Monster personality, of type TraitBase
-	public TraitBase personality;
+	public TraitBase personality; //public to be accessed by other scripts
 	//String name of personality, for debugging
-	public string traitName;
+	public string traitName; //public to be accessed by other scripts
 
-	public int workEthic;//variable used to fake a workethic value for interviewing
+	public int workEthic;//variable used to fake a workethic value for interviewing //public to be accessed by other scripts
 
 	//List of all personalities
-	public TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
+	private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
 
-    public bool inCombat;
+    public bool inCombat; //public to be accesed by other scripts
 
 	//Boolean to keep track of whether the monster has fought this week
-	public bool hasFought = false;
+	public bool hasFought = false; //public to be accessed by trait script
 
     void Awake()
     {
@@ -129,7 +128,7 @@ public class MonsterScript : MonoBehaviour
 
 		//Debug.Log (curDamage);
 
-		if (myRoom.GetComponent<RoomScript>().heroInRoom) 
+		if (myRoom.GetComponent<RoomScript>().heroInRoom) //sometimes throws error, not sure what the cause is
 		{
 			hero = myRoom.GetComponent<RoomScript>().heroesInRoom[0];
 		}

@@ -6,83 +6,85 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 	//Monster Stuff
+	//[HideInInspector]
+	//public GameObject monsterInHand;
+	private bool isHoldingObject;
+	public GameObject[] possibleMonsters; //public to assign references in editor
 	[HideInInspector]
-	public GameObject monsterInHand;
-	public bool isHoldingObject;
-	public GameObject[] possibleMonsters;
-	[HideInInspector]
-	public GameObject monsterInstance;
-	public GameObject heldObject;
+	public GameObject monsterInstance; //public to assign reference in editor
+	public GameObject heldObject; //public for room script to access
 
 	//Resume Stuff
-	public GameObject resume;
-	public List<GameObject> currentResumes;
-	public List<GameObject> expiredResumes;
-	public int activeResume;
-	public GameObject applicationsButton;
-	public Transform resumeSpawn;
+	public GameObject resume; //public to assign reference in editor
+    public List<GameObject> currentResumes; //public to be accessed in interview script
+	public List<GameObject> expiredResumes; //public because this script through a fit when I made it private
+	public int activeResume; //public to be accessed in interview script
+    public GameObject applicationsButton; //public to be accessed in interview script
 	private bool resumeOpen = false;
 
 	//Aggregate Stress Stuff
-    public Image stressImage;
+    public Image stressImage; //public to assign reference in editor
 
 	//Money Stuff
-	public Text currencyText;
-	public int currentCurrency;
-    public int maximumCurrency = 1500;
+	public Text currencyText; //public to assign reference in editor
+	public int currentCurrency; //public to be accessed by other scripts
+    public int maximumCurrency = 1500; //public to be edited in editor
 
-	public bool doingSetup;
-	public bool interviewing = false;
+	private bool doingSetup; 
+	public bool interviewing = false; //public to be accessed in interview script
 
-	public Slider cycleSlider;
-	public GameObject cycleImage;
-	public float cycleTimer = 100f;
+    //old code for the real time slider
+    /* 
+	public Slider cycleSlider; 
+	public GameObject cycleImage; 
+	private float cycleTimer = 100f; 
 	public float cycleDelay = 2f;
+    */
 
-	//Day counter to increase week
-	public int days = 0;
+    //Day counter to increase week
+    private int days = 0;
 
 	//construction stuff
-	public bool inConstructionMode;
+	public bool inConstructionMode; //public for now, pickup room script can be replaced
 
-	public GameObject constructionButton;
-	public GameObject roomButton;
+	public GameObject constructionButton; //public to be assigned in editor
+	public GameObject roomButton; //public to be assigned in editor
 
 	//interviewing stuff
-	public GameObject interviewButtons;
-	public GameObject interviewImage;
-	public GameObject interviewBackground;
-	public GameObject interviewExit;
+	public GameObject interviewButtons; //public to be assigned in editor
+    public GameObject interviewImage; //public to be assigned in editor
+    public GameObject interviewBackground; //public to be assigned in editor
+    public GameObject interviewExit; //public to be assigned in editor
 
-	public GameObject spawnRoom;
-	public GameObject[] heroes;
+    public GameObject spawnRoom; //public to be assigned in editor 
+    public GameObject[] heroes; //public to be assigned in editor
 
-	public GameObject[,] roomList;
+    public GameObject[,] roomList; //public to be accessed by room script
 
 	//Time Unit stuff
 	private bool paused = true;
-	public int timePerDay = 16;
+	public int timePerDay = 16; //public to be edited it editor
 	private int currentTime;
-	public float timeSpeed = 3.0f;
-	public Text timeUnitText;
-	public Text pauseButtonText;
+	public float timeSpeed = 3.0f; //public to be edited in editor
+	public Text timeUnitText; //public to be assigned in editor
+    public Text pauseButtonText; //public to be assigned in editor
 
-	//infamy
-	float infamyLevel = 1;
-	float infamyXP = 0;
-	int xpToNextInfamyLevel = 20;
-	int baseXP = 20;
-	public Text infamyLevelText;
-	public Text infamyXPText;
+    //infamy
+    private float infamyLevel = 1;
+	private float infamyXP = 0;
+	private int xpToNextInfamyLevel = 20;
+	private int baseXP = 20;
+	public Text infamyLevelText; //public to be assigned in editor
+	public Text infamyXPText; //public to be assigned in editor
 
-	//spawn stuff
-	public float baseHeroSpawnRate = 0.25f;
-	public float spawnRateIncrement = 0.1f;
-	private float modifiedHeroSpawnRate;
+    //spawn stuff
+    public float baseHeroSpawnRate = 0.25f; //public to be edited in editor
+	public float spawnRateIncrement = 0.1f; //public to be assigned in editor
+    private float modifiedHeroSpawnRate;
 	public float peakHoursSpawnRateBonus = 0.25f; //how much is added on during peak hours
-	public float peakHourStart = 0.5f;
-	public float peakHourEnd = 1.0f;
-	private bool peakHours = false;
+	public float peakHourStart = 0.5f; //public to be assigned in editor
+    public float peakHourEnd = 1.0f; //public to be assigned in editor
+    private bool peakHours = false;
 
 	// Use this for initialization
 	void Awake()
@@ -183,7 +185,7 @@ public class GameManager : MonoBehaviour
 	{
 		for (int i = 0; i < resumesToCreate; i++)
 		{
-			currentResumes.Add(Instantiate(resume, resumeSpawn.position, Quaternion.identity));
+			currentResumes.Add(Instantiate(resume, new Vector3(0f, 0f, 0f), Quaternion.identity));
 			var thisResume = currentResumes[currentResumes.Count - 1];
 
 			monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(thisResume);
@@ -210,8 +212,8 @@ public class GameManager : MonoBehaviour
 	{
 		currentTime = timePerDay;
 		doingSetup = false;
-		cycleImage.SetActive(false);
-		cycleTimer = 0f;
+		//cycleImage.SetActive(false);
+		//cycleTimer = 0f;
 
 		//Script to run dayhandler and weekhandler
 		days += 1;
@@ -486,14 +488,14 @@ public class GameManager : MonoBehaviour
 		else
 		{
 			int toNext = (int)xpToNextInfamyLevel - (int)infamyXP;
-			print("xp to next level " + toNext);
+			//print("xp to next level " + toNext);
 		}
 		UpdateInfamy();
 	}
 
 	public int InfamyXPNeeded()
 	{
-		print("reached new level");
+		//print("reached new level");
 		float exponent = 1.5f;
 		float xp = baseXP;
 		int xpNeeded = Mathf.FloorToInt(xp * (Mathf.Pow(infamyLevel, exponent)));
