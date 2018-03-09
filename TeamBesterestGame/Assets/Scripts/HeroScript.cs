@@ -154,7 +154,7 @@ public class HeroScript : MonoBehaviour
 	public void CheckCurrentRoom() {
             currentRoomScript.SortNeighbors();
         
-        if (!currentRoomScript.monsterInRoom && currentRoom.CompareTag("Boss Room"))
+        if (!currentRoomScript.monsterInRoom && currentRoom.CompareTag("Boss Room") && gameManager.currentCurrency > 0)
         {
             currentGold += 100;
             gameManager.currentCurrency -= 100;

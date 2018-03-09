@@ -48,6 +48,8 @@ public class RoomScript : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        gameManager.roomList[myX, myY] = gameObject;
+        UpdateNeighbors();
     }
 
     // Update is called once per frame
@@ -57,8 +59,7 @@ public class RoomScript : MonoBehaviour
     }
 
 	public void Initialize() {
-		gameManager.roomList[myX, myY] = gameObject;
-		UpdateNeighbors();
+		
 	}
 
     public void ActivateButtons(bool inConstructionMode)
