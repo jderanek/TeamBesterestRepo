@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 4489087722701510}
   - component: {fileID: 212968793425594196}
   - component: {fileID: 61465178886912832}
+  - component: {fileID: 114376403910858158}
   m_Layer: 0
   m_Name: West Door
   m_TagString: Door
@@ -283,6 +284,7 @@ GameObject:
   - component: {fileID: 4621736814898840}
   - component: {fileID: 212373833978665890}
   - component: {fileID: 61960207966945224}
+  - component: {fileID: 114480733604938840}
   m_Layer: 0
   m_Name: East Door
   m_TagString: Door
@@ -318,6 +320,7 @@ GameObject:
   - component: {fileID: 4260240997004816}
   - component: {fileID: 212599226211772282}
   - component: {fileID: 61483849446730436}
+  - component: {fileID: 114606092296893962}
   m_Layer: 0
   m_Name: North Door
   m_TagString: Door
@@ -385,6 +388,7 @@ GameObject:
   - component: {fileID: 4285792026923796}
   - component: {fileID: 212684145146312016}
   - component: {fileID: 61264573389526394}
+  - component: {fileID: 114267179304235614}
   m_Layer: 0
   m_Name: South Door
   m_TagString: Door
@@ -1237,14 +1241,14 @@ MonoBehaviour:
   southRoom: {fileID: 0}
   eastRoom: {fileID: 0}
   westRoom: {fileID: 0}
-  northDoor: 0
-  southDoor: 0
-  eastDoor: 0
-  westDoor: 0
-  northButton: {fileID: 1456730455087820}
-  southButton: {fileID: 1016739080759688}
-  eastButton: {fileID: 1211801186098546}
-  westButton: {fileID: 1434939723541024}
+  northDoor: {fileID: 1790751065369700}
+  southDoor: {fileID: 1997651451872980}
+  eastDoor: {fileID: 1724625499626812}
+  westDoor: {fileID: 1136515444940930}
+  northDoorBool: 1
+  southDoorBool: 1
+  eastDoorBool: 1
+  westDoorBool: 1
   roomThreat: 0
   goldCapacity: 300
   currentGold: 0
@@ -1253,6 +1257,36 @@ MonoBehaviour:
   coin3: {fileID: 1750345019994446}
   emptyCoin: {fileID: 21300000, guid: 6bbf5c900c3b80a4c9ae540944a6c7cc, type: 3}
   filledCoin: {fileID: 21300000, guid: ef7c1a33e177bd143b09d4a8bb8e3d47, type: 3}
+--- !u!114 &114267179304235614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1997651451872980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114254629359309334}
+          m_MethodName: OperateDoors
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: South
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114359488490558388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1269,6 +1303,66 @@ MonoBehaviour:
   door: {fileID: 1136515444940930}
   myName: 
   myRoomScript: {fileID: 0}
+--- !u!114 &114376403910858158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136515444940930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114254629359309334}
+          m_MethodName: OperateDoors
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: West
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &114480733604938840
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1724625499626812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114254629359309334}
+          m_MethodName: OperateDoors
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: East
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114546644048993580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1310,6 +1404,36 @@ MonoBehaviour:
             m_IntArgument: 3
             m_FloatArgument: 0
             m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
+--- !u!114 &114606092296893962
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1790751065369700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114254629359309334}
+          m_MethodName: OperateDoors
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: North
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,

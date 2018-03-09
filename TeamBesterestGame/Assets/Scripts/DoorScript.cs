@@ -25,6 +25,7 @@ public class DoorScript : MonoBehaviour {
 
     private void OnMouseOver()
     {
+        /*
 		if (Input.GetMouseButtonDown (1))
 		{
 			doorClosed = !doorClosed;
@@ -53,6 +54,7 @@ public class DoorScript : MonoBehaviour {
             
 
         } 
+        */
 	
     }
 
