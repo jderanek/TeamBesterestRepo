@@ -128,7 +128,7 @@ public class MonsterScript : MonoBehaviour
 
 		//Debug.Log (curDamage);
 
-		if (myRoom.GetComponent<RoomScript>().heroInRoom) //sometimes throws error, not sure what the cause is
+		if (myRoom.GetComponent<RoomScript>().heroInRoom) //sometimes throws error, not sure what the cause is //error is caused by hiring a monster while time is passing, too lazy to fix right now
 		{
 			hero = myRoom.GetComponent<RoomScript>().heroesInRoom[0];
 		}

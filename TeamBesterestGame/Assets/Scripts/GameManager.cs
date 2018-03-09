@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
 	public float timeSpeed = 3.0f; //public to be edited in editor
 	public Text timeUnitText; //public to be assigned in editor
     public Text pauseButtonText; //public to be assigned in editor
+    private bool dungeonEmpty = false;
 
     //infamy
     private float infamyLevel = 1;
@@ -316,8 +317,12 @@ public class GameManager : MonoBehaviour
 	public void PassTime(int timeToPass) {
 		for (int i = timeToPass; i > 0; i--)
 		{
-			currentTime--;
-			timeUnitText.text = currentTime.ToString();
+            dungeonEmpty = true;
+            if (currentTime > 0)
+            {
+                currentTime--;
+                timeUnitText.text = currentTime.ToString();
+            }
 
 			foreach (GameObject monster in GameObject.FindGameObjectsWithTag("Monster"))
 			{
@@ -326,6 +331,7 @@ public class GameManager : MonoBehaviour
 
 			foreach (GameObject hero in GameObject.FindGameObjectsWithTag("Hero"))
 			{
+                dungeonEmpty = false;
 				hero.GetComponent<HeroScript>().Attack();
 				hero.GetComponent<HeroScript>().CheckCurrentRoom();
 			}
@@ -389,6 +395,11 @@ public class GameManager : MonoBehaviour
 				CreateNewResume(1);
 
             UpdateStressMeter();
+
+            if (currentTime <= 0 && dungeonEmpty)
+            {
+                NewCycle();
+            }
 		}
 	}
 
@@ -441,8 +452,15 @@ public class GameManager : MonoBehaviour
 
 	//New day handler to apply effects on start of day
 	public void DayHandler() {
+        if (!paused)
+        {
+            TogglePlay();
+        }
+        currentTime = timePerDay;
+        timeUnitText.text = currentTime.ToString();
+        /*
 		foreach (GameObject room in roomList) {
-			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) {
+			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) { //throwing an error right now
 				MonsterScript monScript = monster.GetComponent<MonsterScript> ();
 
 				if (monScript != null) {
@@ -452,7 +470,8 @@ public class GameManager : MonoBehaviour
 				}
 			}
 		}
-	}
+        */
+    }
 
 	//New week handler to apply effects on start of week
 	public void WeekHandler() {
