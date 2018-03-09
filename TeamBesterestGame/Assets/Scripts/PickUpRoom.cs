@@ -49,11 +49,13 @@ public class PickUpRoom : MonoBehaviour {
 
     private void OnMouseOver()
     {
+        /*
         if (Input.GetMouseButtonDown(0) && inConstructionMode)
         {
             inHand = true;
             roomScript.ClearNeighbors();
             gameManager.roomList[roundedX, roundedY] = null;
         }
+        */
     }
 }

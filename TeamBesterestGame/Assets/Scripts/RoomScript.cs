@@ -105,7 +105,7 @@ public class RoomScript : MonoBehaviour
             if (gameManager.roomList[myX, myY + 1] != null)
             {
                 northRoom = gameManager.roomList[myX, myY + 1];
-                if (northDoorBool && gameManager.roomList[myX, myY + 1].GetComponent<RoomScript>().southDoorBool)
+                if (!northDoorBool && !gameManager.roomList[myX, myY + 1].GetComponent<RoomScript>().southDoorBool)
                 {
                     northRoom.GetComponent<RoomScript>().southRoom = gameObject;
                     northRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
@@ -119,7 +119,7 @@ public class RoomScript : MonoBehaviour
             if (gameManager.roomList[myX, myY - 1] != null)
             {
                 southRoom = gameManager.roomList[myX, myY - 1];
-                if (southDoorBool && gameManager.roomList[myX, myY - 1].GetComponent<RoomScript>().northDoorBool)
+                if (!southDoorBool && !gameManager.roomList[myX, myY - 1].GetComponent<RoomScript>().northDoorBool)
                 {
                     southRoom.GetComponent<RoomScript>().northRoom = gameObject;                    
                     southRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
@@ -133,7 +133,7 @@ public class RoomScript : MonoBehaviour
             if (gameManager.roomList[myX + 1, myY] != null)
             {
                 eastRoom = gameManager.roomList[myX + 1, myY];
-                if (eastDoorBool && gameManager.roomList[myX + 1, myY].GetComponent<RoomScript>().westDoorBool)
+                if (!eastDoorBool && !gameManager.roomList[myX + 1, myY].GetComponent<RoomScript>().westDoorBool)
                 {                    
                     eastRoom.GetComponent<RoomScript>().westRoom = gameObject;
                     eastRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
@@ -147,7 +147,7 @@ public class RoomScript : MonoBehaviour
             if (gameManager.roomList[myX - 1, myY] != null)
             {
                 westRoom = gameManager.roomList[myX - 1, myY];
-                if (westDoorBool && gameManager.roomList[myX - 1, myY].GetComponent<RoomScript>().eastDoorBool)
+                if (!westDoorBool && !gameManager.roomList[myX - 1, myY].GetComponent<RoomScript>().eastDoorBool)
                 {
                     westRoom.GetComponent<RoomScript>().eastRoom = gameObject;
                     westRoom.GetComponent<RoomScript>().neighborRooms.Add(gameObject);
@@ -377,45 +377,48 @@ public class RoomScript : MonoBehaviour
 
     public void OperateDoors(string door)
     {
-        if (door == "North")
+        if (gameManager.inConstructionMode)
         {
-            northDoorBool = !northDoorBool;
-            northDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
-            if (northRoom != null)
+            if (door == "North")
             {
-                northRoom.GetComponent<RoomScript>().southDoorBool = northDoorBool;
-                northRoom.GetComponent<RoomScript>().southDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
+                northDoorBool = !northDoorBool;
+                northDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
+                if (northRoom != null)
+                {
+                    northRoom.GetComponent<RoomScript>().southDoorBool = northDoorBool;
+                    northRoom.GetComponent<RoomScript>().southDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
+                }
+
             }
-           
-        }
-        else if (door == "South")
-        {
-            southDoorBool = !southDoorBool;
-            southDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
-            if (southRoom != null)
+            else if (door == "South")
             {
-                southRoom.GetComponent<RoomScript>().northDoorBool = southDoorBool;
-                southRoom.GetComponent<RoomScript>().northDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
+                southDoorBool = !southDoorBool;
+                southDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
+                if (southRoom != null)
+                {
+                    southRoom.GetComponent<RoomScript>().northDoorBool = southDoorBool;
+                    southRoom.GetComponent<RoomScript>().northDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
+                }
             }
-        }
-        else if (door == "East")
-        {
-            eastDoorBool = !eastDoorBool;
-            eastDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
-            if (eastDoor != null)
+            else if (door == "East")
             {
-                eastRoom.GetComponent<RoomScript>().westDoorBool = eastDoorBool;
-                eastRoom.GetComponent<RoomScript>().westDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
+                eastDoorBool = !eastDoorBool;
+                eastDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
+                if (eastDoor != null)
+                {
+                    eastRoom.GetComponent<RoomScript>().westDoorBool = eastDoorBool;
+                    eastRoom.GetComponent<RoomScript>().westDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
+                }
             }
-        }
-        else if (door  == "West")
-        {
-            westDoorBool = !westDoorBool;
-            westDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
-            if (westRoom != null)
+            else if (door == "West")
             {
-                westRoom.GetComponent<RoomScript>().eastDoorBool = westDoorBool;
-                westRoom.GetComponent<RoomScript>().eastDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
+                westDoorBool = !westDoorBool;
+                westDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
+                if (westRoom != null)
+                {
+                    westRoom.GetComponent<RoomScript>().eastDoorBool = westDoorBool;
+                    westRoom.GetComponent<RoomScript>().eastDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
+                }
             }
         }
     }
