@@ -153,7 +153,19 @@ public class HeroScript : MonoBehaviour
 
 	public void CheckCurrentRoom() {
             currentRoomScript.SortNeighbors();
-        if (!currentRoomScript.monsterInRoom && currentRoomScript.currentGold > 0) //If there isn't a monster in the room with the hero and there is gold to be looted
+        
+        if (!currentRoomScript.monsterInRoom && currentRoom.CompareTag("Boss Room"))
+        {
+            currentGold += 100;
+            gameManager.currentCurrency -= 100;
+            gameManager.UpdateCurrency();
+            if (currentGold == carryCapacity)
+            {
+                Destroy(gameObject);
+            }
+        }
+        
+        else if (!currentRoomScript.monsterInRoom && currentRoomScript.currentGold > 0) //If there isn't a monster in the room with the hero and there is gold to be looted
         {
             currentGold += 100;
             currentRoomScript.currentGold -= 100;

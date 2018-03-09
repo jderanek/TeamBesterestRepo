@@ -56,7 +56,8 @@ public class GameManager : MonoBehaviour
     public GameObject interviewBackground; //public to be assigned in editor
     public GameObject interviewExit; //public to be assigned in editor
 
-    public GameObject spawnRoom; //public to be assigned in editor 
+    public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
+    public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
     public GameObject[] heroes; //public to be assigned in editor
 
     public GameObject[,] roomList; //public to be accessed by room script
@@ -340,6 +341,8 @@ public class GameManager : MonoBehaviour
             {
                 room.GetComponent<RoomScript>().RoomMemeberHandler();
             }
+            spawnRoom.GetComponent<RoomScript>().RoomMemeberHandler();
+            bossRoom.GetComponent<RoomScript>().RoomMemeberHandler();
 
             //This part modifies spawn rates during peak hours
             float currentRelativeTime = 1f - ((float)currentTime / timePerDay);
@@ -358,7 +361,7 @@ public class GameManager : MonoBehaviour
 			}
 
 			//Spawn heroes; the longer it goes without spawn, the more likely spawn is
-			if (modifiedHeroSpawnRate > Random.Range(0f, 1f))
+			if (modifiedHeroSpawnRate > Random.Range(0f, 1f) && currentTime > 0)
 			{
 				Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
 				modifiedHeroSpawnRate = baseHeroSpawnRate;

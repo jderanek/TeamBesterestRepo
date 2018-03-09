@@ -293,7 +293,7 @@ Prefab:
     - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
       propertyPath: myY
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114676208393432986, guid: dc360d4d794cb6a46a9bda73560d62e1,
         type: 2}
@@ -2031,6 +2031,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: neighborRooms.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4807169869807150, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2095,6 +2100,30 @@ Prefab:
       propertyPath: southDoor
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1790751065369700, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: northRoom
+      value: 
+      objectReference: {fileID: 1306698472}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: neighborRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 1306698472}
+    - target: {fileID: 114254629359309334, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: neighborRooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 1952476467}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
@@ -4162,6 +4191,7 @@ MonoBehaviour:
   interviewBackground: {fileID: 146191077}
   interviewExit: {fileID: 4713407}
   spawnRoom: {fileID: 1893377716}
+  bossRoom: {fileID: 1306698472}
   heroes:
   - {fileID: 1156476052356406, guid: ad8df0eea4c58104b8c2d0f12c834e24, type: 2}
   timePerDay: 16
@@ -4800,6 +4830,155 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &1257090981
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: roomMembers.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: neighborRooms.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014198946895028, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014198946895028, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014198946895028, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014198946895028, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014198946895028, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014198946895028, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014198946895028, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4014198946895028, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: roomMembers.Array.data[0]
+      value: 
+      objectReference: {fileID: 326449874}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: roomMembers.Array.data[1]
+      value: 
+      objectReference: {fileID: 891989949}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: northRoom
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: southRoom
+      value: 
+      objectReference: {fileID: 373517983}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: northButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: southButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: eastButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: westButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: coin1
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: coin2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: coin3
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589628598962554, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_Name
+      value: Boss Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 212417704488194654, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212417704488194654, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.0896554
+      objectReference: {fileID: 0}
+    - target: {fileID: 212417704488194654, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: southDoor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1193511562305960, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: neighborRooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 373517983}
+    - target: {fileID: 1589628598962554, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_TagString
+      value: Boss Room
+      objectReference: {fileID: 0}
+    - target: {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b,
+        type: 2}
+      propertyPath: myY
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1261450292
 GameObject:
   m_ObjectHideFlags: 0
@@ -4948,6 +5127,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1264194214}
+--- !u!1 &1306698472 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1589628598962554, guid: 6915cebfbe801a04ab449cc191c28c4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1257090981}
 --- !u!1 &1314840179
 GameObject:
   m_ObjectHideFlags: 0
@@ -6457,7 +6641,7 @@ GameObject:
   - component: {fileID: 1893377717}
   m_Layer: 0
   m_Name: Spawn Room
-  m_TagString: Room
+  m_TagString: Spawn Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6474,14 +6658,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c00b8083336bc44b8a8c4cbd1d3f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neighborRooms: []
+  neighborRooms:
+  - {fileID: 959393533}
   roomMembers: []
   myX: 0
   myY: 0
   heroesInRoom: []
   monsterInRoom: 0
   heroInRoom: 0
-  northRoom: {fileID: 0}
+  northRoom: {fileID: 959393533}
   southRoom: {fileID: 0}
   eastRoom: {fileID: 0}
   westRoom: {fileID: 0}
