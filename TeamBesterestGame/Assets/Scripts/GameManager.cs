@@ -230,7 +230,6 @@ public class GameManager : MonoBehaviour
     {
         monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
 
-
         int salary = monsterInstance.GetComponent<MonsterScript>().requestedSalary;
         float infamyRaise = monsterInstance.GetComponent<MonsterScript>().infamyGain;
         if (currentCurrency >= salary)
@@ -409,15 +408,6 @@ public class GameManager : MonoBehaviour
 	public void ToggleConstruction()
 	{
 		inConstructionMode = !inConstructionMode;
-		roomButton.SetActive(inConstructionMode);
-
-		foreach (GameObject room in roomList)
-		{
-			if (room != null)
-			{
-				room.GetComponent<RoomScript>().ActivateButtons(inConstructionMode);
-			}
-		}
 	}
 
 

@@ -19,6 +19,7 @@ TagManager:
   - Aggregate Stress
   - Boss Room
   - Spawn Room
+  - Construction Icon
   layers:
   - Default
   - TransparentFX
