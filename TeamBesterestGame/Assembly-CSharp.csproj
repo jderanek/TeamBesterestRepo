@@ -55,8 +55,10 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\BaseHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\ClericHero.cs" />
+     <Compile Include="Assets\Scripts\Hero Scripts\CrusaderHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\MageHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\RogueHero.cs" />
+     <Compile Include="Assets\Scripts\Hero Scripts\SniperHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\WarriorHero.cs" />
      <Compile Include="Assets\Scripts\HeroScript.cs" />
      <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />

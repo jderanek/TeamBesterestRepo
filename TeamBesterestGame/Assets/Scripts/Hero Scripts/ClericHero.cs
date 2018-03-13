@@ -6,7 +6,7 @@ public class ClericHero : BaseHero {
 
 	//Assigns all initial stats
 	void Start () {
-		this.AssignStats (12, 6, 15, 0, 200, 4);
+		this.AssignStats (20, 2, 25, 1, 100, 2);
 	}
 
 	//Placeholder to be replaced by mage multiattack

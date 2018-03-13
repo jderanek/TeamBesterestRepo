@@ -101,12 +101,11 @@ public abstract class BaseHero : MonoBehaviour {
 		GameObject gameMangerObject = GameObject.FindWithTag ("GameController");
 		if (gameMangerObject != null) {
 			gameManager = gameMangerObject.GetComponent <GameManager> ();
-		}
 
-		gameManager.GetComponent<GameManager>().IncreaseInfamyXP(this.threat);
-		if (gameManager.currentCurrency < gameManager.maximumCurrency)
-		{
-			gameManager.GoldGainedOnDeath(this.value);
+			gameManager.GetComponent<GameManager> ().IncreaseInfamyXP (this.threat);
+			if (gameManager.currentCurrency < gameManager.maximumCurrency) {
+				gameManager.GoldGainedOnDeath (this.value);
+			}
 		}
 		Destroy(this.gameObject);
 	}
