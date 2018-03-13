@@ -51,20 +51,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\DoorScript.cs" />
+     <Compile Include="Assets\Scripts\ConstructionScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\BaseHero.cs" />
+     <Compile Include="Assets\Scripts\Hero Scripts\ClericHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\MageHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\RogueHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\WarriorHero.cs" />
      <Compile Include="Assets\Scripts\HeroScript.cs" />
-     <Compile Include="Assets\Scripts\HiringButton.cs" />
-     <Compile Include="Assets\Scripts\HiringUIScript.cs" />
      <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />
      <Compile Include="Assets\Scripts\InterviewManager.cs" />
      <Compile Include="Assets\Scripts\MonsterScript.cs" />
      <Compile Include="Assets\Scripts\PickUpRoom.cs" />
-     <Compile Include="Assets\Scripts\ResumeExit.cs" />
      <Compile Include="Assets\Scripts\ResumeScript.cs" />
      <Compile Include="Assets\Scripts\RoomScript.cs" />
      <Compile Include="Assets\Scripts\SpawnNewSquare.cs" />
