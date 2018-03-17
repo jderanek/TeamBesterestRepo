@@ -9,24 +9,10 @@ public class MageHero : BaseHero {
 		this.AssignStats (12, 6, 15, 0, 200, 4);
 	}
 
-	//Placeholder to be replaced by mage multiattack
+	//Calls Base attack function 3 times to allow Mage to attack three enemies per room
 	public override void Attack(RoomScript room) {
-		MonsterScript monScript;
-		MonsterScript highThreat = null;
-		int threat = -1;
-		foreach (GameObject mon in room.roomMembers) {
-			monScript = mon.GetComponent<MonsterScript> ();
-
-			if (monScript != null) {
-				if (monScript.curThreat > threat) {
-					highThreat = monScript;
-					threat = monScript.curThreat;
-				}
-			}
-		}
-
-		//Makes mosnter take damage
-		if (highThreat != null)
-			highThreat.TakeDamage(this.getDamage());
+		base.Attack (room);
+		base.Attack (room);
+		base.Attack (room);
 	}
 }

@@ -9,7 +9,7 @@ public class ClericHero : BaseHero {
 		this.AssignStats (20, 2, 25, 1, 100, 2);
 	}
 
-	//Placeholder to be replaced by mage multiattack
+	//Overrides base Attack function to heal a hero in the room instead of attacking
 	public override void Attack(RoomScript room) {
 		BaseHero heroScript;
 		BaseHero mostHurt = null;
@@ -26,7 +26,13 @@ public class ClericHero : BaseHero {
 			}
 		}
 
-		if (mostHurt != null)
-			mostHurt.Heal (this.getDamage ());
+		//Heals the most hurt hero, or calls the parent Attack function to prevent
+		//This unit from healing itself
+		if (mostHurt != null) {
+			if (mostHurt == this)
+				base.Attack (room);
+			else
+				mostHurt.Heal (this.getDamage ());
+		}
 	}
 }

@@ -63,6 +63,7 @@
      <Compile Include="Assets\Scripts\HeroScript.cs" />
      <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />
      <Compile Include="Assets\Scripts\InterviewManager.cs" />
+     <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
      <Compile Include="Assets\Scripts\MonsterScript.cs" />
      <Compile Include="Assets\Scripts\PickUpRoom.cs" />
      <Compile Include="Assets\Scripts\ResumeScript.cs" />

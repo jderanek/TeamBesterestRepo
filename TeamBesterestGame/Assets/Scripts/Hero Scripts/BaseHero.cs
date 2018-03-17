@@ -110,6 +110,25 @@ public abstract class BaseHero : MonoBehaviour {
 		Destroy(this.gameObject);
 	}
 
-	//Abstract attack function to allow for different attack types by class
-	public abstract void Attack(RoomScript room);
+	//Default attack function that hits the monster in the room with the highest threat value
+	//Some classes override this function for different attack methods
+	public virtual void Attack(RoomScript room) {
+		MonsterScript monScript;
+		MonsterScript highThreat = null;
+		int threat = -1;
+		foreach (GameObject mon in room.roomMembers) {
+			monScript = mon.GetComponent<MonsterScript> ();
+
+			if (monScript != null) {
+				if (monScript.curThreat > threat) {
+					highThreat = monScript;
+					threat = monScript.curThreat;
+				}
+			}
+		}
+
+		//Makes mosnter take damage
+		if (highThreat != null)
+			highThreat.TakeDamage(this.getDamage());
+	}
 }
