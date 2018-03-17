@@ -19,7 +19,7 @@ public class ClericHero : BaseHero {
 		foreach (GameObject hero in room.heroesInRoom) {
 			heroScript = hero.GetComponent<BaseHero> ();
 
-			if (heroScript != null) {
+			if (heroScript != null && heroScript != this) {
 				curRatio = ((float)heroScript.getHealth () / heroScript.getMaxHealth ());
 				if (curRatio < hpRatio)
 					mostHurt = heroScript;
@@ -28,11 +28,9 @@ public class ClericHero : BaseHero {
 
 		//Heals the most hurt hero, or calls the parent Attack function to prevent
 		//This unit from healing itself
-		if (mostHurt != null) {
-			if (mostHurt == this)
-				base.Attack (room);
-			else
-				mostHurt.Heal (this.getDamage ());
-		}
+		if (mostHurt != null)
+			mostHurt.Heal (this.getDamage ());
+		else
+			base.Attack (room);
 	}
 }
