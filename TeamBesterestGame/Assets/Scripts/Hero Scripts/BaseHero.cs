@@ -57,7 +57,7 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 
 	//Setter function to gain money
-	public void grab(int mon) {
+	public void Grab(int mon) {
 		this.holding = Mathf.Clamp (this.holding + mon, 0, this.capacity);
 	}
 
@@ -87,6 +87,7 @@ public abstract class BaseHero : MonoBehaviour {
 			curRoom.heroInRoom = false;
 		}
 		this.curRoom = room;
+		this.gameObject.transform.position = room.gameObject.transform.position;
 	}
 
 	//Function to kill this hero
