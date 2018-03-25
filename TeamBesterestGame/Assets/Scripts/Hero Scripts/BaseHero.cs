@@ -56,17 +56,17 @@ public abstract class BaseHero : MonoBehaviour {
 		return this.curRoom;
 	}
 
-	//Setter function to gain money
-	public void Grab(int mon) {
-		this.holding = Mathf.Clamp (this.holding + mon, 0, this.capacity);
-	}
-
 	//Setter functions for damage and value
 	public void setDamage(int dmg) {
 		this.damage = dmg;
 	}
 	public void setValue(int val) {
 		this.value = val;
+	}
+
+	//Setter function to gain money
+	public void Grab(int mon) {
+		this.holding = Mathf.Clamp (this.holding + mon, 0, this.capacity);
 	}
 
 	//Damage and Heal functions to restore or reduce hero health
