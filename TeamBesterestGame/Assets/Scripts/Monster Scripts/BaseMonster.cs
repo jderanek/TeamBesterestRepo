@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class BaseMonster : MonoBehaviour {
+public abstract class BaseMonster : MonoBehaviour {
 
 	//Private variables for this monsters stats
 	string name;
@@ -19,9 +20,12 @@ public class BaseMonster : MonoBehaviour {
 	int infamyGain;
 	int threat;
 	int armor;
+	int workEthic;
+	int size;
 	bool inCombat;
 	bool hasFought;
 	GameObject curRoom;
+	Text damageText;
 
 	///<summary>
 	///Assigns all stats to this monster, to be used in place of super.
@@ -34,7 +38,9 @@ public class BaseMonster : MonoBehaviour {
 	/// <param name="sal">Base Salary</param>
 	/// <param name="thr">Threat</param>
 	/// <param name="arm">Base Armor</param>
-	public void AssignStats(string nm, int hp, int dam, TraitBase trait, int sal, int thr, int arm) {
+	/// <param name="ethic">Work Ethic</param>
+	/// <param name="sz">Monster Size</param>
+	public void AssignStats(string nm, int hp, int dam, TraitBase trait, int sal, int thr, int arm, int ethic, int sz) {
 		this.name = nm;
 		this.maxHealth = hp;
 		this.curHealth = maxHealth;
@@ -49,6 +55,9 @@ public class BaseMonster : MonoBehaviour {
 		this.vacationStressLoss = .15f;
 		this.infamyGain = 1;
 		this.armor = arm;
+		damageText = this.gameObject.GetComponentInChildren<Text>();
+		this.workEthic = ethic;
+		this.size = sz;
 	}
 
 	//Getters for most stats
@@ -100,10 +109,17 @@ public class BaseMonster : MonoBehaviour {
 	public string getName() {
 		return this.name;
 	}
+	public int getWorkEthic() {
+		return this.workEthic;
+	}
+	public int getSize() {
+		return this.size;
+	}
 
 	//Function to make monster lose health
 	public void Damage(int dam) {
 		this.curHealth = Mathf.Clamp (this.curHealth - dam, 0, this.maxHealth);
+		damageText.text = this.curHealth.ToString ();
 		if (curHealth <= 0) {
 			this.Death ();
 		}
