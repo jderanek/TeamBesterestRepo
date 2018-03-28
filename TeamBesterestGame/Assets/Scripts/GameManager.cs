@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
 	{
 		for (int i = 0; i < resumesToCreate; i++)
 		{
-			currentResumes.Add(Instantiate(resume, new Vector3(0f, 0f, 0f), Quaternion.identity));
+			currentResumes.Add(Instantiate(resume, new Vector3(1f, 5f, 0f), Quaternion.identity));
 			var thisResume = currentResumes[currentResumes.Count - 1];
 
 			monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(thisResume);

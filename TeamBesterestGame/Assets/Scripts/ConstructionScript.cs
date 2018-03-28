@@ -121,6 +121,7 @@ public class ConstructionScript : MonoBehaviour
         newRoom.GetComponent<RoomScript>().myX = (int)newRoom.transform.position.x;
         newRoom.GetComponent<RoomScript>().myY = (int)newRoom.transform.position.y;
         gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
+		gameManager.CurrencyChanged(-100);
         Destroy(placeToBuild);
         StartConstruction();
     }
