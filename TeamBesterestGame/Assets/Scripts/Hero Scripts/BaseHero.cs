@@ -15,6 +15,7 @@ public abstract class BaseHero : MonoBehaviour {
 	private int holding = 0;
 	private int threat;
 	private RoomScript curRoom;
+	BaseParty currentParty;
 
 	///<summary>
 	///Assigns all stats to this hero, to be used in place of super.

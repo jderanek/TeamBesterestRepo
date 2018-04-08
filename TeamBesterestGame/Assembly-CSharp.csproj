@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
      <Compile Include="Assets\Scripts\Monster Scripts\GoblinMonster.cs" />
      <Compile Include="Assets\Scripts\MonsterScript.cs" />
+     <Compile Include="Assets\Scripts\Party Scripts\BaseParty.cs" />
      <Compile Include="Assets\Scripts\PickUpRoom.cs" />
      <Compile Include="Assets\Scripts\ResumeScript.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\BaseRoom.cs" />
