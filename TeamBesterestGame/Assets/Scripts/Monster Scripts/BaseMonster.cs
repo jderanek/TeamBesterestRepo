@@ -31,7 +31,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	///Assigns all stats to this monster, to be used in place of super.
 	/// Defaults stress and morale, as well as gain, loss and infamy
 	///</summary>
-	/// <param name="nm">Name of Mosnter</param>
+	/// <param name="nm">Name of Monster</param>
 	/// <param name="hp">Total Health</param>
 	/// <param name="dam">Base Damage</param>
 	/// <param name="trait">Personality Trait</param>
@@ -159,5 +159,10 @@ public abstract class BaseMonster : MonoBehaviour {
 			curRoom.GetComponent<RoomScript>().monsterInRoom = false;
 		}
 		Destroy(this.gameObject);
+	}
+
+	//Applies personality effects to the monster, as well as other stat modifiers
+	//Called at end of each work day
+	public void DayHandler() {
 	}
 }

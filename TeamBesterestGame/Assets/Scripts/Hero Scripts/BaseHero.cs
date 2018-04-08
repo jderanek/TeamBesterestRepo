@@ -16,7 +16,15 @@ public abstract class BaseHero : MonoBehaviour {
 	private int threat;
 	private RoomScript curRoom;
 
-	//Function to assign values to script from child class
+	///<summary>
+	///Assigns all stats to this hero, to be used in place of super.
+	///</summary>
+	/// <param name="hp">Total Health</param>
+	/// <param name="dmg">Base Damage</param>
+	/// <param name="val">Money earned on death</param>
+	/// <param name="arm">Base Armor</param>
+	/// <param name="cap"Max holding money>
+	/// <param name="thr">Threat</param>
 	public void AssignStats(int hp, int dmg, int val, int arm, int cap, int thr) {
 		this.maxHealth = hp;
 		this.curHealth = hp;
