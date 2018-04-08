@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\PickUpRoom.cs" />
      <Compile Include="Assets\Scripts\ResumeScript.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\BaseRoom.cs" />
+     <Compile Include="Assets\Scripts\Room Scripts\EntranceRoom.cs" />
      <Compile Include="Assets\Scripts\RoomScript.cs" />
      <Compile Include="Assets\Scripts\SpawnNewSquare.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />
