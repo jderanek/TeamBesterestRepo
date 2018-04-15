@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBesterestGame", "TeamBesterestGame.csproj", "{C21CECC2-D33F-80BD-E12E-4A5F31D6C42E}"
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamBesterestGame.CSharp", "TeamBesterestGame.CSharp.csproj", "{54FE1097-0A7A-D1B1-83D1-6696D348A84D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C21CECC2-D33F-80BD-E12E-4A5F31D6C42E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C21CECC2-D33F-80BD-E12E-4A5F31D6C42E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C21CECC2-D33F-80BD-E12E-4A5F31D6C42E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C21CECC2-D33F-80BD-E12E-4A5F31D6C42E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54FE1097-0A7A-D1B1-83D1-6696D348A84D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54FE1097-0A7A-D1B1-83D1-6696D348A84D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54FE1097-0A7A-D1B1-83D1-6696D348A84D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54FE1097-0A7A-D1B1-83D1-6696D348A84D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

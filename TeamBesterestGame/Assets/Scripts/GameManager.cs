@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	[HideInInspector]
 	public GameObject monsterInstance; //public to assign reference in editor
 	public GameObject heldObject; //public for room script to access
+    public GameObject selectedObject;
 
 	//Resume Stuff
 	public GameObject resume; //public to assign reference in editor
@@ -185,6 +186,16 @@ public class GameManager : MonoBehaviour
 		heldObject = otherObject;
 		otherObject.SetActive(true);
 	}
+
+    public void SelectObject(GameObject otherObject)
+    {
+        selectedObject = otherObject;
+    }
+
+    public void MoveMonster()
+    {
+
+    }
 
 	//might combine this with creating a new monster and file the resume under the monsters as a child object
 	public void CreateNewResume(int resumesToCreate)
