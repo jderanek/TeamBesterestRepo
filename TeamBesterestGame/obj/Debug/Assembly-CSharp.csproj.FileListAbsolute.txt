@@ -9,15 +9,12 @@ C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unit
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.TestRunner.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Timeline.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.UI.dll
-C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Mono.Cecil.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unity.SerializationLogic.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unity.DataContract.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\ExCSS.Unity.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unity.UNetWeaver.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unity.CecilTools.dll
-C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Mono.Cecil.Pdb.dll
-C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Mono.Cecil.Mdb.dll
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.xml
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEditor.xml
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.UI.xml
@@ -25,7 +22,6 @@ C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unit
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.TestRunner.xml
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\nunit.framework.xml
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Timeline.xml
-C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\obj\Debug\Assembly-CSharp.dll
@@ -62,3 +58,17 @@ C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\D
 C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\obj\Debug\Assembly-CSharp.dll
 C:\Users\Matthew\Desktop\Unity Games\Team Besterest\TeamBesterestGame\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Advertisements.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.Purchasing.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.StandardEvents.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.UIAutomation.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Vuforia.UnityExtensions.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unity.Cecil.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unity.Cecil.Pdb.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Unity.Cecil.Mdb.dll
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\Vuforia.UnityExtensions.xml
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.UIAutomation.xml
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
+C:\Users\Avery\Documents\TeamBesterestRepo\TeamBesterestGame\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
