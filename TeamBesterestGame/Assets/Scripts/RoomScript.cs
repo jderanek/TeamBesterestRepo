@@ -84,6 +84,7 @@ public class RoomScript : MonoBehaviour
 
     void OnMouseOver()
     {
+        /*
         heldObject = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().heldObject;
         if (heldObject != null)
         {
@@ -96,6 +97,28 @@ public class RoomScript : MonoBehaviour
 				foreach (GameObject neighbor in neighborRooms) {
 					neighbor.GetComponent<RoomScript>().SortNeighbors();
 				}
+            }
+        }
+        */
+        if (gameManager.selectedObject != null)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                gameManager.selectedObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Remove(gameManager.selectedObject);
+                gameManager.selectedObject.transform.position = new Vector3(
+                     gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
+                     gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
+                     0
+                    );
+                roomMembers.Add(gameManager.selectedObject);
+                roomThreat += gameManager.selectedObject.GetComponent<MonsterScript>().threatValue;
+                monsterInRoom = true;
+                gameManager.selectedObject.GetComponent<MonsterScript>().myRoom = this.gameObject;
+                foreach (GameObject neighbor in neighborRooms)
+                {
+                    neighbor.GetComponent<RoomScript>().SortNeighbors();
+                }
+                
             }
         }
     }

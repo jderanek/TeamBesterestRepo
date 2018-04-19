@@ -65,8 +65,8 @@ public class InterviewManager : MonoBehaviour {
 	//personality question
     public void Question1Response()
     {
-        interviewQuestions.SetActive(false);
-        interviewResponse.SetActive(true);
+        //interviewQuestions.SetActive(false);
+        //interviewResponse.SetActive(true);
 		if(monsterInstance.GetComponent<MonsterScript>().traitName == "Cowardly")
 		{
 			responseText.text = "I wouldn't say I would run inta fire or nothing... I just like to not be the only one fighting.";
@@ -77,7 +77,7 @@ public class InterviewManager : MonoBehaviour {
 		}
 		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Tyrant")
 		{
-			responseText.text = "It's live or die around here. If someone gets crushed, it's n skin off my back.";
+			responseText.text = "It's live or die around here. If someone gets crushed, it's no skin off my back.";
 		}
 		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Reckless")
 		{
@@ -117,8 +117,8 @@ public class InterviewManager : MonoBehaviour {
 	//work ethic question
     public void Question2Response()
     {
-        interviewQuestions.SetActive(false);
-        interviewResponse.SetActive(true);
+        //interviewQuestions.SetActive(false);
+        //interviewResponse.SetActive(true);
 		if(monsterInstance.GetComponent<MonsterScript>().workEthic == -1)
 		{
 			responseText.text = "I guess I'm a bit of a slacker.";
@@ -137,8 +137,8 @@ public class InterviewManager : MonoBehaviour {
 	//Stat question
     public void Question3Response()
     {
-        interviewQuestions.SetActive(false);
-        interviewResponse.SetActive(true);
+        //interviewQuestions.SetActive(false);
+        //interviewResponse.SetActive(true);
 		if (q31 == 0)//hp responses
 		{
 			if(monsterInstance.GetComponent<MonsterScript>().startingHealth > monsterInstance.GetComponent<MonsterScript>().averageHealth)
@@ -206,8 +206,8 @@ public class InterviewManager : MonoBehaviour {
 	//stat question
 	public void Question4Response()
 	{
-		interviewQuestions.SetActive(false);
-		interviewResponse.SetActive(true);
+		//interviewQuestions.SetActive(false);
+		//interviewResponse.SetActive(true);
 		if (q41 == 0)//hp responses
 		{
 			if(monsterInstance.GetComponent<MonsterScript>().startingHealth > monsterInstance.GetComponent<MonsterScript>().averageHealth)
@@ -275,8 +275,8 @@ public class InterviewManager : MonoBehaviour {
 	//archetype question
 	public void Question5Response()
 	{
-		interviewQuestions.SetActive(false);
-		interviewResponse.SetActive(true);
+		//interviewQuestions.SetActive(false);
+		//interviewResponse.SetActive(true);
 		responseText.text = "Archetype question: TBD";
 		gameManager.GetComponent<GameManager>().PassTime(1);
 	}
@@ -295,19 +295,20 @@ public class InterviewManager : MonoBehaviour {
 
     public void InterviewResponse()
     {
-        interviewResponse.SetActive(false);
-        interviewQuestions.SetActive(true);
+        //interviewResponse.SetActive(false);
+        //interviewQuestions.SetActive(true);
     }
 
     public void ExitInterview() //exits interview and hides the interview UI
     {
 		gameManager.GetComponent<GameManager>().interviewButtons.SetActive(false);
-		gameManager.GetComponent<GameManager>().interviewImage.SetActive(false);
+		gameManager.GetComponent<GameManager>().interviewResponse.SetActive(false);
 		gameManager.GetComponent<GameManager>().interviewBackground.SetActive(false);
 		gameManager.GetComponent<GameManager>().interviewExit.SetActive(false);
 		gameManager.GetComponent<GameManager>().constructionButton.SetActive(true);
 		gameManager.GetComponent<GameManager>().applicationsButton.SetActive(true);
-		interviewResponse.SetActive(false);
+        gameManager.GetComponent<GameManager>().contextMenu.SetActive(true);
+        interviewResponse.SetActive(false);
 
 		/*if (gameManager.GetComponent<GameManager>().resume != null)
 		{

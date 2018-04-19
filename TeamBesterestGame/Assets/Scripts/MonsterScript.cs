@@ -116,8 +116,8 @@ public class MonsterScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !inCombat)
         {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
-          
+            //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
+            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SelectObject(this.gameObject);
         }
     }
 

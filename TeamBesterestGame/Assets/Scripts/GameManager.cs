@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 	[HideInInspector]
 	public GameObject monsterInstance; //public to assign reference in editor
 	public GameObject heldObject; //public for room script to access
+    public GameObject selectedObject;
 
 	//Resume Stuff
 	public GameObject resume; //public to assign reference in editor
@@ -52,9 +53,13 @@ public class GameManager : MonoBehaviour
 
 	//interviewing stuff
 	public GameObject interviewButtons; //public to be assigned in editor
+    public GameObject interviewResponse;//public to be assigned in editor
     public GameObject interviewImage; //public to be assigned in editor
     public GameObject interviewBackground; //public to be assigned in editor
     public GameObject interviewExit; //public to be assigned in editor
+
+    //UI stuff
+    public GameObject contextMenu;
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
@@ -181,6 +186,16 @@ public class GameManager : MonoBehaviour
 		heldObject = otherObject;
 		otherObject.SetActive(true);
 	}
+
+    public void SelectObject(GameObject otherObject)
+    {
+        selectedObject = otherObject;
+    }
+
+    public void MoveMonster()
+    {
+
+    }
 
 	//might combine this with creating a new monster and file the resume under the monsters as a child object
 	public void CreateNewResume(int resumesToCreate)
@@ -434,10 +449,12 @@ public class GameManager : MonoBehaviour
 	{
 		interviewing = true;
 		interviewButtons.SetActive(true);
-		interviewImage.SetActive(true);
+        //interviewImage.SetActive(true);
+        interviewResponse.SetActive(true);
 		interviewBackground.SetActive(true);
 		interviewExit.SetActive(true);
 		constructionButton.SetActive(false);
+        contextMenu.SetActive(false);
 		applicationsButton.SetActive(false);
 		this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
 	}
