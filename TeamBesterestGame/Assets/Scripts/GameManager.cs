@@ -93,6 +93,9 @@ public class GameManager : MonoBehaviour
     public float peakHourEnd = 1.0f; //public to be assigned in editor
     private bool peakHours = false;
 
+    //CSVImporter Test
+    public CSVImporter monsters = new CSVImporter(5, 5, "Monster_Stats_-_Sheet1.csv");
+
 	// Use this for initialization
 	void Awake()
 	{
