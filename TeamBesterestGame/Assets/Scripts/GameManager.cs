@@ -52,9 +52,13 @@ public class GameManager : MonoBehaviour
 
 	//interviewing stuff
 	public GameObject interviewButtons; //public to be assigned in editor
+    public GameObject interviewResponse;//public to be assigned in editor
     public GameObject interviewImage; //public to be assigned in editor
     public GameObject interviewBackground; //public to be assigned in editor
     public GameObject interviewExit; //public to be assigned in editor
+
+    //UI stuff
+    public GameObject contextMenu;
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
@@ -434,10 +438,12 @@ public class GameManager : MonoBehaviour
 	{
 		interviewing = true;
 		interviewButtons.SetActive(true);
-		interviewImage.SetActive(true);
+        //interviewImage.SetActive(true);
+        interviewResponse.SetActive(true);
 		interviewBackground.SetActive(true);
 		interviewExit.SetActive(true);
 		constructionButton.SetActive(false);
+        contextMenu.SetActive(false);
 		applicationsButton.SetActive(false);
 		this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
 	}

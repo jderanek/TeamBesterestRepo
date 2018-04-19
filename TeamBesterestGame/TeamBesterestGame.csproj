@@ -286,6 +286,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ConstructionScript.cs" />
+    <Compile Include="Assets\Scripts\CSVImporter.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\BaseHero.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\ClericHero.cs" />
