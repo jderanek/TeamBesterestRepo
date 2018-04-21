@@ -28,19 +28,20 @@ public class CSVImporter {
         string[] curLine;
         string[] variableNames = new string[rows-1];
         
-        for (int y=0; y<cols; y++) {
+		for (int y=0; y<rows; y++) {
             curLine = reader.ReadLine().Split(',');
-            for (int x=0; x<rows; x++) {
-                Debug.Log(curLine[x]);
+			for (int x=0; x<cols; x++) {
                 if (y == 0 && x > 0) {
                     variableNames[x-1] = curLine[x];
                 } else if (y > 0) {
-                    if (x == 0)
-                        data.Add(curLine[x], new Dictionary<string, string>());
-                    else 
+					if (x == 0)
+						data.Add (curLine [x], new Dictionary<string, string> ());
+					else 
                         data[curLine[0]].Add(variableNames[x-1], curLine[x]);
                 }
             }
         }
+
+		reader.Close ();
     }
 }
