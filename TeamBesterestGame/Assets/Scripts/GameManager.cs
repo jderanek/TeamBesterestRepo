@@ -452,12 +452,12 @@ public class GameManager : MonoBehaviour
 	{
 		interviewing = true;
 		interviewButtons.SetActive(true);
-        //interviewImage.SetActive(true);
+        interviewImage.SetActive(true);
         interviewResponse.SetActive(true);
 		interviewBackground.SetActive(true);
 		interviewExit.SetActive(true);
 		constructionButton.SetActive(false);
-        contextMenu.SetActive(false);
+        //contextMenu.SetActive(false);
 		applicationsButton.SetActive(false);
 		this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
 	}
