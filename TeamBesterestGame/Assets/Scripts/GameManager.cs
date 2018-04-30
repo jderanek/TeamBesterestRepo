@@ -93,8 +93,9 @@ public class GameManager : MonoBehaviour
     public float peakHourEnd = 1.0f; //public to be assigned in editor
     private bool peakHours = false;
 
-    //CSVImporter Test
-    public CSVImporter monsters = new CSVImporter(5, 5, "Monster_Stats_-_Sheet1.csv");
+    //CSVImporter for Monsters and Heroes
+    public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
+	public CSVImporter heroStats = new CSVImporter(7, 7, "Heroes - Sheet1.csv");
 
 	// Use this for initialization
 	void Awake()
@@ -116,6 +117,22 @@ public class GameManager : MonoBehaviour
 		foreach (var room in rooms) {
 			room.GetComponent<RoomScript>().Initialize();
 		}
+
+		/*
+		//Test for CSVImporter
+		foreach (KeyValuePair<string, Dictionary<string, string>> monster in monsters.data) {
+			print (monster.Key);
+			foreach (KeyValuePair<string, string> entry in monster.Value) {
+				print (entry.Key + ": " + entry.Value);
+			}
+		}
+		foreach (KeyValuePair<string, Dictionary<string, string>> hero in heroStats.data) {
+			print (hero.Key);
+			foreach (KeyValuePair<string, string> entry in hero.Value) {
+				print (entry.Key + ": " + entry.Value);
+			}
+		}
+		*/
 	}
 
 	// Update is called once per frame

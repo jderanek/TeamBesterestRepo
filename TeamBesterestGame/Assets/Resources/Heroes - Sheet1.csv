@@ -1,0 +1,14 @@
+Hero Type,Health,Base Attack,Defense,Threat Level,Kill Value,Carry Capacity,,,
+Warrior,20,2,2,3,$10,2 slots,,,
+Rogue,15,4,1,1,$15,3 slots,,,
+Wizard,12,6,0,2,$15,2 slots,,,
+Crusader,30,3,3,3,$20,2 slots,,,
+Cleric,20,2,1,1,$25,1 slot,,,
+Arbalest,20,2,1,1,$25,3 slots,,,Abilities
+,,,,,,,,,
+,,,,,,,,Warrior,Noble March
+,,,,,,,,Rogue,Stealth
+,,,,,,,,Wizard,Teleport                  Chain Lightning
+,,,,,,,,Crusader,Armored Charge
+,,,,,,,,Sniper,Pinpoint Aim
+,,,,,,,,Cleric,Lesser Heal
