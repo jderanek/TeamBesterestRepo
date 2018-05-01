@@ -1,6 +1,0 @@
-Event	ID	Name			Wwise Object Path	Notes
-	588540382	Hero_Enter			\Default Work Unit\Hero_Enter	
-
-In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	664885891	DE_AlertBell	C:\Users\raven\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\DE_AlertBell_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\DE_AlertBell		382220
-

@@ -22,8 +22,6 @@ GameObject:
   - component: {fileID: 114229928952300460}
   - component: {fileID: 61433717370603502}
   - component: {fileID: 212217224592129810}
-  - component: {fileID: 114947187092290970}
-  - component: {fileID: 114194264628477146}
   - component: {fileID: 50724407688829776}
   m_Layer: 0
   m_Name: Hero
@@ -126,28 +124,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.38118482, y: 0.36609077}
   m_EdgeRadius: 0
---- !u!114 &114194264628477146
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1156476052356406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a0c6d90404f99b4bb401ee91387e276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  eventID: 588540382
-  m_callbackData: {fileID: 0}
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  valueGuid: 11f0004f33deaa48b492f5add09d6e1c
 --- !u!114 &114229928952300460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,27 +212,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: -Dmg
---- !u!114 &114947187092290970
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1156476052356406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3596ddeeabdd64db9d97a0207b7bec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_listeners:
-    initialListenerList: []
-    useDefaultListeners: 1
-  isEnvironmentAware: 1
-  isStaticObject: 0
-  m_positionOffsetData:
-    KeepMe: 0
-    positionOffset: {x: 0, y: 0, z: 0}
-  m_posOffsetData: {fileID: 0}
-  listenerMask: 1
 --- !u!212 &212217224592129810
 SpriteRenderer:
   m_ObjectHideFlags: 1
