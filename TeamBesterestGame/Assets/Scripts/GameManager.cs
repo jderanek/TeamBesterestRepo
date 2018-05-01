@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
 
 	//interviewing stuff
 	public GameObject interviewButtons; //public to be assigned in editor
+    public GameObject Q1;
+    public GameObject Q2;
+    public GameObject Q3;
+    public GameObject Q4;
+    public GameObject Q5;
     public GameObject interviewResponse;//public to be assigned in editor
     public GameObject interviewImage; //public to be assigned in editor
     public GameObject interviewBackground; //public to be assigned in editor
@@ -451,10 +456,15 @@ public class GameManager : MonoBehaviour
 	public void Interview()//enables interview UI and hides other UI elements that are in the way
 	{
 		interviewing = true;
-		interviewButtons.SetActive(true);
+        //interviewButtons.SetActive(true);
+        Q1.SetActive(true);
+        Q2.SetActive(true);
+        Q3.SetActive(true);
+        Q4.SetActive(true);
+        Q5.SetActive(true);
         interviewImage.SetActive(true);
         interviewResponse.SetActive(true);
-		interviewBackground.SetActive(true);
+		//interviewBackground.SetActive(true);
 		interviewExit.SetActive(true);
 		constructionButton.SetActive(false);
         //contextMenu.SetActive(false);
