@@ -6,6 +6,7 @@ public class CrusaderHero : BaseHero {
 
 	//Assigns all initial stats
 	void Start () {
-		this.AssignStats (30, 3, 20, 3, 200, 6);
+		//this.AssignStats (30, 3, 20, 3, 200, 6);
+		this.AssignStats("Crusader");
 	}
 }

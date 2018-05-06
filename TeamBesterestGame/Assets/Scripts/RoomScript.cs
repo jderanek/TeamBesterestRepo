@@ -280,12 +280,12 @@ public class RoomScript : MonoBehaviour
 	{
 		roomMembers.Sort(delegate (GameObject x, GameObject y)
 			{
-				if (x.GetComponent<HeroScript>().threatValue > y.GetComponent<HeroScript>().threatValue)
+				if (x.GetComponent<BaseHero>().getThreat() > y.GetComponent<BaseHero>().getThreat())
 				{
 					return -1;
 				}
 
-				else if (x.GetComponent<HeroScript>().threatValue < y.GetComponent<HeroScript>().threatValue)
+				else if (x.GetComponent<BaseHero>().getThreat() < y.GetComponent<BaseHero>().getThreat())
 				{
 					return 1;
 				}

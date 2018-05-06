@@ -135,7 +135,7 @@ public class MonsterScript : MonoBehaviour
 
 		if (hero != null)
 		{
-			hero.GetComponent<HeroScript>().TakeDamage(attackDamage);
+			hero.GetComponent<BaseHero>().TakeDamage(attackDamage);
 		}
 
 	}

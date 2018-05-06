@@ -372,8 +372,8 @@ public class GameManager : MonoBehaviour
 			foreach (GameObject hero in GameObject.FindGameObjectsWithTag("Hero"))
 			{
                 dungeonEmpty = false;
-				hero.GetComponent<HeroScript>().Attack();
-				hero.GetComponent<HeroScript>().CheckCurrentRoom();
+				hero.GetComponent<BaseHero>().Attack();
+				hero.GetComponent<BaseHero>().CheckCurrentRoom();
 			}
 
             foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))

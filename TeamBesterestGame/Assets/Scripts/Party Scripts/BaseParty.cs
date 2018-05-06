@@ -18,7 +18,7 @@ public abstract class BaseParty {
 	//Calls all party members attack function in the current room
 	public void AttackPhase() {
 		foreach (BaseHero hero in partyMembers)
-			hero.Attack (curRoom);
+			hero.Attack ();
 	}
 
 	//Moves all party members to the given room

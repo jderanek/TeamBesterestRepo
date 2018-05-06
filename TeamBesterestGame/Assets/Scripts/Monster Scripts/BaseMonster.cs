@@ -148,7 +148,7 @@ public abstract class BaseMonster : MonoBehaviour {
 
 		//Makes mosnter take damage
 		if (highThreat != null)
-			highThreat.Damage(this.getCurDamage());
+			highThreat.TakeDamage(this.getCurDamage());
 	}
 
 	private void Death()

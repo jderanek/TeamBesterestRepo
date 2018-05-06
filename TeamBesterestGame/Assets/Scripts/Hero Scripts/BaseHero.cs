@@ -14,8 +14,10 @@ public abstract class BaseHero : MonoBehaviour {
 	private int capacity;
 	private int holding = 0;
 	private int threat;
+	private string name;
 	private RoomScript curRoom;
 	BaseParty currentParty;
+	GameManager gameManager;
 
 	///<summary>
 	///Assigns all stats to this hero, to be used in place of super.
@@ -27,6 +29,8 @@ public abstract class BaseHero : MonoBehaviour {
 	/// <param name="cap"Max holding money>
 	/// <param name="thr">Threat</param>
 	public void AssignStats(int hp, int dmg, int val, int arm, int cap, int thr) {
+		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
 		this.maxHealth = hp;
 		this.curHealth = hp;
 		this.damage = dmg;
@@ -34,6 +38,23 @@ public abstract class BaseHero : MonoBehaviour {
 		this.armor = arm;
 		this.capacity = cap;
 		this.threat = thr;
+	}
+
+	///<summary>
+	///Assigns all stats to this hero by getting information from the spreadsheet
+	///</summary>
+	/// <param name="nm">Name</param>
+	public void AssignStats(string nm) {
+		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
+		this.name = nm;
+		this.maxHealth = int.Parse(gameManager.heroStats.data [name] ["Health"]);
+		this.curHealth = int.Parse(gameManager.heroStats.data [name] ["Health"]);
+		this.damage = int.Parse(gameManager.heroStats.data [name] ["Base Attack"]);
+		this.armor = int.Parse(gameManager.heroStats.data [name] ["Defense"]);
+		this.threat = int.Parse(gameManager.heroStats.data [name] ["Threat Level"]);
+		this.value = int.Parse(gameManager.heroStats.data [name] ["Kill Value"]);
+		this.capacity = int.Parse(gameManager.heroStats.data [name] ["Carry Capacity"]) * 100;
 	}
 
 	//Getter functions for damage, current health and currency value
@@ -79,7 +100,7 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 
 	//Damage and Heal functions to restore or reduce hero health
-	public void Damage(int dmg) {
+	public void TakeDamage(int dmg) {
 		this.curHealth -= Mathf.Clamp (dmg - armor, 0, this.maxHealth);
 		if (this.curHealth <= 0)
 			this.Death ();
@@ -122,11 +143,11 @@ public abstract class BaseHero : MonoBehaviour {
 
 	//Default attack function that hits the monster in the room with the highest threat value
 	//Some classes override this function for different attack methods
-	public virtual void Attack(RoomScript room) {
+	public virtual void Attack() {
 		MonsterScript monScript;
 		MonsterScript highThreat = null;
 		int threat = -1;
-		foreach (GameObject mon in room.roomMembers) {
+		foreach (GameObject mon in curRoom.roomMembers) {
 			monScript = mon.GetComponent<MonsterScript> ();
 
 			if (monScript != null) {
@@ -140,5 +161,50 @@ public abstract class BaseHero : MonoBehaviour {
 		//Makes mosnter take damage
 		if (highThreat != null)
 			highThreat.TakeDamage(this.getDamage());
+	}
+
+	//Copied from HeroScript
+	public void CheckCurrentRoom() {
+		curRoom.SortNeighbors();
+
+		if (!curRoom.monsterInRoom && curRoom.gameObject.CompareTag("Boss Room") && gameManager.currentCurrency > 0)
+		{
+			holding += 100;
+			gameManager.currentCurrency -= 100;
+			gameManager.UpdateCurrency();
+			if (holding == capacity)
+			{
+				Destroy(gameObject);
+			}
+		}
+
+		else if (!curRoom.monsterInRoom && curRoom.currentGold > 0) //If there isn't a monster in the room with the hero and there is gold to be looted
+		{
+			holding += 100;
+			curRoom.currentGold -= 100;
+			curRoom.UpdateCoins();
+			if (holding == capacity)
+			{
+				Destroy(gameObject);
+			}
+		}
+		else if (!curRoom.monsterInRoom && curRoom.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
+		{
+			curRoom = curRoom.neighborRooms[0].GetComponent<RoomScript>();
+
+			curRoom.heroesInRoom.Remove(this.gameObject);
+
+			if (curRoom.heroesInRoom.Count == 0)
+			{
+				curRoom.heroInRoom = false;
+			}
+
+			curRoom = curRoom.gameObject.GetComponent<RoomScript>();
+			curRoom.heroInRoom = true;
+			curRoom.heroesInRoom.Add(this.gameObject);
+			//curRoom.SortHeroes(); //somethings wrong here
+
+			transform.position = curRoom.gameObject.transform.position;
+		}
 	}
 }

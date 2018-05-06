@@ -6,17 +6,18 @@ public class ClericHero : BaseHero {
 
 	//Assigns all initial stats
 	void Start () {
-		this.AssignStats (20, 2, 25, 1, 100, 2);
+		//this.AssignStats (20, 2, 25, 1, 100, 2);
+		this.AssignStats("Cleric");
 	}
 
 	//Overrides base Attack function to heal a hero in the room instead of attacking
-	public override void Attack(RoomScript room) {
+	public override void Attack() {
 		BaseHero heroScript;
 		BaseHero mostHurt = null;
 		float hpRatio = 100000f;
 		float curRatio;
 		int threat = -1;
-		foreach (GameObject hero in room.heroesInRoom) {
+		foreach (GameObject hero in this.getRoom().heroesInRoom) {
 			heroScript = hero.GetComponent<BaseHero> ();
 
 			if (heroScript != null && heroScript != this) {
@@ -31,6 +32,6 @@ public class ClericHero : BaseHero {
 		if (mostHurt != null)
 			mostHurt.Heal (this.getDamage ());
 		else
-			base.Attack (room);
+			base.Attack ();
 	}
 }
