@@ -70,14 +70,18 @@ public abstract class BaseMonster : MonoBehaviour {
 	public void AssignStats(string type) {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		this.type = type;
-		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
+		curRoom = gameManager.spawnRoom;
 		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
 		this.curHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
 		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
 		this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
-		this.threat = int.Parse(gameManager.monsters.data [type] ["Threat Level"]);
+		//this.threat = int.Parse(gameManager.monsters.data [type] ["Threat Level"]);
 		this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
 		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
+		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
+
+		//Placeholder
+		this.threat = 3;
 	}
 
 	//Getters for most stats
