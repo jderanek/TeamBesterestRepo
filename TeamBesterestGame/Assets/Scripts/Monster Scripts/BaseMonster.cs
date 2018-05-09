@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public abstract class BaseMonster : MonoBehaviour {
 
 	//Private variables for this monsters stats
+	string type;
 	string name;
 	int curHealth;
 	int maxHealth;
@@ -22,10 +23,12 @@ public abstract class BaseMonster : MonoBehaviour {
 	int armor;
 	int workEthic;
 	int size;
+	int tier;
 	bool inCombat;
 	bool hasFought;
 	GameObject curRoom;
 	Text damageText;
+	GameManager gameManager;
 
 	///<summary>
 	///Assigns all stats to this monster, to be used in place of super.
@@ -58,6 +61,23 @@ public abstract class BaseMonster : MonoBehaviour {
 		damageText = this.gameObject.GetComponentInChildren<Text>();
 		this.workEthic = ethic;
 		this.size = sz;
+	}
+
+	///<summary>
+	///Assigns all stats to this monster from monster stats sheet
+	///</summary>
+	/// <param name="type">Name of Monster Type</param>
+	public void AssignStats(string type) {
+		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+		this.type = type;
+		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
+		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
+		this.curHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
+		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
+		this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
+		this.threat = int.Parse(gameManager.monsters.data [type] ["Threat Level"]);
+		this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
+		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
 	}
 
 	//Getters for most stats
@@ -117,7 +137,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	}
 
 	//Function to make monster lose health
-	public void Damage(int dam) {
+	public void TakeDamage(int dam) {
 		this.curHealth = Mathf.Clamp (this.curHealth - dam, 0, this.maxHealth);
 		damageText.text = this.curHealth.ToString ();
 		if (curHealth <= 0) {

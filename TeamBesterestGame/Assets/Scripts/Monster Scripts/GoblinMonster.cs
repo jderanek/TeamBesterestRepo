@@ -5,5 +5,6 @@ using UnityEngine;
 public class GoblinMonster : BaseMonster {
 	//Assigns all stats
 	void Start() {
+		AssignStats ("Goblin");
 	}
 }
