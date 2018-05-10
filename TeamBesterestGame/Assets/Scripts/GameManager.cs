@@ -64,7 +64,10 @@ public class GameManager : MonoBehaviour
     public GameObject interviewExit; //public to be assigned in editor
 
     //UI stuff
-    public GameObject contextMenu;
+    public GameObject leftPanel;
+    private bool applicationsOpen = false;
+    private bool pauseMenuOpen = false;
+    public GameObject pauseMenu;
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
@@ -194,6 +197,7 @@ public class GameManager : MonoBehaviour
 
 	public void PickUpObject(GameObject otherObject)
 	{
+
 		if (otherObject.GetComponent<MonsterScript>() != null ) {
 			if (otherObject.GetComponent<MonsterScript>().myRoom != null)
 			{
@@ -483,9 +487,9 @@ public class GameManager : MonoBehaviour
         interviewResponse.SetActive(true);
 		//interviewBackground.SetActive(true);
 		interviewExit.SetActive(true);
-		constructionButton.SetActive(false);
+		//constructionButton.SetActive(false);
         //contextMenu.SetActive(false);
-		applicationsButton.SetActive(false);
+		//applicationsButton.SetActive(false);
 		this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
 	}
 
@@ -561,11 +565,39 @@ public class GameManager : MonoBehaviour
 		return xpNeeded;
 	}
 
-	public void UpdateInfamy()
-	{
-		infamyLevelText.text = "InfamyLevel: " + infamyLevel;
-		infamyXPText.text = "InfamyXP: " + infamyXP + "/" + xpToNextInfamyLevel;
-	}
+    public void UpdateInfamy()
+    {
+        infamyLevelText.text = "InfamyLevel: " + infamyLevel;
+        infamyXPText.text = "InfamyXP: " + infamyXP + "/" + xpToNextInfamyLevel;
+    }
+
+    public void ApplicationsMenu()
+    {
+        if (!applicationsOpen)
+        {
+            applicationsOpen = true;
+            leftPanel.SetActive(true);
+        }
+        else
+        {
+            applicationsOpen = false;
+            leftPanel.SetActive(false);
+        }
+    }
+
+    public void PauseMenu()
+    {
+        if (!pauseMenuOpen)
+        {
+            pauseMenuOpen = true;
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            pauseMenuOpen = false;
+            pauseMenu.SetActive(false);
+        }
+    }
 
     //aggregate stress calculating
     public void UpdateStressMeter()

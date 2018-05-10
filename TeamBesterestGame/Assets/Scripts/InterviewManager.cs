@@ -311,8 +311,8 @@ public class InterviewManager : MonoBehaviour {
 		//gameManager.GetComponent<GameManager>().interviewBackground.SetActive(false);
         gameManager.GetComponent<GameManager>().interviewImage.SetActive(false);
         gameManager.GetComponent<GameManager>().interviewExit.SetActive(false);
-		gameManager.GetComponent<GameManager>().constructionButton.SetActive(true);
-		gameManager.GetComponent<GameManager>().applicationsButton.SetActive(true);
+		//gameManager.GetComponent<GameManager>().constructionButton.SetActive(true);
+		//gameManager.GetComponent<GameManager>().applicationsButton.SetActive(true);
         //gameManager.GetComponent<GameManager>().contextMenu.SetActive(true);
         interviewResponse.SetActive(false);
 
