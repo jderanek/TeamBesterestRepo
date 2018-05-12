@@ -80,6 +80,13 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
 		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
 
+		this.stress = 0f;
+		this.morale = .5f;
+		this.stressGain = .02f;
+		this.vacationStressLoss = .15f;
+		this.infamyGain = 1;
+		damageText = this.gameObject.GetComponentInChildren<Text>();
+
 		//Placeholder
 		this.threat = 3;
 	}
