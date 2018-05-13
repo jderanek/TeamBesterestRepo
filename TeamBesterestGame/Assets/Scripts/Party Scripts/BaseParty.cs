@@ -64,19 +64,43 @@ public abstract class BaseParty {
 		return min;
 	}
 
+	//Backtracks by one room, changes state to Exploring if there's a room they haven't explored
+	public RoomScript Backtrack() {
+		RoomScript room = roomPath [roomPath.Count - 1];
+		roomPath.Remove (room);
+		return room;
+	}
+
 	//Finds next room to explore and moves to it
 	//Changes state from Exploring if it is null
 	public void MoveToNextRoom() {
-		RoomScript toMove = this.FindNextRoom ();
-		if (toMove != null) {
-			MoveTo (toMove);
-			return;
+		RoomScript toMove;
+		switch (state) {
+		case "Explore":
+			toMove = this.FindNextRoom ();
+			if (toMove != null)
+				MoveTo (toMove);
+			else if (this.exploredRooms.Count == gameManager.roomList.Length)
+				state = "Exit";
+			else
+				state = "Back";
+			break;
+		case "Back":
+			toMove = this.Backtrack ();
+			if (toMove == null)
+				this.RemoveParty ();
+			else
+				MoveTo (toMove);
+			break;
 		}
+	}
 
-		if (this.exploredRooms.Count == gameManager.roomList.Length)
-			state = "Exit";
-		else
-			state = "Back";
+	//Destroys all party members of this Party to despawn the party
+	//Meant for use when returned to spawnRoom
+	public void RemoveParty() {
+		foreach (BaseHero hero in this.partyMembers) {
+			GameObject.Destroy (hero.gameObject);
+		}
 	}
 
 	//Adds heros to the list of members
