@@ -7,7 +7,7 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	//Private variables for this monsters stats
 	string type;
-	string name;
+	string monName;
 	int curHealth;
 	int maxHealth;
 	int curDamage;
@@ -26,9 +26,26 @@ public abstract class BaseMonster : MonoBehaviour {
 	int tier;
 	bool inCombat;
 	bool hasFought;
+	bool monsterGrabbed;
+	bool heroInRoom;
 	GameObject curRoom;
 	Text damageText;
 	GameManager gameManager;
+
+	//Temp variables from transfer
+	private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
+	string traitName;
+	public float baseNerve = .5f; //public to be edited in editor
+	public float curNerve = .5f; //public to be edited in editor
+
+	void Awake() {
+		monsterGrabbed = true;
+		heroInRoom = false;
+		this.personality = allTraits [Random.Range (0, allTraits.Length)];
+		this.personality.ApplyBase (this);
+		this.traitName = this.personality.getName ();
+		this.workEthic = Random.Range (-1, 1);
+	}
 
 	///<summary>
 	///Assigns all stats to this monster, to be used in place of super.
@@ -44,7 +61,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	/// <param name="ethic">Work Ethic</param>
 	/// <param name="sz">Monster Size</param>
 	public void AssignStats(string nm, int hp, int dam, TraitBase trait, int sal, int thr, int arm, int ethic, int sz) {
-		this.name = nm;
+		this.monName = nm;
 		this.maxHealth = hp;
 		this.curHealth = maxHealth;
 		this.damage = dam;
@@ -104,6 +121,15 @@ public abstract class BaseMonster : MonoBehaviour {
 	public int getBaseDamage() {
 		return this.damage;
 	}
+	public void addDamage(int d) {
+		this.curDamage += d;
+	}
+	public void setDamage(int d) {
+		this.damage = d;
+	}
+	public void setCurDamage(int d) {
+		this.curDamage = d;
+	}
 	public TraitBase getTrait() {
 		return this.personality;
 	}
@@ -113,23 +139,44 @@ public abstract class BaseMonster : MonoBehaviour {
 	public int getThreat() {
 		return this.threat;
 	}
+	public void setThreat(int t) {
+		this.threat = t;
+	}
+	public void addThreat(int t) {
+		this.threat += t;
+	}
 	public int getArmor() {
 		return this.armor;
 	}
 	public float getMorale() {
 		return this.morale;
 	}
+	public void setMorale(float newM) {
+		this.morale = newM;
+	}
 	public float getStress() {
 		return this.stress;
+	}
+	public void setStress(float newS) {
+		this.stress = newS;
 	}
 	public float getStressGain() {
 		return this.stressGain;
 	}
+	public void setStressGain(float newGain) {
+		this.stressGain = newGain;
+	}
 	public float getStressLoss() {
 		return this.vacationStressLoss;
 	}
+	public void setStressLoss(float loss) {
+		this.vacationStressLoss = loss;
+	}
 	public int getInfamyGain() {
 		return this.infamyGain;
+	}
+	public void setInfamyGain(int gain) {
+		this.infamyGain = gain;
 	}
 	public bool isInCombat() {
 		return this.inCombat;
@@ -138,13 +185,19 @@ public abstract class BaseMonster : MonoBehaviour {
 		return this.hasFought;
 	}
 	public string getName() {
-		return this.name;
+		return this.monName;
 	}
 	public int getWorkEthic() {
 		return this.workEthic;
 	}
 	public int getSize() {
 		return this.size;
+	}
+	public string getTraitName() {
+		return this.traitName;
+	}
+	public RoomScript getCurRoom() {
+		return this.curRoom.GetComponent<RoomScript> ();
 	}
 
 	//Function to make monster lose health

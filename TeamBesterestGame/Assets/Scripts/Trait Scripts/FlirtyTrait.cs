@@ -5,17 +5,17 @@ using UnityEngine;
 public class FlirtyTrait : TraitBase {
 
 	//Empty Function
-	public override void ApplyBase(MonsterScript monster) {
+	public override void ApplyBase(BaseMonster monster) {
 		this.setName ("Flirty");
 	}
 
 	//Empty function
-	public override void ApplyDayEffects(MonsterScript monster) {
+	public override void ApplyDayEffects(BaseMonster monster) {
 		//Can't really implement yet
 	}
 
 
 	//Empty function
-	public override void ApplyWeekEffects(MonsterScript monster) {
+	public override void ApplyWeekEffects(BaseMonster monster) {
 	}
 }

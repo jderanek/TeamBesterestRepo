@@ -101,7 +101,7 @@ public class MonsterScript : MonoBehaviour
 		this.curThreat = threatValue;
 
 		this.personality = allTraits [Random.Range (0, allTraits.Length)];
-		this.personality.ApplyBase (this);
+		//this.personality.ApplyBase (this);
 		this.traitName = this.personality.getName ();
 
 		this.workEthic = Random.Range (-1, 1);// see workEthic variable for explanation of why i did this nonsense

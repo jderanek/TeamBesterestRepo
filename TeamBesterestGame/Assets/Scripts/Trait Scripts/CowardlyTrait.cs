@@ -5,41 +5,41 @@ using UnityEngine;
 public class CowardlyTrait : TraitBase {
 
 	//Empty function
-	public override void ApplyBase(MonsterScript monster) {
+	public override void ApplyBase(BaseMonster monster) {
 		this.setName ("Cowardly");
 	}
 
 	//Gains morale if room threat is high, loses it if it is low
-	public override void ApplyDayEffects(MonsterScript monster) {
-		int threat = monster.myRoom.GetComponent<RoomScript> ().roomThreat;
+	public override void ApplyDayEffects(BaseMonster monster) {
+		int threat = monster.getCurRoom ().roomThreat;
 
 		switch (threat) {
 		case 1:
-			monster.morale = Mathf.Clamp01 (monster.morale - .50f);
+			monster.setMorale (Mathf.Clamp01 (monster.getMorale () - .50f));
 			break;
 		case 2:
-				monster.morale = Mathf.Clamp01 (monster.morale - .25f);
+			monster.setMorale (Mathf.Clamp01 (monster.getMorale () - .25f));
 			break;
 		case 3:
-			monster.morale = Mathf.Clamp01 (monster.morale - .10f);
+			monster.setMorale (Mathf.Clamp01 (monster.getMorale () - .10f));
 			break;
 		case 4:
-			monster.morale = Mathf.Clamp01 (monster.morale);
+			monster.setMorale (Mathf.Clamp01 (monster.getMorale ()));
 			break;
 		case 5:
-			monster.morale = Mathf.Clamp01 (monster.morale + .10f);
+			monster.setMorale (Mathf.Clamp01 (monster.getMorale () + .10f));
 			break;
 		case 6:
-			monster.morale = Mathf.Clamp01 (monster.morale + .25f);
+			monster.setMorale (Mathf.Clamp01 (monster.getMorale () + .25f));
 			break;
 		default:
-			monster.morale = Mathf.Clamp01 (monster.morale + .50f);
+			monster.setMorale (Mathf.Clamp01 (monster.getMorale () + .50f));
 			break;
 		}
 	}
 
 	//Empty function
-	public override void ApplyWeekEffects(MonsterScript monster) {
+	public override void ApplyWeekEffects(BaseMonster monster) {
 		return;
 	}
 }

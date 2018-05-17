@@ -5,25 +5,25 @@ using UnityEngine;
 public class SlackerTrait : TraitBase {
 
 	//Increases stress gain by 2
-	public override void ApplyBase(MonsterScript monster) {
-		monster.stressGain += .02f;
-		monster.vacationStressLoss = .2f;
+	public override void ApplyBase(BaseMonster monster) {
+		monster.setStressGain (monster.getStressGain () + .02f);
+		monster.setStressLoss (2f);
 		this.setName ("Slacker");
 	}
 
 	//Empty function
-	public override void ApplyDayEffects(MonsterScript monster) {
+	public override void ApplyDayEffects(BaseMonster monster) {
 	}
 
 
 	//Increases morale by 10 with Wprkaholic monsters.
-	public override void ApplyWeekEffects(MonsterScript monster) {
-		RoomScript room = monster.myRoom.GetComponent<RoomScript> ();
+	public override void ApplyWeekEffects(BaseMonster monster) {
+		RoomScript room = monster.getCurRoom ();
 
 		foreach (GameObject mon in room.roomMembers) {
-			MonsterScript monScript = mon.GetComponent<MonsterScript> ();
-			if (monScript != null && monScript.personality.GetType() == typeof(WorkaholicTrait)) {
-				monster.morale = Mathf.Clamp01 (monster.morale + .1f);
+			BaseMonster monScript = mon.GetComponent<BaseMonster> ();
+			if (monScript != null && monScript.getTrait().GetType() == typeof(WorkaholicTrait)) {
+				monster.setMorale (Mathf.Clamp01 (monster.getMorale () + .1f));
 			}
 		}
 	}

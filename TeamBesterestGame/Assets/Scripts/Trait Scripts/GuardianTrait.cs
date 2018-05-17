@@ -5,31 +5,31 @@ using UnityEngine;
 public class GuardianTrait : TraitBase {
 
 	//Adds threat to this monster
-	public override void ApplyBase(MonsterScript monster) {
-		monster.threatValue += 1;
+	public override void ApplyBase(BaseMonster monster) {
+		monster.addThreat (1);
 		this.setName ("Guardian");
 	}
 
 
 	//Empty function
-	public override void ApplyWeekEffects(MonsterScript monster) {
+	public override void ApplyWeekEffects(BaseMonster monster) {
 	}
 
 	//Adds nevrve and adjusts threat value
 	//Then checks for smaller monsters to change morale
-	public override void ApplyDayEffects(MonsterScript monster) {
+	public override void ApplyDayEffects(BaseMonster monster) {
 		monster.curNerve = Mathf.Clamp01 (monster.baseNerve + .1f);
 
-		RoomScript room = monster.myRoom.GetComponent<RoomScript> ();
+		RoomScript room = monster.getCurRoom ();
 
 		foreach (GameObject mon in room.roomMembers) {
-			MonsterScript monScript = mon.GetComponent<MonsterScript> ();
-			if (monScript != null && monScript.size > monster.size) {
-				monster.morale = Mathf.Clamp01 (monster.morale + .15f);
+			BaseMonster monScript = mon.GetComponent<BaseMonster> ();
+			if (monScript != null && monScript.getSize() > monster.getSize()) {
+				monster.setMorale (Mathf.Clamp01 (monster.getMorale () + .15f));
 				return;
 			}
 		}
 
-		monster.morale = Mathf.Clamp01 (monster.morale - .1f);
+		monster.setMorale (Mathf.Clamp01 (monster.getMorale () - .1f));
 	}
 }

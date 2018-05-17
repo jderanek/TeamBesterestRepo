@@ -5,27 +5,28 @@ using UnityEngine;
 public class FancyTrait : TraitBase {
 
 	//Decreases infamy gain
-	public override void ApplyBase(MonsterScript monster) {
-		monster.infamyGain -= 1;
+	public override void ApplyBase(BaseMonster monster) {
+		monster.setInfamyGain (monster.getInfamyGain () - 1);
 		this.setName ("Fancy");
 		//No idea what this should be either
 	}
 
 	//Empty function
-	public override void ApplyDayEffects(MonsterScript monster) {
+	public override void ApplyDayEffects(BaseMonster monster) {
 	}
 
 	//Reduces all other monsters morale by 5
-	public override void ApplyWeekEffects(MonsterScript monster) {
-		RoomScript room = monster.myRoom.GetComponent<RoomScript> ();
+	public override void ApplyWeekEffects(BaseMonster monster) {
+		RoomScript room = monster.getCurRoom ();
 
 		foreach (GameObject mon in room.roomMembers) {
-			MonsterScript monScript = mon.GetComponent<MonsterScript> ();
+			BaseMonster monScript = mon.GetComponent<BaseMonster> ();
 			if (monScript != null && monScript != monster) {
-				if (monScript.trait1 == "Gross" || monScript.trait2 == "Gross") {
-					monster.morale = Mathf.Clamp01 (monster.morale - .05f);
+				//if (monScript.trait1 == "Gross" || monScript.trait2 == "Gross") {
+				if (monScript.getTrait().getName() == "Gross") {
+					monster.setMorale (Mathf.Clamp01 (monster.getMorale () - .05f));
 				} else {
-					monster.morale = Mathf.Clamp01 (monster.morale + .05f);
+					monster.setMorale (Mathf.Clamp01 (monster.getMorale () + .05f));
 				}
 			}
 		}

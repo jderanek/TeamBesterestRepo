@@ -17,11 +17,11 @@ public abstract class TraitBase {
 	}
 
 	//Abstract function to apply base effects
-	public abstract void ApplyBase(MonsterScript monster);
+	public abstract void ApplyBase(BaseMonster monster);
 
 	//Abstract function to apply effects during end of work 'day'
-	public abstract void ApplyDayEffects(MonsterScript monster);
+	public abstract void ApplyDayEffects(BaseMonster monster);
 
 	//Abstract function to apply effects during end of work 'week'
-	public abstract void ApplyWeekEffects(MonsterScript monster);
+	public abstract void ApplyWeekEffects(BaseMonster monster);
 }

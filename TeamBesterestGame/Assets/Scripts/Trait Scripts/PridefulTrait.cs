@@ -6,17 +6,17 @@ using UnityEngine;
 public class PridefulTrait : TraitBase {
 
 	//Increases damage by 10%
-	public override void ApplyBase(MonsterScript monster) {
-		monster.attackDamage += (int)(monster.attackDamage * .1);
+	public override void ApplyBase(BaseMonster monster) {
+		monster.addDamage ((int)(monster.getBaseDamage () * .1));
 		this.setName ("Prideful");
 	}
 
 	//Empty function
-	public override void ApplyDayEffects(MonsterScript monster) {
+	public override void ApplyDayEffects(BaseMonster monster) {
 	}
 
 
 	//Empty function
-	public override void ApplyWeekEffects(MonsterScript monster) {
+	public override void ApplyWeekEffects(BaseMonster monster) {
 	}
 }

@@ -19,6 +19,9 @@ public abstract class BaseHero : MonoBehaviour {
 	BaseParty currentParty;
 	GameManager gameManager;
 
+	//Variables not set by assignment
+	private bool inCombat;
+
 	///<summary>
 	///Assigns all stats to this hero, to be used in place of super.
 	///</summary>
@@ -84,6 +87,9 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 	public RoomScript getRoom() {
 		return this.curRoom;
+	}
+	public bool isInCombat() {
+		return inCombat;
 	}
 
 	//Setter functions for damage and value
@@ -205,6 +211,15 @@ public abstract class BaseHero : MonoBehaviour {
 			//curRoom.SortHeroes(); //somethings wrong here
 
 			transform.position = curRoom.gameObject.transform.position;
+		}
+	}
+
+	void OnMouseOver()
+	{
+		if (Input.GetMouseButtonDown(0) && !inCombat)
+		{
+			//GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SelectObject(this.gameObject);
 		}
 	}
 }

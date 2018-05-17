@@ -5,23 +5,23 @@ using UnityEngine;
 public class TyrantTrait : TraitBase {
 
 	//Empty function
-	public override void ApplyBase(MonsterScript monster) {
+	public override void ApplyBase(BaseMonster monster) {
 		this.setName ("Tyrant");
 	}
 
 	//Empty function
-	public override void ApplyDayEffects(MonsterScript monster) {
+	public override void ApplyDayEffects(BaseMonster monster) {
 	}
 
 	//Finds all monsters in the room 2 sizes smaller than itself
-	public override void ApplyWeekEffects(MonsterScript monster) {
-		RoomScript room = monster.myRoom.GetComponent<RoomScript> ();
+	public override void ApplyWeekEffects(BaseMonster monster) {
+		RoomScript room = monster.getCurRoom ();
 		List<GameObject> smallMonsters = new List<GameObject> ();
 
 		foreach (GameObject mon in room.roomMembers) {
-			MonsterScript monScript = mon.GetComponent<MonsterScript> ();
+			BaseMonster monScript = mon.GetComponent<BaseMonster> ();
 			if (monScript != null && monScript != monster) {
-				if (monster.size - monScript.size >= 2)
+				if (monster.getSize() - monScript.getSize() >= 2)
 					smallMonsters.Add (mon);
 			}
 		}
@@ -29,9 +29,9 @@ public class TyrantTrait : TraitBase {
 		//Eats random monster if there is at least one
 		if (smallMonsters.Count > 1) {
 			int toEat = Random.Range (0, smallMonsters.Count - 1);
-			MonsterScript smallScript = smallMonsters [toEat].GetComponent<MonsterScript> ();
+			BaseMonster smallScript = smallMonsters [toEat].GetComponent<BaseMonster> ();
 			if (smallScript != null)
-				smallScript.TakeDamage (smallScript.currentHealth);
+				smallScript.TakeDamage (smallScript.getCurHealth ());
 		}
 	}
 }

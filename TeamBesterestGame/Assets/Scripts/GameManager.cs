@@ -102,7 +102,8 @@ public class GameManager : MonoBehaviour
     private bool peakHours = false;
 
     //CSVImporter for Monsters and Heroes
-    public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
+    //public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
+	public CSVImporter monsters;
 	public CSVImporter heroStats = new CSVImporter(7, 7, "Heroes - Sheet1.csv");
 
 	// Use this for initialization
@@ -118,6 +119,9 @@ public class GameManager : MonoBehaviour
 
 		currentTime = timePerDay;
         stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
+
+		monsters = new CSVImporter(24, 11, "Monster_Stats_-_Sheet1.csv", 
+			"https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
     }
 
 	void Start() {
@@ -126,14 +130,14 @@ public class GameManager : MonoBehaviour
 			room.GetComponent<RoomScript>().Initialize();
 		}
 
-		/*
+
 		//Test for CSVImporter
 		foreach (KeyValuePair<string, Dictionary<string, string>> monster in monsters.data) {
 			print (monster.Key);
 			foreach (KeyValuePair<string, string> entry in monster.Value) {
 				print (entry.Key + ": " + entry.Value);
 			}
-		}
+		}/*
 		foreach (KeyValuePair<string, Dictionary<string, string>> hero in heroStats.data) {
 			print (hero.Key);
 			foreach (KeyValuePair<string, string> entry in hero.Value) {
@@ -525,7 +529,7 @@ public class GameManager : MonoBehaviour
 
 				if (monScript != null) {
 					if (monScript.personality != null) {
-						monScript.personality.ApplyWeekEffects (monScript);
+						//monScript.personality.ApplyWeekEffects (monScript);
 					}
 				}
 

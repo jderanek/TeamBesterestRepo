@@ -5,22 +5,22 @@ using UnityEngine;
 public class WaryTrait : TraitBase {
 
 	//Removes threat from this monster
-	public override void ApplyBase(MonsterScript monster) {
-		monster.threatValue -= 1;
+	public override void ApplyBase(BaseMonster monster) {
+		monster.addThreat(-1);
 		this.setName ("Wary");
 	}
 
 	//Reduces nerve and threat level
-	public override void ApplyDayEffects(MonsterScript monster) {
+	public override void ApplyDayEffects(BaseMonster monster) {
 		monster.curNerve = Mathf.Clamp01 (monster.baseNerve - .25f);
-		monster.curThreat = monster.threatValue - 1;
+		//monster.curThreat = monster.threatValue - 1;
 	}
 
 	//Increases morale and removes stress if mosnter didn't fight
-	public override void ApplyWeekEffects(MonsterScript monster) {
-		if (!monster.hasFought) {
-			monster.morale = Mathf.Clamp01 (monster.morale + .2f);
-			monster.stress = Mathf.Clamp01 (monster.stress - .02f);
+	public override void ApplyWeekEffects(BaseMonster monster) {
+		if (!monster.getHasFought()) {
+			monster.setMorale (Mathf.Clamp01 (monster.getMorale () + .2f));
+			monster.setStress (Mathf.Clamp01 (monster.getStress () - .02f));
 		}
 	}
 }
