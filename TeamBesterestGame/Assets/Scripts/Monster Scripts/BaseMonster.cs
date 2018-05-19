@@ -88,6 +88,8 @@ public abstract class BaseMonster : MonoBehaviour {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		this.type = type;
 		curRoom = gameManager.spawnRoom;
+		//Temp name choosing
+		this.monName = gameManager.monNames.data [(Random.Range (1, 5)).ToString()] [(Random.Range (1, 6)).ToString()];
 		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
 		this.curHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
 		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);

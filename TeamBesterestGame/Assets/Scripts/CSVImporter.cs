@@ -17,7 +17,6 @@ public class CSVImporter {
     string path = "Assets/Resources/";
 	string url;
 
-	MonoBehaviour owner;
 	WWW download;
 
 	///<summary>
@@ -49,7 +48,6 @@ public class CSVImporter {
 		this.cols = c;
 		this.path += p;
 		this.url = url;
-		this.owner = owner;
 
 		//this.ImportData();
 		this.LoadData();
@@ -89,7 +87,7 @@ public class CSVImporter {
 		
 		StringReader reader = new StringReader (download.text);
 		string[] curLine;
-		string[] variableNames = new string[rows-1];
+		string[] variableNames = new string[cols-1];
 
 		for (int y=0; y<rows; y++) {
 			curLine = reader.ReadLine().Split(',');

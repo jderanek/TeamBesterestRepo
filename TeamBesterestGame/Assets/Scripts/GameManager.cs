@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
     //CSVImporter for Monsters and Heroes
     //public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
 	public CSVImporter monsters;
+	public CSVImporter monNames;
 	public CSVImporter heroStats = new CSVImporter(7, 7, "Heroes - Sheet1.csv");
 
 	// Use this for initialization
@@ -122,6 +123,8 @@ public class GameManager : MonoBehaviour
 
 		monsters = new CSVImporter(24, 11, "Monster_Stats_-_Sheet1.csv", 
 			"https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
+		monNames = new CSVImporter(6, 7, "NamesWIP - Sheet1.csv",
+			"https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
     }
 
 	void Start() {
