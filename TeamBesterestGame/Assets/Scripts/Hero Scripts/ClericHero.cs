@@ -16,7 +16,7 @@ public class ClericHero : BaseHero {
 		BaseHero mostHurt = null;
 		float hpRatio = 100000f;
 		float curRatio;
-		int threat = -1;
+
 		foreach (GameObject hero in this.getRoom().heroesInRoom) {
 			heroScript = hero.GetComponent<BaseHero> ();
 

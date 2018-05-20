@@ -8,8 +8,10 @@ public abstract class BaseMonster : MonoBehaviour {
 	//Private variables for this monsters stats
 	string type;
 	string monName;
+	string archetype;
 	int curHealth;
 	int maxHealth;
+	int baseHealth;
 	int curDamage;
 	int damage;
 	TraitBase personality;
@@ -39,12 +41,16 @@ public abstract class BaseMonster : MonoBehaviour {
 	public float curNerve = .5f; //public to be edited in editor
 
 	void Awake() {
+		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		monsterGrabbed = true;
 		heroInRoom = false;
+		//Temp measure to suppress errors
+		//this.AssignStats (gameObject.name);
 		this.personality = allTraits [Random.Range (0, allTraits.Length)];
 		this.personality.ApplyBase (this);
 		this.traitName = this.personality.getName ();
 		this.workEthic = Random.Range (-1, 1);
+		this.curRoom = gameManager.spawnRoom;
 	}
 
 	///<summary>
@@ -63,6 +69,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	public void AssignStats(string nm, int hp, int dam, TraitBase trait, int sal, int thr, int arm, int ethic, int sz) {
 		this.monName = nm;
 		this.maxHealth = hp;
+		this.baseHealth = hp;
 		this.curHealth = maxHealth;
 		this.damage = dam;
 		this.curDamage = this.damage;
@@ -85,19 +92,21 @@ public abstract class BaseMonster : MonoBehaviour {
 	///</summary>
 	/// <param name="type">Name of Monster Type</param>
 	public void AssignStats(string type) {
-		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+		//gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		this.type = type;
 		curRoom = gameManager.spawnRoom;
-		//Temp name choosing
-		this.monName = gameManager.monNames.data [(Random.Range (1, 5)).ToString()] [(Random.Range (1, 6)).ToString()];
 		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
 		this.curHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
+		this.baseHealth = curHealth;
 		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
 		this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
-		//this.threat = int.Parse(gameManager.monsters.data [type] ["Threat Level"]);
+		this.threat = int.Parse(gameManager.monsters.data [type] ["Threat"]);
 		this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
 		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
 		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
+		this.archetype = gameManager.monsters.data [type] ["Archetype"];
+		int num = Random.Range (1, 5);
+		this.name = gameManager.monNames.data [num.ToString ()] [this.archetype];
 
 		this.stress = 0f;
 		this.morale = .5f;
@@ -116,6 +125,9 @@ public abstract class BaseMonster : MonoBehaviour {
 	}
 	public int getMaxHealth() {
 		return this.maxHealth;
+	}
+	public int getBaseHealth() {
+		return this.baseHealth;
 	}
 	public int getCurDamage() {
 		return this.curDamage;
@@ -183,11 +195,20 @@ public abstract class BaseMonster : MonoBehaviour {
 	public bool isInCombat() {
 		return this.inCombat;
 	}
+	public void setInCombat(bool value) {
+		this.inCombat = value;
+	}
 	public bool getHasFought() {
 		return this.hasFought;
 	}
+	public void setHasFought(bool value) {
+		this.hasFought = value;
+	}
 	public string getName() {
 		return this.monName;
+	}
+	public void setName(string nm) {
+		this.name = nm;
 	}
 	public int getWorkEthic() {
 		return this.workEthic;
@@ -200,6 +221,15 @@ public abstract class BaseMonster : MonoBehaviour {
 	}
 	public RoomScript getCurRoom() {
 		return this.curRoom.GetComponent<RoomScript> ();
+	}
+	public void setCurRoom(GameObject room) {
+		this.curRoom = room;
+	}
+	public string getType() {
+		return this.type;
+	}
+	public string getArchetype() {
+		return this.archetype;
 	}
 
 	//Function to make monster lose health
@@ -217,17 +247,19 @@ public abstract class BaseMonster : MonoBehaviour {
 	}
 
 	//Default attack function that hits the hero with the highest threat
-	public virtual void Attack(RoomScript room) {
+	public virtual void Attack() {
 		BaseHero heroScript;
 		BaseHero highThreat = null;
 		int threat = -1;
-		foreach (GameObject hero in room.roomMembers) {
-			heroScript = hero.GetComponent<BaseHero> ();
+		foreach (GameObject hero in this.getCurRoom().roomMembers) {
+			if (hero != null) {
+				heroScript = hero.GetComponent<BaseHero> ();
 
-			if (heroScript != null) {
-				if (heroScript.getThreat() > threat) {
-					highThreat = heroScript;
-					threat = heroScript.getThreat();
+				if (heroScript != null) {
+					if (heroScript.getThreat () > threat) {
+						highThreat = heroScript;
+						threat = heroScript.getThreat ();
+					}
 				}
 			}
 		}

@@ -65,6 +65,11 @@
      <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />
      <Compile Include="Assets\Scripts\InterviewManager.cs" />
      <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
+     <Compile Include="Assets\Scripts\Monster Scripts\BestialMosnter.cs" />
+     <Compile Include="Assets\Scripts\Monster Scripts\DemonMonster.cs" />
+     <Compile Include="Assets\Scripts\Monster Scripts\DragonkinMonster.cs" />
+     <Compile Include="Assets\Scripts\Monster Scripts\TribalMonster.cs" />
+     <Compile Include="Assets\Scripts\Monster Scripts\UndeadMonster.cs" />
      <Compile Include="Assets\Scripts\MonsterScript.cs" />
      <Compile Include="Assets\Scripts\Party Scripts\BaseParty.cs" />
      <Compile Include="Assets\Scripts\PickUpRoom.cs" />

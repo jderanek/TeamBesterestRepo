@@ -1786,6 +1786,10 @@ Prefab:
       propertyPath: myRoom
       value: 
       objectReference: {fileID: 959393533}
+    - target: {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
   m_IsPrefabParent: 0
@@ -4085,7 +4089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.26846838, y: 0.90879923}
-  m_AnchoredPosition: {x: 0, y: -0.4474001}
+  m_AnchoredPosition: {x: 0, y: -0.44739914}
   m_SizeDelta: {x: 0, y: 0.105199814}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &658919598
@@ -5283,6 +5287,10 @@ Prefab:
       propertyPath: myRoom
       value: 
       objectReference: {fileID: 959393533}
+    - target: {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
   m_IsPrefabParent: 0

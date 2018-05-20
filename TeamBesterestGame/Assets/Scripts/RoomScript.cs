@@ -104,20 +104,19 @@ public class RoomScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
-                gameManager.selectedObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Remove(gameManager.selectedObject);
-                gameManager.selectedObject.transform.position = new Vector3(
-                     gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
-                     gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
-                     0
-                    );
-                roomMembers.Add(gameManager.selectedObject);
-                roomThreat += gameManager.selectedObject.GetComponent<MonsterScript>().threatValue;
-                monsterInRoom = true;
-                gameManager.selectedObject.GetComponent<MonsterScript>().myRoom = this.gameObject;
-                foreach (GameObject neighbor in neighborRooms)
-                {
-                    neighbor.GetComponent<RoomScript>().SortNeighbors();
-                }
+					//gameManager.selectedObject.GetComponent<BaseMonster> ().getCurRoom ().roomMembers.Remove (gameManager.selectedObject);
+					gameManager.selectedObject.transform.position = new Vector3 (
+						gameObject.transform.position.x + UnityEngine.Random.Range (-0.25f, 0.25f),
+						gameObject.transform.position.y + UnityEngine.Random.Range (-0.25f, 0.25f),
+						0
+					);
+					roomMembers.Add (gameManager.selectedObject);
+					roomThreat += gameManager.selectedObject.GetComponent<BaseMonster> ().getThreat ();
+					monsterInRoom = true;
+					gameManager.selectedObject.GetComponent<BaseMonster> ().setCurRoom (this.gameObject);
+					foreach (GameObject neighbor in neighborRooms) {
+						neighbor.GetComponent<RoomScript> ().SortNeighbors ();
+					}
                 
             }
         }
@@ -252,12 +251,12 @@ public class RoomScript : MonoBehaviour
     {
         roomMembers.Sort(delegate (GameObject x, GameObject y)
         {
-            if (x.GetComponent<MonsterScript>().threatValue > y.GetComponent<MonsterScript>().threatValue)
+            if (x.GetComponent<BaseMonster>().getThreat() > y.GetComponent<BaseMonster>().getThreat())
             {
                 return -1;
             }
 
-            else if (x.GetComponent<MonsterScript>().threatValue < y.GetComponent<MonsterScript>().threatValue)
+            else if (x.GetComponent<BaseMonster>().getThreat() < y.GetComponent<BaseMonster>().getThreat())
             {
                 return 1;
             }
@@ -311,11 +310,11 @@ public class RoomScript : MonoBehaviour
         {
             if (heroesInRoom.Count != 0)
             {
-                monster.GetComponent<MonsterScript>().inCombat = true;
+				monster.GetComponent<BaseMonster> ().setInCombat (true);
             }
             else
             {
-                monster.GetComponent<MonsterScript>().inCombat = false;
+				monster.GetComponent<BaseMonster> ().setInCombat (false);
             }
         }
     }

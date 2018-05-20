@@ -43,7 +43,6 @@ public class CSVImporter {
 	/// <param name="url">Path to download from</param>
 	/// <param name="owner">Script to attempt download</param>
 	public CSVImporter(int r, int c, string p, string url) {
-		data = new Dictionary<string, Dictionary<string, string>>();
 		this.rows = r;
 		this.cols = c;
 		this.path += p;
@@ -53,7 +52,10 @@ public class CSVImporter {
 		this.LoadData();
 	}
     
+	//Reads values from a CSV spreadsheet from the given file name
     private void ImportData() {
+		//Resets dictionary from previous imports
+		data = new Dictionary<string, Dictionary<string, string>>();
         StreamReader reader = new StreamReader(path);
         string[] curLine;
         string[] variableNames = new string[rows-1];
@@ -66,7 +68,7 @@ public class CSVImporter {
                 } else if (y > 0) {
 					if (x == 0)
 						data.Add (curLine [x], new Dictionary<string, string> ());
-					else 
+					else
                         data[curLine[0]].Add(variableNames[x-1], curLine[x]);
                 }
             }
@@ -75,6 +77,7 @@ public class CSVImporter {
 		reader.Close ();
     }
 
+	//Reads data from CSV spreadsheet with given url online
 	private void LoadData() {
 		this.download = new WWW (url);
 
@@ -84,6 +87,9 @@ public class CSVImporter {
 				return;
 			}
 		}
+
+		//Resets dictionary from previous loads
+		data = new Dictionary<string, Dictionary<string, string>>();
 		
 		StringReader reader = new StringReader (download.text);
 		string[] curLine;

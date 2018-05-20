@@ -111,6 +111,10 @@ public class GameManager : MonoBehaviour
 	void Awake()
 	{
 		roomList = new GameObject[10, 10];
+		monsters = new CSVImporter(24, 11, "Monster_Stats_-_Sheet1.csv", 
+			"https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
+		monNames = new CSVImporter(6, 7, "NamesWIP - Sheet1.csv",
+			"https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
         currentCurrency = 1500;
 		UpdateCurrency ();
 		UpdateInfamy();
@@ -120,11 +124,6 @@ public class GameManager : MonoBehaviour
 
 		currentTime = timePerDay;
         stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
-
-		monsters = new CSVImporter(24, 11, "Monster_Stats_-_Sheet1.csv", 
-			"https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
-		monNames = new CSVImporter(6, 7, "NamesWIP - Sheet1.csv",
-			"https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
     }
 
 	void Start() {
@@ -134,16 +133,23 @@ public class GameManager : MonoBehaviour
 		}
 
 
+		/*
 		//Test for CSVImporter
 		foreach (KeyValuePair<string, Dictionary<string, string>> monster in monsters.data) {
 			print (monster.Key);
 			foreach (KeyValuePair<string, string> entry in monster.Value) {
 				print (entry.Key + ": " + entry.Value);
 			}
-		}/*
+		}
 		foreach (KeyValuePair<string, Dictionary<string, string>> hero in heroStats.data) {
 			print (hero.Key);
 			foreach (KeyValuePair<string, string> entry in hero.Value) {
+				print (entry.Key + ": " + entry.Value);
+			}
+		}
+		foreach (KeyValuePair<string, Dictionary<string, string>> name in monNames.data) {
+			print (name.Key);
+			foreach (KeyValuePair<string, string> entry in name.Value) {
 				print (entry.Key + ": " + entry.Value);
 			}
 		}
@@ -197,7 +203,9 @@ public class GameManager : MonoBehaviour
 
 	public GameObject SpawnMonster(GameObject resume)
 	{
-		GameObject newMonster = Instantiate(possibleMonsters[Random.Range(0, possibleMonsters.Length)], resume.transform.position, Quaternion.identity);
+		GameObject monsterPrefab = possibleMonsters [Random.Range (0, possibleMonsters.Length)];
+		GameObject newMonster = Instantiate(monsterPrefab, resume.transform.position, Quaternion.identity);
+		newMonster.GetComponent<BaseMonster> ().AssignStats (monsterPrefab.name);
 		newMonster.SetActive(false);
 		return newMonster;
 	}
@@ -205,16 +213,16 @@ public class GameManager : MonoBehaviour
 	public void PickUpObject(GameObject otherObject)
 	{
 
-		if (otherObject.GetComponent<MonsterScript>() != null ) {
-			if (otherObject.GetComponent<MonsterScript>().myRoom != null)
+		if (otherObject.GetComponent<BaseMonster>() != null ) {
+			if (otherObject.GetComponent<BaseMonster>().getCurRoom() != null)
 			{
-				otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Remove(otherObject.gameObject);
-				otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomThreat -= otherObject.GetComponent<MonsterScript>().threatValue;
-                if (otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().roomMembers.Count == 0)
+				otherObject.GetComponent<BaseMonster>().getCurRoom().roomMembers.Remove(otherObject.gameObject);
+				otherObject.GetComponent<BaseMonster>().getCurRoom().roomThreat -= otherObject.GetComponent<BaseMonster>().getThreat();
+                if (otherObject.GetComponent<BaseMonster>().getCurRoom().roomMembers.Count == 0)
                 {
-                    otherObject.GetComponent<MonsterScript>().myRoom.GetComponent<RoomScript>().monsterInRoom = false;
+                    otherObject.GetComponent<BaseMonster>().getCurRoom().monsterInRoom = false;
                 }
-                otherObject.GetComponent<MonsterScript>().myRoom = null;
+				otherObject.GetComponent<BaseMonster> ().setCurRoom (null);
             }
 		}
 
@@ -244,18 +252,18 @@ public class GameManager : MonoBehaviour
 			monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(thisResume);
 			thisResume.GetComponent<ResumeScript>().monster = monsterInstance;
 			monsterInstance.SetActive(false);
-			var monsterInstanceScript = monsterInstance.GetComponent<MonsterScript>();
+			var monsterInstanceScript = monsterInstance.GetComponent<BaseMonster>();
 
 			//resume pictures
 			thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
 			thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
 
 			// Resume Text
-			thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.monsterName;
-			thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(2).GetComponent<Text>().text = monsterInstanceScript.monsterType;
-			thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(4).GetComponent<Text>().text = "Average Health " + monsterInstanceScript.averageHealth;
-			thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(5).GetComponent<Text>().text = "Average Damage " + monsterInstanceScript.averageDamage;
-			thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.requestedSalary;
+			thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(0).GetComponent<Text>().text = monsterInstanceScript.getName();
+			thisResume.GetComponent<ResumeScript> ().resumeCanvas.transform.GetChild (2).GetComponent<Text> ().text = monsterInstanceScript.getType ();
+			thisResume.GetComponent<ResumeScript> ().resumeCanvas.transform.GetChild (4).GetComponent<Text> ().text = "Average Health " + monsterInstanceScript.getBaseHealth ();
+			thisResume.GetComponent<ResumeScript> ().resumeCanvas.transform.GetChild (5).GetComponent<Text> ().text = "Average Damage " + monsterInstanceScript.getBaseDamage ();
+			thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.getSalary();
 
 			thisResume.SetActive(false);
 		}
@@ -281,12 +289,12 @@ public class GameManager : MonoBehaviour
     {
         monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
 
-        int salary = monsterInstance.GetComponent<MonsterScript>().requestedSalary;
-        float infamyRaise = monsterInstance.GetComponent<MonsterScript>().infamyGain;
+        int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
+        float infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
         if (currentCurrency >= salary)
         {
             CurrencyChanged(-salary); //this will have to change when the monster inheritance class is set up
-            IncreaseInfamyXP(monsterInstance.GetComponent<MonsterScript>().threatValue);
+            IncreaseInfamyXP(monsterInstance.GetComponent<BaseMonster>().getThreat());
 
             currentResumes[activeResume].SetActive(false);
             currentResumes.Remove(currentResumes[activeResume]);
@@ -377,7 +385,7 @@ public class GameManager : MonoBehaviour
 
 			foreach (GameObject monster in GameObject.FindGameObjectsWithTag("Monster"))
 			{
-				monster.GetComponent<MonsterScript>().Attack();
+				monster.GetComponent<BaseMonster>().Attack();
 			}
 
 			foreach (GameObject hero in GameObject.FindGameObjectsWithTag("Hero"))
@@ -512,7 +520,7 @@ public class GameManager : MonoBehaviour
         /*
 		foreach (GameObject room in roomList) {
 			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) { //throwing an error right now
-				MonsterScript monScript = monster.GetComponent<MonsterScript> ();
+				BaseMonster monScript = monster.GetComponent<BaseMonster> ();
 
 				if (monScript != null) {
 					if (monScript.personality != null) {
@@ -528,15 +536,15 @@ public class GameManager : MonoBehaviour
 	public void WeekHandler() {
 		foreach (GameObject room in roomList) {
 			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) {
-				MonsterScript monScript = monster.GetComponent<MonsterScript> ();
+				BaseMonster monScript = monster.GetComponent<BaseMonster> ();
 
 				if (monScript != null) {
-					if (monScript.personality != null) {
+					if (monScript.getTrait() != null) {
 						//monScript.personality.ApplyWeekEffects (monScript);
 					}
 				}
 
-				monScript.hasFought = false;
+				monScript.setHasFought(false);
 			}
 		}
 	}
@@ -614,8 +622,8 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject monster in GameObject.FindGameObjectsWithTag("Monster"))
         {
-            MonsterScript m = monster.GetComponent<MonsterScript>();
-            overallStressValue += m.stress;
+            BaseMonster m = monster.GetComponent<BaseMonster>();
+			overallStressValue += m.getStress();
             monsterCount++;
         }
 

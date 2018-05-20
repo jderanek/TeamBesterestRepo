@@ -14,7 +14,7 @@ public abstract class BaseHero : MonoBehaviour {
 	private int capacity;
 	private int holding = 0;
 	private int threat;
-	private string name;
+	private string type;
 	private RoomScript curRoom;
 	BaseParty currentParty;
 	GameManager gameManager;
@@ -46,18 +46,18 @@ public abstract class BaseHero : MonoBehaviour {
 	///<summary>
 	///Assigns all stats to this hero by getting information from the spreadsheet
 	///</summary>
-	/// <param name="nm">Name</param>
+	/// <param name="nm">type</param>
 	public void AssignStats(string nm) {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
-		this.name = nm;
-		this.maxHealth = int.Parse(gameManager.heroStats.data [name] ["Health"]);
-		this.curHealth = int.Parse(gameManager.heroStats.data [name] ["Health"]);
-		this.damage = int.Parse(gameManager.heroStats.data [name] ["Base Attack"]);
-		this.armor = int.Parse(gameManager.heroStats.data [name] ["Defense"]);
-		this.threat = int.Parse(gameManager.heroStats.data [name] ["Threat Level"]);
-		this.value = int.Parse(gameManager.heroStats.data [name] ["Kill Value"]);
-		this.capacity = int.Parse(gameManager.heroStats.data [name] ["Carry Capacity"]) * 100;
+		this.type = nm;
+		this.maxHealth = int.Parse(gameManager.heroStats.data [type] ["Health"]);
+		this.curHealth = int.Parse(gameManager.heroStats.data [type] ["Health"]);
+		this.damage = int.Parse(gameManager.heroStats.data [type] ["Base Attack"]);
+		this.armor = int.Parse(gameManager.heroStats.data [type] ["Defense"]);
+		this.threat = int.Parse(gameManager.heroStats.data [type] ["Threat Level"]);
+		this.value = int.Parse(gameManager.heroStats.data [type] ["Kill Value"]);
+		this.capacity = int.Parse(gameManager.heroStats.data [type] ["Carry Capacity"]) * 100;
 	}
 
 	//Getter functions for damage, current health and currency value
@@ -150,16 +150,16 @@ public abstract class BaseHero : MonoBehaviour {
 	//Default attack function that hits the monster in the room with the highest threat value
 	//Some classes override this function for different attack methods
 	public virtual void Attack() {
-		MonsterScript monScript;
-		MonsterScript highThreat = null;
+		BaseMonster monScript;
+		BaseMonster highThreat = null;
 		int threat = -1;
 		foreach (GameObject mon in curRoom.roomMembers) {
-			monScript = mon.GetComponent<MonsterScript> ();
+			monScript = mon.GetComponent<BaseMonster> ();
 
 			if (monScript != null) {
-				if (monScript.curThreat > threat) {
+				if (monScript.getThreat() > threat) {
 					highThreat = monScript;
-					threat = monScript.curThreat;
+					threat = monScript.getThreat();
 				}
 			}
 		}
