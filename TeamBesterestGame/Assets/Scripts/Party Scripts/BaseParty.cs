@@ -64,15 +64,20 @@ public abstract class BaseParty {
 		return min;
 	}
 
-	//Backtracks by one room, changes state to Exploring if there's a room they haven't explored
+	//Backtracks by one room
 	public RoomScript Backtrack() {
+		//Returns null if there are no more rooms to backtrack through
+		if (roomPath.Count == 0)
+			return null;
+
+		//Returns the last room in the path and removes it from the list
 		RoomScript room = roomPath [roomPath.Count - 1];
 		roomPath.Remove (room);
 		return room;
 	}
 
-	//Finds next room to explore and moves to it
-	//Changes state from Exploring if it is null
+	//Attempts to find and move to next room
+	//Handles the State Machine
 	public void MoveToNextRoom() {
 		RoomScript toMove;
 		switch (state) {
@@ -89,8 +94,16 @@ public abstract class BaseParty {
 			toMove = this.Backtrack ();
 			if (toMove == null)
 				this.RemoveParty ();
-			else
+			else {
 				MoveTo (toMove);
+				//Sets state to exploring if there is a room to explore now
+				RoomScript room;
+				foreach (GameObject roomObject in toMove.neighborRooms) {
+					room = roomObject.GetComponent<RoomScript> ();
+					if (!this.exploredRooms.Contains (room))
+						this.state = "Explore";
+				}
+			}
 			break;
 		}
 	}
