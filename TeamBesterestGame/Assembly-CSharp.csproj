@@ -90,6 +90,7 @@
      <Compile Include="Assets\Scripts\Trait Scripts\TyrantTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\WaryTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\WorkaholicTrait.cs" />
+     <Compile Include="Assets\Scripts\Workethic Scripts\BaseEthic.cs" />
      <None Include="Assets\StreamingAssets\desc.txt" />
      <None Include="Assets\WwiseSettings.xml" />
  <Reference Include="Vuforia.UnityExtensions.Editor">
