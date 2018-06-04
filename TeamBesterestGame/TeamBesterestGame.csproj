@@ -297,7 +297,11 @@
     <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />
     <Compile Include="Assets\Scripts\InterviewManager.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
-    <Compile Include="Assets\Scripts\Monster Scripts\GoblinMonster.cs" />
+    <Compile Include="Assets\Scripts\Monster Scripts\BestialMosnter.cs" />
+    <Compile Include="Assets\Scripts\Monster Scripts\DemonMonster.cs" />
+    <Compile Include="Assets\Scripts\Monster Scripts\DragonkinMonster.cs" />
+    <Compile Include="Assets\Scripts\Monster Scripts\TribalMonster.cs" />
+    <Compile Include="Assets\Scripts\Monster Scripts\UndeadMonster.cs" />
     <Compile Include="Assets\Scripts\MonsterScript.cs" />
     <Compile Include="Assets\Scripts\Party Scripts\BaseParty.cs" />
     <Compile Include="Assets\Scripts\PickUpRoom.cs" />
@@ -318,6 +322,7 @@
     <Compile Include="Assets\Scripts\Trait Scripts\TyrantTrait.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\WaryTrait.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\WorkaholicTrait.cs" />
+    <Compile Include="Assets\Scripts\Workethic Scripts\BaseEthic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\StreamingAssets\desc.txt" />

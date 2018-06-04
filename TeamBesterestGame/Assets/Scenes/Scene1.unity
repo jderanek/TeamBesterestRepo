@@ -4073,7 +4073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &658919597
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6116,8 +6116,11 @@ MonoBehaviour:
   interviewImage: {fileID: 355529625}
   interviewBackground: {fileID: 0}
   interviewExit: {fileID: 4713407}
+  canvas: {fileID: 1495284377}
   leftPanel: {fileID: 658919596}
   pauseMenu: {fileID: 1431481489}
+  applicantButton: {fileID: 1035185983881526, guid: 3ddbaedde73aa49499169f7ad1b844d4,
+    type: 2}
   spawnRoom: {fileID: 1893377716}
   bossRoom: {fileID: 1306698472}
   heroes:

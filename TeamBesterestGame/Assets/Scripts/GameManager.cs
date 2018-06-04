@@ -64,10 +64,13 @@ public class GameManager : MonoBehaviour
     public GameObject interviewExit; //public to be assigned in editor
 
     //UI stuff
+    public Canvas canvas;
     public GameObject leftPanel;
     private bool applicationsOpen = false;
     private bool pauseMenuOpen = false;
     public GameObject pauseMenu;
+    private List<GameObject> applicationsList;
+    public GameObject applicantButton;
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
@@ -253,6 +256,9 @@ public class GameManager : MonoBehaviour
 			thisResume.GetComponent<ResumeScript>().monster = monsterInstance;
 			monsterInstance.SetActive(false);
 			var monsterInstanceScript = monsterInstance.GetComponent<BaseMonster>();
+
+            //applications menu
+            
 
 			//resume pictures
 			thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
