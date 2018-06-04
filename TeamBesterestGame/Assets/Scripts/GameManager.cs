@@ -253,7 +253,6 @@ public class GameManager : MonoBehaviour
 			var thisResume = currentResumes[currentResumes.Count - 1];
 
 			monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(thisResume);
-            applicationsList.Add(monsterInstance);//add monster to list of applicants
             thisResume.GetComponent<ResumeScript>().monster = monsterInstance;
 			monsterInstance.SetActive(false);
 			var monsterInstanceScript = monsterInstance.GetComponent<BaseMonster>();
