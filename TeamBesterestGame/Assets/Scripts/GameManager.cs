@@ -253,12 +253,16 @@ public class GameManager : MonoBehaviour
 			var thisResume = currentResumes[currentResumes.Count - 1];
 
 			monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(thisResume);
-			thisResume.GetComponent<ResumeScript>().monster = monsterInstance;
+            applicationsList.Add(monsterInstance);//add monster to list of applicants
+            thisResume.GetComponent<ResumeScript>().monster = monsterInstance;
 			monsterInstance.SetActive(false);
 			var monsterInstanceScript = monsterInstance.GetComponent<BaseMonster>();
 
             //applications menu
-            
+            //add monster to list of applicants
+            //monster generatates button, adds button to canvas, rescales button?
+            //reorder list of applicant buttons
+
 
 			//resume pictures
 			thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
