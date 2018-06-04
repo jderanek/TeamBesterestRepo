@@ -6125,6 +6125,12 @@ MonoBehaviour:
   bossRoom: {fileID: 1306698472}
   heroes:
   - {fileID: 1156476052356406, guid: ad8df0eea4c58104b8c2d0f12c834e24, type: 2}
+  - {fileID: 1538723713403652, guid: 975cbdda8ed049b45ab7d1de9d61ea7d, type: 2}
+  - {fileID: 1202316229045692, guid: 03178a1518600ef46af10657a4a890d3, type: 2}
+  - {fileID: 1089698362670590, guid: aa78851add4cd49419f3cfcedfc6e37f, type: 2}
+  - {fileID: 1208952337519340, guid: 5e89ac2699e6b4748bc1768019032152, type: 2}
+  - {fileID: 1512600844001062, guid: 11d6459a900aec448b7a05d468277682, type: 2}
+  - {fileID: 1820813238502166, guid: 2e4d688e4d279e341b54bca22c3d2174, type: 2}
   timePerDay: 16
   timeSpeed: 2
   timeUnitText: {fileID: 968657728}
