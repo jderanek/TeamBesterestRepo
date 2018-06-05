@@ -549,7 +549,7 @@ public class GameManager : MonoBehaviour
 
 				if (monScript != null) {
 					if (monScript.getTrait() != null) {
-						//monScript.personality.ApplyWeekEffects (monScript);
+						monScript.personality.ApplyWeekEffects (monScript);
 					}
 				}
 

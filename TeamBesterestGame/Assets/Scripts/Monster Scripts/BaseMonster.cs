@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public abstract class BaseMonster : MonoBehaviour {
 
 	//Private variables for this monsters stats
+	//Some made TEMPORARILY public for test purposes
 	string type;
-	string monName;
+	public string monName;
 	string archetype;
-	int curHealth;
+	public int curHealth;
 	int maxHealth;
 	int baseHealth;
-	int curDamage;
+	public int curDamage;
 	int damage;
-	TraitBase personality;
+	public TraitBase personality;
 	int salary;
 	float stress;
 	float morale;
@@ -99,6 +100,7 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.curHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
 		this.baseHealth = curHealth;
 		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
+		this.curDamage = damage;
 		this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
 		this.threat = int.Parse(gameManager.monsters.data [type] ["Threat"]);
 		this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
@@ -106,7 +108,8 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
 		this.archetype = gameManager.monsters.data [type] ["Archetype"];
 		int num = Random.Range (1, 5);
-		this.name = gameManager.monNames.data [num.ToString ()] [this.archetype];
+		this.monName = gameManager.monNames.data [num.ToString ()] [this.archetype];
+		this.name = monName;
 
 		this.stress = 0f;
 		this.morale = .5f;
