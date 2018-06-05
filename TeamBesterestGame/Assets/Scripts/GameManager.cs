@@ -308,7 +308,11 @@ public class GameManager : MonoBehaviour
             currentResumes[activeResume].SetActive(false);
             currentResumes.Remove(currentResumes[activeResume]);
 
-            PickUpObject(monsterInstance);
+            //PickUpObject(monsterInstance);
+            monsterInstance.SetActive(true);
+            monsterInstance.GetComponent<BaseMonster>().setCurRoom(GameObject.FindGameObjectWithTag("Room"));
+            var curRoom = monsterInstance.GetComponent<BaseMonster>().getCurRoom();
+            monsterInstance.transform.position = new Vector3(curRoom.transform.position.x, curRoom.transform.position.y, 0f);
             resumeOpen = !resumeOpen;
         }
 

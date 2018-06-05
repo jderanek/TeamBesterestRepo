@@ -42,7 +42,9 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	void Awake() {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
-		monsterGrabbed = true;
+		//monsterGrabbed = true; //this is outdated I think, need to sort that out soon
+        //setCurRoom(GameObject.FindGameObjectWithTag("Room"));
+       // this.transform.position.Set(curRoom.transform.position.x, curRoom.transform.position.y, 0);
 		heroInRoom = false;
 		//Temp measure to suppress errors
 		//this.AssignStats (gameObject.name);
