@@ -65,49 +65,49 @@ public class InterviewManager : MonoBehaviour {
 	//personality question
     public void Question1Response()
     {
-       // interviewQuestions.SetActive(false);
+        // interviewQuestions.SetActive(false);
         //interviewResponse.SetActive(true);
-		if(monsterInstance.GetComponent<MonsterScript>().traitName == "Cowardly")
+        if (monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Cowardly")
 		{
 			responseText.text = "I wouldn't say I would run inta fire or nothing... I just like to not be the only one fighting.";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Guardian")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Guardian")
 		{
 			responseText.text = "Someone has to look out for the little guys, and that someone is me.";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Tyrant")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Tyrant")
 		{
 			responseText.text = "It's live or die around here. If someone gets crushed, it's no skin off my back.";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Reckless")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Reckless")
 		{
 			responseText.text = "I love to fight! No bones aboout it!";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Wary")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Wary")
 		{
 			responseText.text = "I'm not scared! And that rattling isn't my bones either!";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Prideful")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Prideful")
 		{
 			responseText.text = "I'm a bone-a-fide top fighter! Just watch me!";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Workaholic")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Workaholic")
 		{
 			responseText.text = "As you can see, I have already worked myself to the bone.";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Slacker")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Slacker")
 		{
 			responseText.text = "Tibia honest, I do love to nap every now and then.";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Fancy")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Fancy")
 		{
 			responseText.text = "Does this tie match my hair? Wait, don't answer that.";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Gross")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Gross")
 		{
 			responseText.text = "I'm kinda dirty, but if you hire me I promise to wash my bones at least once a... year";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().traitName == "Flirty")
+		else if(monsterInstance.GetComponent<BaseMonster>().getTraitName() == "Flirty")
 		{
 			responseText.text = "I consider myself more of a lover than a fighter, and you know with me the Bone-Zone is always open.";
 		}

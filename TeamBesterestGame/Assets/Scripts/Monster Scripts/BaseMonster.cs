@@ -54,7 +54,10 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.traitName = this.personality.getName ();
 		this.workEthic = Random.Range (-1, 1);
 		this.curRoom = gameManager.spawnRoom;
-	}
+
+        //moved damage text here bc it was throwing error on pre-instantiated monsters
+        damageText = this.gameObject.GetComponentInChildren<Text>();
+    }
 
 	///<summary>
 	///Assigns all stats to this monster, to be used in place of super.
@@ -85,7 +88,7 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.vacationStressLoss = .15f;
 		this.infamyGain = 1;
 		this.armor = arm;
-		damageText = this.gameObject.GetComponentInChildren<Text>();
+		//damageText = this.gameObject.GetComponentInChildren<Text>();
 		this.workEthic = ethic;
 		this.size = sz;
 	}
@@ -240,7 +243,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	//Function to make monster lose health
 	public void TakeDamage(int dam) {
 		this.curHealth = Mathf.Clamp (this.curHealth - dam, 0, this.maxHealth);
-		damageText.text = this.curHealth.ToString ();
+		//damageText.text = this.curHealth.ToString();
 		if (curHealth <= 0) {
 			this.Death ();
 		}
