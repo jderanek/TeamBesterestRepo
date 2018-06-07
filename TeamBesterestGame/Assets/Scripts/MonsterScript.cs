@@ -36,6 +36,7 @@ public class MonsterScript : MonoBehaviour
     //private HeroScript heroScript; //uneeded?
     public bool heroInRoom = false; //note to self, have rooms update monsters on inhabitants at on the time pass function
 
+    public string status = "Break Room";
     public GameObject myRoom; //public to be assigned in editor
 
     //Stress, Morale, Nerve and Size

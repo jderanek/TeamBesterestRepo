@@ -65,12 +65,21 @@ public class GameManager : MonoBehaviour
 
     //UI stuff
     public Canvas canvas;
-    public GameObject leftPanel;
-    private bool applicationsOpen = false;
+
+    public GameObject emptyField;
+    public GameObject applicationPanel;
+    public GameObject monsterPanel;
+    private bool applicationOpen = false;
+    private bool monsterOpen = false;
+    public GameObject applicationField;
+    public GameObject monsterField;
+
     private bool pauseMenuOpen = false;
     public GameObject pauseMenu;
-    private List<GameObject> applicationsList;
+    private List<GameObject> applicationsList = new List<GameObject>();
     public GameObject applicantButton;
+
+    public List<GameObject> monsterList = new List<GameObject>();
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
@@ -204,10 +213,10 @@ public class GameManager : MonoBehaviour
         }*/
 	}
 
-	public GameObject SpawnMonster(GameObject resume)
+	public GameObject SpawnMonster()
 	{
 		GameObject monsterPrefab = possibleMonsters [Random.Range (0, possibleMonsters.Length)];
-		GameObject newMonster = Instantiate(monsterPrefab, resume.transform.position, Quaternion.identity);
+		GameObject newMonster = Instantiate(monsterPrefab, new Vector3(0,0,0), Quaternion.identity);
 		newMonster.GetComponent<BaseMonster> ().AssignStats (monsterPrefab.name);
 		newMonster.SetActive(false);
 		return newMonster;
@@ -249,20 +258,27 @@ public class GameManager : MonoBehaviour
 	{
 		for (int i = 0; i < resumesToCreate; i++)
 		{
+            /*
 			currentResumes.Add(Instantiate(resume, new Vector3(1f, 5f, 0f), Quaternion.identity));
 			var thisResume = currentResumes[currentResumes.Count - 1];
+            applicationsList.Add(thisResume);
+            */
 
-			monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster(thisResume);
+			monsterInstance = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SpawnMonster();
+            applicationsList.Add(monsterInstance);
+            monsterInstance.SetActive(false);
+            /*
             thisResume.GetComponent<ResumeScript>().monster = monsterInstance;
 			monsterInstance.SetActive(false);
 			var monsterInstanceScript = monsterInstance.GetComponent<BaseMonster>();
+            */
 
             //applications menu
             //add monster to list of applicants
             //monster generatates button, adds button to canvas, rescales button?
             //reorder list of applicant buttons
 
-
+            /*
 			//resume pictures
 			thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
 			thisResume.transform.Find("Resume Picture").transform.Find("Resume Image box").transform.Find("enemy image").GetComponent<SpriteRenderer>().sortingLayerName = "Resume";
@@ -275,7 +291,10 @@ public class GameManager : MonoBehaviour
 			thisResume.GetComponent<ResumeScript>().resumeCanvas.transform.GetChild(6).GetComponent<Text>().text = "Requested Salary: $" + monsterInstanceScript.getSalary();
 
 			thisResume.SetActive(false);
+            */
+            
 		}
+        UpdateApplications();
 	}
 
 	public void NewCycle()
@@ -294,9 +313,9 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-    public void HireButton()
+    public void HireButton(GameObject monsterInstance)
     {
-        monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
+        //monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
 
         int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
         float infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
@@ -314,6 +333,9 @@ public class GameManager : MonoBehaviour
             var curRoom = monsterInstance.GetComponent<BaseMonster>().getCurRoom();
             monsterInstance.transform.position = new Vector3(curRoom.transform.position.x, curRoom.transform.position.y, 0f);
             resumeOpen = !resumeOpen;
+
+            monsterList.Add(monsterInstance);
+            UpdateMonsters();
         }
 
         UpdateStressMeter();
@@ -601,15 +623,76 @@ public class GameManager : MonoBehaviour
 
     public void ApplicationsMenu()
     {
-        if (!applicationsOpen)
+        if (applicationOpen)
         {
-            applicationsOpen = true;
-            leftPanel.SetActive(true);
+            applicationOpen = false;
+            applicationPanel.SetActive(false);
         }
         else
         {
-            applicationsOpen = false;
-            leftPanel.SetActive(false);
+            if (monsterOpen)
+            {
+                monsterOpen = false;
+                monsterPanel.SetActive(false);
+            }
+            applicationOpen = true;
+            applicationPanel.SetActive(true);
+        }
+    }
+    public void UpdateApplications()
+    {
+        foreach (Transform child in applicationPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        var empty = Instantiate(emptyField, new Vector3(0, 0, 0), Quaternion.identity);
+        empty.transform.parent = applicationPanel.transform;
+        foreach (GameObject application in applicationsList)
+        {
+            var newField = Instantiate(applicationField, new Vector3(0, 0, 0), Quaternion.identity);
+            newField.GetComponentInChildren<Text>().text = application.name;
+
+            newField.transform.GetComponentInChildren<Button>().onClick.AddListener(delegate { HireButton(application); });
+            //newField.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(PauseMenu);
+            //newField.transform.GetChild(2).GetComponent<Button>().GetComponentInChildren<Text>().text = "Blah";
+            newField.transform.parent = applicationPanel.transform;
+        }
+    }
+
+    public void MonsterMenu()
+    {
+        if (monsterOpen)
+        {
+            monsterOpen = false;
+            monsterPanel.SetActive(false);
+        }
+        else
+        {
+            if (applicationOpen)
+            {
+                applicationPanel.SetActive(false);
+                applicationOpen = false;
+            }
+            monsterOpen = true;
+            monsterPanel.SetActive(true);
+        }
+    }
+
+    public void UpdateMonsters()
+    {
+        foreach (Transform child in monsterPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        var empty = Instantiate(emptyField, new Vector3(0, 0, 0), Quaternion.identity);
+        empty.transform.parent = monsterPanel.transform;
+        foreach (GameObject monster in monsterList)
+        {
+            var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
+            var texts = newField.GetComponentsInChildren<Text>();
+            texts[0].text = monster.name;
+            texts[1].text = monster.GetComponent<MonsterScript>().status;
+            newField.transform.parent = monsterPanel.transform;
         }
     }
 
