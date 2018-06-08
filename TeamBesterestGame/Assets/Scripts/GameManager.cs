@@ -646,7 +646,8 @@ public class GameManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         var empty = Instantiate(emptyField, new Vector3(0, 0, 0), Quaternion.identity);
-        empty.transform.parent = applicationPanel.transform;
+        empty.transform.SetParent(applicationPanel.transform, false);
+        //empty.transform.parent = applicationPanel.transform;
         foreach (GameObject application in applicationsList)
         {
             var newField = Instantiate(applicationField, new Vector3(0, 0, 0), Quaternion.identity);
@@ -655,7 +656,8 @@ public class GameManager : MonoBehaviour
             newField.transform.GetComponentInChildren<Button>().onClick.AddListener(delegate { HireButton(application); });
             //newField.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(PauseMenu);
             //newField.transform.GetChild(2).GetComponent<Button>().GetComponentInChildren<Text>().text = "Blah";
-            newField.transform.parent = applicationPanel.transform;
+            //newField.transform.parent = applicationPanel.transform;
+            newField.transform.SetParent(applicationPanel.transform, false);
         }
     }
 
