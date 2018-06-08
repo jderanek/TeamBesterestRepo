@@ -313,10 +313,11 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-    public void HireButton(GameObject monsterInstance)
+    public void HireButton(GameObject monsterInstance, GameObject monsterApplicationField)
     {
         //monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;
-
+        Destroy(monsterApplicationField);
+        monsterInstance.SetActive(true);
         int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
         float infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
         if (currentCurrency >= salary)
@@ -646,16 +647,18 @@ public class GameManager : MonoBehaviour
             Destroy(child.gameObject);
         }
         var empty = Instantiate(emptyField, new Vector3(0, 0, 0), Quaternion.identity);
-        empty.transform.parent = applicationPanel.transform;
+        empty.transform.SetParent(applicationPanel.transform);
         foreach (GameObject application in applicationsList)
         {
             var newField = Instantiate(applicationField, new Vector3(0, 0, 0), Quaternion.identity);
             newField.GetComponentInChildren<Text>().text = application.name;
-
-            newField.transform.GetComponentInChildren<Button>().onClick.AddListener(delegate { HireButton(application); });
-            //newField.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(PauseMenu);
-            //newField.transform.GetChild(2).GetComponent<Button>().GetComponentInChildren<Text>().text = "Blah";
-            newField.transform.parent = applicationPanel.transform;
+            newField.GetComponent<RectTransform>().sizeDelta = new Vector2(255f, 57.4f);
+            var newFieldCanvas = newField.transform.GetChild(0);
+            newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+            newField.transform.GetComponentInChildren<Button>().onClick.AddListener(delegate { HireButton(application,newField); });
+            newField.transform.SetParent(applicationPanel.transform); 
         }
     }
 
