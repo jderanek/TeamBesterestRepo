@@ -34,12 +34,4 @@ public class ResumeScript : MonoBehaviour {
     {
         
 	}
-
-    void OnMouseOver ()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
-        }
-    }
 }

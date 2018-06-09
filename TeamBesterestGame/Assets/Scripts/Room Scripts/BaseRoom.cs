@@ -94,24 +94,6 @@ public abstract class BaseRoom : MonoBehaviour {
         */
 	}
 
-	void OnMouseOver()
-	{
-		heldObject = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().heldObject;
-		if (heldObject != null)
-		{
-			if (heldObject.CompareTag("Monster") && Input.GetMouseButtonDown(1))
-			{
-				roomMembers.Add(heldObject.GetComponent<BaseMonster>());
-				threat += heldObject.GetComponent<MonsterScript> ().threatValue;
-				monsterInRoom = true;
-				heldObject.GetComponent<MonsterScript>().myRoom = this.gameObject;
-				foreach (BaseRoom neighbor in neighborRooms) {
-					neighbor.GetComponent<BaseRoom>().SortNeighbors();
-				}
-			}
-		}
-	}
-
 	public void UpdateNeighbors()
 	{
 		neighborRooms.Clear();

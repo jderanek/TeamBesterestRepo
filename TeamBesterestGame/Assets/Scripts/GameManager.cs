@@ -7,12 +7,9 @@ public class GameManager : MonoBehaviour
 {
 	//Monster Stuff
 	//[HideInInspector]
-	//public GameObject monsterInHand;
-	private bool isHoldingObject;
 	public GameObject[] possibleMonsters; //public to assign references in editor
 	[HideInInspector]
 	public GameObject monsterInstance; //public to assign reference in editor
-	public GameObject heldObject; //public for room script to access
     public GameObject selectedObject;
 
 	//Aggregate Stress Stuff
@@ -25,14 +22,6 @@ public class GameManager : MonoBehaviour
 
 	private bool doingSetup; 
 	public bool interviewing = false; //public to be accessed in interview script
-
-    //old code for the real time slider
-    /* 
-	public Slider cycleSlider; 
-	public GameObject cycleImage; 
-	private float cycleTimer = 100f; 
-	public float cycleDelay = 2f;
-    */
 
     //Day counter to increase week
     private int days = 0;
@@ -162,22 +151,7 @@ public class GameManager : MonoBehaviour
 
 	// Update is called once per frame
 	void Update()
-	{
-		//placement start
-		if (isHoldingObject)
-		{
-			Vector3 mousePos = Input.mousePosition;
-			mousePos.z = transform.position.z - Camera.main.transform.position.z;
-			heldObject.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
-		}
-
-		if (Input.GetMouseButtonDown(1))
-		{
-			isHoldingObject = false;
-			heldObject = null;
-		}
-		//placement end
-
+    {
 		/*
         if (interviewing)
         {
@@ -212,27 +186,6 @@ public class GameManager : MonoBehaviour
 		newMonster.GetComponent<BaseMonster> ().AssignStats (monsterPrefab.name);
 		newMonster.SetActive(false);
 		return newMonster;
-	}
-
-	public void PickUpObject(GameObject otherObject)
-	{
-
-		if (otherObject.GetComponent<BaseMonster>() != null ) {
-			if (otherObject.GetComponent<BaseMonster>().getCurRoom() != null)
-			{
-				otherObject.GetComponent<BaseMonster>().getCurRoom().roomMembers.Remove(otherObject.gameObject);
-				otherObject.GetComponent<BaseMonster>().getCurRoom().roomThreat -= otherObject.GetComponent<BaseMonster>().getThreat();
-                if (otherObject.GetComponent<BaseMonster>().getCurRoom().roomMembers.Count == 0)
-                {
-                    otherObject.GetComponent<BaseMonster>().getCurRoom().monsterInRoom = false;
-                }
-				otherObject.GetComponent<BaseMonster> ().setCurRoom (null);
-            }
-		}
-
-		isHoldingObject = true;
-		heldObject = otherObject;
-		otherObject.SetActive(true);
 	}
 
     public void SelectObject(GameObject otherObject)
@@ -545,19 +498,6 @@ public class GameManager : MonoBehaviour
         }
         currentTime = timePerDay;
         timeUnitText.text = currentTime.ToString();
-        /*
-		foreach (GameObject room in roomList) {
-			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) { //throwing an error right now
-				BaseMonster monScript = monster.GetComponent<BaseMonster> ();
-
-				if (monScript != null) {
-					if (monScript.personality != null) {
-						monScript.personality.ApplyDayEffects (monScript);
-					}
-				}
-			}
-		}
-        */
     }
 
 	//New week handler to apply effects on start of week
