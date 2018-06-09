@@ -22,15 +22,9 @@ public class MonsterScript : MonoBehaviour
     public int averageDamage; //public to be accessed by scripts
     public int attackDamage; //public to be accessed by scripts
 
-    //possibly obsolete
-    public string[] possibleTraits = new string[] { "Aggressive", "Annoying", "Irritable", "Friendly", "Hard-Working" };
-    public string trait1;
-    public string trait2;
-
     public int averageSalary = 500; //public to be edited in editor
     public int requestedSalary; //public to be accessed by scripts
 
-    //private bool monsterGrabbed;
 
     private GameObject hero;
     //private HeroScript heroScript; //uneeded?
@@ -71,8 +65,12 @@ public class MonsterScript : MonoBehaviour
 	//Boolean to keep track of whether the monster has fought this week
 	public bool hasFought = false; //public to be accessed by trait script
 
+    //For tracking how long an application remains in queue
+    public int applicationLife;
+
     void Awake()
     {
+        applicationLife = Random.Range(3, 7);
 		stress = 25.0f;
 		morale = .5f;
         monsterName = possibleNames[Random.Range(0, possibleNames.Length)];
@@ -159,11 +157,15 @@ public class MonsterScript : MonoBehaviour
 
     private void Death()
     {
-        myRoom.GetComponent<RoomScript>().roomMembers.Remove(this.gameObject);
+        GameManager gameManager;
+        GameObject gameManagerObject = GameObject.FindGameObjectWithTag("Game Controller");
+        gameManager = gameManagerObject.GetComponent<GameManager>();
+        gameManager.monsterList.Remove(gameObject);
+        myRoom.GetComponent<RoomScript>().roomMembers.Remove(gameObject);
         if (myRoom.GetComponent<RoomScript>().roomMembers.Count == 0)
         {
             myRoom.GetComponent<RoomScript>().monsterInRoom = false;
         }
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

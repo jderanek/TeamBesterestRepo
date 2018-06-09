@@ -235,6 +235,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Opens the Applications Panel
     public void ApplicationsMenu()
     {
         if (applicationOpen)
@@ -254,30 +255,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //function should be called whenever the applicationList is changed
     public void UpdateApplications()
     {
+        //reset the panel
         foreach (Transform child in applicationPanel.transform)
         {
             Destroy(child.gameObject);
         }
+
+        //Add a blank object at the top of the panel to create some space bewtween the menu and the first field
         var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
-        empty.AddComponent<RectTransform>();
-        empty.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
+        empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0,0);
         empty.transform.SetParent(applicationPanel.transform, false);
+
+        //Create a field for each application pending
         foreach (GameObject application in applicationsList)
         {
+            //Create new field in the Application Panel and set up its Name, size, position, and button function
             var newField = Instantiate(applicationField, new Vector3(0, 0, 0), Quaternion.identity);
             newField.GetComponentInChildren<Text>().text = application.name;
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(255f, 57.4f);
+            newField.transform.GetComponentInChildren<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
+            newField.transform.SetParent(applicationPanel.transform, false);
+
+            //manually adjust its position
             var newFieldCanvas = newField.transform.GetChild(0);
             newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
             newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
-            newField.transform.GetComponentInChildren<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
-            newField.transform.SetParent(applicationPanel.transform, false);
         }
     }
 
+    //opens the Monster Panel
     public void MonsterMenu()
     {
         if (monsterOpen)
@@ -297,26 +307,34 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //function should be called whenever the monsterList is changed
     public void UpdateMonsters()
     {
+        //reset panel
         foreach (Transform child in monsterPanel.transform)
         {
             Destroy(child.gameObject);
         }
+
+        //create an empty object to create some space between the menu and the first Field
         var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
-        empty.AddComponent<RectTransform>();
-        empty.GetComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
+        empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
         empty.transform.SetParent(monsterPanel.transform, false);
+
+        //create a field for each Monster
         foreach (GameObject monster in monsterList)
         {
+            //Create the field and set up its name and button functionality
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
+            newField.GetComponentInChildren<Text>().text = monster.name;
+            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
+            newField.transform.SetParent(monsterPanel.transform, false);
+
+            //manually adjust its position
             var newFieldCanvas = newField.transform.GetChild(0);
             newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
             newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
-            newField.GetComponentInChildren<Text>().text = monster.name;
-            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
-            newField.transform.SetParent(monsterPanel.transform, false);
         }
     }
 
@@ -356,6 +374,7 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+    //Master function for anything that changes when a time-unit passes
 	public void PassTime(int timeToPass) {
 		for (int i = timeToPass; i > 0; i--)
 		{
@@ -366,11 +385,13 @@ public class GameManager : MonoBehaviour
                 timeUnitText.text = currentTime.ToString();
             }
 
-			foreach (GameObject monster in GameObject.FindGameObjectsWithTag("Monster"))
+            //need to swap this out with a dungeon list
+			foreach (GameObject monster in monsterList)
 			{
 				monster.GetComponent<BaseMonster>().Attack();
 			}
 
+            //probably should create a hero list
 			foreach (GameObject hero in GameObject.FindGameObjectsWithTag("Hero"))
 			{
                 dungeonEmpty = false;
@@ -378,6 +399,7 @@ public class GameManager : MonoBehaviour
 				hero.GetComponent<BaseHero>().CheckCurrentRoom();
 			}
 
+            //probabl should create a room list
             foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
             {
                 room.GetComponent<RoomScript>().RoomMemeberHandler();
@@ -417,28 +439,31 @@ public class GameManager : MonoBehaviour
 				modifiedHeroSpawnRate += spawnRateIncrement;
 			}
 
-            //NEED TO FIX THIS ASAP
-            /*
-			//This part checks all the resumes to see how long they have left
-			foreach (GameObject resume in currentResumes)
-			{
-				resume.GetComponent<ResumeScript>().timeTillExpiration--;
-				if (resume.GetComponent<ResumeScript>().timeTillExpiration <= 0)
-					expiredResumes.Add(resume);
-			}
+            //temp list for making changes to applicationList
+            List<GameObject> applicationsToDestroy = new List<GameObject>();
+            //marks apps to destroy later
+            foreach (GameObject application in applicationsList)
+            {
+                application.GetComponent<MonsterScript>().applicationLife -= 1;
+                if (application.GetComponent<MonsterScript>().applicationLife <= 0)
+                {
+                    applicationsToDestroy.Add(application);
+                }
+                
+            }
 
-			//This part removes expired resumes from the list of resumes before deleting them
-			foreach (GameObject expiredResume in expiredResumes)
-			{
-				currentResumes.Remove(expiredResume);
-				Destroy(expiredResume);
-			}
-			expiredResumes.Clear();
-            */
+            //destroys marked apps
+            foreach (GameObject application in applicationsToDestroy)
+            {
+                applicationsList.Remove(application);
+                Destroy(application);
+            }
+            //refresh application panel
+            UpdateApplications();
 
-			//Potential of 1 new resume per time unit
-			//May put some public variables here so chance and amount can be edited in editor
-			if (Random.Range(0, 9) > 4)
+            //Potential of 1 new resume per time unit
+            //May put some public variables here so chance and amount can be edited in editor
+            if (Random.Range(0, 9) > 4)
 				CreateNewResume(1);
 
             UpdateStressMeter();

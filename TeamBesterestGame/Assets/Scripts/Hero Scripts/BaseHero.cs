@@ -128,7 +128,7 @@ public abstract class BaseHero : MonoBehaviour {
 
 	//Function to kill this hero
 	public void Death() {
-		curRoom.heroesInRoom.Remove(this.gameObject);
+		curRoom.heroesInRoom.Remove(gameObject);
 		if (curRoom.heroesInRoom.Count == 0)
 		{
 			curRoom.heroInRoom = false;
@@ -144,7 +144,7 @@ public abstract class BaseHero : MonoBehaviour {
 				gameManager.GoldGainedOnDeath (this.value);
 			}
 		}
-		Destroy(this.gameObject);
+		//Destroy(this.gameObject);
 	}
 
 	//Default attack function that hits the monster in the room with the highest threat value
@@ -154,14 +154,15 @@ public abstract class BaseHero : MonoBehaviour {
 		BaseMonster highThreat = null;
 		int threat = -1;
 		foreach (GameObject mon in curRoom.roomMembers) {
-			monScript = mon.GetComponent<BaseMonster> ();
-
+            monScript = mon.GetComponent<BaseMonster>();
+           
 			if (monScript != null) {
 				if (monScript.getThreat() > threat) {
 					highThreat = monScript;
 					threat = monScript.getThreat();
 				}
 			}
+            
 		}
 
 		//Makes mosnter take damage
@@ -217,8 +218,7 @@ public abstract class BaseHero : MonoBehaviour {
 	void OnMouseOver()
 	{
 		if (Input.GetMouseButtonDown(0) && !inCombat)
-		{
-			//GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
+        {
 			GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SelectObject(this.gameObject);
 		}
 	}

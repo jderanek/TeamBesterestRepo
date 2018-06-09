@@ -279,12 +279,13 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	private void Death()
 	{
-		curRoom.GetComponent<RoomScript>().roomMembers.Remove(this.gameObject);
+		curRoom.GetComponent<RoomScript>().roomMembers.Remove(gameObject);
+        gameManager.monsterList.Remove(gameObject);
 		if (curRoom.GetComponent<RoomScript>().roomMembers.Count == 0)
 		{
 			curRoom.GetComponent<RoomScript>().monsterInRoom = false;
 		}
-		Destroy(this.gameObject);
+		//Destroy(gameObject);
 	}
 
 	//Applies personality effects to the monster, as well as other stat modifiers
