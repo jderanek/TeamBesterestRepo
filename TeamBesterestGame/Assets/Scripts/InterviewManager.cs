@@ -54,7 +54,7 @@ public class InterviewManager : MonoBehaviour {
         if (gameManager.GetComponent<GameManager>().interviewing)
         {
 			//fetches monster to interview
-			monsterInstance = gameManager.GetComponent<GameManager>().currentResumes[gameManager.GetComponent<GameManager>().activeResume].GetComponent<ResumeScript>().monster; //takes the gameManagers monsterInstance for questioning
+			//monsterInstance = gameManager.GetComponent<GameManager>().currentResumes[gameManager.GetComponent<GameManager>().activeResume].GetComponent<ResumeScript>().monster; //takes the gameManagers monsterInstance for questioning
         }
         else
         {

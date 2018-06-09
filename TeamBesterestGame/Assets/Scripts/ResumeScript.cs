@@ -23,11 +23,6 @@ public class ResumeScript : MonoBehaviour {
     void Awake()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-
-        hideButton.onClick.AddListener(gameManager.OpenApplications);
-        nextButton.onClick.AddListener(gameManager.NextApplication);
-        previousButton.onClick.AddListener(gameManager.PreviousApplication);
-        //hireButton.onClick.AddListener(gameManager.HireButton);
         
 		interviewButton.onClick.AddListener(gameManager.Interview);
 
