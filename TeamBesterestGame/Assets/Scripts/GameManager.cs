@@ -29,9 +29,6 @@ public class GameManager : MonoBehaviour
 	//construction stuff
 	public bool inConstructionMode; //public for now, pickup room script can be replaced
 
-	public GameObject constructionButton; //public to be assigned in editor
-	public GameObject roomButton; //public to be assigned in editor
-
 	//interviewing stuff
 	public GameObject interviewButtons; //public to be assigned in editor
     public GameObject Q1;
@@ -59,8 +56,8 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     private List<GameObject> applicationsList = new List<GameObject>();
     public GameObject applicantButton;
-
-    public List<GameObject> monsterList = new List<GameObject>();
+    public GameObject constructionButton; //public to be assigned in editor
+    public GameObject roomButton; //public to be assigned in editor
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
@@ -93,6 +90,11 @@ public class GameManager : MonoBehaviour
 	public float peakHourStart = 0.5f; //public to be assigned in editor
     public float peakHourEnd = 1.0f; //public to be assigned in editor
     private bool peakHours = false;
+
+    //WHOLE BUNCH OF FUCKING LISSSTTSSSTSTTST
+    public List<GameObject> monsterList = new List<GameObject>();
+    public List<GameObject> breakRoomList = new List<GameObject>();
+    public List<GameObject> dungeonList = new List<GameObject>();
 
     //CSVImporter for Monsters and Heroes
     //public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
@@ -222,14 +224,12 @@ public class GameManager : MonoBehaviour
             CurrencyChanged(-salary); //this will have to change when the monster inheritance class is set up
             IncreaseInfamyXP(monsterInstance.GetComponent<BaseMonster>().getThreat());
 
-
-            //PickUpObject(monsterInstance);
-            monsterInstance.SetActive(true);
-            monsterInstance.GetComponent<BaseMonster>().setCurRoom(GameObject.FindGameObjectWithTag("Room"));
-            var curRoom = monsterInstance.GetComponent<BaseMonster>().getCurRoom();
-            monsterInstance.transform.position = new Vector3(curRoom.transform.position.x, curRoom.transform.position.y, 0f);
+            //monsterInstance.GetComponent<BaseMonster>().setCurRoom(GameObject.FindGameObjectWithTag("Room"));
+            //var curRoom = monsterInstance.GetComponent<BaseMonster>().getCurRoom();
+            //monsterInstance.transform.position = new Vector3(curRoom.transform.position.x, curRoom.transform.position.y, 0f);
 
             monsterList.Add(monsterInstance);
+            breakRoomList.Add(monsterInstance);
             UpdateMonsters();
             UpdateStressMeter();
         }
@@ -310,9 +310,12 @@ public class GameManager : MonoBehaviour
         foreach (GameObject monster in monsterList)
         {
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
-            var texts = newField.GetComponentsInChildren<Text>();
-            texts[0].text = monster.name;
-            texts[1].text = monster.GetComponent<MonsterScript>().status;
+            var newFieldCanvas = newField.transform.GetChild(0);
+            newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+            newField.GetComponentInChildren<Text>().text = monster.name;
+            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
             newField.transform.SetParent(monsterPanel.transform, false);
         }
     }

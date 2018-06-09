@@ -30,7 +30,7 @@ public class MonsterScript : MonoBehaviour
     public int averageSalary = 500; //public to be edited in editor
     public int requestedSalary; //public to be accessed by scripts
 
-    private bool monsterGrabbed;
+    //private bool monsterGrabbed;
 
     private GameObject hero;
     //private HeroScript heroScript; //uneeded?
@@ -81,6 +81,7 @@ public class MonsterScript : MonoBehaviour
 
 		damageText = this.gameObject.GetComponentInChildren<Text>();//fetches DmgText
 
+        /*
         attackDamage = averageDamage + Random.Range(-3, 3);
         threatValue = possibleThreatValue[Random.Range(0, possibleThreatValue.Length)];
 
@@ -91,12 +92,11 @@ public class MonsterScript : MonoBehaviour
             trait2 = null;
             trait1 = "Very " + trait1;
         }
+        */
 
         requestedSalary = averageSalary + Random.Range(-500, 500);
         if (requestedSalary < 0)
             requestedSalary = 100;
-
-        monsterGrabbed = true;
         
         heroInRoom = false;
 		this.curThreat = threatValue;
@@ -117,7 +117,7 @@ public class MonsterScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !inCombat)
         {
-            //GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().PickUpObject(this.gameObject);
+            //If I had to guess, this means the player can select a monster out of combat and move them during combat... too bad Im too lazy to fix this right now
             GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SelectObject(this.gameObject);
         }
     }

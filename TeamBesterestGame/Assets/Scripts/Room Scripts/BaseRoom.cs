@@ -78,20 +78,8 @@ public abstract class BaseRoom : MonoBehaviour {
 	void Start()
 	{
 		gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-		gameManager.roomList[myX, myY] = gameObject;
-		//print(gameObject + " " + myX + ", " + myY);
-		//print(gameManager.roomList[myX, myY]);
+        gameManager.roomList[myX, myY] = gameObject;
 		UpdateNeighbors();
-	}
-
-	public void ActivateButtons(bool inConstructionMode)
-	{
-		/*
-        northButton.SetActive(inConstructionMode);
-        southButton.SetActive(inConstructionMode);
-        westButton.SetActive(inConstructionMode);
-        eastButton.SetActive(inConstructionMode);
-        */
 	}
 
 	public void UpdateNeighbors()
