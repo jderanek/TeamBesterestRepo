@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58800405066604656}
   - component: {fileID: 114487137398937774}
   m_Layer: 9
-  m_Name: Dragon
+  m_Name: Fire Dragon
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -175,6 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e43891d24cd5e4d88661059683621e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monName: 
+  curHealth: 0
+  curDamage: 0
   baseNerve: 0.5
   curNerve: 0.5
 --- !u!114 &114764767025184672
@@ -201,17 +204,10 @@ MonoBehaviour:
   threatValue: 0
   averageDamage: 125
   attackDamage: 0
-  possibleTraits:
-  - Tyrant
-  - Tyrant
-  - Tyrant
-  - Aggressive
-  - Hard-Working
-  trait1: 
-  trait2: 
   averageSalary: 1000
   requestedSalary: 0
   heroInRoom: 0
+  status: Break Room
   myRoom: {fileID: 0}
   stress: 0
   morale: 0.5
@@ -228,6 +224,7 @@ MonoBehaviour:
   workEthic: 0
   inCombat: 0
   hasFought: 0
+  applicationLife: 0
 --- !u!212 &212664647012978128
 SpriteRenderer:
   m_ObjectHideFlags: 1

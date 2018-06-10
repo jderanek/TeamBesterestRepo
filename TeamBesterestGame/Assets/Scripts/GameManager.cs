@@ -47,8 +47,13 @@ public class GameManager : MonoBehaviour
     public GameObject emptyField;
     public GameObject applicationPanel;
     public GameObject monsterPanel;
+    public GameObject departmentPanel;
+    public GameObject breakRoomHeader;
+    public GameObject prHeader;
+    public GameObject hrHeader;
     private bool applicationOpen = false;
     private bool monsterOpen = false;
+    private bool departmentOpen = false;
     public GameObject applicationField;
     public GameObject monsterField;
 
@@ -231,6 +236,7 @@ public class GameManager : MonoBehaviour
             monsterList.Add(monsterInstance);
             breakRoomList.Add(monsterInstance);
             UpdateMonsters();
+            UpdateDepartments();
             UpdateStressMeter();
         }
     }
@@ -249,6 +255,11 @@ public class GameManager : MonoBehaviour
             {
                 monsterOpen = false;
                 monsterPanel.SetActive(false);
+            }
+            if (departmentOpen)
+            {
+                departmentPanel.SetActive(false);
+                departmentOpen = false;
             }
             applicationOpen = true;
             applicationPanel.SetActive(true);
@@ -302,6 +313,11 @@ public class GameManager : MonoBehaviour
                 applicationPanel.SetActive(false);
                 applicationOpen = false;
             }
+            if (departmentOpen)
+            {
+                departmentPanel.SetActive(false);
+                departmentOpen = false;
+            }
             monsterOpen = true;
             monsterPanel.SetActive(true);
         }
@@ -336,6 +352,67 @@ public class GameManager : MonoBehaviour
             newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
         }
+    }
+
+    public void DepartmentMenu()
+    {
+        if (departmentOpen)
+        {
+            departmentOpen = false;
+            departmentPanel.SetActive(false);
+        }
+        else
+        {
+            if (applicationOpen)
+            {
+                applicationPanel.SetActive(false);
+                applicationOpen = false;
+            }
+            if (monsterOpen)
+            {
+                monsterPanel.SetActive(false);
+                monsterOpen = false;
+            }
+            departmentOpen = true;
+            departmentPanel.SetActive(true);
+        }
+    }
+
+    public void UpdateDepartments()
+    {
+        foreach (Transform child in departmentPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
+        empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
+        empty.transform.SetParent(departmentPanel.transform, false);
+
+        var newBreakRoomHeader = Instantiate(breakRoomHeader, new Vector3(0, 0, 0), Quaternion.identity);
+        newBreakRoomHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
+        newBreakRoomHeader.transform.SetParent(departmentPanel.transform, false);
+
+        foreach (GameObject monster in breakRoomList)
+        {
+            print("hi");
+            var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
+            newField.GetComponentInChildren<Text>().text = monster.name;
+            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
+            newField.transform.SetParent(departmentPanel.transform, false);
+
+            //manually adjust its position
+            var newFieldCanvas = newField.transform.GetChild(0);
+            newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+        }
+
+        var newPRHeader = Instantiate(prHeader, new Vector3(0, 0, 0), Quaternion.identity);
+        newPRHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
+        newPRHeader.transform.SetParent(departmentPanel.transform, false);
+
+
     }
 
     public void NewCycle()
