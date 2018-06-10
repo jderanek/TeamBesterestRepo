@@ -285,6 +285,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ConstructionScript.cs" />
     <Compile Include="Assets\Scripts\CSVImporter.cs" />
+    <Compile Include="Assets\Scripts\Defunct\HeroScript.cs" />
+    <Compile Include="Assets\Scripts\Defunct\MonsterScript.cs" />
+    <Compile Include="Assets\Scripts\Defunct\PickUpRoom.cs" />
+    <Compile Include="Assets\Scripts\Defunct\ResumeScript.cs" />
+    <Compile Include="Assets\Scripts\Defunct\RoomScript.cs" />
+    <Compile Include="Assets\Scripts\Defunct\SpawnNewSquare.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\BaseHero.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\ClericHero.cs" />
@@ -293,7 +299,6 @@
     <Compile Include="Assets\Scripts\Hero Scripts\RogueHero.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\SniperHero.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\WarriorHero.cs" />
-    <Compile Include="Assets\Scripts\HeroScript.cs" />
     <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />
     <Compile Include="Assets\Scripts\InterviewManager.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
@@ -302,14 +307,9 @@
     <Compile Include="Assets\Scripts\Monster Scripts\DragonkinMonster.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\TribalMonster.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\UndeadMonster.cs" />
-    <Compile Include="Assets\Scripts\MonsterScript.cs" />
     <Compile Include="Assets\Scripts\Party Scripts\BaseParty.cs" />
-    <Compile Include="Assets\Scripts\PickUpRoom.cs" />
-    <Compile Include="Assets\Scripts\ResumeScript.cs" />
     <Compile Include="Assets\Scripts\Room Scripts\BaseRoom.cs" />
     <Compile Include="Assets\Scripts\Room Scripts\EntranceRoom.cs" />
-    <Compile Include="Assets\Scripts\RoomScript.cs" />
-    <Compile Include="Assets\Scripts\SpawnNewSquare.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\FancyTrait.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\FlirtyTrait.cs" />

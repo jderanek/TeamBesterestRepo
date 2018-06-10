@@ -104,19 +104,22 @@ public class RoomScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
-					//gameManager.selectedObject.GetComponent<BaseMonster> ().getCurRoom ().roomMembers.Remove (gameManager.selectedObject);
-					gameManager.selectedObject.transform.position = new Vector3 (
-						gameObject.transform.position.x + UnityEngine.Random.Range (-0.25f, 0.25f),
-						gameObject.transform.position.y + UnityEngine.Random.Range (-0.25f, 0.25f),
-						0
-					);
-					roomMembers.Add (gameManager.selectedObject);
-					roomThreat += gameManager.selectedObject.GetComponent<BaseMonster> ().getThreat ();
-					monsterInRoom = true;
-					gameManager.selectedObject.GetComponent<BaseMonster> ().setCurRoom (this.gameObject);
-					foreach (GameObject neighbor in neighborRooms) {
-						neighbor.GetComponent<RoomScript> ().SortNeighbors ();
-					}
+				//gameManager.selectedObject.GetComponent<BaseMonster> ().getCurRoom ().roomMembers.Remove (gameManager.selectedObject);
+				gameManager.selectedObject.transform.position = new Vector3 (
+					gameObject.transform.position.x + UnityEngine.Random.Range (-0.25f, 0.25f),
+					gameObject.transform.position.y + UnityEngine.Random.Range (-0.25f, 0.25f),
+					0
+                    );
+                gameManager.breakRoomList.Remove(gameManager.selectedObject);
+                gameManager.UpdateMonsters();
+                gameManager.UpdateDepartments();
+				roomMembers.Add (gameManager.selectedObject);
+				roomThreat += gameManager.selectedObject.GetComponent<BaseMonster> ().getThreat ();
+				monsterInRoom = true;
+				gameManager.selectedObject.GetComponent<BaseMonster> ().setCurRoom (this.gameObject);
+				foreach (GameObject neighbor in neighborRooms) {
+					neighbor.GetComponent<RoomScript> ().SortNeighbors ();
+				}
                 
             }
         }

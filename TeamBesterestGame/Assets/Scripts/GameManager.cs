@@ -43,17 +43,23 @@ public class GameManager : MonoBehaviour
 
     //UI stuff
     public Canvas canvas;
+    public Font arial;
 
     public GameObject emptyField;
     public GameObject applicationPanel;
     public GameObject monsterPanel;
     public GameObject departmentPanel;
+    public GameObject assignmentPanel;
     public GameObject breakRoomHeader;
     public GameObject prHeader;
+    private int prCapacity = 3;
     public GameObject hrHeader;
+    private int hrCapacity = 3;
+    public GameObject emptySlotField;
     private bool applicationOpen = false;
     private bool monsterOpen = false;
     private bool departmentOpen = false;
+    private bool assignmentOpen = false;
     public GameObject applicationField;
     public GameObject monsterField;
 
@@ -100,6 +106,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> monsterList = new List<GameObject>();
     public List<GameObject> breakRoomList = new List<GameObject>();
     public List<GameObject> dungeonList = new List<GameObject>();
+    public List<GameObject> prList = new List<GameObject>();
 
     //CSVImporter for Monsters and Heroes
     //public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
@@ -234,7 +241,7 @@ public class GameManager : MonoBehaviour
             //monsterInstance.transform.position = new Vector3(curRoom.transform.position.x, curRoom.transform.position.y, 0f);
 
             monsterList.Add(monsterInstance);
-            breakRoomList.Add(monsterInstance);
+            AddToDepartment(monsterInstance, breakRoomList);
             UpdateMonsters();
             UpdateDepartments();
             UpdateStressMeter();
@@ -251,16 +258,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (monsterOpen)
-            {
-                monsterOpen = false;
-                monsterPanel.SetActive(false);
-            }
-            if (departmentOpen)
-            {
-                departmentPanel.SetActive(false);
-                departmentOpen = false;
-            }
+            monsterOpen = false;
+            monsterPanel.SetActive(false);
+            departmentPanel.SetActive(false);
+            departmentOpen = false;
+            assignmentPanel.SetActive(false);
+            assignmentOpen = false;
+
             applicationOpen = true;
             applicationPanel.SetActive(true);
         }
@@ -308,16 +312,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (applicationOpen)
-            {
-                applicationPanel.SetActive(false);
-                applicationOpen = false;
-            }
-            if (departmentOpen)
-            {
-                departmentPanel.SetActive(false);
-                departmentOpen = false;
-            }
+            applicationPanel.SetActive(false);
+            applicationOpen = false;
+            departmentPanel.SetActive(false);
+            departmentOpen = false;
+            assignmentPanel.SetActive(false);
+            assignmentOpen = false;
+
             monsterOpen = true;
             monsterPanel.SetActive(true);
         }
@@ -363,16 +364,13 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            if (applicationOpen)
-            {
-                applicationPanel.SetActive(false);
-                applicationOpen = false;
-            }
-            if (monsterOpen)
-            {
-                monsterPanel.SetActive(false);
-                monsterOpen = false;
-            }
+            applicationPanel.SetActive(false);
+            applicationOpen = false;
+            monsterPanel.SetActive(false);
+            monsterOpen = false;
+            assignmentPanel.SetActive(false);
+            assignmentOpen = false;
+
             departmentOpen = true;
             departmentPanel.SetActive(true);
         }
@@ -395,7 +393,6 @@ public class GameManager : MonoBehaviour
 
         foreach (GameObject monster in breakRoomList)
         {
-            print("hi");
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             newField.GetComponentInChildren<Text>().text = monster.name;
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
@@ -408,11 +405,113 @@ public class GameManager : MonoBehaviour
             newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
         }
 
+        var emptySlotBreakRoom = Instantiate(emptySlotField, new Vector3(0, 0, 0), Quaternion.identity);
+        emptySlotBreakRoom.GetComponentInChildren<Button>().onClick.AddListener(delegate {  });
+        emptySlotBreakRoom.transform.SetParent(departmentPanel.transform, false);
+
+        var emptySlotBreakRoomCanvas = emptySlotBreakRoom.transform.GetChild(0);
+        emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+        emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+        emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+
         var newPRHeader = Instantiate(prHeader, new Vector3(0, 0, 0), Quaternion.identity);
         newPRHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
         newPRHeader.transform.SetParent(departmentPanel.transform, false);
 
+        foreach (GameObject monster in prList)
+        {
+            var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
+            newField.GetComponentInChildren<Text>().text = monster.name;
+            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { AddToDepartment(monster, breakRoomList); });
+            newField.transform.GetChild(0).transform.GetChild(3).transform.GetComponentInChildren<Text>().text = "Remove";
+            newField.transform.SetParent(departmentPanel.transform, false);
 
+            var newFieldCanvas = newField.transform.GetChild(0);
+            newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+        }
+        
+        if (prList.Count < prCapacity)
+        {
+            var emptySlotPR = Instantiate(emptySlotField, new Vector3(0, 0, 0), Quaternion.identity);
+            emptySlotPR.GetComponentInChildren<Button>().onClick.AddListener(delegate 
+            {
+                UpdateAssignment(prList);
+                AssignmentMenu();
+            });
+            emptySlotPR.transform.SetParent(departmentPanel.transform, false);
+
+            var emptySlotPRCanvas = emptySlotPR.transform.GetChild(0);
+            emptySlotPRCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            emptySlotPRCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            emptySlotPRCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+        }
+    }
+
+    public void AssignmentMenu()
+    {
+        if (!assignmentOpen)
+        {
+            applicationPanel.SetActive(false);
+            applicationOpen = false;
+            departmentPanel.SetActive(false);
+            departmentOpen = false;
+            monsterPanel.SetActive(false);
+            monsterOpen = false;
+
+            assignmentPanel.SetActive(true);
+            assignmentOpen = true;
+        }
+    }
+
+    public void UpdateAssignment(List<GameObject> department)
+    {
+        //reset panel
+        foreach (Transform child in assignmentPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        //create an empty object to create some space between the menu and the first Field
+        var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
+        empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0, 20);
+        empty.AddComponent<Text>().text = "Choose a Monster to assign";
+        var emptyText = empty.GetComponent<Text>();
+        emptyText.font = arial;
+        emptyText.horizontalOverflow = HorizontalWrapMode.Overflow;
+        emptyText.verticalOverflow = VerticalWrapMode.Overflow;
+        emptyText.alignment = TextAnchor.MiddleCenter;
+        empty.transform.SetParent(assignmentPanel.transform, false);
+
+        //create a field for each Monster
+        foreach (GameObject monster in monsterList) //NEED TO USE AN "INACTIVE" LIST FOR THIS LATER
+        {
+            //Create the field and set up its name and button functionality
+            var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
+            newField.GetComponentInChildren<Text>().text = monster.name;
+            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate 
+            {
+                AddToDepartment(monster, department);
+                DepartmentMenu();
+            });
+            newField.transform.SetParent(assignmentPanel.transform, false);
+
+            //manually adjust its position
+            var newFieldCanvas = newField.transform.GetChild(0);
+            newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+        }
+    }
+
+    public void AddToDepartment(GameObject monster, List<GameObject> department)
+    {
+        monster.GetComponent<BaseMonster>().department.Remove(monster);
+        department.Add(monster);
+        monster.GetComponent<BaseMonster>().department = department;
+        UpdateDepartments();
+        //DepartmentMenu();
     }
 
     public void NewCycle()
@@ -521,8 +620,8 @@ public class GameManager : MonoBehaviour
             //marks apps to destroy later
             foreach (GameObject application in applicationsList)
             {
-                application.GetComponent<MonsterScript>().applicationLife -= 1;
-                if (application.GetComponent<MonsterScript>().applicationLife <= 0)
+                application.GetComponent<BaseMonster>().applicationLife -= 1;
+                if (application.GetComponent<BaseMonster>().applicationLife <= 0)
                 {
                     applicationsToDestroy.Add(application);
                 }

@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public abstract class BaseMonster : MonoBehaviour {
 
+    //not sure the best way to handle this @avery but im putting it here for now - Nate
+    public int applicationLife = 3;
+    public List<GameObject> department;
+
 	//Private variables for this monsters stats
 	//Some made TEMPORARILY public for test purposes
 	string type;
