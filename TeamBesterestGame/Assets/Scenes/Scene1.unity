@@ -1319,6 +1319,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 202444423}
+--- !u!1 &228190686 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1539148127876602, guid: 72666d51cddb8024292be3ab6411ac73,
+    type: 2}
+  m_PrefabInternal: {fileID: 259285360}
 --- !u!1 &232977735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,6 +2727,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 355529625}
+--- !u!1 &360427785 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1896282377797680, guid: 4269d2d07298d3f4ea33bc88d3e8ad76,
+    type: 2}
+  m_PrefabInternal: {fileID: 721010798}
 --- !u!1 &367019570
 GameObject:
   m_ObjectHideFlags: 0
@@ -6471,6 +6481,11 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224351995411850434, guid: 4269d2d07298d3f4ea33bc88d3e8ad76,
     type: 2}
   m_PrefabInternal: {fileID: 721010798}
+--- !u!1 &949428185 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1477375001306068, guid: a1df858c5ee6e8445b14cba06569809c,
+    type: 2}
+  m_PrefabInternal: {fileID: 98663468}
 --- !u!1 &951839981
 GameObject:
   m_ObjectHideFlags: 0
@@ -7008,18 +7023,16 @@ MonoBehaviour:
   interviewBackground: {fileID: 0}
   interviewExit: {fileID: 4713407}
   canvas: {fileID: 1495284377}
-  arial: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  arial: {fileID: 0}
   emptyField: {fileID: 2050185864}
   applicationPanel: {fileID: 918421246}
   monsterPanel: {fileID: 658919596}
   departmentPanel: {fileID: 1141890092}
   assignmentPanel: {fileID: 249430392}
-  breakRoomHeader: {fileID: 1477375001306068, guid: a1df858c5ee6e8445b14cba06569809c,
-    type: 2}
-  prHeader: {fileID: 1539148127876602, guid: 72666d51cddb8024292be3ab6411ac73, type: 2}
-  hrHeader: {fileID: 1880621611883682, guid: 739f22b152d3e964d84560c86974d9da, type: 2}
-  emptySlotField: {fileID: 1896282377797680, guid: 4269d2d07298d3f4ea33bc88d3e8ad76,
-    type: 2}
+  breakRoomHeader: {fileID: 949428185}
+  prHeader: {fileID: 228190686}
+  hrHeader: {fileID: 1169971010}
+  emptySlotField: {fileID: 360427785}
   applicationField: {fileID: 1109429727128744, guid: b0a89e43117e1064e861a474e4c1e01e,
     type: 2}
   monsterField: {fileID: 1019801905109112, guid: f96e23bb6e6d2ff4ba58c4c65bf0f2a3,
@@ -7767,6 +7780,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1169971010 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1880621611883682, guid: 739f22b152d3e964d84560c86974d9da,
+    type: 2}
+  m_PrefabInternal: {fileID: 841743420}
 --- !u!1 &1207427501
 GameObject:
   m_ObjectHideFlags: 0
