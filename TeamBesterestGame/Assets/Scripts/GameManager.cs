@@ -212,7 +212,6 @@ public class GameManager : MonoBehaviour
 
     }
 
-	//might combine this with creating a new monster and file the resume under the monsters as a child object
 	public void CreateNewResume(int resumesToCreate)
 	{
 		for (int i = 0; i < resumesToCreate; i++)
@@ -344,7 +343,22 @@ public class GameManager : MonoBehaviour
             //Create the field and set up its name and button functionality
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             newField.GetComponentInChildren<Text>().text = monster.name;
-            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
+            if (monster.GetComponent<BaseMonster>().department == breakRoomList)
+            {
+                newField.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Text>().text = "Assign";
+                newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
+            }
+            else
+            {
+                newField.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Text>().text = "Break Time!";
+                newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
+                {
+                    AddToDepartment(monster, breakRoomList);
+                    monster.transform.position = new Vector3(0, 0, 0);
+                    //TODO: NEED TO REMOVE MONSTER FROM ROOMS WHILE IN BREAK ROOM
+                    //monster.GetComponent<BaseMonster>().setCurRoom(null);
+                });
+            }
             newField.transform.SetParent(monsterPanel.transform, false);
 
             //manually adjust its position
@@ -405,6 +419,8 @@ public class GameManager : MonoBehaviour
             newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
         }
 
+        //Dont think that break room needs an assingment button but this code will make it happen lol
+        /*
         var emptySlotBreakRoom = Instantiate(emptySlotField, new Vector3(0, 0, 0), Quaternion.identity);
         emptySlotBreakRoom.GetComponentInChildren<Button>().onClick.AddListener(delegate {  });
         emptySlotBreakRoom.transform.SetParent(departmentPanel.transform, false);
@@ -413,6 +429,7 @@ public class GameManager : MonoBehaviour
         emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
         emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
         emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+        */
 
         var newPRHeader = Instantiate(prHeader, new Vector3(0, 0, 0), Quaternion.identity);
         newPRHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
@@ -485,7 +502,7 @@ public class GameManager : MonoBehaviour
         empty.transform.SetParent(assignmentPanel.transform, false);
 
         //create a field for each Monster
-        foreach (GameObject monster in monsterList) //NEED TO USE AN "INACTIVE" LIST FOR THIS LATER
+        foreach (GameObject monster in breakRoomList) //NEED TO USE AN "INACTIVE" LIST FOR THIS LATER
         {
             //Create the field and set up its name and button functionality
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
@@ -511,7 +528,7 @@ public class GameManager : MonoBehaviour
         department.Add(monster);
         monster.GetComponent<BaseMonster>().department = department;
         UpdateDepartments();
-        //DepartmentMenu();
+        UpdateMonsters();
     }
 
     public void NewCycle()
@@ -636,6 +653,13 @@ public class GameManager : MonoBehaviour
             }
             //refresh application panel
             UpdateApplications();
+
+            foreach (GameObject monster in prList)
+            {
+                CurrencyChanged(monster.GetComponent<BaseMonster>().getBaseDamage());
+                infamyXP += monster.GetComponent<BaseMonster>().getThreat();
+                UpdateInfamy();
+            }
 
             //Potential of 1 new resume per time unit
             //May put some public variables here so chance and amount can be edited in editor
