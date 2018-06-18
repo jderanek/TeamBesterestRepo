@@ -4197,6 +4197,72 @@ GameObject:
   m_PrefabParentObject: {fileID: 1724625499626812, guid: dc360d4d794cb6a46a9bda73560d62e1,
     type: 2}
   m_PrefabInternal: {fileID: 1952476466}
+--- !u!1 &594439646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 594439649}
+  - component: {fileID: 594439648}
+  - component: {fileID: 594439647}
+  m_Layer: 0
+  m_Name: WwiseGlobal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &594439647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 594439646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f990a576de79c0a4ca70101baa8998b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  basePath: Audio\GeneratedSoundBanks
+  language: English(US)
+  defaultPoolSize: 4096
+  lowerPoolSize: 2048
+  streamingPoolSize: 1024
+  preparePoolSize: 0
+  memoryCutoffThreshold: 0.95
+  monitorPoolSize: 128
+  monitorQueuePoolSize: 64
+  callbackManagerBufferSize: 4
+  spatialAudioPoolSize: 4096
+  maxSoundPropagationDepth: 8
+  diffractionFlags: 11
+  engineLogging: 1
+--- !u!114 &594439648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 594439646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3951dc62c71db746b2fd41bb64d2661, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &594439649
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 594439646}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &604045400
 GameObject:
   m_ObjectHideFlags: 0
@@ -7024,7 +7090,7 @@ MonoBehaviour:
   interviewExit: {fileID: 4713407}
   canvas: {fileID: 1495284377}
   arial: {fileID: 0}
-  emptyField: {fileID: 2050185864}
+  emptyField: {fileID: 0}
   applicationPanel: {fileID: 918421246}
   monsterPanel: {fileID: 658919596}
   departmentPanel: {fileID: 1141890092}
@@ -8971,6 +9037,8 @@ GameObject:
   - component: {fileID: 1345409354}
   - component: {fileID: 1345409355}
   - component: {fileID: 1345409349}
+  - component: {fileID: 1345409357}
+  - component: {fileID: 1345409356}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9078,6 +9146,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3596ddeeabdd64db9d97a0207b7bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1345409356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345409348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4706cdeffc9c146824da0ea7c63788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &1345409357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345409348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5afeb56a26acee43ae379b0b3bd9fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 0
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!1 &1417845008
 GameObject:
   m_ObjectHideFlags: 0
@@ -11299,6 +11401,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109429727128744, guid: b0a89e43117e1064e861a474e4c1e01e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0a89e43117e1064e861a474e4c1e01e, type: 2}

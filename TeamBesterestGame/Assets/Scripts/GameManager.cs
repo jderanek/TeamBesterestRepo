@@ -290,7 +290,10 @@ public class GameManager : MonoBehaviour
             var newField = Instantiate(applicationField, new Vector3(0, 0, 0), Quaternion.identity);
             newField.GetComponentInChildren<Text>().text = application.name;
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(255f, 57.4f);
-            newField.transform.GetComponentInChildren<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
+
+            newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
+            newField.transform.GetChild(0).transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
+
             newField.transform.SetParent(applicationPanel.transform, false);
 
             //manually adjust its position
