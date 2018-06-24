@@ -18,7 +18,7 @@ public abstract class BaseEthic {
 	///</summary>
 	/// <param name="mon">BaseMonster to target from</param>
 	/// <param name="tar">Type of target to select monsters</param>
-	public static List<BaseMonster> GetTargets(BaseMonster mon, Target tar) {
+	public static List<BaseMonster> GetTargets(BaseMonster mon, Target tar = Target.None, string tag = "") {
 		List<BaseMonster> targets = new List<BaseMonster> ();
 		RoomScript room = mon.getCurRoom ();
 		BaseMonster monScript;
@@ -40,29 +40,21 @@ public abstract class BaseEthic {
 				targets.Add (monScript);
 			}
 			return targets;
+		case Target.AllNoStack:
+			foreach (GameObject monObject in room.roomMembers) {
+				monScript = monObject.GetComponent<BaseMonster> ();
+				if (!monScript.effects.Contains (tag)) {
+					targets.Add (monScript);
+					monScript.effects.Add (tag);
+				}
+			}
+			return targets;
 		default:
 			return targets;
 		}
 			
 	}
 
-	//Private variables
-	string name;
-	string desc;
-
-	double damMod = 1;
-	Target damTarget;
-	double moraleMod = 1;
-	Target moraleTarget;
-	double xpMod = 1;
-	Target xpTarget;
-	double nerveMod = 1;
-	Target nerveTarget;
-	double stressMod = 1;
-	Target stressTarget;
-
-	public abstract void ApplyEthic();
-
-	public static void ApplyStat(List<BaseMonster> monsters) {
-	}
+	//Applies the effects of this ethic to all targeted monsters
+	public abstract void ApplyEthic(BaseMonster monster);
 }
