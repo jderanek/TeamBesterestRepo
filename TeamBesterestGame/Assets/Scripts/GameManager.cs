@@ -291,7 +291,9 @@ public class GameManager : MonoBehaviour
             newField.GetComponentInChildren<Text>().text = application.name;
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(255f, 57.4f);
 
-            newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
+            //stats/interview button
+            newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { Interview(application); });
+            //hire button
             newField.transform.GetChild(0).transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
 
             newField.transform.SetParent(applicationPanel.transform, false);
@@ -702,8 +704,9 @@ public class GameManager : MonoBehaviour
 		currencyText.text = "Gold: " + currentCurrency + " / " + maximumCurrency;
 	}
 
-	public void Interview()//enables interview UI and hides other UI elements that are in the way
+	public void Interview(GameObject monster)//enables interview UI and hides other UI elements that are in the way
 	{
+        monsterInstance = monster;
 		interviewing = true;
         //interviewButtons.SetActive(true);
         Q1.SetActive(true);

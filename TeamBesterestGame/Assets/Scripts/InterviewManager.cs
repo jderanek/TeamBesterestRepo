@@ -301,7 +301,8 @@ public class InterviewManager : MonoBehaviour {
 
     public void ExitInterview() //exits interview and hides the interview UI
     {
-		//gameManager.GetComponent<GameManager>().interviewButtons.SetActive(false);
+        gameManager.GetComponent<GameManager>().monsterInstance = null;
+        //gameManager.GetComponent<GameManager>().interviewButtons.SetActive(false);
         gameManager.GetComponent<GameManager>().Q1.SetActive(false);
         gameManager.GetComponent<GameManager>().Q2.SetActive(false);
         gameManager.GetComponent<GameManager>().Q3.SetActive(false);
