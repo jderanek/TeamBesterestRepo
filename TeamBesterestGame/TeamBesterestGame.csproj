@@ -323,6 +323,11 @@
     <Compile Include="Assets\Scripts\Trait Scripts\WaryTrait.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\WorkaholicTrait.cs" />
     <Compile Include="Assets\Scripts\Workethic Scripts\BaseEthic.cs" />
+    <Compile Include="Assets\Scripts\Workethic Scripts\ChatterBox.cs" />
+    <Compile Include="Assets\Scripts\Workethic Scripts\Focused.cs" />
+    <Compile Include="Assets\Scripts\Workethic Scripts\Leader.cs" />
+    <Compile Include="Assets\Scripts\Workethic Scripts\Mentor.cs" />
+    <Compile Include="Assets\Scripts\Workethic Scripts\OverAchiever.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\_ArrayPoolDefault.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\_ArrayPoolLEngineDefault.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\_ArrayPoolSpatialAudio.cs" />

@@ -24,7 +24,7 @@ public class ResumeScript : MonoBehaviour {
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         
-		interviewButton.onClick.AddListener(gameManager.Interview);
+		//interviewButton.onClick.AddListener(gameManager.Interview);
 
         timeTillExpiration = 5;
     }
