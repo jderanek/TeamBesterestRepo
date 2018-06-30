@@ -23,6 +23,8 @@ public abstract class BaseMonster : MonoBehaviour {
 	int salary;
 	float stress;
 	float morale;
+	float moraleGain = 1f;
+	float moraleLoss = 1f;
 	float stressGain;
 	float vacationStressLoss;
 	int infamyGain;
@@ -38,12 +40,16 @@ public abstract class BaseMonster : MonoBehaviour {
 	GameObject curRoom;
 	Text damageText;
 	GameManager gameManager;
+	float xpMod = 1f;
 
 	//Temp variables from transfer
 	private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
 	string traitName;
 	public float baseNerve = .5f; //public to be edited in editor
 	public float curNerve = .5f; //public to be edited in editor
+
+	//List to hold everything currently affecting the monster
+	public List<string> effects = new List<string>();
 
 	void Awake() {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
@@ -180,6 +186,18 @@ public abstract class BaseMonster : MonoBehaviour {
 	public void setMorale(float newM) {
 		this.morale = newM;
 	}
+	public float getMoraleGain() {
+		return this.moraleGain;
+	}
+	public void setMoraleGain(float newM) {
+		this.moraleGain = newM;
+	}
+	public float getMoraleLoss() {
+		return this.moraleLoss;
+	}
+	public void setMoraleLoss(float newM) {
+		this.moraleLoss = newM;
+	}
 	public float getStress() {
 		return this.stress;
 	}
@@ -242,6 +260,12 @@ public abstract class BaseMonster : MonoBehaviour {
 	}
 	public string getArchetype() {
 		return this.archetype;
+	}
+	public float getXPMod() {
+		return this.xpMod;
+	}
+	public void setXPMod(float newM) {
+		this.xpMod = newM;
 	}
 
 	//Function to make monster lose health
