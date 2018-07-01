@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 	//Monster Stuff
 	//[HideInInspector]
 	public GameObject[] possibleMonsters; //public to assign references in editor
-	[HideInInspector]
+	//[HideInInspector]
 	public GameObject monsterInstance; //public to assign reference in editor
     public GameObject selectedObject;
 
@@ -166,31 +166,7 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update()
     {
-		/*
-        if (interviewing)
-        {
-            interviewButtons.SetActive(true);
-            interviewImage.SetActive(true);
-            interviewBackground.SetActive(true);
-            interviewExit.SetActive(true);
-            constructionButton.SetActive(false);
-            if (resume != null)
-            {
-                resume.SetActive(false);
-            }
-        }
-        else
-        {
-            interviewButtons.SetActive(false);
-            interviewImage.SetActive(false);
-            interviewBackground.SetActive(false);
-            interviewExit.SetActive(false);
-            constructionButton.SetActive(true);
-            if (resume != null)
-            {
-                resume.SetActive(true);
-            }
-        }*/
+	
 	}
 
 	public GameObject SpawnMonster()
