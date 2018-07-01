@@ -41,6 +41,9 @@ public abstract class BaseMonster : MonoBehaviour {
 	Text damageText;
 	GameManager gameManager;
 	float xpMod = 1f;
+	float goldMod = 1f;
+	int breakdowns = 3;
+	public bool canBeDebuffed = true;
 
 	//Temp variables from transfer
 	private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
@@ -266,6 +269,18 @@ public abstract class BaseMonster : MonoBehaviour {
 	}
 	public void setXPMod(float newM) {
 		this.xpMod = newM;
+	}
+	public float getGoldMod() {
+		return this.goldMod;
+	}
+	public void setGoldMod(float newM) {
+		this.goldMod = newM;
+	}
+	public int getBreakdowns() {
+		return this.breakdowns;
+	}
+	public void setBreakdowns(int breaks) {
+		this.breakdowns = breaks;
 	}
 
 	//Function to make monster lose health

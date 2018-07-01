@@ -11,7 +11,9 @@ public class ChatterBox : BaseEthic {
 	public override void ApplyEthic(BaseMonster monster) {
 		List<BaseMonster> targets = BaseEthic.GetTargets (monster, stressRec);
 
-		foreach (BaseMonster mon in targets)
-			mon.setMoraleGain (mon.getMoraleGain () * stressGainMod);
+		foreach (BaseMonster mon in targets) {
+			if (mon.canBeDebuffed)
+				mon.setMoraleGain (mon.getMoraleGain () * stressGainMod);
+		}
 	}
 }
