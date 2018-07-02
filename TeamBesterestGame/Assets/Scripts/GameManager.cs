@@ -684,7 +684,7 @@ public class GameManager : MonoBehaviour
 	{
         monsterInstance = monster;
 		interviewing = true;
-        //interviewButtons.SetActive(true);
+        applicationPanel.SetActive(false);
         Q1.SetActive(true);
         Q2.SetActive(true);
         Q3.SetActive(true);
@@ -692,11 +692,9 @@ public class GameManager : MonoBehaviour
         Q5.SetActive(true);
         interviewImage.SetActive(true);
         interviewResponse.SetActive(true);
-		//interviewBackground.SetActive(true);
 		interviewExit.SetActive(true);
-		//constructionButton.SetActive(false);
-        //contextMenu.SetActive(false);
-		//applicationsButton.SetActive(false);
+
+
 		this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
 	}
 
