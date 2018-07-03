@@ -2140,7 +2140,7 @@ Prefab:
       objectReference: {fileID: 959393533}
     - target: {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114792822318123870, guid: 2bda6a842a515a543a527f9bcc4514c2,
         type: 2}
@@ -5990,7 +5990,7 @@ Prefab:
       objectReference: {fileID: 959393533}
     - target: {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
@@ -6732,9 +6732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neighborRooms: []
-  roomMembers:
-  - {fileID: 326449874}
-  - {fileID: 891989949}
+  roomMembers: []
   myX: 5
   myY: 6
   heroesInRoom: []

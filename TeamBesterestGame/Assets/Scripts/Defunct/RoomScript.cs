@@ -94,9 +94,6 @@ public class RoomScript : MonoBehaviour
 					gameObject.transform.position.y + UnityEngine.Random.Range (-0.25f, 0.25f),
 					0
                     );
-                gameManager.AddToDepartment(gameManager.selectedObject, gameManager.dungeonList);
-                gameManager.UpdateMonsters();
-                gameManager.UpdateDepartments();
 				roomMembers.Add (gameManager.selectedObject);
 				roomThreat += gameManager.selectedObject.GetComponent<BaseMonster> ().getThreat ();
 				monsterInRoom = true;
@@ -105,6 +102,9 @@ public class RoomScript : MonoBehaviour
 					neighbor.GetComponent<RoomScript> ().SortNeighbors ();
 				}
                 gameManager.selectedObject = null;
+                gameManager.AddToDepartment(gameManager.selectedObject, gameManager.dungeonList);
+                gameManager.UpdateMonsters();
+                gameManager.UpdateDepartments();
             }
         }
     }
