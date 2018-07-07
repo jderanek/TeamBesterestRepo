@@ -384,7 +384,9 @@ public class GameManager : MonoBehaviour
 
         var newBreakRoomHeader = Instantiate(breakRoomHeader, new Vector3(0, 0, 0), Quaternion.identity);
         newBreakRoomHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
-        newBreakRoomHeader.transform.SetParent(departmentPanel.transform, false);
+        newBreakRoomHeader.transform.SetParent(departmentPanel.transform, true);
+        newBreakRoomHeader.GetComponent<Image>().enabled = true;
+        newBreakRoomHeader.GetComponentInChildren<Text>().enabled = true;
 
         foreach (GameObject monster in breakRoomList)
         {
@@ -415,6 +417,8 @@ public class GameManager : MonoBehaviour
         var newPRHeader = Instantiate(prHeader, new Vector3(0, 0, 0), Quaternion.identity);
         newPRHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
         newPRHeader.transform.SetParent(departmentPanel.transform, false);
+        newPRHeader.GetComponent<Image>().enabled = true;
+        newPRHeader.GetComponentInChildren<Text>().enabled = true;
 
         foreach (GameObject monster in prList)
         {
@@ -429,21 +433,25 @@ public class GameManager : MonoBehaviour
             newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
         }
-        
+
         if (prList.Count < prCapacity)
         {
             var emptySlotPR = Instantiate(emptySlotField, new Vector3(0, 0, 0), Quaternion.identity);
-            emptySlotPR.GetComponentInChildren<Button>().onClick.AddListener(delegate 
+            emptySlotPR.GetComponentInChildren<Button>().onClick.AddListener(delegate
             {
                 UpdateAssignment(prList);
                 AssignmentMenu();
             });
             emptySlotPR.transform.SetParent(departmentPanel.transform, false);
+            emptySlotPR.GetComponent<Image>().enabled = true;
 
             var emptySlotPRCanvas = emptySlotPR.transform.GetChild(0);
             emptySlotPRCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
             emptySlotPRCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
             emptySlotPRCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+            emptySlotPRCanvas.GetComponent<Canvas>().enabled = true;
+            emptySlotPRCanvas.GetComponent<CanvasScaler>().enabled = true;
+            emptySlotPRCanvas.GetComponent<GraphicRaycaster>().enabled = true;
         }
     }
 
@@ -505,7 +513,10 @@ public class GameManager : MonoBehaviour
 
     public void AddToDepartment(GameObject monster, List<GameObject> department)
     {
-        monster.GetComponent<BaseMonster>().department.Remove(monster);
+        if (monster.GetComponent<BaseMonster>().department != null)
+        {
+            monster.GetComponent<BaseMonster>().department.Remove(monster);
+        }
         department.Add(monster);
         monster.GetComponent<BaseMonster>().department = department;
         UpdateDepartments();
