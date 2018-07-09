@@ -7,8 +7,8 @@ public abstract class BaseHero : MonoBehaviour {
 
 	//Private variables for hero stats
 	private int maxHealth;
-	private int curHealth;
-	private int damage;
+	public int curHealth;
+	public int damage;
 	private int value;
 	private int armor;
 	private int capacity;
@@ -55,9 +55,9 @@ public abstract class BaseHero : MonoBehaviour {
 		this.curHealth = int.Parse(gameManager.heroStats.data [type] ["Health"]);
 		this.damage = int.Parse(gameManager.heroStats.data [type] ["Base Attack"]);
 		this.armor = int.Parse(gameManager.heroStats.data [type] ["Defense"]);
-		this.threat = int.Parse(gameManager.heroStats.data [type] ["Threat Level"]);
-		this.value = int.Parse(gameManager.heroStats.data [type] ["Kill Value"]);
-		this.capacity = int.Parse(gameManager.heroStats.data [type] ["Carry Capacity"]) * 100;
+		//this.threat = int.Parse(gameManager.heroStats.data [type] ["Threat Level"]);
+		this.value = int.Parse(gameManager.heroStats.data [type] ["Gold Drop Value"]);
+		//this.capacity = int.Parse(gameManager.heroStats.data [type] ["Carry Capacity"]) * 100;
 	}
 
 	//Getter functions for damage, current health and currency value
