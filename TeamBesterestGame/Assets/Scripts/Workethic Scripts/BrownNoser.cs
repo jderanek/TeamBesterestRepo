@@ -12,8 +12,9 @@ public class BrownNoser : BaseEthic {
 
 	//Checks whether or not buff should be applied
 	private bool ApplyBuff(BaseMonster monster) {
-		foreach (BaseMonster mon in monster.getCurRoom().roomMembers) {
-			if (mon.getThreat () > monster.getThreat ())
+		foreach (GameObject mon in monster.getCurRoom().roomMembers) {
+			BaseMonster monScript = mon.GetComponent<BaseMonster> ();
+			if (monScript.getThreat () > monster.getThreat ())
 				return true;
 		}
 		return false;
@@ -29,7 +30,7 @@ public class BrownNoser : BaseEthic {
 			targets = BaseEthic.GetTargets (monster, xpRec);
 
 			foreach (BaseMonster mon in targets)
-				mon.setXPMod (mon.getXPMod () = xpMod);
+				mon.setXPMod (mon.getXPMod () * xpMod);
 		}
 	}
 }
