@@ -44,6 +44,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	float goldMod = 1f;
 	int breakdowns = 3;
 	public bool canBeDebuffed = true;
+	float promotionMod = 1f;
 
 	//Temp variables from transfer
 	private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
@@ -282,6 +283,12 @@ public abstract class BaseMonster : MonoBehaviour {
 	public void setBreakdowns(int breaks) {
 		this.breakdowns = breaks;
 	}
+	public float getPromotionMod() {
+		return this.promotionMod;
+	}
+	public void setPromotionMod(float mod) {
+		this.promotionMod = mod;
+	}
 
 	//Function to make monster lose health
 	public void TakeDamage(int dam) {
@@ -329,6 +336,7 @@ public abstract class BaseMonster : MonoBehaviour {
 			curRoom.GetComponent<RoomScript>().monsterInRoom = false;
 		}
 		//Destroy(gameObject);
+		gameObject.SetActive(false);
 	}
 
 	//Applies personality effects to the monster, as well as other stat modifiers

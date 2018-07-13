@@ -208,6 +208,7 @@ public class GameManager : MonoBehaviour
         monsterInstance.SetActive(true);
         int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
         float infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
+		monsterInstance.GetComponent<BaseMonster>().applicationLife = -1;
         if (currentCurrency >= salary)
         {
             CurrencyChanged(-salary); //this will have to change when the monster inheritance class is set up
@@ -632,7 +633,7 @@ public class GameManager : MonoBehaviour
             foreach (GameObject application in applicationsList)
             {
                 application.GetComponent<BaseMonster>().applicationLife -= 1;
-                if (application.GetComponent<BaseMonster>().applicationLife <= 0)
+                if (application.GetComponent<BaseMonster>().applicationLife == 0)
                 {
                     applicationsToDestroy.Add(application);
                 }
