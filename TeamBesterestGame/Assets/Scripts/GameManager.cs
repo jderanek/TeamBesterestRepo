@@ -368,7 +368,7 @@ public class GameManager : MonoBehaviour
 			GameObject[] toAdd = new GameObject[2];
 			toAdd[0] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
 			toAdd[1] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
-			party = new TestPart (toAdd);
+			//party = new TestPart (toAdd);
 
             applicationPanel.SetActive(false);
             applicationOpen = false;
@@ -676,8 +676,7 @@ public class GameManager : MonoBehaviour
                 NewCycle();
             }
 		}
-		party.MoveToNextRoom ();
-		Debug.Log (party.getState ());
+		//party.MoveToNextRoom ();
 	}
 
 	public void ToggleConstruction()
