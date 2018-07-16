@@ -67,6 +67,16 @@
      <Compile Include="Assets\Scripts\Hero Scripts\RogueHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\SniperHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\WarriorHero.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\FastPriorityQueue.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\FastPriorityQueueNode.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\GenericPriorityQueue.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\GenericPriorityQueueNode.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\IFixedSizePriorityQueue.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\IPriorityQueue.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\SimplePriorityQueue.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\StablePriorityQueue.cs" />
+     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\StablePriorityQueueNode.cs" />
      <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />
      <Compile Include="Assets\Scripts\InterviewManager.cs" />
      <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
@@ -76,6 +86,7 @@
      <Compile Include="Assets\Scripts\Monster Scripts\TribalMonster.cs" />
      <Compile Include="Assets\Scripts\Monster Scripts\UndeadMonster.cs" />
      <Compile Include="Assets\Scripts\Party Scripts\BaseParty.cs" />
+     <Compile Include="Assets\Scripts\Party Scripts\TestPart.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\BaseRoom.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\EntranceRoom.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />
@@ -262,6 +273,7 @@
      <None Include="Assets\Wwise\Deployment\Plugins\Mac\Profile\AkSoundEngine.bundle\Contents\Resources\readme.txt" />
      <None Include="Assets\Wwise\Version.txt" />
      <None Include="Assets\Wwise\Deployment\Plugins\Mac\Debug\AkSoundEngine.bundle\Contents\Resources\readme.txt" />
+     <None Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\LICENSE.txt" />
      <None Include="Assets\Wwise\Deployment\Plugins\Mac\Release\AkSoundEngine.bundle\Contents\Resources\readme.txt" />
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>

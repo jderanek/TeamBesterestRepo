@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+	//Test Party
+	public TestPart party;
+
 	//Monster Stuff
 	//[HideInInspector]
 	public GameObject[] possibleMonsters; //public to assign references in editor
@@ -75,6 +78,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] heroes; //public to be assigned in editor
 
     public GameObject[,] roomList; //public to be accessed by room script
+	public int roomCount = 1; //Number of rooms in dungeon
 
 	//Time Unit stuff
 	private bool paused = true;
@@ -140,8 +144,7 @@ public class GameManager : MonoBehaviour
 		foreach (var room in rooms) {
 			room.GetComponent<RoomScript>().Initialize();
 		}
-
-
+			
 		/*
 		//Test for CSVImporter
 		foreach (KeyValuePair<string, Dictionary<string, string>> monster in monsters.data) {
@@ -362,6 +365,11 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+			GameObject[] toAdd = new GameObject[2];
+			toAdd[0] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
+			toAdd[1] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
+			party = new TestPart (toAdd);
+
             applicationPanel.SetActive(false);
             applicationOpen = false;
             monsterPanel.SetActive(false);
@@ -668,6 +676,8 @@ public class GameManager : MonoBehaviour
                 NewCycle();
             }
 		}
+		party.MoveToNextRoom ();
+		Debug.Log (party.getState ());
 	}
 
 	public void ToggleConstruction()

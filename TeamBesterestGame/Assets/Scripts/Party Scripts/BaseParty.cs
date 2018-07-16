@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class BaseParty {
 
-	BaseHero[] partyMembers;
+	public BaseHero[] partyMembers;
 	RoomScript curRoom;
 	public List<RoomScript> roomPath;
 	List<RoomScript> exploredRooms;
@@ -14,13 +14,31 @@ public abstract class BaseParty {
 
 	GameManager gameManager;
 
-	//Assigns gameManager, and other initialization
-	public void Awake() {
-		this.gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+	//Constructor takes hero list to create new party
+	public BaseParty(BaseHero[] heroes) {
 		roomPath = new List<RoomScript> ();
 		exploredRooms = new List<RoomScript> ();
-		roomPath.Add (gameManager.spawnRoom.GetComponent<RoomScript> ());
-		exploredRooms.Add (gameManager.spawnRoom.GetComponent<RoomScript> ());
+		this.gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+		partyMembers = new BaseHero [heroes.Length];
+		for (int x=0; x < heroes.Length; x++) {
+			partyMembers [x] = heroes [x];
+		}
+		this.MoveTo (gameManager.spawnRoom.GetComponent<RoomScript>());
+		this.exploredRooms.Add (curRoom);
+		this.roomPath.Add (curRoom);
+	}
+	//Secondary constructor takes hero list of GameObjects
+	public BaseParty(GameObject[] heroes) {
+		roomPath = new List<RoomScript> ();
+		exploredRooms = new List<RoomScript> ();
+		this.gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+		partyMembers = new BaseHero [heroes.Length];
+		for (int x=0; x < heroes.Length; x++) {
+			partyMembers [x] = heroes [x].GetComponent<BaseHero> ();
+		}
+		this.MoveTo (gameManager.spawnRoom.GetComponent<RoomScript> ());
+		this.exploredRooms.Add (curRoom);
+		this.roomPath.Add (curRoom);
 	}
 
 	//Getter functions for variables
@@ -33,6 +51,9 @@ public abstract class BaseParty {
 	public string getState() {
 		return this.state;
 	}
+	public GameManager getManager() {
+		return this.gameManager;
+	}
 
 	//Calls all party members attack function in the current room
 	public void AttackPhase() {
@@ -43,8 +64,6 @@ public abstract class BaseParty {
 	//Moves all party members to the given room
 	public void MoveTo(RoomScript room) {
 		this.curRoom = room;
-		this.exploredRooms.Add (curRoom);
-		this.roomPath.Add (curRoom);
 		foreach (BaseHero hero in partyMembers)
 			hero.MoveTo (curRoom);
 	}
@@ -119,7 +138,7 @@ public abstract class BaseParty {
 	//A* type algorithm
 	public void FindExitPath() {
 		Dictionary<Vector2, Node> allNodes = new Dictionary<Vector2, Node> ();
-		SortedList<Node, Node> queue = new SortedList<Node, Node> (new NodeCompare());
+		Priority_Queue.SimplePriorityQueue<Node, int> queue = new Priority_Queue.SimplePriorityQueue<Node, int> ();
 		RoomScript spawn = gameManager.spawnRoom.GetComponent<RoomScript> ();
 		Vector2 spawnPos = new Vector2 (spawn.myX, spawn.myY);
 		Node current = new Node (new Vector2 (this.curRoom.myX, this.curRoom.myX), Vector2.negativeInfinity, 
@@ -134,33 +153,34 @@ public abstract class BaseParty {
 			newPos = new Vector2 (current.pos.x + 1, current.pos.y);
 			if (isValid(newPos) && !allNodes.ContainsKey(newPos)) {
 				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
-				queue.Add (toAdd, toAdd);
+				queue.Enqueue (toAdd, toAdd.dis);
 			}
 			newPos = new Vector2 (current.pos.x - 1, current.pos.y);
 			if (isValid(newPos) && !allNodes.ContainsKey(newPos)) {
 				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
-				queue.Add (toAdd, toAdd);
+				queue.Enqueue (toAdd, toAdd.dis);
 			}
 			newPos = new Vector2 (current.pos.x, current.pos.y + 1);
 			if (isValid(newPos) && !allNodes.ContainsKey(newPos)) {
 				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
-				queue.Add (toAdd, toAdd);
+				queue.Enqueue (toAdd, toAdd.dis);
 			}
 			newPos = new Vector2 (current.pos.x, current.pos.y - 1);
 			if (isValid(newPos) && !allNodes.ContainsKey(newPos)) {
 				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
-				queue.Add (toAdd, toAdd);
+				queue.Enqueue (toAdd, toAdd.dis);
 			}
 
 			//Gets the new shortest distance node from the queue
-			current = queue.Values[0];
+			current = queue.First;
 		}
 
 		//Iterates up until the last node in the path is found
 		List<RoomScript> newPath = new List<RoomScript> ();
-		while (current.path != Vector2.negativeInfinity) {
+		while (current != null && current.path != Vector2.negativeInfinity) {
 			newPath.Add (gameManager.roomList [(int)current.pos.x, (int)current.pos.x].GetComponent<RoomScript>());
-			allNodes.TryGetValue (current.path, out current);
+			if (current.path != Vector2.negativeInfinity)
+				allNodes.TryGetValue (current.path, out current);
 		}
 		roomPath = newPath;
 	}
@@ -172,13 +192,21 @@ public abstract class BaseParty {
 		switch (state) {
 		case "Explore":
 			toMove = this.FindNextRoom ();
-			if (toMove != null)
+			if (toMove != null) {
 				MoveTo (toMove);
-			else if (this.exploredRooms.Count == gameManager.roomList.Length) {
+				this.exploredRooms.Add (toMove);
+				this.roomPath.Add (toMove);
+			} else if (this.exploredRooms.Count == gameManager.roomCount) {
 				state = "Exit";
 				FindExitPath ();
-			} else
+				toMove = this.Backtrack ();
+				MoveTo (toMove);
+			} else {
 				state = "Back";
+				roomPath.RemoveAt (roomPath.Count - 1);
+				toMove = this.Backtrack ();
+				MoveTo (toMove);
+			}
 			break;
 		case "Back":
 			toMove = this.Backtrack ();
@@ -190,8 +218,10 @@ public abstract class BaseParty {
 				RoomScript room;
 				foreach (GameObject roomObject in toMove.neighborRooms) {
 					room = roomObject.GetComponent<RoomScript> ();
-					if (!this.exploredRooms.Contains (room))
+					if (!this.exploredRooms.Contains (room)) {
 						this.state = "Explore";
+						this.roomPath.Add (curRoom);
+					}
 				}
 			}
 			break;
@@ -203,6 +233,7 @@ public abstract class BaseParty {
 				MoveTo (toMove);
 			break;
 		}
+		Debug.Log (roomPath.Count);
 	}
 
 	//Destroys all party members of this Party to despawn the party
@@ -214,5 +245,5 @@ public abstract class BaseParty {
 	}
 
 	//Adds heros to the list of members
-	public abstract void CreateParty();
+	//public abstract void CreateParty();
 }

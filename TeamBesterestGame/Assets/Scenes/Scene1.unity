@@ -7114,6 +7114,7 @@ MonoBehaviour:
   - {fileID: 1208952337519340, guid: 5e89ac2699e6b4748bc1768019032152, type: 2}
   - {fileID: 1512600844001062, guid: 11d6459a900aec448b7a05d468277682, type: 2}
   - {fileID: 1820813238502166, guid: 2e4d688e4d279e341b54bca22c3d2174, type: 2}
+  roomCount: 8
   timePerDay: 16
   timeSpeed: 2
   timeUnitText: {fileID: 968657728}

@@ -117,11 +117,14 @@ public abstract class BaseHero : MonoBehaviour {
 
 	//Function to move this hero from one room to another
 	public void MoveTo(RoomScript room) {
-		curRoom.heroesInRoom.Remove(this.gameObject);
-		if (curRoom.heroesInRoom.Count == 0)
-		{
-			curRoom.heroInRoom = false;
+		if (curRoom != null) {
+			curRoom.heroesInRoom.Remove (this.gameObject);
+		
+			if (curRoom.heroesInRoom.Count == 0) {
+				curRoom.heroInRoom = false;
+			}
 		}
+
 		this.curRoom = room;
 		this.gameObject.transform.position = room.gameObject.transform.position;
 	}
