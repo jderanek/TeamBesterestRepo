@@ -8,7 +8,7 @@ public abstract class BaseParty {
 
 	BaseHero[] partyMembers;
 	RoomScript curRoom;
-	List<RoomScript> roomPath;
+	public List<RoomScript> roomPath;
 	List<RoomScript> exploredRooms;
 	string state = "Explore";
 
@@ -159,8 +159,8 @@ public abstract class BaseParty {
 		//Iterates up until the last node in the path is found
 		List<RoomScript> newPath = new List<RoomScript> ();
 		while (current.path != Vector2.negativeInfinity) {
-			newPath.Add (gameManager.roomList [(int)current.pos.x, (int)current.pos.x]);
-			current = allNodes.TryGetValue (current.path);
+			newPath.Add (gameManager.roomList [(int)current.pos.x, (int)current.pos.x].GetComponent<RoomScript>());
+			allNodes.TryGetValue (current.path, out current);
 		}
 		roomPath = newPath;
 	}
