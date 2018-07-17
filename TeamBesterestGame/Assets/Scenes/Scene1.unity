@@ -6721,7 +6721,7 @@ MonoBehaviour:
   myX: 5
   myY: 6
   heroesInRoom: []
-  monsterInRoom: 1
+  monsterInRoom: 0
   heroInRoom: 0
   northRoom: {fileID: 1952476467}
   southRoom: {fileID: 1893377716}
