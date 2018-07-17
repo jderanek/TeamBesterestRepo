@@ -54,10 +54,10 @@
      <Compile Include="Assets\Scripts\ConstructionScript.cs" />
      <Compile Include="Assets\Scripts\CSVImporter.cs" />
      <Compile Include="Assets\Scripts\Defunct\HeroScript.cs" />
+     <Compile Include="Assets\Scripts\Defunct\InterviewButtonScript.cs" />
      <Compile Include="Assets\Scripts\Defunct\MonsterScript.cs" />
      <Compile Include="Assets\Scripts\Defunct\PickUpRoom.cs" />
      <Compile Include="Assets\Scripts\Defunct\ResumeScript.cs" />
-     <Compile Include="Assets\Scripts\Defunct\RoomScript.cs" />
      <Compile Include="Assets\Scripts\Defunct\SpawnNewSquare.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\BaseHero.cs" />
@@ -77,7 +77,6 @@
      <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\SimplePriorityQueue.cs" />
      <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\StablePriorityQueue.cs" />
      <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\StablePriorityQueueNode.cs" />
-     <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />
      <Compile Include="Assets\Scripts\InterviewManager.cs" />
      <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
      <Compile Include="Assets\Scripts\Monster Scripts\BestialMosnter.cs" />
@@ -89,6 +88,7 @@
      <Compile Include="Assets\Scripts\Party Scripts\TestPart.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\BaseRoom.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\EntranceRoom.cs" />
+     <Compile Include="Assets\Scripts\RoomScript.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\FancyTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\FlirtyTrait.cs" />

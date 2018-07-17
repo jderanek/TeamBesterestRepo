@@ -141,8 +141,8 @@ public abstract class BaseParty {
 		Priority_Queue.SimplePriorityQueue<Node, int> queue = new Priority_Queue.SimplePriorityQueue<Node, int> ();
 		RoomScript spawn = gameManager.spawnRoom.GetComponent<RoomScript> ();
 		Vector2 spawnPos = new Vector2 (spawn.myX, spawn.myY);
-		Node current = new Node (new Vector2 (this.curRoom.myX, this.curRoom.myX), Vector2.negativeInfinity, 
-			               Node.GetDistance (new Vector2 (this.curRoom.myX, this.curRoom.myX), spawnPos));
+		Node current = new Node (new Vector2 (this.curRoom.myX, this.curRoom.myY), Vector2.negativeInfinity, 
+			               Node.GetDistance (new Vector2 (this.curRoom.myX, this.curRoom.myY), spawnPos));
 
 		Vector2 newPos;
 		Node toAdd;
@@ -173,12 +173,13 @@ public abstract class BaseParty {
 
 			//Gets the new shortest distance node from the queue
 			current = queue.First;
+			Debug.Log (current.pos.ToString ());
 		}
 
 		//Iterates up until the last node in the path is found
 		List<RoomScript> newPath = new List<RoomScript> ();
 		while (current != null && current.path != Vector2.negativeInfinity) {
-			newPath.Add (gameManager.roomList [(int)current.pos.x, (int)current.pos.x].GetComponent<RoomScript>());
+			newPath.Add (gameManager.roomList [(int)current.pos.x, (int)current.pos.y].GetComponent<RoomScript>());
 			if (current.path != Vector2.negativeInfinity)
 				allNodes.TryGetValue (current.path, out current);
 		}
@@ -233,7 +234,6 @@ public abstract class BaseParty {
 				MoveTo (toMove);
 			break;
 		}
-		Debug.Log (roomPath.Count);
 	}
 
 	//Destroys all party members of this Party to despawn the party

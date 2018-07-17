@@ -166,6 +166,13 @@ public class GameManager : MonoBehaviour
 			}
 		}
 		*/
+		roomList [5, 5] = spawnRoom;
+		for (int x = 0; x < roomList.GetLength (0); x++) {
+			for (int y = 0; y < roomList.GetLength (1); y++) {
+				if (roomList [x, y] != null)
+					Debug.Log ("Room at: " + x.ToString () + ", " + y.ToString ());
+			}
+		}
 	}
 
 	// Update is called once per frame
@@ -365,9 +372,9 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-			GameObject[] toAdd = new GameObject[2];
-			toAdd[0] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
-			toAdd[1] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
+			//GameObject[] toAdd = new GameObject[2];
+			//toAdd[0] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
+			//toAdd[1] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
 			//party = new TestPart (toAdd);
 
             applicationPanel.SetActive(false);
