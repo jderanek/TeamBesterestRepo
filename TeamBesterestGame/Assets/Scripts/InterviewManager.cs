@@ -302,24 +302,17 @@ public class InterviewManager : MonoBehaviour {
     public void ExitInterview() //exits interview and hides the interview UI
     {
         gameManager.GetComponent<GameManager>().monsterInstance = null;
-        //gameManager.GetComponent<GameManager>().interviewButtons.SetActive(false);
         gameManager.GetComponent<GameManager>().Q1.SetActive(false);
         gameManager.GetComponent<GameManager>().Q2.SetActive(false);
         gameManager.GetComponent<GameManager>().Q3.SetActive(false);
         gameManager.GetComponent<GameManager>().Q4.SetActive(false);
         gameManager.GetComponent<GameManager>().Q5.SetActive(false);
         gameManager.GetComponent<GameManager>().interviewResponse.SetActive(false);
-		//gameManager.GetComponent<GameManager>().interviewBackground.SetActive(false);
         gameManager.GetComponent<GameManager>().interviewImage.SetActive(false);
         gameManager.GetComponent<GameManager>().interviewExit.SetActive(false);
         gameManager.GetComponent<GameManager>().applicationPanel.SetActive(true);
         interviewResponse.SetActive(false);
-
-		/*if (gameManager.GetComponent<GameManager>().resume != null)
-		{
-			gameManager.GetComponent<GameManager>().resume.SetActive(true);
-		}
-        gameManager.GetComponent<GameManager>().interviewing = false;*/
+        responseText.text = "Hello";
     }
 
 }

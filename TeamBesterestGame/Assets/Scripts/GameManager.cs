@@ -524,7 +524,7 @@ public class GameManager : MonoBehaviour
 
     public void AddToDepartment(GameObject monster, List<GameObject> department)
     {
-        if (monster.GetComponent<BaseMonster>().department != null)
+        if (monster.GetComponent<BaseMonster>().department != null) //causing an error when moving a monster to the dungeon
         {
             monster.GetComponent<BaseMonster>().department.Remove(monster);
         }

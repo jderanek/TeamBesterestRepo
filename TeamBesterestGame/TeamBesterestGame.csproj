@@ -261,35 +261,35 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Advertisements">
-      <HintPath>C:/Users/Nate/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/James Deranek/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Advertisements">
-      <HintPath>C:/Users/Nate/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
+      <HintPath>C:/Users/James Deranek/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/Nate/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/James Deranek/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Analytics">
-      <HintPath>C:/Users/Nate/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/Editor/UnityEditor.Analytics.dll</HintPath>
+      <HintPath>C:/Users/James Deranek/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.13/Editor/UnityEditor.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/Nate/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/James Deranek/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>C:/Users/Nate/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/James Deranek/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@0.0.19/Editor/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/Nate/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/James Deranek/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\ConstructionScript.cs" />
     <Compile Include="Assets\Scripts\CSVImporter.cs" />
     <Compile Include="Assets\Scripts\Defunct\HeroScript.cs" />
+    <Compile Include="Assets\Scripts\Defunct\InterviewButtonScript.cs" />
     <Compile Include="Assets\Scripts\Defunct\MonsterScript.cs" />
     <Compile Include="Assets\Scripts\Defunct\PickUpRoom.cs" />
     <Compile Include="Assets\Scripts\Defunct\ResumeScript.cs" />
-    <Compile Include="Assets\Scripts\Defunct\RoomScript.cs" />
     <Compile Include="Assets\Scripts\Defunct\SpawnNewSquare.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\BaseHero.cs" />
@@ -299,7 +299,16 @@
     <Compile Include="Assets\Scripts\Hero Scripts\RogueHero.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\SniperHero.cs" />
     <Compile Include="Assets\Scripts\Hero Scripts\WarriorHero.cs" />
-    <Compile Include="Assets\Scripts\InterviewButtonScript.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\FastPriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\FastPriorityQueueNode.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\GenericPriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\GenericPriorityQueueNode.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\IFixedSizePriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\IPriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\SimplePriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\StablePriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\StablePriorityQueueNode.cs" />
     <Compile Include="Assets\Scripts\InterviewManager.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\BestialMosnter.cs" />
@@ -308,8 +317,10 @@
     <Compile Include="Assets\Scripts\Monster Scripts\TribalMonster.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\UndeadMonster.cs" />
     <Compile Include="Assets\Scripts\Party Scripts\BaseParty.cs" />
+    <Compile Include="Assets\Scripts\Party Scripts\TestPart.cs" />
     <Compile Include="Assets\Scripts\Room Scripts\BaseRoom.cs" />
     <Compile Include="Assets\Scripts\Room Scripts\EntranceRoom.cs" />
+    <Compile Include="Assets\Scripts\RoomScript.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\FancyTrait.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\FlirtyTrait.cs" />
@@ -323,9 +334,11 @@
     <Compile Include="Assets\Scripts\Trait Scripts\WaryTrait.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\WorkaholicTrait.cs" />
     <Compile Include="Assets\Scripts\Workethic Scripts\BaseEthic.cs" />
+    <Compile Include="Assets\Scripts\Workethic Scripts\BrownNoser.cs" />
     <Compile Include="Assets\Scripts\Workethic Scripts\ChatterBox.cs" />
     <Compile Include="Assets\Scripts\Workethic Scripts\Compliant.cs" />
     <Compile Include="Assets\Scripts\Workethic Scripts\Focused.cs" />
+    <Compile Include="Assets\Scripts\Workethic Scripts\Frugal.cs" />
     <Compile Include="Assets\Scripts\Workethic Scripts\Kleptomaniac.cs" />
     <Compile Include="Assets\Scripts\Workethic Scripts\Leader.cs" />
     <Compile Include="Assets\Scripts\Workethic Scripts\Mentor.cs" />
@@ -489,6 +502,7 @@
     <Compile Include="Assets\Wwise\Extensions\AkSoundEngine.extensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\LICENSE.txt" />
     <None Include="Assets\StreamingAssets\desc.txt" />
     <None Include="Assets\Wwise\Deployment\Plugins\Mac\Debug\AkSoundEngine.bundle\Contents\Resources\readme.txt" />
     <None Include="Assets\Wwise\Deployment\Plugins\Mac\Profile\AkSoundEngine.bundle\Contents\Resources\readme.txt" />

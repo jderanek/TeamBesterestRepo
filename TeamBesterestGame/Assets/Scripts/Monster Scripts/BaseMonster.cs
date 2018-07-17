@@ -7,6 +7,7 @@ public abstract class BaseMonster : MonoBehaviour {
 
     //TODO: not sure the best way to handle this @avery but im putting it here for now - Nate
     public int applicationLife = 3;
+   
     public List<GameObject> department;
 
 	//Private variables for this monsters stats
@@ -293,7 +294,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	//Function to make monster lose health
 	public void TakeDamage(int dam) {
 		this.curHealth = Mathf.Clamp (this.curHealth - dam, 0, this.maxHealth);
-		//damageText.text = this.curHealth.ToString();
+		damageText.text = this.curHealth.ToString();
 		if (curHealth <= 0) {
 			this.Death ();
 		}
