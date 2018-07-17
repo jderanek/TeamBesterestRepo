@@ -403,7 +403,10 @@ public class GameManager : MonoBehaviour
         {
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             newField.GetComponentInChildren<Text>().text = monster.name;
-            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
+            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate {
+                SelectObject(monster);
+                //AddToDepartment(monster, dungeonList);
+            });
             newField.transform.SetParent(departmentPanel.transform, false);
 
             //manually adjust its position

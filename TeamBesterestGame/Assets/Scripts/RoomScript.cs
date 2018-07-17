@@ -101,10 +101,10 @@ public class RoomScript : MonoBehaviour
 				foreach (GameObject neighbor in neighborRooms) {
 					neighbor.GetComponent<RoomScript> ().SortNeighbors ();
 				}
-                gameManager.selectedObject = null;
                 gameManager.AddToDepartment(gameManager.selectedObject, gameManager.dungeonList);
                 gameManager.UpdateMonsters();
                 gameManager.UpdateDepartments();
+                gameManager.selectedObject = null;
             }
         }
     }
