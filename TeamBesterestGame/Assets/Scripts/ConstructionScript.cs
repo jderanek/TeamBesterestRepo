@@ -13,9 +13,9 @@ public class ConstructionScript : MonoBehaviour
     public GameObject room; //public to be assigned in editor
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-        
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class ConstructionScript : MonoBehaviour
 
     public void StartConstruction()
     {
+        //print("hi");
         GameObject constructionIconHolder;
         if (gameManager.inConstructionMode)
         {
@@ -117,12 +118,15 @@ public class ConstructionScript : MonoBehaviour
 
     public void SpawnNewRoom(GameObject placeToBuild)
     {
-        GameObject newRoom = Instantiate(room, new Vector3(placeToBuild.transform.position.x, placeToBuild.transform.position.y, 0f), Quaternion.identity);
-        newRoom.GetComponent<RoomScript>().myX = (int)newRoom.transform.position.x;
-        newRoom.GetComponent<RoomScript>().myY = (int)newRoom.transform.position.y;
-        gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
-		gameManager.CurrencyChanged(-100);
-        Destroy(placeToBuild);
-        StartConstruction();
+        if (gameManager.currentCurrency >= 100)
+        {
+            GameObject newRoom = Instantiate(room, new Vector3(placeToBuild.transform.position.x, placeToBuild.transform.position.y, 0f), Quaternion.identity);
+            newRoom.GetComponent<RoomScript>().myX = (int)newRoom.transform.position.x;
+            newRoom.GetComponent<RoomScript>().myY = (int)newRoom.transform.position.y;
+            gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
+            gameManager.CurrencyChanged(-100);
+            Destroy(placeToBuild);
+            StartConstruction();
+        }
     }
 }

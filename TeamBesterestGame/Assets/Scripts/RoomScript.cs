@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class RoomScript : MonoBehaviour
 {
     private GameManager gameManager;
+
+    public GameObject canvas;
+    public GameObject confirmationBox;
 
     public List<GameObject> neighborRooms = new List<GameObject>(); //public to assign reference in editor
 
@@ -59,6 +63,7 @@ public class RoomScript : MonoBehaviour
         //print(gameObject + " " + myX + ", " + myY);
         //print(gameManager.roomList[myX, myY]);
         UpdateNeighbors();
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
     }
 
     // Update is called once per frame
@@ -106,6 +111,28 @@ public class RoomScript : MonoBehaviour
                 gameManager.UpdateDepartments();
                 gameManager.selectedObject = null;
             }
+        }
+
+        if (Input.GetMouseButtonDown(1) && gameManager.inConstructionMode)
+        {
+            GameObject cb = Instantiate(confirmationBox, Vector3.zero, Quaternion.identity);
+            cb.transform.SetParent(canvas.transform, false);
+            cb.transform.GetChild(0).GetChild(0).GetComponent<Button>().onClick.AddListener(delegate
+            {
+                gameManager.CurrencyChanged(50);
+                gameManager.roomList[myX, myY] = null;
+                Destroy(gameObject);
+                UpdateNeighbors();
+                gameManager.ToggleConstruction();
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<ConstructionScript>().StartConstruction();
+                gameManager.ToggleConstruction();
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<ConstructionScript>().StartConstruction();
+                Destroy(cb);
+            });
+            cb.transform.GetChild(0).GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { Destroy(cb); });
+            cb.transform.GetChild(0).GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+            cb.transform.GetChild(0).GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+            cb.transform.GetChild(0).GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
         }
     }
 

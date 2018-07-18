@@ -20,6 +20,7 @@ TagManager:
   - Boss Room
   - Spawn Room
   - Construction Icon
+  - Canvas
   layers:
   - Default
   - TransparentFX
