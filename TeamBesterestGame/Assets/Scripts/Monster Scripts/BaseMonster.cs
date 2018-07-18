@@ -309,8 +309,8 @@ public abstract class BaseMonster : MonoBehaviour {
 	public virtual void Attack() {
 		BaseHero heroScript;
 		BaseHero highThreat = null;
-		int threat = -1;
-		foreach (GameObject hero in this.getCurRoom().roomMembers) {
+		int threat = int.MinValue;
+		foreach (GameObject hero in this.getCurRoom().heroesInRoom) {
 			if (hero != null) {
 				heroScript = hero.GetComponent<BaseHero> ();
 
@@ -323,7 +323,7 @@ public abstract class BaseMonster : MonoBehaviour {
 			}
 		}
 
-		//Makes mosnter take damage
+		//Makes hero take damage
 		if (highThreat != null)
 			highThreat.TakeDamage(this.getCurDamage());
 	}

@@ -111,6 +111,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> breakRoomList = new List<GameObject>();
     public List<GameObject> dungeonList = new List<GameObject>();
     public List<GameObject> prList = new List<GameObject>();
+	public List<BaseParty> attackParties = new List<BaseParty> ();
 
     //CSVImporter for Monsters and Heroes
     //public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
@@ -376,6 +377,7 @@ public class GameManager : MonoBehaviour
 			//toAdd[0] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
 			//toAdd[1] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
 			//party = new TestPart (toAdd);
+			//attackParties.Add (party);
 
             applicationPanel.SetActive(false);
             applicationOpen = false;
@@ -598,12 +600,22 @@ public class GameManager : MonoBehaviour
 			}
 
             //probably should create a hero list
+			/*
 			foreach (GameObject hero in GameObject.FindGameObjectsWithTag("Hero"))
 			{
                 dungeonEmpty = false;
 				hero.GetComponent<BaseHero>().Attack();
 				hero.GetComponent<BaseHero>().CheckCurrentRoom();
+			}*/
+
+			//Makes all parties attack their current room, and then check it
+			foreach (BaseParty heroParty in attackParties) {
+				dungeonEmpty = false;
+				heroParty.AttackPhase ();
+				heroParty.CheckRoom ();
 			}
+			//Trims list of deleted parties
+			attackParties.RemoveAll(item => item.markedForDelete());
 
             //probabl should create a room list
             foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
@@ -632,8 +644,15 @@ public class GameManager : MonoBehaviour
 			//Spawn heroes; the longer it goes without spawn, the more likely spawn is
 			if (modifiedHeroSpawnRate > Random.Range(0f, 1f) && currentTime > 0)
 			{
-				Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+				//Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
 				modifiedHeroSpawnRate = baseHeroSpawnRate;
+
+				//Creates a new party with a random hero and adds it to the party list
+				//Temporary, until there are more party types
+				GameObject[] newHero = new GameObject[1];
+				newHero[0] = Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+				BaseParty newParty = new TestPart (newHero);
+				this.attackParties.Add (newParty);
 
 				if (peakHours)
 				{
@@ -650,7 +669,8 @@ public class GameManager : MonoBehaviour
             //marks apps to destroy later
             foreach (GameObject application in applicationsList)
             {
-                application.GetComponent<BaseMonster>().applicationLife -= 1;
+				if (application.GetComponent<BaseMonster>().applicationLife > 0)
+	                application.GetComponent<BaseMonster>().applicationLife -= 1;
                 if (application.GetComponent<BaseMonster>().applicationLife == 0)
                 {
                     applicationsToDestroy.Add(application);

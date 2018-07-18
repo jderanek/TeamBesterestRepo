@@ -11,8 +11,8 @@ public abstract class BaseHero : MonoBehaviour {
 	public int damage;
 	private int value;
 	private int armor;
-	private int capacity;
-	private int holding = 0;
+	public int capacity;
+	public int holding = 0;
 	private int threat;
 	private string type;
 	private RoomScript curRoom;
@@ -55,9 +55,9 @@ public abstract class BaseHero : MonoBehaviour {
 		this.curHealth = int.Parse(gameManager.heroStats.data [type] ["Health"]);
 		this.damage = int.Parse(gameManager.heroStats.data [type] ["Base Attack"]);
 		this.armor = int.Parse(gameManager.heroStats.data [type] ["Defense"]);
-		//this.threat = int.Parse(gameManager.heroStats.data [type] ["Threat Level"]);
+		this.threat = int.Parse(gameManager.heroStats.data [type] ["Threat"]);
 		this.value = int.Parse(gameManager.heroStats.data [type] ["Gold Drop Value"]);
-		//this.capacity = int.Parse(gameManager.heroStats.data [type] ["Carry Capacity"]) * 100;
+		this.capacity = int.Parse(gameManager.heroStats.data [type] ["Carry Capacity"]) * 100;
 	}
 
 	//Getter functions for damage, current health and currency value
@@ -90,6 +90,9 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 	public bool isInCombat() {
 		return inCombat;
+	}
+	public void setParty(BaseParty party) {
+		this.currentParty = party;
 	}
 
 	//Setter functions for damage and value
@@ -126,6 +129,8 @@ public abstract class BaseHero : MonoBehaviour {
 		}
 
 		this.curRoom = room;
+		curRoom.heroesInRoom.Add (this.gameObject);
+		curRoom.heroInRoom = true;
 		this.gameObject.transform.position = room.gameObject.transform.position;
 	}
 
@@ -147,7 +152,19 @@ public abstract class BaseHero : MonoBehaviour {
 				gameManager.GoldGainedOnDeath (this.value);
 			}
 		}
-		//Destroy(this.gameObject);
+		currentParty.partyMembers.Remove (this);
+		Destroy(this.gameObject);
+	}
+
+	//Removes this hero without giving gold, meant for heroes who left dungeon
+	public void Remove() {
+		curRoom.heroesInRoom.Remove(gameObject);
+		if (curRoom.heroesInRoom.Count == 0)
+		{
+			curRoom.heroInRoom = false;
+		}
+
+		Destroy(this.gameObject);
 	}
 
 	//Default attack function that hits the monster in the room with the highest threat value
@@ -157,6 +174,9 @@ public abstract class BaseHero : MonoBehaviour {
 		BaseMonster highThreat = null;
 		int threat = -1;
 		foreach (GameObject mon in curRoom.roomMembers) {
+			if (mon == null)
+				continue;
+			
             monScript = mon.GetComponent<BaseMonster>();
            
 			if (monScript != null) {
@@ -182,10 +202,10 @@ public abstract class BaseHero : MonoBehaviour {
 			holding += 100;
 			gameManager.currentCurrency -= 100;
 			gameManager.UpdateCurrency();
-			if (holding == capacity)
+			/*if (holding == capacity)
 			{
 				Destroy(gameObject);
-			}
+			}*/
 		}
 
 		else if (!curRoom.monsterInRoom && curRoom.currentGold > 0) //If there isn't a monster in the room with the hero and there is gold to be looted
@@ -193,11 +213,13 @@ public abstract class BaseHero : MonoBehaviour {
 			holding += 100;
 			curRoom.currentGold -= 100;
 			curRoom.UpdateCoins();
-			if (holding == capacity)
+			/*if (holding == capacity)
 			{
 				Destroy(gameObject);
-			}
+			}*/
 		}
+		//Should no longer be needed
+		/*
 		else if (!curRoom.monsterInRoom && curRoom.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
 		{
 			curRoom = curRoom.neighborRooms[0].GetComponent<RoomScript>();
@@ -215,7 +237,7 @@ public abstract class BaseHero : MonoBehaviour {
 			//curRoom.SortHeroes(); //somethings wrong here
 
 			transform.position = curRoom.gameObject.transform.position;
-		}
+		}*/
 	}
 
 	void OnMouseOver()

@@ -18,6 +18,9 @@ public class ClericHero : BaseHero {
 		float curRatio;
 
 		foreach (GameObject hero in this.getRoom().heroesInRoom) {
+			if (hero == null)
+				continue;
+
 			heroScript = hero.GetComponent<BaseHero> ();
 
 			if (heroScript != null && heroScript != this) {
