@@ -310,7 +310,7 @@ public class InterviewManager : MonoBehaviour {
         gameManager.GetComponent<GameManager>().interviewResponse.SetActive(false);
         gameManager.GetComponent<GameManager>().interviewImage.SetActive(false);
         gameManager.GetComponent<GameManager>().interviewExit.SetActive(false);
-        gameManager.GetComponent<GameManager>().applicationPanel.SetActive(true);
+        //gameManager.GetComponent<GameManager>().applicationPanel.SetActive(true);
         interviewResponse.SetActive(false);
         responseText.text = "Hello";
     }
