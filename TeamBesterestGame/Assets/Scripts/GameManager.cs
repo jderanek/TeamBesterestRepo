@@ -278,6 +278,7 @@ public class GameManager : MonoBehaviour
         {
             //Create new field in the Application Panel and set up its Name, size, position, and button function
             var newField = Instantiate(applicationField, new Vector3(0, 0, 0), Quaternion.identity);
+            newField.transform.GetChild(0).transform.GetChild(1).GetComponent<Image>().color = application.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Text>().text = application.name;
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(255f, 57.4f);
 
@@ -337,6 +338,7 @@ public class GameManager : MonoBehaviour
         {
             //Create the field and set up its name and button functionality
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
+            newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Text>().text = monster.name;
             if (monster.GetComponent<BaseMonster>().department == breakRoomList)
             {
@@ -411,6 +413,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject monster in breakRoomList)
         {
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
+            newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Text>().text = monster.name;
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate {
                 SelectObject(monster);
@@ -447,6 +450,7 @@ public class GameManager : MonoBehaviour
         {
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             newField.GetComponentInChildren<Text>().text = monster.name;
+            newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { AddToDepartment(monster, breakRoomList); });
             newField.transform.GetChild(0).transform.GetChild(3).transform.GetComponentInChildren<Text>().text = "Remove";
             newField.transform.SetParent(departmentPanel.transform, false);
@@ -519,6 +523,7 @@ public class GameManager : MonoBehaviour
             //Create the field and set up its name and button functionality
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             newField.GetComponentInChildren<Text>().text = monster.name;
+            newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate 
             {
                 AddToDepartment(monster, department);
