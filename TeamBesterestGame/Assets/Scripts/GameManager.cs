@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> dungeonList = new List<GameObject>();
     public List<GameObject> prList = new List<GameObject>();
 	public List<BaseParty> attackParties = new List<BaseParty> ();
+    public List<GameObject> deadMonsters = new List<GameObject>(); //for the corporeally challenged
 
     //CSVImporter for Monsters and Heroes
     //public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
@@ -168,6 +169,9 @@ public class GameManager : MonoBehaviour
 			}
 		}
 		*/
+
+        //this was Avery's turning it off for now
+        /*
 		roomList [5, 5] = spawnRoom;
 		for (int x = 0; x < roomList.GetLength (0); x++) {
 			for (int y = 0; y < roomList.GetLength (1); y++) {
@@ -175,6 +179,7 @@ public class GameManager : MonoBehaviour
 					Debug.Log ("Room at: " + x.ToString () + ", " + y.ToString ());
 			}
 		}
+        */
 	}
 
 	// Update is called once per frame
@@ -337,33 +342,36 @@ public class GameManager : MonoBehaviour
         //create a field for each Monster
         foreach (GameObject monster in monsterList)
         {
-            //Create the field and set up its name and button functionality
-            var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
-            newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-            newField.GetComponentInChildren<Text>().text = monster.name;
-            if (monster.GetComponent<BaseMonster>().department == breakRoomList)
+            if (!deadMonsters.Contains(monster))
             {
-                newField.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Text>().text = "Assign";
-                newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
-            }
-            else
-            {
-                newField.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Text>().text = "Break Time!";
-                newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
+                //Create the field and set up its name and button functionality
+                var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
+                newField.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
+                newField.GetComponentInChildren<Text>().text = monster.name;
+                if (monster.GetComponent<BaseMonster>().department == breakRoomList)
                 {
-                    AddToDepartment(monster, breakRoomList);
-                    monster.transform.position = new Vector3(0, 0, 0);
-                    //TODO: NEED TO REMOVE MONSTER FROM ROOMS WHILE IN BREAK ROOM
-                    //monster.GetComponent<BaseMonster>().setCurRoom(null);
-                });
-            }
-            newField.transform.SetParent(monsterPanel.transform, false);
+                    newField.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Text>().text = "Assign";
+                    newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
+                }
+                else
+                {
+                    newField.transform.GetChild(0).transform.GetChild(3).GetComponentInChildren<Text>().text = "Break Time!";
+                    newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
+                    {
+                        AddToDepartment(monster, breakRoomList);
+                        monster.transform.position = new Vector3(0, 0, 0);
+                        //TODO: NEED TO REMOVE MONSTER FROM ROOMS WHILE IN BREAK ROOM
+                        //monster.GetComponent<BaseMonster>().setCurRoom(null);
+                    });
+                }
+                newField.transform.SetParent(monsterPanel.transform, false);
 
-            //manually adjust its position
-            var newFieldCanvas = newField.transform.GetChild(0);
-            newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-            newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
-            newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+                //manually adjust its position
+                var newFieldCanvas = newField.transform.GetChild(0);
+                newFieldCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+                newFieldCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+                newFieldCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+            }            
         }
     }
 

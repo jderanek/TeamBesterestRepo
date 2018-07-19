@@ -338,6 +338,8 @@ public abstract class BaseMonster : MonoBehaviour {
 		}
 		//Destroy(gameObject);
 		gameObject.SetActive(false);
+        gameManager.AddToDepartment(gameObject, gameManager.deadMonsters);
+        gameManager.UpdateDepartments();
 	}
 
 	//Applies personality effects to the monster, as well as other stat modifiers
