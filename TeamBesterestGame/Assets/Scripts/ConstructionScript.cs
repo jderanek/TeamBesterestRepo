@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ConstructionScript : MonoBehaviour
 {
 
     public GameManager gameManager; //public to be assigned in editor //can be looked up with tags or something later
+    public GameObject canvas;
 
     public GameObject constructionIcon; //public to be assigned in editor
 
     public GameObject room; //public to be assigned in editor
+
+    public GameObject confirmationBox;
 
     // Use this for initialization
     void Awake()
@@ -25,8 +29,7 @@ public class ConstructionScript : MonoBehaviour
     }
 
     public void StartConstruction()
-    {
-        //print("hi");
+    {        
         GameObject constructionIconHolder;
         if (gameManager.inConstructionMode)
         {
@@ -125,13 +128,27 @@ public class ConstructionScript : MonoBehaviour
     {
         if (gameManager.currentCurrency >= 100)
         {
-            GameObject newRoom = Instantiate(room, new Vector3(placeToBuild.transform.position.x, placeToBuild.transform.position.y, 0f), Quaternion.identity);
-            newRoom.GetComponent<RoomScript>().myX = (int)newRoom.transform.position.x;
-            newRoom.GetComponent<RoomScript>().myY = (int)newRoom.transform.position.y;
-            gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
-            gameManager.CurrencyChanged(-100);
-            Destroy(placeToBuild);
-            StartConstruction();
-        }
+            GameObject cb = Instantiate(confirmationBox, Vector3.zero, Quaternion.identity);
+            cb.transform.SetParent(canvas.transform, false);
+            var cbCanvas = cb.transform.GetChild(0);
+            RectTransform cbCanvasRect = cbCanvas.GetComponent<RectTransform>();
+            Button cbButtonYes = cbCanvas.GetChild(0).GetComponent<Button>();
+            Button cbButtonNo = cbCanvas.GetChild(1).GetComponent<Button>();
+            cbButtonYes.onClick.AddListener(delegate
+            {
+                GameObject newRoom = Instantiate(room, new Vector3(placeToBuild.transform.position.x, placeToBuild.transform.position.y, 0f), Quaternion.identity);
+                newRoom.GetComponent<RoomScript>().myX = (int)newRoom.transform.position.x;
+                newRoom.GetComponent<RoomScript>().myY = (int)newRoom.transform.position.y;
+                gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
+                gameManager.CurrencyChanged(-100);
+                Destroy(placeToBuild);
+                StartConstruction();
+                Destroy(cb);
+            });
+            cbButtonNo.onClick.AddListener(delegate { Destroy(cb); });
+            cbCanvasRect.anchoredPosition = new Vector2(0, 0);
+            cbCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
+            cbCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
+        }                       
     }
 }

@@ -1965,9 +1965,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 676812022}
   - {fileID: 1330479532}
   - {fileID: 916730886}
+  - {fileID: 676812022}
   - {fileID: 294031115}
   m_Father: {fileID: 959393538}
   m_RootOrder: 1
@@ -2194,13 +2194,13 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 959393534}
           m_MethodName: OperateDoors
-          m_Mode: 5
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 4
             m_FloatArgument: 0
-            m_StringArgument: West
+            m_StringArgument: 4
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -4957,7 +4957,7 @@ Transform:
   m_LocalScale: {x: 0.105033115, y: 0.34521112, z: 1}
   m_Children: []
   m_Father: {fileID: 284192850}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &676812023
 MonoBehaviour:
@@ -4978,13 +4978,13 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 959393534}
           m_MethodName: OperateDoors
-          m_Mode: 5
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 3
             m_FloatArgument: 0
-            m_StringArgument: East
+            m_StringArgument: 3
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -6273,7 +6273,7 @@ Transform:
   m_LocalScale: {x: 0.10787852, y: 0.33610615, z: 1}
   m_Children: []
   m_Father: {fileID: 284192850}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &916730887
 MonoBehaviour:
@@ -6294,13 +6294,13 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 959393534}
           m_MethodName: OperateDoors
-          m_Mode: 5
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 2
             m_FloatArgument: 0
-            m_StringArgument: South
+            m_StringArgument: 2
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -7236,9 +7236,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1031783964}
+  canvas: {fileID: 1495284374}
   constructionIcon: {fileID: 1155967508596460, guid: da683292365309744b2e6dbf3c9e8964,
     type: 2}
   room: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+  confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
+    type: 2}
 --- !u!1 &1060937996
 GameObject:
   m_ObjectHideFlags: 0
@@ -8968,7 +8971,7 @@ Transform:
   m_LocalScale: {x: 0.10787852, y: 0.33610615, z: 1}
   m_Children: []
   m_Father: {fileID: 284192850}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &1330479533
 MonoBehaviour:
@@ -8989,13 +8992,13 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 959393534}
           m_MethodName: OperateDoors
-          m_Mode: 5
+          m_Mode: 3
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 1
             m_FloatArgument: 0
-            m_StringArgument: North
+            m_StringArgument: 1
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
