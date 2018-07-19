@@ -103,14 +103,19 @@ public class ConstructionScript : MonoBehaviour
         }
         else
         {
-            foreach (GameObject constructionIcon in gameManager.roomList)
+            ClearConstructionIcons();
+        }
+    }
+
+    public void ClearConstructionIcons()
+    {
+        foreach (GameObject constructionIcon in gameManager.roomList)
+        {
+            if (constructionIcon != null)
             {
-                if (constructionIcon != null)
+                if (constructionIcon.CompareTag("Construction Icon"))
                 {
-                    if (constructionIcon.CompareTag("Construction Icon"))
-                    {
-                        Destroy(constructionIcon);
-                    }
+                    Destroy(constructionIcon);
                 }
             }
         }

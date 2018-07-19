@@ -141,8 +141,9 @@ public class GameManager : MonoBehaviour
     }
 
 	void Start() {
-		var rooms = GameObject.FindGameObjectsWithTag("Room");
-		foreach (var room in rooms) {
+		//var rooms = GameObject.FindGameObjectsWithTag("Room");
+		/*
+        foreach (var room in rooms) {
 			room.GetComponent<RoomScript>().Initialize();
 		}
 			
@@ -716,6 +717,16 @@ public class GameManager : MonoBehaviour
 
 	public void ToggleConstruction()
 	{
+        if (inConstructionMode)
+        {
+            foreach (GameObject room in roomList)
+            {
+                if (room != null && room.GetComponent<RoomScript>() != null)
+                {
+                    room.GetComponent<RoomScript>().UpdateNeighbors();
+                }
+            }
+        }
 		inConstructionMode = !inConstructionMode;
 	}
 
