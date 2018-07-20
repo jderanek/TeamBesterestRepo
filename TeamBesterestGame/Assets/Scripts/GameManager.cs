@@ -360,10 +360,10 @@ public class GameManager : MonoBehaviour
                     newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Break Time!";
                     newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
                     {
+                        monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<RoomScript>().roomMembers.Remove(monster);
+                        monster.GetComponent<BaseMonster>().setCurRoom(null);
                         AddToDepartment(monster, breakRoomList);
-                        monster.transform.position = new Vector3(0, 0, 0);
-                        //TODO: NEED TO REMOVE MONSTER FROM ROOMS WHILE IN BREAK ROOM
-                        //monster.GetComponent<BaseMonster>().setCurRoom(null);
+                        monster.transform.position = new Vector3(0, 0, 0);                        
                     });
                 }
                 newField.transform.SetParent(monsterPanel.transform, false);
@@ -651,7 +651,6 @@ public class GameManager : MonoBehaviour
 			//Trims list of deleted parties
 			attackParties.RemoveAll(item => item.markedForDelete());
 
-            //probabl should create a room list
             foreach (GameObject room in roomList)
             {               
                 if (room != null && room.GetComponent<RoomScript>() != null)
@@ -659,8 +658,6 @@ public class GameManager : MonoBehaviour
                     room.GetComponent<RoomScript>().RoomMemeberHandler();
                 }                    
             }
-            //spawnRoom.GetComponent<RoomScript>().RoomMemeberHandler();
-            //bossRoom.GetComponent<RoomScript>().RoomMemeberHandler();
 
             //This part modifies spawn rates during peak hours
             float currentRelativeTime = 1f - ((float)currentTime / timePerDay);
