@@ -96,7 +96,7 @@ public class RoomScript : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1) && gameManager.inConstructionMode)
+		if (Input.GetMouseButtonDown(1) && gameManager.inConstructionMode)
         {
             /*
             GameObject cb = Instantiate(confirmationBox, Vector3.zero, Quaternion.identity);
@@ -486,11 +486,13 @@ public class RoomScript : MonoBehaviour
 
 	//Checks if a given pos is a valid room in the GameManager
 	private bool isValid(Vector2 pos) {
-		if (pos.x < 0 || pos.y < 0 || pos.x >= gameManager.roomList.GetLength(0) ||
-			pos.y >= gameManager.roomList.GetLength(1))
+		if (pos.x < 0 || pos.y < 0 || pos.x >= gameManager.roomList.GetLength (0) ||
+		    pos.y >= gameManager.roomList.GetLength (1))
 			return false;
 
 		if (gameManager.roomList [(int)pos.x, (int)pos.y] == null)
+			return false;
+		else if (gameManager.roomList [(int)pos.x, (int)pos.y].GetComponent<RoomScript> () == null)
 			return false;
 		else
 			return true;

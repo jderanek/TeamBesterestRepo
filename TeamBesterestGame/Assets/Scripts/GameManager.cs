@@ -592,21 +592,22 @@ public class GameManager : MonoBehaviour
     {
         switch(optionSelected)
         {
-            case -1: //destroy room
-                roomMenuConfirm.onClick.AddListener(delegate 
-                {
-                    CurrencyChanged(50);
-                    roomList[selectedObject.GetComponent<RoomScript>().myX, selectedObject.GetComponent<RoomScript>().myY] = null;                    
-                    selectedObject.GetComponent<RoomScript>().UpdateNeighbors();
-                    Destroy(selectedObject);
-                    ToggleConstruction();
-                    roomCount--;
-                    this.GetComponent<ConstructionScript>().ClearConstructionIcons();                    
-                });
-                roomMenuCancel.onClick.AddListener(delegate 
-                {
-                    RoomMenu(selectedObject);
-                } );
+		case -1: //destroy room
+			//Checks if the room can be destroyed
+			if (selectedObject.GetComponent<RoomScript> ().CanRemove ()) {
+				roomMenuConfirm.onClick.AddListener (delegate {
+					CurrencyChanged (50);
+					roomList [selectedObject.GetComponent<RoomScript> ().myX, selectedObject.GetComponent<RoomScript> ().myY] = null;                    
+					selectedObject.GetComponent<RoomScript> ().UpdateNeighbors ();
+					Destroy (selectedObject);
+					ToggleConstruction ();
+					roomCount--;
+					this.GetComponent<ConstructionScript> ().ClearConstructionIcons ();                    
+				});
+				roomMenuCancel.onClick.AddListener (delegate {
+					RoomMenu (selectedObject);
+				});
+			}
                 break;
             default: //nothing selected
                 roomMenuConfirm.onClick.AddListener(delegate

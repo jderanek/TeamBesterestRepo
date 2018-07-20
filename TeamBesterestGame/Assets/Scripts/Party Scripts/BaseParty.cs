@@ -174,6 +174,8 @@ public abstract class BaseParty {
 
 		if (gameManager.roomList [(int)pos.x, (int)pos.y] == null)
 			return false;
+		else if (gameManager.roomList [(int)pos.x, (int)pos.y].GetComponent<RoomScript> () == null)
+			return false;
 		else
 			return true;
 	}
