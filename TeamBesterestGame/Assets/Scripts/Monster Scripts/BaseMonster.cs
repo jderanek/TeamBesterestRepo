@@ -117,12 +117,81 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.type = type;
 		curRoom = gameManager.spawnRoom;
 		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
-		this.curHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
+        this.maxHealth *= gameManager.healthWeight;
+        switch((Random.Range(1, 7) + Random.Range(1, 7) + Random.Range(1, 7)))
+        {
+            case 3: case 4:
+                this.maxHealth = (int)(this.maxHealth * 0.75f);
+                break;
+            case 5: case 6: case 7:
+                this.maxHealth = (int)(this.maxHealth * 0.9f);
+                break;
+            default:
+                break;
+            case 14: case 15: case 16:
+                this.maxHealth = (int)(this.maxHealth * 1.1f);
+                break;
+            case 17: case 18:
+                this.maxHealth = (int)(this.maxHealth * 1.25f);
+                break;
+        }
+		this.curHealth = this.maxHealth;
 		this.baseHealth = curHealth;
+
 		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
+        this.damage *= gameManager.attackWeight;
 		this.curDamage = damage;
+        switch((Random.Range(1, 7)) + Random.Range(1, 7) + Random.Range(1, 7))
+        {
+            case 3:
+            case 4:
+                this.damage = (int)(this.damage * 0.75f);
+                break;
+            case 5:
+            case 6:
+            case 7:
+                this.damage = (int)(this.damage * 0.9f);
+                break;
+            default:
+                break;
+            case 14:
+            case 15:
+            case 16:
+                this.damage = (int)(this.damage * 1.1f);
+                break;
+            case 17:
+            case 18:
+                this.damage = (int)(this.damage * 1.25f);
+                break;
+        }
+
 		this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
-		this.threat = int.Parse(gameManager.monsters.data [type] ["Threat"]);
+        this.armor *= gameManager.defenseWeight;
+        switch ((Random.Range(1, 7)) + Random.Range(1, 7) + Random.Range(1, 7))
+        {
+            case 3:
+            case 4:
+                this.armor = (int)(this.armor * 0.75f);
+                break;
+            case 5:
+            case 6:
+            case 7:
+                this.armor = (int)(this.armor * 0.9f);
+                break;
+            default:
+                break;
+            case 14:
+            case 15:
+            case 16:
+                this.armor = (int)(this.armor * 1.1f);
+                break;
+            case 17:
+            case 18:
+                this.armor = (int)(this.armor * 1.25f);
+                break;
+        }
+
+        this.threat = int.Parse(gameManager.monsters.data [type] ["Threat"]);
 		this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
 		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
 		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
@@ -137,9 +206,6 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.vacationStressLoss = .15f;
 		this.infamyGain = 1;
 		damageText = this.gameObject.GetComponentInChildren<Text>();
-
-		//Placeholder
-		this.threat = 3;
 	}
 
 	//Getters for most stats

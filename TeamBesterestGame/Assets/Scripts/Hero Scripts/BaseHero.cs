@@ -31,6 +31,7 @@ public abstract class BaseHero : MonoBehaviour {
 	/// <param name="arm">Base Armor</param>
 	/// <param name="cap"Max holding money>
 	/// <param name="thr">Threat</param>
+    /*
 	public void AssignStats(int hp, int dmg, int val, int arm, int cap, int thr) {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
@@ -42,6 +43,7 @@ public abstract class BaseHero : MonoBehaviour {
 		this.capacity = cap;
 		this.threat = thr;
 	}
+    */
 
 	///<summary>
 	///Assigns all stats to this hero by getting information from the spreadsheet
@@ -52,9 +54,15 @@ public abstract class BaseHero : MonoBehaviour {
 		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
 		this.type = nm;
 		this.maxHealth = int.Parse(gameManager.heroStats.data [type] ["Health"]);
-		this.curHealth = int.Parse(gameManager.heroStats.data [type] ["Health"]);
+        this.maxHealth *= gameManager.healthWeight;
+        this.curHealth = this.maxHealth;
+
 		this.damage = int.Parse(gameManager.heroStats.data [type] ["Base Attack"]);
+        this.damage *= gameManager.attackWeight;
+
 		this.armor = int.Parse(gameManager.heroStats.data [type] ["Defense"]);
+        this.armor *= gameManager.defenseWeight;
+
 		this.threat = int.Parse(gameManager.heroStats.data [type] ["Threat"]);
 		this.value = int.Parse(gameManager.heroStats.data [type] ["Gold Drop Value"]);
 		this.capacity = int.Parse(gameManager.heroStats.data [type] ["Carry Capacity"]) * 100;

@@ -7123,6 +7123,9 @@ MonoBehaviour:
   - {fileID: 1530068321745230, guid: aaac33a10c1b94340b6d1073277aaedf, type: 2}
   monsterInstance: {fileID: 0}
   selectedObject: {fileID: 0}
+  healthWeight: 10
+  attackWeight: 3
+  defenseWeight: 2
   stressImage: {fileID: 0}
   currencyText: {fileID: 935864226}
   currentCurrency: 0
@@ -7187,6 +7190,7 @@ MonoBehaviour:
   breakRoomList: []
   dungeonList: []
   prList: []
+  deadMonsters: []
 --- !u!4 &1031783965
 Transform:
   m_ObjectHideFlags: 0

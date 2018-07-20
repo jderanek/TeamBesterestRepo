@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
 	//[HideInInspector]
 	public GameObject monsterInstance; //public to assign reference in editor
     public GameObject selectedObject;
+    public int healthWeight = 10;
+    public int attackWeight = 3;
+    public int defenseWeight = 2;
 
 	//Aggregate Stress Stuff
     public Image stressImage; //public to assign reference in editor
