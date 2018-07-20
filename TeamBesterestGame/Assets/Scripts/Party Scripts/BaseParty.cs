@@ -217,7 +217,7 @@ public abstract class BaseParty {
 			}
 
 			//Gets the new shortest distance node from the queue
-			current = queue.First;
+			current = queue.Dequeue();
 		}
 
 		//Iterates up until the last node in the path is found

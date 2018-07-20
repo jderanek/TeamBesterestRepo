@@ -459,4 +459,117 @@ public class RoomScript : MonoBehaviour
             }
         }
     }
+
+	//Datastructure for pathfinding. Contains the Vector2 of the room, and the Vector2 of the preceding room
+	//as well as an integer consisting of the distance to the spawnroom
+	private class Node {
+		public Vector2 pos;
+		public Vector2 path;
+		public int dis;
+
+		public Node(Vector2 pos, Vector2 path, int dis) {
+			this.pos = pos;
+			this.path = path;
+			this.dis = dis;
+		}
+
+		public static int GetDistance (Vector2 x, Vector2 y) {
+			return (int)(Mathf.Abs (x.x - y.x) + Mathf.Abs (x.y - y.y));
+		}
+	}
+	//Comparer to sort queue
+	private class NodeCompare : IComparer<Node> {
+		int IComparer<Node>.Compare ( Node x, Node y )  {
+			return (x.dis - y.dis);
+		}
+	}
+
+	//Checks if a given pos is a valid room in the GameManager
+	private bool isValid(Vector2 pos) {
+		if (pos.x < 0 || pos.y < 0 || pos.x >= gameManager.roomList.GetLength(0) ||
+			pos.y >= gameManager.roomList.GetLength(1))
+			return false;
+
+		if (gameManager.roomList [(int)pos.x, (int)pos.y] == null)
+			return false;
+		else
+			return true;
+	}
+
+	//Taken from BaseParty to check and see if all of a Room's neighbors have a path to the spawn room
+	public bool CanRemove() {
+		RoomScript north = null;
+		RoomScript east = null;
+		RoomScript south = null;
+		RoomScript west = null;
+
+		if (northRoom != null)
+			north = northRoom.GetComponent<RoomScript> ();
+		if (eastRoom != null)
+			east = eastRoom.GetComponent<RoomScript> ();
+		if (southRoom != null)
+			south = southRoom.GetComponent<RoomScript> ();
+		if (westRoom != null)
+			west = westRoom.GetComponent<RoomScript> ();
+
+		return (HasPath (north) && HasPath (east) && HasPath (south) && HasPath (west));
+	}
+
+	//Finds the shortest path back to the dungeons spawn room
+	//Returns true if a path is found
+	//A* type algorithm
+	public bool HasPath(RoomScript room) {
+		//Returns true if the given room is null
+		if (room == null)
+			return true;
+		
+		Dictionary<Vector2, Node> allNodes = new Dictionary<Vector2, Node> ();
+		Priority_Queue.SimplePriorityQueue<Node, int> queue = new Priority_Queue.SimplePriorityQueue<Node, int> ();
+		RoomScript spawn = gameManager.spawnRoom.GetComponent<RoomScript> ();
+		Vector2 spawnPos = new Vector2 (spawn.myX, spawn.myY);
+		Node current = new Node (new Vector2 (room.myX, room.myY), Vector2.negativeInfinity, 
+			Node.GetDistance (new Vector2 (room.myX, room.myY), spawnPos));
+		Vector2 removePos = new Vector2 (this.myX, this.myY);
+
+		Vector2 newPos;
+		Node toAdd;
+		while (current.dis != 0) {
+			//Adds current node to all checked nodes
+			allNodes.Add (current.pos, current);
+			//Adds all four possible new directions, if available
+			newPos = new Vector2 (current.pos.x + 1, current.pos.y);
+			if (isValid(newPos) && !allNodes.ContainsKey(newPos) &&
+				newPos != removePos) {
+				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
+				queue.Enqueue (toAdd, toAdd.dis);
+			}
+			newPos = new Vector2 (current.pos.x - 1, current.pos.y);
+			if (isValid(newPos) && !allNodes.ContainsKey(newPos) &&
+				newPos != removePos) {
+				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
+				queue.Enqueue (toAdd, toAdd.dis);
+			}
+			newPos = new Vector2 (current.pos.x, current.pos.y + 1);
+			if (isValid(newPos) && !allNodes.ContainsKey(newPos) &&
+				newPos != removePos) {
+				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
+				queue.Enqueue (toAdd, toAdd.dis);
+			}
+			newPos = new Vector2 (current.pos.x, current.pos.y - 1);
+			if (isValid(newPos) && !allNodes.ContainsKey(newPos) &&
+				newPos != removePos) {
+				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
+				queue.Enqueue (toAdd, toAdd.dis);
+			}
+
+			//If the queue is empty, there is no path so it returns false
+			if (queue.Count == 0)
+				return false;
+			
+			//Gets the new shortest distance node from the queue
+			current = queue.Dequeue();
+		}
+
+		return true;
+	}
 }
