@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Base class to store heroes max and current health, damage and money drop
 public abstract class BaseHero : MonoBehaviour {
@@ -18,6 +19,7 @@ public abstract class BaseHero : MonoBehaviour {
 	private RoomScript curRoom;
 	BaseParty currentParty;
 	GameManager gameManager;
+    Text damageText;
 
 	//Variables not set by assignment
 	private bool inCombat;
@@ -66,7 +68,10 @@ public abstract class BaseHero : MonoBehaviour {
 		this.threat = int.Parse(gameManager.heroStats.data [type] ["Threat"]);
 		this.value = int.Parse(gameManager.heroStats.data [type] ["Gold Drop Value"]);
 		this.capacity = int.Parse(gameManager.heroStats.data [type] ["Carry Capacity"]) * 100;
-	}
+
+        damageText = this.gameObject.GetComponentInChildren<Text>();
+        damageText.text = this.curHealth + "hp";
+    }
 
 	//Getter functions for damage, current health and currency value
 	public int getHealth() {
@@ -119,6 +124,7 @@ public abstract class BaseHero : MonoBehaviour {
 	//Damage and Heal functions to restore or reduce hero health
 	public void TakeDamage(int dmg) {
 		this.curHealth -= Mathf.Clamp (dmg - armor, 0, this.maxHealth);
+        this.damageText.text = this.curHealth + "hp";
 		if (this.curHealth <= 0)
 			this.Death ();
 	}

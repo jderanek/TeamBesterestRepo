@@ -204,6 +204,7 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.vacationStressLoss = .15f;
 		this.infamyGain = 1;
 		damageText = this.gameObject.GetComponentInChildren<Text>();
+        damageText.text = this.getCurHealth().ToString() + "hp";
 	}
 
 	//Getters for most stats
@@ -366,7 +367,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	//Function to make monster lose health
 	public void TakeDamage(int dam) {
 		this.curHealth = Mathf.Clamp (this.curHealth - dam, 0, this.maxHealth);
-		damageText.text = this.curHealth.ToString();
+		damageText.text = this.curHealth.ToString() + "hp";
 		if (curHealth <= 0) {
 			this.Death ();
 		}
