@@ -430,12 +430,6 @@ public class GameManager : MonoBehaviour
             childNum++;
         }
 
-        /*
-        var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
-        empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
-        empty.transform.SetParent(departmentPanel.transform, false);
-        */
-
         var newBreakRoomHeader = Instantiate(breakRoomHeader, new Vector3(0, 0, 0), Quaternion.identity);
         newBreakRoomHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
         newBreakRoomHeader.transform.SetParent(departmentPanel.transform, true);
@@ -533,12 +527,17 @@ public class GameManager : MonoBehaviour
     public void UpdateAssignment(List<GameObject> department)
     {
         //reset panel
+        int childNum = 0;
         foreach (Transform child in assignmentPanel.transform)
-        {
-            Destroy(child.gameObject);
+        { if (childNum != 0)
+            {
+                Destroy(child.gameObject);
+            }
+            childNum++;
         }
 
         //create an empty object to create some space between the menu and the first Field
+        /*
         var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
         empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0, 20);
         empty.AddComponent<Text>().text = "Choose a Monster to assign";
@@ -548,6 +547,7 @@ public class GameManager : MonoBehaviour
         emptyText.verticalOverflow = VerticalWrapMode.Overflow;
         emptyText.alignment = TextAnchor.MiddleCenter;
         empty.transform.SetParent(assignmentPanel.transform, false);
+        */
 
         //create a field for each Monster
         foreach (GameObject monster in breakRoomList) //NEED TO USE AN "INACTIVE" LIST FOR THIS LATER
