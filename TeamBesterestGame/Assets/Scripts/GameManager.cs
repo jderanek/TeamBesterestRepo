@@ -421,6 +421,7 @@ public class GameManager : MonoBehaviour
         newBreakRoomHeader.transform.SetParent(departmentPanel.transform, true);
         newBreakRoomHeader.GetComponent<Image>().enabled = true;
         newBreakRoomHeader.GetComponentInChildren<Text>().enabled = true;
+        newBreakRoomHeader.GetComponentInChildren<Text>().text = "Unassigned";
 
         foreach (GameObject monster in breakRoomList)
         {
@@ -429,10 +430,13 @@ public class GameManager : MonoBehaviour
             var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Text>().text = monster.name;
+            /*
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate {
                 SelectObject(monster);
                 //AddToDepartment(monster, dungeonList);
             });
+            */
+            newFieldCanvas.GetChild(3).gameObject.SetActive(false);
             newField.transform.SetParent(departmentPanel.transform, false);
 
             //manually adjust its position
