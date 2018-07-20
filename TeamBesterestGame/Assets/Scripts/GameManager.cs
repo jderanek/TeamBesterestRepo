@@ -653,8 +653,11 @@ public class GameManager : MonoBehaviour
 
             //probabl should create a room list
             foreach (GameObject room in roomList)
-            {
-                room.GetComponent<RoomScript>().RoomMemeberHandler();
+            {               
+                if (room != null && room.GetComponent<RoomScript>() != null)
+                {
+                    room.GetComponent<RoomScript>().RoomMemeberHandler();
+                }                    
             }
             //spawnRoom.GetComponent<RoomScript>().RoomMemeberHandler();
             //bossRoom.GetComponent<RoomScript>().RoomMemeberHandler();
