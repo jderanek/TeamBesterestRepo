@@ -293,7 +293,7 @@ public class GameManager : MonoBehaviour
 
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = application.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Text>().text = application.name;
-            newField.GetComponent<RectTransform>().sizeDelta = new Vector2(255f, 57.4f);
+            newField.GetComponent<RectTransform>().sizeDelta = new Vector2(214.77f, 57.4f);
 
             //stats/interview button
             newFieldCanvas.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate { Interview(application); });
@@ -354,6 +354,7 @@ public class GameManager : MonoBehaviour
                 var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
                 var newFieldCanvas = newField.transform.GetChild(0);
                 var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
+                newField.GetComponent<RectTransform>().sizeDelta = new Vector2(217.44f, 57.4f);
                 newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
                 newField.GetComponentInChildren<Text>().text = monster.name;
                 if (monster.GetComponent<BaseMonster>().department == breakRoomList)
