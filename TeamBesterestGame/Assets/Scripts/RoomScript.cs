@@ -43,7 +43,6 @@ public class RoomScript : MonoBehaviour
     public bool eastDoorBool; //public to be accessed by other scripts
     public bool westDoorBool; //public to be accessed by other scripts
 
-
     public int roomThreat; //public to be accessed by heroes
 
     public int goldCapacity = 300; //public so it can be tested in editor
