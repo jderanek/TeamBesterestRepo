@@ -226,7 +226,7 @@ public class GameManager : MonoBehaviour
         //monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;        
         int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
         float infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
-		monsterInstance.GetComponent<BaseMonster>().applicationLife = -1;
+		monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
         if (currentCurrency >= salary)
         {
             Destroy(monsterApplicationField);
@@ -703,10 +703,10 @@ public class GameManager : MonoBehaviour
             //marks apps to destroy later
             foreach (GameObject application in applicationsList)
             {
-                int applicationLife = application.GetComponent<BaseMonster>().applicationLife;
+                int applicationLife = application.GetComponent<BaseMonster>().getApplicationLife();
 
                 if (applicationLife > 0)
-	                applicationLife -= 1;
+	                application.GetComponent<BaseMonster>().setApplicationLife(applicationLife - 1);
                 if (applicationLife == 0)
                 {
                     applicationsToDestroy.Add(application);

@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class BaseMonster : MonoBehaviour {
-
-    //TODO: not sure the best way to handle this @avery but im putting it here for now - Nate
-    public int applicationLife = 3;
    
     public List<GameObject> department;
 
@@ -46,9 +43,10 @@ public abstract class BaseMonster : MonoBehaviour {
 	int breakdowns = 3;
 	public bool canBeDebuffed = true;
 	float promotionMod = 1f;
+    int applicationLife = 3;
 
-	//Temp variables from transfer
-	private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
+    //Temp variables from transfer
+    private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
 	string traitName;
 	public float baseNerve = .5f; //public to be edited in editor
 	public float curNerve = .5f; //public to be edited in editor
@@ -356,6 +354,14 @@ public abstract class BaseMonster : MonoBehaviour {
 	public void setPromotionMod(float mod) {
 		this.promotionMod = mod;
 	}
+    public int getApplicationLife()
+    {
+        return applicationLife;
+    }
+    public void setApplicationLife(int newAppLife)
+    {
+        applicationLife = newAppLife;
+    }
 
 	//Function to make monster lose health
 	public void TakeDamage(int dam) {
