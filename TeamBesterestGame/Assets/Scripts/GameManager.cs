@@ -272,15 +272,22 @@ public class GameManager : MonoBehaviour
     public void UpdateApplications()
     {
         //reset the panel
+        int childNum = 0;
         foreach (Transform child in applicationPanel.transform)
         {
-            Destroy(child.gameObject);
+            if (childNum != 0)
+            {
+                Destroy(child.gameObject);
+            }
+            childNum++;
         }
 
         //Add a blank object at the top of the panel to create some space bewtween the menu and the first field
+        /*
         var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
         empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0,0);
         empty.transform.SetParent(applicationPanel.transform, false);
+        */
 
         //Create a field for each application pending
         foreach (GameObject application in applicationsList)
@@ -332,15 +339,22 @@ public class GameManager : MonoBehaviour
     public void UpdateMonsters()
     {
         //reset panel
+        int childNum = 0;
         foreach (Transform child in monsterPanel.transform)
-        {
-            Destroy(child.gameObject);
+        { 
+            if (childNum != 0)
+            {
+                Destroy(child.gameObject);
+            }
+            childNum++;
         }
 
         //create an empty object to create some space between the menu and the first Field
+        /*
         var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
         empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
         empty.transform.SetParent(monsterPanel.transform, false);
+        */
 
         //create a field for each Monster
         foreach (GameObject monster in monsterList)
@@ -407,14 +421,20 @@ public class GameManager : MonoBehaviour
 
     public void UpdateDepartments()
     {
+        int childNum = 0;
         foreach (Transform child in departmentPanel.transform)
-        {
-            Destroy(child.gameObject);
+        { if (childNum != 0)
+            {
+                Destroy(child.gameObject);
+            }
+            childNum++;
         }
 
+        /*
         var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
         empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0, 0);
         empty.transform.SetParent(departmentPanel.transform, false);
+        */
 
         var newBreakRoomHeader = Instantiate(breakRoomHeader, new Vector3(0, 0, 0), Quaternion.identity);
         newBreakRoomHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
