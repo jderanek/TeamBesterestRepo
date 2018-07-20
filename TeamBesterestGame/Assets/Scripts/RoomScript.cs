@@ -72,7 +72,7 @@ public class RoomScript : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (gameManager.selectedObject != null)
+        if (gameManager.selectedObject != null && gameManager.selectedObject.GetComponent<BaseMonster>() != null)
         {
             if (Input.GetMouseButtonDown(1))
             {
@@ -98,6 +98,7 @@ public class RoomScript : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1) && gameManager.inConstructionMode)
         {
+            /*
             GameObject cb = Instantiate(confirmationBox, Vector3.zero, Quaternion.identity);
             cb.transform.SetParent(canvas.transform, false);
             var cbCanvas = cb.transform.GetChild(0);
@@ -119,6 +120,9 @@ public class RoomScript : MonoBehaviour
             cbCanvasRect.anchoredPosition = new Vector2(0, 0);
             cbCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
             cbCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
+            */
+
+            gameManager.RoomMenu(gameObject);
         }
     }
 

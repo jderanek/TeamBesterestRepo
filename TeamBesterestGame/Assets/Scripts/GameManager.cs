@@ -69,6 +69,12 @@ public class GameManager : MonoBehaviour
     public GameObject applicationField;
     public GameObject monsterField;
 
+    public GameObject roomMenu;
+    public Button roomMenuConfirm;
+    public Button roomMenuCancel;
+    private bool roomMenuOpen = false;
+    private int roomOptionSelected;
+
     private bool pauseMenuOpen = false;
     public GameObject pauseMenu;
     private List<GameObject> applicationsList = new List<GameObject>();
@@ -565,6 +571,62 @@ public class GameManager : MonoBehaviour
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
             newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
+        }
+    }
+
+    public void RoomMenu(GameObject roomSelected)
+    {
+        selectedObject = roomSelected;
+        roomMenuOpen = !roomMenuOpen;
+        roomMenu.SetActive(roomMenuOpen);
+        RoomMenuHandler(0);
+    }
+
+    public void UpdateRoomMenu()
+    {
+
+    }
+
+    public void RoomMenuHandler(int optionSelected)
+    {
+        switch(optionSelected)
+        {
+            case -1: //destroy room
+                roomMenuConfirm.onClick.AddListener(delegate 
+                {
+                    CurrencyChanged(50);
+                    roomList[selectedObject.GetComponent<RoomScript>().myX, selectedObject.GetComponent<RoomScript>().myY] = null;                    
+                    selectedObject.GetComponent<RoomScript>().UpdateNeighbors();
+                    Destroy(selectedObject);
+                    ToggleConstruction();
+                    roomCount--;
+                    this.GetComponent<ConstructionScript>().ClearConstructionIcons();                    
+                });
+                roomMenuCancel.onClick.AddListener(delegate 
+                {
+                    RoomMenu(selectedObject);
+                } );
+                break;
+            default: //nothing selected
+                roomMenuConfirm.onClick.AddListener(delegate
+                {
+                    RoomMenu(selectedObject);
+                });
+                roomMenuCancel.onClick.AddListener(delegate
+                {
+                    RoomMenu(selectedObject);
+                });
+                break;
+            case 1:                
+                roomMenuConfirm.onClick.AddListener(delegate
+                {
+                    RoomMenu(selectedObject);
+                });
+                roomMenuCancel.onClick.AddListener(delegate
+                {
+                    RoomMenu(selectedObject);
+                });
+                break;
         }
     }
 
