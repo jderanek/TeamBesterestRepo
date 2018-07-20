@@ -141,15 +141,15 @@ public class InterviewManager : MonoBehaviour {
         //interviewResponse.SetActive(true);
 		if (q31 == 0)//hp responses
 		{
-			if(monsterInstance.GetComponent<MonsterScript>().startingHealth > monsterInstance.GetComponent<MonsterScript>().averageHealth)
+			if(monsterInstance.GetComponent<BaseMonster>().getMaxHealth() > monsterInstance.GetComponent<MonsterScript>().averageHealth)
 			{
 				responseText.text = "I can take a beating before I start to crack.";
 			}
-			else if(monsterInstance.GetComponent<MonsterScript>().startingHealth == monsterInstance.GetComponent<MonsterScript>().averageHealth)
+			else if(monsterInstance.GetComponent<BaseMonster>().getMaxHealth() == monsterInstance.GetComponent<MonsterScript>().averageHealth)
 			{
 				responseText.text = "My bones are normal for the most part.";
 			}
-			else if(monsterInstance.GetComponent<MonsterScript>().startingHealth < monsterInstance.GetComponent<MonsterScript>().averageHealth)
+			else if(monsterInstance.GetComponent<BaseMonster>().getMaxHealth() < monsterInstance.GetComponent<MonsterScript>().averageHealth)
 			{
 				responseText.text = "Uh... I would prefer not risking a fracture...";
 			}
