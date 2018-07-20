@@ -33,12 +33,14 @@ public class ConstructionScript : MonoBehaviour
         GameObject constructionIconHolder;
         if (gameManager.inConstructionMode)
         {
+            gameManager.roomCount = 0;
             foreach (GameObject room in gameManager.roomList)
             {
                 if (room != null)
                 {
-                    if (room.CompareTag("Room") || room.CompareTag("Spawn Room") || room.CompareTag("Boss Room"))
+                    if (room.GetComponent<RoomScript>() != null)
                     {
+                        gameManager.roomCount++;
                         int myX = room.GetComponent<RoomScript>().myX;
                         int myY = room.GetComponent<RoomScript>().myY;
                         if (myY < 9)

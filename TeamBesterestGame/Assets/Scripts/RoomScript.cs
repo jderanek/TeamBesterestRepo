@@ -112,6 +112,7 @@ public class RoomScript : MonoBehaviour
                 Destroy(gameObject);
                 UpdateNeighbors();
                 gameManager.ToggleConstruction();
+                gameManager.roomCount--;
                 GameObject.FindGameObjectWithTag("GameController").GetComponent<ConstructionScript>().ClearConstructionIcons();
                 Destroy(cb);
             });
@@ -439,7 +440,6 @@ public class RoomScript : MonoBehaviour
                 eastDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
                 if (eastDoor != null)
                 {
-                    print(eastRoomScript);
                     eastRoomScript.westDoorBool = eastDoorBool;
                     eastRoomScript.westDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
                 }
