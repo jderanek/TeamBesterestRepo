@@ -291,12 +291,12 @@ public class GameManager : MonoBehaviour
             var newFieldCanvas = newField.transform.GetChild(0);
             var newFieldCanvasRect = newField.transform.GetChild(0).GetComponent<RectTransform>();
 
-            newFieldCanvas.transform.GetChild(1).GetComponent<Image>().color = application.GetComponent<SpriteRenderer>().color;
+            newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = application.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Text>().text = application.name;
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(255f, 57.4f);
 
             //stats/interview button
-            newFieldCanvas.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { Interview(application); });
+            newFieldCanvas.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate { Interview(application); });
             //hire button
             newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
 
