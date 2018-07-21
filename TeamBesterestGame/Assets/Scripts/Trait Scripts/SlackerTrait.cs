@@ -18,7 +18,7 @@ public class SlackerTrait : TraitBase {
 
 	//Increases morale by 10 with Wprkaholic monsters.
 	public override void ApplyWeekEffects(BaseMonster monster) {
-		RoomScript room = monster.getCurRoom ();
+		BaseRoom room = monster.getCurRoom ();
 
 		foreach (GameObject mon in room.roomMembers) {
 			BaseMonster monScript = mon.GetComponent<BaseMonster> ();

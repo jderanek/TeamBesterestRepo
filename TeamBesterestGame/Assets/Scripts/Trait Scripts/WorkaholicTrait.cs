@@ -17,7 +17,7 @@ public class WorkaholicTrait : TraitBase {
 
 	//Reduces morale by 10 with Slacker monsters.
 	public override void ApplyWeekEffects(BaseMonster monster) {
-		RoomScript room = monster.getCurRoom();
+		BaseRoom room = monster.getCurRoom();
 
 		foreach (GameObject mon in room.roomMembers) {
 			BaseMonster monScript = mon.GetComponent<BaseMonster> ();

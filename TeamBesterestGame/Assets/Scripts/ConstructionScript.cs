@@ -37,11 +37,11 @@ public class ConstructionScript : MonoBehaviour
             {
                 if (room != null)
                 {
-                    if (room.GetComponent<RoomScript>() != null)
+                    if (room.GetComponent<BaseRoom>() != null)
                     {
                         gameManager.roomCount++;
-                        int myX = room.GetComponent<RoomScript>().myX;
-                        int myY = room.GetComponent<RoomScript>().myY;
+                        int myX = room.GetComponent<BaseRoom>().myX;
+                        int myY = room.GetComponent<BaseRoom>().myY;
                         if (myY < 9)
                         {
                             if (gameManager.roomList[myX, myY + 1] == null)
@@ -151,8 +151,8 @@ public class ConstructionScript : MonoBehaviour
             cbButtonYes.onClick.AddListener(delegate
             {
                 GameObject newRoom = Instantiate(room, new Vector3(placeToBuild.transform.position.x, placeToBuild.transform.position.y, 0f), Quaternion.identity);
-                newRoom.GetComponent<RoomScript>().myX = (int)newRoom.transform.position.x;
-                newRoom.GetComponent<RoomScript>().myY = (int)newRoom.transform.position.y;
+                newRoom.GetComponent<BaseRoom>().myX = (int)newRoom.transform.position.x;
+                newRoom.GetComponent<BaseRoom>().myY = (int)newRoom.transform.position.y;
                 gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
                 gameManager.CurrencyChanged(-100);
                 Destroy(placeToBuild);

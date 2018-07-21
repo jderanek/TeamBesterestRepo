@@ -20,7 +20,7 @@ public abstract class BaseEthic {
 	/// <param name="tar">Type of target to select monsters</param>
 	public static List<BaseMonster> GetTargets(BaseMonster mon, Target tar = Target.None, string tag = "") {
 		List<BaseMonster> targets = new List<BaseMonster> ();
-		RoomScript room = mon.getCurRoom ();
+		BaseRoom room = mon.getCurRoom ();
 		BaseMonster monScript;
 
 		switch (tar) {

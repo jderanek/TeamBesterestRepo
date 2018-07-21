@@ -15,7 +15,7 @@ public class TyrantTrait : TraitBase {
 
 	//Finds all monsters in the room 2 sizes smaller than itself
 	public override void ApplyWeekEffects(BaseMonster monster) {
-		RoomScript room = monster.getCurRoom ();
+		BaseRoom room = monster.getCurRoom ();
 		List<GameObject> smallMonsters = new List<GameObject> ();
 
 		foreach (GameObject mon in room.roomMembers) {

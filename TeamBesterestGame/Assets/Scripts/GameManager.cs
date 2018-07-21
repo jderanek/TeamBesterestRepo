@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
 	public TestPart party;
 
 	//Monster Stuff
-	[HideInInspector]
+	//[HideInInspector]
 	public GameObject[] possibleMonsters; //public to assign references in editor
-	[HideInInspector]
+	//[HideInInspector]
 	public GameObject monsterInstance; //public to assign reference in editor
     [HideInInspector]
     public GameObject selectedObject;
@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour
 		//var rooms = GameObject.FindGameObjectsWithTag("Room");
 		/*
         foreach (var room in rooms) {
-			room.GetComponent<RoomScript>().Initialize();
+			room.GetComponent<BaseRoom>().Initialize();
 		}
 			
 		/*
@@ -380,7 +380,7 @@ public class GameManager : MonoBehaviour
                     newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Break Time!";
                     newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
                     {
-                        monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<RoomScript>().roomMembers.Remove(monster);
+                        monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<BaseRoom>().roomMembers.Remove(monster);
                         monster.GetComponent<BaseMonster>().setCurRoom(null);
                         AddToDepartment(monster, breakRoomList);
                         monster.transform.position = new Vector3(0, 0, 0);                        
@@ -617,13 +617,13 @@ public class GameManager : MonoBehaviour
         {
             case -1: //destroy room
                      //Checks if the room can be destroyed
-                if (selectedObject.GetComponent<RoomScript>().CanRemove())
+                if (selectedObject.GetComponent<BaseRoom>().CanRemove())
                 {
                     roomMenuConfirm.onClick.AddListener(delegate
                     {
                         CurrencyChanged(50);
-                        roomList[selectedObject.GetComponent<RoomScript>().myX, selectedObject.GetComponent<RoomScript>().myY] = null;
-                        selectedObject.GetComponent<RoomScript>().UpdateNeighbors();
+                        roomList[selectedObject.GetComponent<BaseRoom>().myX, selectedObject.GetComponent<BaseRoom>().myY] = null;
+                        selectedObject.GetComponent<BaseRoom>().UpdateNeighbors();
                         Destroy(selectedObject);
                         this.GetComponent<ConstructionScript>().ClearConstructionIcons();
                         this.GetComponent<ConstructionScript>().StartConstruction();
@@ -740,9 +740,9 @@ public class GameManager : MonoBehaviour
 
             foreach (GameObject room in roomList)
             {               
-                if (room != null && room.GetComponent<RoomScript>() != null)
+                if (room != null && room.GetComponent<BaseRoom>() != null)
                 {
-                    room.GetComponent<RoomScript>().RoomMemeberHandler();
+                    room.GetComponent<BaseRoom>().RoomMemeberHandler();
                 }                    
             }
 
@@ -839,9 +839,9 @@ public class GameManager : MonoBehaviour
         {
             foreach (GameObject room in roomList)
             {
-                if (room != null && room.GetComponent<RoomScript>() != null)
+                if (room != null && room.GetComponent<BaseRoom>() != null)
                 {
-                    room.GetComponent<RoomScript>().UpdateNeighbors();
+                    room.GetComponent<BaseRoom>().UpdateNeighbors();
                 }
             }
         }
@@ -882,7 +882,7 @@ public class GameManager : MonoBehaviour
 		interviewExit.SetActive(true);
 
 
-		this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
+		//this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
 	}
 
 	//New day handler to apply effects on start of day
@@ -898,7 +898,7 @@ public class GameManager : MonoBehaviour
 	//New week handler to apply effects on start of week
 	public void WeekHandler() {
 		foreach (GameObject room in roomList) {
-			foreach (GameObject monster in room.GetComponent<RoomScript>().roomMembers) {
+			foreach (GameObject monster in room.GetComponent<BaseRoom>().roomMembers) {
 				BaseMonster monScript = monster.GetComponent<BaseMonster> ();
 
 				if (monScript != null) {

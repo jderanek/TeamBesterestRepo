@@ -113,7 +113,7 @@ public class InterviewManager : MonoBehaviour {
 		}
 		gameManager.GetComponent<GameManager>().PassTime(1);
     }
-
+    /*
 	//work ethic question
     public void Question2Response()
     {
@@ -314,5 +314,5 @@ public class InterviewManager : MonoBehaviour {
         interviewResponse.SetActive(false);
         responseText.text = "Hello";
     }
-
+    */
 }

@@ -17,7 +17,7 @@ public class GrossTrait : TraitBase {
 
 	//Reduces all other monsters morale by 5
 	public override void ApplyWeekEffects(BaseMonster monster) {
-		RoomScript room = monster.getCurRoom ();
+		BaseRoom room = monster.getCurRoom ();
 
 		foreach (GameObject mon in room.roomMembers) {
 			BaseMonster monScript = mon.GetComponent<BaseMonster> ();

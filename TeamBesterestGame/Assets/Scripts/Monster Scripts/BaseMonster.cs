@@ -319,8 +319,8 @@ public abstract class BaseMonster : MonoBehaviour {
 	public string getTraitName() {
 		return this.traitName;
 	}
-	public RoomScript getCurRoom() {
-		return this.curRoom.GetComponent<RoomScript> ();
+	public BaseRoom getCurRoom() {
+		return this.curRoom.GetComponent<BaseRoom> ();
 	}
 	public void setCurRoom(GameObject room) {
 		this.curRoom = room;
@@ -403,11 +403,11 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	private void Death()
 	{
-		curRoom.GetComponent<RoomScript>().roomMembers.Remove(gameObject);
+		curRoom.GetComponent<BaseRoom>().roomMembers.Remove(gameObject);
         gameManager.monsterList.Remove(gameObject);
-		if (curRoom.GetComponent<RoomScript>().roomMembers.Count == 0)
+		if (curRoom.GetComponent<BaseRoom>().roomMembers.Count == 0)
 		{
-			curRoom.GetComponent<RoomScript>().monsterInRoom = false;
+			curRoom.GetComponent<BaseRoom>().monsterInRoom = false;
 		}
 		//Destroy(gameObject);
 		gameObject.SetActive(false);

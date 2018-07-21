@@ -7,9 +7,9 @@ using UnityEngine;
 public abstract class BaseParty {
 
 	public List<BaseHero> partyMembers;
-	RoomScript curRoom;
-	public List<RoomScript> roomPath;
-	List<RoomScript> exploredRooms;
+	BaseRoom curRoom;
+	public List<BaseRoom> roomPath;
+	List<BaseRoom> exploredRooms;
 	string state = "Explore";
 	bool shouldRemove = false;
 
@@ -17,29 +17,29 @@ public abstract class BaseParty {
 
 	//Constructor takes hero list to create new party
 	public BaseParty(BaseHero[] heroes) {
-		roomPath = new List<RoomScript> ();
-		exploredRooms = new List<RoomScript> ();
+		roomPath = new List<BaseRoom> ();
+		exploredRooms = new List<BaseRoom> ();
 		this.gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		partyMembers = new List<BaseHero> ();
 		for (int x=0; x < heroes.Length; x++) {
 			partyMembers.Add (heroes [x]);
 			heroes [x].setParty (this);
 		}
-		this.MoveTo (gameManager.spawnRoom.GetComponent<RoomScript>());
+		this.MoveTo (gameManager.spawnRoom.GetComponent<BaseRoom>());
 		this.exploredRooms.Add (curRoom);
 		this.roomPath.Add (curRoom);
 	}
 	//Secondary constructor takes hero list of GameObjects
 	public BaseParty(GameObject[] heroes) {
-		roomPath = new List<RoomScript> ();
-		exploredRooms = new List<RoomScript> ();
+		roomPath = new List<BaseRoom> ();
+		exploredRooms = new List<BaseRoom> ();
 		this.gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		partyMembers = new List<BaseHero> ();
 		for (int x=0; x < heroes.Length; x++) {
 			partyMembers.Add (heroes [x].GetComponent<BaseHero> ());
 			heroes [x].GetComponent<BaseHero> ().setParty (this);
 		}
-		this.MoveTo (gameManager.spawnRoom.GetComponent<RoomScript> ());
+		this.MoveTo (gameManager.spawnRoom.GetComponent<BaseRoom> ());
 		this.exploredRooms.Add (curRoom);
 		this.roomPath.Add (curRoom);
 	}
@@ -48,7 +48,7 @@ public abstract class BaseParty {
 	public BaseHero[] getPartyMembers() {
 		return this.partyMembers.ToArray();
 	}
-	public RoomScript getRoom() {
+	public BaseRoom getRoom() {
 		return this.curRoom;
 	}
 	public string getState() {
@@ -88,7 +88,7 @@ public abstract class BaseParty {
 	}
 
 	//Moves all party members to the given room
-	public void MoveTo(RoomScript room) {
+	public void MoveTo(BaseRoom room) {
 		this.curRoom = room;
 		foreach (BaseHero hero in partyMembers)
 			hero.MoveTo (curRoom);
@@ -96,12 +96,12 @@ public abstract class BaseParty {
 
 	/*//Finds the adjacent room with the lowest threat
 	//Cannot be an explored room
-	public RoomScript FindNextRoom() {
-		RoomScript room;
-		RoomScript min = null;
+	public BaseRoom FindNextRoom() {
+		BaseRoom room;
+		BaseRoom min = null;
 		int threat = int.MaxValue;
 		foreach (GameObject roomObject in curRoom.neighborRooms) {
-			room = roomObject.GetComponent<RoomScript> ();
+			room = roomObject.GetComponent<BaseRoom> ();
 			if (room.roomThreat < threat && !exploredRooms.Contains(room)) {
 				threat = room.roomThreat;
 				min = room;
@@ -113,13 +113,13 @@ public abstract class BaseParty {
 
 	//Finds the adjacent room with the lowest threat
 	//Cannot be an explored room
-	public RoomScript FindNextRoom() {
-		RoomScript room;
-		RoomScript max = null;
+	public BaseRoom FindNextRoom() {
+		BaseRoom room;
+		BaseRoom max = null;
 		int maxScore = int.MinValue;
 		int score;
 		foreach (GameObject roomObject in curRoom.neighborRooms) {
-			room = roomObject.GetComponent<RoomScript> ();
+			room = roomObject.GetComponent<BaseRoom> ();
 			score = (room.currentGold / 100) - room.roomThreat;
 			if (score > maxScore && !exploredRooms.Contains(room)) {
 				maxScore = score;
@@ -131,13 +131,13 @@ public abstract class BaseParty {
 	}
 
 	//Backtracks by one room
-	public RoomScript Backtrack() {
+	public BaseRoom Backtrack() {
 		//Returns null if there are no more rooms to backtrack through
 		if (roomPath.Count == 0)
 			return null;
 
 		//Returns the last room in the path and removes it from the list
-		RoomScript room = roomPath [roomPath.Count - 1];
+		BaseRoom room = roomPath [roomPath.Count - 1];
 		roomPath.Remove (room);
 		return room;
 	}
@@ -174,7 +174,7 @@ public abstract class BaseParty {
 
 		if (gameManager.roomList [(int)pos.x, (int)pos.y] == null)
 			return false;
-		else if (gameManager.roomList [(int)pos.x, (int)pos.y].GetComponent<RoomScript> () == null)
+		else if (gameManager.roomList [(int)pos.x, (int)pos.y].GetComponent<BaseRoom> () == null)
 			return false;
 		else
 			return true;
@@ -186,7 +186,7 @@ public abstract class BaseParty {
 	public void FindExitPath() {
 		Dictionary<Vector2, Node> allNodes = new Dictionary<Vector2, Node> ();
 		Priority_Queue.SimplePriorityQueue<Node, int> queue = new Priority_Queue.SimplePriorityQueue<Node, int> ();
-		RoomScript spawn = gameManager.spawnRoom.GetComponent<RoomScript> ();
+		BaseRoom spawn = gameManager.spawnRoom.GetComponent<BaseRoom> ();
 		Vector2 spawnPos = new Vector2 (spawn.myX, spawn.myY);
 		Node current = new Node (new Vector2 (this.curRoom.myX, this.curRoom.myY), Vector2.negativeInfinity, 
 			               Node.GetDistance (new Vector2 (this.curRoom.myX, this.curRoom.myY), spawnPos));
@@ -223,9 +223,9 @@ public abstract class BaseParty {
 		}
 
 		//Iterates up until the last node in the path is found
-		List<RoomScript> newPath = new List<RoomScript> ();
+		List<BaseRoom> newPath = new List<BaseRoom> ();
 		while (current != null && current.path != Vector2.negativeInfinity) {
-			newPath.Add (gameManager.roomList [(int)current.pos.x, (int)current.pos.y].GetComponent<RoomScript>());
+			newPath.Add (gameManager.roomList [(int)current.pos.x, (int)current.pos.y].GetComponent<BaseRoom>());
 			if (current.path != Vector2.negativeInfinity)
 				allNodes.TryGetValue (current.path, out current);
 		}
@@ -245,7 +245,7 @@ public abstract class BaseParty {
 			return;
 		}
 		
-		RoomScript toMove;
+		BaseRoom toMove;
 		switch (state) {
 		case "Explore":
 			toMove = this.FindNextRoom ();
@@ -272,9 +272,9 @@ public abstract class BaseParty {
 			else {
 				MoveTo (toMove);
 				//Sets state to exploring if there is a room to explore now
-				RoomScript room;
+				BaseRoom room;
 				foreach (GameObject roomObject in toMove.neighborRooms) {
-					room = roomObject.GetComponent<RoomScript> ();
+					room = roomObject.GetComponent<BaseRoom> ();
 					if (!this.exploredRooms.Contains (room)) {
 						this.state = "Explore";
 						this.roomPath.Add (curRoom);

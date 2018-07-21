@@ -20,7 +20,7 @@ public class GuardianTrait : TraitBase {
 	public override void ApplyDayEffects(BaseMonster monster) {
 		monster.curNerve = Mathf.Clamp01 (monster.baseNerve + .1f);
 
-		RoomScript room = monster.getCurRoom ();
+		BaseRoom room = monster.getCurRoom ();
 
 		foreach (GameObject mon in room.roomMembers) {
 			BaseMonster monScript = mon.GetComponent<BaseMonster> ();

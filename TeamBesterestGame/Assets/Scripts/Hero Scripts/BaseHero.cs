@@ -16,7 +16,7 @@ public abstract class BaseHero : MonoBehaviour {
 	public int holding = 0;
 	private int threat;
 	private string type;
-	private RoomScript curRoom;
+	private BaseRoom curRoom;
 	BaseParty currentParty;
 	GameManager gameManager;
     Text damageText;
@@ -36,7 +36,7 @@ public abstract class BaseHero : MonoBehaviour {
     /*
 	public void AssignStats(int hp, int dmg, int val, int arm, int cap, int thr) {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
-		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
+		curRoom = gameManager.spawnRoom.GetComponent<BaseRoom> ();
 		this.maxHealth = hp;
 		this.curHealth = hp;
 		this.damage = dmg;
@@ -53,7 +53,7 @@ public abstract class BaseHero : MonoBehaviour {
 	/// <param name="nm">type</param>
 	public void AssignStats(string nm) {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
-		curRoom = gameManager.spawnRoom.GetComponent<RoomScript> ();
+		curRoom = gameManager.spawnRoom.GetComponent<BaseRoom> ();
 		this.type = nm;
 		this.maxHealth = int.Parse(gameManager.heroStats.data [type] ["Health"]);
         this.maxHealth *= gameManager.healthWeight;
@@ -98,7 +98,7 @@ public abstract class BaseHero : MonoBehaviour {
 	public int getHolding() {
 		return this.holding;
 	}
-	public RoomScript getRoom() {
+	public BaseRoom getRoom() {
 		return this.curRoom;
 	}
 	public bool isInCombat() {
@@ -133,7 +133,7 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 
 	//Function to move this hero from one room to another
-	public void MoveTo(RoomScript room) {
+	public void MoveTo(BaseRoom room) {
 		if (curRoom != null) {
 			curRoom.heroesInRoom.Remove (this.gameObject);
 		
@@ -236,7 +236,7 @@ public abstract class BaseHero : MonoBehaviour {
 		/*
 		else if (!curRoom.monsterInRoom && curRoom.neighborRooms.Count != 0) //If there isn't a monster in the room with the hero and if the room has neighbor rooms
 		{
-			curRoom = curRoom.neighborRooms[0].GetComponent<RoomScript>();
+			curRoom = curRoom.neighborRooms[0].GetComponent<BaseRoom>();
 
 			curRoom.heroesInRoom.Remove(this.gameObject);
 
@@ -245,7 +245,7 @@ public abstract class BaseHero : MonoBehaviour {
 				curRoom.heroInRoom = false;
 			}
 
-			curRoom = curRoom.gameObject.GetComponent<RoomScript>();
+			curRoom = curRoom.gameObject.GetComponent<BaseRoom>();
 			curRoom.heroInRoom = true;
 			curRoom.heroesInRoom.Add(this.gameObject);
 			//curRoom.SortHeroes(); //somethings wrong here
