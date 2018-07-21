@@ -7,28 +7,27 @@ using System;
 
 //Opens a CSV file, and copies its contents into a Dictionary for ease of access
 public class CSVImporter {
-
-    //Variables for rows, columns, data imported, and file name
-    int rows;
-    int cols;
     
+	//Dictionary of dictionaries where all data is saved
     public Dictionary<string, Dictionary<string,string>> data;
     
+	//IMPORTANT: Appends this to the start of the given path, so users need only give the
+	//name of the file. Change this to wherever you save your spreadsheets.
+	//The path is also where the loaded will save back-up spreadsheets
     string path = "Assets/Resources/";
+
+	//Url to download from
 	string url;
 
+	//Actual download
 	WWW download;
 
 	///<summary>
 	///Imports data from given path
 	///</summary>
-	/// <param name="r">Rows, or lines, to read</param>
-	/// <param name="c">Columns, to split lines into</param>
 	/// <param name="p">Path to import from</param>
-    public CSVImporter(int r, int c, string p) {
+    public CSVImporter(string p) {
         data = new Dictionary<string, Dictionary<string, string>>();
-        this.rows = r;
-        this.cols = c;
         this.path += p;
         
         this.ImportData();
@@ -37,18 +36,12 @@ public class CSVImporter {
 	///<summary>
 	///Imports data from given path
 	///</summary>
-	/// <param name="r">Rows, or lines, to read</param>
-	/// <param name="c">Columns, to split lines into</param>
 	/// <param name="p">Path to import from</param>
 	/// <param name="url">Path to download from</param>
-	/// <param name="owner">Script to attempt download</param>
-	public CSVImporter(int r, int c, string p, string url) {
-		this.rows = r;
-		this.cols = c;
+	public CSVImporter(string p, string url) {
 		this.path += p;
 		this.url = url;
 
-		//this.ImportData();
 		this.LoadData();
 	}
     
@@ -58,22 +51,44 @@ public class CSVImporter {
 		data = new Dictionary<string, Dictionary<string, string>>();
         StreamReader reader = new StreamReader(path);
         string[] curLine;
-        string[] variableNames = new string[rows-1];
-        
-		for (int y=0; y<rows; y++) {
-            curLine = reader.ReadLine().Split(',');
-			for (int x=0; x<cols; x++) {
-                if (y == 0 && x > 0) {
-                    variableNames[x-1] = curLine[x];
-                } else if (y > 0) {
-					if (x == 0)
-						data.Add (curLine [x], new Dictionary<string, string> ());
-					else
-                        data[curLine[0]].Add(variableNames[x-1], curLine[x]);
-                }
-            }
-        }
+		List<String> variableNames = new List<string> ();
+		String[] variables = null;
+		int y = 0;
+		int x = 0;
 
+		//Reads all lines of the spreadsheet, and imports values into a dictionary
+		Debug.Log("Loading data from: " + this.path);
+		curLine = reader.ReadLine().Split(',');
+		while (curLine != null) {
+			foreach (string stat in curLine) {
+				//Halts running once the first empty area is found
+				if (stat == "")
+					break;
+
+				//Turns list of variable names into an array to speed up performance
+				if (y > 0 && variables == null)
+					variables = variableNames.ToArray ();
+
+				if (y == 0 && x > 0) {
+					variableNames.Add(stat);
+				} else if (y > 0) {
+					if (x == 0)
+						data.Add (stat, new Dictionary<string, string> ());
+					else {
+						data [curLine [0]].Add (variables [x - 1], curLine [x]);
+					}
+				}
+				x++;
+			}
+			x = 0;
+			y++;
+
+			//Breaks loops once end of stream is reached
+			if (reader.Peek () == -1)
+				break;
+
+			curLine = reader.ReadLine().Split(',');
+		}
 		reader.Close ();
     }
 
@@ -81,32 +96,61 @@ public class CSVImporter {
 	private void LoadData() {
 		this.download = new WWW (url);
 
+		//Throws a debug message and loads back-up if download fails
 		while (!this.download.isDone) {
 			if (this.download.error != null) {
 				Debug.Log (this.download.error);
+				this.ImportData ();
 				return;
 			}
 		}
+
+		//Saves downloaded text to file at path
+		File.WriteAllText(path, download.text);
 
 		//Resets dictionary from previous loads
 		data = new Dictionary<string, Dictionary<string, string>>();
 		
 		StringReader reader = new StringReader (download.text);
 		string[] curLine;
-		string[] variableNames = new string[cols-1];
+		List<String> variableNames = new List<string> ();
+		String[] variables = null;
+		int y = 0;
+		int x = 0;
 
-		for (int y=0; y<rows; y++) {
-			curLine = reader.ReadLine().Split(',');
-			for (int x=0; x<cols; x++) {
+		//Reads all lines of the spreadsheet, and imports values into a dictionary
+		Debug.Log("Loading data from: " + this.path);
+		curLine = reader.ReadLine().Split(',');
+		while (curLine != null) {
+			foreach (string stat in curLine) {
+				//Halts running once the first empty area is found
+				if (stat == "")
+					break;
+
+				//Turns list of variable names into an array to speed up performance
+				if (y > 0 && variables == null)
+					variables = variableNames.ToArray ();
+
 				if (y == 0 && x > 0) {
-					variableNames[x-1] = curLine[x];
+					variableNames.Add(stat);
 				} else if (y > 0) {
 					if (x == 0)
-						data.Add (curLine [x], new Dictionary<string, string> ());
-					else 
-						data[curLine[0]].Add(variableNames[x-1], curLine[x]);
+						data.Add (stat, new Dictionary<string, string> ());
+					else {
+						data [curLine [0]].Add (variables [x - 1], curLine [x]);
+					}
 				}
+				x++;
 			}
+			x = 0;
+			y++;
+
+			//Breaks loops once end of stream is reached
+			if (reader.Peek () == -1)
+				break;
+			
+			curLine = reader.ReadLine().Split(',');
 		}
+		reader.Close ();
 	}
 }

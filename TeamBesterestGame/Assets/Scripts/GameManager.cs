@@ -146,11 +146,11 @@ public class GameManager : MonoBehaviour
 	void Awake()
 	{
 		roomList = new GameObject[10, 10];
-		monsters = new CSVImporter(24, 11, "Monster_Stats_-_Sheet1.csv", 
+		monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv", 
 			"https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
-		monNames = new CSVImporter(6, 7, "NamesWIP - Sheet1.csv",
+		monNames = new CSVImporter("NamesWIP - Sheet1.csv",
 			"https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
-		heroStats = new CSVImporter (7, 9, "Heroes - Sheet1.csv",
+		heroStats = new CSVImporter ("Heroes - Sheet1.csv",
 			"https://docs.google.com/spreadsheets/d/e/2PACX-1vROE5F1pcPZ65Zg5H5QsEqwpayjzcLOYQMffmv6E3zjR3tMq7kD68zPNGdrCXmq8w67wZHNNGwehsLo/pub?gid=0&single=true&output=csv");
         currentCurrency = 1500;
 		UpdateCurrency ();
