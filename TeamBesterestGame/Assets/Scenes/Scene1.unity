@@ -609,6 +609,11 @@ RectTransform:
   m_AnchoredPosition: {x: 125, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &62882117 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1326071907255702, guid: 6915cebfbe801a04ab449cc191c28c4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1257090981}
 --- !u!1 &95967755
 GameObject:
   m_ObjectHideFlags: 0
@@ -7370,6 +7375,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1111984982}
+--- !u!1 &1113339222 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1193511562305960, guid: 6915cebfbe801a04ab449cc191c28c4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1257090981}
 --- !u!1 &1116044187
 GameObject:
   m_ObjectHideFlags: 0
@@ -8182,6 +8192,10 @@ Prefab:
       propertyPath: myX
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1589628598962554, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114728608263746002, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
     - {fileID: 114935339217052806, guid: 6915cebfbe801a04ab449cc191c28c4b, type: 2}
@@ -8261,6 +8275,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1261450292}
+--- !u!1 &1263842686 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1697712114454522, guid: 6915cebfbe801a04ab449cc191c28c4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1257090981}
 --- !u!1 &1264194214
 GameObject:
   m_ObjectHideFlags: 0
@@ -8587,10 +8606,10 @@ MonoBehaviour:
   southRoom: {fileID: 0}
   eastRoom: {fileID: 0}
   westRoom: {fileID: 0}
-  northDoor: {fileID: 0}
-  southDoor: {fileID: 0}
-  eastDoor: {fileID: 0}
-  westDoor: {fileID: 0}
+  northDoor: {fileID: 1263842686}
+  southDoor: {fileID: 1113339222}
+  eastDoor: {fileID: 62882117}
+  westDoor: {fileID: 1795213318}
   northDoorBool: 0
   southDoorBool: 0
   eastDoorBool: 0
@@ -8997,6 +9016,16 @@ Prefab:
         type: 2}
       propertyPath: myY
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 212599226211772282, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212684145146312016, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -10104,6 +10133,11 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1740814957}
+--- !u!1 &1795213318 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1889695333498636, guid: 6915cebfbe801a04ab449cc191c28c4b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1257090981}
 --- !u!224 &1812984223 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224240421601338276, guid: b0a89e43117e1064e861a474e4c1e01e,

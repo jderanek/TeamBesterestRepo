@@ -95,6 +95,10 @@ public abstract class BaseRoom : MonoBehaviour {
             coin2 = transform.GetChild(3).GetComponent<SpriteRenderer>();
             coin3 = transform.GetChild(4).GetComponent<SpriteRenderer>();
         }
+        northDoor = transform.GetChild(1).GetChild(0).gameObject;
+        southDoor = transform.GetChild(1).GetChild(1).gameObject;
+        eastDoor = transform.GetChild(1).GetChild(2).gameObject;
+        westDoor = transform.GetChild(1).GetChild(3).gameObject;
     }
 
     void OnMouseOver()
@@ -415,24 +419,24 @@ public abstract class BaseRoom : MonoBehaviour {
         switch (currentGold)
         {
             case 0:
-                coin1.GetComponent<SpriteRenderer>().sprite = emptyCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin1.sprite = emptyCoin;
+                coin2.sprite = emptyCoin;
+                coin3.sprite = emptyCoin;
                 break;
             case 100:
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = emptyCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin1.sprite = filledCoin;
+                coin2.sprite = emptyCoin;
+                coin3.sprite = emptyCoin;
                 break;
             case 200:
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = emptyCoin;
+                coin1.sprite = filledCoin;
+                coin2.sprite = filledCoin;
+                coin3.sprite = emptyCoin;
                 break;
             case 300:
-                coin1.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin2.GetComponent<SpriteRenderer>().sprite = filledCoin;
-                coin3.GetComponent<SpriteRenderer>().sprite = filledCoin;
+                coin1.sprite = filledCoin;
+                coin2.sprite = filledCoin;
+                coin3.sprite = filledCoin;
                 break;
             default:
                 Debug.Log("You shouldn't be seeing this message");
