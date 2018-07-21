@@ -9,31 +9,64 @@ public class GameManager : MonoBehaviour
 	public TestPart party;
 
 	//Monster Stuff
-	//[HideInInspector]
+	[HideInInspector]
 	public GameObject[] possibleMonsters; //public to assign references in editor
-	//[HideInInspector]
+	[HideInInspector]
 	public GameObject monsterInstance; //public to assign reference in editor
+    [HideInInspector]
     public GameObject selectedObject;
     public int healthWeight = 10;
     public int attackWeight = 3;
     public int defenseWeight = 2;
 
-	//Aggregate Stress Stuff
+    //Aggregate Stress Stuff
+    [HideInInspector]
     public Image stressImage; //public to assign reference in editor
 
 	//Money Stuff
+    //TODO getters and setters
 	public Text currencyText; //public to assign reference in editor
 	public int currentCurrency; //public to be accessed by other scripts
     public int maximumCurrency = 1500; //public to be edited in editor
 
-	private bool doingSetup; 
-	public bool interviewing = false; //public to be accessed in interview script
+    //infamy
+    private float infamyLevel = 1;
+    private float infamyXP = 0;
+    private int xpToNextInfamyLevel = 20;
+    private int baseXP = 20;
+    public Text infamyLevelText; //public to be assigned in editor
+    public Text infamyXPText; //public to be assigned in editor
+
+    //Time Unit stuff
+    private bool paused = true;
+    public int timePerDay = 16; //public to be edited it editor
+    private int currentTime;
+    public float timeSpeed = 3.0f; //public to be edited in editor
+    public Text timeUnitText; //public to be assigned in editor
+    public Text pauseButtonText; //public to be assigned in editor
+    private bool dungeonEmpty = false;
+
+    //spawn stuff
+    public float baseHeroSpawnRate = 0.25f; //public to be edited in editor
+    public float spawnRateIncrement = 0.1f; //public to be assigned in editor
+    private float modifiedHeroSpawnRate;
+    public float peakHoursSpawnRateBonus = 0.25f; //how much is added on during peak hours
+    public float peakHourStart = 0.5f; //public to be assigned in editor
+    public float peakHourEnd = 1.0f; //public to be assigned in editor
+    private bool peakHours = false;
+
+    private bool doingSetup;
+    //TODO getters and setters
+    [HideInInspector]
+    public bool interviewing = false; //public to be accessed in interview script
 
     //Day counter to increase week
     private int days = 0;
 
-	//construction stuff
-	public bool inConstructionMode; //public for now, pickup room script can be replaced
+    //construction stuff
+    //TODO getters and setters
+    [HideInInspector]
+    public bool inConstructionMode; //public for now, pickup room script can be replaced
 
 	//interviewing stuff
 	public GameObject interviewButtons; //public to be assigned in editor
@@ -89,38 +122,18 @@ public class GameManager : MonoBehaviour
     public GameObject[,] roomList; //public to be accessed by room script
 	public int roomCount = 1; //Number of rooms in dungeon
 
-	//Time Unit stuff
-	private bool paused = true;
-	public int timePerDay = 16; //public to be edited it editor
-	private int currentTime;
-	public float timeSpeed = 3.0f; //public to be edited in editor
-	public Text timeUnitText; //public to be assigned in editor
-    public Text pauseButtonText; //public to be assigned in editor
-    private bool dungeonEmpty = false;
-
-    //infamy
-    private float infamyLevel = 1;
-	private float infamyXP = 0;
-	private int xpToNextInfamyLevel = 20;
-	private int baseXP = 20;
-	public Text infamyLevelText; //public to be assigned in editor
-	public Text infamyXPText; //public to be assigned in editor
-
-    //spawn stuff
-    public float baseHeroSpawnRate = 0.25f; //public to be edited in editor
-	public float spawnRateIncrement = 0.1f; //public to be assigned in editor
-    private float modifiedHeroSpawnRate;
-	public float peakHoursSpawnRateBonus = 0.25f; //how much is added on during peak hours
-	public float peakHourStart = 0.5f; //public to be assigned in editor
-    public float peakHourEnd = 1.0f; //public to be assigned in editor
-    private bool peakHours = false;
-
     //WHOLE BUNCH OF FUCKING LISSSTTSSSTSTTST
+    [HideInInspector]
     public List<GameObject> monsterList = new List<GameObject>();
+    [HideInInspector]
     public List<GameObject> breakRoomList = new List<GameObject>();
+    [HideInInspector]
     public List<GameObject> dungeonList = new List<GameObject>();
+    [HideInInspector]
     public List<GameObject> prList = new List<GameObject>();
-	public List<BaseParty> attackParties = new List<BaseParty> ();
+    [HideInInspector]
+    public List<BaseParty> attackParties = new List<BaseParty> ();
+    [HideInInspector]
     public List<GameObject> deadMonsters = new List<GameObject>(); //for the corporeally challenged
 
     //CSVImporter for Monsters and Heroes
@@ -612,13 +625,9 @@ public class GameManager : MonoBehaviour
                         roomList[selectedObject.GetComponent<RoomScript>().myX, selectedObject.GetComponent<RoomScript>().myY] = null;
                         selectedObject.GetComponent<RoomScript>().UpdateNeighbors();
                         Destroy(selectedObject);
-                        //ToggleConstruction();
-                        //this.GetComponent<ConstructionScript>().StartConstruction();
-                        //ToggleConstruction();
                         this.GetComponent<ConstructionScript>().ClearConstructionIcons();
                         this.GetComponent<ConstructionScript>().StartConstruction();
                         roomCount--;
-                        //this.GetComponent<ConstructionScript>().ClearConstructionIcons();
                         RoomMenu();
                     });
                 }
@@ -648,7 +657,7 @@ public class GameManager : MonoBehaviour
 
     public void AddToDepartment(GameObject monster, List<GameObject> department)
     {
-        if (monster.GetComponent<BaseMonster>().department != null) //causing an error when moving a monster to the dungeon
+        if (monster.GetComponent<BaseMonster>().department != null)
         {
             monster.GetComponent<BaseMonster>().department.Remove(monster);
         }

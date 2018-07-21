@@ -58,8 +58,6 @@ public class RoomScript : MonoBehaviour
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         gameManager.roomList[myX, myY] = gameObject;
-        //print(gameObject + " " + myX + ", " + myY);
-        //print(gameManager.roomList[myX, myY]);
         UpdateNeighbors();
         canvas = GameObject.FindGameObjectWithTag("Canvas");
     }
@@ -76,7 +74,6 @@ public class RoomScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1))
             {
-				//gameManager.selectedObject.GetComponent<BaseMonster> ().getCurRoom ().roomMembers.Remove (gameManager.selectedObject);
 				gameManager.selectedObject.transform.position = new Vector3 (
 					gameObject.transform.position.x + UnityEngine.Random.Range (-0.25f, 0.25f),
 					gameObject.transform.position.y + UnityEngine.Random.Range (-0.25f, 0.25f),
@@ -297,63 +294,72 @@ public class RoomScript : MonoBehaviour
 
     public void AddGoldToRoom(int coinClicked)
     {
-        if (coinClicked == 1)
+        switch(coinClicked)
         {
-            if (currentGold == 100)
-            {
-                gameManager.currentCurrency += currentGold;
-                currentGold = 0;
-                gameManager.UpdateCurrency();
-            }
-            else if (currentGold > 100)
-            {
-                gameManager.currentCurrency += currentGold - 100;
-                currentGold = 100;
-                gameManager.UpdateCurrency();
-            }
-            else if (currentGold < 100 && gameManager.currentCurrency >= 100)
-            {
-                gameManager.currentCurrency -= 100;
-                currentGold = 100;
-                gameManager.UpdateCurrency();
-            }
-
-        }
-        else if (coinClicked == 2)
-        {
-            if (currentGold == 200)
-            {
-                gameManager.currentCurrency += currentGold - 100;
-                currentGold = 100;
-                gameManager.UpdateCurrency();
-            }
-            else if (currentGold > 200)
-            {
-                gameManager.currentCurrency += currentGold - 200;
-                currentGold = 200;
-                gameManager.UpdateCurrency();
-            }
-            else if (currentGold < 200 && gameManager.currentCurrency >= (200 - currentGold))
-            {
-                gameManager.currentCurrency -= 200 - currentGold;
-                currentGold = 200;
-                gameManager.UpdateCurrency();
-            }
-        }
-        else if (coinClicked == 3)
-        {
-            if (currentGold >= 300)
-            {
-                gameManager.currentCurrency += currentGold - 200;
-                currentGold = 200;
-                gameManager.UpdateCurrency();
-            }
-            else if (currentGold < 300 && gameManager.currentCurrency >= (300 - currentGold))
-            {
-                gameManager.currentCurrency -= 300 - currentGold;
-                currentGold = 300;
-                gameManager.UpdateCurrency();
-            }
+            case 1:
+                switch(currentGold)
+                {
+                    case 0:
+                        if (gameManager.currentCurrency >= 100)
+                        {
+                            gameManager.currentCurrency -= 100;
+                            currentGold = 100;
+                            gameManager.UpdateCurrency();
+                        }
+                        break;
+                    case 100:
+                        gameManager.currentCurrency += currentGold;
+                        currentGold = 0;
+                        gameManager.UpdateCurrency();
+                        break;
+                    case 200: case 300:
+                        gameManager.currentCurrency += currentGold - 100;
+                        currentGold = 100;
+                        gameManager.UpdateCurrency();
+                        break;
+                }
+                break;
+            case 2:
+                switch(currentGold)
+                {
+                    case 0: case 100:
+                        if (gameManager.currentCurrency >= (200 - currentGold))
+                        {
+                            gameManager.currentCurrency -= 200 - currentGold;
+                            currentGold = 200;
+                            gameManager.UpdateCurrency();
+                        }
+                        break;
+                    case 200:
+                        gameManager.currentCurrency += currentGold - 100;
+                        currentGold = 100;
+                        gameManager.UpdateCurrency();
+                        break;
+                    case 300:
+                        gameManager.currentCurrency += currentGold - 200;
+                        currentGold = 200;
+                        gameManager.UpdateCurrency();
+                        break;
+                }
+                break;
+            case 3:
+                switch(currentGold)
+                {
+                    case 0: case 100: case 200:
+                        if (gameManager.currentCurrency >= (300 - currentGold))
+                        {
+                            gameManager.currentCurrency -= 300 - currentGold;
+                            currentGold = 300;
+                            gameManager.UpdateCurrency();
+                        }
+                        break;
+                    case 300:
+                        gameManager.currentCurrency += currentGold - 200;
+                        currentGold = 200;
+                        gameManager.UpdateCurrency();
+                        break;
+                }
+                break;
         }
         UpdateCoins();
     }
@@ -393,46 +399,44 @@ public class RoomScript : MonoBehaviour
         UpdateNeighbors();
         if (gameManager.inConstructionMode)
         {
-            if (door == 1)
+            switch(door)
             {
-                northDoorBool = !northDoorBool;
-                northDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
-                if (northRoom != null)
-                {
-                    northRoomScript.southDoorBool = northDoorBool;
-                    northRoomScript.southDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
-                }
-
-            }
-            else if (door == 2)
-            {
-                southDoorBool = !southDoorBool;
-                southDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
-                if (southRoom != null)
-                {
-                    southRoomScript.northDoorBool = southDoorBool;
-                    southRoomScript.northDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
-                }
-            }
-            else if (door == 3)
-            {
-                eastDoorBool = !eastDoorBool;
-                eastDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
-                if (eastDoor != null)
-                {
-                    eastRoomScript.westDoorBool = eastDoorBool;
-                    eastRoomScript.westDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
-                }
-            }
-            else if (door == 4)
-            {
-                westDoorBool = !westDoorBool;
-                westDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
-                if (westRoom != null)
-                {
-                    westRoomScript.eastDoorBool = westDoorBool;
-                    westRoomScript.eastDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
-                }
+                case 1:
+                    northDoorBool = !northDoorBool;
+                    northDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
+                    if (northRoom != null)
+                    {
+                        northRoomScript.southDoorBool = northDoorBool;
+                        northRoomScript.southDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
+                    }
+                    break;
+                case 2:
+                    southDoorBool = !southDoorBool;
+                    southDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
+                    if (southRoom != null)
+                    {
+                        southRoomScript.northDoorBool = southDoorBool;
+                        southRoomScript.northDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
+                    }
+                    break;
+                case 3:
+                    eastDoorBool = !eastDoorBool;
+                    eastDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
+                    if (eastDoor != null)
+                    {
+                        eastRoomScript.westDoorBool = eastDoorBool;
+                        eastRoomScript.westDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
+                    }
+                    break;
+                case 4:
+                    westDoorBool = !westDoorBool;
+                    westDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
+                    if (westRoom != null)
+                    {
+                        westRoomScript.eastDoorBool = westDoorBool;
+                        westRoomScript.eastDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
+                    }
+                    break;
             }
         }
     }
