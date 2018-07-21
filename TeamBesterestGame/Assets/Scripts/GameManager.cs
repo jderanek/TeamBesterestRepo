@@ -384,6 +384,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Opens the Department Panel
     public void DepartmentMenu()
     {
         if (departmentOpen)
@@ -411,6 +412,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Call this whenever you change the Department Panel
     public void UpdateDepartments()
     {
         //reset panel
@@ -511,6 +513,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Call this to display the menu shown when choosing a monster to assing to a department
     public void AssignmentMenu()
     {
         if (!assignmentOpen)
@@ -527,6 +530,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Call this to update the assignment menu with monsters availble to be assigned
     public void UpdateAssignment(List<GameObject> department)
     {
         //reset panel
@@ -575,58 +579,68 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RoomMenu(GameObject roomSelected)
+    //function should be called when pulling up room menu options (ie clicking on a room)
+    public void RoomMenu()
     {
-        selectedObject = roomSelected;
+        if (roomMenuOpen)
+        {
+            RoomMenuHandler(0);
+        }
         roomMenuOpen = !roomMenuOpen;
         roomMenu.SetActive(roomMenuOpen);
-        RoomMenuHandler(0);
+        roomMenuConfirm.onClick.RemoveAllListeners();
     }
 
+    //call this when changes are made to the Room Menu
     public void UpdateRoomMenu()
     {
 
     }
 
+    //Pass to here when an option is selected in the room menu to add the proper funcionality to the confirm and cancel buttons in it
     public void RoomMenuHandler(int optionSelected)
     {
-        switch(optionSelected)
+        switch (optionSelected)
         {
-		case -1: //destroy room
-			//Checks if the room can be destroyed
-			if (selectedObject.GetComponent<RoomScript> ().CanRemove ()) {
-				roomMenuConfirm.onClick.AddListener (delegate {
-					CurrencyChanged (50);
-					roomList [selectedObject.GetComponent<RoomScript> ().myX, selectedObject.GetComponent<RoomScript> ().myY] = null;                    
-					selectedObject.GetComponent<RoomScript> ().UpdateNeighbors ();
-					Destroy (selectedObject);
-					ToggleConstruction ();
-					roomCount--;
-					this.GetComponent<ConstructionScript> ().ClearConstructionIcons ();                    
-				});
-				roomMenuCancel.onClick.AddListener (delegate {
-					RoomMenu (selectedObject);
-				});
-			}
+            case -1: //destroy room
+                     //Checks if the room can be destroyed
+                if (selectedObject.GetComponent<RoomScript>().CanRemove())
+                {
+                    roomMenuConfirm.onClick.AddListener(delegate
+                    {
+                        CurrencyChanged(50);
+                        roomList[selectedObject.GetComponent<RoomScript>().myX, selectedObject.GetComponent<RoomScript>().myY] = null;
+                        selectedObject.GetComponent<RoomScript>().UpdateNeighbors();
+                        Destroy(selectedObject);
+                        //ToggleConstruction();
+                        //this.GetComponent<ConstructionScript>().StartConstruction();
+                        //ToggleConstruction();
+                        this.GetComponent<ConstructionScript>().ClearConstructionIcons();
+                        this.GetComponent<ConstructionScript>().StartConstruction();
+                        roomCount--;
+                        //this.GetComponent<ConstructionScript>().ClearConstructionIcons();
+                        RoomMenu();
+                    });
+                }
+                else
+                {
+                    roomMenuConfirm.onClick.AddListener(delegate
+                    {
+                        print("NO!");
+                        RoomMenu();
+                    });
+                }
                 break;
             default: //nothing selected
                 roomMenuConfirm.onClick.AddListener(delegate
                 {
-                    RoomMenu(selectedObject);
-                });
-                roomMenuCancel.onClick.AddListener(delegate
-                {
-                    RoomMenu(selectedObject);
+                    RoomMenu();
                 });
                 break;
-            case 1:                
+            case 1:
                 roomMenuConfirm.onClick.AddListener(delegate
                 {
-                    RoomMenu(selectedObject);
-                });
-                roomMenuCancel.onClick.AddListener(delegate
-                {
-                    RoomMenu(selectedObject);
+                    RoomMenu();
                 });
                 break;
         }

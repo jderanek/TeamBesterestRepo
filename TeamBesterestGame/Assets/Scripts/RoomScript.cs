@@ -98,31 +98,8 @@ public class RoomScript : MonoBehaviour
 
 		if (Input.GetMouseButtonDown(1) && gameManager.inConstructionMode)
         {
-            /*
-            GameObject cb = Instantiate(confirmationBox, Vector3.zero, Quaternion.identity);
-            cb.transform.SetParent(canvas.transform, false);
-            var cbCanvas = cb.transform.GetChild(0);
-            RectTransform cbCanvasRect = cbCanvas.GetComponent<RectTransform>();
-            Button cbButtonYes = cbCanvas.GetChild(0).GetComponent<Button>();
-            Button cbButtonNo = cbCanvas.GetChild(1).GetComponent<Button>();
-            cbButtonYes.onClick.AddListener(delegate
-            {
-                gameManager.CurrencyChanged(50);
-                gameManager.roomList[myX, myY] = null;
-                Destroy(gameObject);
-                UpdateNeighbors();
-                gameManager.ToggleConstruction();
-                gameManager.roomCount--;
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<ConstructionScript>().ClearConstructionIcons();
-                Destroy(cb);
-            });
-            cbButtonNo.onClick.AddListener(delegate { Destroy(cb); });
-            cbCanvasRect.anchoredPosition = new Vector2(0, 0);
-            cbCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-            cbCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-            */
-
-            gameManager.RoomMenu(gameObject);
+            gameManager.RoomMenu();
+            gameManager.selectedObject = gameObject;
         }
     }
 

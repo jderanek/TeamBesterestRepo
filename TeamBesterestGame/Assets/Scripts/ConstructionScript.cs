@@ -29,11 +29,10 @@ public class ConstructionScript : MonoBehaviour
     }
 
     public void StartConstruction()
-    {        
+    {
         GameObject constructionIconHolder;
         if (gameManager.inConstructionMode)
         {
-            gameManager.roomCount = 0;
             foreach (GameObject room in gameManager.roomList)
             {
                 if (room != null)
@@ -57,7 +56,7 @@ public class ConstructionScript : MonoBehaviour
                                 trigger.triggers.Add(entry);
                             }
                         }
-
+                        
                         if (myY >= 1)
                         {
                             if (gameManager.roomList[myX, myY - 1] == null)
@@ -114,15 +113,28 @@ public class ConstructionScript : MonoBehaviour
 
     public void ClearConstructionIcons()
     {
+        int i = 0;
+        int j = 0;
         foreach (GameObject constructionIcon in gameManager.roomList)
-        {
+        {            
             if (constructionIcon != null)
             {
                 if (constructionIcon.CompareTag("Construction Icon"))
-                {
+                {                    
+                    gameManager.roomList[j, i] = null;
                     Destroy(constructionIcon);
                 }
             }
+            //Someone make this better please
+            if (i < 9)
+            {
+                i++;
+            }
+            else
+            {
+                i = 0;
+                j++;
+            }            
         }
     }
 
