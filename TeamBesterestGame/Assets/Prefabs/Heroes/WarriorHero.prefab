@@ -36,7 +36,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4779808927487976}
-  - component: {fileID: 114807318343873942}
   - component: {fileID: 61778875977560480}
   - component: {fileID: 212844467118960664}
   - component: {fileID: 50752401574247562}
@@ -136,6 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad9eb2772fb205b429f5d3a2b8983766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curHealth: 0
+  damage: 0
+  capacity: 0
+  holding: 0
 --- !u!114 &114067177770923576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,24 +188,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: -Dmg
---- !u!114 &114807318343873942
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1820813238502166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69d6678911b57cd468d4db60159c3de2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possibleThreatValue: 020000000400000006000000
-  threatValue: 0
-  damage: 10
-  heroHp: 100
-  monsterPosition: {fileID: 0}
-  currencyValue: 10
-  carryCapacity: 200
 --- !u!114 &114967286421770044
 MonoBehaviour:
   m_ObjectHideFlags: 1

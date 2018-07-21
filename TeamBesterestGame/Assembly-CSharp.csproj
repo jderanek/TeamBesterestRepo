@@ -53,10 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ConstructionScript.cs" />
      <Compile Include="Assets\Scripts\CSVImporter.cs" />
-     <Compile Include="Assets\Scripts\Defunct\HeroScript.cs" />
      <Compile Include="Assets\Scripts\Defunct\InterviewButtonScript.cs" />
-     <Compile Include="Assets\Scripts\Defunct\MonsterScript.cs" />
-     <Compile Include="Assets\Scripts\Defunct\PickUpRoom.cs" />
      <Compile Include="Assets\Scripts\Defunct\ResumeScript.cs" />
      <Compile Include="Assets\Scripts\Defunct\SpawnNewSquare.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
@@ -87,8 +84,8 @@
      <Compile Include="Assets\Scripts\Party Scripts\BaseParty.cs" />
      <Compile Include="Assets\Scripts\Party Scripts\TestPart.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\BaseRoom.cs" />
+     <Compile Include="Assets\Scripts\Room Scripts\DefaultRoom.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\EntranceRoom.cs" />
-     <Compile Include="Assets\Scripts\RoomScript.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\FancyTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\FlirtyTrait.cs" />

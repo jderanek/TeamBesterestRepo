@@ -38,7 +38,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4887520611836752}
   - component: {fileID: 212908011047340260}
-  - component: {fileID: 114792822318123870}
   - component: {fileID: 58222956705144232}
   - component: {fileID: 114821120507573988}
   m_Layer: 9
@@ -164,57 +163,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114792822318123870
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1078517849305682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdf9d983b4ce9b4ea65c50f79e37d31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possibleNames:
-  - Jim
-  - Tim
-  - Kim
-  - Zim
-  monsterName: 
-  monsterType: Goblin
-  averageHealth: 100
-  startingHealth: 0
-  currentHealth: 0
-  threatValue: 0
-  averageDamage: 10
-  attackDamage: 0
-  possibleTraits:
-  - Aggressive
-  - Annoying
-  - Irritable
-  - Friendly
-  - Hard-Working
-  trait1: 
-  trait2: 
-  averageSalary: 100
-  requestedSalary: 0
-  heroInRoom: 0
-  myRoom: {fileID: 0}
-  stress: 0
-  morale: 0.5
-  baseNerve: 0.5
-  curNerve: 0.5
-  size: 1
-  curThreat: 0
-  stressGain: 0.02
-  vacationStressLoss: 0.15
-  infamyGain: 1
-  gender: 
-  curDamage: 0
-  traitName: 
-  workEthic: 0
-  inCombat: 0
-  hasFought: 0
 --- !u!114 &114821120507573988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,8 +174,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  department: []
+  monName: 
+  curHealth: 0
+  curDamage: 0
+  canBeDebuffed: 1
   baseNerve: 0.5
   curNerve: 0.5
+  effects: []
 --- !u!212 &212908011047340260
 SpriteRenderer:
   m_ObjectHideFlags: 1

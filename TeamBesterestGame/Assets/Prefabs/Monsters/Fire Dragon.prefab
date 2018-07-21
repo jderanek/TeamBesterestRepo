@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4895498766016772}
   - component: {fileID: 212664647012978128}
-  - component: {fileID: 114764767025184672}
   - component: {fileID: 58800405066604656}
   - component: {fileID: 114487137398937774}
   m_Layer: 9
@@ -175,56 +174,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e43891d24cd5e4d88661059683621e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  department: []
   monName: 
   curHealth: 0
   curDamage: 0
+  canBeDebuffed: 1
   baseNerve: 0.5
   curNerve: 0.5
---- !u!114 &114764767025184672
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1530068321745230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdf9d983b4ce9b4ea65c50f79e37d31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possibleNames:
-  - Tim the Annihilator
-  - Tim the Destroyer
-  - Tim the Lord of Death
-  - Tim the Defiler
-  monsterName: 
-  monsterType: Dragon
-  averageHealth: 1200
-  startingHealth: 0
-  currentHealth: 0
-  threatValue: 0
-  averageDamage: 125
-  attackDamage: 0
-  averageSalary: 1000
-  requestedSalary: 0
-  heroInRoom: 0
-  status: Break Room
-  myRoom: {fileID: 0}
-  stress: 0
-  morale: 0.5
-  baseNerve: 0.5
-  curNerve: 0.5
-  size: 3
-  curThreat: 0
-  stressGain: 0.02
-  vacationStressLoss: 0.15
-  infamyGain: 1
-  gender: 
-  curDamage: 0
-  traitName: 
-  workEthic: 0
-  inCombat: 0
-  hasFought: 0
-  applicationLife: 0
+  effects: []
 --- !u!212 &212664647012978128
 SpriteRenderer:
   m_ObjectHideFlags: 1

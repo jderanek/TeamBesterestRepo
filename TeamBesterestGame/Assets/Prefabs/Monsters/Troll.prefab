@@ -37,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4686982571404496}
   - component: {fileID: 212867608738898780}
-  - component: {fileID: 114919275312682912}
   - component: {fileID: 58778809547376988}
   - component: {fileID: 114997636758598598}
   m_Layer: 9
@@ -115,57 +114,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114919275312682912
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1933339814376790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fdf9d983b4ce9b4ea65c50f79e37d31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  possibleNames:
-  - Jim
-  - Bob
-  - Jim-Bob
-  - Bob-Jim
-  monsterName: 
-  monsterType: Troll
-  averageHealth: 350
-  startingHealth: 0
-  currentHealth: 0
-  threatValue: 0
-  averageDamage: 50
-  attackDamage: 0
-  possibleTraits:
-  - Guardian
-  - Guardian
-  - Guardian
-  - Irritable
-  - Aggressive
-  trait1: 
-  trait2: 
-  averageSalary: 500
-  requestedSalary: 0
-  heroInRoom: 0
-  myRoom: {fileID: 0}
-  stress: 0
-  morale: 0.5
-  baseNerve: 0.5
-  curNerve: 0.5
-  size: 2
-  curThreat: 0
-  stressGain: 0.02
-  vacationStressLoss: 0.15
-  infamyGain: 1
-  gender: 
-  curDamage: 0
-  traitName: 
-  workEthic: 0
-  inCombat: 0
-  hasFought: 0
 --- !u!114 &114920046901391328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,8 +174,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  department: []
+  monName: 
+  curHealth: 0
+  curDamage: 0
+  canBeDebuffed: 1
   baseNerve: 0.5
   curNerve: 0.5
+  effects: []
 --- !u!212 &212867608738898780
 SpriteRenderer:
   m_ObjectHideFlags: 1
