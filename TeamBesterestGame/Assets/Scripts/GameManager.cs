@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 	public TestPart party;
 
 	//Monster Stuff
-	//[HideInInspector]
 	public GameObject[] possibleMonsters; //public to assign references in editor
 	//[HideInInspector]
 	public GameObject monsterInstance; //public to assign reference in editor
@@ -19,6 +18,9 @@ public class GameManager : MonoBehaviour
     public int healthWeight = 10;
     public int attackWeight = 3;
     public int defenseWeight = 2;
+
+    //Room Stuff
+    public GameObject[] possibleRooms;
 
     //Aggregate Stress Stuff
     [HideInInspector]
@@ -653,9 +655,14 @@ public class GameManager : MonoBehaviour
                     //temporary for visual flair, need to swap out with different prefab later
                     //might come down to instantiating the new prefab with the references already attached?
                     //that would probably be faster and easier
-                    selectedObject.GetComponent<SpriteRenderer>().color = Color.grey;
-
+                    //selectedObject.GetComponent<SpriteRenderer>().color = Color.grey;
                     BaseRoom oldScript = selectedObject.GetComponent<BaseRoom>();
+                    GameObject newRoom = Instantiate(possibleRooms[1], selectedObject.transform.position, Quaternion.identity);
+                    CemetaryRoom newScript = newRoom.GetComponent<CemetaryRoom>();
+                    newScript.myX = oldScript.myX;
+                    newScript.myY = oldScript.myY;
+                    newScript.Initialize();
+
 
                     //reseting monsters and gold in room
                     foreach (GameObject monster in oldScript.roomMembers)
@@ -667,20 +674,19 @@ public class GameManager : MonoBehaviour
                     UpdateDepartments();
 
                     //passing references to new script
-                    CemetaryRoom newScript = selectedObject.AddComponent<CemetaryRoom>();
-                    newScript.myX = oldScript.myX;
-                    newScript.myY = oldScript.myY;
-                    newScript.confirmationBox = oldScript.confirmationBox;
-                    newScript.emptyCoin = oldScript.emptyCoin;
-                    newScript.filledCoin = oldScript.filledCoin;
-                    newScript.roomMembers = oldScript.roomMembers;
-                    newScript.Initialize();
+                    
+                   // newScript.confirmationBox = oldScript.confirmationBox;
+                    //newScript.emptyCoin = oldScript.emptyCoin;
+                    //newScript.filledCoin = oldScript.filledCoin;
+                    //newScript.roomMembers = oldScript.roomMembers;
+                    
 
                     //setting up new coin slots
+                    /*
                     for (int i = 2; i < 5; i++)
                     {
                         int j = i - 1;
-                        newScript.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite = newScript.emptyCoin; //part of gold reset
+                        //newScript.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite = newScript.emptyCoin; //part of gold reset
                         EventTrigger trigger = newScript.transform.GetChild(i).GetComponent<EventTrigger>();
                         EventTrigger.Entry entry = new EventTrigger.Entry();
                         entry.eventID = EventTriggerType.PointerDown;
@@ -689,9 +695,10 @@ public class GameManager : MonoBehaviour
                         });
                         trigger.triggers.Add(entry);
                     }
+                    */
 
                     //and finally get rid of the old script
-                    Destroy(selectedObject.GetComponent<DefaultRoom>());
+                    Destroy(selectedObject);
                     
                     RoomMenu();
                 });

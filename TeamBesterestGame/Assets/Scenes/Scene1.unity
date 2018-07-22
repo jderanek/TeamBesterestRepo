@@ -7046,16 +7046,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleMonsters:
-  - {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+  - {fileID: 1472645067824748, guid: 4f11571425061844dbcd2a0327886c59, type: 2}
   - {fileID: 1136505623855328, guid: 3bd3d31ff6ef4964f87ca15b6ac7fd65, type: 2}
   - {fileID: 1933339814376790, guid: 0facce03004ff0b49b63099d5a43dabb, type: 2}
-  - {fileID: 1530068321745230, guid: aaac33a10c1b94340b6d1073277aaedf, type: 2}
+  - {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+  - {fileID: 1227263955059428, guid: af768c4dfea5b72498e466ac5f0f5678, type: 2}
+  - {fileID: 1484436021157160, guid: 3849f2e0383594b469bddd666579b1b1, type: 2}
   monsterInstance: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c,
     type: 2}
   selectedObject: {fileID: 0}
   healthWeight: 10
   attackWeight: 3
   defenseWeight: 2
+  possibleRooms:
+  - {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+  - {fileID: 1566428048444222, guid: 9f5a6c6a54624084782763b0cad1d35c, type: 2}
   stressImage: {fileID: 0}
   currencyText: {fileID: 935864226}
   currentCurrency: 0
