@@ -520,7 +520,8 @@ public class GameManager : MonoBehaviour
             var newFieldCanvas = newField.transform.GetChild(0);
             var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-            newField.GetComponentInChildren<Text>().text = monster.name;
+            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
+            newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
             /*
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate {
                 SelectObject(monster);
@@ -625,19 +626,6 @@ public class GameManager : MonoBehaviour
             childNum++;
         }
 
-        //create an empty object to create some space between the menu and the first Field
-        /*
-        var empty = Instantiate(new GameObject(), new Vector3(0, 0, 0), Quaternion.identity);
-        empty.AddComponent<RectTransform>().sizeDelta = new Vector2(0, 20);
-        empty.AddComponent<Text>().text = "Choose a Monster to assign";
-        var emptyText = empty.GetComponent<Text>();
-        emptyText.font = arial;
-        emptyText.horizontalOverflow = HorizontalWrapMode.Overflow;
-        emptyText.verticalOverflow = VerticalWrapMode.Overflow;
-        emptyText.alignment = TextAnchor.MiddleCenter;
-        empty.transform.SetParent(assignmentPanel.transform, false);
-        */
-
         //create a field for each Monster
         foreach (GameObject monster in breakRoomList) //NEED TO USE AN "INACTIVE" LIST FOR THIS LATER
         {
@@ -645,7 +633,9 @@ public class GameManager : MonoBehaviour
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             var newFieldCanvas = newField.transform.GetChild(0);
             var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
-            newField.GetComponentInChildren<Text>().text = monster.name;
+            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
+            newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
+
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate 
             {
