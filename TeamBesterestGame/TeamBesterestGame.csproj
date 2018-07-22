@@ -316,6 +316,7 @@
     <Compile Include="Assets\Scripts\Party Scripts\BaseParty.cs" />
     <Compile Include="Assets\Scripts\Party Scripts\TestPart.cs" />
     <Compile Include="Assets\Scripts\Room Scripts\BaseRoom.cs" />
+    <Compile Include="Assets\Scripts\Room Scripts\CemetaryRoom.cs" />
     <Compile Include="Assets\Scripts\Room Scripts\DefaultRoom.cs" />
     <Compile Include="Assets\Scripts\Room Scripts\EntranceRoom.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />

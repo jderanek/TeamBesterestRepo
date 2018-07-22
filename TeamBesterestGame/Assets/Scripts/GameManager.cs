@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -649,6 +650,49 @@ public class GameManager : MonoBehaviour
             case 1:
                 roomMenuConfirm.onClick.AddListener(delegate
                 {
+                    //temporary for visual flair, need to swap out with different prefab later
+                    //might come down to instantiating the new prefab with the references already attached?
+                    //that would probably be faster and easier
+                    selectedObject.GetComponent<SpriteRenderer>().color = Color.grey;
+
+                    BaseRoom oldScript = selectedObject.GetComponent<BaseRoom>();
+
+                    //reseting monsters and gold in room
+                    foreach (GameObject monster in oldScript.roomMembers)
+                    {
+                        AddToDepartment(monster, breakRoomList);
+                        monster.transform.position = Vector3.zero;
+                    }
+                    CurrencyChanged(oldScript.currentGold);
+                    UpdateDepartments();
+
+                    //passing references to new script
+                    CemetaryRoom newScript = selectedObject.AddComponent<CemetaryRoom>();
+                    newScript.myX = oldScript.myX;
+                    newScript.myY = oldScript.myY;
+                    newScript.confirmationBox = oldScript.confirmationBox;
+                    newScript.emptyCoin = oldScript.emptyCoin;
+                    newScript.filledCoin = oldScript.filledCoin;
+                    newScript.roomMembers = oldScript.roomMembers;
+                    newScript.Initialize();
+
+                    //setting up new coin slots
+                    for (int i = 2; i < 5; i++)
+                    {
+                        int j = i - 1;
+                        newScript.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite = newScript.emptyCoin; //part of gold reset
+                        EventTrigger trigger = newScript.transform.GetChild(i).GetComponent<EventTrigger>();
+                        EventTrigger.Entry entry = new EventTrigger.Entry();
+                        entry.eventID = EventTriggerType.PointerDown;
+                        entry.callback.AddListener((data) => {
+                            newScript.AddGoldToRoom(j);
+                        });
+                        trigger.triggers.Add(entry);
+                    }
+
+                    //and finally get rid of the old script
+                    Destroy(selectedObject.GetComponent<DefaultRoom>());
+                    
                     RoomMenu();
                 });
                 break;

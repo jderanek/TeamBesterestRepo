@@ -119,7 +119,7 @@ public class CSVImporter {
 		int x = 0;
 
 		//Reads all lines of the spreadsheet, and imports values into a dictionary
-		Debug.Log("Loading data from: " + this.path);
+		//Debug.Log("Loading data from: " + this.path);
 		curLine = reader.ReadLine().Split(',');
 		while (curLine != null) {
 			foreach (string stat in curLine) {

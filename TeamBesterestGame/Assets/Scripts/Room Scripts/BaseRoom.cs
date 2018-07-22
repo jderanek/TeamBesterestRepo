@@ -85,20 +85,25 @@ public abstract class BaseRoom : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        gameManager.roomList[myX, myY] = gameObject;
-        UpdateNeighbors();
-        canvas = GameObject.FindGameObjectWithTag("Canvas");
-        if (!(this.CompareTag("Spawn Room") || this.CompareTag("Boss Room")))
-        {
-            coin1 = transform.GetChild(2).GetComponent<SpriteRenderer>();
-            coin2 = transform.GetChild(3).GetComponent<SpriteRenderer>();
-            coin3 = transform.GetChild(4).GetComponent<SpriteRenderer>();
-        }
-        northDoor = transform.GetChild(1).GetChild(0).gameObject;
-        southDoor = transform.GetChild(1).GetChild(1).gameObject;
-        eastDoor = transform.GetChild(1).GetChild(2).gameObject;
-        westDoor = transform.GetChild(1).GetChild(3).gameObject;
+        Initialize();
+    }  
+
+     public void Initialize()
+    {
+            gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+            gameManager.roomList[myX, myY] = gameObject;
+            UpdateNeighbors();
+            canvas = GameObject.FindGameObjectWithTag("Canvas");
+            if (!(this.CompareTag("Spawn Room") || this.CompareTag("Boss Room")))
+            {
+                coin1 = transform.GetChild(2).GetComponent<SpriteRenderer>();
+                coin2 = transform.GetChild(3).GetComponent<SpriteRenderer>();
+                coin3 = transform.GetChild(4).GetComponent<SpriteRenderer>();
+            }
+            northDoor = transform.GetChild(1).GetChild(0).gameObject;
+            southDoor = transform.GetChild(1).GetChild(1).gameObject;
+            eastDoor = transform.GetChild(1).GetChild(2).gameObject;
+            westDoor = transform.GetChild(1).GetChild(3).gameObject;
     }
 
     void OnMouseOver()
