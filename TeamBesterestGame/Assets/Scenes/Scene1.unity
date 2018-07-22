@@ -7046,14 +7046,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleMonsters:
-  - {fileID: 1472645067824748, guid: 4f11571425061844dbcd2a0327886c59, type: 2}
   - {fileID: 1136505623855328, guid: 3bd3d31ff6ef4964f87ca15b6ac7fd65, type: 2}
-  - {fileID: 1933339814376790, guid: 0facce03004ff0b49b63099d5a43dabb, type: 2}
+  - {fileID: 1472645067824748, guid: 4f11571425061844dbcd2a0327886c59, type: 2}
+  - {fileID: 1688424819524178, guid: 1257f948d1d3ca84595a10056ace654f, type: 2}
+  - {fileID: 1031335067283868, guid: 853e0bbfaf65a0c4e8d04b1b04f55120, type: 2}
   - {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
+  - {fileID: 1933339814376790, guid: 0facce03004ff0b49b63099d5a43dabb, type: 2}
   - {fileID: 1227263955059428, guid: af768c4dfea5b72498e466ac5f0f5678, type: 2}
   - {fileID: 1484436021157160, guid: 3849f2e0383594b469bddd666579b1b1, type: 2}
+  - {fileID: 1294962261068262, guid: 76ef901bcfea2a347b383827f041a1f7, type: 2}
+  - {fileID: 1733774689049142, guid: de09bad5048db484e96bf76e0fb858bb, type: 2}
+  - {fileID: 1566250559667780, guid: 886372bf045fba54a88819b598b2d28c, type: 2}
+  - {fileID: 1078436874206618, guid: 2596b23cbdeec134aa09a193d3463a3f, type: 2}
+  - {fileID: 1800898381481494, guid: 7d4e6c2217e1e2e49a9d6e400ecb69ce, type: 2}
+  - {fileID: 1089590941511588, guid: bd6834859599a304998e329a18fdeed3, type: 2}
+  - {fileID: 1806320186551774, guid: e4c5bba1d51b70442b41bc235bfc1419, type: 2}
+  - {fileID: 1806667804734658, guid: 5854f693d519c4843998c5057c4ab8d7, type: 2}
+  - {fileID: 1505360056973262, guid: 6ccae6947204132498d47a5f42335cc1, type: 2}
   monsterInstance: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c,
     type: 2}
+  possibleHeroes: []
   selectedObject: {fileID: 0}
   healthWeight: 10
   attackWeight: 3
@@ -7115,14 +7127,6 @@ MonoBehaviour:
   roomButton: {fileID: 0}
   spawnRoom: {fileID: 1893377716}
   bossRoom: {fileID: 1306698472}
-  heroes:
-  - {fileID: 1156476052356406, guid: ad8df0eea4c58104b8c2d0f12c834e24, type: 2}
-  - {fileID: 1538723713403652, guid: 975cbdda8ed049b45ab7d1de9d61ea7d, type: 2}
-  - {fileID: 1202316229045692, guid: 03178a1518600ef46af10657a4a890d3, type: 2}
-  - {fileID: 1089698362670590, guid: aa78851add4cd49419f3cfcedfc6e37f, type: 2}
-  - {fileID: 1208952337519340, guid: 5e89ac2699e6b4748bc1768019032152, type: 2}
-  - {fileID: 1512600844001062, guid: 11d6459a900aec448b7a05d468277682, type: 2}
-  - {fileID: 1820813238502166, guid: 2e4d688e4d279e341b54bca22c3d2174, type: 2}
   roomCount: 8
   monsterList: []
   breakRoomList: []

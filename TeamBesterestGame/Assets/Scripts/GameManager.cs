@@ -9,12 +9,19 @@ public class GameManager : MonoBehaviour
 	//Test Party
 	public TestPart party;
 
-	//Monster Stuff
-	public GameObject[] possibleMonsters; //public to assign references in editor
-	//[HideInInspector]
-	public GameObject monsterInstance; //public to assign reference in editor
+    //Array stuff
+    public GameObject[] possibleMonsters;
+    public GameObject[][][] monsterSpawnList;
+    
+    public GameObject monsterInstance; //public to assign reference in editor
+    public GameObject[] possibleHeroes; //public to be assigned in editor
+    private List<GameObject> heroSpawnSet = new List<GameObject>();
+
+
     [HideInInspector]
     public GameObject selectedObject;
+
+    //Balance stuff
     public int healthWeight = 10;
     public int attackWeight = 3;
     public int defenseWeight = 2;
@@ -120,8 +127,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
-    public GameObject[] heroes; //public to be assigned in editor
-
+    
+    //TODO jagged array is faster, need to convert
     public GameObject[,] roomList; //public to be accessed by room script
 	public int roomCount = 1; //Number of rooms in dungeon
 
@@ -148,7 +155,7 @@ public class GameManager : MonoBehaviour
 	// Use this for initialization
 	void Awake()
 	{
-		roomList = new GameObject[10, 10];
+        roomList = new GameObject[10, 10];
 		monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv", 
 			"https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
 		monNames = new CSVImporter("NamesWIP - Sheet1.csv",
@@ -158,21 +165,79 @@ public class GameManager : MonoBehaviour
         currentCurrency = 1500;
 		UpdateCurrency ();
 		UpdateInfamy();
-		CreateNewResume(3);
-
+		
 		modifiedHeroSpawnRate = baseHeroSpawnRate;
 
-		currentTime = timePerDay;
+        currentTime = timePerDay;
         stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
+
+        //sets up intial list of monster spawns from possible monsters
+        monsterSpawnList = new GameObject[][][]
+        {
+            //UNDEAD
+            new GameObject[][]
+            {
+                new GameObject[] //infamy level 0
+                {
+                    possibleMonsters[0], possibleMonsters[1]
+                },
+                new GameObject[] //infamy level 1
+                {
+                    possibleMonsters[0], possibleMonsters[0], possibleMonsters[0], possibleMonsters[0], possibleMonsters[1],
+                    possibleMonsters[1], possibleMonsters[1], possibleMonsters[1], possibleMonsters[8], possibleMonsters[9]
+                }
+            }, 
+
+            //BESTIAL
+            new GameObject[][]
+            {
+                new GameObject[] //infamy level 0
+                {
+                    possibleMonsters[2], possibleMonsters[3]
+                },
+                new GameObject[] //infamy level 1
+                {
+                    possibleMonsters[2], possibleMonsters[2], possibleMonsters[2], possibleMonsters[2], possibleMonsters[3],
+                    possibleMonsters[3], possibleMonsters[3], possibleMonsters[3], possibleMonsters[10], possibleMonsters[11]
+                }
+            },
+
+            //TRIBAL
+            new GameObject[][]
+            {
+                new GameObject[] //infamy level 0
+                {
+                    possibleMonsters[4], possibleMonsters[5]
+                }, 
+                new GameObject[] //infamy level 1
+                {
+                    possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[5],
+                    possibleMonsters[5], possibleMonsters[5], possibleMonsters[5], possibleMonsters[12], possibleMonsters[13]
+                }
+            }, 
+
+            //DEMONS
+            new GameObject[][]
+            {
+                new GameObject[] //infamy level 0
+                {
+                    possibleMonsters[6], possibleMonsters[7]
+                }, 
+                new GameObject[] //infamy level 1
+                {
+                    possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[7],
+                    possibleMonsters[7], possibleMonsters[7], possibleMonsters[7], possibleMonsters[14], possibleMonsters[15]
+                }
+            }
+
+        };
+        CreateNewResume(3);
+
+        heroSpawnSet.Add(possibleHeroes[0]);
+        
     }
 
-	void Start() {
-		//var rooms = GameObject.FindGameObjectsWithTag("Room");
-		/*
-        foreach (var room in rooms) {
-			room.GetComponent<BaseRoom>().Initialize();
-		}
-			
+	void Start() {			
 		/*
 		//Test for CSVImporter
 		foreach (KeyValuePair<string, Dictionary<string, string>> monster in monsters.data) {
@@ -193,10 +258,6 @@ public class GameManager : MonoBehaviour
 				print (entry.Key + ": " + entry.Value);
 			}
 		}
-		*/
-
-        //this was Avery's turning it off for now
-        /*
 		roomList [5, 5] = spawnRoom;
 		for (int x = 0; x < roomList.GetLength (0); x++) {
 			for (int y = 0; y < roomList.GetLength (1); y++) {
@@ -205,7 +266,7 @@ public class GameManager : MonoBehaviour
 			}
 		}
         */
-	}
+    }
 
 	// Update is called once per frame
 	void Update()
@@ -215,7 +276,8 @@ public class GameManager : MonoBehaviour
 
 	public GameObject SpawnMonster()
 	{
-		GameObject monsterPrefab = possibleMonsters [Random.Range (0, possibleMonsters.Length)];
+        int rand = Random.Range(0, 4);
+        GameObject monsterPrefab = monsterSpawnList[rand][infamyLevel][Random.Range(0, monsterSpawnList[rand][infamyLevel].Length)];
 		GameObject newMonster = Instantiate(monsterPrefab, new Vector3(0,0,0), Quaternion.identity);
 		newMonster.GetComponent<BaseMonster> ().AssignStats (monsterPrefab.name);
 		newMonster.SetActive(false);
@@ -244,8 +306,7 @@ public class GameManager : MonoBehaviour
 	}
 
     public void HireButton(GameObject monsterInstance, GameObject monsterApplicationField)
-    {
-        //monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;        
+    {  
         int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
         int infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
 		monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
@@ -799,7 +860,8 @@ public class GameManager : MonoBehaviour
 				//Creates a new party with a random hero and adds it to the party list
 				//Temporary, until there are more party types
 				GameObject[] newHero = new GameObject[1];
-				newHero[0] = Instantiate(heroes[0], spawnRoom.transform.position, Quaternion.identity);
+                //grabs a hero from spawn set with equal weight. Maybe best way to affect spawn %s is to just add duplicates to spawn set?
+				newHero[0] = Instantiate(heroSpawnSet[(Random.Range(0, heroSpawnSet.Count + 1))], spawnRoom.transform.position, Quaternion.identity);
 				BaseParty newParty = new TestPart (newHero);
 				this.attackParties.Add (newParty);
 
@@ -838,6 +900,7 @@ public class GameManager : MonoBehaviour
             //refresh application panel
             UpdateApplications();
 
+            //PR Department code
             foreach (GameObject monster in prList)
             {
                 BaseMonster monsterScript = monster.GetComponent<BaseMonster>();
@@ -953,6 +1016,21 @@ public class GameManager : MonoBehaviour
 			infamyLevel += 1;
 			infamyXP -= xpToNextInfamyLevel;
 			xpToNextInfamyLevel = InfamyXPNeeded();
+
+            //modify spawn sets and options availible here
+            switch(infamyLevel) {
+                case 1:
+                    //monsterSpawnSet.Add(possibleMonsters[0]);
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+            }
 		}
 		else
 		{

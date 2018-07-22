@@ -39,6 +39,8 @@ GameObject:
   - component: {fileID: 4105937633194466}
   - component: {fileID: 212711985162671844}
   - component: {fileID: 58019083784325328}
+  - component: {fileID: 114686363947069714}
+  - component: {fileID: 114966776699619014}
   m_Layer: 9
   m_Name: Monster
   m_TagString: Monster
@@ -70,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1627720604894886}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7395673, y: 0.61331016, z: 0}
+  m_LocalPosition: {x: 50.01, y: 0.61331016, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224421255046834578}
@@ -146,6 +148,25 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &114686363947069714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627720604894886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  department: []
+  monName: 
+  curHealth: 0
+  curDamage: 0
+  canBeDebuffed: 1
+  baseNerve: 0.5
+  curNerve: 0.5
+  effects: []
 --- !u!114 &114837559761220304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -162,6 +183,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114966776699619014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1627720604894886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  department: []
+  monName: 
+  curHealth: 0
+  curDamage: 0
+  canBeDebuffed: 1
+  baseNerve: 0.5
+  curNerve: 0.5
+  effects: []
 --- !u!212 &212711985162671844
 SpriteRenderer:
   m_ObjectHideFlags: 1
