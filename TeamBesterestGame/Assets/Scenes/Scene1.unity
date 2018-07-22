@@ -7065,7 +7065,14 @@ MonoBehaviour:
   - {fileID: 1505360056973262, guid: 6ccae6947204132498d47a5f42335cc1, type: 2}
   monsterInstance: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c,
     type: 2}
-  possibleHeroes: []
+  possibleHeroes:
+  - {fileID: 1156476052356406, guid: ad8df0eea4c58104b8c2d0f12c834e24, type: 2}
+  - {fileID: 1512600844001062, guid: 11d6459a900aec448b7a05d468277682, type: 2}
+  - {fileID: 1538723713403652, guid: 975cbdda8ed049b45ab7d1de9d61ea7d, type: 2}
+  - {fileID: 1089698362670590, guid: aa78851add4cd49419f3cfcedfc6e37f, type: 2}
+  - {fileID: 1820813238502166, guid: 2e4d688e4d279e341b54bca22c3d2174, type: 2}
+  - {fileID: 1512600844001062, guid: 11d6459a900aec448b7a05d468277682, type: 2}
+  - {fileID: 1208952337519340, guid: 5e89ac2699e6b4748bc1768019032152, type: 2}
   selectedObject: {fileID: 0}
   healthWeight: 10
   attackWeight: 3

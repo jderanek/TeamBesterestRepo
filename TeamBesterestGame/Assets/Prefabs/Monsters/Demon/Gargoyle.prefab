@@ -56,8 +56,6 @@ GameObject:
   - component: {fileID: 4286426162530000}
   - component: {fileID: 212729890166254132}
   - component: {fileID: 58472788374872452}
-  - component: {fileID: 114959294818307464}
-  - component: {fileID: 114021400505680016}
   - component: {fileID: 114136384024549612}
   m_Layer: 9
   m_Name: Gargoyle
@@ -95,25 +93,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
---- !u!114 &114021400505680016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1806320186551774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  department: []
-  monName: 
-  curHealth: 0
-  curDamage: 0
-  canBeDebuffed: 1
-  baseNerve: 0.5
-  curNerve: 0.5
-  effects: []
 --- !u!114 &114077631807863648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,25 +182,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &114959294818307464
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1806320186551774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  department: []
-  monName: 
-  curHealth: 0
-  curDamage: 0
-  canBeDebuffed: 1
-  baseNerve: 0.5
-  curNerve: 0.5
-  effects: []
 --- !u!212 &212729890166254132
 SpriteRenderer:
   m_ObjectHideFlags: 1

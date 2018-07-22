@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212646168067327432}
   - component: {fileID: 58162498832196698}
   - component: {fileID: 114060962329587590}
-  - component: {fileID: 114360772588246190}
   m_Layer: 9
   m_Name: Orc
   m_TagString: Monster
@@ -150,25 +149,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114360772588246190
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1089590941511588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  department: []
-  monName: 
-  curHealth: 0
-  curDamage: 0
-  canBeDebuffed: 1
-  baseNerve: 0.5
-  curNerve: 0.5
-  effects: []
 --- !u!114 &114380281508838706
 MonoBehaviour:
   m_ObjectHideFlags: 1

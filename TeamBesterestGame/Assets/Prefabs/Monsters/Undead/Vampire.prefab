@@ -56,8 +56,6 @@ GameObject:
   - component: {fileID: 4229754496816974}
   - component: {fileID: 212163203433956078}
   - component: {fileID: 58862489645675732}
-  - component: {fileID: 114830420904310350}
-  - component: {fileID: 114264387862588424}
   - component: {fileID: 114715034145031374}
   m_Layer: 9
   m_Name: Vampire
@@ -95,25 +93,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
---- !u!114 &114264387862588424
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1733774689049142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  department: []
-  monName: 
-  curHealth: 0
-  curDamage: 0
-  canBeDebuffed: 1
-  baseNerve: 0.5
-  curNerve: 0.5
-  effects: []
 --- !u!114 &114512472180591874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,25 +182,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &114830420904310350
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1733774689049142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  department: []
-  monName: 
-  curHealth: 0
-  curDamage: 0
-  canBeDebuffed: 1
-  baseNerve: 0.5
-  curNerve: 0.5
-  effects: []
 --- !u!212 &212163203433956078
 SpriteRenderer:
   m_ObjectHideFlags: 1

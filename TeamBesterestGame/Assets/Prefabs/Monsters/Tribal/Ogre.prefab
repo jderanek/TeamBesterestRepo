@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 212227467395853234}
   - component: {fileID: 58065699104218292}
   - component: {fileID: 114558856816285088}
-  - component: {fileID: 114859810038478546}
   m_Layer: 9
   m_Name: Ogre
   m_TagString: Monster
@@ -183,25 +182,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: -Dmg
---- !u!114 &114859810038478546
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1800898381481494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  department: []
-  monName: 
-  curHealth: 0
-  curDamage: 0
-  canBeDebuffed: 1
-  baseNerve: 0.5
-  curNerve: 0.5
-  effects: []
 --- !u!212 &212227467395853234
 SpriteRenderer:
   m_ObjectHideFlags: 1

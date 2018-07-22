@@ -39,8 +39,6 @@ GameObject:
   - component: {fileID: 4869920940678926}
   - component: {fileID: 212286149859450792}
   - component: {fileID: 58876888234192024}
-  - component: {fileID: 114167752409743646}
-  - component: {fileID: 114850600083152804}
   - component: {fileID: 114551414194443858}
   m_Layer: 9
   m_Name: Whelp
@@ -95,25 +93,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
---- !u!114 &114167752409743646
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1505360056973262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  department: []
-  monName: 
-  curHealth: 0
-  curDamage: 0
-  canBeDebuffed: 1
-  baseNerve: 0.5
-  curNerve: 0.5
-  effects: []
 --- !u!114 &114312645305890398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,25 +139,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2e43891d24cd5e4d88661059683621e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  department: []
-  monName: 
-  curHealth: 0
-  curDamage: 0
-  canBeDebuffed: 1
-  baseNerve: 0.5
-  curNerve: 0.5
-  effects: []
---- !u!114 &114850600083152804
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1505360056973262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaed08a1b9fcc994bb60e3737545f499, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   department: []
