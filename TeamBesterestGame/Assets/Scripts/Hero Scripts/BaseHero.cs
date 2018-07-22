@@ -33,19 +33,29 @@ public abstract class BaseHero : MonoBehaviour {
 	/// <param name="arm">Base Armor</param>
 	/// <param name="cap"Max holding money>
 	/// <param name="thr">Threat</param>
-    /*
-	public void AssignStats(int hp, int dmg, int val, int arm, int cap, int thr) {
+    
+	public void ManualAssignStats(int hp, int dmg, int arm, int val, int cap, int thr) {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		curRoom = gameManager.spawnRoom.GetComponent<BaseRoom> ();
+
 		this.maxHealth = hp;
-		this.curHealth = hp;
+        this.maxHealth *= gameManager.healthWeight;
+        this.curHealth = this.maxHealth;
+
 		this.damage = dmg;
-		this.value = val;
+        this.damage *= gameManager.attackWeight;
+
 		this.armor = arm;
-		this.capacity = cap;
+        this.armor *= gameManager.defenseWeight;
+
+        this.value = val;
+        this.capacity = cap;
 		this.threat = thr;
-	}
-    */
+
+        damageText = this.gameObject.GetComponentInChildren<Text>();
+        damageText.text = this.curHealth + "hp";
+    }
+    
 
 	///<summary>
 	///Assigns all stats to this hero by getting information from the spreadsheet

@@ -33,8 +33,8 @@ public class GameManager : MonoBehaviour
     public int maximumCurrency = 1500; //public to be edited in editor
 
     //infamy
-    private float infamyLevel = 1;
-    private float infamyXP = 0;
+    private int infamyLevel = 0;
+    private int infamyXP = 0;
     private int xpToNextInfamyLevel = 20;
     private int baseXP = 20;
     public Text infamyLevelText; //public to be assigned in editor
@@ -247,7 +247,7 @@ public class GameManager : MonoBehaviour
     {
         //monsterInstance = currentResumes[activeResume].GetComponent<ResumeScript>().monster;        
         int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
-        float infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
+        int infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
 		monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
         if (currentCurrency >= salary)
         {
@@ -649,13 +649,10 @@ public class GameManager : MonoBehaviour
                     RoomMenu();
                 });
                 break;
-            case 1:
+            case 1: //Cemetary selected
                 roomMenuConfirm.onClick.AddListener(delegate
                 {
-                    //temporary for visual flair, need to swap out with different prefab later
-                    //might come down to instantiating the new prefab with the references already attached?
-                    //that would probably be faster and easier
-                    //selectedObject.GetComponent<SpriteRenderer>().color = Color.grey;
+                    //out with the old, in with the new
                     BaseRoom oldScript = selectedObject.GetComponent<BaseRoom>();
                     GameObject newRoom = Instantiate(possibleRooms[1], selectedObject.transform.position, Quaternion.identity);
                     CemetaryRoom newScript = newRoom.GetComponent<CemetaryRoom>();
@@ -663,41 +660,15 @@ public class GameManager : MonoBehaviour
                     newScript.myY = oldScript.myY;
                     newScript.Initialize();
 
-
-                    //reseting monsters and gold in room
+                    //reseting monsters in room
                     foreach (GameObject monster in oldScript.roomMembers)
                     {
                         AddToDepartment(monster, breakRoomList);
                         monster.transform.position = Vector3.zero;
                     }
-                    CurrencyChanged(oldScript.currentGold);
                     UpdateDepartments();
 
-                    //passing references to new script
-                    
-                   // newScript.confirmationBox = oldScript.confirmationBox;
-                    //newScript.emptyCoin = oldScript.emptyCoin;
-                    //newScript.filledCoin = oldScript.filledCoin;
-                    //newScript.roomMembers = oldScript.roomMembers;
-                    
-
-                    //setting up new coin slots
-                    /*
-                    for (int i = 2; i < 5; i++)
-                    {
-                        int j = i - 1;
-                        //newScript.transform.GetChild(i).GetComponent<SpriteRenderer>().sprite = newScript.emptyCoin; //part of gold reset
-                        EventTrigger trigger = newScript.transform.GetChild(i).GetComponent<EventTrigger>();
-                        EventTrigger.Entry entry = new EventTrigger.Entry();
-                        entry.eventID = EventTriggerType.PointerDown;
-                        entry.callback.AddListener((data) => {
-                            newScript.AddGoldToRoom(j);
-                        });
-                        trigger.triggers.Add(entry);
-                    }
-                    */
-
-                    //and finally get rid of the old script
+                    CurrencyChanged(oldScript.currentGold);
                     Destroy(selectedObject);
                     
                     RoomMenu();
@@ -828,7 +799,7 @@ public class GameManager : MonoBehaviour
 				//Creates a new party with a random hero and adds it to the party list
 				//Temporary, until there are more party types
 				GameObject[] newHero = new GameObject[1];
-				newHero[0] = Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
+				newHero[0] = Instantiate(heroes[0], spawnRoom.transform.position, Quaternion.identity);
 				BaseParty newParty = new TestPart (newHero);
 				this.attackParties.Add (newParty);
 
@@ -975,7 +946,7 @@ public class GameManager : MonoBehaviour
 		int high = 25, low = 10;
 		int divNum = Random.Range(low, high);
 		int gain = characterValue / divNum;
-		infamyXP += divNum;
+		infamyXP += gain;
 
 		if (infamyXP >= xpToNextInfamyLevel)
 		{
