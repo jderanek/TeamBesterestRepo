@@ -382,8 +382,8 @@ public class GameManager : MonoBehaviour
                     newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
                     {
                         monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<BaseRoom>().roomMembers.Remove(monster);
-                        monster.GetComponent<BaseMonster>().setCurRoom(null);
                         AddToDepartment(monster, breakRoomList);
+                        monster.GetComponent<BaseMonster>().setCurRoom(null);
                         monster.transform.position = new Vector3(0, 0, 0);                        
                     });
                 }
@@ -701,12 +701,18 @@ public class GameManager : MonoBehaviour
 
     public void AddToDepartment(GameObject monster, List<GameObject> department)
     {
-        if (monster.GetComponent<BaseMonster>().department != null)
+        BaseMonster monsterScript = monster.GetComponent<BaseMonster>();
+        if (dungeonList.Contains(monster))
         {
-            monster.GetComponent<BaseMonster>().department.Remove(monster);
+            monsterScript.getCurRoom().RemoveRoomEffect(monsterScript);
+        }
+
+        if (monsterScript.department != null)
+        {
+            monsterScript.department.Remove(monster);
         }
         department.Add(monster);
-        monster.GetComponent<BaseMonster>().department = department;
+        monsterScript.department = department;
         UpdateDepartments();
         UpdateMonsters();
     }

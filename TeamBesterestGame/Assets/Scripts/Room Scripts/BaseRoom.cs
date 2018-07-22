@@ -118,6 +118,7 @@ public abstract class BaseRoom : MonoBehaviour {
                     0
                     );
                 roomMembers.Add(gameManager.selectedObject);
+                RoomEffect(gameManager.selectedObject.GetComponent<BaseMonster>());
                 roomThreat += gameManager.selectedObject.GetComponent<BaseMonster>().getThreat();
                 monsterInRoom = true;
                 gameManager.selectedObject.GetComponent<BaseMonster>().setCurRoom(this.gameObject);
@@ -623,4 +624,10 @@ public abstract class BaseRoom : MonoBehaviour {
 
         return true;
     }
+
+    //call when monster enters room
+    abstract public void RoomEffect(BaseMonster monster);
+
+    //call when monster leaves room
+    abstract public void RemoveRoomEffect(BaseMonster monster);
 }

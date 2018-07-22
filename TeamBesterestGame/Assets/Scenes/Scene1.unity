@@ -1757,7 +1757,7 @@ GameObject:
   - component: {fileID: 244951759}
   - component: {fileID: 244951758}
   m_Layer: 5
-  m_Name: Test Option
+  m_Name: Cemetary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6708,7 +6708,7 @@ GameObject:
   - component: {fileID: 956359617}
   - component: {fileID: 956359616}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Cemetary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6764,7 +6764,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Test Option
+  m_Text: Cemetary
 --- !u!222 &956359617
 CanvasRenderer:
   m_ObjectHideFlags: 0

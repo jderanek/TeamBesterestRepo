@@ -138,7 +138,6 @@ public abstract class BaseMonster : MonoBehaviour {
 
 		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
         this.damage *= gameManager.attackWeight;
-		this.curDamage = damage;
         switch((Random.Range(1, 7)) + Random.Range(1, 7) + Random.Range(1, 7))
         {
             case 3:
@@ -162,8 +161,9 @@ public abstract class BaseMonster : MonoBehaviour {
                 this.damage = (int)(this.damage * 1.25f);
                 break;
         }
+        this.curDamage = damage;
 
-		this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
+        this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
         this.armor *= gameManager.defenseWeight;
         switch ((Random.Range(1, 7)) + Random.Range(1, 7) + Random.Range(1, 7))
         {
