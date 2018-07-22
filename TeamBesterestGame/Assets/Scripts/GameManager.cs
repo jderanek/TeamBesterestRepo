@@ -233,7 +233,7 @@ public class GameManager : MonoBehaviour
         };
         CreateNewResume(3);
 
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 7; i++)
         {
             heroSpawnSet.Add(possibleHeroes[i]);
         }
@@ -314,6 +314,7 @@ public class GameManager : MonoBehaviour
 		monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
         if (currentCurrency >= salary)
         {
+            applicationsList.Remove(monsterInstance);
             Destroy(monsterApplicationField);
             monsterInstance.SetActive(true);
             CurrencyChanged(-salary); //this will have to change when the monster inheritance class is set up
@@ -1008,13 +1009,19 @@ public class GameManager : MonoBehaviour
 	//function to 'level up' player -> aka increase infamy level
 	public void IncreaseInfamyXP(int characterValue)
 	{
-        print("boop");
 		int high = 25, low = 10;
 		int divNum = Random.Range(low, high);
 		int gain = characterValue / divNum;
-		infamyXP += gain;
+        if (gain > 1)
+        {
+            infamyXP += gain;
+        }
+        else
+        {
+            infamyXP += 1;
+        }
 
-		if (infamyXP >= xpToNextInfamyLevel)
+        if (infamyXP >= xpToNextInfamyLevel)
 		{
 			infamyLevel += 1;
 			infamyXP -= xpToNextInfamyLevel;
