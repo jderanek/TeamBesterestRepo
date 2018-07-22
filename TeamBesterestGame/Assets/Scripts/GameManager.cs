@@ -152,21 +152,21 @@ public class GameManager : MonoBehaviour
 	public CSVImporter monNames;
 	public CSVImporter heroStats;
 
-	// Use this for initialization
-	void Awake()
-	{
+    // Use this for initialization
+    void Awake()
+    {
         roomList = new GameObject[10, 10];
-		monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv", 
-			"https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
-		monNames = new CSVImporter("NamesWIP - Sheet1.csv",
-			"https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
-		heroStats = new CSVImporter ("Heroes - Sheet1.csv",
-			"https://docs.google.com/spreadsheets/d/e/2PACX-1vROE5F1pcPZ65Zg5H5QsEqwpayjzcLOYQMffmv6E3zjR3tMq7kD68zPNGdrCXmq8w67wZHNNGwehsLo/pub?gid=0&single=true&output=csv");
+        monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv",
+            "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
+        monNames = new CSVImporter("NamesWIP - Sheet1.csv",
+            "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
+        heroStats = new CSVImporter("Heroes - Sheet1.csv",
+            "https://docs.google.com/spreadsheets/d/e/2PACX-1vROE5F1pcPZ65Zg5H5QsEqwpayjzcLOYQMffmv6E3zjR3tMq7kD68zPNGdrCXmq8w67wZHNNGwehsLo/pub?gid=0&single=true&output=csv");
         currentCurrency = 1500;
-		UpdateCurrency ();
-		UpdateInfamy();
-		
-		modifiedHeroSpawnRate = baseHeroSpawnRate;
+        UpdateCurrency();
+        UpdateInfamy();
+
+        modifiedHeroSpawnRate = baseHeroSpawnRate;
 
         currentTime = timePerDay;
         stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
@@ -208,7 +208,7 @@ public class GameManager : MonoBehaviour
                 new GameObject[] //infamy level 0
                 {
                     possibleMonsters[4], possibleMonsters[5]
-                }, 
+                },
                 new GameObject[] //infamy level 1
                 {
                     possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[5],
@@ -222,7 +222,7 @@ public class GameManager : MonoBehaviour
                 new GameObject[] //infamy level 0
                 {
                     possibleMonsters[6], possibleMonsters[7]
-                }, 
+                },
                 new GameObject[] //infamy level 1
                 {
                     possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[7],
@@ -233,8 +233,10 @@ public class GameManager : MonoBehaviour
         };
         CreateNewResume(3);
 
-        heroSpawnSet.Add(possibleHeroes[0]);
-        
+        for (int i = 0; i < 8; i++)
+        {
+            heroSpawnSet.Add(possibleHeroes[i]);
+        }
     }
 
 	void Start() {			
@@ -861,7 +863,7 @@ public class GameManager : MonoBehaviour
 				//Temporary, until there are more party types
 				GameObject[] newHero = new GameObject[1];
                 //grabs a hero from spawn set with equal weight. Maybe best way to affect spawn %s is to just add duplicates to spawn set?
-				newHero[0] = Instantiate(heroSpawnSet[(Random.Range(0, heroSpawnSet.Count + 1))], spawnRoom.transform.position, Quaternion.identity);
+				newHero[0] = Instantiate(heroSpawnSet[Random.Range(0, infamyLevel * 2)], spawnRoom.transform.position, Quaternion.identity);
 				BaseParty newParty = new TestPart (newHero);
 				this.attackParties.Add (newParty);
 
@@ -1006,6 +1008,7 @@ public class GameManager : MonoBehaviour
 	//function to 'level up' player -> aka increase infamy level
 	public void IncreaseInfamyXP(int characterValue)
 	{
+        print("boop");
 		int high = 25, low = 10;
 		int divNum = Random.Range(low, high);
 		int gain = characterValue / divNum;

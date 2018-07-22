@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50724407688829776}
   - component: {fileID: 114926923661289134}
   m_Layer: 0
-  m_Name: Knave
+  m_Name: Hero
   m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
