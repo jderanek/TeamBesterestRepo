@@ -372,13 +372,14 @@ public class GameManager : MonoBehaviour
             var newFieldCanvasRect = newField.transform.GetChild(0).GetComponent<RectTransform>();
 
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = application.GetComponent<SpriteRenderer>().color;
-            newField.GetComponentInChildren<Text>().text = application.name;
+            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = application.name;
+            newFieldCanvas.transform.GetChild(2).GetComponent<Text>().text = application.GetComponent<BaseMonster>().getType();
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(214.77f, 57.4f);
 
             //stats/interview button
-            newFieldCanvas.transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate { Interview(application); });
+            newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { Interview(application); });
             //hire button
-            newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
+            newFieldCanvas.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
 
             newField.transform.SetParent(applicationPanel.transform, false);
 
@@ -436,7 +437,8 @@ public class GameManager : MonoBehaviour
                 var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
                 newField.GetComponent<RectTransform>().sizeDelta = new Vector2(217.44f, 57.4f);
                 newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-                newField.GetComponentInChildren<Text>().text = monster.name;
+                newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
+                newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
                 if (monster.GetComponent<BaseMonster>().department == breakRoomList)
                 {
                     newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Assign";
