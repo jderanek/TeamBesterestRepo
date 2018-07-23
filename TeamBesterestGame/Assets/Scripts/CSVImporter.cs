@@ -42,7 +42,10 @@ public class CSVImporter {
 		this.path += p;
 		this.url = url;
 
-		this.LoadData();
+		if (Application.internetReachability != NetworkReachability.NotReachable)
+			this.LoadData ();
+		else
+			this.ImportData ();
 	}
     
 	//Reads values from a CSV spreadsheet from the given file name
