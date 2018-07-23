@@ -307,6 +307,7 @@ public class GameManager : MonoBehaviour
     //Pass to here when an option is selected in the room menu to add the proper funcionality to the confirm and cancel buttons in it
     public void RoomMenuHandler(int optionSelected)
     {
+        uiManager.roomMenuConfirm.onClick.RemoveAllListeners();
         switch (optionSelected)
         {
             case -1: //destroy room
@@ -322,7 +323,7 @@ public class GameManager : MonoBehaviour
                         this.GetComponent<ConstructionScript>().ClearConstructionIcons();
                         this.GetComponent<ConstructionScript>().StartConstruction();
                         roomCount--;
-                        uiManager.ToggleMenu(5);
+                        uiManager.ToggleMenu(4);
                     });
                 }
                 else
@@ -330,14 +331,14 @@ public class GameManager : MonoBehaviour
                     uiManager.roomMenuConfirm.onClick.AddListener(delegate
                     {
                         print("NO!");
-                        uiManager.ToggleMenu(5);
+                        uiManager.ToggleMenu(4);
                     });
                 }
                 break;
             default: //nothing selected
                 uiManager.roomMenuConfirm.onClick.AddListener(delegate
                 {
-                    uiManager.ToggleMenu(5);
+                    uiManager.ToggleMenu(4);
                 });
                 break;
             case 1: //Cemetary selected
@@ -362,381 +363,12 @@ public class GameManager : MonoBehaviour
                     CurrencyChanged(oldScript.currentGold);
                     Destroy(selectedObject);
 
-                    uiManager.ToggleMenu(5);
+                    uiManager.ToggleMenu(4);
                 });
                 break;
         }
     }
     #endregion
-
-    /*
-    #region UI Stuff
-    //Opens any menu
-    public void ToggleMenu(int menuToOpen)
-    {
-        switch(menuToOpen)
-        {
-            case 1: //Application Menu
-                applicationOpen = !applicationOpen;
-                applicationPanel.SetActive(applicationOpen);
-                monsterOpen = false;
-                monsterPanel.SetActive(false);
-                departmentPanel.SetActive(false);
-                departmentOpen = false;
-                assignmentPanel.SetActive(false);
-                assignmentOpen = false;
-                break;
-            case 2: //Monster Menu
-                monsterOpen = !monsterOpen;
-                monsterPanel.SetActive(monsterOpen);
-                applicationPanel.SetActive(false);
-                applicationOpen = false;
-                departmentPanel.SetActive(false);
-                departmentOpen = false;
-                assignmentPanel.SetActive(false);
-                assignmentOpen = false;
-                break;
-            case 3: //Department Menu
-                departmentOpen = !departmentOpen;
-                departmentPanel.SetActive(departmentOpen);
-                applicationPanel.SetActive(false);
-                applicationOpen = false;
-                monsterPanel.SetActive(false);
-                monsterOpen = false;
-                assignmentPanel.SetActive(false);
-                assignmentOpen = false;
-                break;
-            case 4: //Assignment Menu
-                assignmentOpen = !assignmentOpen;
-                assignmentPanel.SetActive(assignmentOpen);
-                applicationPanel.SetActive(false);
-                applicationOpen = false;
-                departmentPanel.SetActive(false);
-                departmentOpen = false;
-                monsterPanel.SetActive(false);
-                monsterOpen = false;
-                break;
-            case 5: //Room Options Menu
-                if (roomMenuOpen)
-                {
-                    RoomMenuHandler(0);
-                }
-                roomMenuOpen = !roomMenuOpen;
-                roomMenu.SetActive(roomMenuOpen);
-                roomMenuConfirm.onClick.RemoveAllListeners();
-                break;
-            case 6: //Pause Menu
-                pauseMenuOpen = !pauseMenuOpen;
-                pauseMenu.SetActive(pauseMenuOpen);
-                applicationPanel.SetActive(false);
-                applicationOpen = false;
-                departmentPanel.SetActive(false);
-                departmentOpen = false;
-                monsterPanel.SetActive(false);
-                monsterOpen = false;
-                roomMenuOpen = false;
-                roomMenu.SetActive(false);
-                assignmentOpen = false;
-                assignmentPanel.SetActive(false);
-                break;
-        }
-    }
-
-    //function should be called whenever the applicationList is changed
-    public void UpdateApplications()
-    {
-        //reset the panel
-        int childNum = 0;
-        foreach (Transform child in applicationPanel.transform)
-        {
-            if (childNum != 0)
-            {
-                Destroy(child.gameObject);
-            }
-            childNum++;
-        }
-
-        //Create a field for each application pending
-        foreach (GameObject application in applicationsList)
-        {
-            //Create new field in the Application Panel and set up its Name, size, position, and button function
-            var newField = Instantiate(applicationField, new Vector3(0, 0, 0), Quaternion.identity);
-            var newFieldCanvas = newField.transform.GetChild(0);
-            var newFieldCanvasRect = newField.transform.GetChild(0).GetComponent<RectTransform>();
-
-            newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = application.GetComponent<SpriteRenderer>().color;
-            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = application.name;
-            newFieldCanvas.transform.GetChild(2).GetComponent<Text>().text = application.GetComponent<BaseMonster>().getType();
-            newField.GetComponent<RectTransform>().sizeDelta = new Vector2(214.77f, 57.4f);
-
-            //stats/interview button
-            newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { Interview(application); });
-            //hire button
-            newFieldCanvas.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate { HireButton(application, newField); });
-
-            newField.transform.SetParent(applicationPanel.transform, false);
-
-            //manually adjust its position           
-            newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
-            newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-            newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-        }
-    }
-
-    //function should be called whenever the monsterList is changed
-    public void UpdateMonsters()
-    {
-        //reset panel
-        int childNum = 0;
-        foreach (Transform child in monsterPanel.transform)
-        { 
-            if (childNum != 0)
-            {
-                Destroy(child.gameObject);
-            }
-            childNum++;
-        }        
-
-        //create a field for each Monster
-        foreach (GameObject monster in monsterList)
-        {
-            if (!deadMonsters.Contains(monster))
-            {
-                //Create the field and set up its name and button functionality
-                var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
-                var newFieldCanvas = newField.transform.GetChild(0);
-                var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
-                newField.GetComponent<RectTransform>().sizeDelta = new Vector2(217.44f, 57.4f);
-                newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-                newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
-                newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
-                if (monster.GetComponent<BaseMonster>().department == breakRoomList)
-                {
-                    newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Assign";
-                    newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { SelectObject(monster); });
-                }
-                else
-                {
-                    newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Break Time!";
-                    newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
-                    {
-                        monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<BaseRoom>().roomMembers.Remove(monster);
-                        AddToDepartment(monster, breakRoomList);
-                        monster.GetComponent<BaseMonster>().setCurRoom(null);
-                        monster.transform.position = new Vector3(0, 0, 0);                        
-                    });
-                }
-                newField.transform.SetParent(monsterPanel.transform, false);
-
-                //manually adjust its position
-                newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
-                newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-                newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-            }            
-        }
-    }
-
-    //Call this whenever you change the Department Panel
-    public void UpdateDepartments()
-    {
-        //reset panel
-        int childNum = 0;
-        foreach (Transform child in departmentPanel.transform)
-        { if (childNum != 0)
-            {
-                Destroy(child.gameObject);
-            }
-            childNum++;
-        }
-
-        var newBreakRoomHeader = Instantiate(breakRoomHeader, new Vector3(0, 0, 0), Quaternion.identity);
-        newBreakRoomHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
-        newBreakRoomHeader.transform.SetParent(departmentPanel.transform, true);
-        newBreakRoomHeader.GetComponent<Image>().enabled = true;
-        newBreakRoomHeader.GetComponentInChildren<Text>().enabled = true;
-        newBreakRoomHeader.GetComponentInChildren<Text>().text = "Unassigned";
-
-        foreach (GameObject monster in breakRoomList)
-        {
-            var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
-            var newFieldCanvas = newField.transform.GetChild(0);
-            var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
-            newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
-            newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
-            newFieldCanvas.GetChild(3).gameObject.SetActive(false);
-            newField.transform.SetParent(departmentPanel.transform, false);
-
-            //manually adjust its position
-            newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
-            newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-            newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-        }
-
-        var newPRHeader = Instantiate(prHeader, new Vector3(0, 0, 0), Quaternion.identity);
-        newPRHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
-        newPRHeader.transform.SetParent(departmentPanel.transform, false);
-        newPRHeader.GetComponent<Image>().enabled = true;
-        Text newPRHeaderText = newPRHeader.GetComponentInChildren<Text>();
-        newPRHeaderText.enabled = true;
-        newPRHeaderText.text = "Pillaging and Raiding " + prList.Count + "/3";
-
-        foreach (GameObject monster in prList)
-        {
-            var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
-            var newFieldCanvas = newField.transform.GetChild(0);
-            var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
-            newField.GetComponentInChildren<Text>().text = monster.name;
-            newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { AddToDepartment(monster, breakRoomList); });
-            newFieldCanvas.transform.GetChild(3).transform.GetComponentInChildren<Text>().text = "Remove";
-            newField.transform.SetParent(departmentPanel.transform, false);
-                        
-            //manually adjust position
-            newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
-            newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-            newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-        }
-
-        if (prList.Count < prCapacity)
-        {
-            var emptySlotPR = Instantiate(emptySlotField, new Vector3(0, 0, 0), Quaternion.identity);
-            var emptySlotPRCanvas = emptySlotPR.transform.GetChild(0);
-            var emptySlotPRCanvasRect = emptySlotPRCanvas.GetComponent<RectTransform>();
-            emptySlotPR.GetComponentInChildren<Button>().onClick.AddListener(delegate
-            {
-                UpdateAssignment(prList);
-                ToggleMenu(4);
-            });
-            emptySlotPR.transform.SetParent(departmentPanel.transform, false);
-            emptySlotPR.GetComponent<Image>().enabled = true;
-
-            emptySlotPRCanvasRect.anchoredPosition = new Vector2(0, 0);
-            emptySlotPRCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-            emptySlotPRCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-            emptySlotPRCanvas.GetComponent<Canvas>().enabled = true;
-            emptySlotPRCanvas.GetComponent<CanvasScaler>().enabled = true;
-            emptySlotPRCanvas.GetComponent<GraphicRaycaster>().enabled = true;
-        }
-    }
-
-    //Call this to update the assignment menu with monsters availble to be assigned
-    public void UpdateAssignment(List<GameObject> department)
-    {
-        //reset panel
-        int childNum = 0;
-        foreach (Transform child in assignmentPanel.transform)
-        { if (childNum != 0)
-            {
-                Destroy(child.gameObject);
-            }
-            childNum++;
-        }
-
-        //create a field for each Monster
-        foreach (GameObject monster in breakRoomList) //NEED TO USE AN "INACTIVE" LIST FOR THIS LATER
-        {
-            //Create the field and set up its name and button functionality
-            var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
-            var newFieldCanvas = newField.transform.GetChild(0);
-            var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
-            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
-            newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
-
-            newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate 
-            {
-                AddToDepartment(monster, department);
-                ToggleMenu(3);
-            });
-            newField.transform.SetParent(assignmentPanel.transform, false);
-
-            //manually adjust its position            
-            newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
-            newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-            newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-        }
-    }
-
-    //call this when changes are made to the Room Menu
-    public void UpdateRoomMenu()
-    {
-
-    }
-
-    //aggregate stress calculating
-    public void UpdateStressMeter()
-    {
-        float overallStressValue = 0;
-        int monsterCount = 0;
-
-        foreach (GameObject monster in monsterList)
-        {
-            BaseMonster m = monster.GetComponent<BaseMonster>();
-            overallStressValue += m.getStress();
-            monsterCount++;
-        }
-
-        overallStressValue = overallStressValue / monsterCount;
-
-        if (overallStressValue <= 10f)
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 255, 0, 255);
-        }
-        else if (overallStressValue < 20f && overallStressValue > 10f)
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 230, 0, 255);
-        }
-        else if (overallStressValue < 30f && overallStressValue > 20f)
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 205, 0, 255);
-        }
-        else if (overallStressValue < 40f && overallStressValue > 30f)
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 190, 0, 255);
-        }
-        else if (overallStressValue < 50f && overallStressValue > 40f)
-        {
-            stressImage.color = Color.yellow;
-            //stressImage.color = new Color(135, 165, 0, 255);
-        }
-        else if (overallStressValue < 60f && overallStressValue > 50f)
-        {
-            stressImage.color = Color.yellow;
-            //stressImage.color = new Color(135, 140, 0, 255);
-        }
-        else if (overallStressValue < 70f && overallStressValue > 60f)
-        {
-            stressImage.color = Color.yellow;
-            //stressImage.color = new Color(135, 115, 0, 255);
-        }
-        else if (overallStressValue < 80f && overallStressValue > 70f)
-        {
-            stressImage.color = Color.red;
-            //stressImage.color = new Color(135, 90, 0, 255);
-        }
-        else if (overallStressValue < 90f && overallStressValue > 80f)
-        {
-            stressImage.color = Color.red;
-            //stressImage.color = new Color(135, 65, 0, 255);
-        }
-        else if (overallStressValue >= 90f)
-        {
-            stressImage.color = Color.red;
-            //stressImage.color = new Color(135, 40, 0, 255);
-        }
-        else
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 255, 0, 255);
-        }
-
-    }
-    */
 
     //enables interview UI and hides other UI elements that are in the way
     public void Interview(GameObject monster)
@@ -756,20 +388,6 @@ public class GameManager : MonoBehaviour
 
         //this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
     }
-    /*
-
-    public void UpdateCurrency()
-    {
-        currencyText.text = "Gold: " + currentCurrency + " / " + maximumCurrency;
-    }
-
-    public void UpdateInfamy()
-    {
-        infamyLevelText.text = "InfamyLevel: " + infamyLevel;
-        infamyXPText.text = "InfamyXP: " + infamyXP + "/" + xpToNextInfamyLevel;
-    }
-    #endregion
-    */
 
     #region Time Stuff
     public void NewCycle()
