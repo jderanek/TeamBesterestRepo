@@ -375,7 +375,7 @@ public class GameManager : MonoBehaviour
     {
         monsterInstance = monster; //might wanna use selectedObject for consistency - Nate
         interviewing = true;
-        uiManager.menus[3].SetActive(false);
+        uiManager.menus[0].SetActive(false);
         Q1.SetActive(true);
         Q2.SetActive(true);
         Q3.SetActive(true);
