@@ -209,7 +209,7 @@ public class UIManager : MonoBehaviour {
                     newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Break Time!";
                     newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
                     {
-                        monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<BaseRoom>().roomMembers.Remove(monster);
+                        monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<BaseRoom>().roomMembers.Remove(monster);     
                         gameManager.AddToDepartment(monster, gameManager.breakRoomList);
                         monster.GetComponent<BaseMonster>().setCurRoom(null);
                         monster.transform.position = new Vector3(0, 0, 0);

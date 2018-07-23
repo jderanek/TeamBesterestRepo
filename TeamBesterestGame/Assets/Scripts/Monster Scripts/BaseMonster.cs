@@ -72,7 +72,7 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.personality.ApplyBase (this);
 		this.traitName = this.personality.getName ();
 		this.workEthic = Random.Range (-1, 1);
-		this.curRoom = gameManager.spawnRoom;
+		//this.curRoom = gameManager.spawnRoom;
 
         //moved damage text here bc it was throwing error on pre-instantiated monsters
         damageText = this.gameObject.GetComponentInChildren<Text>();
@@ -340,7 +340,14 @@ public abstract class BaseMonster : MonoBehaviour {
 		return this.traitName;
 	}
 	public BaseRoom getCurRoom() {
-		return this.curRoom.GetComponent<BaseRoom> ();
+        if (curRoom != null)
+        {
+            return this.curRoom.GetComponent<BaseRoom>();
+        }
+		else
+        {
+            return null;
+        }
 	}
 	public void setCurRoom(GameObject room) {
 		this.curRoom = room;
@@ -403,18 +410,25 @@ public abstract class BaseMonster : MonoBehaviour {
 		BaseHero heroScript;
 		BaseHero highThreat = null;
 		int threat = int.MinValue;
-		foreach (GameObject hero in this.getCurRoom().heroesInRoom) {
-			if (hero != null) {
-				heroScript = hero.GetComponent<BaseHero> ();
+        if (curRoom != null)
+        {
+            foreach (GameObject hero in this.getCurRoom().heroesInRoom)
+            {
+                if (hero != null)
+                {
+                    heroScript = hero.GetComponent<BaseHero>();
 
-				if (heroScript != null) {
-					if (heroScript.getThreat () > threat) {
-						highThreat = heroScript;
-						threat = heroScript.getThreat ();
-					}
-				}
-			}
-		}
+                    if (heroScript != null)
+                    {
+                        if (heroScript.getThreat() > threat)
+                        {
+                            highThreat = heroScript;
+                            threat = heroScript.getThreat();
+                        }
+                    }
+                }
+            }
+        }
 
 		//Makes hero take damage
 		if (highThreat != null)
