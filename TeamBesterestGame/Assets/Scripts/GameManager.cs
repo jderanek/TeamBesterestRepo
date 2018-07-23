@@ -6,32 +6,46 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
-	//Test Party
-	public TestPart party;
+    #region Declarations
+    //Test Party
+    public TestPart party;
 
     //Array stuff
-    public GameObject[] possibleMonsters;
-    public GameObject[][][] monsterSpawnList;
-    
+    public GameObject[] possibleMonsters; //public to be assigned in editor
+    private GameObject[][][] monsterSpawnList;
     public GameObject monsterInstance; //public to assign reference in editor
+
     public GameObject[] possibleHeroes; //public to be assigned in editor
     private List<GameObject> heroSpawnSet = new List<GameObject>();
 
+    public GameObject[] possibleRooms; //public to be assigned in editor
 
+    //TODO jagged array is faster, need to convert
+    public GameObject[,] roomList; //public to be accessed by room script
+    public int roomCount = 1; //Number of rooms in dungeon
+
+    //WHOLE BUNCH OF FUCKING LISSSTTSSSTSTTST
+    [HideInInspector]
+    public List<GameObject> monsterList = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> breakRoomList = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> dungeonList = new List<GameObject>();
+    [HideInInspector]
+    public List<GameObject> prList = new List<GameObject>();
+    [HideInInspector]
+    public List<BaseParty> attackParties = new List<BaseParty>();
+    [HideInInspector]
+    public List<GameObject> deadMonsters = new List<GameObject>(); //for the corporeally challenged
+
+    //TODO getter and setter
     [HideInInspector]
     public GameObject selectedObject;
 
     //Balance stuff
-    public int healthWeight = 10;
-    public int attackWeight = 3;
-    public int defenseWeight = 2;
-
-    //Room Stuff
-    public GameObject[] possibleRooms;
-
-    //Aggregate Stress Stuff
-    [HideInInspector]
-    public Image stressImage; //public to assign reference in editor
+    public int healthWeight = 10; //public for testing in editor
+    public int attackWeight = 3; //public for testing in editor
+    public int defenseWeight = 2; //public for testing in editor
 
 	//Money Stuff
     //TODO getters and setters
@@ -40,10 +54,10 @@ public class GameManager : MonoBehaviour
     public int maximumCurrency = 1500; //public to be edited in editor
 
     //infamy
-    private int infamyLevel = 0;
-    private int infamyXP = 0;
-    private int xpToNextInfamyLevel = 20;
-    private int baseXP = 20;
+    public int infamyLevel = 0; //public to be tested in editor
+    public int infamyXP = 0; //public to be tested in editor
+    public int xpToNextInfamyLevel = 20; //public to be tested in editor
+    public int baseXP = 20; //public to be tested in editor
     public Text infamyLevelText; //public to be assigned in editor
     public Text infamyXPText; //public to be assigned in editor
 
@@ -94,57 +108,40 @@ public class GameManager : MonoBehaviour
     public Canvas canvas;
     public Font arial;
 
-    public GameObject emptyField;
-    public GameObject applicationPanel;
-    public GameObject monsterPanel;
-    public GameObject departmentPanel;
-    public GameObject assignmentPanel;
-    public GameObject breakRoomHeader;
-    public GameObject prHeader;
+    public GameObject emptyField; //public to be assigned in editor
+    public GameObject applicationPanel; //public to be assigned in editor
+    public GameObject monsterPanel; //public to be assigned in editor
+    public GameObject departmentPanel; //public to be assigned in editor
+    public GameObject assignmentPanel; //public to be assigned in editor
+    public GameObject breakRoomHeader; //public to be assigned in editor
+    public GameObject prHeader; //public to be assigned in editor
     private int prCapacity = 3;
-    public GameObject hrHeader;
+    public GameObject hrHeader; //public to be assigned in editor
     private int hrCapacity = 3;
-    public GameObject emptySlotField;
+    public GameObject emptySlotField; //public to be assigned in editor
     private bool applicationOpen = false;
     private bool monsterOpen = false;
     private bool departmentOpen = false;
     private bool assignmentOpen = false;
-    public GameObject applicationField;
-    public GameObject monsterField;
+    public GameObject applicationField; //public to be assigned in editor
+    public GameObject monsterField; //public to be assigned in editor
 
-    public GameObject roomMenu;
-    public Button roomMenuConfirm;
-    public Button roomMenuCancel;
+    public GameObject roomMenu; //public to be assigned in editor
+    public Button roomMenuConfirm; //public to be assigned in editor
+    public Button roomMenuCancel; //public to be assigned in editor
     private bool roomMenuOpen = false;
     private int roomOptionSelected;
 
     private bool pauseMenuOpen = false;
-    public GameObject pauseMenu;
+    public GameObject pauseMenu; //public to be assigned in editor
     private List<GameObject> applicationsList = new List<GameObject>();
-    public GameObject applicantButton;
+    public GameObject applicantButton; //public to be assigned in editor
     public GameObject constructionButton; //public to be assigned in editor
     public GameObject roomButton; //public to be assigned in editor
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
-    
-    //TODO jagged array is faster, need to convert
-    public GameObject[,] roomList; //public to be accessed by room script
-	public int roomCount = 1; //Number of rooms in dungeon
-
-    //WHOLE BUNCH OF FUCKING LISSSTTSSSTSTTST
-    [HideInInspector]
-    public List<GameObject> monsterList = new List<GameObject>();
-    [HideInInspector]
-    public List<GameObject> breakRoomList = new List<GameObject>();
-    [HideInInspector]
-    public List<GameObject> dungeonList = new List<GameObject>();
-    [HideInInspector]
-    public List<GameObject> prList = new List<GameObject>();
-    [HideInInspector]
-    public List<BaseParty> attackParties = new List<BaseParty> ();
-    [HideInInspector]
-    public List<GameObject> deadMonsters = new List<GameObject>(); //for the corporeally challenged
+    public Image stressImage; //public to assign reference in editor
 
     //CSVImporter for Monsters and Heroes
     //public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
@@ -152,6 +149,9 @@ public class GameManager : MonoBehaviour
 	public CSVImporter monNames;
 	public CSVImporter heroStats;
 
+    #endregion
+
+    #region Initialization
     // Use this for initialization
     void Awake()
     {
@@ -269,34 +269,63 @@ public class GameManager : MonoBehaviour
 		}
         */
     }
+    #endregion
 
-	// Update is called once per frame
-	void Update()
+    #region Handlers
+    public GameObject SpawnMonster()
     {
-	
-	}
-
-	public GameObject SpawnMonster()
-	{
         int rand = Random.Range(0, 4);
         GameObject monsterPrefab = monsterSpawnList[rand][infamyLevel][Random.Range(0, monsterSpawnList[rand][infamyLevel].Length)];
-		GameObject newMonster = Instantiate(monsterPrefab, new Vector3(0,0,0), Quaternion.identity);
-		newMonster.GetComponent<BaseMonster> ().AssignStats (monsterPrefab.name);
-		newMonster.SetActive(false);
-		return newMonster;
-	}
+        GameObject newMonster = Instantiate(monsterPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        newMonster.GetComponent<BaseMonster>().AssignStats(monsterPrefab.name);
+        newMonster.SetActive(false);
+        return newMonster;
+    }
 
     public void SelectObject(GameObject otherObject)
     {
         selectedObject = otherObject;
     }
 
-    public void MoveMonster()
+    public void AddToDepartment(GameObject monster, List<GameObject> department)
     {
+        BaseMonster monsterScript = monster.GetComponent<BaseMonster>();
+        if (dungeonList.Contains(monster))
+        {
+            monsterScript.getCurRoom().RemoveRoomEffect(monsterScript);
+        }
 
+        if (monsterScript.department != null)
+        {
+            monsterScript.department.Remove(monster);
+        }
+        department.Add(monster);
+        monsterScript.department = department;
+        UpdateDepartments();
+        UpdateMonsters();
     }
 
-	public void CreateNewResume(int resumesToCreate)
+    public void HireButton(GameObject monsterInstance, GameObject monsterApplicationField)
+    {
+        int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
+        int infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
+        monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
+        if (currentCurrency >= salary)
+        {
+            applicationsList.Remove(monsterInstance);
+            Destroy(monsterApplicationField);
+            monsterInstance.SetActive(true);
+            CurrencyChanged(-salary);
+            IncreaseInfamyXP(monsterInstance.GetComponent<BaseMonster>().getThreat());
+            monsterList.Add(monsterInstance);
+            AddToDepartment(monsterInstance, breakRoomList);
+            UpdateMonsters();
+            UpdateDepartments();
+            UpdateStressMeter();
+        }
+    }
+
+    public void CreateNewResume(int resumesToCreate)
 	{
 		for (int i = 0; i < resumesToCreate; i++)
 		{
@@ -307,26 +336,72 @@ public class GameManager : MonoBehaviour
         UpdateApplications();
 	}
 
-    public void HireButton(GameObject monsterInstance, GameObject monsterApplicationField)
-    {  
-        int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
-        int infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
-		monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
-        if (currentCurrency >= salary)
+    //Pass to here when an option is selected in the room menu to add the proper funcionality to the confirm and cancel buttons in it
+    public void RoomMenuHandler(int optionSelected)
+    {
+        switch (optionSelected)
         {
-            applicationsList.Remove(monsterInstance);
-            Destroy(monsterApplicationField);
-            monsterInstance.SetActive(true);
-            CurrencyChanged(-salary); //this will have to change when the monster inheritance class is set up
-            IncreaseInfamyXP(monsterInstance.GetComponent<BaseMonster>().getThreat());
-            monsterList.Add(monsterInstance);
-            AddToDepartment(monsterInstance, breakRoomList);
-            UpdateMonsters();
-            UpdateDepartments();
-            UpdateStressMeter();
+            case -1: //destroy room
+                     //Checks if the room can be destroyed
+                if (selectedObject.GetComponent<BaseRoom>().CanRemove())
+                {
+                    roomMenuConfirm.onClick.AddListener(delegate
+                    {
+                        CurrencyChanged(50);
+                        roomList[selectedObject.GetComponent<BaseRoom>().myX, selectedObject.GetComponent<BaseRoom>().myY] = null;
+                        selectedObject.GetComponent<BaseRoom>().UpdateNeighbors();
+                        Destroy(selectedObject);
+                        this.GetComponent<ConstructionScript>().ClearConstructionIcons();
+                        this.GetComponent<ConstructionScript>().StartConstruction();
+                        roomCount--;
+                        RoomMenu();
+                    });
+                }
+                else
+                {
+                    roomMenuConfirm.onClick.AddListener(delegate
+                    {
+                        print("NO!");
+                        RoomMenu();
+                    });
+                }
+                break;
+            default: //nothing selected
+                roomMenuConfirm.onClick.AddListener(delegate
+                {
+                    RoomMenu();
+                });
+                break;
+            case 1: //Cemetary selected
+                roomMenuConfirm.onClick.AddListener(delegate
+                {
+                    //out with the old, in with the new
+                    BaseRoom oldScript = selectedObject.GetComponent<BaseRoom>();
+                    GameObject newRoom = Instantiate(possibleRooms[1], selectedObject.transform.position, Quaternion.identity);
+                    CemetaryRoom newScript = newRoom.GetComponent<CemetaryRoom>();
+                    newScript.myX = oldScript.myX;
+                    newScript.myY = oldScript.myY;
+                    newScript.Initialize();
+
+                    //reseting monsters in room
+                    foreach (GameObject monster in oldScript.roomMembers)
+                    {
+                        AddToDepartment(monster, breakRoomList);
+                        monster.transform.position = Vector3.zero;
+                    }
+                    UpdateDepartments();
+
+                    CurrencyChanged(oldScript.currentGold);
+                    Destroy(selectedObject);
+
+                    RoomMenu();
+                });
+                break;
         }
     }
+    #endregion
 
+    #region UI Stuff
     //Opens the Applications Panel
     public void ApplicationsMenu()
     {
@@ -458,7 +533,6 @@ public class GameManager : MonoBehaviour
                 newField.transform.SetParent(monsterPanel.transform, false);
 
                 //manually adjust its position
-                
                 newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
                 newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
                 newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
@@ -522,33 +596,14 @@ public class GameManager : MonoBehaviour
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
             newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
-            /*
-            newField.GetComponentInChildren<Button>().onClick.AddListener(delegate {
-                SelectObject(monster);
-                //AddToDepartment(monster, dungeonList);
-            });
-            */
             newFieldCanvas.GetChild(3).gameObject.SetActive(false);
             newField.transform.SetParent(departmentPanel.transform, false);
 
             //manually adjust its position
-            
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
             newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
         }
-
-        //Dont think that break room needs an assingment button but this code will make it happen lol
-        /*
-        var emptySlotBreakRoom = Instantiate(emptySlotField, new Vector3(0, 0, 0), Quaternion.identity);
-        emptySlotBreakRoom.GetComponentInChildren<Button>().onClick.AddListener(delegate {  });
-        emptySlotBreakRoom.transform.SetParent(departmentPanel.transform, false);
-
-        var emptySlotBreakRoomCanvas = emptySlotBreakRoom.transform.GetChild(0);
-        emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
-        emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
-        emptySlotBreakRoomCanvas.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
-        */
 
         var newPRHeader = Instantiate(prHeader, new Vector3(0, 0, 0), Quaternion.identity);
         newPRHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
@@ -569,6 +624,7 @@ public class GameManager : MonoBehaviour
             newFieldCanvas.transform.GetChild(3).transform.GetComponentInChildren<Text>().text = "Remove";
             newField.transform.SetParent(departmentPanel.transform, false);
                         
+            //manually adjust position
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
             newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
@@ -669,88 +725,125 @@ public class GameManager : MonoBehaviour
 
     }
 
-    //Pass to here when an option is selected in the room menu to add the proper funcionality to the confirm and cancel buttons in it
-    public void RoomMenuHandler(int optionSelected)
+    //Opens pause menu
+    public void PauseMenu()
     {
-        switch (optionSelected)
+        if (!pauseMenuOpen)
         {
-            case -1: //destroy room
-                     //Checks if the room can be destroyed
-                if (selectedObject.GetComponent<BaseRoom>().CanRemove())
-                {
-                    roomMenuConfirm.onClick.AddListener(delegate
-                    {
-                        CurrencyChanged(50);
-                        roomList[selectedObject.GetComponent<BaseRoom>().myX, selectedObject.GetComponent<BaseRoom>().myY] = null;
-                        selectedObject.GetComponent<BaseRoom>().UpdateNeighbors();
-                        Destroy(selectedObject);
-                        this.GetComponent<ConstructionScript>().ClearConstructionIcons();
-                        this.GetComponent<ConstructionScript>().StartConstruction();
-                        roomCount--;
-                        RoomMenu();
-                    });
-                }
-                else
-                {
-                    roomMenuConfirm.onClick.AddListener(delegate
-                    {
-                        print("NO!");
-                        RoomMenu();
-                    });
-                }
-                break;
-            default: //nothing selected
-                roomMenuConfirm.onClick.AddListener(delegate
-                {
-                    RoomMenu();
-                });
-                break;
-            case 1: //Cemetary selected
-                roomMenuConfirm.onClick.AddListener(delegate
-                {
-                    //out with the old, in with the new
-                    BaseRoom oldScript = selectedObject.GetComponent<BaseRoom>();
-                    GameObject newRoom = Instantiate(possibleRooms[1], selectedObject.transform.position, Quaternion.identity);
-                    CemetaryRoom newScript = newRoom.GetComponent<CemetaryRoom>();
-                    newScript.myX = oldScript.myX;
-                    newScript.myY = oldScript.myY;
-                    newScript.Initialize();
-
-                    //reseting monsters in room
-                    foreach (GameObject monster in oldScript.roomMembers)
-                    {
-                        AddToDepartment(monster, breakRoomList);
-                        monster.transform.position = Vector3.zero;
-                    }
-                    UpdateDepartments();
-
-                    CurrencyChanged(oldScript.currentGold);
-                    Destroy(selectedObject);
-                    
-                    RoomMenu();
-                });
-                break;
+            pauseMenuOpen = true;
+            pauseMenu.SetActive(true);
+        }
+        else
+        {
+            pauseMenuOpen = false;
+            pauseMenu.SetActive(false);
         }
     }
 
-    public void AddToDepartment(GameObject monster, List<GameObject> department)
+    //aggregate stress calculating
+    public void UpdateStressMeter()
     {
-        BaseMonster monsterScript = monster.GetComponent<BaseMonster>();
-        if (dungeonList.Contains(monster))
+        float overallStressValue = 0;
+        int monsterCount = 0;
+
+        foreach (GameObject monster in monsterList)
         {
-            monsterScript.getCurRoom().RemoveRoomEffect(monsterScript);
+            BaseMonster m = monster.GetComponent<BaseMonster>();
+            overallStressValue += m.getStress();
+            monsterCount++;
         }
 
-        if (monsterScript.department != null)
+        overallStressValue = overallStressValue / monsterCount;
+
+        if (overallStressValue <= 10f)
         {
-            monsterScript.department.Remove(monster);
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 255, 0, 255);
         }
-        department.Add(monster);
-        monsterScript.department = department;
-        UpdateDepartments();
-        UpdateMonsters();
+        else if (overallStressValue < 20f && overallStressValue > 10f)
+        {
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 230, 0, 255);
+        }
+        else if (overallStressValue < 30f && overallStressValue > 20f)
+        {
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 205, 0, 255);
+        }
+        else if (overallStressValue < 40f && overallStressValue > 30f)
+        {
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 190, 0, 255);
+        }
+        else if (overallStressValue < 50f && overallStressValue > 40f)
+        {
+            stressImage.color = Color.yellow;
+            //stressImage.color = new Color(135, 165, 0, 255);
+        }
+        else if (overallStressValue < 60f && overallStressValue > 50f)
+        {
+            stressImage.color = Color.yellow;
+            //stressImage.color = new Color(135, 140, 0, 255);
+        }
+        else if (overallStressValue < 70f && overallStressValue > 60f)
+        {
+            stressImage.color = Color.yellow;
+            //stressImage.color = new Color(135, 115, 0, 255);
+        }
+        else if (overallStressValue < 80f && overallStressValue > 70f)
+        {
+            stressImage.color = Color.red;
+            //stressImage.color = new Color(135, 90, 0, 255);
+        }
+        else if (overallStressValue < 90f && overallStressValue > 80f)
+        {
+            stressImage.color = Color.red;
+            //stressImage.color = new Color(135, 65, 0, 255);
+        }
+        else if (overallStressValue >= 90f)
+        {
+            stressImage.color = Color.red;
+            //stressImage.color = new Color(135, 40, 0, 255);
+        }
+        else
+        {
+            stressImage.color = Color.green;
+            //stressImage.color = new Color(135, 255, 0, 255);
+        }
+
     }
 
+    public void Interview(GameObject monster)//enables interview UI and hides other UI elements that are in the way
+    {
+        monsterInstance = monster;
+        interviewing = true;
+        applicationPanel.SetActive(false);
+        Q1.SetActive(true);
+        Q2.SetActive(true);
+        Q3.SetActive(true);
+        Q4.SetActive(true);
+        Q5.SetActive(true);
+        interviewImage.SetActive(true);
+        interviewResponse.SetActive(true);
+        interviewExit.SetActive(true);
+
+
+        //this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
+    }
+
+    public void UpdateCurrency()
+    {
+        currencyText.text = "Gold: " + currentCurrency + " / " + maximumCurrency;
+    }
+
+    public void UpdateInfamy()
+    {
+        infamyLevelText.text = "InfamyLevel: " + infamyLevel;
+        infamyXPText.text = "InfamyXP: " + infamyXP + "/" + xpToNextInfamyLevel;
+    }
+    #endregion
+
+    #region Time Stuff
     public void NewCycle()
 	{
 		currentTime = timePerDay;
@@ -919,8 +1012,44 @@ public class GameManager : MonoBehaviour
 		//party.MoveToNextRoom ();
 	}
 
-	public void ToggleConstruction()
-	{
+    //New day handler to apply effects on start of day
+    public void DayHandler()
+    {
+        if (!paused)
+        {
+            TogglePlay();
+        }
+        currentTime = timePerDay;
+        timeUnitText.text = currentTime.ToString();
+    }
+
+    //New week handler to apply effects on start of week
+    public void WeekHandler()
+    {
+        foreach (GameObject room in roomList)
+        {
+            foreach (GameObject monster in room.GetComponent<BaseRoom>().roomMembers)
+            {
+                BaseMonster monScript = monster.GetComponent<BaseMonster>();
+
+                if (monScript != null)
+                {
+                    if (monScript.getTrait() != null)
+                    {
+                        monScript.personality.ApplyWeekEffects(monScript);
+                    }
+                }
+
+                monScript.setHasFought(false);
+            }
+        }
+    }
+    #endregion
+
+    #region State Managers
+
+    public void ToggleConstruction()
+    {
         if (inConstructionMode)
         {
             foreach (GameObject room in roomList)
@@ -931,71 +1060,18 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
-		inConstructionMode = !inConstructionMode;
-	}
+        inConstructionMode = !inConstructionMode;
+    }
 
-	public void GoldGainedOnDeath (int goldValue)
-	{
-		currentCurrency += goldValue;
-		UpdateCurrency();
-	}
+    #endregion
 
-	//changes value of currency and updates UI
-	//Takes: integer (either positive or negative)
-	public void CurrencyChanged(int value)
+    #region Getters and Setters
+    //changes value of currency and updates UI
+    //Takes: integer (either positive or negative)
+    public void CurrencyChanged(int value)
 	{
 		currentCurrency += value;
 		UpdateCurrency();
-	}
-
-	public void UpdateCurrency()
-	{
-		currencyText.text = "Gold: " + currentCurrency + " / " + maximumCurrency;
-	}
-
-	public void Interview(GameObject monster)//enables interview UI and hides other UI elements that are in the way
-	{
-        monsterInstance = monster;
-		interviewing = true;
-        applicationPanel.SetActive(false);
-        Q1.SetActive(true);
-        Q2.SetActive(true);
-        Q3.SetActive(true);
-        Q4.SetActive(true);
-        Q5.SetActive(true);
-        interviewImage.SetActive(true);
-        interviewResponse.SetActive(true);
-		interviewExit.SetActive(true);
-
-
-		//this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
-	}
-
-	//New day handler to apply effects on start of day
-	public void DayHandler() {
-        if (!paused)
-        {
-            TogglePlay();
-        }
-        currentTime = timePerDay;
-        timeUnitText.text = currentTime.ToString();
-    }
-
-	//New week handler to apply effects on start of week
-	public void WeekHandler() {
-		foreach (GameObject room in roomList) {
-			foreach (GameObject monster in room.GetComponent<BaseRoom>().roomMembers) {
-				BaseMonster monScript = monster.GetComponent<BaseMonster> ();
-
-				if (monScript != null) {
-					if (monScript.getTrait() != null) {
-						monScript.personality.ApplyWeekEffects (monScript);
-					}
-				}
-
-				monScript.setHasFought(false);
-			}
-		}
 	}
 
 	//function to 'level up' player -> aka increase infamy level
@@ -1050,97 +1126,5 @@ public class GameManager : MonoBehaviour
 		int xpNeeded = Mathf.FloorToInt(xp * (Mathf.Pow(infamyLevel, exponent)));
 		return xpNeeded;
 	}
-
-    public void UpdateInfamy()
-    {
-        infamyLevelText.text = "InfamyLevel: " + infamyLevel;
-        infamyXPText.text = "InfamyXP: " + infamyXP + "/" + xpToNextInfamyLevel;
-    }
-
-    public void PauseMenu()
-    {
-        if (!pauseMenuOpen)
-        {
-            pauseMenuOpen = true;
-            pauseMenu.SetActive(true);
-        }
-        else
-        {
-            pauseMenuOpen = false;
-            pauseMenu.SetActive(false);
-        }
-    }
-
-    //aggregate stress calculating
-    public void UpdateStressMeter()
-    {
-        float overallStressValue = 0;
-        int monsterCount = 0;
-
-        foreach (GameObject monster in monsterList)
-        {
-            BaseMonster m = monster.GetComponent<BaseMonster>();
-			overallStressValue += m.getStress();
-            monsterCount++;
-        }
-
-        overallStressValue = overallStressValue / monsterCount;
-
-        if (overallStressValue <= 10f)
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 255, 0, 255);
-        }
-        else if (overallStressValue < 20f && overallStressValue > 10f)
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 230, 0, 255);
-        }
-        else if (overallStressValue < 30f && overallStressValue > 20f)
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 205, 0, 255);
-        }
-        else if (overallStressValue < 40f && overallStressValue > 30f)
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 190, 0, 255);
-        }
-        else if (overallStressValue < 50f && overallStressValue > 40f)
-        {
-            stressImage.color = Color.yellow;
-            //stressImage.color = new Color(135, 165, 0, 255);
-        }
-        else if (overallStressValue < 60f && overallStressValue > 50f)
-        {
-            stressImage.color = Color.yellow;
-            //stressImage.color = new Color(135, 140, 0, 255);
-        }
-        else if (overallStressValue < 70f && overallStressValue > 60f)
-        {
-            stressImage.color = Color.yellow;
-            //stressImage.color = new Color(135, 115, 0, 255);
-        }
-        else if (overallStressValue < 80f && overallStressValue > 70f)
-        {
-            stressImage.color = Color.red;
-            //stressImage.color = new Color(135, 90, 0, 255);
-        }
-        else if (overallStressValue < 90f && overallStressValue > 80f)
-        {
-            stressImage.color = Color.red;
-            //stressImage.color = new Color(135, 65, 0, 255);
-        }
-        else if (overallStressValue >= 90f)
-        {
-            stressImage.color = Color.red;
-            //stressImage.color = new Color(135, 40, 0, 255);
-        }
-        else
-        {
-            stressImage.color = Color.green;
-            //stressImage.color = new Color(135, 255, 0, 255);
-        }
-
-    }
+    #endregion
 }

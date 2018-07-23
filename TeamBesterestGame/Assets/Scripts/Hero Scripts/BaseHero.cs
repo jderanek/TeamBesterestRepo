@@ -173,7 +173,7 @@ public abstract class BaseHero : MonoBehaviour {
 
 			gameManager.GetComponent<GameManager> ().IncreaseInfamyXP (this.threat);
 			if (gameManager.currentCurrency < gameManager.maximumCurrency) {
-				gameManager.GoldGainedOnDeath (this.value);
+				gameManager.CurrencyChanged(this.value);
 			}
 		}
 		currentParty.partyMembers.Remove (this);
