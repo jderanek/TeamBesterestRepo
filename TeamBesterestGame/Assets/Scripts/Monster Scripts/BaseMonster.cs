@@ -38,6 +38,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	GameObject curRoom;
 	Text damageText;
 	GameManager gameManager;
+    UIManager uiManager;
 	float xpMod = 1f;
 	float goldMod = 1f;
 	int breakdowns = 3;
@@ -56,6 +57,7 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	void Awake() {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+        uiManager = gameManager.GetComponent<UIManager>();
 		//monsterGrabbed = true; //this is outdated I think, need to sort that out soon
         //setCurRoom(GameObject.FindGameObjectWithTag("Room"));
        // this.transform.position.Set(curRoom.transform.position.x, curRoom.transform.position.y, 0);
@@ -412,7 +414,7 @@ public abstract class BaseMonster : MonoBehaviour {
 		//Destroy(gameObject);
 		gameObject.SetActive(false);
         gameManager.AddToDepartment(gameObject, gameManager.deadMonsters);
-        gameManager.UpdateDepartments();
+        uiManager.UpdateDepartments();
 	}
 
 	//Applies personality effects to the monster, as well as other stat modifiers

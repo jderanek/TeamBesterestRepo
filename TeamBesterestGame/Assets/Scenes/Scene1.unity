@@ -3489,13 +3489,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031783964}
+      - m_Target: {fileID: 1031783968}
         m_MethodName: ToggleMenu
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3611,13 +3611,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031783964}
+      - m_Target: {fileID: 1031783968}
         m_MethodName: ToggleMenu
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5599,13 +5599,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1031783964}
+      - m_Target: {fileID: 1031783968}
         m_MethodName: ToggleMenu
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6089,13 +6089,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031783964}
+      - m_Target: {fileID: 1031783968}
         m_MethodName: ToggleMenu
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6959,13 +6959,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031783964}
+      - m_Target: {fileID: 1031783968}
         m_MethodName: ToggleMenu
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7027,6 +7027,7 @@ GameObject:
   - component: {fileID: 1031783964}
   - component: {fileID: 1031783966}
   - component: {fileID: 1031783967}
+  - component: {fileID: 1031783968}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: GameController
@@ -7082,6 +7083,7 @@ MonoBehaviour:
   dungeonList: []
   prList: []
   deadMonsters: []
+  applicationsList: []
   selectedObject: {fileID: 0}
   healthWeight: 10
   attackWeight: 3
@@ -7116,31 +7118,6 @@ MonoBehaviour:
   interviewImage: {fileID: 355529625}
   interviewBackground: {fileID: 0}
   interviewExit: {fileID: 4713407}
-  canvas: {fileID: 1495284377}
-  arial: {fileID: 0}
-  emptyField: {fileID: 1896282377797680, guid: 4269d2d07298d3f4ea33bc88d3e8ad76, type: 2}
-  applicationPanel: {fileID: 918421246}
-  monsterPanel: {fileID: 658919596}
-  departmentPanel: {fileID: 1141890092}
-  assignmentPanel: {fileID: 249430392}
-  breakRoomHeader: {fileID: 1477375001306068, guid: a1df858c5ee6e8445b14cba06569809c,
-    type: 2}
-  prHeader: {fileID: 1539148127876602, guid: 72666d51cddb8024292be3ab6411ac73, type: 2}
-  hrHeader: {fileID: 1880621611883682, guid: 739f22b152d3e964d84560c86974d9da, type: 2}
-  emptySlotField: {fileID: 1896282377797680, guid: 4269d2d07298d3f4ea33bc88d3e8ad76,
-    type: 2}
-  applicationField: {fileID: 1109429727128744, guid: b0a89e43117e1064e861a474e4c1e01e,
-    type: 2}
-  monsterField: {fileID: 1019801905109112, guid: f96e23bb6e6d2ff4ba58c4c65bf0f2a3,
-    type: 2}
-  roomMenu: {fileID: 589762297}
-  roomMenuConfirm: {fileID: 145636449}
-  roomMenuCancel: {fileID: 1439441504}
-  pauseMenu: {fileID: 1431481489}
-  applicantButton: {fileID: 1035185983881526, guid: 3ddbaedde73aa49499169f7ad1b844d4,
-    type: 2}
-  constructionButton: {fileID: 36520027}
-  roomButton: {fileID: 0}
   spawnRoom: {fileID: 1893377716}
   bossRoom: {fileID: 1306698472}
   stressImage: {fileID: 0}
@@ -7199,6 +7176,47 @@ MonoBehaviour:
   room: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
+--- !u!114 &1031783968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031783963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223c4a425957dbd47b475d03e3f0c3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1031783964}
+  canvas: {fileID: 1495284377}
+  arial: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  menus:
+  - {fileID: 918421246}
+  - {fileID: 658919596}
+  - {fileID: 1141890092}
+  - {fileID: 249430392}
+  - {fileID: 589762297}
+  - {fileID: 1431481489}
+  emptyField: {fileID: 1019801905109112, guid: f96e23bb6e6d2ff4ba58c4c65bf0f2a3, type: 2}
+  breakRoomHeader: {fileID: 1477375001306068, guid: a1df858c5ee6e8445b14cba06569809c,
+    type: 2}
+  prHeader: {fileID: 1539148127876602, guid: 72666d51cddb8024292be3ab6411ac73, type: 2}
+  hrHeader: {fileID: 1880621611883682, guid: 739f22b152d3e964d84560c86974d9da, type: 2}
+  applicationField: {fileID: 1109429727128744, guid: b0a89e43117e1064e861a474e4c1e01e,
+    type: 2}
+  monsterField: {fileID: 1019801905109112, guid: f96e23bb6e6d2ff4ba58c4c65bf0f2a3,
+    type: 2}
+  roomMenu: {fileID: 589762297}
+  roomMenuConfirm: {fileID: 145636449}
+  roomMenuCancel: {fileID: 1439441504}
+  pauseMenu: {fileID: 1431481489}
+  applicantButton: {fileID: 1035185983881526, guid: 3ddbaedde73aa49499169f7ad1b844d4,
+    type: 2}
+  constructionButton: {fileID: 36520027}
+  stressImage: {fileID: 305197058}
+  infamyLevelText: {fileID: 1261450294}
+  infamyXPText: {fileID: 1321988804}
+  currencyText: {fileID: 935864226}
 --- !u!1 &1060937996
 GameObject:
   m_ObjectHideFlags: 0

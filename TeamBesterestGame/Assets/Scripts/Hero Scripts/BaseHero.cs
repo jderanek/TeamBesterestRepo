@@ -19,6 +19,7 @@ public abstract class BaseHero : MonoBehaviour {
 	private BaseRoom curRoom;
 	BaseParty currentParty;
 	GameManager gameManager;
+    UIManager uiManager;
     Text damageText;
 
 	//Variables not set by assignment
@@ -36,6 +37,7 @@ public abstract class BaseHero : MonoBehaviour {
     
 	public void ManualAssignStats(int hp, int dmg, int arm, int val, int cap, int thr) {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+        uiManager = gameManager.GetComponent<UIManager>();
 		curRoom = gameManager.spawnRoom.GetComponent<BaseRoom> ();
 
 		this.maxHealth = hp;
@@ -225,7 +227,7 @@ public abstract class BaseHero : MonoBehaviour {
 		{
 			holding += 100;
 			gameManager.currentCurrency -= 100;
-			gameManager.UpdateCurrency();
+			uiManager.UpdateCurrency();
 			/*if (holding == capacity)
 			{
 				Destroy(gameObject);

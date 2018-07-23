@@ -13,6 +13,7 @@ public abstract class BaseRoom : MonoBehaviour {
 	int threat = 0;
 
     private GameManager gameManager;
+    private UIManager uiManager;
 
     public GameObject canvas;
     public GameObject confirmationBox;
@@ -88,22 +89,23 @@ public abstract class BaseRoom : MonoBehaviour {
         Initialize();
     }  
 
-     public void Initialize()
+    public void Initialize()
     {
-            gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-            gameManager.roomList[myX, myY] = gameObject;
-            UpdateNeighbors();
-            canvas = GameObject.FindGameObjectWithTag("Canvas");
-            if (!(this.CompareTag("Spawn Room") || this.CompareTag("Boss Room")))
-            {
-                coin1 = transform.GetChild(2).GetComponent<SpriteRenderer>();
-                coin2 = transform.GetChild(3).GetComponent<SpriteRenderer>();
-                coin3 = transform.GetChild(4).GetComponent<SpriteRenderer>();
-            }
-            northDoor = transform.GetChild(1).GetChild(0).gameObject;
-            southDoor = transform.GetChild(1).GetChild(1).gameObject;
-            eastDoor = transform.GetChild(1).GetChild(2).gameObject;
-            westDoor = transform.GetChild(1).GetChild(3).gameObject;
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        uiManager = gameManager.GetComponent<UIManager>();
+        gameManager.roomList[myX, myY] = gameObject;
+        UpdateNeighbors();
+        canvas = GameObject.FindGameObjectWithTag("Canvas");
+        if (!(this.CompareTag("Spawn Room") || this.CompareTag("Boss Room")))
+        {
+            coin1 = transform.GetChild(2).GetComponent<SpriteRenderer>();
+            coin2 = transform.GetChild(3).GetComponent<SpriteRenderer>();
+            coin3 = transform.GetChild(4).GetComponent<SpriteRenderer>();
+        }
+        northDoor = transform.GetChild(1).GetChild(0).gameObject;
+        southDoor = transform.GetChild(1).GetChild(1).gameObject;
+        eastDoor = transform.GetChild(1).GetChild(2).gameObject;
+        westDoor = transform.GetChild(1).GetChild(3).gameObject;
     }
 
     void OnMouseOver()
@@ -127,15 +129,15 @@ public abstract class BaseRoom : MonoBehaviour {
                     neighbor.GetComponent<BaseRoom>().SortNeighbors();
                 }
                 gameManager.AddToDepartment(gameManager.selectedObject, gameManager.dungeonList);
-                gameManager.UpdateMonsters();
-                gameManager.UpdateDepartments();
+                uiManager.UpdateMonsters();
+                uiManager.UpdateDepartments();
                 gameManager.selectedObject = null;
             }
         }
 
         if (Input.GetMouseButtonDown(1) && gameManager.inConstructionMode)
         {
-            gameManager.ToggleMenu(5);
+            uiManager.ToggleMenu(4);
             gameManager.selectedObject = gameObject;
         }
     }
@@ -356,19 +358,19 @@ public abstract class BaseRoom : MonoBehaviour {
                         {
                             gameManager.currentCurrency -= 100;
                             currentGold = 100;
-                            gameManager.UpdateCurrency();
+                            uiManager.UpdateCurrency();
                         }
                         break;
                     case 100:
                         gameManager.currentCurrency += currentGold;
                         currentGold = 0;
-                        gameManager.UpdateCurrency();
+                        uiManager.UpdateCurrency();
                         break;
                     case 200:
                     case 300:
                         gameManager.currentCurrency += currentGold - 100;
                         currentGold = 100;
-                        gameManager.UpdateCurrency();
+                        uiManager.UpdateCurrency();
                         break;
                 }
                 break;
@@ -381,18 +383,18 @@ public abstract class BaseRoom : MonoBehaviour {
                         {
                             gameManager.currentCurrency -= 200 - currentGold;
                             currentGold = 200;
-                            gameManager.UpdateCurrency();
+                            uiManager.UpdateCurrency();
                         }
                         break;
                     case 200:
                         gameManager.currentCurrency += currentGold - 100;
                         currentGold = 100;
-                        gameManager.UpdateCurrency();
+                        uiManager.UpdateCurrency();
                         break;
                     case 300:
                         gameManager.currentCurrency += currentGold - 200;
                         currentGold = 200;
-                        gameManager.UpdateCurrency();
+                        uiManager.UpdateCurrency();
                         break;
                 }
                 break;
@@ -406,13 +408,13 @@ public abstract class BaseRoom : MonoBehaviour {
                         {
                             gameManager.currentCurrency -= 300 - currentGold;
                             currentGold = 300;
-                            gameManager.UpdateCurrency();
+                            uiManager.UpdateCurrency();
                         }
                         break;
                     case 300:
                         gameManager.currentCurrency += currentGold - 200;
                         currentGold = 200;
-                        gameManager.UpdateCurrency();
+                        uiManager.UpdateCurrency();
                         break;
                 }
                 break;

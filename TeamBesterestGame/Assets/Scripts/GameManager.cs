@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class GameManager : MonoBehaviour
 {
     #region Declarations
+    UIManager uiManager;
     //Test Party
     public TestPart party;
 
@@ -37,6 +38,8 @@ public class GameManager : MonoBehaviour
     public List<BaseParty> attackParties = new List<BaseParty>();
     [HideInInspector]
     public List<GameObject> deadMonsters = new List<GameObject>(); //for the corporeally challenged
+    [HideInInspector]
+    public List<GameObject> applicationsList = new List<GameObject>();
 
     //TODO getter and setter
     [HideInInspector]
@@ -104,41 +107,6 @@ public class GameManager : MonoBehaviour
     public GameObject interviewBackground; //public to be assigned in editor
     public GameObject interviewExit; //public to be assigned in editor
 
-    //UI stuff
-    public Canvas canvas;
-    public Font arial;
-
-    public GameObject emptyField; //public to be assigned in editor
-    public GameObject applicationPanel; //public to be assigned in editor
-    public GameObject monsterPanel; //public to be assigned in editor
-    public GameObject departmentPanel; //public to be assigned in editor
-    public GameObject assignmentPanel; //public to be assigned in editor
-    public GameObject breakRoomHeader; //public to be assigned in editor
-    public GameObject prHeader; //public to be assigned in editor
-    private int prCapacity = 3;
-    public GameObject hrHeader; //public to be assigned in editor
-    private int hrCapacity = 3;
-    public GameObject emptySlotField; //public to be assigned in editor
-    private bool applicationOpen = false;
-    private bool monsterOpen = false;
-    private bool departmentOpen = false;
-    private bool assignmentOpen = false;
-    public GameObject applicationField; //public to be assigned in editor
-    public GameObject monsterField; //public to be assigned in editor
-
-    public GameObject roomMenu; //public to be assigned in editor
-    public Button roomMenuConfirm; //public to be assigned in editor
-    public Button roomMenuCancel; //public to be assigned in editor
-    private bool roomMenuOpen = false;
-    private int roomOptionSelected;
-
-    private bool pauseMenuOpen = false;
-    public GameObject pauseMenu; //public to be assigned in editor
-    private List<GameObject> applicationsList = new List<GameObject>();
-    public GameObject applicantButton; //public to be assigned in editor
-    public GameObject constructionButton; //public to be assigned in editor
-    public GameObject roomButton; //public to be assigned in editor
-
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
     public Image stressImage; //public to assign reference in editor
@@ -155,6 +123,7 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        uiManager = this.GetComponent<UIManager>();
         roomList = new GameObject[10, 10];
         monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv",
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
@@ -163,8 +132,8 @@ public class GameManager : MonoBehaviour
         heroStats = new CSVImporter("Heroes - Sheet1.csv",
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vROE5F1pcPZ65Zg5H5QsEqwpayjzcLOYQMffmv6E3zjR3tMq7kD68zPNGdrCXmq8w67wZHNNGwehsLo/pub?gid=0&single=true&output=csv");
         currentCurrency = 1500;
-        UpdateCurrency();
-        UpdateInfamy();
+        uiManager.UpdateCurrency();
+        uiManager.UpdateInfamy();
 
         modifiedHeroSpawnRate = baseHeroSpawnRate;
 
@@ -298,8 +267,8 @@ public class GameManager : MonoBehaviour
         }
         department.Add(monster);
         monsterScript.department = department;
-        UpdateDepartments();
-        UpdateMonsters();
+        uiManager.UpdateDepartments();
+        uiManager.UpdateMonsters();
     }
 
     //Converts a monster from an applicant to an employee. Called by Hire Button
@@ -317,9 +286,9 @@ public class GameManager : MonoBehaviour
             IncreaseInfamyXP(monsterInstance.GetComponent<BaseMonster>().getThreat());
             monsterList.Add(monsterInstance);
             AddToDepartment(monsterInstance, breakRoomList);
-            UpdateMonsters();
-            UpdateDepartments();
-            UpdateStressMeter();
+            uiManager.UpdateMonsters();
+            uiManager.UpdateDepartments();
+            uiManager.UpdateStressMeter();
         }
     }
 
@@ -332,7 +301,7 @@ public class GameManager : MonoBehaviour
             applicationsList.Add(monsterInstance);
             monsterInstance.SetActive(false);
 		}
-        UpdateApplications();
+        uiManager.UpdateApplications();
 	}
 
     //Pass to here when an option is selected in the room menu to add the proper funcionality to the confirm and cancel buttons in it
@@ -344,7 +313,7 @@ public class GameManager : MonoBehaviour
                      //Checks if the room can be destroyed
                 if (selectedObject.GetComponent<BaseRoom>().CanRemove())
                 {
-                    roomMenuConfirm.onClick.AddListener(delegate
+                    uiManager.roomMenuConfirm.onClick.AddListener(delegate
                     {
                         CurrencyChanged(50);
                         roomList[selectedObject.GetComponent<BaseRoom>().myX, selectedObject.GetComponent<BaseRoom>().myY] = null;
@@ -353,26 +322,26 @@ public class GameManager : MonoBehaviour
                         this.GetComponent<ConstructionScript>().ClearConstructionIcons();
                         this.GetComponent<ConstructionScript>().StartConstruction();
                         roomCount--;
-                        ToggleMenu(5);
+                        uiManager.ToggleMenu(5);
                     });
                 }
                 else
                 {
-                    roomMenuConfirm.onClick.AddListener(delegate
+                    uiManager.roomMenuConfirm.onClick.AddListener(delegate
                     {
                         print("NO!");
-                        ToggleMenu(5);
+                        uiManager.ToggleMenu(5);
                     });
                 }
                 break;
             default: //nothing selected
-                roomMenuConfirm.onClick.AddListener(delegate
+                uiManager.roomMenuConfirm.onClick.AddListener(delegate
                 {
-                    ToggleMenu(5);
+                    uiManager.ToggleMenu(5);
                 });
                 break;
             case 1: //Cemetary selected
-                roomMenuConfirm.onClick.AddListener(delegate
+                uiManager.roomMenuConfirm.onClick.AddListener(delegate
                 {
                     //out with the old, in with the new
                     BaseRoom oldScript = selectedObject.GetComponent<BaseRoom>();
@@ -388,18 +357,19 @@ public class GameManager : MonoBehaviour
                         AddToDepartment(monster, breakRoomList);
                         monster.transform.position = Vector3.zero;
                     }
-                    UpdateDepartments();
+                    uiManager.UpdateDepartments();
 
                     CurrencyChanged(oldScript.currentGold);
                     Destroy(selectedObject);
 
-                    ToggleMenu(5);
+                    uiManager.ToggleMenu(5);
                 });
                 break;
         }
     }
     #endregion
 
+    /*
     #region UI Stuff
     //Opens any menu
     public void ToggleMenu(int menuToOpen)
@@ -766,13 +736,14 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    */
 
     //enables interview UI and hides other UI elements that are in the way
     public void Interview(GameObject monster)
     {
         monsterInstance = monster; //might wanna use selectedObject for consistency - Nate
         interviewing = true;
-        applicationPanel.SetActive(false);
+        uiManager.menus[3].SetActive(false);
         Q1.SetActive(true);
         Q2.SetActive(true);
         Q3.SetActive(true);
@@ -785,6 +756,7 @@ public class GameManager : MonoBehaviour
 
         //this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
     }
+    /*
 
     public void UpdateCurrency()
     {
@@ -797,6 +769,7 @@ public class GameManager : MonoBehaviour
         infamyXPText.text = "InfamyXP: " + infamyXP + "/" + xpToNextInfamyLevel;
     }
     #endregion
+    */
 
     #region Time Stuff
     public void NewCycle()
@@ -928,7 +901,7 @@ public class GameManager : MonoBehaviour
                 Destroy(application);
             }
             //refresh application panel
-            UpdateApplications();
+            uiManager.UpdateApplications();
 
             //PR Department code
             foreach (GameObject monster in prList)
@@ -936,7 +909,7 @@ public class GameManager : MonoBehaviour
                 BaseMonster monsterScript = monster.GetComponent<BaseMonster>();
                 CurrencyChanged(monsterScript.getBaseDamage());
                 infamyXP += monsterScript.getThreat();
-                UpdateInfamy();
+                uiManager.UpdateInfamy();
             }
 
             //Potential of 1 new resume per time unit
@@ -944,7 +917,7 @@ public class GameManager : MonoBehaviour
             if (Random.Range(0, 9) > 4)
 				CreateNewResume(1);
 
-            UpdateStressMeter();
+            uiManager.UpdateStressMeter();
 
             if (currentTime <= 0 && dungeonEmpty)
             {
@@ -1036,7 +1009,7 @@ public class GameManager : MonoBehaviour
     public void CurrencyChanged(int value)
 	{
 		currentCurrency += value;
-		UpdateCurrency();
+		uiManager.UpdateCurrency();
 	}
 
 	//function to 'level up' player -> aka increase infamy level
@@ -1080,7 +1053,7 @@ public class GameManager : MonoBehaviour
 			int toNext = (int)xpToNextInfamyLevel - (int)infamyXP;
 			//print("xp to next level " + toNext);
 		}
-		UpdateInfamy();
+		uiManager.UpdateInfamy();
 	}
 
 	public int InfamyXPNeeded()
