@@ -7073,17 +7073,26 @@ MonoBehaviour:
   - {fileID: 1820813238502166, guid: 2e4d688e4d279e341b54bca22c3d2174, type: 2}
   - {fileID: 1512600844001062, guid: 11d6459a900aec448b7a05d468277682, type: 2}
   - {fileID: 1208952337519340, guid: 5e89ac2699e6b4748bc1768019032152, type: 2}
+  possibleRooms:
+  - {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
+  - {fileID: 1566428048444222, guid: 9f5a6c6a54624084782763b0cad1d35c, type: 2}
+  roomCount: 8
+  monsterList: []
+  breakRoomList: []
+  dungeonList: []
+  prList: []
+  deadMonsters: []
   selectedObject: {fileID: 0}
   healthWeight: 10
   attackWeight: 3
   defenseWeight: 2
-  possibleRooms:
-  - {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-  - {fileID: 1566428048444222, guid: 9f5a6c6a54624084782763b0cad1d35c, type: 2}
-  stressImage: {fileID: 0}
   currencyText: {fileID: 935864226}
   currentCurrency: 0
   maximumCurrency: 1500
+  infamyLevel: 0
+  infamyXP: 0
+  xpToNextInfamyLevel: 20
+  baseXP: 20
   infamyLevelText: {fileID: 1261450294}
   infamyXPText: {fileID: 1321988804}
   timePerDay: 16
@@ -7134,12 +7143,7 @@ MonoBehaviour:
   roomButton: {fileID: 0}
   spawnRoom: {fileID: 1893377716}
   bossRoom: {fileID: 1306698472}
-  roomCount: 8
-  monsterList: []
-  breakRoomList: []
-  dungeonList: []
-  prList: []
-  deadMonsters: []
+  stressImage: {fileID: 0}
 --- !u!4 &1031783965
 Transform:
   m_ObjectHideFlags: 0
@@ -10624,6 +10628,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1019801905109112, guid: f96e23bb6e6d2ff4ba58c4c65bf0f2a3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f96e23bb6e6d2ff4ba58c4c65bf0f2a3, type: 2}
   m_IsPrefabParent: 0
@@ -10999,6 +11007,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109429727128744, guid: b0a89e43117e1064e861a474e4c1e01e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0a89e43117e1064e861a474e4c1e01e, type: 2}
