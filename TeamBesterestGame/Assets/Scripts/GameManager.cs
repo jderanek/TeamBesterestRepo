@@ -202,7 +202,7 @@ public class GameManager : MonoBehaviour
         };
         CreateNewResume(3);
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 6; i++)
         {
             heroSpawnSet.Add(possibleHeroes[i]);
         }
