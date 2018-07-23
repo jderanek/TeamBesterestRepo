@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR && UNITY_5_6_OR_NEWER
+﻿/*#if UNITY_EDITOR && UNITY_5_6_OR_NEWER
 public partial class AkBuildPreprocessor
 {
 	/// <summary>
@@ -167,4 +167,4 @@ public partial class AkBuildPreprocessor : UnityEditor.Build.IPreprocessBuild, U
 	}
 #endif
 }
-#endif // #if UNITY_EDITOR && UNITY_5_6_OR_NEWER
+#endif // #if UNITY_EDITOR && UNITY_5_6_OR_NEWER*/

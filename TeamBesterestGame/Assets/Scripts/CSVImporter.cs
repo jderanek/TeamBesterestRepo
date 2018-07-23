@@ -14,7 +14,7 @@ public class CSVImporter {
 	//IMPORTANT: Appends this to the start of the given path, so users need only give the
 	//name of the file. Change this to wherever you save your spreadsheets.
 	//The path is also where the loaded will save back-up spreadsheets
-    string path = "Assets/Resources/";
+    string path = Application.dataPath + "/Resources/";
 
 	//Url to download from
 	string url;
@@ -99,7 +99,7 @@ public class CSVImporter {
 		//Throws a debug message and loads back-up if download fails
 		while (!this.download.isDone) {
 			if (this.download.error != null) {
-				Debug.Log (this.download.error);
+				Debug.LogError (this.download.error);
 				this.ImportData ();
 				return;
 			}
