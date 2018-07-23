@@ -272,6 +272,7 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Handlers
+    //spawns a new monster instance
     public GameObject SpawnMonster()
     {
         int rand = Random.Range(0, 4);
@@ -282,11 +283,7 @@ public class GameManager : MonoBehaviour
         return newMonster;
     }
 
-    public void SelectObject(GameObject otherObject)
-    {
-        selectedObject = otherObject;
-    }
-
+    //Changes a monster's department
     public void AddToDepartment(GameObject monster, List<GameObject> department)
     {
         BaseMonster monsterScript = monster.GetComponent<BaseMonster>();
@@ -305,6 +302,7 @@ public class GameManager : MonoBehaviour
         UpdateMonsters();
     }
 
+    //Converts a monster from an applicant to an employee. Called by Hire Button
     public void HireButton(GameObject monsterInstance, GameObject monsterApplicationField)
     {
         int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
@@ -325,6 +323,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Spawns a new applicant monster
     public void CreateNewResume(int resumesToCreate)
 	{
 		for (int i = 0; i < resumesToCreate; i++)
@@ -354,7 +353,7 @@ public class GameManager : MonoBehaviour
                         this.GetComponent<ConstructionScript>().ClearConstructionIcons();
                         this.GetComponent<ConstructionScript>().StartConstruction();
                         roomCount--;
-                        RoomMenu();
+                        ToggleMenu(5);
                     });
                 }
                 else
@@ -362,14 +361,14 @@ public class GameManager : MonoBehaviour
                     roomMenuConfirm.onClick.AddListener(delegate
                     {
                         print("NO!");
-                        RoomMenu();
+                        ToggleMenu(5);
                     });
                 }
                 break;
             default: //nothing selected
                 roomMenuConfirm.onClick.AddListener(delegate
                 {
-                    RoomMenu();
+                    ToggleMenu(5);
                 });
                 break;
             case 1: //Cemetary selected
@@ -394,7 +393,7 @@ public class GameManager : MonoBehaviour
                     CurrencyChanged(oldScript.currentGold);
                     Destroy(selectedObject);
 
-                    RoomMenu();
+                    ToggleMenu(5);
                 });
                 break;
         }
@@ -402,25 +401,74 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region UI Stuff
-    //Opens the Applications Panel
-    public void ApplicationsMenu()
+    //Opens any menu
+    public void ToggleMenu(int menuToOpen)
     {
-        if (applicationOpen)
+        switch(menuToOpen)
         {
-            applicationOpen = false;
-            applicationPanel.SetActive(false);
-        }
-        else
-        {
-            monsterOpen = false;
-            monsterPanel.SetActive(false);
-            departmentPanel.SetActive(false);
-            departmentOpen = false;
-            assignmentPanel.SetActive(false);
-            assignmentOpen = false;
-
-            applicationOpen = true;
-            applicationPanel.SetActive(true);
+            case 1: //Application Menu
+                applicationOpen = !applicationOpen;
+                applicationPanel.SetActive(applicationOpen);
+                monsterOpen = false;
+                monsterPanel.SetActive(false);
+                departmentPanel.SetActive(false);
+                departmentOpen = false;
+                assignmentPanel.SetActive(false);
+                assignmentOpen = false;
+                break;
+            case 2: //Monster Menu
+                monsterOpen = !monsterOpen;
+                monsterPanel.SetActive(monsterOpen);
+                applicationPanel.SetActive(false);
+                applicationOpen = false;
+                departmentPanel.SetActive(false);
+                departmentOpen = false;
+                assignmentPanel.SetActive(false);
+                assignmentOpen = false;
+                break;
+            case 3: //Department Menu
+                departmentOpen = !departmentOpen;
+                departmentPanel.SetActive(departmentOpen);
+                applicationPanel.SetActive(false);
+                applicationOpen = false;
+                monsterPanel.SetActive(false);
+                monsterOpen = false;
+                assignmentPanel.SetActive(false);
+                assignmentOpen = false;
+                break;
+            case 4: //Assignment Menu
+                assignmentOpen = !assignmentOpen;
+                assignmentPanel.SetActive(assignmentOpen);
+                applicationPanel.SetActive(false);
+                applicationOpen = false;
+                departmentPanel.SetActive(false);
+                departmentOpen = false;
+                monsterPanel.SetActive(false);
+                monsterOpen = false;
+                break;
+            case 5: //Room Options Menu
+                if (roomMenuOpen)
+                {
+                    RoomMenuHandler(0);
+                }
+                roomMenuOpen = !roomMenuOpen;
+                roomMenu.SetActive(roomMenuOpen);
+                roomMenuConfirm.onClick.RemoveAllListeners();
+                break;
+            case 6: //Pause Menu
+                pauseMenuOpen = !pauseMenuOpen;
+                pauseMenu.SetActive(pauseMenuOpen);
+                applicationPanel.SetActive(false);
+                applicationOpen = false;
+                departmentPanel.SetActive(false);
+                departmentOpen = false;
+                monsterPanel.SetActive(false);
+                monsterOpen = false;
+                roomMenuOpen = false;
+                roomMenu.SetActive(false);
+                assignmentOpen = false;
+                assignmentPanel.SetActive(false);
+                break;
         }
     }
 
@@ -462,28 +510,6 @@ public class GameManager : MonoBehaviour
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
             newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-        }
-    }
-
-    //opens the Monster Panel
-    public void MonsterMenu()
-    {
-        if (monsterOpen)
-        {
-            monsterOpen = false;
-            monsterPanel.SetActive(false);
-        }
-        else
-        {
-            applicationPanel.SetActive(false);
-            applicationOpen = false;
-            departmentPanel.SetActive(false);
-            departmentOpen = false;
-            assignmentPanel.SetActive(false);
-            assignmentOpen = false;
-
-            monsterOpen = true;
-            monsterPanel.SetActive(true);
         }
     }
 
@@ -537,34 +563,6 @@ public class GameManager : MonoBehaviour
                 newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
                 newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
             }            
-        }
-    }
-
-    //Opens the Department Panel
-    public void DepartmentMenu()
-    {
-        if (departmentOpen)
-        {
-            departmentOpen = false;
-            departmentPanel.SetActive(false);
-        }
-        else
-        {
-			//GameObject[] toAdd = new GameObject[2];
-			//toAdd[0] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
-			//toAdd[1] = Instantiate(heroes[1], spawnRoom.transform.position, Quaternion.identity);
-			//party = new TestPart (toAdd);
-			//attackParties.Add (party);
-
-            applicationPanel.SetActive(false);
-            applicationOpen = false;
-            monsterPanel.SetActive(false);
-            monsterOpen = false;
-            assignmentPanel.SetActive(false);
-            assignmentOpen = false;
-
-            departmentOpen = true;
-            departmentPanel.SetActive(true);
         }
     }
 
@@ -638,7 +636,7 @@ public class GameManager : MonoBehaviour
             emptySlotPR.GetComponentInChildren<Button>().onClick.AddListener(delegate
             {
                 UpdateAssignment(prList);
-                AssignmentMenu();
+                ToggleMenu(4);
             });
             emptySlotPR.transform.SetParent(departmentPanel.transform, false);
             emptySlotPR.GetComponent<Image>().enabled = true;
@@ -649,23 +647,6 @@ public class GameManager : MonoBehaviour
             emptySlotPRCanvas.GetComponent<Canvas>().enabled = true;
             emptySlotPRCanvas.GetComponent<CanvasScaler>().enabled = true;
             emptySlotPRCanvas.GetComponent<GraphicRaycaster>().enabled = true;
-        }
-    }
-
-    //Call this to display the menu shown when choosing a monster to assing to a department
-    public void AssignmentMenu()
-    {
-        if (!assignmentOpen)
-        {
-            applicationPanel.SetActive(false);
-            applicationOpen = false;
-            departmentPanel.SetActive(false);
-            departmentOpen = false;
-            monsterPanel.SetActive(false);
-            monsterOpen = false;
-
-            assignmentPanel.SetActive(true);
-            assignmentOpen = true;
         }
     }
 
@@ -696,7 +677,7 @@ public class GameManager : MonoBehaviour
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate 
             {
                 AddToDepartment(monster, department);
-                DepartmentMenu();
+                ToggleMenu(3);
             });
             newField.transform.SetParent(assignmentPanel.transform, false);
 
@@ -707,37 +688,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //function should be called when pulling up room menu options (ie clicking on a room)
-    public void RoomMenu()
-    {
-        if (roomMenuOpen)
-        {
-            RoomMenuHandler(0);
-        }
-        roomMenuOpen = !roomMenuOpen;
-        roomMenu.SetActive(roomMenuOpen);
-        roomMenuConfirm.onClick.RemoveAllListeners();
-    }
-
     //call this when changes are made to the Room Menu
     public void UpdateRoomMenu()
     {
 
-    }
-
-    //Opens pause menu
-    public void PauseMenu()
-    {
-        if (!pauseMenuOpen)
-        {
-            pauseMenuOpen = true;
-            pauseMenu.SetActive(true);
-        }
-        else
-        {
-            pauseMenuOpen = false;
-            pauseMenu.SetActive(false);
-        }
     }
 
     //aggregate stress calculating
@@ -813,9 +767,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void Interview(GameObject monster)//enables interview UI and hides other UI elements that are in the way
+    //enables interview UI and hides other UI elements that are in the way
+    public void Interview(GameObject monster)
     {
-        monsterInstance = monster;
+        monsterInstance = monster; //might wanna use selectedObject for consistency - Nate
         interviewing = true;
         applicationPanel.SetActive(false);
         Q1.SetActive(true);
@@ -858,19 +813,6 @@ public class GameManager : MonoBehaviour
 			WeekHandler();
 			days = 0;
 		}
-	}
-
-	public void TogglePlay() {
-		if (paused) {
-			var coroutine = Play ();
-			StartCoroutine (coroutine);
-			pauseButtonText.text = "Pause";
-
-		} else {
-			StopAllCoroutines();
-			pauseButtonText.text = "Play";
-		}
-		paused = !paused;
 	}
 
 	public IEnumerator Play() {
@@ -1063,9 +1005,32 @@ public class GameManager : MonoBehaviour
         inConstructionMode = !inConstructionMode;
     }
 
+    public void TogglePlay()
+    {
+        if (paused)
+        {
+            var coroutine = Play();
+            StartCoroutine(coroutine);
+            pauseButtonText.text = "Pause";
+
+        }
+        else
+        {
+            StopAllCoroutines();
+            pauseButtonText.text = "Play";
+        }
+        paused = !paused;
+    }
+
     #endregion
 
     #region Getters and Setters
+
+    public void SelectObject(GameObject otherObject)
+    {
+        selectedObject = otherObject;
+    }
+
     //changes value of currency and updates UI
     //Takes: integer (either positive or negative)
     public void CurrencyChanged(int value)

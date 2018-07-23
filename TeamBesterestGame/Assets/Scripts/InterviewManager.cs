@@ -55,6 +55,7 @@ public class InterviewManager : MonoBehaviour {
         {
             //fetches monster to interview
             monsterInstance = gameManager.GetComponent<GameManager>().monsterInstance;//takes the gameManagers monsterInstance for questioning
+                                                                                        //might wanna use selectedObject for consistency - Nate
         }
         else
         {

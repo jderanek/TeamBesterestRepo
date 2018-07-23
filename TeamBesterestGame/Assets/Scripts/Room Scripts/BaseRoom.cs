@@ -135,7 +135,7 @@ public abstract class BaseRoom : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(1) && gameManager.inConstructionMode)
         {
-            gameManager.RoomMenu();
+            gameManager.ToggleMenu(5);
             gameManager.selectedObject = gameObject;
         }
     }
