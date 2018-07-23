@@ -46,6 +46,10 @@ public abstract class BaseMonster : MonoBehaviour {
 	float promotionMod = 1f;
     int applicationLife = 3;
 
+    public int healthTier;
+    public int defenseTier;
+    public int attackTier;
+
     //Temp variables from transfer
     private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
 	string traitName;
@@ -122,17 +126,22 @@ public abstract class BaseMonster : MonoBehaviour {
         {
             case 3: case 4:
                 this.maxHealth = (int)(this.maxHealth * 0.75f);
+                this.healthTier = -1;
                 break;
             case 5: case 6: case 7:
                 this.maxHealth = (int)(this.maxHealth * 0.9f);
+                this.healthTier = -1;
                 break;
             default:
+                this.healthTier = 0;
                 break;
             case 14: case 15: case 16:
                 this.maxHealth = (int)(this.maxHealth * 1.1f);
+                this.healthTier = 1;
                 break;
             case 17: case 18:
                 this.maxHealth = (int)(this.maxHealth * 1.25f);
+                this.healthTier = 1;
                 break;
         }
 		this.curHealth = this.maxHealth;
@@ -145,11 +154,13 @@ public abstract class BaseMonster : MonoBehaviour {
             case 3:
             case 4:
                 this.damage = (int)(this.damage * 0.75f);
+                this.attackTier = -1;
                 break;
             case 5:
             case 6:
             case 7:
                 this.damage = (int)(this.damage * 0.9f);
+                this.attackTier = -1;
                 break;
             default:
                 break;
@@ -157,10 +168,12 @@ public abstract class BaseMonster : MonoBehaviour {
             case 15:
             case 16:
                 this.damage = (int)(this.damage * 1.1f);
+                this.attackTier = 1;
                 break;
             case 17:
             case 18:
                 this.damage = (int)(this.damage * 1.25f);
+                this.attackTier = 1;
                 break;
         }
         this.curDamage = damage;
@@ -172,22 +185,27 @@ public abstract class BaseMonster : MonoBehaviour {
             case 3:
             case 4:
                 this.armor = (int)(this.armor * 0.75f);
+                this.defenseTier = -1;
                 break;
             case 5:
             case 6:
             case 7:
                 this.armor = (int)(this.armor * 0.9f);
+                this.defenseTier = -1;
                 break;
             default:
+                this.defenseTier = 0;
                 break;
             case 14:
             case 15:
             case 16:
                 this.armor = (int)(this.armor * 1.1f);
+                this.defenseTier = 1;
                 break;
             case 17:
             case 18:
                 this.armor = (int)(this.armor * 1.25f);
+                this.defenseTier = 1;
                 break;
         }
 

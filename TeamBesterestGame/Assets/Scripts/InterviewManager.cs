@@ -26,14 +26,15 @@ public class InterviewManager : MonoBehaviour {
 	public Text q4Text;
 
 	//arraylists for stat questions.
-	public string[][] statQuestions = {hpQuestions, attackQuestions, nerveQuestions, threatQuestions}; //wageQuestions};
-	//public string[][] questionFour = {hpQuestions, attackQuestions, nerveQuestions, threatQuestions}; //wageQuestions};
+	public string[][] statQuestions = {hpQuestions, attackQuestions, defenseQuestions};
 
 	//arraylists for specific stat questions
 	public static string[] hpQuestions = {"Are you able to take a lot of punishment?", "Can you last long in a fight?", 
 		"Can you take what you dish out?", "After a big fight, are you still able to stand?", "Can you outlast a tough hero?"};
 	public static string[] attackQuestions = {"Are you good in a fight?", "Do you have any combat experience?", 
 		"After a big fight, are you still able to stand?", "How much battle training do you have?", "Can you hold your own in a fight?"};
+    public static string[] defenseQuestions = {"How good are you at protecting yourself?", "Do big hits shake you up?", "Are you any good at blocking attacks?",
+    "Do you have a sturdy defense?", "Are you good at mitigating damage?"};
 	public static string[] nerveQuestions = {"Do you become uneasy in stressful situations?", "If a strong hero showed up, how would you respond", 
 		"Do you buck under pressure?", "Can you handle stressful situations?", "Do you lose your nerve easily?"};
 	public static string[] threatQuestions = {"Has anyone ever said you have an imposing presence?", "If you speak up do people pay attention to you?", 
@@ -114,21 +115,19 @@ public class InterviewManager : MonoBehaviour {
 		}
 		gameManager.GetComponent<GameManager>().PassTime(1);
     }
-    /*
+    
 	//work ethic question
     public void Question2Response()
     {
-       // interviewQuestions.SetActive(false);
-        //interviewResponse.SetActive(true);
-		if(monsterInstance.GetComponent<MonsterScript>().workEthic == -1)
+		if(monsterInstance.GetComponent<BaseMonster>().getWorkEthic() == -1)
 		{
 			responseText.text = "I guess I'm a bit of a slacker.";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().workEthic == 0)
+		else if(monsterInstance.GetComponent<BaseMonster>().getWorkEthic() == 0)
 		{
 			responseText.text = "I like the feeling I get after a hard day's work.";
 		}
-		else if(monsterInstance.GetComponent<MonsterScript>().workEthic == 1)
+		else if(monsterInstance.GetComponent<BaseMonster>().getWorkEthic() == 1)
 		{
 			responseText.text = "I can't live without my work. So please hire me...";
 		}
@@ -138,68 +137,53 @@ public class InterviewManager : MonoBehaviour {
 	//Stat question
     public void Question3Response()
     {
-       // interviewQuestions.SetActive(false);
-        //interviewResponse.SetActive(true);
 		if (q31 == 0)//hp responses
 		{
-			if(monsterInstance.GetComponent<BaseMonster>().getMaxHealth() > monsterInstance.GetComponent<MonsterScript>().averageHealth)
+			if(monsterInstance.GetComponent<BaseMonster>().healthTier == -1)
 			{
 				responseText.text = "I can take a beating before I start to crack.";
 			}
-			else if(monsterInstance.GetComponent<BaseMonster>().getMaxHealth() == monsterInstance.GetComponent<MonsterScript>().averageHealth)
+			else if(monsterInstance.GetComponent<BaseMonster>().healthTier == 0)
 			{
 				responseText.text = "My bones are normal for the most part.";
 			}
-			else if(monsterInstance.GetComponent<BaseMonster>().getMaxHealth() < monsterInstance.GetComponent<MonsterScript>().averageHealth)
+			else if(monsterInstance.GetComponent<BaseMonster>().healthTier == 1)
 			{
 				responseText.text = "Uh... I would prefer not risking a fracture...";
 			}
 		}
 		else if (q31 == 1)//attack responses
 		{
-			if(monsterInstance.GetComponent<MonsterScript>().attackDamage > monsterInstance.GetComponent<MonsterScript>().averageDamage)
+			if(monsterInstance.GetComponent<BaseMonster>().attackTier == -1)
 			{
 				responseText.text = "I used to get into scuffles every now and then, I came out on top most of the time.";
 			}
-			else if(monsterInstance.GetComponent<MonsterScript>().attackDamage == monsterInstance.GetComponent<MonsterScript>().averageDamage)
-			{
+			else if(monsterInstance.GetComponent<BaseMonster>().attackTier == 0)
+
+            {
 				responseText.text = "Ehh... I am average at best...";
 			}
-			else if(monsterInstance.GetComponent<MonsterScript>().attackDamage < monsterInstance.GetComponent<MonsterScript>().averageDamage)
-			{
+            else if (monsterInstance.GetComponent<BaseMonster>().attackTier == 1)
+            {
 				responseText.text = "Combat isn't really my thing, but I'll give it a shot.";
 			}
 		}
-		else if (q31 == 2)//nerve responses
+		else if (q31 == 2)//defense responses
 		{
-			if(monsterInstance.GetComponent<MonsterScript>().curNerve > monsterInstance.GetComponent<MonsterScript>().baseNerve)
-			{
-				responseText.text = "I'm not scared of anything.";
+			if (monsterInstance.GetComponent<BaseMonster>().defenseTier == -1)
+            {
+				responseText.text = "I don't break that easily that's for sure.";
 			}
-			else if(monsterInstance.GetComponent<MonsterScript>().curNerve == monsterInstance.GetComponent<MonsterScript>().baseNerve)
-			{
-				responseText.text = "I don't really scare easy, but I'm not extremely courageous.";
+			else if (monsterInstance.GetComponent<BaseMonster>().defenseTier == 0)
+            {
+				responseText.text = "I can hold my own, that's about it.";
 			}
-			else if(monsterInstance.GetComponent<MonsterScript>().curNerve < monsterInstance.GetComponent<MonsterScript>().baseNerve)
-			{
-				responseText.text = "EEP! Sorry, I got scared looking at your shadow...";
+			else if (monsterInstance.GetComponent<BaseMonster>().defenseTier == 1)
+            {
+				responseText.text = "These old bones have seen better days...";
 			}
 		}
-		else if (q31 == 3)//threat responses
-		{
-			if(monsterInstance.GetComponent<MonsterScript>().threatValue > 4)
-			{
-				responseText.text = "Give me the job, or i will hurt you.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().threatValue == 4)
-			{
-				responseText.text = "Heroes will attack me unless some bigger monster is nearby.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().threatValue < 4)
-			{
-				responseText.text = "People don't really notice me all that much. In fact, I'm surprised you notice me right now.";
-			}
-		}
+	
 		gameManager.GetComponent<GameManager>().PassTime(1);
 		UpdateQuestions();
     }
@@ -207,71 +191,56 @@ public class InterviewManager : MonoBehaviour {
 	//stat question
 	public void Question4Response()
 	{
-		//interviewQuestions.SetActive(false);
-		//interviewResponse.SetActive(true);
-		if (q41 == 0)//hp responses
-		{
-			if(monsterInstance.GetComponent<MonsterScript>().startingHealth > monsterInstance.GetComponent<MonsterScript>().averageHealth)
-			{
-				responseText.text = "I can take a beating before I start to crack.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().startingHealth == monsterInstance.GetComponent<MonsterScript>().averageHealth)
-			{
-				responseText.text = "My bones are normal for the most part.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().startingHealth < monsterInstance.GetComponent<MonsterScript>().averageHealth)
-			{
-				responseText.text = "Uh... I would prefer not risking a fracture...";
-			}
-		}
-		else if (q41 == 1)//attack responses
-		{
-			if(monsterInstance.GetComponent<MonsterScript>().attackDamage > monsterInstance.GetComponent<MonsterScript>().averageDamage)
-			{
-				responseText.text = "I used to get into scuffles every now and then, I came out on top most of the time.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().attackDamage == monsterInstance.GetComponent<MonsterScript>().averageDamage)
-			{
-				responseText.text = "Ehh... I am average at best...";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().attackDamage < monsterInstance.GetComponent<MonsterScript>().averageDamage)
-			{
-				responseText.text = "Combat isn't really my thing, but I'll give it a shot.";
-			}
-		}
-		else if (q41 == 2)//nerve responses
-		{
-			if(monsterInstance.GetComponent<MonsterScript>().curNerve > monsterInstance.GetComponent<MonsterScript>().baseNerve)
-			{
-				responseText.text = "I'm not scared of anything.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().curNerve == monsterInstance.GetComponent<MonsterScript>().baseNerve)
-			{
-				responseText.text = "I don't really scare easy, but I'm not extremely courageous.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().curNerve < monsterInstance.GetComponent<MonsterScript>().baseNerve)
-			{
-				responseText.text = "EEP! Sorry, I got scared looking at your shadow...";
-			}
-		}
-		else if (q41 == 3)//threat responses
-		{
-			if(monsterInstance.GetComponent<MonsterScript>().threatValue > 4)
-			{
-				responseText.text = "Give me the job, or i will hurt you.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().threatValue == 4)
-			{
-				responseText.text = "Heroes will attack me unless some bigger monster is nearby.";
-			}
-			else if(monsterInstance.GetComponent<MonsterScript>().threatValue < 4)
-			{
-				responseText.text = "People don't really notice me all that much. In fact, I'm surprised you notice me right now.";
-			}
-		}
-		gameManager.GetComponent<GameManager>().PassTime(1);
-		UpdateQuestions();
-	}
+        if (q41 == 0)//hp responses
+        {
+            if (monsterInstance.GetComponent<BaseMonster>().healthTier == -1)
+            {
+                responseText.text = "I can take a beating before I start to crack.";
+            }
+            else if (monsterInstance.GetComponent<BaseMonster>().healthTier == 0)
+            {
+                responseText.text = "My bones are normal for the most part.";
+            }
+            else if (monsterInstance.GetComponent<BaseMonster>().healthTier == 1)
+            {
+                responseText.text = "Uh... I would prefer not risking a fracture...";
+            }
+        }
+        else if (q41 == 1)//attack responses
+        {
+            if (monsterInstance.GetComponent<BaseMonster>().attackTier == -1)
+            {
+                responseText.text = "I used to get into scuffles every now and then, I came out on top most of the time.";
+            }
+            else if (monsterInstance.GetComponent<BaseMonster>().attackTier == 0)
+
+            {
+                responseText.text = "Ehh... I am average at best...";
+            }
+            else if (monsterInstance.GetComponent<BaseMonster>().attackTier == 1)
+            {
+                responseText.text = "Combat isn't really my thing, but I'll give it a shot.";
+            }
+        }
+        else if (q41 == 2)//defense responses
+        {
+            if (monsterInstance.GetComponent<BaseMonster>().defenseTier == -1)
+            {
+                responseText.text = "I don't break that easily that's for sure.";
+            }
+            else if (monsterInstance.GetComponent<BaseMonster>().defenseTier == 0)
+            {
+                responseText.text = "I can hold my own, that's about it.";
+            }
+            else if (monsterInstance.GetComponent<BaseMonster>().defenseTier == 1)
+            {
+                responseText.text = "These old bones have seen better days...";
+            }
+        }
+
+        gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateQuestions();
+    }
 
 	//archetype question
 	public void Question5Response()
@@ -315,5 +284,5 @@ public class InterviewManager : MonoBehaviour {
         interviewResponse.SetActive(false);
         responseText.text = "Hello";
     }
-    */
+    
 }
