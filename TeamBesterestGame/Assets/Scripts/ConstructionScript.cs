@@ -151,6 +151,7 @@ public class ConstructionScript : MonoBehaviour
                     {
                         gameManager.roomsToBuild.Add(icon);
                         icon.GetComponent<SpriteRenderer>().sprite = selectedConstructionIcon;
+                        StartConstruction();
                     });
                     trigger.triggers.Add(entry);
                 }

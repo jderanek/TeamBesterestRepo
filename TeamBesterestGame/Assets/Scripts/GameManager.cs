@@ -608,17 +608,8 @@ public class GameManager : MonoBehaviour
 
     public void ToggleConstruction()
     {
-        if (inConstructionMode)
+        if (inConstructionMode && roomsToBuild.Count > 0)
         {
-            /*
-            foreach (GameObject room in roomList)
-            {
-                if (room != null && room.GetComponent<BaseRoom>() != null)
-                {
-                    room.GetComponent<BaseRoom>().UpdateNeighbors();
-                }
-            }
-            */
             GameObject cb = Instantiate(uiManager.confirmationBox, Vector3.zero, Quaternion.identity);
             cb.transform.SetParent(uiManager.canvas.transform, false);
             var cbCanvas = cb.transform.GetChild(0);
@@ -639,7 +630,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    ToggleConstruction();
+                    ToggleConstruction();                    
                     Destroy(cb);
                 }
             });
@@ -652,9 +643,9 @@ public class GameManager : MonoBehaviour
             cbCanvasRect.anchoredPosition = new Vector2(0, 0);
             cbCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
             cbCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-            
-            
+            constructionScript.ClearConstructionIcons();
         }
+        constructionScript.ClearConstructionIcons();
         inConstructionMode = !inConstructionMode;
     }
 
