@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public abstract class BaseMonster : MonoBehaviour {
-   
     public List<GameObject> department;
 
 	//Private variables for this monsters stats

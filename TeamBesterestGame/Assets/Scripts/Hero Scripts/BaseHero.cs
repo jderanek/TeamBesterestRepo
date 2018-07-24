@@ -221,7 +221,6 @@ public abstract class BaseHero : MonoBehaviour {
 
 	//Copied from HeroScript
 	public void CheckCurrentRoom() {
-		curRoom.SortNeighbors();
 
 		if (!curRoom.monsterInRoom && curRoom.gameObject.CompareTag("Boss Room") && gameManager.currentCurrency > 0)
 		{

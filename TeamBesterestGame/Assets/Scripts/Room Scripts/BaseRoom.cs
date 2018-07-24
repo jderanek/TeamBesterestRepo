@@ -18,7 +18,9 @@ public abstract class BaseRoom : MonoBehaviour {
     public GameObject canvas;
     public GameObject confirmationBox;
 
+	//List of rooms with open doors (neighbor) and list of all nearby rooms (adjacent)
     public List<GameObject> neighborRooms = new List<GameObject>(); //public to assign reference in editor
+	public List<GameObject> adjacentRooms = new List<GameObject>();
 
     public List<GameObject> roomMembers = new List<GameObject>(); //public to be accessed by hero/monster
     public int myX; //public to assign reference in editor
@@ -28,21 +30,6 @@ public abstract class BaseRoom : MonoBehaviour {
 
     public bool monsterInRoom = false; //public to be accessed by hero/monster
     public bool heroInRoom = false; //public to be accessed by hero/monster
-
-    public GameObject northRoom; //public to assign reference in editor, should be unnecesary in the future
-    public GameObject southRoom; //public to assign reference in editor
-    public GameObject eastRoom; //public to assign reference in editor
-    public GameObject westRoom; //public to assign reference in editor
-
-    private BaseRoom northRoomScript;
-    private BaseRoom southRoomScript;
-    private BaseRoom eastRoomScript;
-    private BaseRoom westRoomScript;
-
-    public GameObject northDoor; //public to be accessed by door script, may replace with trigger events later
-    public GameObject southDoor; //public to assign reference in editor
-    public GameObject eastDoor; //public to assign reference in editor
-    public GameObject westDoor; //public to assign reference in editor
 
     public bool northDoorBool; //public to be accessed by other scripts
     public bool southDoorBool; //public to be accessed by other scripts
@@ -102,10 +89,41 @@ public abstract class BaseRoom : MonoBehaviour {
             coin2 = transform.GetChild(3).GetComponent<SpriteRenderer>();
             coin3 = transform.GetChild(4).GetComponent<SpriteRenderer>();
         }
-        northDoor = transform.GetChild(1).GetChild(0).gameObject;
-        southDoor = transform.GetChild(1).GetChild(1).gameObject;
-        eastDoor = transform.GetChild(1).GetChild(2).gameObject;
-        westDoor = transform.GetChild(1).GetChild(3).gameObject;
+
+		GameObject newDoor;
+		DoorScript door;
+		if (isValid (new Vector2 (myX + 1, myY)))
+			adjacentRooms.Add (gameManager.roomList [myX + 1, myY]);
+		else {
+			newDoor = Instantiate (gameManager.door, new Vector2 (myX + .5f, myY), Quaternion.Euler (new Vector3 (0, 0, 90)));
+			door = newDoor.GetComponent<DoorScript> ();
+			door.pos1 = new Vector2 (this.myX, this.myY);
+			door.pos2 = new Vector2 (this.myX + 1, this.myY);
+		}
+		if (isValid (new Vector2 (myX - 1, myY)))
+			adjacentRooms.Add (gameManager.roomList [myX - 1, myY]);
+		else {
+			newDoor = Instantiate (gameManager.door, new Vector2 (myX - .5f, myY), Quaternion.Euler (new Vector3 (0, 0, 90)));
+			door = newDoor.GetComponent<DoorScript> ();
+			door.pos1 = new Vector2 (this.myX, this.myY);
+			door.pos2 = new Vector2 (this.myX - 1, this.myY);
+		}
+		if (isValid (new Vector2 (myX, myY + 1)))
+			adjacentRooms.Add (gameManager.roomList [myX, myY + 1]);
+		else {
+			newDoor = Instantiate (gameManager.door, new Vector2 (myX, myY + .5f), Quaternion.Euler (new Vector3 (0, 0, 0)));
+			door = newDoor.GetComponent<DoorScript> ();
+			door.pos1 = new Vector2 (this.myX, this.myY);
+			door.pos2 = new Vector2 (this.myX, this.myY + 1);
+		}
+		if (isValid (new Vector2 (myX, myY - 1)))
+			adjacentRooms.Add (gameManager.roomList [myX, myY - 1]);
+		else {
+			newDoor = Instantiate (gameManager.door, new Vector2 (myX, myY - .5f), Quaternion.Euler (new Vector3 (0, 0, 0)));
+			door = newDoor.GetComponent<DoorScript> ();
+			door.pos1 = new Vector2 (this.myX, this.myY);
+			door.pos2 = new Vector2 (this.myX, this.myY - 1);
+		}
     }
 
     void OnMouseOver()
@@ -124,10 +142,6 @@ public abstract class BaseRoom : MonoBehaviour {
                 roomThreat += gameManager.selectedObject.GetComponent<BaseMonster>().getThreat();
                 monsterInRoom = true;
                 gameManager.selectedObject.GetComponent<BaseMonster>().setCurRoom(this.gameObject);
-                foreach (GameObject neighbor in neighborRooms)
-                {
-                    neighbor.GetComponent<BaseRoom>().SortNeighbors();
-                }
                 gameManager.AddToDepartment(gameManager.selectedObject, gameManager.dungeonList);
                 uiManager.UpdateMonsters();
                 uiManager.UpdateDepartments();
@@ -144,133 +158,11 @@ public abstract class BaseRoom : MonoBehaviour {
 
     public void UpdateNeighbors()
     {
-        neighborRooms.Clear();
-        if (myY <= 8)
-        {
-            if (gameManager.roomList[myX, myY + 1] != null && gameManager.roomList[myX, myY + 1].GetComponent<BaseRoom>() != null)
-            {
-                northRoom = gameManager.roomList[myX, myY + 1];
-                northRoomScript = northRoom.GetComponent<BaseRoom>();
-                northRoomScript.southRoom = gameObject;
-                if (!northDoorBool && !northRoomScript.southDoorBool)
-                {
-                    northRoomScript.southRoom = gameObject;
-                    northRoomScript.neighborRooms.Add(gameObject);
-                    neighborRooms.Add(northRoom);
-                }
-                else northRoomScript.neighborRooms.Remove(gameObject);
-            }
-        }
-
-        if (myY >= 1)
-        {
-            if (gameManager.roomList[myX, myY - 1] != null && gameManager.roomList[myX, myY - 1].GetComponent<BaseRoom>() != null)
-            {
-                southRoom = gameManager.roomList[myX, myY - 1];
-                southRoomScript = southRoom.GetComponent<BaseRoom>();
-                southRoomScript.northRoom = gameObject;
-                if (!southDoorBool && !southRoomScript.northDoorBool)
-                {
-                    southRoomScript.northRoom = gameObject;
-                    southRoomScript.neighborRooms.Add(gameObject);
-                    neighborRooms.Add(southRoom);
-                }
-                else southRoomScript.neighborRooms.Remove(gameObject);
-
-            }
-        }
-
-        if (myX <= 8)
-        {
-            if (gameManager.roomList[myX + 1, myY] != null && gameManager.roomList[myX + 1, myY].GetComponent<BaseRoom>() != null)
-            {
-                eastRoom = gameManager.roomList[myX + 1, myY];
-                eastRoomScript = eastRoom.GetComponent<BaseRoom>();
-                eastRoomScript.westRoom = gameObject;
-                if (!eastDoorBool && !eastRoomScript.westDoorBool)
-                {
-                    eastRoomScript.westRoom = gameObject;
-                    eastRoomScript.neighborRooms.Add(gameObject);
-                    neighborRooms.Add(eastRoom);
-                }
-                else eastRoomScript.neighborRooms.Remove(gameObject);
-            }
-        }
-
-        if (myX >= 1)
-        {
-            if (gameManager.roomList[myX - 1, myY] != null && gameManager.roomList[myX - 1, myY].GetComponent<BaseRoom>() != null)
-            {
-                westRoom = gameManager.roomList[myX - 1, myY];
-                westRoomScript = westRoom.GetComponent<BaseRoom>();
-                westRoomScript.eastRoom = gameObject;
-                if (!westDoorBool && !westRoomScript.eastDoorBool)
-                {
-                    westRoomScript.eastRoom = gameObject;
-                    westRoomScript.neighborRooms.Add(gameObject);
-                    neighborRooms.Add(westRoom);
-                }
-                else westRoomScript.neighborRooms.Remove(gameObject);
-            }
-        }
-        SortNeighbors();
-    }
-
-    public void SortNeighbors()
-    {
-        if (neighborRooms.Count >= 2)
-        {
-            neighborRooms.Sort(delegate (GameObject x, GameObject y) {
-                if (x.GetComponent<BaseRoom>().roomThreat > y.GetComponent<BaseRoom>().roomThreat)
-                {
-                    return -1;
-                }
-                else if (x.GetComponent<BaseRoom>().roomThreat < y.GetComponent<BaseRoom>().roomThreat)
-                {
-                    return 1;
-                }
-                else
-                {
-                    if (UnityEngine.Random.Range(0, 2) == 0)
-                    {
-                        return -1;
-                    }
-                    else
-                    {
-                        return 1;
-                    }
-                }
-            });
-        }
+        //neighborRooms.Clear();
     }
 
     public void ClearNeighbors()
     {
-        if (northRoom != null)
-        {
-            northRoomScript.southRoom = null;
-        }
-
-        if (southRoom != null)
-        {
-            southRoomScript.northRoom = null;
-        }
-
-        if (eastRoom != null)
-        {
-            eastRoomScript.westRoom = null;
-        }
-
-        if (westRoom != null)
-        {
-            westRoomScript.eastRoom = null;
-        }
-
-        northRoom = null;
-        southRoom = null;
-        eastRoom = null;
-        westRoom = null;
-
         neighborRooms.Clear();
     }
 
@@ -452,51 +344,10 @@ public abstract class BaseRoom : MonoBehaviour {
         }
     }
 
+	//Removed
     public void OperateDoors(int door)
     {
         UpdateNeighbors();
-        if (gameManager.inConstructionMode)
-        {
-            switch (door)
-            {
-                case 1:
-                    northDoorBool = !northDoorBool;
-                    northDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
-                    if (northRoom != null)
-                    {
-                        northRoomScript.southDoorBool = northDoorBool;
-                        northRoomScript.southDoor.GetComponent<SpriteRenderer>().enabled = northDoorBool;
-                    }
-                    break;
-                case 2:
-                    southDoorBool = !southDoorBool;
-                    southDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
-                    if (southRoom != null)
-                    {
-                        southRoomScript.northDoorBool = southDoorBool;
-                        southRoomScript.northDoor.GetComponent<SpriteRenderer>().enabled = southDoorBool;
-                    }
-                    break;
-                case 3:
-                    eastDoorBool = !eastDoorBool;
-                    eastDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
-                    if (eastDoor != null)
-                    {
-                        eastRoomScript.westDoorBool = eastDoorBool;
-                        eastRoomScript.westDoor.GetComponent<SpriteRenderer>().enabled = eastDoorBool;
-                    }
-                    break;
-                case 4:
-                    westDoorBool = !westDoorBool;
-                    westDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
-                    if (westRoom != null)
-                    {
-                        westRoomScript.eastDoorBool = westDoorBool;
-                        westRoomScript.eastDoor.GetComponent<SpriteRenderer>().enabled = westDoorBool;
-                    }
-                    break;
-            }
-        }
     }
 
     //Datastructure for pathfinding. Contains the Vector2 of the room, and the Vector2 of the preceding room
@@ -529,7 +380,7 @@ public abstract class BaseRoom : MonoBehaviour {
     }
 
     //Checks if a given pos is a valid room in the GameManager
-    private bool isValid(Vector2 pos)
+	public bool isValid(Vector2 pos)
     {
         if (pos.x < 0 || pos.y < 0 || pos.x >= gameManager.roomList.GetLength(0) ||
             pos.y >= gameManager.roomList.GetLength(1))
@@ -546,21 +397,17 @@ public abstract class BaseRoom : MonoBehaviour {
     //Taken from BaseParty to check and see if all of a Room's neighbors have a path to the spawn room
     public bool CanRemove()
     {
-        BaseRoom north = null;
-        BaseRoom east = null;
-        BaseRoom south = null;
-        BaseRoom west = null;
+		BaseRoom roomScript;
 
-        if (northRoom != null)
-            north = northRoom.GetComponent<BaseRoom>();
-        if (eastRoom != null)
-            east = eastRoom.GetComponent<BaseRoom>();
-        if (southRoom != null)
-            south = southRoom.GetComponent<BaseRoom>();
-        if (westRoom != null)
-            west = westRoom.GetComponent<BaseRoom>();
+		foreach (GameObject room in adjacentRooms) {
+			roomScript = room.GetComponent<BaseRoom> ();
+			if (roomScript != null) {
+				if (!HasPath (roomScript))
+					return false;
+			}
+		}
 
-        return (HasPath(north) && HasPath(east) && HasPath(south) && HasPath(west));
+		return true;
     }
 
     //Finds the shortest path back to the dungeons spawn room

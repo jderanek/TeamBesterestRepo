@@ -609,11 +609,6 @@ RectTransform:
   m_AnchoredPosition: {x: 125, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &62882117 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1326071907255702, guid: 6915cebfbe801a04ab449cc191c28c4b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1257090981}
 --- !u!1 &95967755
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +876,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &123130844
 Transform:
   m_ObjectHideFlags: 0
@@ -6889,6 +6884,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e107284f5aef1846b5c170995f40d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 1720928684111470, guid: 058985dedd2beed49bacbe55e715dd5e, type: 2}
+  wall: {fileID: 21300000, guid: b3e2cefe615393b41a9ba4a7bebeaa1d, type: 3}
+  closed: {fileID: 21300000, guid: 026d90b8f1749a84194dc54833b8eb60, type: 3}
+  open: {fileID: 21300000, guid: 518a3d82769461f48b7b99de1dab3bbe, type: 3}
   possibleMonsters:
   - {fileID: 1136505623855328, guid: 3bd3d31ff6ef4964f87ca15b6ac7fd65, type: 2}
   - {fileID: 1472645067824748, guid: 4f11571425061844dbcd2a0327886c59, type: 2}
@@ -7256,11 +7255,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1111984982}
---- !u!1 &1113339222 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1193511562305960, guid: 6915cebfbe801a04ab449cc191c28c4b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1257090981}
 --- !u!1 &1116044187
 GameObject:
   m_ObjectHideFlags: 0
@@ -8156,11 +8150,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1261450292}
---- !u!1 &1263842686 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1697712114454522, guid: 6915cebfbe801a04ab449cc191c28c4b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1257090981}
 --- !u!1 &1264194214
 GameObject:
   m_ObjectHideFlags: 0
@@ -8477,20 +8466,13 @@ MonoBehaviour:
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
   neighborRooms: []
+  adjacentRooms: []
   roomMembers: []
   myX: 5
   myY: 9
   heroesInRoom: []
   monsterInRoom: 0
   heroInRoom: 0
-  northRoom: {fileID: 0}
-  southRoom: {fileID: 0}
-  eastRoom: {fileID: 0}
-  westRoom: {fileID: 0}
-  northDoor: {fileID: 1263842686}
-  southDoor: {fileID: 1113339222}
-  eastDoor: {fileID: 62882117}
-  westDoor: {fileID: 1795213318}
   northDoorBool: 0
   southDoorBool: 0
   eastDoorBool: 0
@@ -9331,7 +9313,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1491510505
 Transform:
   m_ObjectHideFlags: 0
@@ -10014,11 +9996,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1740814957}
---- !u!1 &1795213318 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1889695333498636, guid: 6915cebfbe801a04ab449cc191c28c4b,
-    type: 2}
-  m_PrefabInternal: {fileID: 1257090981}
 --- !u!224 &1812984223 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224240421601338276, guid: b0a89e43117e1064e861a474e4c1e01e,
@@ -10058,20 +10035,13 @@ MonoBehaviour:
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
   neighborRooms: []
+  adjacentRooms: []
   roomMembers: []
   myX: 5
   myY: 5
   heroesInRoom: []
   monsterInRoom: 0
   heroInRoom: 0
-  northRoom: {fileID: 959393533}
-  southRoom: {fileID: 0}
-  eastRoom: {fileID: 0}
-  westRoom: {fileID: 0}
-  northDoor: {fileID: 0}
-  southDoor: {fileID: 0}
-  eastDoor: {fileID: 0}
-  westDoor: {fileID: 0}
   northDoorBool: 0
   southDoorBool: 0
   eastDoorBool: 0

@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Defunct\InterviewButtonScript.cs" />
      <Compile Include="Assets\Scripts\Defunct\ResumeScript.cs" />
      <Compile Include="Assets\Scripts\Defunct\SpawnNewSquare.cs" />
+     <Compile Include="Assets\Scripts\DoorScript.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\BaseHero.cs" />
      <Compile Include="Assets\Scripts\Hero Scripts\ClericHero.cs" />

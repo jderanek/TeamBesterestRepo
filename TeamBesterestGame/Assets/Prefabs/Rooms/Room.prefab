@@ -131,7 +131,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1622502106507208
 GameObject:
   m_ObjectHideFlags: 1
@@ -270,7 +270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1994454549400840
 GameObject:
   m_ObjectHideFlags: 1
@@ -1066,20 +1066,13 @@ MonoBehaviour:
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
   neighborRooms: []
+  adjacentRooms: []
   roomMembers: []
   myX: 0
   myY: 0
   heroesInRoom: []
   monsterInRoom: 0
   heroInRoom: 0
-  northRoom: {fileID: 0}
-  southRoom: {fileID: 0}
-  eastRoom: {fileID: 0}
-  westRoom: {fileID: 0}
-  northDoor: {fileID: 0}
-  southDoor: {fileID: 0}
-  eastDoor: {fileID: 0}
-  westDoor: {fileID: 0}
   northDoorBool: 0
   southDoorBool: 0
   eastDoorBool: 0

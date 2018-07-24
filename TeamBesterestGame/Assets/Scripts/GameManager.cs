@@ -11,6 +11,14 @@ public class GameManager : MonoBehaviour
     //Test Party
     public TestPart party;
 
+	//Door object to be spawned when constructing rooms
+	//Assigned in editor for ease of use
+	public GameObject door;
+	//Sprites used for doors, also assigned by editor for ease of use
+	public Sprite wall;
+	public Sprite closed;
+	public Sprite open;
+
     //Array stuff
     public GameObject[] possibleMonsters; //public to be assigned in editor
     private GameObject[][][] monsterSpawnList;
@@ -683,4 +691,20 @@ public class GameManager : MonoBehaviour
 		return xpNeeded;
 	}
     #endregion
+
+	//Static function to check if a room exists in the roomList
+	//Checks if a given pos is a valid room in the GameManager
+	public bool isValid(Vector2 pos)
+	{
+		if (pos.x < 0 || pos.y < 0 || pos.x >= this.roomList.GetLength(0) ||
+			pos.y >= this.roomList.GetLength(1))
+			return false;
+
+		if (this.roomList[(int)pos.x, (int)pos.y] == null)
+			return false;
+		else if (this.roomList[(int)pos.x, (int)pos.y].GetComponent<BaseRoom>() == null)
+			return false;
+		else
+			return true;
+	}
 }
