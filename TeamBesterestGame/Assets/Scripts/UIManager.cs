@@ -202,7 +202,7 @@ public class UIManager : MonoBehaviour {
                 if (monster.GetComponent<BaseMonster>().department == gameManager.breakRoomList)
                 {
                     newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Assign";
-                    newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { gameManager.SelectObject(monster); });
+                    newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { gameManager.selectedObjects.Add(monster); });
                 }
                 else
                 {

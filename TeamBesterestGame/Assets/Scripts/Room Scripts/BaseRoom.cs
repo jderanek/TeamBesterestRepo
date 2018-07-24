@@ -45,6 +45,7 @@ public abstract class BaseRoom : MonoBehaviour {
     private SpriteRenderer coin3; 
     public Sprite emptyCoin; //public to assign reference in editor
     public Sprite filledCoin; //public to assign reference in editor
+    private SpriteRenderer highlight;
 
     ///<summary>
     ///Assigns all stats to this room, to be used in place of super.
@@ -88,6 +89,7 @@ public abstract class BaseRoom : MonoBehaviour {
             coin1 = transform.GetChild(2).GetComponent<SpriteRenderer>();
             coin2 = transform.GetChild(3).GetComponent<SpriteRenderer>();
             coin3 = transform.GetChild(4).GetComponent<SpriteRenderer>();
+            highlight = transform.GetChild(5).GetComponent<SpriteRenderer>();
         }
 
 		GameObject newDoor;
@@ -128,32 +130,44 @@ public abstract class BaseRoom : MonoBehaviour {
 
     void OnMouseOver()
     {
-        if (gameManager.selectedObject != null && gameManager.selectedObject.GetComponent<BaseMonster>() != null)
+        foreach (GameObject selectedObject in gameManager.selectedObjects)
+        if (selectedObject != null && selectedObject.GetComponent<BaseMonster>() != null)
         {
             if (Input.GetMouseButtonDown(1))
             {
-                gameManager.selectedObject.transform.position = new Vector3(
+                selectedObject.transform.position = new Vector3(
                     gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
                     gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
                     0
                     );
-                roomMembers.Add(gameManager.selectedObject);
-                RoomEffect(gameManager.selectedObject.GetComponent<BaseMonster>());
-                roomThreat += gameManager.selectedObject.GetComponent<BaseMonster>().getThreat();
+                roomMembers.Add(selectedObject);
+                RoomEffect(selectedObject.GetComponent<BaseMonster>());
+                roomThreat += selectedObject.GetComponent<BaseMonster>().getThreat();
                 monsterInRoom = true;
-                gameManager.selectedObject.GetComponent<BaseMonster>().setCurRoom(this.gameObject);
-                gameManager.AddToDepartment(gameManager.selectedObject, gameManager.dungeonList);
+                selectedObject.GetComponent<BaseMonster>().setCurRoom(this.gameObject);
+                gameManager.AddToDepartment(selectedObject, gameManager.dungeonList);
                 uiManager.UpdateMonsters();
                 uiManager.UpdateDepartments();
-                gameManager.selectedObject = null;
+                //selectedObject = null;
             }
+                gameManager.selectedObjects.Clear();
         }
 
-        if (Input.GetMouseButtonDown(1) && gameManager.inConstructionMode)
+        if (gameManager.inConstructionMode)
         {
-            uiManager.ToggleMenu(4);
-            gameManager.selectedObject = gameObject;
+            if (Input.GetMouseButtonDown(0) && (gameManager.selectedObjects.Count == 0 || gameManager.selectedObjects[0].GetComponent<BaseRoom>() != null))
+            {
+                print(highlight);
+                gameManager.selectedObjects.Add(gameObject);
+                this.highlight.enabled = true;
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                uiManager.ToggleMenu(4);
+            }
         }
+        
     }
 
     public void UpdateNeighbors()

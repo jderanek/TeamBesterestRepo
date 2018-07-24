@@ -265,6 +265,7 @@ public abstract class BaseHero : MonoBehaviour {
 		}*/
 	}
 
+    /*
 	void OnMouseOver()
 	{
 		if (Input.GetMouseButtonDown(0) && !inCombat)
@@ -272,4 +273,5 @@ public abstract class BaseHero : MonoBehaviour {
 			GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>().SelectObject(this.gameObject);
 		}
 	}
+    */
 }

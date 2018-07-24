@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     //TODO getter and setter
     [HideInInspector]
-    public GameObject selectedObject;
+    public List<GameObject> selectedObjects = new List<GameObject>();
 
     //Balance stuff
     public int healthWeight = 10; //public for testing in editor
@@ -320,28 +320,34 @@ public class GameManager : MonoBehaviour
         {
             case -1: //destroy room
                      //Checks if the room can be destroyed
-                if (selectedObject.GetComponent<BaseRoom>().CanRemove())
+
+                foreach (GameObject room in selectedObjects)
                 {
-                    uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                    if (room.GetComponent<BaseRoom>().CanRemove())
                     {
-                        CurrencyChanged(50);
-                        roomList[selectedObject.GetComponent<BaseRoom>().myX, selectedObject.GetComponent<BaseRoom>().myY] = null;
-                        selectedObject.GetComponent<BaseRoom>().UpdateNeighbors();
-                        Destroy(selectedObject);
-                        this.GetComponent<ConstructionScript>().ClearConstructionIcons();
-                        this.GetComponent<ConstructionScript>().StartConstruction();
-                        roomCount--;
-                        uiManager.ToggleMenu(4);
-                    });
-                }
-                else
-                {
-                    uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                        uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                        {
+                            CurrencyChanged(50);
+                            roomList[room.GetComponent<BaseRoom>().myX, room.GetComponent<BaseRoom>().myY] = null;
+                            room.GetComponent<BaseRoom>().UpdateNeighbors();
+                            selectedObjects.Remove(room);
+                            Destroy(room);
+                            this.GetComponent<ConstructionScript>().ClearConstructionIcons();
+                            this.GetComponent<ConstructionScript>().StartConstruction();
+                            roomCount--;
+                            //uiManager.ToggleMenu(4);
+                        });
+                    }
+                    else
                     {
-                        print("NO!");
-                        uiManager.ToggleMenu(4);
-                    });
+                        uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                        {
+                            print("NO!");
+                            //uiManager.ToggleMenu(4);
+                        });
+                    }
                 }
+                uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
                 break;
             default: //nothing selected
                 uiManager.roomMenuConfirm.onClick.AddListener(delegate
@@ -352,26 +358,30 @@ public class GameManager : MonoBehaviour
             case 1: //Cemetary selected
                 uiManager.roomMenuConfirm.onClick.AddListener(delegate
                 {
-                    //out with the old, in with the new
-                    BaseRoom oldScript = selectedObject.GetComponent<BaseRoom>();
-                    GameObject newRoom = Instantiate(possibleRooms[1], selectedObject.transform.position, Quaternion.identity);
-                    CemetaryRoom newScript = newRoom.GetComponent<CemetaryRoom>();
-                    newScript.myX = oldScript.myX;
-                    newScript.myY = oldScript.myY;
-                    newScript.Initialize();
-
-                    //reseting monsters in room
-                    foreach (GameObject monster in oldScript.roomMembers)
+                    foreach (GameObject room in selectedObjects)
                     {
-                        AddToDepartment(monster, breakRoomList);
-                        monster.transform.position = Vector3.zero;
+                        //out with the old, in with the new
+                        BaseRoom oldScript = room.GetComponent<BaseRoom>();
+                        GameObject newRoom = Instantiate(possibleRooms[1], room.transform.position, Quaternion.identity);
+                        CemetaryRoom newScript = newRoom.GetComponent<CemetaryRoom>();
+                        newScript.myX = oldScript.myX;
+                        newScript.myY = oldScript.myY;
+                        newScript.Initialize();
+
+                        //reseting monsters in room
+                        foreach (GameObject monster in oldScript.roomMembers)
+                        {
+                            AddToDepartment(monster, breakRoomList);
+                            monster.transform.position = Vector3.zero;
+                        }
+                        uiManager.UpdateDepartments();
+
+                        CurrencyChanged(oldScript.currentGold);
+                        selectedObjects.Remove(room);
+                        Destroy(room);
+
+                        uiManager.ToggleMenu(4);
                     }
-                    uiManager.UpdateDepartments();
-
-                    CurrencyChanged(oldScript.currentGold);
-                    Destroy(selectedObject);
-
-                    uiManager.ToggleMenu(4);
                 });
                 break;
         }
@@ -625,10 +635,12 @@ public class GameManager : MonoBehaviour
 
     #region Getters and Setters
 
+    /*
     public void SelectObject(GameObject otherObject)
     {
         selectedObject = otherObject;
     }
+    */
 
     //changes value of currency and updates UI
     //Takes: integer (either positive or negative)
