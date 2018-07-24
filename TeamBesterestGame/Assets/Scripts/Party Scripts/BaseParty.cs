@@ -262,6 +262,10 @@ public abstract class BaseParty {
 				state = "Back";
 				roomPath.RemoveAt (roomPath.Count - 1);
 				toMove = this.Backtrack ();
+				if (toMove == null) {
+					this.RemoveParty ();
+					return;
+				}
 				MoveTo (toMove);
 			}
 			break;
