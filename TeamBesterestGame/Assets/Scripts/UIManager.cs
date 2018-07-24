@@ -26,6 +26,8 @@ public class UIManager : MonoBehaviour {
     public GameObject applicationField; //public to be assigned in editor
     public GameObject monsterField; //public to be assigned in editor
 
+    public GameObject confirmationBox;
+
     public GameObject roomMenu; //public to be assigned in editor
     public Button roomMenuConfirm; //public to be assigned in editor
     public Button roomMenuCancel; //public to be assigned in editor

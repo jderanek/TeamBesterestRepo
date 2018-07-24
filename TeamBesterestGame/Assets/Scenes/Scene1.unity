@@ -7109,6 +7109,7 @@ MonoBehaviour:
   deadMonsters: []
   applicationsList: []
   selectedObjects: []
+  roomsToBuild: []
   healthWeight: 10
   attackWeight: 3
   defenseWeight: 2
@@ -7197,6 +7198,8 @@ MonoBehaviour:
   canvas: {fileID: 1495284374}
   constructionIcon: {fileID: 1155967508596460, guid: da683292365309744b2e6dbf3c9e8964,
     type: 2}
+  selectedConstructionIcon: {fileID: 21300000, guid: cfadd050e268fd9428cd53ba79cebd9c,
+    type: 3}
   room: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
@@ -7229,6 +7232,8 @@ MonoBehaviour:
   applicationField: {fileID: 1109429727128744, guid: b0a89e43117e1064e861a474e4c1e01e,
     type: 2}
   monsterField: {fileID: 1019801905109112, guid: f96e23bb6e6d2ff4ba58c4c65bf0f2a3,
+    type: 2}
+  confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
   roomMenu: {fileID: 589762297}
   roomMenuConfirm: {fileID: 145636449}

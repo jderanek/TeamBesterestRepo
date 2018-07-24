@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     #region Declarations
     UIManager uiManager;
+    ConstructionScript constructionScript;
     //Test Party
     public TestPart party;
 
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
     //TODO getter and setter
     [HideInInspector]
     public List<GameObject> selectedObjects = new List<GameObject>();
+    public List<GameObject> roomsToBuild = new List<GameObject>();
 
     //Balance stuff
     public int healthWeight = 10; //public for testing in editor
@@ -132,6 +134,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         uiManager = this.GetComponent<UIManager>();
+        constructionScript = this.GetComponent<ConstructionScript>();
         roomList = new GameObject[10, 10];
         monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv",
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
@@ -607,6 +610,7 @@ public class GameManager : MonoBehaviour
     {
         if (inConstructionMode)
         {
+            /*
             foreach (GameObject room in roomList)
             {
                 if (room != null && room.GetComponent<BaseRoom>() != null)
@@ -614,6 +618,42 @@ public class GameManager : MonoBehaviour
                     room.GetComponent<BaseRoom>().UpdateNeighbors();
                 }
             }
+            */
+            GameObject cb = Instantiate(uiManager.confirmationBox, Vector3.zero, Quaternion.identity);
+            cb.transform.SetParent(uiManager.canvas.transform, false);
+            var cbCanvas = cb.transform.GetChild(0);
+            RectTransform cbCanvasRect = cbCanvas.GetComponent<RectTransform>();
+            Button cbButtonYes = cbCanvas.GetChild(0).GetComponent<Button>();
+            Button cbButtonNo = cbCanvas.GetChild(1).GetComponent<Button>();
+            cbButtonYes.onClick.AddListener(delegate
+            {
+                if (currentCurrency >= roomsToBuild.Count * 100)
+                {
+                    foreach (GameObject plot in roomsToBuild)
+                    {
+                        constructionScript.SpawnNewRoom(plot);
+                    }
+                    Destroy(cb);
+                    ToggleConstruction();
+                    roomsToBuild.Clear();
+                }
+                else
+                {
+                    ToggleConstruction();
+                    Destroy(cb);
+                }
+            });
+            cbButtonNo.onClick.AddListener(delegate 
+            {
+                Destroy(cb);
+                roomsToBuild.Clear();
+                ToggleConstruction();
+            });
+            cbCanvasRect.anchoredPosition = new Vector2(0, 0);
+            cbCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
+            cbCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
+            
+            
         }
         inConstructionMode = !inConstructionMode;
     }

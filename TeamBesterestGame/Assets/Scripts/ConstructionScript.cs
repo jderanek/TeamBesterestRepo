@@ -11,6 +11,7 @@ public class ConstructionScript : MonoBehaviour
     public GameObject canvas;
 
     public GameObject constructionIcon; //public to be assigned in editor
+    public Sprite selectedConstructionIcon; //public to be assigned in editor
 
     public GameObject room; //public to be assigned in editor
 
@@ -37,7 +38,7 @@ public class ConstructionScript : MonoBehaviour
             {
                 if (room != null)
                 {
-                    if (room.GetComponent<BaseRoom>() != null)
+                    if (room.GetComponent<BaseRoom>() != null || gameManager.selectedObjects.Contains(room))
                     {
                         gameManager.roomCount++;
                         int myX = room.GetComponent<BaseRoom>().myX;
@@ -48,11 +49,16 @@ public class ConstructionScript : MonoBehaviour
                             {
                                 constructionIconHolder = Instantiate(constructionIcon, new Vector3(myX, myY + 1, 0f), Quaternion.identity);
                                 gameManager.roomList[myX, myY + 1] = constructionIconHolder;
-
+                                
                                 EventTrigger trigger = constructionIconHolder.GetComponent<EventTrigger>();
                                 EventTrigger.Entry entry = new EventTrigger.Entry();
                                 entry.eventID = EventTriggerType.PointerDown;
-                                entry.callback.AddListener((eventData) => { SpawnNewRoom(gameManager.roomList[myX, myY + 1]); });
+                                entry.callback.AddListener((eventData) => 
+                                {
+                                    gameManager.roomsToBuild.Add(constructionIconHolder);
+                                    constructionIconHolder.GetComponent<SpriteRenderer>().sprite = selectedConstructionIcon;
+                                    print("a");
+                                });
                                 trigger.triggers.Add(entry);
                             }
                         }
@@ -67,7 +73,12 @@ public class ConstructionScript : MonoBehaviour
                                 EventTrigger trigger = constructionIconHolder.GetComponent<EventTrigger>();
                                 EventTrigger.Entry entry = new EventTrigger.Entry();
                                 entry.eventID = EventTriggerType.PointerDown;
-                                entry.callback.AddListener((eventData) => { SpawnNewRoom(gameManager.roomList[myX, myY - 1]); });
+                                entry.callback.AddListener((eventData) => 
+                                {
+                                    gameManager.roomsToBuild.Add(constructionIconHolder);
+                                    constructionIconHolder.GetComponent<SpriteRenderer>().sprite = selectedConstructionIcon;
+                                    print("b");
+                                });
                                 trigger.triggers.Add(entry);
                             }
                         }
@@ -78,12 +89,18 @@ public class ConstructionScript : MonoBehaviour
                             {
                                 constructionIconHolder = Instantiate(constructionIcon, new Vector3(myX + 1, myY, 0f), Quaternion.identity);
                                 gameManager.roomList[myX + 1, myY] = constructionIconHolder;
-
+                                
                                 EventTrigger trigger = constructionIconHolder.GetComponent<EventTrigger>();
                                 EventTrigger.Entry entry = new EventTrigger.Entry();
                                 entry.eventID = EventTriggerType.PointerDown;
-                                entry.callback.AddListener((eventData) => { SpawnNewRoom(gameManager.roomList[myX + 1, myY]); });
+                                entry.callback.AddListener((eventData) => 
+                                {
+                                    gameManager.roomsToBuild.Add(constructionIconHolder);
+                                    constructionIconHolder.GetComponent<SpriteRenderer>().sprite = selectedConstructionIcon;
+                                    print("c");
+                                });
                                 trigger.triggers.Add(entry);
+                                
                             }
                         }
 
@@ -92,13 +109,19 @@ public class ConstructionScript : MonoBehaviour
                             if (gameManager.roomList[myX - 1, myY] == null)
                             {
                                 constructionIconHolder = Instantiate(constructionIcon, new Vector3(myX - 1, myY, 0f), Quaternion.identity);
-                                gameManager.roomList[myX - 1, myY] = constructionIconHolder;
-
+                                gameManager.roomList[myX - 1, myY] = constructionIconHolder;    
+                                
                                 EventTrigger trigger = constructionIconHolder.GetComponent<EventTrigger>();
                                 EventTrigger.Entry entry = new EventTrigger.Entry();
                                 entry.eventID = EventTriggerType.PointerDown;
-                                entry.callback.AddListener((eventData) => { SpawnNewRoom(gameManager.roomList[myX - 1, myY]); });
+                                entry.callback.AddListener((eventData) => 
+                                {
+                                    gameManager.roomsToBuild.Add(constructionIconHolder);
+                                    constructionIconHolder.GetComponent<SpriteRenderer>().sprite = selectedConstructionIcon;
+                                    print("d");
+                                });
                                 trigger.triggers.Add(entry);
+                                
                             }
                         }
                     }
@@ -107,7 +130,7 @@ public class ConstructionScript : MonoBehaviour
         }
         else
         {
-            ClearConstructionIcons();
+            //ClearConstructionIcons();
         }
     }
 
@@ -119,7 +142,7 @@ public class ConstructionScript : MonoBehaviour
         {            
             if (constructionIcon != null)
             {
-                if (constructionIcon.CompareTag("Construction Icon"))
+                if (constructionIcon.CompareTag("Construction Icon")) //maybe constructionIcon.GetComponent<BaseRoom> == null instead?
                 {                    
                     gameManager.roomList[j, i] = null;
                     Destroy(constructionIcon);
@@ -140,29 +163,12 @@ public class ConstructionScript : MonoBehaviour
 
     public void SpawnNewRoom(GameObject placeToBuild)
     {
-        if (gameManager.currentCurrency >= 100)
-        {
-            GameObject cb = Instantiate(confirmationBox, Vector3.zero, Quaternion.identity);
-            cb.transform.SetParent(canvas.transform, false);
-            var cbCanvas = cb.transform.GetChild(0);
-            RectTransform cbCanvasRect = cbCanvas.GetComponent<RectTransform>();
-            Button cbButtonYes = cbCanvas.GetChild(0).GetComponent<Button>();
-            Button cbButtonNo = cbCanvas.GetChild(1).GetComponent<Button>();
-            cbButtonYes.onClick.AddListener(delegate
-            {
-                GameObject newRoom = Instantiate(room, new Vector3(placeToBuild.transform.position.x, placeToBuild.transform.position.y, 0f), Quaternion.identity);
-                newRoom.GetComponent<BaseRoom>().myX = (int)newRoom.transform.position.x;
-                newRoom.GetComponent<BaseRoom>().myY = (int)newRoom.transform.position.y;
-                gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
-                gameManager.CurrencyChanged(-100);
-                Destroy(placeToBuild);
-                StartConstruction();
-                Destroy(cb);
-            });
-            cbButtonNo.onClick.AddListener(delegate { Destroy(cb); });
-            cbCanvasRect.anchoredPosition = new Vector2(0, 0);
-            cbCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-            cbCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
-        }                       
+        GameObject newRoom = Instantiate(room, new Vector3(placeToBuild.transform.position.x, placeToBuild.transform.position.y, 0f), Quaternion.identity);
+        newRoom.GetComponent<BaseRoom>().myX = (int)newRoom.transform.position.x;
+        newRoom.GetComponent<BaseRoom>().myY = (int)newRoom.transform.position.y;
+        gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
+        gameManager.CurrencyChanged(-100);
+        Destroy(placeToBuild);
+        StartConstruction();
     }
 }
