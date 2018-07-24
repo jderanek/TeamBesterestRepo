@@ -193,33 +193,23 @@ public abstract class BaseParty {
 
 		Vector2 newPos;
 		Node toAdd;
+		BaseRoom currentRoom = this.curRoom;
 		while (current.dis != 0) {
 			//Adds current node to all checked nodes
 			allNodes.Add (current.pos, current);
-			//Adds all four possible new directions, if available
-			newPos = new Vector2 (current.pos.x + 1, current.pos.y);
-			if (isValid(newPos) && !allNodes.ContainsKey(newPos)) {
-				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
-				queue.Enqueue (toAdd, toAdd.dis);
-			}
-			newPos = new Vector2 (current.pos.x - 1, current.pos.y);
-			if (isValid(newPos) && !allNodes.ContainsKey(newPos)) {
-				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
-				queue.Enqueue (toAdd, toAdd.dis);
-			}
-			newPos = new Vector2 (current.pos.x, current.pos.y + 1);
-			if (isValid(newPos) && !allNodes.ContainsKey(newPos)) {
-				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
-				queue.Enqueue (toAdd, toAdd.dis);
-			}
-			newPos = new Vector2 (current.pos.x, current.pos.y - 1);
-			if (isValid(newPos) && !allNodes.ContainsKey(newPos)) {
-				toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
-				queue.Enqueue (toAdd, toAdd.dis);
+			//Adds all possible rooms to move to
+			foreach (GameObject roomObject in currentRoom.neighborRooms) {
+				BaseRoom room = roomObject.GetComponent<BaseRoom> ();
+				newPos = new Vector2 (room.myX, room.myY);
+				if (!allNodes.ContainsKey (newPos)) {
+					toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
+					queue.Enqueue (toAdd, toAdd.dis);
+				}
 			}
 
 			//Gets the new shortest distance node from the queue
 			current = queue.Dequeue();
+			currentRoom = gameManager.roomList [(int)current.pos.x, (int)current.pos.y].GetComponent<BaseRoom> ();
 		}
 
 		//Iterates up until the last node in the path is found

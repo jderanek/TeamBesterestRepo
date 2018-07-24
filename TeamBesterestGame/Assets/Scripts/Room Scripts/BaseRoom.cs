@@ -7,7 +7,7 @@ public abstract class BaseRoom : MonoBehaviour {
 	//Private variables
 	//Damage type here, is it a string???
 	//float efficieny;
-	int size;
+	int size = 1;
 	int cost;
 	int slots;
 	int threat = 0;
@@ -419,7 +419,6 @@ public abstract class BaseRoom : MonoBehaviour {
     public bool CanRemove()
     {
 		BaseRoom roomScript;
-
 		foreach (GameObject room in adjacentRooms) {
 			roomScript = room.GetComponent<BaseRoom> ();
 			if (roomScript != null) {
@@ -450,46 +449,28 @@ public abstract class BaseRoom : MonoBehaviour {
 
         Vector2 newPos;
         Node toAdd;
-        while (current.dis != 0)
-        {
-            //Adds current node to all checked nodes
-            allNodes.Add(current.pos, current);
-            //Adds all four possible new directions, if available
-            newPos = new Vector2(current.pos.x + 1, current.pos.y);
-            if (isValid(newPos) && !allNodes.ContainsKey(newPos) &&
-                newPos != removePos)
-            {
-                toAdd = new Node(newPos, current.pos, Node.GetDistance(newPos, spawnPos));
-                queue.Enqueue(toAdd, toAdd.dis);
-            }
-            newPos = new Vector2(current.pos.x - 1, current.pos.y);
-            if (isValid(newPos) && !allNodes.ContainsKey(newPos) &&
-                newPos != removePos)
-            {
-                toAdd = new Node(newPos, current.pos, Node.GetDistance(newPos, spawnPos));
-                queue.Enqueue(toAdd, toAdd.dis);
-            }
-            newPos = new Vector2(current.pos.x, current.pos.y + 1);
-            if (isValid(newPos) && !allNodes.ContainsKey(newPos) &&
-                newPos != removePos)
-            {
-                toAdd = new Node(newPos, current.pos, Node.GetDistance(newPos, spawnPos));
-                queue.Enqueue(toAdd, toAdd.dis);
-            }
-            newPos = new Vector2(current.pos.x, current.pos.y - 1);
-            if (isValid(newPos) && !allNodes.ContainsKey(newPos) &&
-                newPos != removePos)
-            {
-                toAdd = new Node(newPos, current.pos, Node.GetDistance(newPos, spawnPos));
-                queue.Enqueue(toAdd, toAdd.dis);
-            }
+		BaseRoom currentRoom = room;
+		while (current.dis != 0) {
+			//Adds current node to all checked nodes
+			allNodes.Add (current.pos, current);
+			//Adds all possible rooms to move to
+			foreach (GameObject roomObject in currentRoom.adjacentRooms) {
+				BaseRoom script = roomObject.GetComponent<BaseRoom> ();
+				newPos = new Vector2 (script.myX, script.myY);
+				if (!allNodes.ContainsKey (newPos) && newPos != removePos) {
+					toAdd = new Node (newPos, current.pos, Node.GetDistance (newPos, spawnPos));
+					queue.Enqueue (toAdd, toAdd.dis);
+				}
+			}
 
             //If the queue is empty, there is no path so it returns false
-            if (queue.Count == 0)
-                return false;
+			if (queue.Count == 0) {
+				return false;
+			}
 
             //Gets the new shortest distance node from the queue
             current = queue.Dequeue();
+			currentRoom = gameManager.roomList [(int)current.pos.x, (int)current.pos.y].GetComponent<BaseRoom> ();
         }
 
         return true;

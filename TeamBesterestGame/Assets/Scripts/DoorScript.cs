@@ -49,14 +49,36 @@ public class DoorScript : MonoBehaviour {
 		if (pos1 == Vector2.negativeInfinity || pos2 == Vector2.negativeInfinity)
 			return;
 		
-		if (gameManager.isValid (pos1))
+		if (gameManager.isValid (pos1)) {
 			room1 = gameManager.roomList [(int)pos1.x, (int)pos1.y].GetComponent<BaseRoom> ();
-		else
+			if (room2 != null && room1 != null &&
+				!room2.adjacentRooms.Contains (room1.gameObject)) {
+				room1.adjacentRooms.Add (room2.gameObject);
+				room2.adjacentRooms.Add (room1.gameObject);
+			}
+		} else {
+			if (room2 != null && room1 != null && 
+				room2.adjacentRooms.Contains (room1.gameObject)) {
+				room1.adjacentRooms.Remove (room2.gameObject);
+				room2.adjacentRooms.Remove (room1.gameObject);
+			}
 			room1 = null;
-		if (gameManager.isValid (pos2))
+		}
+		if (gameManager.isValid (pos2)) {
 			room2 = gameManager.roomList [(int)pos2.x, (int)pos2.y].GetComponent<BaseRoom> ();
-		else
+			if (room1 != null && room2 != null &&
+				!room1.adjacentRooms.Contains (room2.gameObject)) {
+				room1.adjacentRooms.Add (room2.gameObject);
+				room2.adjacentRooms.Add (room1.gameObject);
+			}
+		} else {
+			if (room1 != null && room2 != null &&
+				room1.adjacentRooms.Contains (room2.gameObject)) {
+				room1.adjacentRooms.Remove (room2.gameObject);
+				room2.adjacentRooms.Remove (room1.gameObject);
+			}
 			room2 = null;
+		}
 
 		if (room1 == null && room2 == null)
 			GameObject.Destroy (this.gameObject);
