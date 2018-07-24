@@ -349,6 +349,10 @@ public class GameManager : MonoBehaviour
                 }
                 uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
                 break;
+            case -2: //merge rooms
+                //call room merging here if rooms in selectedObjects are valid for merge
+                uiManager.ToggleMenu(4);
+                break;
             default: //nothing selected
                 uiManager.roomMenuConfirm.onClick.AddListener(delegate
                 {

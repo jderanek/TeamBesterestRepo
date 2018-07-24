@@ -157,9 +157,16 @@ public abstract class BaseRoom : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0) && (gameManager.selectedObjects.Count == 0 || gameManager.selectedObjects[0].GetComponent<BaseRoom>() != null))
             {
-                print(highlight);
-                gameManager.selectedObjects.Add(gameObject);
-                this.highlight.enabled = true;
+                if (!this.highlight.enabled)
+                {
+                    gameManager.selectedObjects.Add(gameObject);
+                    this.highlight.enabled = true;
+                }
+                else
+                {
+                    gameManager.selectedObjects.Remove(gameObject);
+                    this.highlight.enabled = false;
+                }
             }
 
             if (Input.GetMouseButtonDown(1))
