@@ -460,6 +460,11 @@ public abstract class BaseRoom : MonoBehaviour {
 		while (current.dis != 0) {
 			//Adds current node to all checked nodes
 			allNodes.Add (current.pos, current);
+
+			//Breaks if there is a null room still
+			if (currentRoom == null)
+				return false;
+
 			//Adds all possible rooms to move to
 			foreach (GameObject roomObject in currentRoom.adjacentRooms) {
 				BaseRoom script = roomObject.GetComponent<BaseRoom> ();
@@ -477,6 +482,11 @@ public abstract class BaseRoom : MonoBehaviour {
 
             //Gets the new shortest distance node from the queue
             current = queue.Dequeue();
+
+			//Another check for null values
+			if (!isValid(current.pos))
+				return false;
+
 			currentRoom = gameManager.roomList [(int)current.pos.x, (int)current.pos.y].GetComponent<BaseRoom> ();
         }
 
@@ -486,6 +496,17 @@ public abstract class BaseRoom : MonoBehaviour {
 	//Sets gameManager, meant for use from MergedRoom
 	public void SetManager() {
 		gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+	}
+
+	//Removes this object from all adjacent rooms
+	//Should also be done by doors, but this should work between updates
+	public void RemoveAdjacent() {
+		BaseRoom toRemove;
+		foreach (GameObject room in this.adjacentRooms) {
+			toRemove = room.GetComponent<BaseRoom> ();
+			toRemove.adjacentRooms.Remove (this.gameObject);
+		}
+		this.adjacentRooms.Clear ();
 	}
 
     //call when monster enters room

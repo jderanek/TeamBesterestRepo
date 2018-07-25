@@ -334,36 +334,37 @@ public class GameManager : MonoBehaviour
         {
             switch (optionSelected)
             {
-                case -1: //destroy room
-                         //Checks if the room can be destroyed
-
-                    foreach (GameObject room in selectedObjects)
-                    {
-                        if (room.GetComponent<BaseRoom>() != null && room.GetComponent<BaseRoom>().CanRemove())
-                        {
-                            uiManager.roomMenuConfirm.onClick.AddListener(delegate
-                            {
-                                CurrencyChanged(50);
-                                roomList[room.GetComponent<BaseRoom>().myX, room.GetComponent<BaseRoom>().myY] = null;
-                                room.GetComponent<BaseRoom>().UpdateNeighbors();
-                                selectedObjects.Remove(room);
-                                Destroy(room);
-                                this.GetComponent<ConstructionScript>().ClearConstructionIcons();
-                                this.GetComponent<ConstructionScript>().StartConstruction();
-                                roomCount--;
-                                //uiManager.ToggleMenu(4);
-                            });
-                        }
-                        else
-                        {
-                            uiManager.roomMenuConfirm.onClick.AddListener(delegate
-                            {
-                                print("NO!");
-                                //uiManager.ToggleMenu(4);
-                            });
-                        }
-                    }
-                    selectedObjects.Clear();
+			case -1: //destroy room
+				//Adds delegate to check and destroy all possible rooms in the list of objects
+				uiManager.roomMenuConfirm.onClick.AddListener (delegate {
+					bool canContinue = true;
+					int iters = 0;
+					while (canContinue)  {
+						canContinue = false;
+						iters++;
+						foreach (GameObject room in selectedObjects) {
+							if (room.GetComponent<BaseRoom>() != null && room.GetComponent<BaseRoom>().CanRemove()) {
+								CurrencyChanged (50);
+								roomList [room.GetComponent<BaseRoom> ().myX, room.GetComponent<BaseRoom> ().myY] = null;
+								room.GetComponent<BaseRoom> ().RemoveAdjacent();
+								//selectedObjects.Remove (room);
+								Destroy (room);
+								roomCount--;
+								canContinue = true;
+							}
+						}
+						//Removes all newly null elements in the list
+						selectedObjects.RemoveAll(item => item == null);
+						if (iters > 50)
+							break;
+					}
+								//uiManager.ToggleMenu(4);
+					this.GetComponent<ConstructionScript> ().ClearConstructionIcons ();
+					this.GetComponent<ConstructionScript> ().StartConstruction ();
+					selectedObjects.Clear();
+				});
+		
+                    //selectedObjects.Clear();
                     uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
                     break;
 
