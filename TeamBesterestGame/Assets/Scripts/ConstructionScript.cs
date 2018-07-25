@@ -143,6 +143,10 @@ public class ConstructionScript : MonoBehaviour
 
     public void SpawnNewRoom(GameObject placeToBuild)
     {
+		//Makes sure there's no room at that point already
+		if (gameManager.roomList [(int)placeToBuild.transform.position.x, (int)placeToBuild.transform.position.y].GetComponent<BaseRoom> () != null)
+			return;
+		
         GameObject newRoom = Instantiate(room, new Vector3(placeToBuild.transform.position.x, placeToBuild.transform.position.y, 0f), Quaternion.identity);
         newRoom.GetComponent<BaseRoom>().myX = (int)newRoom.transform.position.x;
         newRoom.GetComponent<BaseRoom>().myY = (int)newRoom.transform.position.y;

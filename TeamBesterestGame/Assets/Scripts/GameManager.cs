@@ -349,15 +349,18 @@ public class GameManager : MonoBehaviour
 								room.GetComponent<BaseRoom> ().RemoveAdjacent();
 								//selectedObjects.Remove (room);
 								Destroy (room);
+								//room.SetActive(false);
 								roomCount--;
 								canContinue = true;
 							}
 						}
 						//Removes all newly null elements in the list
 						selectedObjects.RemoveAll(item => item == null);
-						if (iters > 50)
+
+						if (iters > 500)
 							break;
 					}
+					Debug.Log(iters);
 								//uiManager.ToggleMenu(4);
 					this.GetComponent<ConstructionScript> ().ClearConstructionIcons ();
 					this.GetComponent<ConstructionScript> ().StartConstruction ();
