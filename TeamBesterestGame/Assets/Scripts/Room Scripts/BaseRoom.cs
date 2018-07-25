@@ -45,7 +45,7 @@ public abstract class BaseRoom : MonoBehaviour {
     private SpriteRenderer coin3; 
     public Sprite emptyCoin; //public to assign reference in editor
     public Sprite filledCoin; //public to assign reference in editor
-    private SpriteRenderer highlight;
+    public SpriteRenderer highlight;
 
 	//Room to pass when clicked
 	public BaseRoom master;
@@ -161,16 +161,19 @@ public abstract class BaseRoom : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(0) && (gameManager.selectedObjects.Count == 0 || gameManager.selectedObjects[0].CompareTag("Room")))
             {
-                if (!this.highlight.enabled)
+                if (true)
                 {
-                    gameManager.selectedObjects.Add(gameObject);
-                    this.highlight.enabled = true;
-                }
-                else
-                {
-                    gameManager.selectedObjects.Remove(gameObject);
-                    this.highlight.enabled = false;
-                }
+                    if (!this.highlight.enabled)
+                    {
+                        gameManager.selectedObjects.Add(gameObject);
+                        this.highlight.enabled = true;
+                    }
+                    else
+                    {
+                        gameManager.selectedObjects.Remove(gameObject);
+                        this.highlight.enabled = false;
+                    }
+                }                
             }
 
             if (Input.GetMouseButtonDown(1))

@@ -339,7 +339,7 @@ public class GameManager : MonoBehaviour
 
                     foreach (GameObject room in selectedObjects)
                     {
-                        if (room.GetComponent<BaseRoom>().CanRemove())
+                        if (room.GetComponent<BaseRoom>() != null && room.GetComponent<BaseRoom>().CanRemove())
                         {
                             uiManager.roomMenuConfirm.onClick.AddListener(delegate
                             {
@@ -653,27 +653,40 @@ public class GameManager : MonoBehaviour
                         constructionScript.SpawnNewRoom(plot);
                     }
                     Destroy(cb);
-                    ToggleConstruction();
                     roomsToBuild.Clear();
+                    selectedObjects.Clear();
+                    constructionScript.ClearConstructionIcons();
                 }
                 else
-                {
-                    ToggleConstruction();                    
+                {                   
                     Destroy(cb);
+                    selectedObjects.Clear();
+                    constructionScript.ClearConstructionIcons();
                 }
+                
             });
             cbButtonNo.onClick.AddListener(delegate 
             {
                 Destroy(cb);
                 roomsToBuild.Clear();
-                ToggleConstruction();
+                constructionScript.ClearConstructionIcons();
+                selectedObjects.Clear();
             });
             cbCanvasRect.anchoredPosition = new Vector2(0, 0);
             cbCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
-            cbCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
+            cbCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);            
+        }
+        foreach (GameObject obj in selectedObjects)
+        {           
+            if (obj.CompareTag("Room"))
+            {
+                obj.GetComponent<BaseRoom>().highlight.enabled = false;
+            }
+        }
+        if (selectedObjects.Count == 0)
+        {
             constructionScript.ClearConstructionIcons();
         }
-        constructionScript.ClearConstructionIcons();
         inConstructionMode = !inConstructionMode;
     }
 
