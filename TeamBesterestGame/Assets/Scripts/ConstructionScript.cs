@@ -38,7 +38,7 @@ public class ConstructionScript : MonoBehaviour
             {
                 if (room != null)
                 {
-                    if (room.GetComponent<BaseRoom>() != null || gameManager.selectedObjects.Contains(room))
+                    if (room.CompareTag("Room") || gameManager.selectedObjects.Contains(room))
                     {
                         gameManager.roomCount++;
                         int myX = room.GetComponent<BaseRoom>().myX;
@@ -149,6 +149,7 @@ public class ConstructionScript : MonoBehaviour
                     entry.eventID = EventTriggerType.PointerDown;
                     entry.callback.AddListener((eventData) =>
                     {
+                        gameManager.selectedObjects.Add(icon);
                         gameManager.roomsToBuild.Add(icon);
                         icon.GetComponent<SpriteRenderer>().sprite = selectedConstructionIcon;
                         StartConstruction();

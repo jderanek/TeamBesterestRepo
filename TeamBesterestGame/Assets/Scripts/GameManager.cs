@@ -330,80 +330,96 @@ public class GameManager : MonoBehaviour
     public void RoomMenuHandler(int optionSelected)
     {
         uiManager.roomMenuConfirm.onClick.RemoveAllListeners();
-        switch (optionSelected)
+        if (selectedObjects[0].CompareTag("Room"))
         {
-            case -1: //destroy room
-                     //Checks if the room can be destroyed
+            switch (optionSelected)
+            {
+                case -1: //destroy room
+                         //Checks if the room can be destroyed
 
-                foreach (GameObject room in selectedObjects)
-                {
-                    if (room.GetComponent<BaseRoom>().CanRemove())
-                    {
-                        uiManager.roomMenuConfirm.onClick.AddListener(delegate
-                        {
-                            CurrencyChanged(50);
-                            roomList[room.GetComponent<BaseRoom>().myX, room.GetComponent<BaseRoom>().myY] = null;
-                            room.GetComponent<BaseRoom>().UpdateNeighbors();
-                            selectedObjects.Remove(room);
-                            Destroy(room);
-                            this.GetComponent<ConstructionScript>().ClearConstructionIcons();
-                            this.GetComponent<ConstructionScript>().StartConstruction();
-                            roomCount--;
-                            //uiManager.ToggleMenu(4);
-                        });
-                    }
-                    else
-                    {
-                        uiManager.roomMenuConfirm.onClick.AddListener(delegate
-                        {
-                            print("NO!");
-                            //uiManager.ToggleMenu(4);
-                        });
-                    }
-                }
-                uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
-                break;
-			case -2: //merge rooms
-                //call room merging here if rooms in selectedObjects are valid for merge
-				MergedRoom.MergeRooms (selectedObjects);
-				uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
-                break;
-            default: //nothing selected
-                uiManager.roomMenuConfirm.onClick.AddListener(delegate
-                {
-                    uiManager.ToggleMenu(4);
-                });
-                break;
-            case 1: //Cemetary selected
-                uiManager.roomMenuConfirm.onClick.AddListener(delegate
-                {
                     foreach (GameObject room in selectedObjects)
                     {
-                        //out with the old, in with the new
-                        BaseRoom oldScript = room.GetComponent<BaseRoom>();
-                        GameObject newRoom = Instantiate(possibleRooms[1], room.transform.position, Quaternion.identity);
-                        CemetaryRoom newScript = newRoom.GetComponent<CemetaryRoom>();
-                        newScript.myX = oldScript.myX;
-                        newScript.myY = oldScript.myY;
-                        newScript.Initialize();
-
-                        //reseting monsters in room
-                        foreach (GameObject monster in oldScript.roomMembers)
+                        if (room.GetComponent<BaseRoom>().CanRemove())
                         {
-                            AddToDepartment(monster, breakRoomList);
-                            monster.transform.position = Vector3.zero;
+                            uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                            {
+                                CurrencyChanged(50);
+                                roomList[room.GetComponent<BaseRoom>().myX, room.GetComponent<BaseRoom>().myY] = null;
+                                room.GetComponent<BaseRoom>().UpdateNeighbors();
+                                selectedObjects.Remove(room);
+                                Destroy(room);
+                                this.GetComponent<ConstructionScript>().ClearConstructionIcons();
+                                this.GetComponent<ConstructionScript>().StartConstruction();
+                                roomCount--;
+                                //uiManager.ToggleMenu(4);
+                            });
                         }
-                        uiManager.UpdateDepartments();
-
-                        CurrencyChanged(oldScript.currentGold);
-                        selectedObjects.Remove(room);
-                        Destroy(room);
-
-                        uiManager.ToggleMenu(4);
+                        else
+                        {
+                            uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                            {
+                                print("NO!");
+                                //uiManager.ToggleMenu(4);
+                            });
+                        }
                     }
-                });
-                break;
+                    selectedObjects.Clear();
+                    uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
+                    break;
+
+                case -2: //merge rooms
+                         //call room merging here if rooms in selectedObjects are valid for merge
+                    MergedRoom.MergeRooms(selectedObjects);
+                    uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                    {
+                        uiManager.ToggleMenu(4);
+                        foreach (GameObject room in selectedObjects)
+                        {
+                            room.transform.GetChild(5).GetComponent<SpriteRenderer>().enabled = false;
+                        }
+                        selectedObjects.Clear();
+                        this.GetComponent<ConstructionScript>().ClearConstructionIcons();
+                        this.GetComponent<ConstructionScript>().StartConstruction();
+                    });
+                    break;
+                default: //nothing selected
+                    uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                    {
+                        uiManager.ToggleMenu(4);
+                    });
+                    break;
+                case 1: //Cemetary selected
+                    uiManager.roomMenuConfirm.onClick.AddListener(delegate
+                    {
+                        foreach (GameObject room in selectedObjects)
+                        {
+                            //out with the old, in with the new
+                            BaseRoom oldScript = room.GetComponent<BaseRoom>();
+                            GameObject newRoom = Instantiate(possibleRooms[1], room.transform.position, Quaternion.identity);
+                            CemetaryRoom newScript = newRoom.GetComponent<CemetaryRoom>();
+                            newScript.myX = oldScript.myX;
+                            newScript.myY = oldScript.myY;
+                            newScript.Initialize();
+
+                            //reseting monsters in room
+                            foreach (GameObject monster in oldScript.roomMembers)
+                            {
+                                AddToDepartment(monster, breakRoomList);
+                                monster.transform.position = Vector3.zero;
+                            }
+                            uiManager.UpdateDepartments();
+
+                            CurrencyChanged(oldScript.currentGold);
+                            selectedObjects.Remove(room);
+                            Destroy(room);
+
+                            uiManager.ToggleMenu(4);
+                        }
+                    });
+                    break;
+            }
         }
+
     }
     #endregion
 
