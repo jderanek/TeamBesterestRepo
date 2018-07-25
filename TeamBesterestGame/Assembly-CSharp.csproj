@@ -89,6 +89,7 @@
      <Compile Include="Assets\Scripts\Room Scripts\CemetaryRoom.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\DefaultRoom.cs" />
      <Compile Include="Assets\Scripts\Room Scripts\EntranceRoom.cs" />
+     <Compile Include="Assets\Scripts\Room Scripts\MergedRoom.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\CowardlyTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\FancyTrait.cs" />
      <Compile Include="Assets\Scripts\Trait Scripts\FlirtyTrait.cs" />

@@ -7,12 +7,12 @@ public abstract class BaseRoom : MonoBehaviour {
 	//Private variables
 	//Damage type here, is it a string???
 	//float efficieny;
-	int size = 1;
+	public int size = 1;
 	int cost;
 	int slots;
 	int threat = 0;
 
-    private GameManager gameManager;
+    public GameManager gameManager;
     private UIManager uiManager;
 
     public GameObject canvas;
@@ -47,6 +47,9 @@ public abstract class BaseRoom : MonoBehaviour {
     public Sprite filledCoin; //public to assign reference in editor
     private SpriteRenderer highlight;
 
+	//Room to pass when clicked
+	public BaseRoom master;
+
     ///<summary>
     ///Assigns all stats to this room, to be used in place of super.
     ///</summary>
@@ -80,6 +83,7 @@ public abstract class BaseRoom : MonoBehaviour {
     public void Initialize()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+		this.master = this;
         uiManager = gameManager.GetComponent<UIManager>();
         gameManager.roomList[myX, myY] = gameObject;
         UpdateNeighbors();
@@ -475,6 +479,11 @@ public abstract class BaseRoom : MonoBehaviour {
 
         return true;
     }
+
+	//Sets gameManager, meant for use from MergedRoom
+	public void SetManager() {
+		gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+	}
 
     //call when monster enters room
     abstract public void RoomEffect(BaseMonster monster);

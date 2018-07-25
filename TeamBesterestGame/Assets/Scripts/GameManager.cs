@@ -248,6 +248,17 @@ public class GameManager : MonoBehaviour
 			}
 		}
         */
+
+		//Room merge test
+		/*
+		MergedRoom merged = MergedRoom.MergeBase (this.roomList [5, 6].GetComponent<BaseRoom> (),
+			                    this.roomList [5, 7].GetComponent<BaseRoom> ());
+		MergedRoom merged2 = MergedRoom.MergeBase (this.roomList [6, 7].GetComponent<BaseRoom> (),
+			this.roomList [7, 7].GetComponent<BaseRoom> ());
+
+		merged = MergedRoom.MergeMerged (merged, merged2);
+		merged = MergedRoom.MergeMixed(merged, this.roomList [5, 8].GetComponent<BaseRoom> ());
+		*/
     }
     #endregion
 
@@ -352,9 +363,10 @@ public class GameManager : MonoBehaviour
                 }
                 uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
                 break;
-            case -2: //merge rooms
+			case -2: //merge rooms
                 //call room merging here if rooms in selectedObjects are valid for merge
-                uiManager.ToggleMenu(4);
+				MergedRoom.MergeRooms (selectedObjects);
+				uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
                 break;
             default: //nothing selected
                 uiManager.roomMenuConfirm.onClick.AddListener(delegate
