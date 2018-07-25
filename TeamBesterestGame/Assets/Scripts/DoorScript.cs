@@ -51,10 +51,9 @@ public class DoorScript : MonoBehaviour {
 		
 		if (gameManager.isValid (pos1)) {
 			room1 = gameManager.roomList [(int)pos1.x, (int)pos1.y].GetComponent<BaseRoom> ();
-			if (room2 != null && room1 != null &&
-				!room2.adjacentRooms.Contains (room1.gameObject)) {
-				room1.adjacentRooms.Add (room2.gameObject);
-				room2.adjacentRooms.Add (room1.gameObject);
+			if (room2 != null && room1 != null) {
+				this.AddRoom (room1, room2);
+				this.AddRoom (room2, room1);
 			}
 		} else {
 			if (room2 != null && room1 != null && 
@@ -66,10 +65,9 @@ public class DoorScript : MonoBehaviour {
 		}
 		if (gameManager.isValid (pos2)) {
 			room2 = gameManager.roomList [(int)pos2.x, (int)pos2.y].GetComponent<BaseRoom> ();
-			if (room1 != null && room2 != null &&
-				!room1.adjacentRooms.Contains (room2.gameObject)) {
-				room1.adjacentRooms.Add (room2.gameObject);
-				room2.adjacentRooms.Add (room1.gameObject);
+			if (room1 != null && room2 != null) {
+				this.AddRoom (room1, room2);
+				this.AddRoom (room2, room1);
 			}
 		} else {
 			if (room1 != null && room2 != null &&
@@ -91,5 +89,11 @@ public class DoorScript : MonoBehaviour {
 			this.render.enabled = false;
 		else
 			this.render.enabled = true;
+	}
+
+	//Adds room to adjacentList, unless it is alraedy added
+	private void AddRoom(BaseRoom room1, BaseRoom room2) {
+		if (!room1.adjacentRooms.Contains (room2.gameObject))
+			room1.adjacentRooms.Add (room2.gameObject);
 	}
 }
