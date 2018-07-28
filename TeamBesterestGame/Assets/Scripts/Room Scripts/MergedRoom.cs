@@ -29,6 +29,9 @@ public class MergedRoom : BaseRoom {
 		merged.rooms.Add (room1);
 		merged.rooms.Add (room2);
 
+		room1.master = merged;
+		room2.master = merged;
+
 		//Replaces previous rooms with this room in the list
 		merged.gameManager.roomList [room1.myX, room1.myY] = roomObject;
 		merged.gameManager.roomList [room2.myX, room2.myY] = roomObject;
@@ -92,6 +95,8 @@ public class MergedRoom : BaseRoom {
 		merged.goldCapacity += toMerge.goldCapacity;
 		merged.currentGold += toMerge.currentGold;
 
+		toMerge.master = merged;
+
 		//Moves all monsters into the new room and removes them from old
 		merged.roomMembers.AddRange (toMerge.roomMembers);
 		toMerge.roomMembers.Clear ();
@@ -128,6 +133,7 @@ public class MergedRoom : BaseRoom {
 		foreach (BaseRoom room in toMerge.rooms) {
 			merged.rooms.Add (room);
 			merged.gameManager.roomList [room.myX, room.myY] = merged.gameObject;
+			room.master = merged;
 		}
 		toMerge.rooms.Clear ();
 

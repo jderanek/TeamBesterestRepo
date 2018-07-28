@@ -7101,7 +7101,7 @@ MonoBehaviour:
   possibleRooms:
   - {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   - {fileID: 1566428048444222, guid: 9f5a6c6a54624084782763b0cad1d35c, type: 2}
-  roomCount: 8
+  roomCount: 7
   monsterList: []
   breakRoomList: []
   dungeonList: []
@@ -8671,6 +8671,7 @@ MonoBehaviour:
   currentGold: 0
   emptyCoin: {fileID: 0}
   filledCoin: {fileID: 0}
+  highlight: {fileID: 0}
   master: {fileID: 0}
 --- !u!1 &1321988802
 GameObject:
@@ -10238,6 +10239,7 @@ MonoBehaviour:
   currentGold: 0
   emptyCoin: {fileID: 21300000, guid: 6bbf5c900c3b80a4c9ae540944a6c7cc, type: 3}
   filledCoin: {fileID: 21300000, guid: ef7c1a33e177bd143b09d4a8bb8e3d47, type: 3}
+  highlight: {fileID: 0}
   master: {fileID: 0}
 --- !u!65 &1893377718
 BoxCollider:

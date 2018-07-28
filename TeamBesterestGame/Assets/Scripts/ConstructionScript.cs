@@ -43,7 +43,7 @@ public class ConstructionScript : MonoBehaviour
                         GameObject room = gameManager.roomList[x, y];
                         if (room.GetComponent<BaseRoom>() != null || gameManager.selectedObjects.Contains(room))
                         {
-                            gameManager.roomCount++;
+                            //gameManager.roomCount++;
                             if (y < 9)
                             {
                                 if (gameManager.roomList[x, y + 1] == null)
@@ -152,6 +152,7 @@ public class ConstructionScript : MonoBehaviour
         newRoom.GetComponent<BaseRoom>().myY = (int)newRoom.transform.position.y;
         newRoom.GetComponent<BaseRoom>().Initialize();
         gameManager.roomList[(int)newRoom.transform.position.x, (int)newRoom.transform.position.y] = newRoom;
+		gameManager.roomCount++;
         gameManager.CurrencyChanged(-100);
         Destroy(placeToBuild);
         StartConstruction();

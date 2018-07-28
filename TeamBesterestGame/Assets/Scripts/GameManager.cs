@@ -339,28 +339,36 @@ public class GameManager : MonoBehaviour
 				uiManager.roomMenuConfirm.onClick.AddListener (delegate {
 					bool canContinue = true;
 					int iters = 0;
+					Debug.Log(selectedObjects.Count);
 					while (canContinue)  {
 						canContinue = false;
 						iters++;
+
+						GameObject toDelete = null;
 						foreach (GameObject room in selectedObjects) {
 							if (room.GetComponent<BaseRoom>() != null && room.GetComponent<BaseRoom>().CanRemove()) {
 								CurrencyChanged (50);
 								roomList [room.GetComponent<BaseRoom> ().myX, room.GetComponent<BaseRoom> ().myY] = null;
 								room.GetComponent<BaseRoom> ().RemoveAdjacent();
 								//selectedObjects.Remove (room);
-								Destroy (room);
+								//Destroy (room);
 								//room.SetActive(false);
 								roomCount--;
 								canContinue = true;
+								toDelete = room;
+								break;
 							}
 						}
-						//Removes all newly null elements in the list
-						selectedObjects.RemoveAll(item => item == null);
+						if (toDelete != null) {
+							selectedObjects.Remove(toDelete);
+							Destroy (toDelete);
+						}
+						//Removes the newly deleted room
+						//selectedObjects.RemoveAll(item => item == null);
 
 						if (iters > 500)
 							break;
 					}
-					Debug.Log(iters);
 								//uiManager.ToggleMenu(4);
 					this.GetComponent<ConstructionScript> ().ClearConstructionIcons ();
 					this.GetComponent<ConstructionScript> ().StartConstruction ();
