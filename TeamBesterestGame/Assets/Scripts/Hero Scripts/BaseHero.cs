@@ -157,7 +157,12 @@ public abstract class BaseHero : MonoBehaviour {
 		this.curRoom = room;
 		curRoom.heroesInRoom.Add (this.gameObject);
 		curRoom.heroInRoom = true;
-		this.gameObject.transform.position = room.gameObject.transform.position;
+		if (curRoom is MergedRoom) {
+			MergedRoom merged = curRoom as MergedRoom;
+			int randRoom = Random.Range (0, merged.rooms.Count - 1);
+			this.gameObject.transform.position = merged.rooms [randRoom].transform.position;
+		} else
+			this.gameObject.transform.position = room.gameObject.transform.position;
 	}
 
 	//Function to kill this hero

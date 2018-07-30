@@ -339,7 +339,6 @@ public class GameManager : MonoBehaviour
 				uiManager.roomMenuConfirm.onClick.AddListener (delegate {
 					bool canContinue = true;
 					int iters = 0;
-					Debug.Log(selectedObjects.Count);
 					while (canContinue)  {
 						canContinue = false;
 						iters++;

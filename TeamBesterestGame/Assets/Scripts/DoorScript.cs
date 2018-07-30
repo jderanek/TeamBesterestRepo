@@ -28,19 +28,10 @@ public class DoorScript : MonoBehaviour {
 
 	void OnMouseDown() {
 		if (this.room1 != null && this.room2 != null) {
-			if (isOpen) {
-				isOpen = false;
-				room1.neighborRooms.Remove (room2.gameObject);
-				room2.neighborRooms.Remove (room1.gameObject);
-				render.sprite = gameManager.closed;
-			} else {
-				isOpen = true;
-				if (!room1.neighborRooms.Contains (room2.gameObject))
-					room1.neighborRooms.Add (room2.gameObject);
-				if (!room2.neighborRooms.Contains (room1.gameObject))
-					room2.neighborRooms.Add (room1.gameObject);
-				render.sprite = gameManager.open;
-			}
+			if (isOpen)
+				Close ();
+			else
+				Open ();
 		}
 	}
 		
@@ -50,10 +41,13 @@ public class DoorScript : MonoBehaviour {
 			return;
 		
 		if (gameManager.isValid (pos1)) {
-			room1 = gameManager.roomList [(int)pos1.x, (int)pos1.y].GetComponent<BaseRoom> ();
-			if (room2 != null && room1 != null) {
-				this.AddRoom (room1, room2);
-				this.AddRoom (room2, room1);
+			if (gameManager.roomList [(int)pos1.x, (int)pos1.y].GetComponent<BaseRoom> () != room1) {
+				Close ();
+				room1 = gameManager.roomList [(int)pos1.x, (int)pos1.y].GetComponent<BaseRoom> ();
+				if (room2 != null && room1 != null) {
+					this.AddRoom (room1, room2);
+					this.AddRoom (room2, room1);
+				}
 			}
 		} else {
 			if (room2 != null && room1 != null && 
@@ -64,10 +58,13 @@ public class DoorScript : MonoBehaviour {
 			room1 = null;
 		}
 		if (gameManager.isValid (pos2)) {
-			room2 = gameManager.roomList [(int)pos2.x, (int)pos2.y].GetComponent<BaseRoom> ();
-			if (room1 != null && room2 != null) {
-				this.AddRoom (room1, room2);
-				this.AddRoom (room2, room1);
+			if (gameManager.roomList [(int)pos2.x, (int)pos2.y].GetComponent<BaseRoom> () != room2) {
+				Close ();
+				room2 = gameManager.roomList [(int)pos2.x, (int)pos2.y].GetComponent<BaseRoom> ();
+				if (room1 != null && room2 != null) {
+					this.AddRoom (room1, room2);
+					this.AddRoom (room2, room1);
+				}
 			}
 		} else {
 			if (room1 != null && room2 != null &&
@@ -80,14 +77,16 @@ public class DoorScript : MonoBehaviour {
 
 		if (room1 == null && room2 == null)
 			GameObject.Destroy (this.gameObject);
-		else if (room1 == null ^ room2 == null)
+		else if (room1 == null ^ room2 == null) {
+			this.Close ();
 			this.render.sprite = gameManager.wall;
-		else if (!isOpen)
+		} else if (!isOpen)
 			this.render.sprite = gameManager.closed;
 
-		if (room1 == room2)
+		if (room1 == room2) {
+			this.Close ();
 			this.render.enabled = false;
-		else
+		} else
 			this.render.enabled = true;
 	}
 
@@ -95,5 +94,28 @@ public class DoorScript : MonoBehaviour {
 	private void AddRoom(BaseRoom room1, BaseRoom room2) {
 		if (!room1.adjacentRooms.Contains (room2.gameObject))
 			room1.adjacentRooms.Add (room2.gameObject);
+	}
+
+	//Opens door
+	private void Open() {
+		if (room1 == null || room2 == null)
+			return;
+		
+		isOpen = true;
+		if (!room1.neighborRooms.Contains (room2.gameObject))
+			room1.neighborRooms.Add (room2.gameObject);
+		if (!room2.neighborRooms.Contains (room1.gameObject))
+			room2.neighborRooms.Add (room1.gameObject);
+		render.sprite = gameManager.open;
+	}
+	//Closes door
+	private void Close() {
+		if (room1 == null || room2 == null)
+			return;
+		
+		isOpen = false;
+		room1.neighborRooms.Remove (room2.gameObject);
+		room2.neighborRooms.Remove (room1.gameObject);
+		render.sprite = gameManager.closed;
 	}
 }
