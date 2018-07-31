@@ -134,27 +134,19 @@ public abstract class BaseRoom : MonoBehaviour {
 
     void OnMouseOver()
     {
-        foreach (GameObject selectedObject in gameManager.selectedObjects)
-        if (selectedObject != null && selectedObject.GetComponent<BaseMonster>() != null)
+        if (gameManager.selectedObjects.Count != 0 && gameManager.selectedObjects[0].GetComponent<BaseMonster>() != null)
         {
             if (Input.GetMouseButtonDown(1))
             {
-                selectedObject.transform.position = new Vector3(
-                    gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
-                    gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
-                    0
-                    );
-                roomMembers.Add(selectedObject);
-                RoomEffect(selectedObject.GetComponent<BaseMonster>());
-                roomThreat += selectedObject.GetComponent<BaseMonster>().getThreat();
-                monsterInRoom = true;
-                selectedObject.GetComponent<BaseMonster>().setCurRoom(this.gameObject);
-                gameManager.AddToDepartment(selectedObject, gameManager.dungeonList);
-                uiManager.UpdateMonsters();
-                uiManager.UpdateDepartments();
-                //selectedObject = null;
+                print(master);
+                if (master.GetComponent<MergedRoom>() != null) {
+                    master.GetComponent<MergedRoom>().rooms[0].AssignMonsters(gameManager.selectedObjects);
+                }
+                else
+                {
+                    master.AssignMonsters(gameManager.selectedObjects);
+                }
             }
-                gameManager.selectedObjects.Clear();
         }
 
         if (gameManager.inConstructionMode)
@@ -173,7 +165,7 @@ public abstract class BaseRoom : MonoBehaviour {
                         gameManager.selectedObjects.Remove(gameObject);
                         this.highlight.enabled = false;
                     }
-                }                
+                }   
             }
 
             if (Input.GetMouseButtonDown(1))
@@ -182,6 +174,30 @@ public abstract class BaseRoom : MonoBehaviour {
             }
         }
         
+    }
+
+    public void AssignMonsters(List<GameObject> monsters)
+    {
+        foreach (GameObject monster in monsters)
+        {
+            monster.transform.position = new Vector3(
+                    gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
+                    gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
+                    0
+                    );
+            roomMembers.Add(monster);
+            RoomEffect(monster.GetComponent<BaseMonster>());
+            roomThreat += monster.GetComponent<BaseMonster>().getThreat();
+            monsterInRoom = true;
+            monster.GetComponent<BaseMonster>().setCurRoom(this.gameObject);
+            gameManager.AddToDepartment(monster, gameManager.dungeonList);
+            //uiManager.UpdateMonsters();
+            //uiManager.UpdateDepartments();
+            //selectedObject = null;
+        }
+        uiManager.UpdateMonsters();
+        uiManager.UpdateDepartments();
+        monsters.Clear();
     }
 
     public void UpdateNeighbors()

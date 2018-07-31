@@ -179,6 +179,7 @@ public class UIManager : MonoBehaviour {
     {
         //reset panel
         int childNum = 0;
+        Debug.Log("a");
         foreach (Transform child in menus[1].transform)
         {
             if (childNum != 0)
@@ -187,7 +188,7 @@ public class UIManager : MonoBehaviour {
             }
             childNum++;
         }
-
+        Debug.Log(gameManager.monsterList.Count);
         //create a field for each Monster
         foreach (GameObject monster in gameManager.monsterList)
         {
@@ -225,6 +226,7 @@ public class UIManager : MonoBehaviour {
                 newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
             }
         }
+        Debug.Log("c");
     }
 
     //Call this whenever you change the Department Panel
