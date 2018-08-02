@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour {
     public Font arial;
 
     public GameObject[] menus;
+    public GameObject sideBar;
 
     public GameObject emptyField; //public to be assigned in editor
     public GameObject breakRoomHeader; //public to be assigned in editor
@@ -50,14 +51,24 @@ public class UIManager : MonoBehaviour {
     public void ToggleMenu(int menuToOpen)
     {
         int i = 0;
+        int j = 0;
         foreach (GameObject menu in menus)
         {
             if (menuToOpen == i)
             {
+                sideBar.SetActive(true);
                 menu.SetActive(!menu.activeInHierarchy);
+                if (menu.activeInHierarchy == true)
+                {
+                    j++;
+                }
             }
             else
             {
+                if (j == 0)
+                {
+                    sideBar.SetActive(false);
+                }
                 menu.SetActive(false);
             }
             i++;
@@ -138,7 +149,7 @@ public class UIManager : MonoBehaviour {
     {
         //reset the panel
         int childNum = 0;
-        foreach (Transform child in menus[0].transform)
+        foreach (Transform child in menus[0].transform.GetChild(0).transform)
         {
             if (childNum != 0)
             {
@@ -165,7 +176,7 @@ public class UIManager : MonoBehaviour {
             //hire button
             newFieldCanvas.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate { gameManager.HireButton(application, newField); });
 
-            newField.transform.SetParent(menus[0].transform, false);
+            newField.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
 
             //manually adjust its position           
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
@@ -180,7 +191,7 @@ public class UIManager : MonoBehaviour {
         //reset panel
         int childNum = 0;
         //Debug.Log("a");
-        foreach (Transform child in menus[1].transform)
+        foreach (Transform child in menus[1].transform.GetChild(0).transform)
         {
             if (childNum != 0)
             {
@@ -218,7 +229,7 @@ public class UIManager : MonoBehaviour {
                         monster.transform.position = new Vector3(0, 0, 0);
                     });
                 }
-                newField.transform.SetParent(menus[1].transform, false);
+                newField.transform.SetParent(menus[1].transform.GetChild(0).transform, false);
 
                 //manually adjust its position
                 newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
@@ -234,7 +245,7 @@ public class UIManager : MonoBehaviour {
     {
         //reset panel
         int childNum = 0;
-        foreach (Transform child in menus[2].transform)
+        foreach (Transform child in menus[2].transform.GetChild(0).transform)
         {
             if (childNum != 0)
             {
@@ -244,8 +255,8 @@ public class UIManager : MonoBehaviour {
         }
 
         var newBreakRoomHeader = Instantiate(breakRoomHeader, new Vector3(0, 0, 0), Quaternion.identity);
-        newBreakRoomHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
-        newBreakRoomHeader.transform.SetParent(menus[2].transform, true);
+        newBreakRoomHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(217, 30);
+        newBreakRoomHeader.transform.SetParent(menus[2].transform.GetChild(0).transform, true);
         newBreakRoomHeader.GetComponent<Image>().enabled = true;
         newBreakRoomHeader.GetComponentInChildren<Text>().enabled = true;
         newBreakRoomHeader.GetComponentInChildren<Text>().text = "Unassigned";
@@ -259,7 +270,7 @@ public class UIManager : MonoBehaviour {
             newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
             newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
             newFieldCanvas.GetChild(3).gameObject.SetActive(false);
-            newField.transform.SetParent(menus[2].transform, false);
+            newField.transform.SetParent(menus[2].transform.GetChild(0).transform, false);
 
             //manually adjust its position
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
@@ -268,8 +279,8 @@ public class UIManager : MonoBehaviour {
         }
 
         var newPRHeader = Instantiate(prHeader, new Vector3(0, 0, 0), Quaternion.identity);
-        newPRHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(255, 30);
-        newPRHeader.transform.SetParent(menus[2].transform, false);
+        newPRHeader.GetComponent<RectTransform>().sizeDelta = new Vector2(217, 30);
+        newPRHeader.transform.SetParent(menus[2].transform.GetChild(0).transform, false);
         newPRHeader.GetComponent<Image>().enabled = true;
         Text newPRHeaderText = newPRHeader.GetComponentInChildren<Text>();
         newPRHeaderText.enabled = true;
@@ -285,7 +296,7 @@ public class UIManager : MonoBehaviour {
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { gameManager.AddToDepartment(monster, gameManager.breakRoomList); });
             newFieldCanvas.transform.GetChild(3).transform.GetComponentInChildren<Text>().text = "Remove";
-            newField.transform.SetParent(menus[2].transform, false);
+            newField.transform.SetParent(menus[2].transform.GetChild(0).transform, false);
 
             //manually adjust position
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
@@ -303,7 +314,7 @@ public class UIManager : MonoBehaviour {
                 UpdateAssignment(gameManager.prList);
                 ToggleMenu(3);
             });
-            emptySlotPR.transform.SetParent(menus[2].transform, false);
+            emptySlotPR.transform.SetParent(menus[2].transform.GetChild(0).transform, false);
             emptySlotPR.GetComponent<Image>().enabled = true;
 
             emptySlotPRCanvasRect.anchoredPosition = new Vector2(0, 0);
@@ -313,9 +324,9 @@ public class UIManager : MonoBehaviour {
             emptySlotPRCanvas.GetComponent<CanvasScaler>().enabled = true;
             emptySlotPRCanvas.GetComponent<GraphicRaycaster>().enabled = true;
             emptySlotPRCanvas.transform.GetChild(0).GetComponent<Image>().enabled = false;
-            emptySlotPRCanvas.transform.GetChild(1).GetComponent<Text>().enabled = false;
-            emptySlotPRCanvas.transform.GetChild(4).GetComponent<Text>().enabled = false;
-            emptySlotPRCanvas.transform.GetChild(3).GetComponent<RectTransform>().position = Vector2.zero;
+            //emptySlotPRCanvas.transform.GetChild(1).GetComponent<Text>().enabled = false;
+            //emptySlotPRCanvas.transform.GetChild(4).GetComponent<Text>().enabled = false;
+            //emptySlotPRCanvas.transform.GetChild(3).GetComponent<RectTransform>().position = Vector2.zero;
         }
     }
 
@@ -324,7 +335,7 @@ public class UIManager : MonoBehaviour {
     {
         //reset panel
         int childNum = 0;
-        foreach (Transform child in menus[3].transform)
+        foreach (Transform child in menus[3].transform.GetChild(0).transform)
         {
             if (childNum != 0)
             {
@@ -350,7 +361,7 @@ public class UIManager : MonoBehaviour {
 
                 ToggleMenu(2);
             });
-            newField.transform.SetParent(menus[3].transform, false);
+            newField.transform.SetParent(menus[3].transform.GetChild(0).transform, false);
 
             //manually adjust its position            
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
