@@ -195,7 +195,8 @@ public abstract class BaseHero : MonoBehaviour {
 			curRoom.heroInRoom = false;
 		}
 
-		Destroy(this.gameObject);
+		this.gameObject.SetActive (false);
+		GameObject.Destroy(this.gameObject);
 	}
 
 	//Default attack function that hits the monster in the room with the highest threat value

@@ -139,6 +139,9 @@ public abstract class BaseParty {
 		//Returns the last room in the path and removes it from the list
 		BaseRoom room = roomPath [roomPath.Count - 1];
 		roomPath.Remove (room);
+		room = gameManager.roomList [room.myX, room.myY].GetComponent<BaseRoom> ();
+		if (room == curRoom)
+			Backtrack ();
 		return room;
 	}
 
@@ -242,8 +245,10 @@ public abstract class BaseParty {
 			if (this.exploredRooms.Count == gameManager.roomCount || !CanContinue ()) {
 				state = "Exit";
 				FindExitPath ();
-				toMove = this.Backtrack ();
-				MoveTo (toMove);
+				roomPath.RemoveAt (roomPath.Count - 1);
+				this.MoveToNextRoom ();
+				//toMove = this.Backtrack ();
+				//MoveTo (toMove);
 			} else if (toMove != null) {
 				MoveTo (toMove);
 				this.exploredRooms.Add (toMove);
@@ -251,17 +256,18 @@ public abstract class BaseParty {
 			} else {
 				state = "Back";
 				roomPath.RemoveAt (roomPath.Count - 1);
-				toMove = this.Backtrack ();
-				if (toMove == null) {
+				this.MoveToNextRoom ();
+				/*toMove = this.Backtrack ();
+				if (toMove == null || this.curRoom == gameManager.spawnRoom.GetComponent<BaseRoom>()) {
 					this.RemoveParty ();
 					return;
 				}
-				MoveTo (toMove);
+				MoveTo (toMove);*/
 			}
 			break;
 		case "Back":
 			toMove = this.Backtrack ();
-			if (toMove == null)
+			if (toMove == null || this.curRoom == gameManager.spawnRoom.GetComponent<BaseRoom>())
 				this.RemoveParty ();
 			else {
 				MoveTo (toMove);
