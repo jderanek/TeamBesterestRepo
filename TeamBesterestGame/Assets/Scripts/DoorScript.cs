@@ -48,6 +48,7 @@ public class DoorScript : MonoBehaviour {
 					this.AddRoom (room1, room2);
 					this.AddRoom (room2, room1);
 				}
+				Open ();
 			}
 		} else {
 			if (room2 != null && room1 != null && 
@@ -65,6 +66,7 @@ public class DoorScript : MonoBehaviour {
 					this.AddRoom (room1, room2);
 					this.AddRoom (room2, room1);
 				}
+				Open ();
 			}
 		} else {
 			if (room1 != null && room2 != null &&
