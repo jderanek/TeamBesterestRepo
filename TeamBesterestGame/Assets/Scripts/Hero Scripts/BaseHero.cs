@@ -101,6 +101,9 @@ public abstract class BaseHero : MonoBehaviour {
 	public int getThreat() {
 		return this.threat;
 	}
+	public void setArmor(int arm) {
+		this.armor = arm;
+	}
 	public int getArmor() {
 		return this.armor;
 	}
@@ -134,7 +137,7 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 
 	//Damage and Heal functions to restore or reduce hero health
-	public void TakeDamage(int dmg) {
+	public virtual void TakeDamage(int dmg) {
 		this.curHealth -= Mathf.Clamp (dmg - armor, 0, this.maxHealth);
         this.damageText.text = this.curHealth + "hp";
 		if (this.curHealth <= 0)
