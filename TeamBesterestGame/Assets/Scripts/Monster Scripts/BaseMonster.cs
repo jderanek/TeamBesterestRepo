@@ -44,6 +44,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	public bool canBeDebuffed = true;
 	float promotionMod = 1f;
     int applicationLife = 3;
+	bool stunned = false;
 
     public int healthTier;
     public int defenseTier;
@@ -389,6 +390,9 @@ public abstract class BaseMonster : MonoBehaviour {
     {
         applicationLife = newAppLife;
     }
+	public void Stun() {
+		this.stunned = true;
+	}
 
 	//Function to make monster lose health
 	public void TakeDamage(int dam) {
@@ -406,6 +410,12 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	//Default attack function that hits the hero with the highest threat
 	public virtual void Attack() {
+		//Breaks attack function if stunned
+		if (stunned) {
+			this.stunned = false;
+			return;
+		}
+
 		BaseHero heroScript;
 		BaseHero highThreat = null;
 		int threat = int.MinValue;

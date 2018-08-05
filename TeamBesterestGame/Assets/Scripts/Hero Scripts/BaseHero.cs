@@ -148,7 +148,7 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 
 	//Function to move this hero from one room to another
-	public void MoveTo(BaseRoom room) {
+	public virtual void MoveTo(BaseRoom room) {
 		if (curRoom != null) {
 			curRoom.heroesInRoom.Remove (this.gameObject);
 		
