@@ -105,8 +105,10 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public bool inConstructionMode; //public for now, pickup room script can be replaced
 
-	//interviewing stuff
-	public GameObject interviewButtons; //public to be assigned in editor
+    //interviewing stuff
+
+    /*
+    public GameObject interviewButtons; //public to be assigned in editor
     public GameObject Q1;
     public GameObject Q2;
     public GameObject Q3;
@@ -116,6 +118,10 @@ public class GameManager : MonoBehaviour
     public GameObject interviewImage; //public to be assigned in editor
     public GameObject interviewBackground; //public to be assigned in editor
     public GameObject interviewExit; //public to be assigned in editor
+    */
+    public GameObject interviewCanvas;
+    public GameObject interviewResponse;
+    public GameObject interviewHireButton;
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
@@ -314,6 +320,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void HireButton(GameObject monsterInstance) //used for hiring monster while in the interview screen
+    {
+        int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
+        int infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
+        monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
+        if (currentCurrency >= salary)
+        {
+            applicationsList.Remove(monsterInstance);
+            monsterInstance.SetActive(true);
+            CurrencyChanged(-salary);
+            IncreaseInfamyXP(monsterInstance.GetComponent<BaseMonster>().getThreat());
+            monsterList.Add(monsterInstance);
+            AddToDepartment(monsterInstance, breakRoomList);
+            uiManager.UpdateMonsters();
+            uiManager.UpdateDepartments();
+            uiManager.UpdateStressMeter();
+            uiManager.UpdateApplications();
+            this.gameObject.GetComponent<InterviewManager>().ExitInterview();
+        }
+    }
+
     //Spawns a new applicant monster
     public void CreateNewResume(int resumesToCreate)
 	{
@@ -439,7 +466,8 @@ public class GameManager : MonoBehaviour
     {
         monsterInstance = monster; //might wanna use selectedObject for consistency - Nate
         interviewing = true;
-        uiManager.menus[0].SetActive(false);
+        uiManager.ToggleMenu(0);
+        /*
         Q1.SetActive(true);
         Q2.SetActive(true);
         Q3.SetActive(true);
@@ -448,8 +476,12 @@ public class GameManager : MonoBehaviour
         interviewImage.SetActive(true);
         interviewResponse.SetActive(true);
         interviewExit.SetActive(true);
+        */
 
-
+        interviewCanvas.SetActive(true);
+        interviewResponse.SetActive(true);
+        interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
+        
         //this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
     }
 
