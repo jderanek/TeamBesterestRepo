@@ -242,6 +242,13 @@ public abstract class BaseParty {
 		switch (state) {
 		case "Explore":
 			toMove = this.FindNextRoom ();
+
+			//Loops until there is a room with no hero, or there are no rooms
+			while (toMove != null && toMove.heroInRoom) {
+				curRoom = toMove;
+				toMove = this.FindNextRoom ();
+			}
+			
 			if (this.exploredRooms.Count == gameManager.roomCount || !CanContinue ()) {
 				state = "Exit";
 				FindExitPath ();
@@ -267,7 +274,12 @@ public abstract class BaseParty {
 			break;
 		case "Back":
 			toMove = this.Backtrack ();
-			if (toMove == null || this.curRoom == gameManager.spawnRoom.GetComponent<BaseRoom>())
+
+			//Loops until there is a room with no hero, or there are no rooms
+			while (toMove != null && toMove.heroInRoom)
+				toMove = this.Backtrack ();
+
+			if (toMove == null || this.curRoom == gameManager.spawnRoom.GetComponent<BaseRoom> ())
 				this.RemoveParty ();
 			else {
 				MoveTo (toMove);
@@ -284,6 +296,11 @@ public abstract class BaseParty {
 			break;
 		case "Exit":
 			toMove = this.Backtrack ();
+
+			//Loops until there is a room with no hero, or there are no rooms
+			while (toMove != null && toMove.heroInRoom)
+				toMove = this.Backtrack ();
+			
 			if (toMove == null)
 				this.RemoveParty ();
 			else
