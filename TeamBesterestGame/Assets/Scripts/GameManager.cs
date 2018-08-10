@@ -320,24 +320,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void HireButton(GameObject monsterInstance) //used for hiring monster while in the interview screen
+    public void HireButton() //used for hiring monster while in the interview screen
     {
-        int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
-        int infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
-        monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
-        if (currentCurrency >= salary)
+        if (interviewing)
         {
-            applicationsList.Remove(monsterInstance);
-            monsterInstance.SetActive(true);
-            CurrencyChanged(-salary);
-            IncreaseInfamyXP(monsterInstance.GetComponent<BaseMonster>().getThreat());
-            monsterList.Add(monsterInstance);
-            AddToDepartment(monsterInstance, breakRoomList);
-            uiManager.UpdateMonsters();
-            uiManager.UpdateDepartments();
-            uiManager.UpdateStressMeter();
-            uiManager.UpdateApplications();
-            this.gameObject.GetComponent<InterviewManager>().ExitInterview();
+            int salary = monsterInstance.GetComponent<BaseMonster>().getSalary();
+            int infamyRaise = monsterInstance.GetComponent<BaseMonster>().getInfamyGain();
+            monsterInstance.GetComponent<BaseMonster>().setApplicationLife(-1);
+            if (currentCurrency >= salary)
+            {
+                applicationsList.Remove(monsterInstance);
+                monsterInstance.SetActive(true);
+                CurrencyChanged(-salary);
+                IncreaseInfamyXP(monsterInstance.GetComponent<BaseMonster>().getThreat());
+                monsterList.Add(monsterInstance);
+                AddToDepartment(monsterInstance, breakRoomList);
+                uiManager.UpdateMonsters();
+                uiManager.UpdateDepartments();
+                uiManager.UpdateStressMeter();
+                uiManager.UpdateApplications();
+                this.gameObject.GetComponent<InterviewManager>().ExitInterview();
+            }
         }
     }
 
@@ -480,7 +483,7 @@ public class GameManager : MonoBehaviour
 
         interviewCanvas.SetActive(true);
         interviewResponse.SetActive(true);
-        interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
+        //interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
         
         //this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
     }

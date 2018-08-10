@@ -259,9 +259,25 @@ public class InterviewManager : MonoBehaviour {
 		q41 = Random.Range(0, statQuestions.Length);
 		q42 = Random.Range(0, 4);
 
+        if (q31 == q41)
+        {
+            UpdateQuestions(q41);
+        }
+
 		q3Text.text = statQuestions[q31][q32];
 		q4Text.text = statQuestions[q41][q42];
 	}
+
+    public void UpdateQuestions(int q) //helper function so the questions don't match
+    {
+        if (q31 == q41)
+        {
+            UpdateQuestions(q41);
+        }
+
+        q41 = Random.Range(0, 4);
+        q42 = Random.Range(0, 4);
+    }
 
     public void InterviewResponse()
     {
