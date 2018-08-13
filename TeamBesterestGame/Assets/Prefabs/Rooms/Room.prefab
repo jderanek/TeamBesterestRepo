@@ -1092,6 +1092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc79b434302a8d6499856bb748f84b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 3
+  gameManager: {fileID: 0}
   canvas: {fileID: 0}
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
@@ -1112,6 +1114,8 @@ MonoBehaviour:
   currentGold: 0
   emptyCoin: {fileID: 21300000, guid: 6bbf5c900c3b80a4c9ae540944a6c7cc, type: 3}
   filledCoin: {fileID: 21300000, guid: ef7c1a33e177bd143b09d4a8bb8e3d47, type: 3}
+  highlight: {fileID: 0}
+  master: {fileID: 0}
 --- !u!114 &114576128899916690
 MonoBehaviour:
   m_ObjectHideFlags: 1

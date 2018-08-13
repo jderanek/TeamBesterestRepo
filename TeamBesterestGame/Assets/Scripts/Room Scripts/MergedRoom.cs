@@ -190,10 +190,47 @@ public class MergedRoom : BaseRoom {
 	public static void MergeRooms(List<GameObject> rooms) {
 		if (rooms.Count < 2)
 			return;
+		else if (rooms.Count > 4)
+			return;
 		
 		MergedRoom final = MergeStart (rooms [0].GetComponent<BaseRoom> (), rooms [1].GetComponent<BaseRoom> ());
 
-		for (int i = 1; i < rooms.Count; i++)
+		for (int i = 2; i < rooms.Count; i++)
 			final = MergeStart (final, rooms [i].GetComponent<BaseRoom> ());
+	}
+
+	//Spreads the gold from all rooms evenly
+	public void UpdateGold() {
+		int gold = this.currentGold;
+		//Assigns gold evenly to the rooms, and changes their graphics
+		foreach (BaseRoom room in rooms) {
+			if (gold > 300) {
+				room.currentGold = 300;
+				gold -= 300;
+				room.UpdateCoins ();
+			} else {
+				room.currentGold = gold;
+				gold = 0;
+				room.UpdateCoins ();
+			}
+		}
+	}
+
+	//Updates the visuals of all the monsters in the room
+	public void UpdateMonsters() {
+		int curIndex = 0;
+		int maxIndex = this.rooms.Count - 1;
+
+		foreach (GameObject monster in roomMembers) {
+			monster.transform.position = new Vector3(
+				rooms[curIndex].gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
+				rooms[curIndex].gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
+				0
+			);
+
+			curIndex += 1;
+			if (curIndex > maxIndex)
+				curIndex = 0;
+		}
 	}
 }

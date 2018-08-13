@@ -7,7 +7,7 @@ public abstract class BaseRoom : MonoBehaviour {
 	//Private variables
 	//Damage type here, is it a string???
 	//float efficieny;
-	public int size = 1;
+	public int size = 3;
 	int cost;
 	int slots;
 	int threat = 0;
@@ -46,6 +46,7 @@ public abstract class BaseRoom : MonoBehaviour {
     public Sprite emptyCoin; //public to assign reference in editor
     public Sprite filledCoin; //public to assign reference in editor
     public SpriteRenderer highlight;
+	public int monsterSize = 0;
 
 	//Room to pass when clicked
 	public BaseRoom master;
@@ -140,7 +141,7 @@ public abstract class BaseRoom : MonoBehaviour {
             {
                 print(master);
                 if (master.GetComponent<MergedRoom>() != null) {
-                    master.GetComponent<MergedRoom>().rooms[0].AssignMonsters(gameManager.selectedObjects);
+                    master.GetComponent<MergedRoom>().AssignMonsters(gameManager.selectedObjects);
                 }
                 else
                 {
@@ -178,19 +179,32 @@ public abstract class BaseRoom : MonoBehaviour {
 
     public void AssignMonsters(List<GameObject> monsters)
     {
+		//Makes sure this rooms size is up to date
+		UpdateMonsterSize();
+
         foreach (GameObject monster in monsters)
         {
+			if (this.roomMembers.Contains (monster))
+				continue;
+
+			//Gets the monster script for later use
+			BaseMonster monScript = monster.GetComponent<BaseMonster> ();
+			//Breaks assignment loop if it would go over the size cap
+			if (this.monsterSize + monScript.getSize() > this.size)
+				break;
+			
             monster.transform.position = new Vector3(
                     gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
                     gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
                     0
                     );
             roomMembers.Add(monster);
-            RoomEffect(monster.GetComponent<BaseMonster>());
-            roomThreat += monster.GetComponent<BaseMonster>().getThreat();
+			RoomEffect(monScript);
+			roomThreat += monScript.getThreat();
             monsterInRoom = true;
-            monster.GetComponent<BaseMonster>().setCurRoom(this.gameObject);
+			monScript.setCurRoom(this.gameObject);
             gameManager.AddToDepartment(monster, gameManager.dungeonList);
+			this.monsterSize += monScript.getSize ();
             //uiManager.UpdateMonsters();
             //uiManager.UpdateDepartments();
             //selectedObject = null;
@@ -198,6 +212,11 @@ public abstract class BaseRoom : MonoBehaviour {
         uiManager.UpdateMonsters();
         uiManager.UpdateDepartments();
         monsters.Clear();
+
+		if (this is MergedRoom) {
+			MergedRoom merged = this as MergedRoom;
+			merged.UpdateMonsters ();
+		}
     }
 
     public void UpdateNeighbors()
@@ -284,6 +303,8 @@ public abstract class BaseRoom : MonoBehaviour {
 
     public void AddGoldToRoom(int coinClicked)
     {
+		int beforeGold = this.currentGold;
+
         switch (coinClicked)
         {
             case 1:
@@ -356,6 +377,12 @@ public abstract class BaseRoom : MonoBehaviour {
                 break;
         }
         UpdateCoins();
+
+		if (this.master is MergedRoom) {
+			MergedRoom merged = master as MergedRoom;
+			merged.currentGold = master.currentGold - beforeGold + currentGold;
+			merged.UpdateGold ();
+		}
     }
 
     public void UpdateCoins()
@@ -512,6 +539,7 @@ public abstract class BaseRoom : MonoBehaviour {
 	//Sets gameManager, meant for use from MergedRoom
 	public void SetManager() {
 		gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+		uiManager = gameManager.GetComponent<UIManager>();
 	}
 
 	//Removes this object from all adjacent rooms
@@ -523,6 +551,18 @@ public abstract class BaseRoom : MonoBehaviour {
 			toRemove.adjacentRooms.Remove (this.gameObject);
 		}
 		this.adjacentRooms.Clear ();
+	}
+
+	//Updates this rooms current monsterSize to make sure it accounts for dead/removed monsters
+	//Meant to be called before assigning monster
+	void UpdateMonsterSize() {
+		BaseMonster monscript;
+		int mons = 0;
+		foreach (GameObject monster in this.roomMembers) {
+			monscript = monster.GetComponent<BaseMonster> ();
+			mons += monscript.getSize ();
+		}
+		this.monsterSize = mons;
 	}
 
     //call when monster enters room

@@ -348,6 +348,11 @@ Prefab:
       propertyPath: myY
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 114488006014605454, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
@@ -1453,6 +1458,11 @@ Prefab:
         type: 2}
       propertyPath: myY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114488006014605454, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -3348,6 +3358,11 @@ Prefab:
         type: 2}
       propertyPath: myY
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114488006014605454, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -9718,6 +9733,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114488006014605454, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: size
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
@@ -10111,6 +10131,11 @@ Prefab:
         type: 2}
       propertyPath: myY
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114488006014605454, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
@@ -11711,7 +11736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc79b434302a8d6499856bb748f84b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 1
+  size: 3
   gameManager: {fileID: 0}
   canvas: {fileID: 1495284374}
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
@@ -11851,6 +11876,11 @@ Prefab:
     - target: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
       propertyPath: m_Name
       value: Room (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114488006014605454, guid: dc360d4d794cb6a46a9bda73560d62e1,
+        type: 2}
+      propertyPath: size
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}

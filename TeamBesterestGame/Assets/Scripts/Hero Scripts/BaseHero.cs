@@ -246,7 +246,12 @@ public abstract class BaseHero : MonoBehaviour {
 		{
 			holding += 100;
 			curRoom.currentGold -= 100;
-			curRoom.UpdateCoins();
+			if (curRoom is MergedRoom) {
+				MergedRoom merged = curRoom as MergedRoom;
+				merged.UpdateGold ();
+			} else
+				curRoom.UpdateCoins();
+			
 			/*if (holding == capacity)
 			{
 				Destroy(gameObject);
