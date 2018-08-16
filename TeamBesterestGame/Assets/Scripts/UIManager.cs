@@ -210,17 +210,17 @@ public class UIManager : MonoBehaviour {
                 var newFieldCanvas = newField.transform.GetChild(0);
                 var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
                 newField.GetComponent<RectTransform>().sizeDelta = new Vector2(217.44f, 57.4f);
-                newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-                newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
-                newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
+                newFieldCanvas.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
+                newFieldCanvas.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = monster.name;
+                newFieldCanvas.transform.GetChild(0).transform.GetChild(3).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
                 if (monster.GetComponent<BaseMonster>().department == gameManager.breakRoomList)
                 {
-                    newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Assign";
+                    newFieldCanvas.transform.GetChild(1).GetComponentInChildren<Text>().text = "Assign";
                     newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { gameManager.selectedObjects.Add(monster); });
                 }
                 else
                 {
-                    newFieldCanvas.transform.GetChild(3).GetComponentInChildren<Text>().text = "Break Time!";
+                    newFieldCanvas.transform.GetChild(1).GetComponentInChildren<Text>().text = "Break Time!";
                     newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
                     {
                         monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<BaseRoom>().roomMembers.Remove(monster);     
@@ -266,10 +266,10 @@ public class UIManager : MonoBehaviour {
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             var newFieldCanvas = newField.transform.GetChild(0);
             var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
-            newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
-            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
-            newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
-            newFieldCanvas.GetChild(3).gameObject.SetActive(false);
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = monster.name;
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(3).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
+            newFieldCanvas.GetChild(0).transform.GetChild(2).gameObject.SetActive(false);
             newField.transform.SetParent(menus[2].transform.GetChild(0).transform, false);
 
             //manually adjust its position
@@ -291,11 +291,11 @@ public class UIManager : MonoBehaviour {
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             var newFieldCanvas = newField.transform.GetChild(0);
             var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
-            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
-            newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
-            newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = monster.name;
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(3).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate { gameManager.AddToDepartment(monster, gameManager.breakRoomList); });
-            newFieldCanvas.transform.GetChild(3).transform.GetComponentInChildren<Text>().text = "Remove";
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(2).transform.GetComponentInChildren<Text>().text = "Remove";
             newField.transform.SetParent(menus[2].transform.GetChild(0).transform, false);
 
             //manually adjust position
@@ -351,10 +351,10 @@ public class UIManager : MonoBehaviour {
             var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
             var newFieldCanvas = newField.transform.GetChild(0);
             var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
-            newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = monster.name;
-            newFieldCanvas.transform.GetChild(4).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = monster.name;
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(3).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
 
-            newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
+            newFieldCanvas.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
             newField.GetComponentInChildren<Button>().onClick.AddListener(delegate
             {
                 gameManager.AddToDepartment(monster, department);
