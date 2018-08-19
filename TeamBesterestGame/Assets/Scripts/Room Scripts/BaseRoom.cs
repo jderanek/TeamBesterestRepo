@@ -213,10 +213,11 @@ public abstract class BaseRoom : MonoBehaviour {
         uiManager.UpdateDepartments();
         monsters.Clear();
 
-		if (this is MergedRoom) {
+		this.UpdateMonsters ();
+		/*if (this is MergedRoom) {
 			MergedRoom merged = this as MergedRoom;
 			merged.UpdateMonsters ();
-		}
+		}*/
     }
 
     public void UpdateNeighbors()
@@ -563,6 +564,36 @@ public abstract class BaseRoom : MonoBehaviour {
 			mons += monscript.getSize ();
 		}
 		this.monsterSize = mons;
+	}
+
+	//Updates the visuals of all the monsters in the room
+	public virtual void UpdateMonsters() {
+		int curMon = 0;
+
+		foreach (GameObject monster in roomMembers) {
+			monster.transform.position = new Vector3(
+				this.gameObject.transform.position.x + .25f,
+				this.gameObject.transform.position.y + .25f - (curMon * .25f),
+				0
+			);
+
+			curMon += 1;
+		}
+	}
+
+	//Updates the visuals of all the heroes in the room
+	public virtual void UpdateHeroes() {
+		int curHero = 0;
+
+		foreach (GameObject hero in this.heroesInRoom) {
+			hero.transform.position = new Vector3(
+				this.gameObject.transform.position.x - .25f,
+				this.gameObject.transform.position.y + .25f - (curHero * .25f),
+				0
+			);
+
+			curHero += 1;
+		}
 	}
 
     //call when monster enters room

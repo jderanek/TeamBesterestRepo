@@ -552,6 +552,7 @@ public class GameManager : MonoBehaviour
                 if (room != null && room.GetComponent<BaseRoom>() != null)
                 {
                     room.GetComponent<BaseRoom>().RoomMemeberHandler();
+					room.GetComponent<BaseRoom> ().UpdateHeroes ();
                 }                    
             }
 

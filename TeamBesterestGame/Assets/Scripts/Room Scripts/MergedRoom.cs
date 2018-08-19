@@ -217,18 +217,48 @@ public class MergedRoom : BaseRoom {
 	}
 
 	//Updates the visuals of all the monsters in the room
-	public void UpdateMonsters() {
+	public override void UpdateMonsters() {
 		int curIndex = 0;
 		int maxIndex = this.rooms.Count - 1;
+		int curMon = 0;
 
 		foreach (GameObject monster in roomMembers) {
 			monster.transform.position = new Vector3(
-				rooms[curIndex].gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
-				rooms[curIndex].gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
+				rooms[curIndex].gameObject.transform.position.x + .25f,
+				rooms[curIndex].gameObject.transform.position.y + .25f - (curMon * .25f),
 				0
 			);
 
-			curIndex += 1;
+			curMon += 1;
+
+			if (curMon > 2) {
+				curIndex += 1;
+				curMon = 0;
+			}
+			if (curIndex > maxIndex)
+				curIndex = 0;
+		}
+	}
+
+	//Updates the visuals of all the monsters in the room
+	public override void UpdateHeroes() {
+		int curIndex = 0;
+		int maxIndex = this.rooms.Count - 1;
+		int curHero = 0;
+
+		foreach (GameObject hero in this.heroesInRoom) {
+			hero.transform.position = new Vector3(
+				rooms[curIndex].gameObject.transform.position.x - .25f,
+				rooms[curIndex].gameObject.transform.position.y + .25f - (curHero * .25f),
+				0
+			);
+
+			curHero += 1;
+
+			if (curHero > 2) {
+				curIndex += 1;
+				curHero = 0;
+			}
 			if (curIndex > maxIndex)
 				curIndex = 0;
 		}
