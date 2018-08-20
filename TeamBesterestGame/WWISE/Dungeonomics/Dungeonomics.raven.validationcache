@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ValidationCache Version="1" SchemaVersion="85">
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects.wwu" DateLow="1523383713" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Actor-Mixer Hierarchy\Factory Synth One.wwu" DateLow="1523383712" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Attenuations\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Audio Devices\Default Work Unit.wwu" DateLow="1525889862" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Control Surface Sessions\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Conversion Settings\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Conversion Settings\Factory Conversion Settings.wwu" DateLow="1523383712" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Dungeonomics.raven.wsettings" DateLow="1528737270" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Dungeonomics.wproj" DateLow="1528737662" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Dynamic Dialogue\Default Work Unit.wwu" DateLow="1525889862" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory Auro Headphone.wwu" DateLow="1523383718" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory Effects.wwu" DateLow="1523383712" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory iZotope Box Modeler.wwu" DateLow="1523383719" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory iZotope Delay.wwu" DateLow="1523383719" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory iZotope Dynamics.wwu" DateLow="1523383719" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory iZotope Filters.wwu" DateLow="1523383719" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory iZotope Hybrid Reverb Effects.wwu" DateLow="1523383719" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory iZotope Multiband Distortion.wwu" DateLow="1523383719" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory iZotope Singleband Distortion.wwu" DateLow="1523383719" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Effects\Factory McDSP Effects.wwu" DateLow="1523383716" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Events\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Game Parameters\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Game Parameters\Factory SoundSeed Air Game Syncs.wwu" DateLow="1523383713" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Interactive Music Hierarchy\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Master-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Mixing Sessions\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Modulators\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Presets\Default Work Unit.wwu" DateLow="1525889862" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Queries\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Queries\Factory Queries.wwu" DateLow="1523383712" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\SoundBanks\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\States\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Switches\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Triggers\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Virtual Acoustics\Default Work Unit.wwu" DateLow="1525889862" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\Virtual Acoustics\Factory Reflect Acoustic Textures.wwu" DateLow="1523383716" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\raven\Documents\WwiseProjects\Jan 29\Dungeonomics\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1525889861" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\raven\Documents\WwiseProjects\Jan 29\Dungeonomics\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects.wwu" DateLow="1523383713" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\raven\Documents\WwiseProjects\Jan 29\Dungeonomics\Actor-Mixer Hierarchy\Factory Synth One.wwu" DateLow="1523383712" DateHigh="0"/>

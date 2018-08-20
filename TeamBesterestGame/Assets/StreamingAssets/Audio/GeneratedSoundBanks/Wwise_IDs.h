@@ -11,12 +11,6 @@
 
 namespace AK
 {
-    namespace EVENTS
-    {
-        static const AkUniqueID HERO_ENTER = 588540382U;
-        static const AkUniqueID MOUSE_CLICK = 3695522715U;
-    } // namespace EVENTS
-
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID SS_AIR_FEAR = 1351367891U;
@@ -34,8 +28,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID MAIN = 3161908922U;
-        static const AkUniqueID SECOND = 3476314365U;
+        static const AkUniqueID DEFAULT = 782826392U;
     } // namespace BANKS
 
     namespace BUSSES
