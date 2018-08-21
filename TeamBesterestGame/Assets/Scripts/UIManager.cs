@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour {
             {
                 if (j == 0)
                 {
-                    sideBar.SetActive(false);
+                    HideSideBar();
                 }
                 menu.SetActive(false);
             }
@@ -142,6 +142,20 @@ public class UIManager : MonoBehaviour {
                 break;
         }
         */
+    }
+
+    public void ToggleMenusOff()
+    {
+        foreach (GameObject menu in menus)
+        {
+            sideBar.SetActive(false);
+            menu.SetActive(false);
+        }
+    }
+
+    public void HideSideBar()
+    {
+        sideBar.SetActive(false);
     }
 
     //function should be called whenever the applicationList is changed
