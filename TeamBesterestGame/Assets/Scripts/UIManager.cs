@@ -26,6 +26,7 @@ public class UIManager : MonoBehaviour {
     private bool assignmentOpen = false;
     public GameObject applicationField; //public to be assigned in editor
     public GameObject monsterField; //public to be assigned in editor
+    public GameObject monsterContextField; //public to be assigned in editor
 
     public GameObject confirmationBox;
 
@@ -158,6 +159,19 @@ public class UIManager : MonoBehaviour {
         sideBar.SetActive(false);
     }
 
+    //used to toggle the monster's context field
+    public void ToggleContext(GameObject mcf) //mcf - monster context field
+    {
+        if (!mcf.activeInHierarchy)
+        {
+            mcf.SetActive(true);
+        }
+        else
+        {
+            mcf.SetActive(false);
+        }
+    }
+
     //function should be called whenever the applicationList is changed
     public void UpdateApplications()
     {
@@ -223,10 +237,23 @@ public class UIManager : MonoBehaviour {
                 var newField = Instantiate(monsterField, new Vector3(0, 0, 0), Quaternion.identity);
                 var newFieldCanvas = newField.transform.GetChild(0);
                 var newFieldCanvasRect = newFieldCanvas.GetComponent<RectTransform>();
+                var newContext = Instantiate(monsterContextField, new Vector3(0, 0, 0), Quaternion.identity);
+                var newContextCanvas = newContext.transform.GetChild(0);
+                var newContextCanvasRect = newContextCanvas.GetComponent<RectTransform>();
                 newField.GetComponent<RectTransform>().sizeDelta = new Vector2(217.44f, 57.4f);
+
                 newFieldCanvas.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
                 newFieldCanvas.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = monster.name;
                 newFieldCanvas.transform.GetChild(0).transform.GetChild(3).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().getType();
+                newContextCanvas.transform.GetChild(0).GetComponent<Text>().text = "HP: " + monster.GetComponent<BaseMonster>().getCurHealth().ToString() + "/" + monster.GetComponent<BaseMonster>().getMaxHealth().ToString();
+                newContextCanvas.transform.GetChild(1).GetComponent<Text>().text = "Atk: " + monster.GetComponent<BaseMonster>().getBaseDamage().ToString();
+                newContextCanvas.transform.GetChild(2).GetComponent<Text>().text = "Def: " + monster.GetComponent<BaseMonster>().getArmor().ToString();
+                newContextCanvas.transform.GetChild(3).GetComponent<Text>().text = "Thr: " + monster.GetComponent<BaseMonster>().getThreat().ToString();
+                //newContextCanvas.transform.GetChild(5).GetComponent<Text>().text = monster.GetComponent<BaseMonster>(); //personality trait
+                //newContextCanvas.transform.GetChild(6).GetComponent<Text>().text = monster.GetComponent<BaseMonster>(); //workethic trait
+                //newContextCanvas.transform.GetChild(7).GetComponent<Text>().text = monster.GetComponent<BaseMonster>(); //archetype trait
+
+                newFieldCanvas.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { ToggleContext(newContext); });
                 if (monster.GetComponent<BaseMonster>().department == gameManager.breakRoomList)
                 {
                     newFieldCanvas.transform.GetChild(1).GetComponentInChildren<Text>().text = "Assign";
@@ -244,11 +271,15 @@ public class UIManager : MonoBehaviour {
                     });
                 }
                 newField.transform.SetParent(menus[1].transform.GetChild(0).transform, false);
+                newContext.transform.SetParent(menus[1].transform.GetChild(0).transform, false);
 
                 //manually adjust its position
                 newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
                 newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
                 newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
+                newContextCanvasRect.anchoredPosition = new Vector2(0, 0);
+                newContextCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
+                newContextCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
             }
         }
         //Debug.Log("c");
@@ -475,4 +506,6 @@ public class UIManager : MonoBehaviour {
         infamyLevelText.text = "InfamyLevel: " + gameManager.infamyLevel;
         infamyXPText.text = "InfamyXP: " + gameManager.infamyXP + "/" + gameManager.xpToNextInfamyLevel;
     }
+
+
 }
