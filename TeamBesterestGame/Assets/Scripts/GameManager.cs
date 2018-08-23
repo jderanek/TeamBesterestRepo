@@ -842,4 +842,9 @@ public class GameManager : MonoBehaviour
 		else
 			return true;
 	}
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

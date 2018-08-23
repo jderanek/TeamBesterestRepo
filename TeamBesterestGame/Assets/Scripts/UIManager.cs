@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour {
     public GameObject applicationField; //public to be assigned in editor
     public GameObject monsterField; //public to be assigned in editor
     public GameObject monsterContextField; //public to be assigned in editor
+    public GameObject applicationContextField; //public to be assigned in editor
 
     public GameObject confirmationBox;
 
@@ -193,6 +194,9 @@ public class UIManager : MonoBehaviour {
             var newField = Instantiate(applicationField, new Vector3(0, 0, 0), Quaternion.identity);
             var newFieldCanvas = newField.transform.GetChild(0);
             var newFieldCanvasRect = newField.transform.GetChild(0).GetComponent<RectTransform>();
+            var newContext = Instantiate(applicationContextField, new Vector3(0, 0, 0), Quaternion.identity);
+            var newContextCanvas = newContext.transform.GetChild(0);
+            var newContextCanvasRect = newContextCanvas.GetComponent<RectTransform>();
 
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = application.GetComponent<SpriteRenderer>().color;
             newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = application.name;
@@ -200,16 +204,22 @@ public class UIManager : MonoBehaviour {
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(214.77f, 57.4f);
 
             //stats/interview button
-            newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { gameManager.Interview(application); });
+            newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { ToggleContext(newContext); });
+
             //hire button
             newFieldCanvas.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate { gameManager.HireButton(application, newField); });
+            newContextCanvas.transform.GetChild(8).GetComponent<Button>().onClick.AddListener(delegate { gameManager.Interview(application); });
 
             newField.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
+            newContext.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
 
             //manually adjust its position           
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
             newFieldCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
             newFieldCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
+            newContextCanvasRect.anchoredPosition = new Vector2(0, 0);
+            newContextCanvasRect.anchorMin = new Vector2(0.5f, 0.5f);
+            newContextCanvasRect.anchorMax = new Vector2(0.5f, 0.5f);
         }
     }
 
