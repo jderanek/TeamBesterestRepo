@@ -21,6 +21,7 @@ public abstract class BaseHero : MonoBehaviour {
 	GameManager gameManager;
     UIManager uiManager;
     Text damageText;
+	public Vector3 targetPos;
 
 	//Variables not set by assignment
 	private bool inCombat;
@@ -160,12 +161,12 @@ public abstract class BaseHero : MonoBehaviour {
 		this.curRoom = room;
 		curRoom.heroesInRoom.Add (this.gameObject);
 		curRoom.heroInRoom = true;
-		if (curRoom is MergedRoom) {
+		/*if (curRoom is MergedRoom) {
 			MergedRoom merged = curRoom as MergedRoom;
 			int randRoom = Random.Range (0, merged.rooms.Count - 1);
 			this.gameObject.transform.position = merged.rooms [randRoom].transform.position;
 		} else
-			this.gameObject.transform.position = room.gameObject.transform.position;
+			this.gameObject.transform.position = room.gameObject.transform.position;*/
 	}
 
 	//Function to kill this hero
@@ -288,4 +289,17 @@ public abstract class BaseHero : MonoBehaviour {
 		}
 	}
     */
+
+	public void StartUpdating() {
+		InvokeRepeating ("UpdatePos", 0f, .03f);
+	}
+
+	//Moves heroes towards their desired position
+	void UpdatePos() {
+		if (this.targetPos != null) {
+			this.transform.position = Vector3.Lerp (this.transform.position, this.targetPos, 2.5f * .03f);
+			if (this.transform.position == this.targetPos)
+				CancelInvoke ();
+		}
+	}
 }

@@ -92,6 +92,11 @@ public abstract class BaseParty {
 		this.curRoom = room;
 		foreach (BaseHero hero in partyMembers)
 			hero.MoveTo (curRoom);
+
+		room.UpdateHeroes ();
+
+		foreach (BaseHero hero in partyMembers)
+			hero.StartUpdating ();
 	}
 
 	/*//Finds the adjacent room with the lowest threat

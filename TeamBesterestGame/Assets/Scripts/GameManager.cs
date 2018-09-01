@@ -552,7 +552,7 @@ public class GameManager : MonoBehaviour
                 if (room != null && room.GetComponent<BaseRoom>() != null)
                 {
                     room.GetComponent<BaseRoom>().RoomMemeberHandler();
-					room.GetComponent<BaseRoom> ().UpdateHeroes ();
+					//room.GetComponent<BaseRoom> ().UpdateHeroes ();
                 }                    
             }
 
@@ -637,10 +637,10 @@ public class GameManager : MonoBehaviour
 
             uiManager.UpdateStressMeter();
 
-            if (currentTime <= 0 && dungeonEmpty)
+            /*if (currentTime <= 0 && dungeonEmpty)
             {
                 NewCycle();
-            }
+            }*/
 		}
 		//party.MoveToNextRoom ();
 	}

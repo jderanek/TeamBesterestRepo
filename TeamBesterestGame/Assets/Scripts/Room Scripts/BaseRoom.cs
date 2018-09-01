@@ -586,7 +586,7 @@ public abstract class BaseRoom : MonoBehaviour {
 		int curHero = 0;
 
 		foreach (GameObject hero in this.heroesInRoom) {
-			hero.transform.position = new Vector3(
+			hero.GetComponent<BaseHero>().targetPos = new Vector3(
 				this.gameObject.transform.position.x - .25f,
 				this.gameObject.transform.position.y + .25f - (curHero * .25f),
 				0
