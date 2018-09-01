@@ -26,14 +26,15 @@ public class DoorScript : MonoBehaviour {
 		render = this.GetComponent<SpriteRenderer> ();
 	}
 
-	void OnMouseDown() {
+	/*Commented out doors
+	  void OnMouseDown() {
 		if (this.room1 != null && this.room2 != null) {
 			if (isOpen)
 				Close ();
 			else
 				Open ();
 		}
-	}
+	}*/
 		
 	//Updates door sprite
 	void Update() {
