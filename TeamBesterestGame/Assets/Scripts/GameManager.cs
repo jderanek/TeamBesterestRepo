@@ -517,11 +517,11 @@ public class GameManager : MonoBehaviour
 		for (int i = timeToPass; i > 0; i--)
 		{
             dungeonEmpty = true;
-            if (currentTime > 0)
+            /*if (currentTime > 0)
             {
                 currentTime--;
                 timeUnitText.text = currentTime.ToString();
-            }
+            }*/
 
             //need to swap this out with a dungeon list
 			foreach (GameObject monster in monsterList)
@@ -573,7 +573,7 @@ public class GameManager : MonoBehaviour
 			}
 
 			//Spawn heroes; the longer it goes without spawn, the more likely spawn is
-			if (modifiedHeroSpawnRate > Random.Range(0f, 1f) && currentTime > 0)
+			if (modifiedHeroSpawnRate > Random.Range(0f, 1f) && currentTime > 0 && attackParties.Count < 3)
 			{
 				//Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
 				modifiedHeroSpawnRate = baseHeroSpawnRate;
