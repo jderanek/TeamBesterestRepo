@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
     {
         uiManager = this.GetComponent<UIManager>();
         constructionScript = this.GetComponent<ConstructionScript>();
-        roomList = new GameObject[10, 10];
+        roomList = new GameObject[20, 20];
         monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv",
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
         monNames = new CSVImporter("NamesWIP - Sheet1.csv",
@@ -165,12 +165,12 @@ public class GameManager : MonoBehaviour
             {
                 new GameObject[] //infamy level 0
                 {
-                    possibleMonsters[0], possibleMonsters[1]
+                    possibleMonsters[0]//, possibleMonsters[1]
                 },
                 new GameObject[] //infamy level 1
                 {
-                    possibleMonsters[0], possibleMonsters[0], possibleMonsters[0], possibleMonsters[0], possibleMonsters[1],
-                    possibleMonsters[1], possibleMonsters[1], possibleMonsters[1], possibleMonsters[8], possibleMonsters[9]
+                    possibleMonsters[0], possibleMonsters[0], possibleMonsters[0], possibleMonsters[0]//, possibleMonsters[1],
+                    //possibleMonsters[1], possibleMonsters[1], possibleMonsters[1], possibleMonsters[8], possibleMonsters[9]
                 }
             }, 
 
@@ -179,12 +179,14 @@ public class GameManager : MonoBehaviour
             {
                 new GameObject[] //infamy level 0
                 {
-                    possibleMonsters[2], possibleMonsters[3]
+                    possibleMonsters[0]
+                    //possibleMonsters[2], possibleMonsters[3]
                 },
                 new GameObject[] //infamy level 1
                 {
-                    possibleMonsters[2], possibleMonsters[2], possibleMonsters[2], possibleMonsters[2], possibleMonsters[3],
-                    possibleMonsters[3], possibleMonsters[3], possibleMonsters[3], possibleMonsters[10], possibleMonsters[11]
+                    possibleMonsters[0]
+                    //possibleMonsters[2], possibleMonsters[2], possibleMonsters[2], possibleMonsters[2], possibleMonsters[3],
+                    //possibleMonsters[3], possibleMonsters[3], possibleMonsters[3], possibleMonsters[10], possibleMonsters[11]
                 }
             },
 
@@ -193,12 +195,14 @@ public class GameManager : MonoBehaviour
             {
                 new GameObject[] //infamy level 0
                 {
-                    possibleMonsters[4], possibleMonsters[5]
+                    possibleMonsters[0]
+                    //possibleMonsters[4], possibleMonsters[5]
                 },
                 new GameObject[] //infamy level 1
                 {
-                    possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[5],
-                    possibleMonsters[5], possibleMonsters[5], possibleMonsters[5], possibleMonsters[12], possibleMonsters[13]
+                    possibleMonsters[0]
+                    //possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[5],
+                    //possibleMonsters[5], possibleMonsters[5], possibleMonsters[5], possibleMonsters[12], possibleMonsters[13]
                 }
             }, 
 
@@ -207,19 +211,21 @@ public class GameManager : MonoBehaviour
             {
                 new GameObject[] //infamy level 0
                 {
-                    possibleMonsters[6], possibleMonsters[7]
+                    possibleMonsters[0]
+                    //possibleMonsters[6], possibleMonsters[7]
                 },
                 new GameObject[] //infamy level 1
                 {
-                    possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[7],
-                    possibleMonsters[7], possibleMonsters[7], possibleMonsters[7], possibleMonsters[14], possibleMonsters[15]
+                    possibleMonsters[0]
+                    //possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[7],
+                    //possibleMonsters[7], possibleMonsters[7], possibleMonsters[7], possibleMonsters[14], possibleMonsters[15]
                 }
             }
 
         };
         CreateNewResume(3);
 
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < possibleHeroes.Length; i++)
         {
             heroSpawnSet.Add(possibleHeroes[i]);
         }
