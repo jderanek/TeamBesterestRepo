@@ -208,7 +208,7 @@ public class UIManager : MonoBehaviour {
 
             //hire button
             newFieldCanvas.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate { gameManager.HireButton(application, newField); });
-            newContextCanvas.transform.GetChild(8).GetComponent<Button>().onClick.AddListener(delegate { gameManager.Interview(application); });
+            newContextCanvas.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate { gameManager.Interview(application); });
 
             newField.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
             newContext.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
