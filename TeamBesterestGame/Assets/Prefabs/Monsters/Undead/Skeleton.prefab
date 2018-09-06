@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212386752791340614}
   - component: {fileID: 58809765604022280}
   - component: {fileID: 114691138632011334}
+  - component: {fileID: 95027555287831776}
   m_Layer: 9
   m_Name: Skeleton
   m_TagString: Monster
@@ -71,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1136505623855328}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7208743, y: 0.72196895, z: 0}
+  m_LocalPosition: {x: 10.491045, y: 4.846036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224832806704509498}
@@ -93,6 +94,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
+--- !u!95 &95027555287831776
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1136505623855328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f46b4a379cbc33944a3a0625b91147ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114027765999853938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -130,6 +148,10 @@ MonoBehaviour:
   curHealth: 0
   curDamage: 0
   canBeDebuffed: 1
+  healthTier: 0
+  defenseTier: 0
+  attackTier: 0
+  anim: {fileID: 95027555287831776}
   baseNerve: 0.5
   curNerve: 0.5
   effects: []

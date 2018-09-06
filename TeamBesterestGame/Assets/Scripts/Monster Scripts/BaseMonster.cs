@@ -50,6 +50,8 @@ public abstract class BaseMonster : MonoBehaviour {
     public int defenseTier;
     public int attackTier;
 
+    public Animator anim;
+
     //Temp variables from transfer
     private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
 	string traitName;
