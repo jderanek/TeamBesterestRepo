@@ -472,6 +472,8 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	//Applies personality effects to the monster, as well as other stat modifiers
 	//Called at end of each work day
-	public void DayHandler() {
+	public void DayHandler()
+    {
+
 	}
 }

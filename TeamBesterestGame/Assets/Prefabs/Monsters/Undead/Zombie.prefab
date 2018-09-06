@@ -146,6 +146,10 @@ MonoBehaviour:
   curHealth: 0
   curDamage: 0
   canBeDebuffed: 1
+  healthTier: 0
+  defenseTier: 0
+  attackTier: 0
+  anim: {fileID: 0}
   baseNerve: 0.5
   curNerve: 0.5
   effects: []

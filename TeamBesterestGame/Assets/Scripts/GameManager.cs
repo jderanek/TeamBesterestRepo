@@ -476,16 +476,6 @@ public class GameManager : MonoBehaviour
         monsterInstance = monster; //might wanna use selectedObject for consistency - Nate
         interviewing = true;
         uiManager.ToggleMenu(0);
-        /*
-        Q1.SetActive(true);
-        Q2.SetActive(true);
-        Q3.SetActive(true);
-        Q4.SetActive(true);
-        Q5.SetActive(true);
-        interviewImage.SetActive(true);
-        interviewResponse.SetActive(true);
-        interviewExit.SetActive(true);
-        */
 
         interviewCanvas.SetActive(true);
         interviewResponse.SetActive(true);
