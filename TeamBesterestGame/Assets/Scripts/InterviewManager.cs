@@ -279,30 +279,28 @@ public class InterviewManager : MonoBehaviour {
         q42 = Random.Range(0, 4);
     }
 
-    public void InterviewResponse()
-    {
-        //interviewResponse.SetActive(false);
-        //interviewQuestions.SetActive(true);
-    }
-
     public void ExitInterview() //exits interview and hides the interview UI
     {
         gameManager.GetComponent<GameManager>().monsterInstance = null;
-        
-        /*gameManager.GetComponent<GameManager>().Q1.SetActive(false);
-        gameManager.GetComponent<GameManager>().Q2.SetActive(false);
-        gameManager.GetComponent<GameManager>().Q3.SetActive(false);
-        gameManager.GetComponent<GameManager>().Q4.SetActive(false);
-        gameManager.GetComponent<GameManager>().Q5.SetActive(false);
-        gameManager.GetComponent<GameManager>().interviewResponse.SetActive(false);
-        gameManager.GetComponent<GameManager>().interviewImage.SetActive(false);
-        gameManager.GetComponent<GameManager>().interviewExit.SetActive(false);*/
-        //gameManager.GetComponent<GameManager>().applicationPanel.SetActive(true);
-
         gameManager.GetComponent<GameManager>().interviewCanvas.SetActive(false);
 
         interviewResponse.SetActive(false);
         responseText.text = "Hello";
+        gameManager.GetComponent<GameManager>().interviewing = false;
     }
-    
+
+    public void LeaveInterview() //called when you leave an interview with the red X button
+    {
+        gameManager.GetComponent<GameManager>().monsterInstance = null;
+
+        if (gameManager.GetComponent<GameManager>().interviewing && monsterInstance != null)
+        {
+            //monsterInstance.GetComponent<BaseMonster>().setApplicationLife(1);
+            gameManager.GetComponent<GameManager>().applicationsList.Remove(monsterInstance);
+            gameManager.GetComponent<UIManager>().UpdateApplications();
+            Destroy(monsterInstance);
+            monsterInstance = null;
+        }
+    }
+
 }

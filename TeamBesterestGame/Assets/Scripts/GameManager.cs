@@ -523,11 +523,11 @@ public class GameManager : MonoBehaviour
 		for (int i = timeToPass; i > 0; i--)
 		{
             dungeonEmpty = true;
-            /*if (currentTime > 0)
+            if (currentTime > 0)
             {
                 currentTime--;
                 timeUnitText.text = currentTime.ToString();
-            }*/
+            }
 
             //need to swap this out with a dungeon list
 			foreach (GameObject monster in monsterList)
