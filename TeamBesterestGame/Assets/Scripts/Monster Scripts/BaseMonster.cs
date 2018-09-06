@@ -319,6 +319,14 @@ public abstract class BaseMonster : MonoBehaviour {
 	}
 	public void setInCombat(bool value) {
 		this.inCombat = value;
+        if (this.inCombat)
+        {
+            anim.SetBool("inCombat", true);
+        }
+        else
+        {
+            anim.SetBool("inCombat", false);
+        }
 	}
 	public bool getHasFought() {
 		return this.hasFought;
@@ -448,6 +456,8 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	private void Death()
 	{
+        anim.SetTrigger("death");
+        anim.Play("hellhound_death");
 		curRoom.GetComponent<BaseRoom>().roomMembers.Remove(gameObject);
         gameManager.monsterList.Remove(gameObject);
 		if (curRoom.GetComponent<BaseRoom>().roomMembers.Count == 0)
