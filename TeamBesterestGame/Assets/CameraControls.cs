@@ -7,8 +7,23 @@ public class CameraControls : MonoBehaviour {
     private float dragSpeed = 1.5f;
     private Vector3 dragOrigin;
 
+    Camera thisCamera;
+    float cameraSize = 5f;
+    float cameraSizeMax = 10f;
+    float cameraSizeMin = 2.5f;
+    float scrollSpeed = 1f;
+
+    private void Start()
+    {
+        thisCamera = this.GetComponent<Camera>();
+    }
+
     void Update()
     {
+        cameraSize += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+        cameraSize = Mathf.Clamp(cameraSize, cameraSizeMin, cameraSizeMax);
+        thisCamera.orthographicSize = cameraSize;
+
         if (Input.GetMouseButtonDown(0))
         {
             dragOrigin = Input.mousePosition;
@@ -21,6 +36,5 @@ public class CameraControls : MonoBehaviour {
         Vector3 move = new Vector3(pos.x * dragSpeed, pos.y * dragSpeed, 0);
 
         transform.Translate(move - pos, Space.World);
-        //transform.position.Set(transform.position.x, transform.position.y, -1);
     }
 }
