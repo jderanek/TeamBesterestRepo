@@ -9693,7 +9693,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db2197fed47ac9c4193966a8064b021e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragSpeed: 1
 --- !u!224 &1358709416 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224803246425563360, guid: f96e23bb6e6d2ff4ba58c4c65bf0f2a3,
