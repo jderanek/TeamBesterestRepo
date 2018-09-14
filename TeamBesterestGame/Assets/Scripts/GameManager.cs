@@ -522,7 +522,13 @@ public class GameManager : MonoBehaviour
             //need to swap this out with a dungeon list
 			foreach (GameObject monster in monsterList)
 			{
-				monster.GetComponent<BaseMonster>().Attack();
+                //Applies all passTime effects before combat
+                BaseMonster monScript = monster.GetComponent<BaseMonster>();
+
+                foreach (BaseTrait trait in monScript.traits)
+                    trait.OnTimePass(monScript);
+
+                monScript.Attack();
 			}
 
             //probably should create a hero list
@@ -638,7 +644,6 @@ public class GameManager : MonoBehaviour
                 NewCycle();
             }*/
 		}
-		//party.MoveToNextRoom ();
 	}
 
     //New day handler to apply effects on start of day

@@ -19,8 +19,6 @@ public class DeathCurse : BaseTrait {
         }
     }
 
-    public override void OnAttack(BaseHero attacked) {}
-
     public override void OnSpawn() {}
 
     public override void OnKill(BaseHero killed) {}

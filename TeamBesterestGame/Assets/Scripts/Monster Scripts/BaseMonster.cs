@@ -401,15 +401,23 @@ public abstract class BaseMonster : MonoBehaviour {
     {
         applicationLife = newAppLife;
     }
+    public int getDefense()
+    {
+        return this.defenseTier;
+    }
+    public void setDefense(int def)
+    {
+        this.defenseTier = def;
+    }
 	public void Stun() {
 		this.stunned = true;
 	}
 
 	//Function to make monster lose health
-	public void TakeDamage(int dam) {
+	public void TakeDamage(int dam, BaseHero attacker = null) {
         foreach (BaseTrait trait in this.traits)
         {
-            dam = trait.OnAttacked(dam);
+            dam = trait.OnAttacked(dam, this, attacker);
         }
 		this.curHealth = Mathf.Clamp (this.curHealth - dam, 0, this.maxHealth);
 		damageText.text = this.curHealth.ToString() + "hp";
@@ -454,9 +462,16 @@ public abstract class BaseMonster : MonoBehaviour {
             }
         }
 
-		//Makes hero take damage
-		if (highThreat != null)
-			highThreat.TakeDamage(this.getCurDamage(), this);
+        //Makes hero take damage
+        if (highThreat != null)
+        {
+            int dmg = this.getCurDamage();
+            foreach (BaseTrait trait in this.traits)
+            {
+                dmg = trait.OnAttack(dmg, highThreat, this);
+            }
+            highThreat.TakeDamage(dmg, this);
+        }
 	}
 
     //Plays animations, and kills this monster

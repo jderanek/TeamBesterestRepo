@@ -9,8 +9,6 @@ public class MoneyMonger : BaseTrait
 
     public override void OnDeath(BaseMonster monster) { }
 
-    public override void OnAttack(BaseHero attacked) { }
-
     public override void OnSpawn() { }
 
     public override void OnKill(BaseHero killed)

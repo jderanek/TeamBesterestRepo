@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//Recovers 25% health after combat
-public class HeavySleeper : BaseTrait
+public class Claustrophobic : BaseTrait
 {
-    public HeavySleeper(List<PersonalityTags.Tag> tags) : base(tags) { }
+    public Claustrophobic(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }
 
@@ -15,8 +14,8 @@ public class HeavySleeper : BaseTrait
 
     public override void OnHeroDeath(BaseHero dead) { }
 
-    public override void OnCombatEnd(BaseMonster monster)
+    public override int OnAttacked(int dmg, BaseMonster attacked, BaseHero attacker = null)
     {
-        monster.Heal((int)(monster.getMaxHealth() * .25));
+        return dmg * (1 + attacked.getCurRoom().heroesInRoom.Count);
     }
 }

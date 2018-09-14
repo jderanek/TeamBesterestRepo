@@ -139,6 +139,13 @@ public abstract class BaseHero : MonoBehaviour {
 
 	//Damage and Heal functions to restore or reduce hero health
 	public virtual void TakeDamage(int dmg, BaseMonster attacker = null) {
+        if (attacker != null)
+        {
+            foreach (BaseTrait trait in attacker.traits)
+            {
+                trait.OnHeroDamaged(Mathf.Min(dmg - armor, 0), this, attacker);
+            }
+        }
 		this.curHealth -= Mathf.Clamp (dmg - armor, 0, this.maxHealth);
         this.damageText.text = this.curHealth + "hp";
 		if (this.curHealth <= 0)

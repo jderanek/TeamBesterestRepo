@@ -12,9 +12,11 @@ public abstract class BaseTrait {
 
     public abstract void OnDeath(BaseMonster monster);
 
-    public abstract void OnAttack(BaseHero attacked);
+    public virtual int OnAttack(int dmg, BaseHero attacked, BaseMonster attacker = null) {
+        return dmg;
+    }
 
-    public virtual int OnAttacked(int dmg, BaseHero attacker = null)
+    public virtual int OnAttacked(int dmg, BaseMonster attacked, BaseHero attacker = null)
     {
         return dmg;
     }
@@ -26,4 +28,8 @@ public abstract class BaseTrait {
     public abstract void OnHeroDeath(BaseHero dead = null);
 
     public virtual void OnCombatEnd(BaseMonster monster) {}
+
+    public virtual void OnTimePass(BaseMonster monster) { }
+
+    public virtual void OnHeroDamaged(int dmg, BaseHero hero, BaseMonster monster) { }
 }
