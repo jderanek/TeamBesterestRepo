@@ -17,6 +17,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	public int curDamage;
 	int damage;
 	public TraitBase personality;
+    public List<BaseTrait> traits;
 	int salary;
 	float stress;
 	float morale;
@@ -406,6 +407,10 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	//Function to make monster lose health
 	public void TakeDamage(int dam) {
+        foreach (BaseTrait trait in this.traits)
+        {
+            dam = trait.OnAttacked(dam);
+        }
 		this.curHealth = Mathf.Clamp (this.curHealth - dam, 0, this.maxHealth);
 		damageText.text = this.curHealth.ToString() + "hp";
 		if (curHealth <= 0) {
@@ -451,11 +456,18 @@ public abstract class BaseMonster : MonoBehaviour {
 
 		//Makes hero take damage
 		if (highThreat != null)
-			highThreat.TakeDamage(this.getCurDamage());
+			highThreat.TakeDamage(this.getCurDamage(), this);
 	}
 
+    //Plays animations, and kills this monster
 	private void Death()
 	{
+        //Runs all trait death functions before removing monster
+        foreach (BaseTrait trait in this.traits)
+        {
+            trait.OnDeath(this);
+        }
+
         anim.SetTrigger("death");
         anim.Play("hellhound_death");
 		curRoom.GetComponent<BaseRoom>().roomMembers.Remove(gameObject);

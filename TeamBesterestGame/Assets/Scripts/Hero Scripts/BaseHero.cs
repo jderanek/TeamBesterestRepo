@@ -138,11 +138,11 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 
 	//Damage and Heal functions to restore or reduce hero health
-	public virtual void TakeDamage(int dmg) {
+	public virtual void TakeDamage(int dmg, BaseMonster attacker = null) {
 		this.curHealth -= Mathf.Clamp (dmg - armor, 0, this.maxHealth);
         this.damageText.text = this.curHealth + "hp";
 		if (this.curHealth <= 0)
-			this.Death ();
+			this.Death (attacker);
 	}
 	public void Heal(int heal) {
 		this.curHealth = Mathf.Clamp (this.curHealth + heal, 0, this.maxHealth);
@@ -170,11 +170,30 @@ public abstract class BaseHero : MonoBehaviour {
 	}
 
 	//Function to kill this hero
-	public void Death() {
+	public void Death(BaseMonster killer = null) {
+        //Activates traits before completing death function
+        if (killer != null)
+        {
+            foreach (BaseTrait trait in killer.traits)
+            {
+                trait.OnKill(this);
+            }
+        }
+
+        foreach (GameObject monster in this.curRoom.roomMembers)
+        {
+            BaseMonster script = monster.GetComponent<BaseMonster>();
+            foreach (BaseTrait trait in script.traits)
+            {
+                trait.OnHeroDeath(this);
+            }
+        }
+
 		curRoom.heroesInRoom.Remove(gameObject);
 		if (curRoom.heroesInRoom.Count == 0)
 		{
 			curRoom.heroInRoom = false;
+            curRoom.OnCombatEnd();
 		}
 
 		GameManager gameManager;

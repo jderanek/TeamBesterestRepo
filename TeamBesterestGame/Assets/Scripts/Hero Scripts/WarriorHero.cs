@@ -12,7 +12,7 @@ public class WarriorHero : BaseHero {
 		this.AssignStats("Warrior");
 	}
 
-	public override void TakeDamage(int dmg) {
+	public override void TakeDamage(int dmg, BaseMonster attacker = null) {
 		base.TakeDamage (dmg);
 		if (this.getHealth () <= this.getMaxHealth () / 2 && !boosted) {
 			this.Heal (1);

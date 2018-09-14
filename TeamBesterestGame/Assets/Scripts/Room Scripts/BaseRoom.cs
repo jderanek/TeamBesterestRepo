@@ -596,6 +596,17 @@ public abstract class BaseRoom : MonoBehaviour {
 		}
 	}
 
+    //Called when combat is ended
+    public void OnCombatEnd()
+    {
+        foreach (GameObject monster in this.roomMembers)
+        {
+            BaseMonster script = monster.GetComponent<BaseMonster>();
+            foreach (BaseTrait trait in script.traits)
+                trait.OnCombatEnd(script);
+        }
+    }
+
     //call when monster enters room
     abstract public void RoomEffect(BaseMonster monster);
 
