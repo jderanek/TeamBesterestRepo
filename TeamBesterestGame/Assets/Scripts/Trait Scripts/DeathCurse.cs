@@ -5,6 +5,7 @@ using UnityEngine;
 //Kills all heroes in the monsters room when the monster dies
 public class DeathCurse : BaseTrait {
 
+    public DeathCurse() : base() { }
 	public DeathCurse(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster)

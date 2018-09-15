@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -71,11 +72,26 @@ public abstract class BaseMonster : MonoBehaviour {
 		heroInRoom = false;
 		//Temp measure to suppress errors
 		//this.AssignStats (gameObject.name);
-		this.personality = allTraits [Random.Range (0, allTraits.Length)];
+		this.personality = allTraits [UnityEngine.Random.Range (0, allTraits.Length)];
 		this.personality.ApplyBase (this);
 		this.traitName = this.personality.getName ();
-		this.workEthic = Random.Range (-1, 1);
-		//this.curRoom = gameManager.spawnRoom;
+		this.workEthic = UnityEngine.Random.Range (-1, 1);
+        //this.curRoom = gameManager.spawnRoom;
+
+        //Adds three traits to the trait list
+        traits = new List<BaseTrait>();
+        int rand;
+        List<string> traitList = new List<string>(gameManager.traits);
+        for (int x = 0; x < 3; x++)
+        {
+            rand = UnityEngine.Random.Range(0, traitList.Count-1);
+
+            Debug.Log(traitList[rand]);
+            BaseTrait toAdd = Activator.CreateInstance(System.Type.GetType(traitList[rand]), new List<PersonalityTags.Tag>()) as BaseTrait;
+            traits.Add(toAdd);
+
+            traitList.RemoveAt(rand);
+        }
 
         //moved damage text here bc it was throwing error on pre-instantiated monsters
         damageText = this.gameObject.GetComponentInChildren<Text>();
@@ -125,7 +141,7 @@ public abstract class BaseMonster : MonoBehaviour {
 		curRoom = gameManager.spawnRoom;
 		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
         this.maxHealth *= gameManager.healthWeight;
-        switch((Random.Range(1, 7) + Random.Range(1, 7) + Random.Range(1, 7)))
+        switch((UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7)))
         {
             case 3: case 4:
                 this.maxHealth = (int)(this.maxHealth * 0.75f);
@@ -152,7 +168,7 @@ public abstract class BaseMonster : MonoBehaviour {
 
 		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
         this.damage *= gameManager.attackWeight;
-        switch((Random.Range(1, 7)) + Random.Range(1, 7) + Random.Range(1, 7))
+        switch((UnityEngine.Random.Range(1, 7)) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7))
         {
             case 3:
             case 4:
@@ -183,7 +199,7 @@ public abstract class BaseMonster : MonoBehaviour {
 
         this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
         this.armor *= gameManager.defenseWeight;
-        switch ((Random.Range(1, 7)) + Random.Range(1, 7) + Random.Range(1, 7))
+        switch ((UnityEngine.Random.Range(1, 7)) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7))
         {
             case 3:
             case 4:
@@ -217,7 +233,7 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
 		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
 		this.archetype = gameManager.monsters.data [type] ["Archetype"];
-		int num = Random.Range (1, 5);
+		int num = UnityEngine.Random.Range (1, 5);
 		this.monName = gameManager.monNames.data [num.ToString ()] [this.archetype];
 		this.name = monName;
 

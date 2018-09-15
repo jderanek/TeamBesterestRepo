@@ -5,6 +5,7 @@ using UnityEngine;
 //Takes half damage
 public class ToughSkinned : BaseTrait
 {
+    public ToughSkinned() : base() { }
     public ToughSkinned(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

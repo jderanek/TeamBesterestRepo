@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bloodthirsty : BaseTrait
 {
+    public Bloodthirsty() : base() { }
     public Bloodthirsty(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

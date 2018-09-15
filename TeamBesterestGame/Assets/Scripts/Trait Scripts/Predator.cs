@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Predator : BaseTrait
 {
+    public Predator() : base() { }
     public Predator(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

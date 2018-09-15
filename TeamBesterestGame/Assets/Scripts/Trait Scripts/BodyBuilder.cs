@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BodyBuilder : BaseTrait
 {
+    public BodyBuilder() : base() { }
     public BodyBuilder(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

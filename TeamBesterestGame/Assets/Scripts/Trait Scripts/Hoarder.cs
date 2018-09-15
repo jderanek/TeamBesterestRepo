@@ -4,6 +4,7 @@ using UnityEngine;
 
 //Heroes this monster kills don't give gold
 public class Hoarder : BaseTrait {
+    public Hoarder() : base() { }
     public Hoarder(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) {}

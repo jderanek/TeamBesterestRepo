@@ -5,6 +5,7 @@ using UnityEngine;
 //Recovers 25% health after combat
 public class HeavySleeper : BaseTrait
 {
+    public HeavySleeper() : base() { }
     public HeavySleeper(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

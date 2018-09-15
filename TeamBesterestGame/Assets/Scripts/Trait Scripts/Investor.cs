@@ -7,6 +7,7 @@ public class Investor : BaseTrait
 {
     float goldMult = 1f;
 
+    public Investor() : base() { }
     public Investor(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

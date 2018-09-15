@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RichKid : BaseTrait
 {
+    public RichKid() : base() { }
     public RichKid(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

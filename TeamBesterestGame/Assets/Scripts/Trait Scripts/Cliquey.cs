@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cliquey : BaseTrait
 {
+    public Cliquey() : base() { }
     public Cliquey(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

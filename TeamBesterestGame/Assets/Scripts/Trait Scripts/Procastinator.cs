@@ -6,6 +6,7 @@ using UnityEngine;
 public class Procastinator : BaseTrait
 {
     bool isBoosted = false;
+    public Procastinator() : base() { }
     public Procastinator(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

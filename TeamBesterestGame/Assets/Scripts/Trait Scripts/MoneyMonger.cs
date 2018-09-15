@@ -5,6 +5,7 @@ using UnityEngine;
 //Increases gold gain by 2x
 public class MoneyMonger : BaseTrait
 {
+    public MoneyMonger() : base() { }
     public MoneyMonger(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

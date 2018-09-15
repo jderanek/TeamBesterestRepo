@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PriestSchoolDropout : BaseTrait
 {
+    public PriestSchoolDropout() : base() { }
     public PriestSchoolDropout(List<PersonalityTags.Tag> tags) : base(tags) { }
 
     public override void OnDeath(BaseMonster monster) { }

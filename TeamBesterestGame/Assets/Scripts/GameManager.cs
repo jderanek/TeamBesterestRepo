@@ -133,6 +133,10 @@ public class GameManager : MonoBehaviour
 	public CSVImporter monNames;
 	public CSVImporter heroStats;
 
+    //Array of Trait Types
+    public string[] traits = {"HeavySleeper", "Procastinator", "Opportunist", "Reckless", "Claustrophobic",
+    "Cliquey", "Predator", "BrownNoser"};
+
     #endregion
 
     #region Initialization

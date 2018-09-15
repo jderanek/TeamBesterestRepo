@@ -5,6 +5,8 @@ using UnityEngine;
 public abstract class BaseTrait {
     List<PersonalityTags.Tag> tags = new List<PersonalityTags.Tag>();
 
+    public BaseTrait() { }
+
     public BaseTrait(List<PersonalityTags.Tag> tags)
     {
         this.tags.AddRange(tags);
