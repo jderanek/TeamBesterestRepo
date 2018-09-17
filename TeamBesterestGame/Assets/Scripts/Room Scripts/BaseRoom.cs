@@ -102,7 +102,7 @@ public abstract class BaseRoom : MonoBehaviour {
 		if (isValid (new Vector2 (myX + 1, myY)))
 			adjacentRooms.Add (gameManager.roomList [myX + 1, myY]);
 		else {
-			newDoor = Instantiate (gameManager.door, new Vector2 (myX + .5f, myY), Quaternion.Euler (new Vector3 (0, 0, 90)));
+			newDoor = Instantiate (gameManager.door, new Vector2 ((myX * 3) + 1.5f, myY * 3), Quaternion.Euler (new Vector3 (0, 0, 90)));
 			door = newDoor.GetComponent<DoorScript> ();
 			door.pos1 = new Vector2 (this.myX, this.myY);
 			door.pos2 = new Vector2 (this.myX + 1, this.myY);
@@ -110,7 +110,7 @@ public abstract class BaseRoom : MonoBehaviour {
 		if (isValid (new Vector2 (myX - 1, myY)))
 			adjacentRooms.Add (gameManager.roomList [myX - 1, myY]);
 		else {
-			newDoor = Instantiate (gameManager.door, new Vector2 (myX - .5f, myY), Quaternion.Euler (new Vector3 (0, 0, 90)));
+			newDoor = Instantiate (gameManager.door, new Vector2 ((myX * 3) - 1.5f, myY * 3), Quaternion.Euler (new Vector3 (0, 0, 90)));
 			door = newDoor.GetComponent<DoorScript> ();
 			door.pos1 = new Vector2 (this.myX, this.myY);
 			door.pos2 = new Vector2 (this.myX - 1, this.myY);
@@ -118,7 +118,7 @@ public abstract class BaseRoom : MonoBehaviour {
 		if (isValid (new Vector2 (myX, myY + 1)))
 			adjacentRooms.Add (gameManager.roomList [myX, myY + 1]);
 		else {
-			newDoor = Instantiate (gameManager.door, new Vector2 (myX, myY + .5f), Quaternion.Euler (new Vector3 (0, 0, 0)));
+			newDoor = Instantiate (gameManager.door, new Vector2 (myX * 3, (myY * 3) + 1.5f), Quaternion.Euler (new Vector3 (0, 0, 0)));
 			door = newDoor.GetComponent<DoorScript> ();
 			door.pos1 = new Vector2 (this.myX, this.myY);
 			door.pos2 = new Vector2 (this.myX, this.myY + 1);
@@ -126,7 +126,7 @@ public abstract class BaseRoom : MonoBehaviour {
 		if (isValid (new Vector2 (myX, myY - 1)))
 			adjacentRooms.Add (gameManager.roomList [myX, myY - 1]);
 		else {
-			newDoor = Instantiate (gameManager.door, new Vector2 (myX, myY - .5f), Quaternion.Euler (new Vector3 (0, 0, 0)));
+			newDoor = Instantiate (gameManager.door, new Vector2 (myX * 3, (myY * 3) - 1.5f), Quaternion.Euler (new Vector3 (0, 0, 0)));
 			door = newDoor.GetComponent<DoorScript> ();
 			door.pos1 = new Vector2 (this.myX, this.myY);
 			door.pos2 = new Vector2 (this.myX, this.myY - 1);

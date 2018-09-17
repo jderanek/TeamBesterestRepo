@@ -497,8 +497,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696128822791202}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 7, z: 0}
-  m_LocalScale: {x: 3.173602, y: 3.089897, z: 1}
+  m_LocalPosition: {x: 2.229038, y: 5.353494, z: 0}
+  m_LocalScale: {x: 9, y: 9, z: 1}
   m_Children:
   - {fileID: 4699569941881310}
   - {fileID: 4997586361106940}
@@ -1115,6 +1115,7 @@ MonoBehaviour:
   emptyCoin: {fileID: 21300000, guid: 6bbf5c900c3b80a4c9ae540944a6c7cc, type: 3}
   filledCoin: {fileID: 21300000, guid: ef7c1a33e177bd143b09d4a8bb8e3d47, type: 3}
   highlight: {fileID: 0}
+  monsterSize: 0
   master: {fileID: 0}
 --- !u!114 &114576128899916690
 MonoBehaviour:

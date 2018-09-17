@@ -8,10 +8,10 @@ public class CameraControls : MonoBehaviour {
     private Vector3 dragOrigin;
 
     Camera thisCamera;
-    float cameraSize = 5f;
-    float cameraSizeMax = 10f;
-    float cameraSizeMin = 2.5f;
-    float scrollSpeed = 1f;
+    float cameraSize = 19f;
+    float cameraSizeMax = 25f;
+    float cameraSizeMin = 10f;
+    float scrollSpeed = 3f;
 
     private void Start()
     {
@@ -20,7 +20,7 @@ public class CameraControls : MonoBehaviour {
 
     void Update()
     {
-        cameraSize += Input.GetAxis("Mouse ScrollWheel") * scrollSpeed;
+        cameraSize += Input.GetAxis("Mouse ScrollWheel") * -scrollSpeed;
         cameraSize = Mathf.Clamp(cameraSize, cameraSizeMin, cameraSizeMax);
         thisCamera.orthographicSize = cameraSize;
 
