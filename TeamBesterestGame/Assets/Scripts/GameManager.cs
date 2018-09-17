@@ -748,13 +748,13 @@ public class GameManager : MonoBehaviour
         {
             var coroutine = Play();
             StartCoroutine(coroutine);
-            pauseButtonText.text = "Pause";
+            //pauseButtonText.text = "Pause";
 
         }
         else
         {
             StopAllCoroutines();
-            pauseButtonText.text = "Play";
+            //pauseButtonText.text = "Play";
         }
         paused = !paused;
     }
