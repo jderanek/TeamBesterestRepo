@@ -526,6 +526,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\LICENSE.txt" />
+    <None Include="Assets\Sprites\UI\UI_Assets\readme.txt" />
     <None Include="Assets\StreamingAssets\desc.txt" />
     <None Include="Assets\Wwise\Deployment\Plugins\Mac\Debug\AkSoundEngine.bundle\Contents\Resources\readme.txt" />
     <None Include="Assets\Wwise\Deployment\Plugins\Mac\Profile\AkSoundEngine.bundle\Contents\Resources\readme.txt" />

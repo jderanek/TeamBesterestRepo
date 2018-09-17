@@ -201,7 +201,7 @@ public class UIManager : MonoBehaviour {
             newFieldCanvas.transform.GetChild(0).GetComponent<Image>().color = application.GetComponent<SpriteRenderer>().color;
             newFieldCanvas.transform.GetChild(1).GetComponent<Text>().text = application.name;
             newFieldCanvas.transform.GetChild(2).GetComponent<Text>().text = application.GetComponent<BaseMonster>().getType();
-            newField.GetComponent<RectTransform>().sizeDelta = new Vector2(214.77f, 57.4f);
+            newField.GetComponent<RectTransform>().sizeDelta = new Vector2(210f, 80f);
 
             //stats/interview button
             newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { ToggleContext(newContext); });
