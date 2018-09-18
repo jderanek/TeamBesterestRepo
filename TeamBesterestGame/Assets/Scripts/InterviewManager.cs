@@ -41,7 +41,7 @@ public class InterviewManager : MonoBehaviour {
     */
 
     public string[][] tagQuestions = { hierarchyQuestions, aidQuestions, rudeQuestions, workethicQuestions, physicalQuestions,
-        selfcenteredQuestions, speechQuestions, conditionQuestions, appearanceQuestions, appearanceQuestions, negativeQuestions };
+        selfcenteredQuestions, speechQuestions, conditionQuestions, appearanceQuestions, negativeQuestions };
     public static string[] hierarchyQuestions = { "Are you someone who likes to take charge?", "Do you prefer to let others take the lead?", "Are you good at following orders?" };
     public static string[] aidQuestions = { "Could I expect you to aid others willingly when they ask?", "Are you an amicable person?", "While you work, do you try to always lend a hand?" };
     public static string[] rudeQuestions = { "Do you sometimes tend to rub people the wrong way?", "Have people told you that always bring down the mood of the room?", "Would someone say you have a scary presence?" };
@@ -53,11 +53,11 @@ public class InterviewManager : MonoBehaviour {
     public static string[] appearanceQuestions = { "Tell me how others say you act like.", "How do you see yourself?", "Do you have any health problems I should know about?" };
     public static string[] negativeQuestions = { "Would your actions cause any disruption in the workplace?", "Will there be any fights or trouble if you are hired?", "Do you have any history of workplace disputes?" };
 
-    int q11;
+    public int q11;
     int q12;
-    int q21;
+    public int q21;
     int q22;
-    int q31;
+    public int q31;
     int q32;
 
     public Text q1Text;
@@ -89,18 +89,21 @@ public class InterviewManager : MonoBehaviour {
 
     public void Question1()
     {
+        GetResponse(q11);
         gameManager.GetComponent<GameManager>().PassTime(1);
         UpdateQuestions();
     }
 
     public void Question2()
     {
+        GetResponse(q21);
         gameManager.GetComponent<GameManager>().PassTime(1);
         UpdateQuestions();
     }
 
     public void Question3()
     {
+        GetResponse(q31);
         gameManager.GetComponent<GameManager>().PassTime(1);
         UpdateQuestions();
     }
@@ -377,6 +380,43 @@ public class InterviewManager : MonoBehaviour {
         q41 = Random.Range(0, 4);
         q42 = Random.Range(0, 4);
         */
+    }
+
+    public void GetResponse(int q)
+    {
+        switch (q)
+        {
+            case 0:
+                responseText.text = "hierarchy question response";
+                break;
+            case 1:
+                responseText.text = "aid question response";
+                break;
+            case 2:
+                responseText.text = "rude question response";
+                break;
+            case 3:
+                responseText.text = "work-ethic question response";
+                break;
+            case 4:
+                responseText.text = "physical question response";
+                break;
+            case 5:
+                responseText.text = "self-centered question response";
+                break;
+            case 6:
+                responseText.text = "speech question response";
+                break;
+            case 7:
+                responseText.text = "condition question response";
+                break;
+            case 8:
+                responseText.text = "appearance question response";
+                break;
+            case 9:
+                responseText.text = "negative question response";
+                break;
+        }
     }
 
     public void ExitInterview() //exits interview and hides the interview UI
