@@ -572,8 +572,8 @@ public abstract class BaseRoom : MonoBehaviour {
 
 		foreach (GameObject monster in roomMembers) {
 			monster.transform.position = new Vector3(
-				this.gameObject.transform.position.x + .25f,
-				this.gameObject.transform.position.y + .25f - (curMon * .25f),
+				this.gameObject.transform.position.x + .75f,
+				this.gameObject.transform.position.y + .75f - (curMon * .75f),
 				0
 			);
 
@@ -587,8 +587,8 @@ public abstract class BaseRoom : MonoBehaviour {
 
 		foreach (GameObject hero in this.heroesInRoom) {
 			hero.GetComponent<BaseHero>().targetPos = new Vector3(
-				this.gameObject.transform.position.x - .25f,
-				this.gameObject.transform.position.y + .25f - (curHero * .25f),
+				this.gameObject.transform.position.x - .75f,
+				this.gameObject.transform.position.y + .75f - (curHero * .75f),
 				0
 			);
 

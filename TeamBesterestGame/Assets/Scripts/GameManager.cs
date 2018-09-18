@@ -852,4 +852,57 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    //Debug controls. Disable for full builds
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            GameObject[] newHero = new GameObject[1];
+            //grabs a hero from spawn set with equal weight. Maybe best way to affect spawn %s is to just add duplicates to spawn set?
+            newHero[0] = Instantiate(heroSpawnSet[0], spawnRoom.transform.position, Quaternion.identity);
+            BaseParty newParty = new TestPart(newHero);
+            this.attackParties.Add(newParty);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            GameObject[] newHero = new GameObject[2];
+            //grabs a hero from spawn set with equal weight. Maybe best way to affect spawn %s is to just add duplicates to spawn set?
+            newHero[0] = Instantiate(heroSpawnSet[0], spawnRoom.transform.position, Quaternion.identity);
+            newHero[1] = Instantiate(heroSpawnSet[0], spawnRoom.transform.position, Quaternion.identity);
+            BaseParty newParty = new TestPart(newHero);
+            this.attackParties.Add(newParty);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            GameObject[] newHero = new GameObject[3];
+            //grabs a hero from spawn set with equal weight. Maybe best way to affect spawn %s is to just add duplicates to spawn set?
+            newHero[0] = Instantiate(heroSpawnSet[0], spawnRoom.transform.position, Quaternion.identity);
+            newHero[1] = Instantiate(heroSpawnSet[0], spawnRoom.transform.position, Quaternion.identity);
+            newHero[2] = Instantiate(heroSpawnSet[0], spawnRoom.transform.position, Quaternion.identity);
+            BaseParty newParty = new TestPart(newHero);
+            this.attackParties.Add(newParty);
+        }
+        if (Input.GetKeyDown(KeyCode.G)) {
+            currentCurrency += 100;
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            BaseMonster monScript;
+            foreach (GameObject monster in monsterList)
+            {
+                monScript = monster.GetComponent<BaseMonster>();
+                string toLog = monScript.monName + ": ";
+
+                foreach (BaseTrait trait in monScript.traits)
+                    toLog += trait.ToString() + ", ";
+
+                Debug.LogWarning(toLog);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            CreateNewResume(1);
+        }
+    }
 }
