@@ -579,7 +579,7 @@ public class GameManager : MonoBehaviour
 			}
 
 			//Spawn heroes; the longer it goes without spawn, the more likely spawn is
-			if (modifiedHeroSpawnRate > Random.Range(0f, 1f) && currentTime > 0 && attackParties.Count < 3)
+			if (modifiedHeroSpawnRate > Random.Range(0f, 1f) && attackParties.Count < 3)
 			{
 				//Instantiate(heroes[Random.Range(0, heroes.Length)], spawnRoom.transform.position, Quaternion.identity);
 				modifiedHeroSpawnRate = baseHeroSpawnRate;
