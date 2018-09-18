@@ -13,20 +13,18 @@ public class InterviewManager : MonoBehaviour {
     public GameObject monsterInstance;
 
     public GameObject interviewQuestions;
-    public GameObject questionOne;
-    public GameObject questionTwo;
     public GameObject interviewResponse;
 
-	public int q31;
+	/*public int q31;
 	public int q32;
 	public int q41;
 	public int q42;
 
 	public Text q3Text;
-	public Text q4Text;
+	public Text q4Text;*/
 
-	//arraylists for stat questions.
-	public string[][] statQuestions = {hpQuestions, attackQuestions, defenseQuestions};
+    //arraylists for stat questions.
+    /*public string[][] statQuestions = {hpQuestions, attackQuestions, defenseQuestions};
 
 	//arraylists for specific stat questions
 	public static string[] hpQuestions = {"Are you able to take a lot of punishment?", "Can you last long in a fight?", 
@@ -40,6 +38,31 @@ public class InterviewManager : MonoBehaviour {
 	public static string[] threatQuestions = {"Has anyone ever said you have an imposing presence?", "If you speak up do people pay attention to you?", 
 		"Do heroes seem to prioritize you over others?", "Do you seem to draw everyone's focus?", "Has anyone ever called you the center of attention?"};
 	//public string[] wageQuestions;
+    */
+
+    public string[][] tagQuestions = { hierarchyQuestions, aidQuestions, rudeQuestions, workethicQuestions, physicalQuestions,
+        selfcenteredQuestions, speechQuestions, conditionQuestions, appearanceQuestions, appearanceQuestions, negativeQuestions };
+    public static string[] hierarchyQuestions = { "Are you someone who likes to take charge?", "Do you prefer to let others take the lead?", "Are you good at following orders?" };
+    public static string[] aidQuestions = { "Could I expect you to aid others willingly when they ask?", "Are you an amicable person?", "While you work, do you try to always lend a hand?" };
+    public static string[] rudeQuestions = { "Do you sometimes tend to rub people the wrong way?", "Have people told you that always bring down the mood of the room?", "Would someone say you have a scary presence?" };
+    public static string[] workethicQuestions = { "Can I count on you to put 100% effort into your job?", "Can you keep yourself on-task during stressful situations?", "Are you the type of person who can work for extended periods of time?" };
+    public static string[] physicalQuestions = { "Tell me about the toughest brawl you have been in.", "Can you hold your own in combat?", "Do you enjoy fighting?" };
+    public static string[] selfcenteredQuestions = { "Do others tend to see you as a vain person?", "Can you work well with new people?", "Have previous coworkers said that you are full of yourself?" };
+    public static string[] speechQuestions = { "Do you like to meet new people?", "Have others said you are a chatterbox?", "Are you adept at mingling with your coworkers?" };
+    public static string[] conditionQuestions = { "How would you describe your physique?", "Tell me about your medical history.", "Are there any physical conditions I need to know about?" };
+    public static string[] appearanceQuestions = { "Tell me how others say you act like.", "How do you see yourself?", "Do you have any health problems I should know about?" };
+    public static string[] negativeQuestions = { "Would your actions cause any disruption in the workplace?", "Will there be any fights or trouble if you are hired?", "Do you have any history of workplace disputes?" };
+
+    int q11;
+    int q12;
+    int q21;
+    int q22;
+    int q31;
+    int q32;
+
+    public Text q1Text;
+    public Text q2Text;
+    public Text q3Text;
 
     public Text responseText;
 
@@ -64,6 +87,26 @@ public class InterviewManager : MonoBehaviour {
         }
     }
 
+    public void Question1()
+    {
+        gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateQuestions();
+    }
+
+    public void Question2()
+    {
+        gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateQuestions();
+    }
+
+    public void Question3()
+    {
+        gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateQuestions();
+    }
+
+    //old interview questions
+    /*
 	//personality question
     public void Question1Response()
     {
@@ -133,6 +176,7 @@ public class InterviewManager : MonoBehaviour {
 		}
 		gameManager.GetComponent<GameManager>().PassTime(1);
     }
+    
 
 	//Stat question
     public void Question3Response()
@@ -266,10 +310,65 @@ public class InterviewManager : MonoBehaviour {
 
 		q3Text.text = statQuestions[q31][q32];
 		q4Text.text = statQuestions[q41][q42];
-	}
+	}*/
+
+    //replaces text on the stat questions
+    public void UpdateQuestions()
+    {
+        q11 = Random.Range(0, tagQuestions.Length);
+        q12 = Random.Range(0, 2);
+        q21 = Random.Range(0, tagQuestions.Length);
+        q22 = Random.Range(0, 2);
+        q31 = Random.Range(0, tagQuestions.Length);
+        q32 = Random.Range(0, 2);
+
+        if (q11 == q21 && q12 == q22) // if q2 is q1
+        {
+            UpdateQuestions(2);
+        }
+        else if (q11 == q31 && q12 == q32) //if q3 is q1
+        {
+            UpdateQuestions(3);
+        }
+        else if (q21 == q31 && q22 == q32) // if q3 is q2
+        {
+            UpdateQuestions(3);
+        }
+
+        q1Text.text = tagQuestions[q11][q12];
+        q2Text.text = tagQuestions[q21][q22];
+        q3Text.text = tagQuestions[q31][q32];
+    }
 
     public void UpdateQuestions(int q) //helper function so the questions don't match
     {
+
+        if (q == 2) //resets q2
+        {
+            q21 = Random.Range(0, tagQuestions.Length);
+            q22 = Random.Range(0, 2);
+        }
+
+        else if (q == 3) //resets q3
+        {
+            q31 = Random.Range(0, tagQuestions.Length);
+            q32 = Random.Range(0, 2);
+        }
+
+        if (q11 == q21 && q12 == q22) // if q2 is q1
+        {
+            UpdateQuestions(2);
+        }
+        else if (q11 == q31 && q12 == q32) //if q3 is q1
+        {
+            UpdateQuestions(3);
+        }
+        else if (q21 == q31 && q22 == q32) // if q3 is q2
+        {
+            UpdateQuestions(3);
+        }
+
+        /*
         if (q31 == q41)
         {
             UpdateQuestions(q41);
@@ -277,6 +376,7 @@ public class InterviewManager : MonoBehaviour {
 
         q41 = Random.Range(0, 4);
         q42 = Random.Range(0, 4);
+        */
     }
 
     public void ExitInterview() //exits interview and hides the interview UI
