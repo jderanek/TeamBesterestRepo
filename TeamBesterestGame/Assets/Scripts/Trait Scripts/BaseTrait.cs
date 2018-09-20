@@ -34,4 +34,9 @@ public abstract class BaseTrait {
     public virtual void OnTimePass(BaseMonster monster) { }
 
     public virtual void OnHeroDamaged(int dmg, BaseHero hero, BaseMonster monster) { }
+
+    public List<PersonalityTags.Tag> GetTags()
+    {
+        return this.tags;
+    }
 }

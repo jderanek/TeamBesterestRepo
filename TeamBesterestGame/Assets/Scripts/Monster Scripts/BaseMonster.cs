@@ -19,6 +19,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	int damage;
 	public TraitBase personality;
     public List<BaseTrait> traits;
+    public List<PersonalityTags.Tag> tags;
 	int salary;
 	float stress;
 	float morale;
@@ -89,6 +90,12 @@ public abstract class BaseMonster : MonoBehaviour {
             Debug.Log(traitList[rand]);
             BaseTrait toAdd = Activator.CreateInstance(System.Type.GetType(traitList[rand]), new List<PersonalityTags.Tag>()) as BaseTrait;
             traits.Add(toAdd);
+
+            foreach (PersonalityTags.Tag tag in toAdd.GetTags())
+            {
+                if (!tags.Contains(tag))
+                    tags.Add(tag);
+            }
 
             traitList.RemoveAt(rand);
         }
