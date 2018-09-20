@@ -132,9 +132,11 @@ public class GameManager : MonoBehaviour
 	public CSVImporter monsters;
 	public CSVImporter monNames;
 	public CSVImporter heroStats;
+    public CSVImporter traitTagSheet;
+    public Dictionary<string, List<PersonalityTags.Tag>> traitTags;
 
     //Array of Trait Types
-    public string[] traits = {"HeavySleeper", "Procastinator", "Opportunist", "Reckless", "Claustrophobic",
+    public string[] traits = {"HeavySleeper", "Procrastinator", "Opportunist", "Reckless", "Claustrophobic",
     "Cliquey", "Predator", "BrownNoser"};
 
     #endregion
@@ -152,6 +154,31 @@ public class GameManager : MonoBehaviour
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
         heroStats = new CSVImporter("Heroes - Sheet1.csv",
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vROE5F1pcPZ65Zg5H5QsEqwpayjzcLOYQMffmv6E3zjR3tMq7kD68zPNGdrCXmq8w67wZHNNGwehsLo/pub?gid=0&single=true&output=csv");
+        traitTagSheet = new CSVImporter("Tag Sheet.scv",
+            "https://docs.google.com/spreadsheets/d/e/2PACX-1vQmDd84KQr_Mq-spZ6Lpoyps_-GX82NXWNb9_fDz3YawLcL79nytQg6bvV_CjGfSwqpk9y56eFpD0Ps/pub?gid=1985735442&single=true&output=csv");
+
+        //Assigns newly downloaded tag sheet values to the traits
+        traitTags = new Dictionary<string, List<PersonalityTags.Tag>>();
+        List<PersonalityTags.Tag> tags;
+        PersonalityTags.Tag toAdd = PersonalityTags.Tag.NULL;
+        foreach (KeyValuePair<string, Dictionary<string, string>> trait in traitTagSheet.data)
+        {
+            tags = new List<PersonalityTags.Tag>();
+            toAdd = PersonalityTags.StringToTag(trait.Value["Tag 1"]);
+            if (toAdd != PersonalityTags.Tag.NULL)
+                tags.Add(toAdd);
+            toAdd = PersonalityTags.StringToTag(trait.Value["Tag 2"]);
+            if (toAdd != PersonalityTags.Tag.NULL)
+                tags.Add(toAdd);
+            toAdd = PersonalityTags.StringToTag(trait.Value["Tag 3"]);
+            if (toAdd != PersonalityTags.Tag.NULL)
+                tags.Add(toAdd);
+
+            traitTags.Add(trait.Key, tags);
+        }
+        //Clears CSVImporter to save some space
+        traitTagSheet = null;
+
         currentCurrency = 1500;
         uiManager.UpdateCurrency();
         uiManager.UpdateInfamy();

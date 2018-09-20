@@ -316,7 +316,6 @@
     <Compile Include="Assets\Scripts\Defunct\GrossTrait.cs" />
     <Compile Include="Assets\Scripts\Defunct\GuardianTrait.cs" />
     <Compile Include="Assets\Scripts\Defunct\InterviewButtonScript.cs" />
-    <Compile Include="Assets\Scripts\Defunct\PersonalityTags.cs" />
     <Compile Include="Assets\Scripts\Defunct\PersonalityTrait.cs" />
     <Compile Include="Assets\Scripts\Defunct\PridefulTrait.cs" />
     <Compile Include="Assets\Scripts\Defunct\RecklessTrait.cs" />
@@ -385,9 +384,10 @@
     <Compile Include="Assets\Scripts\Trait Scripts\Investor.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\MoneyMonger.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\Opportunist.cs" />
+    <Compile Include="Assets\Scripts\Trait Scripts\PersonalityTags.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\Predator.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\PriestSchoolDropout.cs" />
-    <Compile Include="Assets\Scripts\Trait Scripts\Procastinator.cs" />
+    <Compile Include="Assets\Scripts\Trait Scripts\Procrastinator.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\Reckless.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\RichKid.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\ToughSkinned.cs" />

@@ -7526,7 +7526,7 @@ MonoBehaviour:
   stressImage: {fileID: 0}
   traits:
   - HeavySleeper
-  - Procastinator
+  - Procrastinator
   - Opportunist
   - Reckless
   - Claustrophobic
@@ -7561,6 +7561,9 @@ MonoBehaviour:
   monsterInstance: {fileID: 0}
   interviewQuestions: {fileID: 0}
   interviewResponse: {fileID: 369298016}
+  q11: 0
+  q21: 0
+  q31: 0
   q1Text: {fileID: 279320170}
   q2Text: {fileID: 1060937998}
   q3Text: {fileID: 516112911}

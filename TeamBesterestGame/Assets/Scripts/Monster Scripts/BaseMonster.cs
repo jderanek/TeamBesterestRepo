@@ -87,8 +87,9 @@ public abstract class BaseMonster : MonoBehaviour {
         {
             rand = UnityEngine.Random.Range(0, traitList.Count-1);
 
-            Debug.Log(traitList[rand]);
-            BaseTrait toAdd = Activator.CreateInstance(System.Type.GetType(traitList[rand]), new List<PersonalityTags.Tag>()) as BaseTrait;
+            //Debug.Log(traitList[rand].ToString());
+            BaseTrait toAdd = Activator.CreateInstance(System.Type.GetType(traitList[rand]), 
+                gameManager.traitTags[traitList[rand]]) as BaseTrait;
             traits.Add(toAdd);
 
             foreach (PersonalityTags.Tag tag in toAdd.GetTags())
