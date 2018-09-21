@@ -49,6 +49,8 @@ public class UIManager : MonoBehaviour {
 
     public Text currencyText; //public to assign reference in editor
 
+    public GameObject hourSwivel;
+
     //Opens any menu
     public void ToggleMenu(int menuToOpen)
     {
@@ -516,6 +518,4 @@ public class UIManager : MonoBehaviour {
         infamyLevelText.text = "InfamyLevel: " + gameManager.infamyLevel;
         infamyXPText.text = "InfamyXP: " + gameManager.infamyXP + "/" + gameManager.xpToNextInfamyLevel;
     }
-
-
 }

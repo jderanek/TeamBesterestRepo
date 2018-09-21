@@ -323,7 +323,7 @@ public abstract class BaseHero : MonoBehaviour {
 	//Moves heroes towards their desired position
 	void UpdatePos() {
 		if (this.targetPos != null) {
-			this.transform.position = Vector3.Lerp (this.transform.position, this.targetPos, 2.5f * .03f);
+			this.transform.position = Vector3.MoveTowards (this.transform.position, this.targetPos, 15f * .03f);
 			if (this.transform.position == this.targetPos)
 				CancelInvoke ();
 		}

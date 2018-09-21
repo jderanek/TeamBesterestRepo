@@ -76,8 +76,8 @@ public class GameManager : MonoBehaviour
 
     //Time Unit stuff
     private bool paused = true;
-    public int timePerDay = 16; //public to be edited it editor
-    private int currentTime;
+    public int timePerDay = 24; //public to be edited it editor
+    public int currentTime;
     public float timeSpeed = 3.0f; //public to be edited in editor
     public Text timeUnitText; //public to be assigned in editor
     public Text pauseButtonText; //public to be assigned in editor
@@ -532,6 +532,16 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+    public void ChangeSpeed()
+    {
+        float newSpeed = timeSpeed - 1;
+
+        if (newSpeed == 0)
+            newSpeed = 3;
+
+        timeSpeed = newSpeed;
+    }
+
 	public IEnumerator Play() {
 		while (true) {
 			yield return new WaitForSeconds(timeSpeed);
@@ -544,11 +554,15 @@ public class GameManager : MonoBehaviour
 		for (int i = timeToPass; i > 0; i--)
 		{
             dungeonEmpty = true;
-            if (currentTime > 0)
+            if (currentTime < 23)
             {
-                currentTime--;
+                currentTime += timeToPass;
                 timeUnitText.text = currentTime.ToString();
             }
+            else
+                currentTime = 0;
+
+            uiManager.hourSwivel.transform.Rotate(new Vector3(0, 0, (360 / -12) * timeToPass));
 
             //need to swap this out with a dungeon list
 			foreach (GameObject monster in monsterList)
