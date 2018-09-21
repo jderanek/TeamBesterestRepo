@@ -386,35 +386,189 @@ public class InterviewManager : MonoBehaviour {
     {
         switch (q)
         {
-            case 0:
-                responseText.text = "hierarchy question response";
+            case 0://hierarchy group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.FOLLOWER))
+                {
+                    responseText.text = "follower tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.COWARDLY))
+                {
+                    responseText.text = "cowardly tag response";
+                }
+                else
+                {
+                    responseText.text = "All that leader stuff isn’t for me";
+                }
                 break;
-            case 1:
-                responseText.text = "aid question response";
+            case 1://aid group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.HELPFUL))
+                {
+                    responseText.text = "helpful tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.FRIENDLY))
+                {
+                    responseText.text = "friendly tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.POSITIVE))
+                {
+                    responseText.text = "positive tag response";
+                }
+                else
+                {
+                    responseText.text = "I have to watch my own back, don’t have time to worry about others";
+                }
                 break;
-            case 2:
-                responseText.text = "rude question response";
+            case 2://rude group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.MEAN))
+                {
+                    responseText.text = "mean tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ANTISOCIAL))
+                {
+                    responseText.text = "antisocial tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.THREATENING))
+                {
+                    responseText.text = "threatening tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.NEGATIVE))
+                {
+                    responseText.text = "negative tag response";
+                }
+                else
+                {
+                    responseText.text = "I don’t think I give off that impression, at least I hope not…";
+                }
                 break;
-            case 3:
-                responseText.text = "work-ethic question response";
+            case 3://work-ethic group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.DILIGENT))
+                {
+                    responseText.text = "diligent tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.HARDWORKING))
+                {
+                    responseText.text = "hardworking tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.MOTIVATED))
+                {
+                    responseText.text = "motivated tag response";
+                }
+                else
+                {
+                    responseText.text = "I am just here for the paycheck, so don’t expect any miracles";
+                }
                 break;
-            case 4:
-                responseText.text = "physical question response";
+            case 4://physical group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.AGGRESSIVE))
+                {
+                    responseText.text = "aggressive tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.STRONG))
+                {
+                    responseText.text = "strong tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.VIOLENT))
+                {
+                    responseText.text = "violent tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ENDURING))
+                {
+                    responseText.text = "enduring tag response";
+                }
+                else
+                {
+                    responseText.text = "Getting down and dirty isn’t really my forte.";
+                }
                 break;
-            case 5:
-                responseText.text = "self-centered question response";
+            case 5://self-centered group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.PROUD))
+                {
+                    responseText.text = "proud tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.EGOCENTRIC))
+                {
+                    responseText.text = "egocentric tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.INDEPENDENT))
+                {
+                    responseText.text = "independent tag response";
+                }
+                else
+                {
+                    responseText.text = "I don’t really see myself as someone special";
+                }
                 break;
-            case 6:
-                responseText.text = "speech question response";
+            case 6://speech group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SOCIAL))
+                {
+                    responseText.text = "social tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.TALKATIVE))
+                {
+                    responseText.text = "talkative tag response";
+                }
+                else
+                {
+                    responseText.text = "I tend to focus on my work rather than chatting";
+                }
                 break;
-            case 7:
-                responseText.text = "condition question response";
+            case 7://condition group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SICKLY))
+                {
+                    responseText.text = "sickly tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.WEAK))
+                {
+                    responseText.text = "weak tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.BURLY))
+                {
+                    responseText.text = "bulky tag response";
+                }
+                else
+                {
+                    responseText.text = "I feel fine for the most part";
+                }
                 break;
-            case 8:
-                responseText.text = "appearance question response";
+            case 8://appearance group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.OLDFASHIONED))
+                {
+                    responseText.text = "old-fashioned tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SPOOKY))
+                {
+                    responseText.text = "spooky tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.GROSS))
+                {
+                    responseText.text = "gross tag response";
+                }
+                else
+                {
+                    responseText.text = "I think most would say I don’t really stand out much";
+                }
                 break;
-            case 9:
-                responseText.text = "negative question response";
+            case 9://negative group
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.LAZY))
+                {
+                    responseText.text = "lazy tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ANGRY))
+                {
+                    responseText.text = "angry tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.GREEDY))
+                {
+                    responseText.text = "greedy tag response";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.WILD))
+                {
+                    responseText.text = "wild tag response";
+                }
+                else
+                {
+                    responseText.text = "Don’t worry about me. I don’t like instigating any brawls.";
+                }
                 break;
         }
     }

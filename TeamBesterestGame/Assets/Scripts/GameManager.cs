@@ -512,7 +512,7 @@ public class GameManager : MonoBehaviour
         interviewResponse.SetActive(true);
         //interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
         
-        //this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
+        this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
     }
 
     #region Time Stuff
