@@ -389,11 +389,11 @@ public class InterviewManager : MonoBehaviour {
             case 0://hierarchy group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.FOLLOWER))
                 {
-                    responseText.text = "follower tag response";
+                    responseText.text = "Others can take the reins, too much responsibility for me";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.COWARDLY))
                 {
-                    responseText.text = "cowardly tag response";
+                    responseText.text = "They say discretion is the better part of valor ok?";
                 }
                 else
                 {
@@ -403,15 +403,15 @@ public class InterviewManager : MonoBehaviour {
             case 1://aid group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.HELPFUL))
                 {
-                    responseText.text = "helpful tag response";
+                    responseText.text = "I am always willing to lend a helping hand!";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.FRIENDLY))
                 {
-                    responseText.text = "friendly tag response";
+                    responseText.text = "Yes, it is not hard for me to get along with new people";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.POSITIVE))
                 {
-                    responseText.text = "positive tag response";
+                    responseText.text = "I always look on the bright side of things!";
                 }
                 else
                 {
@@ -421,19 +421,19 @@ public class InterviewManager : MonoBehaviour {
             case 2://rude group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.MEAN))
                 {
-                    responseText.text = "mean tag response";
+                    responseText.text = "I just speak my mind, what is wrong with that?!";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ANTISOCIAL))
                 {
-                    responseText.text = "antisocial tag response";
+                    responseText.text = "I just prefer to keep people at a distance, I have my reasons.";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.THREATENING))
                 {
-                    responseText.text = "threatening tag response";
+                    responseText.text = "I don’t even need to fight heroes, they cower in fear!";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.NEGATIVE))
                 {
-                    responseText.text = "negative tag response";
+                    responseText.text = "I am just being real with my chances, ok?";
                 }
                 else
                 {
@@ -443,15 +443,15 @@ public class InterviewManager : MonoBehaviour {
             case 3://work-ethic group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.DILIGENT))
                 {
-                    responseText.text = "diligent tag response";
+                    responseText.text = "Yes, that is not a problem for me";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.HARDWORKING))
                 {
-                    responseText.text = "hardworking tag response";
+                    responseText.text = "I love to work and do my best!";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.MOTIVATED))
                 {
-                    responseText.text = "motivated tag response";
+                    responseText.text = "I stay focused on the mission, at all times.";
                 }
                 else
                 {
@@ -461,19 +461,19 @@ public class InterviewManager : MonoBehaviour {
             case 4://physical group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.AGGRESSIVE))
                 {
-                    responseText.text = "aggressive tag response";
+                    responseText.text = "I take what I see, no time for hesitation";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.STRONG))
                 {
-                    responseText.text = "strong tag response";
+                    responseText.text = "I can knock out heroes wearing even the strongest armor!";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.VIOLENT))
                 {
-                    responseText.text = "violent tag response";
+                    responseText.text = "I prefer to break people, especially puny heroes!";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ENDURING))
                 {
-                    responseText.text = "enduring tag response";
+                    responseText.text = "You can always count on me in a tough brawl!";
                 }
                 else
                 {
@@ -483,15 +483,15 @@ public class InterviewManager : MonoBehaviour {
             case 5://self-centered group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.PROUD))
                 {
-                    responseText.text = "proud tag response";
+                    responseText.text = "I know what I am and what I can do, what is wrong with being proud of that?";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.EGOCENTRIC))
                 {
-                    responseText.text = "egocentric tag response";
+                    responseText.text = "I mean who wouldn’t? Have you seen my looks?";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.INDEPENDENT))
                 {
-                    responseText.text = "independent tag response";
+                    responseText.text = "I prefer to go solo if possible.";
                 }
                 else
                 {
@@ -501,11 +501,11 @@ public class InterviewManager : MonoBehaviour {
             case 6://speech group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SOCIAL))
                 {
-                    responseText.text = "social tag response";
+                    responseText.text = "Conversation is one of my strong suits, not sure how it helps fighting heroes though.";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.TALKATIVE))
                 {
-                    responseText.text = "talkative tag response";
+                    responseText.text = "I just love gossip, I want to know every juicy detail!";
                 }
                 else
                 {
@@ -515,15 +515,15 @@ public class InterviewManager : MonoBehaviour {
             case 7://condition group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SICKLY))
                 {
-                    responseText.text = "sickly tag response";
+                    responseText.text = "Days? How about weeks?";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.WEAK))
                 {
-                    responseText.text = "weak tag response";
+                    responseText.text = "Y-yeah… maybe I have applied for the wrong position...";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.BURLY))
                 {
-                    responseText.text = "bulky tag response";
+                    responseText.text = "My endurance is much higher than average.";
                 }
                 else
                 {
@@ -531,17 +531,17 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 8://appearance group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.OLDFASHIONED))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SPOOKY))
                 {
-                    responseText.text = "old-fashioned tag response";
-                }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SPOOKY))
-                {
-                    responseText.text = "spooky tag response";
+                    responseText.text = "Yes, most heroes shake in their boots when face to face with me!";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.GROSS))
                 {
-                    responseText.text = "gross tag response";
+                    responseText.text = "Listen, I call it my natural musk.";
+                }
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.OLDFASHIONED))
+                {
+                    responseText.text = "I guess that wrinkle cream isn’t working at all…";
                 }
                 else
                 {
@@ -551,19 +551,19 @@ public class InterviewManager : MonoBehaviour {
             case 9://negative group
                 if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.LAZY))
                 {
-                    responseText.text = "lazy tag response";
+                    responseText.text = "Listen, I call it my beauty sleep.";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ANGRY))
                 {
-                    responseText.text = "angry tag response";
+                    responseText.text = "What?! Who said that?!";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.GREEDY))
                 {
-                    responseText.text = "greedy tag response";
+                    responseText.text = "I prefer the term FRUGAL thank you.";
                 }
                 else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.WILD))
                 {
-                    responseText.text = "wild tag response";
+                    responseText.text = "I am just GO GO GO ALL THE TIME!";
                 }
                 else
                 {
