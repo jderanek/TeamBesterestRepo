@@ -219,7 +219,8 @@ public class UIManager : MonoBehaviour {
             newContextCanvas.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate { gameManager.Interview(application); });
 
             newField.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
-            newContext.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
+            //newContext.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
+            newContext.transform.SetParent(newFieldCanvas.transform, false);
 
             //manually adjust its position           
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
@@ -258,7 +259,7 @@ public class UIManager : MonoBehaviour {
                 var newContext = Instantiate(monsterContextField, new Vector3(0, 0, 0), Quaternion.identity);
                 var newContextCanvas = newContext.transform.GetChild(0);
                 var newContextCanvasRect = newContextCanvas.GetComponent<RectTransform>();
-                newField.GetComponent<RectTransform>().sizeDelta = new Vector2(217.44f, 57.4f);
+                newField.GetComponent<RectTransform>().sizeDelta = new Vector2(210f, 80f);
 
                 newFieldCanvas.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().color = monster.GetComponent<SpriteRenderer>().color;
                 newFieldCanvas.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = monster.name;
