@@ -284,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraControls.cs" />
+    <Compile Include="Assets\FastForwardAnimator.cs" />
     <Compile Include="Assets\PlayButtonAnimator.cs" />
     <Compile Include="Assets\Scripts\ConstructionScript.cs" />
     <Compile Include="Assets\Scripts\CSVImporter.cs" />
@@ -369,6 +370,7 @@
     <Compile Include="Assets\Scripts\Trait Scripts\RichKid.cs" />
     <Compile Include="Assets\Scripts\Trait Scripts\ToughSkinned.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
+    <Compile Include="Assets\SkipButtonAnimator.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\_ArrayPoolDefault.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\_ArrayPoolLEngineDefault.cs" />
     <Compile Include="Assets\Wwise\Deployment\API\Generated\Common\_ArrayPoolSpatialAudio.cs" />
