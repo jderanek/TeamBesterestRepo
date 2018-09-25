@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour {
 
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour {
     public Text currencyText; //public to assign reference in editor
 
     public GameObject hourSwivel;
+    //public EventSystem eventSystem;
 
     //Opens any menu
     public void ToggleMenu(int menuToOpen)
@@ -62,21 +64,25 @@ public class UIManager : MonoBehaviour {
             {
                 sideBar.SetActive(true);
                 menu.SetActive(!menu.activeInHierarchy);
+                //eventSystem.SetSelectedGameObject(null);
                 if (menu.activeInHierarchy == true)
                 {
                     j++;
                 }
+                
             }
             else
             {
                 if (j == 0)
                 {
                     HideSideBar();
+                    
                 }
                 menu.SetActive(false);
             }
             i++;
         }
+        //eventSystem.SetSelectedGameObject(null);
 
         /*
         switch (menuToOpen)
@@ -147,7 +153,7 @@ public class UIManager : MonoBehaviour {
         }
         */
     }
-
+    
     public void ToggleMenusOff()
     {
         foreach (GameObject menu in menus)

@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
     public Text infamyXPText; //public to be assigned in editor
 
     //Time Unit stuff
-    private bool paused = true;
+    public bool paused = true;
     public int timePerDay = 24; //public to be edited it editor
     public int currentTime;
     public float timeSpeed = 3.0f; //public to be edited in editor
