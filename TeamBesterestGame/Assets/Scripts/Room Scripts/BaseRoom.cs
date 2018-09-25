@@ -300,6 +300,18 @@ public abstract class BaseRoom : MonoBehaviour {
                 monster.GetComponent<BaseMonster>().setInCombat(false);
             }
         }
+
+        foreach (GameObject hero in heroesInRoom)
+        {
+            if (roomMembers.Count != 0)
+            {
+                hero.GetComponent<BaseHero>().setInCombat(true);
+            }
+            else
+            {
+                hero.GetComponent<BaseHero>().setInCombat(false);
+            }
+        }
     }
 
     public void AddGoldToRoom(int coinClicked)

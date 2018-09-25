@@ -25,18 +25,19 @@ public abstract class BaseHero : MonoBehaviour {
 
 	//Variables not set by assignment
 	private bool inCombat;
+    public Animator anim;
 
-	///<summary>
-	///Assigns all stats to this hero, to be used in place of super.
-	///</summary>
-	/// <param name="hp">Total Health</param>
-	/// <param name="dmg">Base Damage</param>
-	/// <param name="val">Money earned on death</param>
-	/// <param name="arm">Base Armor</param>
-	/// <param name="cap"Max holding money>
-	/// <param name="thr">Threat</param>
-    
-	public void ManualAssignStats(int hp, int dmg, int arm, int val, int cap, int thr) {
+    ///<summary>
+    ///Assigns all stats to this hero, to be used in place of super.
+    ///</summary>
+    /// <param name="hp">Total Health</param>
+    /// <param name="dmg">Base Damage</param>
+    /// <param name="val">Money earned on death</param>
+    /// <param name="arm">Base Armor</param>
+    /// <param name="cap"Max holding money>
+    /// <param name="thr">Threat</param>
+
+    public void ManualAssignStats(int hp, int dmg, int arm, int val, int cap, int thr) {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
         uiManager = gameManager.GetComponent<UIManager>();
 		curRoom = gameManager.spawnRoom.GetComponent<BaseRoom> ();
@@ -57,6 +58,7 @@ public abstract class BaseHero : MonoBehaviour {
 
         damageText = this.gameObject.GetComponentInChildren<Text>();
         damageText.text = this.curHealth + "hp";
+        anim = this.gameObject.GetComponentInChildren<Animator>();
     }
     
 
@@ -84,6 +86,7 @@ public abstract class BaseHero : MonoBehaviour {
 
         damageText = this.gameObject.GetComponentInChildren<Text>();
         damageText.text = this.curHealth + "hp";
+        anim = this.gameObject.GetComponentInChildren<Animator>();
     }
 
 	//Getter functions for damage, current health and currency value
@@ -120,6 +123,19 @@ public abstract class BaseHero : MonoBehaviour {
 	public bool isInCombat() {
 		return inCombat;
 	}
+
+    public void setInCombat(bool value) {
+        this.inCombat = value;
+        if (this.inCombat)
+        {
+            anim.SetBool("inCombat", true);
+        }
+        else
+        {
+            anim.SetBool("inCombat", false);
+        }
+    }
+
 	public void setParty(BaseParty party) {
 		this.currentParty = party;
 	}
