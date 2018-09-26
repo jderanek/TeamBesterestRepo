@@ -196,11 +196,11 @@ public class GameManager : MonoBehaviour
             {
                 new GameObject[] //infamy level 0
                 {
-                    possibleMonsters[0]//, possibleMonsters[1]
+                    possibleMonsters[0], possibleMonsters[1]
                 },
                 new GameObject[] //infamy level 1
                 {
-                    possibleMonsters[0], possibleMonsters[0], possibleMonsters[0], possibleMonsters[0]//, possibleMonsters[1],
+                    possibleMonsters[0], possibleMonsters[0], possibleMonsters[1], possibleMonsters[1]//, possibleMonsters[1],
                     //possibleMonsters[1], possibleMonsters[1], possibleMonsters[1], possibleMonsters[8], possibleMonsters[9]
                 }
             }, 
@@ -210,12 +210,12 @@ public class GameManager : MonoBehaviour
             {
                 new GameObject[] //infamy level 0
                 {
-                    possibleMonsters[0]
+                    possibleMonsters[0], possibleMonsters[1]
                     //possibleMonsters[2], possibleMonsters[3]
                 },
                 new GameObject[] //infamy level 1
                 {
-                    possibleMonsters[0]
+                    possibleMonsters[0], possibleMonsters[1]
                     //possibleMonsters[2], possibleMonsters[2], possibleMonsters[2], possibleMonsters[2], possibleMonsters[3],
                     //possibleMonsters[3], possibleMonsters[3], possibleMonsters[3], possibleMonsters[10], possibleMonsters[11]
                 }
@@ -226,12 +226,12 @@ public class GameManager : MonoBehaviour
             {
                 new GameObject[] //infamy level 0
                 {
-                    possibleMonsters[0]
+                    possibleMonsters[0], possibleMonsters[1]
                     //possibleMonsters[4], possibleMonsters[5]
                 },
                 new GameObject[] //infamy level 1
                 {
-                    possibleMonsters[0]
+                    possibleMonsters[0], possibleMonsters[1]
                     //possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[4], possibleMonsters[5],
                     //possibleMonsters[5], possibleMonsters[5], possibleMonsters[5], possibleMonsters[12], possibleMonsters[13]
                 }
@@ -242,12 +242,12 @@ public class GameManager : MonoBehaviour
             {
                 new GameObject[] //infamy level 0
                 {
-                    possibleMonsters[0]
+                    possibleMonsters[0], possibleMonsters[1]
                     //possibleMonsters[6], possibleMonsters[7]
                 },
                 new GameObject[] //infamy level 1
                 {
-                    possibleMonsters[0]
+                    possibleMonsters[0], possibleMonsters[1]
                     //possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[6], possibleMonsters[7],
                     //possibleMonsters[7], possibleMonsters[7], possibleMonsters[7], possibleMonsters[14], possibleMonsters[15]
                 }

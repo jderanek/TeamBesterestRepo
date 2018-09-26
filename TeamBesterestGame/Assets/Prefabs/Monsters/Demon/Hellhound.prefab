@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 212993789623516698}
   - component: {fileID: 58329329079417044}
   - component: {fileID: 114608343947868716}
+  - component: {fileID: 95668766770180998}
   m_Layer: 9
   m_Name: Hellhound
   m_TagString: Monster
@@ -71,8 +72,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1484436021157160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7395673, y: 0.61331016, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -72.48953, y: -1.186018, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 224803245497585654}
   m_Father: {fileID: 0}
@@ -93,6 +94,23 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.16
+--- !u!95 &95668766770180998
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1484436021157160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f46b4a379cbc33944a3a0625b91147ea, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114009215753237484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -129,7 +147,12 @@ MonoBehaviour:
   monName: 
   curHealth: 0
   curDamage: 0
+  tags: 
   canBeDebuffed: 1
+  healthTier: 0
+  defenseTier: 0
+  attackTier: 0
+  anim: {fileID: 0}
   baseNerve: 0.5
   curNerve: 0.5
   effects: []
@@ -161,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -260,7 +283,7 @@ RectTransform:
   m_GameObject: {fileID: 1264532955476812}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8, y: 3, z: 1}
   m_Children:
   - {fileID: 224819957945794420}
   m_Father: {fileID: 4938931986023914}

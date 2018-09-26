@@ -511,8 +511,8 @@ public abstract class BaseMonster : MonoBehaviour {
             trait.OnDeath(this);
         }
 
-        anim.SetTrigger("death");
-        anim.Play("hellhound_death");
+        //anim.SetTrigger("death");
+        //anim.Play("hellhound_death");
 		curRoom.GetComponent<BaseRoom>().roomMembers.Remove(gameObject);
         gameManager.monsterList.Remove(gameObject);
 		if (curRoom.GetComponent<BaseRoom>().roomMembers.Count == 0)
