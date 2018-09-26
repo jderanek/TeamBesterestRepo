@@ -241,9 +241,13 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
 		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
 		this.archetype = gameManager.monsters.data [type] ["Archetype"];
-		int num = UnityEngine.Random.Range (1, 5);
-		this.monName = gameManager.monNames.data [num.ToString ()] [this.archetype];
-		this.name = monName;
+		int num = UnityEngine.Random.Range (1, 25);
+        bool useArchetype = (UnityEngine.Random.value > .3f);
+        if (useArchetype)
+    		this.monName = gameManager.monNames.data [num.ToString ()] [this.archetype];
+        else
+            this.monName = gameManager.monNames.data[num.ToString()]["Any"];
+        this.name = monName;
 
 		this.stress = 0f;
 		this.morale = .5f;
