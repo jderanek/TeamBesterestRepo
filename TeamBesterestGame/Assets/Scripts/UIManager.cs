@@ -219,8 +219,8 @@ public class UIManager : MonoBehaviour {
             newContextCanvas.transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate { gameManager.Interview(application); });
 
             newField.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
-            //newContext.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
-            newContext.transform.SetParent(newFieldCanvas.transform, false);
+            newContext.transform.SetParent(menus[0].transform.GetChild(0).transform, false);
+            //newContext.transform.SetParent(newFieldCanvas.transform, false);
 
             //manually adjust its position           
             newFieldCanvasRect.anchoredPosition = new Vector2(0, 0);
