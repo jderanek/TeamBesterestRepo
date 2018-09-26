@@ -257,13 +257,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ???
+  m_Text: 'Archetypal: ???'
 --- !u!114 &114323680186601402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -410,13 +410,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ???
+  m_Text: 'Workethic: ???'
 --- !u!114 &114655366763976554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -503,13 +503,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ???
+  m_Text: 'Personality: ???'
 --- !u!222 &222187249535692744
 CanvasRenderer:
   m_ObjectHideFlags: 1
