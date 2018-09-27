@@ -186,7 +186,7 @@ public class GameManager : MonoBehaviour
         modifiedHeroSpawnRate = baseHeroSpawnRate;
 
         currentTime = timePerDay;
-        stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
+        //stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
 
         //sets up intial list of monster spawns from possible monsters
         monsterSpawnList = new GameObject[][][]
