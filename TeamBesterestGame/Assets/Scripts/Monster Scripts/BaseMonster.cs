@@ -53,7 +53,7 @@ public abstract class BaseMonster : MonoBehaviour {
     public int defenseTier;
     public int attackTier;
 
-    public Animator anim;
+    public Animator anim; //= this.gameObject.GetComponentInChildren<Animator>();
 
     //Temp variables from transfer
     private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
@@ -103,6 +103,7 @@ public abstract class BaseMonster : MonoBehaviour {
 
         //moved damage text here bc it was throwing error on pre-instantiated monsters
         damageText = this.gameObject.GetComponentInChildren<Text>();
+        anim = this.gameObject.GetComponentInChildren<Animator>();
     }
 
 	///<summary>
@@ -256,7 +257,8 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.infamyGain = 1;
 		damageText = this.gameObject.GetComponentInChildren<Text>();
         damageText.text = this.getCurHealth().ToString() + "hp";
-	}
+        anim = this.gameObject.GetComponentInChildren<Animator>();
+    }
 
 	//Getters for most stats
 	public int getCurHealth() {
