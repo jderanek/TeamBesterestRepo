@@ -276,7 +276,11 @@ public class UIManager : MonoBehaviour {
                 if (monster.GetComponent<BaseMonster>().department == gameManager.breakRoomList)
                 {
                     newFieldCanvas.transform.GetChild(1).GetComponentInChildren<Text>().text = "Assign";
-                    newFieldCanvas.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate { gameManager.selectedObjects.Add(monster); });
+                    newFieldCanvas.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate 
+                    {
+                        gameManager.selectedObjects.Add(monster);
+                        monster.GetComponent<SpriteRenderer>().enabled = true;
+                    });
                 }
                 else
                 {
@@ -286,7 +290,7 @@ public class UIManager : MonoBehaviour {
                         monster.GetComponent<BaseMonster>().getCurRoom().GetComponent<BaseRoom>().roomMembers.Remove(monster);     
                         gameManager.AddToDepartment(monster, gameManager.breakRoomList);
                         monster.GetComponent<BaseMonster>().setCurRoom(null);
-                        monster.transform.position = new Vector3(0, 0, 0);
+                        monster.GetComponent<SpriteRenderer>().enabled = false;
                     });
                 }
                 newField.transform.SetParent(menus[1].transform.GetChild(0).transform, false);
