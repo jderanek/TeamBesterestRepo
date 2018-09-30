@@ -15,6 +15,8 @@ public class InterviewManager : MonoBehaviour {
     public GameObject interviewQuestions;
     public GameObject interviewResponse;
 
+    public GameObject revealedTraitText;
+
 	/*public int q31;
 	public int q32;
 	public int q41;
@@ -92,6 +94,7 @@ public class InterviewManager : MonoBehaviour {
         GetResponse(q11);
         monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateTraitText();
         UpdateQuestions();
     }
 
@@ -100,6 +103,7 @@ public class InterviewManager : MonoBehaviour {
         GetResponse(q21);
         monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateTraitText();
         UpdateQuestions();
     }
 
@@ -108,6 +112,7 @@ public class InterviewManager : MonoBehaviour {
         GetResponse(q31);
         monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateTraitText();
         UpdateQuestions();
     }
 
@@ -604,6 +609,31 @@ public class InterviewManager : MonoBehaviour {
             Debug.Log(trait);
     }
 
+    public void UpdateTraitText()
+    {
+        if (monsterInstance.GetComponent<BaseMonster>().revealedTraits.Count == 3 && monsterInstance != null)
+        {
+            revealedTraitText.transform.GetChild(0).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[0];
+            revealedTraitText.transform.GetChild(1).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[1];
+            revealedTraitText.transform.GetChild(2).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[2];
+        }
+        else if (monsterInstance.GetComponent<BaseMonster>().revealedTraits.Count == 2 && monsterInstance != null)
+        {
+            revealedTraitText.transform.GetChild(0).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[0];
+            revealedTraitText.transform.GetChild(1).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[1];
+        }
+        else if (monsterInstance.GetComponent<BaseMonster>().revealedTraits.Count == 1 && monsterInstance != null)
+        {
+            revealedTraitText.transform.GetChild(0).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[0];
+        }
+        else
+        {
+            revealedTraitText.transform.GetChild(0).GetComponent<Text>().text = "???";
+            revealedTraitText.transform.GetChild(1).GetComponent<Text>().text = "???";
+            revealedTraitText.transform.GetChild(2).GetComponent<Text>().text = "???";
+        }
+    }
+
     public void ExitInterview() //exits interview and hides the interview UI
     {
         gameManager.GetComponent<GameManager>().monsterInstance = null;
@@ -625,6 +655,7 @@ public class InterviewManager : MonoBehaviour {
             gameManager.GetComponent<UIManager>().UpdateApplications();
             Destroy(monsterInstance);
             monsterInstance = null;
+            UpdateTraitText();
         }
     }
 

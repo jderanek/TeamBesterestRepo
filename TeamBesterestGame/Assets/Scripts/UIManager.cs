@@ -276,18 +276,18 @@ public class UIManager : MonoBehaviour {
 
                 //Revealing Traits
 
-                if (monster.GetComponent<BaseMonster>().revealedTraits.Capacity == 3)
+                if (monster.GetComponent<BaseMonster>().revealedTraits.Count == 3)
                 {
                     newContextCanvas.transform.GetChild(5).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[0];
                     newContextCanvas.transform.GetChild(6).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[1];
                     newContextCanvas.transform.GetChild(7).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[2];
                 }
-                else if (monster.GetComponent<BaseMonster>().revealedTraits.Capacity == 2)
+                else if (monster.GetComponent<BaseMonster>().revealedTraits.Count == 2)
                 {
                     newContextCanvas.transform.GetChild(5).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[0];
                     newContextCanvas.transform.GetChild(6).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[1];
                 }
-                else if (monster.GetComponent<BaseMonster>().revealedTraits.Capacity == 1)
+                else if (monster.GetComponent<BaseMonster>().revealedTraits.Count == 1)
                 {
                     newContextCanvas.transform.GetChild(5).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[0];
                 }

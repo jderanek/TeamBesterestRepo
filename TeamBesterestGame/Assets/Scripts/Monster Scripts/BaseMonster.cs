@@ -574,6 +574,7 @@ public abstract class BaseMonster : MonoBehaviour {
                 revealedTraits.Add(trait.traitName);
             }
         }
+        print(revealedTraits.Count);
     }
 
 }
