@@ -513,7 +513,18 @@ public class GameManager : MonoBehaviour
         interviewCanvas.SetActive(true);
         interviewResponse.SetActive(true);
         //interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
-        
+
+        if (monsterInstance.GetComponent<BaseMonster>().getType().Equals("Goblin"))
+        {
+            hellhoundImage.SetActive(false);
+            goblinImage.SetActive(true);
+        }
+        else
+        {
+            hellhoundImage.SetActive(true);
+            goblinImage.SetActive(false);
+        }
+
         this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
     }
 

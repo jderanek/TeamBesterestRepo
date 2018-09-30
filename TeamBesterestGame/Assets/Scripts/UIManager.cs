@@ -211,6 +211,11 @@ public class UIManager : MonoBehaviour {
             newFieldCanvas.transform.GetChild(2).GetComponent<Text>().text = application.GetComponent<BaseMonster>().getType();
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(210f, 80f);
 
+            newContextCanvas.transform.GetChild(0).GetComponent<Text>().text = "HP: " + application.GetComponent<BaseMonster>().getMaxHealth().ToString();
+            newContextCanvas.transform.GetChild(1).GetComponent<Text>().text = "Atk: " + application.GetComponent<BaseMonster>().getBaseDamage().ToString();
+            newContextCanvas.transform.GetChild(2).GetComponent<Text>().text = "Def: " + application.GetComponent<BaseMonster>().getArmor().ToString();
+            newContextCanvas.transform.GetChild(3).GetComponent<Text>().text = "Thr: " + application.GetComponent<BaseMonster>().getThreat().ToString();
+
             //stats/interview button
             newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { ToggleContext(newContext); });
 
