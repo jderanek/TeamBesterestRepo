@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" SchemaVersion="85">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Button_Press" ID="{9E0EA4D5-E18F-4EDB-9E23-808A0240BFAE}">
+					<ChildrenList>
+						<Action Name="" ID="{BB612988-3D63-4EC2-9BE8-D2F4AE6F506E}" ShortID="320039059">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button_Click" ID="{BFD0F46B-2EAB-487A-9A8F-F8539469AD67}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Hero_Combat" ID="{981B465B-A683-4CE2-9F49-D905BBECFC9D}">
+					<ChildrenList>
+						<Action Name="" ID="{988DC582-6F27-45C6-B78D-4E5D211E0D75}" ShortID="733796716">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Battle_Hero" ID="{6FF8F66E-65E0-4518-B76B-BB08FF6FC314}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="BackGround_Music" ID="{18DAD7C5-3750-48FF-BE1A-7250F7FE4799}">
+					<ChildrenList>
+						<Action Name="" ID="{A3A3D69D-3A20-4ADC-8828-2D106D0171BE}" ShortID="756246930">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Background Music" ID="{D7EE6ED1-1F1D-450D-BBB5-D9271E0C0D89}" WorkUnitID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>

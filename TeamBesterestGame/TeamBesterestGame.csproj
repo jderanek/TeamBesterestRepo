@@ -288,6 +288,7 @@
     <Compile Include="Assets\CameraControls.cs" />
     <Compile Include="Assets\FastForwardAnimator.cs" />
     <Compile Include="Assets\PlayButtonAnimator.cs" />
+    <Compile Include="Assets\PlayButtonSound.cs" />
     <Compile Include="Assets\Scripts\ConstructionScript.cs" />
     <Compile Include="Assets\Scripts\CSVImporter.cs" />
     <Compile Include="Assets\Scripts\Defunct\CowardlyTrait.cs" />

@@ -1,0 +1,15 @@
+Event	ID	Name			Wwise Object Path	Notes
+	64054188	Hero_Combat			\Default Work Unit\Hero_Combat	
+	1585661381	BackGround_Music			\Default Work Unit\BackGround_Music	
+	2698747613	Button_Press			\Default Work Unit\Button_Press	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	61280742	Dungeonomics Trailer Score LOOP	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\Dungeonomics Trailer Score LOOP_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Background Music\Main Theme LOOP\Dungeonomics Trailer Score LOOP		9405444
+	514974851	BUTTON_Click_Compressor_Small_01_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_Small_01_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_Small_01_stereo		57892
+	518377828	BUTTON_Click_Compressor_Small_02_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_Small_02_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_Small_02_stereo		47392
+	652342185	BATTLE_Medieval_Segment_01_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BATTLE_Medieval_Segment_01_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Battle_Hero\BATTLE_Medieval_Segment_01_stereo		1241628
+	653834363	BATTLE_Medieval_Segment_02_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BATTLE_Medieval_Segment_02_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Battle_Hero\BATTLE_Medieval_Segment_02_stereo		851604
+	704055876	SCORE ENTRANCE	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\SCORE ENTRANCE_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Background Music\Main Theme INTRO\SCORE ENTRANCE		781404
+	930739875	BUTTON_Spring_Press_mono	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Spring_Press_mono_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Spring_Press_mono		49396
+	1036189582	BUTTON_Click_Compressor_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_stereo		62564
+

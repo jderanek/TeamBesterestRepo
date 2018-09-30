@@ -1,6 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}" SchemaVersion="85">
 	<AudioObjects>
-		<WorkUnit Name="Default Work Unit" ID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}" PersistMode="Standalone">
+			<ChildrenList>
+				<RandomSequenceContainer Name="Button_Click" ID="{BFD0F46B-2EAB-487A-9A8F-F8539469AD67}" ShortID="640860160">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="BUTTON_Click_Compressor_Small_01_stereo" ID="{BEEECA66-27AC-4B13-93C1-F6E5D0C00BA2}" ShortID="1043495964">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BUTTON_Click_Compressor_Small_01_stereo" ID="{E77B82FF-9169-42C8-BB16-55B0E2707535}" ShortID="514974851">
+									<Language>SFX</Language>
+									<AudioFile>BUTTON_Click_Compressor_Small_01_stereo.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BUTTON_Click_Compressor_Small_01_stereo" ID="{E77B82FF-9169-42C8-BB16-55B0E2707535}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BUTTON_Click_Compressor_stereo" ID="{E9EB83C7-AD19-463D-867C-86E9764811B4}" ShortID="245664705">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BUTTON_Click_Compressor_stereo" ID="{8A862BD5-3E77-4F9D-96FC-43FA4E956752}" ShortID="1036189582">
+									<Language>SFX</Language>
+									<AudioFile>BUTTON_Click_Compressor_stereo.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BUTTON_Click_Compressor_stereo" ID="{8A862BD5-3E77-4F9D-96FC-43FA4E956752}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BUTTON_Click_Compressor_Small_02_stereo" ID="{C54636F5-D04C-421B-B8DE-C9B2E37279EF}" ShortID="615226174">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BUTTON_Click_Compressor_Small_02_stereo" ID="{7011DFE1-D3D7-472E-B7F3-ADD92E2DF486}" ShortID="518377828">
+									<Language>SFX</Language>
+									<AudioFile>BUTTON_Click_Compressor_Small_02_stereo.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BUTTON_Click_Compressor_Small_02_stereo" ID="{7011DFE1-D3D7-472E-B7F3-ADD92E2DF486}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BUTTON_Spring_Press_mono" ID="{5A543E0A-DA00-4395-A4E2-405B7F1D070F}" ShortID="918981641">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BUTTON_Spring_Press_mono" ID="{AD2799B8-8952-44E1-95E6-B366A880575B}" ShortID="930739875">
+									<Language>SFX</Language>
+									<AudioFile>BUTTON_Spring_Press_mono.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BUTTON_Spring_Press_mono" ID="{AD2799B8-8952-44E1-95E6-B366A880575B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Dog_Talk" ID="{B18B9FD3-B1E2-4B66-822A-0DB4B84D8A08}" ShortID="1071368695">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="ANIMAL_Dog_Bark_02_Mono" ID="{16BAEB56-7CE6-434F-9524-479DF2713183}" ShortID="837569329">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ANIMAL_Dog_Bark_02_Mono" ID="{1041E4D0-C4E7-4A43-AED1-D88B99E442C1}" ShortID="1072933713">
+									<Language>SFX</Language>
+									<AudioFile>ANIMAL_Dog_Bark_02_Mono.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ANIMAL_Dog_Bark_02_Mono" ID="{1041E4D0-C4E7-4A43-AED1-D88B99E442C1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="ANIMAL_Dog_Bark_01_Mono" ID="{69163A63-619E-4FCE-8E47-361F1617C8F6}" ShortID="390815310">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="ANIMAL_Dog_Bark_01_Mono" ID="{6D72D1E5-509C-4D6D-9DC8-4FD2B16744DF}" ShortID="204487952">
+									<Language>SFX</Language>
+									<AudioFile>ANIMAL_Dog_Bark_01_Mono.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="ANIMAL_Dog_Bark_01_Mono" ID="{6D72D1E5-509C-4D6D-9DC8-4FD2B16744DF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Battle_Hero" ID="{6FF8F66E-65E0-4518-B76B-BB08FF6FC314}" ShortID="979983674">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="BATTLE_Medieval_Segment_02_stereo" ID="{1DA05B28-1E37-446B-B5D5-B06899B408A4}" ShortID="607512492">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BATTLE_Medieval_Segment_02_stereo" ID="{03BE37F6-6DF0-4F23-8484-4A678A16CB44}" ShortID="653834363">
+									<Language>SFX</Language>
+									<AudioFile>BATTLE_Medieval_Segment_02_stereo.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BATTLE_Medieval_Segment_02_stereo" ID="{03BE37F6-6DF0-4F23-8484-4A678A16CB44}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="BATTLE_Medieval_Segment_01_stereo" ID="{9FB456D2-50FF-4C84-B4C1-01DDC7D73341}" ShortID="125080409">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="BATTLE_Medieval_Segment_01_stereo" ID="{BE3A6A77-DB63-492A-BF48-0C59A1D517B7}" ShortID="652342185">
+									<Language>SFX</Language>
+									<AudioFile>BATTLE_Medieval_Segment_01_stereo.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="BATTLE_Medieval_Segment_01_stereo" ID="{BE3A6A77-DB63-492A-BF48-0C59A1D517B7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</AudioObjects>
 </WwiseDocument>

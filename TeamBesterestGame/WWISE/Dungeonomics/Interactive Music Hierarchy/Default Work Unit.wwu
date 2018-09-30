@@ -1,6 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}" SchemaVersion="85">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Background Music" ID="{D7EE6ED1-1F1D-450D-BBB5-D9271E0C0D89}" ShortID="135378597">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="Main Theme INTRO" ID="{296DE4A4-5D87-4D44-B248-9F5401FC346A}" ShortID="42747723">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="167042.787517356"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="SCORE ENTRANCE" ID="{0A70FD7C-76BA-4FDC-AC93-00BBFC01B872}" ShortID="589062166">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SCORE ENTRANCE" ID="{E943D6A5-5277-4447-A8AC-3F0CAC87C512}" ShortID="704055876">
+											<Language>SFX</Language>
+											<AudioFile>SCORE ENTRANCE.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{14EC4D83-758E-4EB4-B5F8-2A1D6F9CE0FC}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{C32AFFB9-C874-413C-AEFF-31C68AFAC94A}">
+											<ClipList>
+												<MusicClip Name="SCORE ENTRANCE" ID="{F41C16FA-B1FC-451C-9BCE-EF2567D72642}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="4429.36507936508"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="SCORE ENTRANCE" ID="{E943D6A5-5277-4447-A8AC-3F0CAC87C512}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{A3799CB0-F741-4293-8B8D-FEB22CCA8F43}"/>
+								<MusicCue Name="Exit Cue" ID="{A37050FB-87B4-4CCC-AFA3-83D1D2C6B21D}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="4429.36507936508"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+						<MusicSegment Name="Main Theme LOOP" ID="{AE321581-7D68-4ED1-BD37-C5DE7621264F}" ShortID="695536583">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="57770.5930726374"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Dungeonomics Trailer Score LOOP" ID="{0E48A6FA-ECC7-4768-9ABE-DF057A6BA7EB}" ShortID="580361005">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Dungeonomics Trailer Score LOOP" ID="{8E2F3F30-AC4A-43BD-920B-EBB2D948196B}" ShortID="698543523">
+											<Language>SFX</Language>
+											<AudioFile>Dungeonomics Trailer Score LOOP.wav</AudioFile>
+											<ConvertedFileIDList>
+												<File ID="61280742"/>
+											</ConvertedFileIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{63CD7F47-5D7E-49EB-BB17-8151F7054D75}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{C58C6886-634D-4C28-99FE-D04E6AB7E438}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<SequenceList>
+										<MusicTrackSequence Name="" ID="{698E2FE6-E169-4717-9CC2-AC9D28E21B29}">
+											<ClipList>
+												<MusicClip Name="Dungeonomics Trailer Score LOOP" ID="{4463A72E-16E5-4172-ADC8-992F806740D5}">
+													<PropertyList>
+														<Property Name="EndTrimOffset" Type="Real64" Value="53318.1179138322"/>
+														<Property Name="FadeInMode" Type="int16" Value="0"/>
+														<Property Name="FadeOutMode" Type="int16" Value="0"/>
+													</PropertyList>
+													<AudioSourceRef Name="Dungeonomics Trailer Score LOOP" ID="{8E2F3F30-AC4A-43BD-920B-EBB2D948196B}"/>
+												</MusicClip>
+											</ClipList>
+										</MusicTrackSequence>
+									</SequenceList>
+								</MusicTrack>
+							</ChildrenList>
+							<CueList>
+								<MusicCue Name="Entry Cue" ID="{9A3A19DE-6999-4BA3-86DF-D55F02C8E646}"/>
+								<MusicCue Name="Exit Cue" ID="{CB74ECD3-5031-411C-BB45-F71E83D79A16}">
+									<PropertyList>
+										<Property Name="CueType" Type="int16" Value="1"/>
+										<Property Name="TimeMs" Type="Real64" Value="53318.1179138322"/>
+									</PropertyList>
+								</MusicCue>
+							</CueList>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{A5EE8067-24B5-42DD-A7BD-9CB1B505BD02}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{37A3C0BB-43FA-426F-B40D-2997FE28D208}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{7F2A7205-CEC9-456B-B9CA-629110AEBC17}" ShortID="191346868">
+							<PropertyList>
+								<Property Name="LoopCount" Type="int16" Value="0"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{66F037FA-79DC-45FE-ACA7-CF1D4F917A0D}" ShortID="676716714">
+									<PropertyList>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Main Theme INTRO" ID="{296DE4A4-5D87-4D44-B248-9F5401FC346A}"/>
+								</MusicPlaylistItem>
+								<MusicPlaylistItem Name="" ID="{E78C8787-BCF9-4FAD-A2BB-A359CE3E87C2}" ShortID="865653185">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="Main Theme LOOP" ID="{AE321581-7D68-4ED1-BD37-C5DE7621264F}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>
