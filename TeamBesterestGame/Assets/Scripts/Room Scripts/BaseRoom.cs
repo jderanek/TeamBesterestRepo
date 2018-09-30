@@ -189,7 +189,10 @@ public abstract class BaseRoom : MonoBehaviour {
 
         foreach (GameObject monster in monsters)
         {
-            monster.GetComponent<BaseMonster>().getCurRoom().roomMembers.Remove(monster);
+            if (monster.GetComponent<BaseMonster>().getCurRoom() != null)
+            {
+                monster.GetComponent<BaseMonster>().getCurRoom().roomMembers.Remove(monster);
+            }
             monster.GetComponent<BaseMonster>().setCurRoom(gameObject);
             monster.GetComponent<SpriteRenderer>().enabled = true;
 
