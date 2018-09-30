@@ -211,6 +211,11 @@ public class UIManager : MonoBehaviour {
             newFieldCanvas.transform.GetChild(2).GetComponent<Text>().text = application.GetComponent<BaseMonster>().getType();
             newField.GetComponent<RectTransform>().sizeDelta = new Vector2(210f, 80f);
 
+            newContextCanvas.transform.GetChild(0).GetComponent<Text>().text = "HP: " + application.GetComponent<BaseMonster>().getMaxHealth().ToString();
+            newContextCanvas.transform.GetChild(1).GetComponent<Text>().text = "Atk: " + application.GetComponent<BaseMonster>().getBaseDamage().ToString();
+            newContextCanvas.transform.GetChild(2).GetComponent<Text>().text = "Def: " + application.GetComponent<BaseMonster>().getArmor().ToString();
+            newContextCanvas.transform.GetChild(3).GetComponent<Text>().text = "Thr: " + application.GetComponent<BaseMonster>().getThreat().ToString();
+
             //stats/interview button
             newFieldCanvas.transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate { ToggleContext(newContext); });
 
@@ -268,9 +273,25 @@ public class UIManager : MonoBehaviour {
                 newContextCanvas.transform.GetChild(1).GetComponent<Text>().text = "Atk: " + monster.GetComponent<BaseMonster>().getBaseDamage().ToString();
                 newContextCanvas.transform.GetChild(2).GetComponent<Text>().text = "Def: " + monster.GetComponent<BaseMonster>().getArmor().ToString();
                 newContextCanvas.transform.GetChild(3).GetComponent<Text>().text = "Thr: " + monster.GetComponent<BaseMonster>().getThreat().ToString();
-                //newContextCanvas.transform.GetChild(5).GetComponent<Text>().text = monster.GetComponent<BaseMonster>(); //personality trait
-                //newContextCanvas.transform.GetChild(6).GetComponent<Text>().text = monster.GetComponent<BaseMonster>(); //workethic trait
-                //newContextCanvas.transform.GetChild(7).GetComponent<Text>().text = monster.GetComponent<BaseMonster>(); //archetype trait
+
+                //Revealing Traits
+
+                if (monster.GetComponent<BaseMonster>().revealedTraits.Capacity == 3)
+                {
+                    newContextCanvas.transform.GetChild(5).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[0];
+                    newContextCanvas.transform.GetChild(6).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[1];
+                    newContextCanvas.transform.GetChild(7).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[2];
+                }
+                else if (monster.GetComponent<BaseMonster>().revealedTraits.Capacity == 2)
+                {
+                    newContextCanvas.transform.GetChild(5).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[0];
+                    newContextCanvas.transform.GetChild(6).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[1];
+                }
+                else if (monster.GetComponent<BaseMonster>().revealedTraits.Capacity == 1)
+                {
+                    newContextCanvas.transform.GetChild(5).GetComponent<Text>().text = monster.GetComponent<BaseMonster>().revealedTraits[0];
+                }
+
 
                 newFieldCanvas.transform.GetChild(0).GetComponent<Button>().onClick.AddListener(delegate { ToggleContext(newContext); });
                 if (monster.GetComponent<BaseMonster>().department == gameManager.breakRoomList)

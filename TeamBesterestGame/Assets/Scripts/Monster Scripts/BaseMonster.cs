@@ -46,7 +46,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	int breakdowns = 3;
 	public bool canBeDebuffed = true;
 	float promotionMod = 1f;
-    int applicationLife = 3;
+    int applicationLife = 15;
 	bool stunned = false;
 
     public int healthTier;
@@ -104,20 +104,10 @@ public abstract class BaseMonster : MonoBehaviour {
                     tags.Add(tag);
             }
 
-            revealedTraits.Add(traitList[rand]);
+            //revealedTraits.Add(traitList[rand]);
 
             traitList.RemoveAt(rand);
         }
-
-        foreach (BaseTrait trait in this.traits)
-        {
-            //trait.GetTags;
-        }
-
-        //foreach (BaseTrait trait in traits)
-        //{
-        // revealedTraits.Add(trait);
-        //}
 
         //moved damage text here bc it was throwing error on pre-instantiated monsters
         damageText = this.gameObject.GetComponentInChildren<Text>();
@@ -558,4 +548,27 @@ public abstract class BaseMonster : MonoBehaviour {
         gameManager.selectedObjects.Add(gameObject);
         transform.GetChild(1).gameObject.SetActive(true);
     }
+
+    public void RevealTraits()
+    {
+        revealedTraits.Clear();
+        foreach (BaseTrait trait in traits)
+        {
+            int j = 0;
+            //for each tag in each trait on the monster if a tag isn't revealed for that trait increment j
+            //at the end of the loop if j > 0 the trait is not revealed
+            for (int i = 0; i < trait.GetTags().Count; i++)
+            {
+                if (!revealedTags.Contains(trait.GetTags()[i]))
+                {
+                    j++;
+                }
+            }
+            if (j <= 0)
+            {
+                revealedTraits.Add(trait.traitName);
+            }
+        }
+    }
+
 }
