@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Reckless : BaseTrait
 {
-    public Reckless() : base() { }
-    public Reckless(List<PersonalityTags.Tag> tags) : base(tags) { }
+    public Reckless() : base() { this.traitName = "Reckless"; }
+    public Reckless(List<PersonalityTags.Tag> tags) : base(tags) { this.traitName = "Reckless"; }
 
     public override void OnDeath(BaseMonster monster) { }
 

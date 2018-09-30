@@ -122,6 +122,8 @@ public class GameManager : MonoBehaviour
     public GameObject interviewCanvas;
     public GameObject interviewResponse;
     public GameObject interviewHireButton;
+    public GameObject hellhoundImage;
+    public GameObject goblinImage;
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later

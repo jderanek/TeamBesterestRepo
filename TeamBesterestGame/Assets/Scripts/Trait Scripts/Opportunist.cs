@@ -5,8 +5,8 @@ using UnityEngine;
 //Has a growing chance to instakill low health heroes
 public class Opportunist : BaseTrait
 {
-    public Opportunist() : base() { }
-    public Opportunist(List<PersonalityTags.Tag> tags) : base(tags) { }
+    public Opportunist() : base() { traitName = "Oppurtunist"; }
+    public Opportunist(List<PersonalityTags.Tag> tags) : base(tags) { traitName = "Oppurtunist"; }
 
     public override void OnDeath(BaseMonster monster) { }
 

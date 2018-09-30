@@ -6,8 +6,8 @@ using UnityEngine;
 public class Procrastinator : BaseTrait
 {
     bool isBoosted = false;
-    public Procrastinator() : base() { }
-    public Procrastinator(List<PersonalityTags.Tag> tags) : base(tags) { }
+    public Procrastinator() : base() { this.traitName = "Procrastinator"; }
+    public Procrastinator(List<PersonalityTags.Tag> tags) : base(tags) { this.traitName = "Procrastinator"; }
 
     public override void OnDeath(BaseMonster monster) { }
 

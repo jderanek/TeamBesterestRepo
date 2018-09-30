@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Predator : BaseTrait
 {
-    public Predator() : base() { }
-    public Predator(List<PersonalityTags.Tag> tags) : base(tags) { }
+    public Predator() : base() { this.traitName = "Predator"; }
+    public Predator(List<PersonalityTags.Tag> tags) : base(tags) { this.traitName = "Predator"; }
 
     public override void OnDeath(BaseMonster monster) { }
 

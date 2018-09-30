@@ -63,8 +63,14 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	//List to hold everything currently affecting the monster
 	public List<string> effects = new List<string>();
+    
+    public List<BaseTrait> traitsToReveal = new List<BaseTrait>();
+    public List<String> revealedTraits = new List<String>();
 
-	void Awake() {
+    public List<PersonalityTags.Tag> revealedTags = new List<PersonalityTags.Tag>();
+
+
+    void Awake() {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
         uiManager = gameManager.GetComponent<UIManager>();
 		//monsterGrabbed = true; //this is outdated I think, need to sort that out soon
@@ -98,8 +104,20 @@ public abstract class BaseMonster : MonoBehaviour {
                     tags.Add(tag);
             }
 
+            revealedTraits.Add(traitList[rand]);
+
             traitList.RemoveAt(rand);
         }
+
+        foreach (BaseTrait trait in this.traits)
+        {
+            //trait.GetTags;
+        }
+
+        //foreach (BaseTrait trait in traits)
+        //{
+        // revealedTraits.Add(trait);
+        //}
 
         //moved damage text here bc it was throwing error on pre-instantiated monsters
         damageText = this.gameObject.GetComponentInChildren<Text>();

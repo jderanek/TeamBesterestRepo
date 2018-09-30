@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class BaseTrait {
     List<PersonalityTags.Tag> tags = new List<PersonalityTags.Tag>();
+    public string traitName;
 
     public BaseTrait() { }
 

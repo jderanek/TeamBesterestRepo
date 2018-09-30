@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bloodthirsty : BaseTrait
 {
-    public Bloodthirsty() : base() { }
-    public Bloodthirsty(List<PersonalityTags.Tag> tags) : base(tags) { }
+    public Bloodthirsty() : base() { this.traitName = "Bloodthirsty"; }
+    public Bloodthirsty(List<PersonalityTags.Tag> tags) : base(tags) { this.traitName = "Bloodthirsty"; }
 
     public override void OnDeath(BaseMonster monster) { }
 

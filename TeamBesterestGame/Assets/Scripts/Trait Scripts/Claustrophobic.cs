@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Claustrophobic : BaseTrait
 {
-    public Claustrophobic() : base() { }
-    public Claustrophobic(List<PersonalityTags.Tag> tags) : base(tags) { }
+    public Claustrophobic() : base() { this.traitName = "Claustrophobic"; }
+    public Claustrophobic(List<PersonalityTags.Tag> tags) : base(tags) { this.traitName = "Claustrophobic"; }
 
     public override void OnDeath(BaseMonster monster) { }
 
