@@ -90,6 +90,7 @@ public class InterviewManager : MonoBehaviour {
     public void Question1()
     {
         GetResponse(q11);
+        monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
         UpdateQuestions();
     }
@@ -97,6 +98,7 @@ public class InterviewManager : MonoBehaviour {
     public void Question2()
     {
         GetResponse(q21);
+        monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
         UpdateQuestions();
     }
@@ -104,6 +106,7 @@ public class InterviewManager : MonoBehaviour {
     public void Question3()
     {
         GetResponse(q31);
+        monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
         UpdateQuestions();
     }
@@ -371,15 +374,6 @@ public class InterviewManager : MonoBehaviour {
             UpdateQuestions(3);
         }
 
-        /*
-        if (q31 == q41)
-        {
-            UpdateQuestions(q41);
-        }
-
-        q41 = Random.Range(0, 4);
-        q42 = Random.Range(0, 4);
-        */
     }
 
     public void GetResponse(int q)
