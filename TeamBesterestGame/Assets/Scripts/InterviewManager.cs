@@ -596,6 +596,12 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
         }
+        Debug.Log("Tags for: " + monsterInstance.name);
+        foreach (PersonalityTags.Tag tag in monsterInstance.GetComponent<BaseMonster>().revealedTags)
+            Debug.Log(tag.ToString());
+        Debug.Log("Revealed Traits: ");
+        foreach (string trait in monsterInstance.GetComponent<BaseMonster>().revealedTraits)
+            Debug.Log(trait);
     }
 
     public void ExitInterview() //exits interview and hides the interview UI

@@ -389,9 +389,10 @@ public class GameManager : MonoBehaviour
 	{
 		for (int i = 0; i < resumesToCreate; i++)
 		{
-			monsterInstance = SpawnMonster();
-            applicationsList.Add(monsterInstance);
-            monsterInstance.SetActive(false);
+			//monsterInstance = SpawnMonster();
+            applicationsList.Add(SpawnMonster());
+            applicationsList[applicationsList.Count - 1].SetActive(false);
+            //monsterInstance.SetActive(false);
 		}
         uiManager.UpdateApplications();
 	}

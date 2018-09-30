@@ -65,7 +65,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	public List<string> effects = new List<string>();
     
     public List<BaseTrait> traitsToReveal = new List<BaseTrait>();
-    public List<String> revealedTraits = new List<String>();
+    public List<string> revealedTraits = new List<string>();
 
     public List<PersonalityTags.Tag> revealedTags = new List<PersonalityTags.Tag>();
 
