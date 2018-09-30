@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraControls : MonoBehaviour {
 
@@ -10,8 +11,8 @@ public class CameraControls : MonoBehaviour {
     Camera thisCamera;
     float cameraSize = 19f;
     float cameraSizeMax = 25f;
-    float cameraSizeMin = 10f;
-    float scrollSpeed = 3f;
+    float cameraSizeMin = 3f;
+    float scrollSpeed = 5f;
 
     private void Start()
     {
@@ -32,9 +33,13 @@ public class CameraControls : MonoBehaviour {
 
         if (!Input.GetMouseButton(0)) return;
 
-        Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
-        Vector3 move = new Vector3(pos.x * dragSpeed, pos.y * dragSpeed, 0);
+        if (EventSystem.current.currentSelectedGameObject == null)
+        {
+            Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition - dragOrigin);
+            Vector3 move = new Vector3(pos.x * dragSpeed, pos.y * dragSpeed, 0);
 
-        transform.Translate(move - pos, Space.World);
+            transform.Translate(move - pos, Space.World);
+        }
+        
     }
 }

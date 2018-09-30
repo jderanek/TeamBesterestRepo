@@ -46,7 +46,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	int breakdowns = 3;
 	public bool canBeDebuffed = true;
 	float promotionMod = 1f;
-    int applicationLife = 3;
+    int applicationLife = 15;
 	bool stunned = false;
 
     public int healthTier;
@@ -63,8 +63,14 @@ public abstract class BaseMonster : MonoBehaviour {
 
 	//List to hold everything currently affecting the monster
 	public List<string> effects = new List<string>();
+    
+    public List<BaseTrait> traitsToReveal = new List<BaseTrait>();
+    public List<string> revealedTraits = new List<string>();
 
-	void Awake() {
+    public List<PersonalityTags.Tag> revealedTags = new List<PersonalityTags.Tag>();
+
+
+    void Awake() {
 		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
         uiManager = gameManager.GetComponent<UIManager>();
 		//monsterGrabbed = true; //this is outdated I think, need to sort that out soon
@@ -97,6 +103,8 @@ public abstract class BaseMonster : MonoBehaviour {
                 if (!tags.Contains(tag))
                     tags.Add(tag);
             }
+
+            //revealedTraits.Add(traitList[rand]);
 
             traitList.RemoveAt(rand);
         }
@@ -442,6 +450,11 @@ public abstract class BaseMonster : MonoBehaviour {
 	public void Stun() {
 		this.stunned = true;
 	}
+    
+    public void addApplicationLife(int newLife)
+    {
+        this.applicationLife += newLife;
+    }
 
 	//Function to make monster lose health
 	public void TakeDamage(int dam, BaseHero attacker = null) {
@@ -533,4 +546,35 @@ public abstract class BaseMonster : MonoBehaviour {
     {
 
 	}
+
+    private void OnMouseDown()
+    {
+        gameManager.selectedObjects.Clear();
+        gameManager.selectedObjects.Add(gameObject);
+        transform.GetChild(1).gameObject.SetActive(true);
+    }
+
+    public void RevealTraits()
+    {
+        revealedTraits.Clear();
+        foreach (BaseTrait trait in traits)
+        {
+            int j = 0;
+            //for each tag in each trait on the monster if a tag isn't revealed for that trait increment j
+            //at the end of the loop if j > 0 the trait is not revealed
+            for (int i = 0; i < trait.GetTags().Count; i++)
+            {
+                if (!revealedTags.Contains(trait.GetTags()[i]))
+                {
+                    j++;
+                }
+            }
+            if (j <= 0)
+            {
+                revealedTraits.Add(trait.traitName);
+            }
+        }
+        print(revealedTraits.Count);
+    }
+
 }

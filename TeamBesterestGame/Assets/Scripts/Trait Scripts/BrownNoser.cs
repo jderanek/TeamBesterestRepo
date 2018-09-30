@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BrownNoser : BaseTrait
 {
-    public BrownNoser() : base() { }
-    public BrownNoser(List<PersonalityTags.Tag> tags) : base(tags) { }
+    public BrownNoser() : base() { this.traitName = "Brown Noser"; }
+    public BrownNoser(List<PersonalityTags.Tag> tags) : base(tags) { this.traitName = "Brown Noser"; }
 
     public override void OnDeath(BaseMonster monster) { }
 

@@ -122,6 +122,8 @@ public class GameManager : MonoBehaviour
     public GameObject interviewCanvas;
     public GameObject interviewResponse;
     public GameObject interviewHireButton;
+    public GameObject hellhoundImage;
+    public GameObject goblinImage;
 
     public GameObject spawnRoom; //public to be assigned in editor //can assign using tag later
     public GameObject bossRoom; //public to be assigned in editor //can assign using tag later
@@ -186,7 +188,7 @@ public class GameManager : MonoBehaviour
         modifiedHeroSpawnRate = baseHeroSpawnRate;
 
         currentTime = timePerDay;
-        stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
+        //stressImage = GameObject.FindGameObjectWithTag("Aggregate Stress").GetComponent<Image>();
 
         //sets up intial list of monster spawns from possible monsters
         monsterSpawnList = new GameObject[][][]
@@ -354,6 +356,7 @@ public class GameManager : MonoBehaviour
             uiManager.UpdateMonsters();
             uiManager.UpdateDepartments();
             uiManager.UpdateStressMeter();
+            uiManager.UpdateApplications();
         }
     }
 
@@ -386,9 +389,10 @@ public class GameManager : MonoBehaviour
 	{
 		for (int i = 0; i < resumesToCreate; i++)
 		{
-			monsterInstance = SpawnMonster();
-            applicationsList.Add(monsterInstance);
-            monsterInstance.SetActive(false);
+			//monsterInstance = SpawnMonster();
+            applicationsList.Add(SpawnMonster());
+            applicationsList[applicationsList.Count - 1].SetActive(false);
+            //monsterInstance.SetActive(false);
 		}
         uiManager.UpdateApplications();
 	}
@@ -511,7 +515,18 @@ public class GameManager : MonoBehaviour
         interviewCanvas.SetActive(true);
         interviewResponse.SetActive(true);
         //interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
-        
+
+        if (monsterInstance.GetComponent<BaseMonster>().getType().Equals("Goblin"))
+        {
+            hellhoundImage.SetActive(false);
+            goblinImage.SetActive(true);
+        }
+        else
+        {
+            hellhoundImage.SetActive(true);
+            goblinImage.SetActive(false);
+        }
+
         this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
     }
 
@@ -650,7 +665,7 @@ public class GameManager : MonoBehaviour
             {
                 int applicationLife = application.GetComponent<BaseMonster>().getApplicationLife();
 
-                if (applicationLife > 0)
+                if (applicationLife > 0 && application != monsterInstance)
 	                application.GetComponent<BaseMonster>().setApplicationLife(applicationLife - 1);
                 if (applicationLife == 0)
                 {

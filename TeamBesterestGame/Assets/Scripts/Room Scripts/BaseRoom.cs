@@ -143,8 +143,9 @@ public abstract class BaseRoom : MonoBehaviour {
         {
             if (Input.GetMouseButtonDown(1))
             {
-                print(master);
-                if (master.GetComponent<MergedRoom>() != null) {
+                //print(master);
+                if (master.GetComponent<MergedRoom>() != null)
+                {
                     master.GetComponent<MergedRoom>().AssignMonsters(gameManager.selectedObjects);
                 }
                 else
@@ -188,7 +189,11 @@ public abstract class BaseRoom : MonoBehaviour {
 
         foreach (GameObject monster in monsters)
         {
-			if (this.roomMembers.Contains (monster))
+            monster.GetComponent<BaseMonster>().getCurRoom().roomMembers.Remove(monster);
+            monster.GetComponent<BaseMonster>().setCurRoom(gameObject);
+            monster.GetComponent<SpriteRenderer>().enabled = true;
+
+            if (this.roomMembers.Contains (monster))
 				continue;
 
 			//Gets the monster script for later use
@@ -196,7 +201,8 @@ public abstract class BaseRoom : MonoBehaviour {
 			//Breaks assignment loop if it would go over the size cap
 			if (this.monsterSize + monScript.getSize() > this.size)
 				break;
-			
+            
+            monster.transform.GetChild(1).gameObject.SetActive(false);
             monster.transform.position = new Vector3(
                     gameObject.transform.position.x + UnityEngine.Random.Range(-0.25f, 0.25f),
                     gameObject.transform.position.y + UnityEngine.Random.Range(-0.25f, 0.25f),
@@ -218,6 +224,7 @@ public abstract class BaseRoom : MonoBehaviour {
         monsters.Clear();
 
 		this.UpdateMonsters ();
+        gameManager.selectedObjects.Clear();
 		/*if (this is MergedRoom) {
 			MergedRoom merged = this as MergedRoom;
 			merged.UpdateMonsters ();

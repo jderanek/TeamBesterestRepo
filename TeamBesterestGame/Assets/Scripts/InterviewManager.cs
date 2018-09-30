@@ -15,6 +15,8 @@ public class InterviewManager : MonoBehaviour {
     public GameObject interviewQuestions;
     public GameObject interviewResponse;
 
+    public GameObject revealedTraitText;
+
 	/*public int q31;
 	public int q32;
 	public int q41;
@@ -90,21 +92,27 @@ public class InterviewManager : MonoBehaviour {
     public void Question1()
     {
         GetResponse(q11);
+        monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateTraitText();
         UpdateQuestions();
     }
 
     public void Question2()
     {
         GetResponse(q21);
+        monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateTraitText();
         UpdateQuestions();
     }
 
     public void Question3()
     {
         GetResponse(q31);
+        monsterInstance.GetComponent<BaseMonster>().RevealTraits();
         gameManager.GetComponent<GameManager>().PassTime(1);
+        UpdateTraitText();
         UpdateQuestions();
     }
 
@@ -371,15 +379,6 @@ public class InterviewManager : MonoBehaviour {
             UpdateQuestions(3);
         }
 
-        /*
-        if (q31 == q41)
-        {
-            UpdateQuestions(q41);
-        }
-
-        q41 = Random.Range(0, 4);
-        q42 = Random.Range(0, 4);
-        */
     }
 
     public void GetResponse(int q)
@@ -387,12 +386,14 @@ public class InterviewManager : MonoBehaviour {
         switch (q)
         {
             case 0://hierarchy group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.FOLLOWER))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.FOLLOWER) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.FOLLOWER))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.FOLLOWER);
                     responseText.text = "Others can take the reins, too much responsibility for me";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.COWARDLY))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.COWARDLY) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.COWARDLY))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.COWARDLY);
                     responseText.text = "They say discretion is the better part of valor ok?";
                 }
                 else
@@ -401,16 +402,19 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 1://aid group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.HELPFUL))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.HELPFUL) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.HELPFUL))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.HELPFUL);
                     responseText.text = "I am always willing to lend a helping hand!";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.FRIENDLY))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.FRIENDLY) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.FRIENDLY))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.FRIENDLY);
                     responseText.text = "Yes, it is not hard for me to get along with new people";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.POSITIVE))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.POSITIVE) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.POSITIVE))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.POSITIVE);
                     responseText.text = "I always look on the bright side of things!";
                 }
                 else
@@ -419,20 +423,24 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 2://rude group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.MEAN))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.MEAN) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.MEAN))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.MEAN);
                     responseText.text = "I just speak my mind, what is wrong with that?!";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ANTISOCIAL))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ANTISOCIAL) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.ANTISOCIAL))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.ANTISOCIAL);
                     responseText.text = "I just prefer to keep people at a distance, I have my reasons.";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.THREATENING))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.THREATENING) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.THREATENING))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.THREATENING);
                     responseText.text = "I don’t even need to fight heroes, they cower in fear!";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.NEGATIVE))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.NEGATIVE) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.NEGATIVE))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.NEGATIVE);
                     responseText.text = "I am just being real with my chances, ok?";
                 }
                 else
@@ -441,16 +449,19 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 3://work-ethic group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.DILIGENT))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.DILIGENT) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.DILIGENT))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.DILIGENT);
                     responseText.text = "Yes, that is not a problem for me";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.HARDWORKING))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.HARDWORKING) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.HARDWORKING))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.HARDWORKING);
                     responseText.text = "I love to work and do my best!";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.MOTIVATED))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.MOTIVATED) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.MOTIVATED))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.MOTIVATED);
                     responseText.text = "I stay focused on the mission, at all times.";
                 }
                 else
@@ -459,20 +470,24 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 4://physical group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.AGGRESSIVE))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.AGGRESSIVE) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.AGGRESSIVE))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.AGGRESSIVE);
                     responseText.text = "I take what I see, no time for hesitation";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.STRONG))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.STRONG) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.STRONG))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.STRONG);
                     responseText.text = "I can knock out heroes wearing even the strongest armor!";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.VIOLENT))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.VIOLENT) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.VIOLENT))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.VIOLENT);
                     responseText.text = "I prefer to break people, especially puny heroes!";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ENDURING))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ENDURING) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.ENDURING))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.ENDURING);
                     responseText.text = "You can always count on me in a tough brawl!";
                 }
                 else
@@ -481,16 +496,19 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 5://self-centered group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.PROUD))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.PROUD) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.PROUD))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.PROUD);
                     responseText.text = "I know what I am and what I can do, what is wrong with being proud of that?";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.EGOCENTRIC))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.EGOCENTRIC) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.EGOCENTRIC))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.EGOCENTRIC);
                     responseText.text = "I mean who wouldn’t? Have you seen my looks?";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.INDEPENDENT))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.INDEPENDENT) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.INDEPENDENT))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.INDEPENDENT);
                     responseText.text = "I prefer to go solo if possible.";
                 }
                 else
@@ -499,12 +517,14 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 6://speech group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SOCIAL))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SOCIAL) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.SOCIAL))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.SOCIAL);
                     responseText.text = "Conversation is one of my strong suits, not sure how it helps fighting heroes though.";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.TALKATIVE))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.TALKATIVE) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.TALKATIVE))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.TALKATIVE);
                     responseText.text = "I just love gossip, I want to know every juicy detail!";
                 }
                 else
@@ -513,16 +533,19 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 7://condition group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SICKLY))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SICKLY) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.SICKLY))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.SICKLY);
                     responseText.text = "Days? How about weeks?";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.WEAK))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.WEAK) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.WEAK))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.WEAK);
                     responseText.text = "Y-yeah… maybe I have applied for the wrong position...";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.BURLY))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.BURLY) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.BURLY))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.BURLY);
                     responseText.text = "My endurance is much higher than average.";
                 }
                 else
@@ -531,16 +554,19 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 8://appearance group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SPOOKY))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.SPOOKY) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.SPOOKY))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.SPOOKY);
                     responseText.text = "Yes, most heroes shake in their boots when face to face with me!";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.GROSS))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.GROSS) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.GROSS))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.GROSS);
                     responseText.text = "Listen, I call it my natural musk.";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.OLDFASHIONED))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.OLDFASHIONED) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.OLDFASHIONED))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.OLDFASHIONED);
                     responseText.text = "I guess that wrinkle cream isn’t working at all…";
                 }
                 else
@@ -549,20 +575,24 @@ public class InterviewManager : MonoBehaviour {
                 }
                 break;
             case 9://negative group
-                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.LAZY))
+                if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.LAZY) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.LAZY))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.LAZY);
                     responseText.text = "Listen, I call it my beauty sleep.";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ANGRY))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.ANGRY) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.ANGRY))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.ANGRY);
                     responseText.text = "What?! Who said that?!";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.GREEDY))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.GREEDY) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.GREEDY))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.GREEDY);
                     responseText.text = "I prefer the term FRUGAL thank you.";
                 }
-                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.WILD))
+                else if (monsterInstance.GetComponent<BaseMonster>().tags.Contains(PersonalityTags.Tag.WILD) && !monsterInstance.GetComponent<BaseMonster>().revealedTags.Contains(PersonalityTags.Tag.WILD))
                 {
+                    monsterInstance.GetComponent<BaseMonster>().revealedTags.Add(PersonalityTags.Tag.WILD);
                     responseText.text = "I am just GO GO GO ALL THE TIME!";
                 }
                 else
@@ -570,6 +600,37 @@ public class InterviewManager : MonoBehaviour {
                     responseText.text = "Don’t worry about me. I don’t like instigating any brawls.";
                 }
                 break;
+        }
+        Debug.Log("Tags for: " + monsterInstance.name);
+        foreach (PersonalityTags.Tag tag in monsterInstance.GetComponent<BaseMonster>().revealedTags)
+            Debug.Log(tag.ToString());
+        Debug.Log("Revealed Traits: ");
+        foreach (string trait in monsterInstance.GetComponent<BaseMonster>().revealedTraits)
+            Debug.Log(trait);
+    }
+
+    public void UpdateTraitText()
+    {
+        if (monsterInstance.GetComponent<BaseMonster>().revealedTraits.Count == 3 && monsterInstance != null)
+        {
+            revealedTraitText.transform.GetChild(0).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[0];
+            revealedTraitText.transform.GetChild(1).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[1];
+            revealedTraitText.transform.GetChild(2).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[2];
+        }
+        else if (monsterInstance.GetComponent<BaseMonster>().revealedTraits.Count == 2 && monsterInstance != null)
+        {
+            revealedTraitText.transform.GetChild(0).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[0];
+            revealedTraitText.transform.GetChild(1).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[1];
+        }
+        else if (monsterInstance.GetComponent<BaseMonster>().revealedTraits.Count == 1 && monsterInstance != null)
+        {
+            revealedTraitText.transform.GetChild(0).GetComponent<Text>().text = monsterInstance.GetComponent<BaseMonster>().revealedTraits[0];
+        }
+        else
+        {
+            revealedTraitText.transform.GetChild(0).GetComponent<Text>().text = "???";
+            revealedTraitText.transform.GetChild(1).GetComponent<Text>().text = "???";
+            revealedTraitText.transform.GetChild(2).GetComponent<Text>().text = "???";
         }
     }
 
@@ -594,6 +655,7 @@ public class InterviewManager : MonoBehaviour {
             gameManager.GetComponent<UIManager>().UpdateApplications();
             Destroy(monsterInstance);
             monsterInstance = null;
+            UpdateTraitText();
         }
     }
 
