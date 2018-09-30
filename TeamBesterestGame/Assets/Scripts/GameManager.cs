@@ -356,6 +356,7 @@ public class GameManager : MonoBehaviour
             uiManager.UpdateMonsters();
             uiManager.UpdateDepartments();
             uiManager.UpdateStressMeter();
+            uiManager.UpdateApplications();
         }
     }
 

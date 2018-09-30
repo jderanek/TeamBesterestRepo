@@ -46,7 +46,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	int breakdowns = 3;
 	public bool canBeDebuffed = true;
 	float promotionMod = 1f;
-    int applicationLife = 3;
+    int applicationLife = 15;
 	bool stunned = false;
 
     public int healthTier;
@@ -557,7 +557,7 @@ public abstract class BaseMonster : MonoBehaviour {
             int j = 0;
             //for each tag in each trait on the monster if a tag isn't revealed for that trait increment j
             //at the end of the loop if j > 0 the trait is not revealed
-            for (int i = 0; i < trait.GetTags().Count - 1; i++)
+            for (int i = 0; i < trait.GetTags().Count; i++)
             {
                 if (!revealedTags.Contains(trait.GetTags()[i]))
                 {
