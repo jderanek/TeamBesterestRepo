@@ -450,6 +450,11 @@ public abstract class BaseMonster : MonoBehaviour {
 	public void Stun() {
 		this.stunned = true;
 	}
+    
+    public void addApplicationLife(int newLife)
+    {
+        this.applicationLife += newLife;
+    }
 
 	//Function to make monster lose health
 	public void TakeDamage(int dam, BaseHero attacker = null) {

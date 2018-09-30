@@ -664,7 +664,7 @@ public class GameManager : MonoBehaviour
             {
                 int applicationLife = application.GetComponent<BaseMonster>().getApplicationLife();
 
-                if (applicationLife > 0)
+                if (applicationLife > 0 && application != monsterInstance)
 	                application.GetComponent<BaseMonster>().setApplicationLife(applicationLife - 1);
                 if (applicationLife == 0)
                 {
