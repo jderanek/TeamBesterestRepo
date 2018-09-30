@@ -279,7 +279,7 @@ public class UIManager : MonoBehaviour {
                     newFieldCanvas.transform.GetChild(1).GetComponent<Button>().onClick.AddListener(delegate 
                     {
                         gameManager.selectedObjects.Add(monster);
-                        monster.GetComponent<SpriteRenderer>().enabled = true;
+                        //monster.GetComponent<SpriteRenderer>().enabled = true;
                     });
                 }
                 else

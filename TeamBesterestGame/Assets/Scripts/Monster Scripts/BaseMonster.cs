@@ -551,4 +551,11 @@ public abstract class BaseMonster : MonoBehaviour {
     {
 
 	}
+
+    private void OnMouseDown()
+    {
+        gameManager.selectedObjects.Clear();
+        gameManager.selectedObjects.Add(gameObject);
+        transform.GetChild(1).gameObject.SetActive(true);
+    }
 }
