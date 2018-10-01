@@ -284,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraControls.cs" />
+    <Compile Include="Assets\DisableScrolling.cs" />
     <Compile Include="Assets\FastForwardAnimator.cs" />
     <Compile Include="Assets\PlayButtonAnimator.cs" />
     <Compile Include="Assets\PlayButtonSound.cs" />
@@ -533,6 +534,11 @@
     <None Include="Assets\Sprites\2D Pixel Top-Down Dungeon Tileset\How to use Tilesets.txt" />
     <None Include="Assets\Sprites\2D Pixel Top-Down Dungeon Tileset\Read_Me.txt" />
     <None Include="Assets\Sprites\UI\UI_Assets\readme.txt" />
+    <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\Default.txt" />
+    <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\Init.txt" />
+    <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\Main.txt" />
+    <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\PluginInfo.xml" />
+    <None Include="Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\SoundbanksInfo.xml" />
     <None Include="Assets\StreamingAssets\desc.txt" />
     <None Include="Assets\Wwise\Deployment\Plugins\Mac\Debug\AkSoundEngine.bundle\Contents\Resources\readme.txt" />
     <None Include="Assets\Wwise\Deployment\Plugins\Mac\Profile\AkSoundEngine.bundle\Contents\Resources\readme.txt" />
