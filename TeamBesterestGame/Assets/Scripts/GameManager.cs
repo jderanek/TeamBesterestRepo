@@ -572,7 +572,7 @@ public class GameManager : MonoBehaviour
             if (currentTime < 23)
             {
                 currentTime += timeToPass;
-                timeUnitText.text = currentTime.ToString();
+                //timeUnitText.text = currentTime.ToString();
             }
             else
                 currentTime = 0;
