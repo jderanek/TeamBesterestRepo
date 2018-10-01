@@ -181,7 +181,7 @@ public class GameManager : MonoBehaviour
         //Clears CSVImporter to save some space
         traitTagSheet = null;
 
-        currentCurrency = 1500;
+        currentCurrency = 300;
         uiManager.UpdateCurrency();
         uiManager.UpdateInfamy();
 
