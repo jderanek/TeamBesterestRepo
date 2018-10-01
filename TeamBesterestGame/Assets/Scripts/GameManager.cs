@@ -910,7 +910,7 @@ public class GameManager : MonoBehaviour
     }
 
     //Debug controls. Disable for full builds
-    private void Update()
+    /*private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -960,5 +960,5 @@ public class GameManager : MonoBehaviour
         {
             CreateNewResume(1);
         }
-    }
+    }*/
 }
