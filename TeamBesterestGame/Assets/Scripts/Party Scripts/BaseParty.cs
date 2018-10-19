@@ -76,6 +76,8 @@ public abstract class BaseParty {
 			if (hero != null)
 				hero.Attack ();
 		}
+
+        this.CheckRoom();
 	}
 
 	//Calls all party members CheckRoom function in the current room

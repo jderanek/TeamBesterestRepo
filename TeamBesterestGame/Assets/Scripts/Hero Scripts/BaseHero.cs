@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //Base class to store heroes max and current health, damage and money drop
-public abstract class BaseHero : MonoBehaviour {
+public abstract class BaseHero : BaseEntity {
 
 	//Private variables for hero stats
 	private int maxHealth;
@@ -83,6 +83,8 @@ public abstract class BaseHero : MonoBehaviour {
 		this.threat = int.Parse(gameManager.heroStats.data [type] ["Threat"]);
 		this.value = int.Parse(gameManager.heroStats.data [type] ["Gold Drop Value"]);
 		this.capacity = int.Parse(gameManager.heroStats.data [type] ["Carry Capacity"]) * 100;
+
+        this.SetSpeed(int.Parse(gameManager.heroStats.data[type]["Speed"]));
 
         damageText = this.gameObject.GetComponentInChildren<Text>();
         damageText.text = this.curHealth + "hp";
@@ -247,7 +249,7 @@ public abstract class BaseHero : MonoBehaviour {
 
 	//Default attack function that hits the monster in the room with the highest threat value
 	//Some classes override this function for different attack methods
-	public virtual void Attack() {
+	public override void Attack() {
 		BaseMonster monScript;
 		BaseMonster highThreat = null;
 		int threat = -1;

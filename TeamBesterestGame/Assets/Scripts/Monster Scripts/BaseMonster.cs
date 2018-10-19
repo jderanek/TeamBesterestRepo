@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class BaseMonster : MonoBehaviour {
+public abstract class BaseMonster : BaseEntity {
     public List<GameObject> department;
 
 	//Private variables for this monsters stats
@@ -250,7 +250,8 @@ public abstract class BaseMonster : MonoBehaviour {
 		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
 		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
 		this.archetype = gameManager.monsters.data [type] ["Archetype"];
-		int num = UnityEngine.Random.Range (1, 25);
+        this.SetSpeed(int.Parse(gameManager.monsters.data [type] ["Speed"]));
+        int num = UnityEngine.Random.Range (1, 25);
         bool useArchetype = (UnityEngine.Random.value > .3f);
         if (useArchetype)
     		this.monName = gameManager.monNames.data [num.ToString ()] [this.archetype];
@@ -475,7 +476,7 @@ public abstract class BaseMonster : MonoBehaviour {
 	}
 
 	//Default attack function that hits the hero with the highest threat
-	public virtual void Attack() {
+	public override void Attack() {
 		//Breaks attack function if stunned
 		if (stunned) {
 			this.stunned = false;

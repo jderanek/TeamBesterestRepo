@@ -579,7 +579,7 @@ public class GameManager : MonoBehaviour
 
             uiManager.hourSwivel.transform.Rotate(new Vector3(0, 0, (360 / -12) * timeToPass));
 
-            //need to swap this out with a dungeon list
+            /*//need to swap this out with a dungeon list
 			foreach (GameObject monster in monsterList)
 			{
                 //Applies all passTime effects before combat
@@ -589,10 +589,10 @@ public class GameManager : MonoBehaviour
                     trait.OnTimePass(monScript);
 
                 monScript.Attack();
-			}
+			}*/
 
             //probably should create a hero list
-			/*
+            /*
 			foreach (GameObject hero in GameObject.FindGameObjectsWithTag("Hero"))
 			{
                 dungeonEmpty = false;
@@ -600,10 +600,34 @@ public class GameManager : MonoBehaviour
 				hero.GetComponent<BaseHero>().CheckCurrentRoom();
 			}*/
 
-			//Makes all parties attack their current room, and then check it
-			foreach (BaseParty heroParty in attackParties) {
+            //Creates list of entities to sort by speed
+            List<BaseEntity> entities = new List<BaseEntity>();
+
+            //Adds monster scripts to the list
+            BaseEntity monsterEntity;
+            foreach (GameObject mon in monsterList)
+            {
+                monsterEntity = mon.GetComponent<BaseEntity>();
+                entities.Add(monsterEntity);
+            }
+
+            //Adds all heroes to the entity list
+            foreach (BaseParty heroParty in attackParties)
+            {
+                entities.AddRange(heroParty.getPartyMembers());
+            }
+
+            //Sorts entities by speed
+            entities.Sort((e1, e2) => e2.GetSpeed().CompareTo(e1.GetSpeed()));
+
+            //Loops through list of entities and makes all attack
+            foreach (BaseEntity entity in entities)
+                entity.Attack();
+
+            //Makes all parties attack their current room, and then check it
+            foreach (BaseParty heroParty in attackParties) {
 				dungeonEmpty = false;
-				heroParty.AttackPhase ();
+				//heroParty.AttackPhase ();
 				heroParty.CheckRoom ();
 			}
 			//Trims list of deleted parties
