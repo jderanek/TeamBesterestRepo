@@ -749,15 +749,6 @@ public class GameManager : MonoBehaviour
             foreach (GameObject monster in room.GetComponent<BaseRoom>().roomMembers)
             {
                 BaseMonster monScript = monster.GetComponent<BaseMonster>();
-
-                if (monScript != null)
-                {
-                    if (monScript.getTrait() != null)
-                    {
-                        monScript.personality.ApplyWeekEffects(monScript);
-                    }
-                }
-
                 monScript.setHasFought(false);
             }
         }

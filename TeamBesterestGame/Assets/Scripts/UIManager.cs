@@ -476,7 +476,7 @@ public class UIManager : MonoBehaviour {
         foreach (GameObject monster in gameManager.monsterList)
         {
             BaseMonster m = monster.GetComponent<BaseMonster>();
-            overallStressValue += m.getStress();
+            //overallStressValue += m.getStress();
             monsterCount++;
         }
 

@@ -17,17 +17,17 @@ public abstract class BaseMonster : BaseEntity {
 	int baseHealth;
 	public int curDamage;
 	int damage;
-	public TraitBase personality;
     public List<BaseTrait> traits;
     public List<PersonalityTags.Tag> tags;
 	int salary;
-	float stress;
+    /*float stress;
 	float morale;
 	float moraleGain = 1f;
 	float moraleLoss = 1f;
 	float stressGain;
-	float vacationStressLoss;
-	int infamyGain;
+	float vacationStressLoss;*/
+    int mood = 50;
+    int infamyGain;
 	int threat;
 	int armor;
 	int workEthic;
@@ -55,12 +55,6 @@ public abstract class BaseMonster : BaseEntity {
 
     public Animator anim; //= this.gameObject.GetComponentInChildren<Animator>();
 
-    //Temp variables from transfer
-    private TraitBase[] allTraits = new TraitBase[] {new CowardlyTrait(), new FancyTrait(), new FlirtyTrait(), new GrossTrait(), new GuardianTrait(), new PridefulTrait(), new RecklessTrait(), new SlackerTrait(), new TyrantTrait(), new WaryTrait(), new WorkaholicTrait()};
-	string traitName;
-	public float baseNerve = .5f; //public to be edited in editor
-	public float curNerve = .5f; //public to be edited in editor
-
 	//List to hold everything currently affecting the monster
 	public List<string> effects = new List<string>();
     
@@ -79,9 +73,6 @@ public abstract class BaseMonster : BaseEntity {
 		heroInRoom = false;
 		//Temp measure to suppress errors
 		//this.AssignStats (gameObject.name);
-		this.personality = allTraits [UnityEngine.Random.Range (0, allTraits.Length)];
-		this.personality.ApplyBase (this);
-		this.traitName = this.personality.getName ();
 		this.workEthic = UnityEngine.Random.Range (-1, 1);
         //this.curRoom = gameManager.spawnRoom;
 
@@ -127,20 +118,19 @@ public abstract class BaseMonster : BaseEntity {
 	/// <param name="arm">Base Armor</param>
 	/// <param name="ethic">Work Ethic</param>
 	/// <param name="sz">Monster Size</param>
-	public void AssignStats(string nm, int hp, int dam, TraitBase trait, int sal, int thr, int arm, int ethic, int sz) {
+	public void AssignStats(string nm, int hp, int dam, int sal, int thr, int arm, int ethic, int sz) {
 		this.monName = nm;
 		this.maxHealth = hp;
 		this.baseHealth = hp;
 		this.curHealth = maxHealth;
 		this.damage = dam;
 		this.curDamage = this.damage;
-		this.personality = trait;
 		this.salary = sal;
 		this.threat = thr;
-		this.stress = 0f;
+		/*this.stress = 0f;
 		this.morale = .5f;
 		this.stressGain = .02f;
-		this.vacationStressLoss = .15f;
+		this.vacationStressLoss = .15f;*/
 		this.infamyGain = 1;
 		this.armor = arm;
 		//damageText = this.gameObject.GetComponentInChildren<Text>();
@@ -259,10 +249,10 @@ public abstract class BaseMonster : BaseEntity {
             this.monName = gameManager.monNames.data[num.ToString()]["Any"];
         this.name = monName;
 
-		this.stress = 0f;
+		/*this.stress = 0f;
 		this.morale = .5f;
 		this.stressGain = .02f;
-		this.vacationStressLoss = .15f;
+		this.vacationStressLoss = .15f;*/
 		this.infamyGain = 1;
 		damageText = this.gameObject.GetComponentInChildren<Text>();
         damageText.text = this.getCurHealth().ToString() + "hp";
@@ -294,9 +284,6 @@ public abstract class BaseMonster : BaseEntity {
 	public void setCurDamage(int d) {
 		this.curDamage = d;
 	}
-	public TraitBase getTrait() {
-		return this.personality;
-	}
 	public int getSalary() {
 		return this.salary;
 	}
@@ -312,7 +299,7 @@ public abstract class BaseMonster : BaseEntity {
 	public int getArmor() {
 		return this.armor;
 	}
-	public float getMorale() {
+	/*public float getMorale() {
 		return this.morale;
 	}
 	public void setMorale(float newM) {
@@ -347,7 +334,15 @@ public abstract class BaseMonster : BaseEntity {
 	}
 	public void setStressLoss(float loss) {
 		this.vacationStressLoss = loss;
-	}
+	}*/
+    public int GetMood()
+    {
+        return mood;
+    }
+    public void SetMood(int newMood)
+    {
+        mood = newMood;
+    }
 	public int getInfamyGain() {
 		return this.infamyGain;
 	}
@@ -385,9 +380,6 @@ public abstract class BaseMonster : BaseEntity {
 	}
 	public int getSize() {
 		return this.size;
-	}
-	public string getTraitName() {
-		return this.traitName;
 	}
 	public BaseRoom getCurRoom() {
         if (curRoom != null)
