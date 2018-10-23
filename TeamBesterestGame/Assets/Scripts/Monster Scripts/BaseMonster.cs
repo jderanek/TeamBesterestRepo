@@ -564,10 +564,8 @@ public abstract class BaseMonster : BaseEntity {
             }
             if (j <= 0)
             {
-                revealedTraits.Add(trait.traitName);
+                this.revealedTraits.Add(trait.traitName);
             }
         }
-        print(revealedTraits.Count);
     }
-
 }
