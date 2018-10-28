@@ -1,8 +1,2 @@
-Hero Type,Health,Base Attack,Defense,Speed,Gold Drop Value,Total Stats,Infamy Tier,Carry Capacity,Threat,Abilities,Ability Description
-Warrior,3,2,2,4,3,7,0,2,4,Determined,This Hero will gain 1 Base Hp and 1 Base Damage upon reaching 50% Hp
-Rogue,6,4,2,1,8,12,1,3,1,Stealth,Enters the Dungeon stealthed. Sneaks along behind it's assigned party. Follows along and grabs $300 worth of your Gold from a room with $900 or more.  Can only be revealed by certain Monsters and Room types. Will only attack if revealed.
-Wizard,6,5,1,1,5,12,1,2,2,Teleport                Chain Lightning,Teleports the wizard and all heroes in the same room further into the dungeon.                                                            Each attack is inflicts damage to several Monsters at a time.
-Crusader,15,6,7,1,20,28,2,3,5,Armored Charge,The first attack that a Crusader performs after it enters a Dungeon Room will inflict 2 extra damage and stun the targeted Monster. Stunning prevents the monsters next attack. This ability does not work if the targeted Monster has at least 2 armor.
-Cleric,1,1,1,3,15,3,2,1,3,Lesser Heal,Normal attack is replaced by healing lowest health friendly target when applicable.
-Archer,14,9,4,1,25,27,2,3,3,Pinpoint Aim,"The Archer bow attacks ignore 1 point of armor.
-"
+Hero,Health,Base Attack,Defense,Speed,Gold Drop Value,Total Stats,Infamy Tier,Carry Capacity,Threat
+Warrior,25,10,0,20,3,0,1,2,5

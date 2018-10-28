@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
         monNames = new CSVImporter("NamesWIP - Sheet1.csv",
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
         heroStats = new CSVImporter("Heroes - Sheet1.csv",
-            "https://docs.google.com/spreadsheets/d/e/2PACX-1vROE5F1pcPZ65Zg5H5QsEqwpayjzcLOYQMffmv6E3zjR3tMq7kD68zPNGdrCXmq8w67wZHNNGwehsLo/pub?gid=0&single=true&output=csv");
+            "https://docs.google.com/spreadsheets/d/e/2PACX-1vSN79EKAGo0PLiqEk3hpER-dOt919hqnSF3koRp6i4QwpMv6_qSV8hKNSKQYyAF1fnSVqt8jFjMYbGv/pub?gid=0&single=true&output=csv");
         traitTagSheet = new CSVImporter("Tag Sheet.scv",
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vQmDd84KQr_Mq-spZ6Lpoyps_-GX82NXWNb9_fDz3YawLcL79nytQg6bvV_CjGfSwqpk9y56eFpD0Ps/pub?gid=1985735442&single=true&output=csv");
 
