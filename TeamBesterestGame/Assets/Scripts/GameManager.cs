@@ -100,6 +100,11 @@ public class GameManager : MonoBehaviour
     //Day counter to increase week
     private int days = 0;
 
+    //Current phase of the game, as well as the enemies to spawn next combat
+    string phase = "Start";
+    int enemiesToSpawn = 3;
+    bool canSkip = true;
+
     //construction stuff
     //TODO getters and setters
     [HideInInspector]
@@ -560,9 +565,109 @@ public class GameManager : MonoBehaviour
 	public IEnumerator Play() {
 		while (true) {
 			yield return new WaitForSeconds(timeSpeed);
-			PassTime (1);
+            if (CombatStep())
+            {
+                canSkip = true;
+                break;
+            }
+			//PassTime (1);
 		}
 	}
+
+    //Starts the next phase when the button is clicked.
+    //Only works when canSkip is true
+    public void StartPhase()
+    {
+        if (!canSkip)
+            return;
+
+        switch (phase)
+        {
+            case "Start":
+                canSkip = false;
+                phase = "Combat";
+                enemiesToSpawn = 3;
+                TogglePlay();
+                break;
+        }
+    }
+
+    //New 'time; function, meant for only combat related sections
+    //Returns true when all heroes have left or been killed
+    public bool CombatStep()
+    {
+        Debug.Log("Running Combat");
+        //Changes time and moves clock
+        dungeonEmpty = true;
+        if (currentTime < 23)
+        {
+            currentTime += 1;
+            //timeUnitText.text = currentTime.ToString();
+        }
+        else
+            currentTime = 0;
+
+        uiManager.hourSwivel.transform.Rotate(new Vector3(0, 0, 360 / -12));
+
+        //Creates list of entities to sort by speed
+        List<BaseEntity> entities = new List<BaseEntity>();
+
+        //Adds monster scripts to the list
+        BaseEntity monsterEntity;
+        foreach (GameObject mon in monsterList)
+        {
+            monsterEntity = mon.GetComponent<BaseEntity>();
+            entities.Add(monsterEntity);
+        }
+
+        //Adds all heroes to the entity list
+        foreach (BaseParty heroParty in attackParties)
+        {
+            entities.AddRange(heroParty.getPartyMembers());
+        }
+
+        //Sorts entities by speed
+        entities.Sort((e1, e2) => e2.GetSpeed().CompareTo(e1.GetSpeed()));
+
+        //Loops through list of entities and makes all attack
+        foreach (BaseEntity entity in entities)
+            entity.Attack();
+
+        //Makes all parties attack their current room, and then check it
+        foreach (BaseParty heroParty in attackParties)
+        {
+            dungeonEmpty = false;
+            //heroParty.AttackPhase ();
+            heroParty.CheckRoom();
+        }
+        //Trims list of deleted parties
+        attackParties.RemoveAll(item => item.markedForDelete());
+
+        //Spawns a party if needed. Should be changed to have a list of parties to spawn.
+        if (enemiesToSpawn > 0)
+        {
+            GameObject[] newHero = new GameObject[1];
+            //grabs a hero from spawn set with equal weight. Maybe best way to affect spawn %s is to just add duplicates to spawn set?
+            newHero[0] = Instantiate(heroSpawnSet[0], spawnRoom.transform.position, Quaternion.identity);
+            BaseParty newParty = new TestPart(newHero);
+            this.attackParties.Add(newParty);
+            enemiesToSpawn -= 1;
+        }
+
+        foreach (GameObject room in roomList)
+        {
+            if (room != null && room.GetComponent<BaseRoom>() != null)
+            {
+                room.GetComponent<BaseRoom>().RoomMemeberHandler();
+                //room.GetComponent<BaseRoom> ().UpdateHeroes ();
+            }
+        }
+
+        if (enemiesToSpawn == 0 && this.attackParties.Count == 0)
+            return true;
+
+        return false;
+    }
 
     //Master function for anything that changes when a time-unit passes
 	public void PassTime(int timeToPass) {
@@ -639,7 +744,7 @@ public class GameManager : MonoBehaviour
                 {
                     room.GetComponent<BaseRoom>().RoomMemeberHandler();
 					//room.GetComponent<BaseRoom> ().UpdateHeroes ();
-                }                    
+                }
             }
 
             //This part modifies spawn rates during peak hours

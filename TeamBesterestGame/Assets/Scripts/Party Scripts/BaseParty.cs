@@ -67,7 +67,7 @@ public abstract class BaseParty {
 			if (hero.getHolding () < hero.getCapacity ())
 				return true;
 		}
-		return false;
+		return true;
 	}
 
 	//Calls all party members attack function in the current room

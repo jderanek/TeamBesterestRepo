@@ -130,11 +130,11 @@ public abstract class BaseHero : BaseEntity {
         this.inCombat = value;
         if (this.inCombat)
         {
-            anim.SetBool("inCombat", true);
+            //anim.SetBool("inCombat", true);
         }
         else
         {
-            anim.SetBool("inCombat", false);
+            //anim.SetBool("inCombat", false);
         }
     }
 
