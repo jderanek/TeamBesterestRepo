@@ -260,6 +260,11 @@ public abstract class BaseMonster : BaseEntity {
     }
 
 	//Getters for most stats
+    public void setMaxHealth(int newHealth)
+    {
+        maxHealth = newHealth;
+    }
+
 	public int getCurHealth() {
 		return this.curHealth;
 	}
