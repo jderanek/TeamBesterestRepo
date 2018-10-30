@@ -151,6 +151,10 @@ public class GameManager : MonoBehaviour
     public string[] traits = {"HeavySleeper", "Procrastinator", "Opportunist", "Reckless", "Claustrophobic",
     "Cliquey", "Predator", "BrownNoser"};
 
+    public GameObject trainingMenu;
+    public GameObject trainingMenuSlot;
+    public int actionsRemaining;
+
     #endregion
 
     #region Initialization
@@ -1088,9 +1092,151 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
-    //Debug controls. Disable for full builds
-    /*private void Update()
+
+    public void ToggleTrainingMenu()
     {
+        int childNum = 0;
+        foreach (Transform child in trainingMenu.transform.GetChild(0).transform)
+        {
+            if (childNum != 0)
+            {
+                Destroy(child.gameObject);
+            }
+            childNum++;
+        }
+
+        trainingMenu.SetActive(!trainingMenu.activeSelf);
+        foreach(GameObject monster in monsterList)
+        {
+            actionsRemaining++;
+            GameObject slot = Instantiate(trainingMenuSlot, new Vector3(), Quaternion.identity);
+            slot.transform.GetChild(0).GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            slot.transform.GetChild(0).GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+            slot.transform.GetChild(0).GetComponent<RectTransform>().position = Vector3.zero;
+            slot.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(175f, 365f);
+
+            slot.transform.SetParent(trainingMenu.transform.GetChild(0));
+            slot.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = monster.name;
+            slot.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate 
+            {
+                monster.GetComponent<BaseMonster>().setDamage(monster.GetComponent<BaseMonster>().getBaseDamage() + 5);
+                monster.GetComponent<BaseMonster>().setCurDamage(monster.GetComponent<BaseMonster>().getBaseDamage() );
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Image>().color = Color.gray;
+                actionsRemaining--;
+                if (actionsRemaining == 0)
+                {
+                    StartCoroutine(CloseMenuButSlowly());
+                }
+            });
+            slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Button>().onClick.AddListener(delegate 
+            {
+                monster.GetComponent<BaseMonster>().SetSpeed(monster.GetComponent<BaseMonster>().GetSpeed() + 5);
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Image>().color = Color.gray;
+                actionsRemaining--;
+                if (actionsRemaining == 0)
+                {
+                    StartCoroutine(CloseMenuButSlowly());
+                }
+            });
+            slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Button>().onClick.AddListener(delegate 
+            {
+                monster.GetComponent<BaseMonster>().setMaxHealth(monster.GetComponent<BaseMonster>().getMaxHealth() + 5);
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Image>().color = Color.gray;
+                actionsRemaining--;
+                if (actionsRemaining == 0)
+                {
+                    StartCoroutine(CloseMenuButSlowly());
+                }
+            });
+            slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Button>().onClick.AddListener(delegate 
+            {
+                print("YOU FOOL");
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Image>().color = Color.gray;
+                actionsRemaining--;
+                if (actionsRemaining == 0)
+                {
+                    StartCoroutine(CloseMenuButSlowly());
+                }
+            });
+            slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Button>().onClick.AddListener(delegate 
+            {
+                slot.transform.GetChild(0).transform.GetChild(6).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(3).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(4).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(5).GetComponent<Image>().color = Color.gray;
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().enabled = false;
+                slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Image>().color = Color.gray;
+                selectedObjects.Add(monster);
+                trainingMenu.SetActive(false);
+                actionsRemaining--;
+                StartCoroutine(WaitForClick());                               
+            });
+        }
+    }
+
+    IEnumerator WaitForClick()
+    {
+        while(!Input.GetMouseButtonDown(1))
+        {
+            yield return null;
+        }
+        trainingMenu.SetActive(true);
+        if (actionsRemaining == 0)
+        {
+            StartCoroutine(CloseMenuButSlowly());
+        }
+    }
+
+    IEnumerator CloseMenuButSlowly()
+    {
+        yield return new WaitForSeconds(1.5f);
+        trainingMenu.SetActive(false);
+    }
+
+    //Debug controls. Disable for full builds
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            ToggleTrainingMenu();
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             GameObject[] newHero = new GameObject[1];
@@ -1139,5 +1285,5 @@ public class GameManager : MonoBehaviour
         {
             CreateNewResume(1);
         }
-    }*/
+    }
 }
