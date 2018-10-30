@@ -8795,7 +8795,7 @@ MonoBehaviour:
   possibleRooms:
   - {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   - {fileID: 1566428048444222, guid: 9f5a6c6a54624084782763b0cad1d35c, type: 2}
-  roomCount: 4
+  roomCount: 5
   monsterList: []
   breakRoomList: []
   dungeonList: []

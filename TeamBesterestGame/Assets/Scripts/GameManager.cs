@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
 	public Sprite closed;
 	public Sprite open;
 
+    //Public readonly stats meant for global settings
+    public readonly int StartingGold = 500;
+
     //Array stuff
     public GameObject[] possibleMonsters; //public to be assigned in editor
     private GameObject[][][] monsterSpawnList;
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     //TODO jagged array is faster, need to convert
     public GameObject[,] roomList; //public to be accessed by room script
-    public int roomCount = 1; //Number of rooms in dungeon
+    public int roomCount = 5; //Number of rooms in dungeon
 
     //WHOLE BUNCH OF FUCKING LISSSTTSSSTSTTST
     [HideInInspector]
@@ -104,6 +107,8 @@ public class GameManager : MonoBehaviour
     string phase = "Start";
     int enemiesToSpawn = 3;
     bool canSkip = true;
+    public readonly int maxInterviews = 3;
+    public int interviewsRemaining;
 
     //construction stuff
     //TODO getters and setters
@@ -155,8 +160,10 @@ public class GameManager : MonoBehaviour
         uiManager = this.GetComponent<UIManager>();
         constructionScript = this.GetComponent<ConstructionScript>();
         roomList = new GameObject[20, 20];
+        //monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv",
+        //    "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
         monsters = new CSVImporter("Monster_Stats_-_Sheet1.csv",
-            "https://docs.google.com/spreadsheets/d/e/2PACX-1vSBLCQyX37HLUhxOVtonHsR0S76lt2FzvDSeoAzPsB_TbQa43nR7pb6Ns5QeuaHwpIqun55JeEM8Llc/pub?gid=2027062354&single=true&output=csv");
+            "https://docs.google.com/spreadsheets/d/e/2PACX-1vRf-khjHX1-sbDBkzdjxO0950yZ8LKXV0Ke1LTXiKSuPAXtfjrMJ-LOXFa6_ZWHd_INvaXCnQxrFCy8/pub?gid=0&single=true&output=csv");
         monNames = new CSVImporter("NamesWIP - Sheet1.csv",
             "https://docs.google.com/spreadsheets/d/e/2PACX-1vS3YmSZDNM2JAfk0jTir8mO4tq2Z_6SF7hPDmQvovd2G9Ld_dfFcDARmPQ2kB2hKYFSuupbD4oB2m7f/pub?gid=1640444901&single=true&output=csv");
         heroStats = new CSVImporter("Heroes - Sheet1.csv",
@@ -186,7 +193,7 @@ public class GameManager : MonoBehaviour
         //Clears CSVImporter to save some space
         traitTagSheet = null;
 
-        currentCurrency = 300;
+        currentCurrency = StartingGold;
         uiManager.UpdateCurrency();
         uiManager.UpdateInfamy();
 
@@ -261,7 +268,7 @@ public class GameManager : MonoBehaviour
             }
 
         };
-        CreateNewResume(3);
+        //CreateNewResume(3);
 
         for (int i = 0; i < possibleHeroes.Length; i++)
         {
@@ -563,7 +570,25 @@ public class GameManager : MonoBehaviour
     }
 
 	public IEnumerator Play() {
-		while (true) {
+        //Applies friendly effect, and then loner effect
+        foreach (GameObject monster in monsterList)
+        {
+            BaseMonster monScript = monster.GetComponent<BaseMonster>();
+            foreach (BaseTrait trait in monScript.traits)
+            {
+                trait.OnPhaseStart(monScript);
+            }
+        }
+        foreach (GameObject monster in monsterList)
+        {
+            BaseMonster monScript = monster.GetComponent<BaseMonster>();
+            foreach (BaseTrait trait in monScript.traits)
+            {
+                trait.OnCombatStart(monScript);
+            }
+        }
+
+        while (true) {
 			yield return new WaitForSeconds(timeSpeed);
             if (CombatStep())
             {
@@ -588,6 +613,20 @@ public class GameManager : MonoBehaviour
                 phase = "Combat";
                 enemiesToSpawn = 3;
                 TogglePlay();
+                break;
+            case "Combat":
+                phase = "Interview";
+                ResetPhase();
+                break;
+            case "Interview":
+                canSkip = true;
+                phase = "Action";
+                //this.Interview();
+                break;
+            case "Action":
+                canSkip = true;
+                phase = "Combat";
+                //ToggleTrainingMenu();
                 break;
         }
     }
@@ -667,6 +706,26 @@ public class GameManager : MonoBehaviour
             return true;
 
         return false;
+    }
+
+    //Resets the dungeon to the original state, but keeps monster changes
+    public void ResetPhase()
+    {
+        currentCurrency = StartingGold;
+
+        foreach (GameObject monster in monsterList)
+        {
+            if (!monster.activeSelf)
+            {
+                monster.SetActive(true);
+            }
+
+            monster.GetComponent<BaseMonster>().Reset();
+        }
+
+        uiManager.hourSwivel.transform.rotation = Quaternion.Euler(Vector3.zero);
+
+        this.currentTime = 0;
     }
 
     //Master function for anything that changes when a time-unit passes

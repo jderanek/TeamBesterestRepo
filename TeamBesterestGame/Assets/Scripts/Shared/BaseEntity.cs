@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class BaseEntity : MonoBehaviour {
     int speed;
+    int baseSpeed;
 
     public void SetSpeed(int spd)
     {
@@ -12,6 +13,14 @@ public abstract class BaseEntity : MonoBehaviour {
     public int GetSpeed()
     {
         return this.speed;
+    }
+    public void SetBaseSpeed(int spd)
+    {
+        this.baseSpeed = spd;
+    }
+    public int GetBaseSpeed()
+    {
+        return baseSpeed;
     }
 
     public virtual void Attack() { }

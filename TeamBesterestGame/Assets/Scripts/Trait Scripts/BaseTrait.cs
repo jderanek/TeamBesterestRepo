@@ -13,7 +13,7 @@ public abstract class BaseTrait {
         this.tags.AddRange(tags);
     }
 
-    public abstract void OnDeath(BaseMonster monster);
+    public virtual void OnDeath(BaseMonster monster) { }
 
     public virtual int OnAttack(int dmg, BaseHero attacked, BaseMonster attacker = null) {
         return dmg;
@@ -24,17 +24,21 @@ public abstract class BaseTrait {
         return dmg;
     }
 
-    public abstract void OnSpawn();
+    public virtual void OnSpawn() { }
 
-    public abstract void OnKill(BaseHero killed = null);
+    public virtual void OnKill(BaseHero killed = null) { }
 
-    public abstract void OnHeroDeath(BaseHero dead = null);
+    public virtual void OnHeroDeath(BaseHero dead = null) { }
 
-    public virtual void OnCombatEnd(BaseMonster monster) {}
+    public virtual void OnCombatEnd(BaseMonster monster) { }
 
     public virtual void OnTimePass(BaseMonster monster) { }
 
     public virtual void OnHeroDamaged(int dmg, BaseHero hero, BaseMonster monster) { }
+
+    public virtual void OnPhaseStart(BaseMonster monster) { }
+
+    public virtual void OnCombatStart(BaseMonster monster) { }
 
     public List<PersonalityTags.Tag> GetTags()
     {

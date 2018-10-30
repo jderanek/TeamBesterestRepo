@@ -17,7 +17,7 @@ public abstract class BaseMonster : BaseEntity {
 	int baseHealth;
 	public int curDamage;
 	int damage;
-    public List<BaseTrait> traits;
+    public List<BaseTrait> traits = new List<BaseTrait>();
     public List<PersonalityTags.Tag> tags;
 	int salary;
     /*float stress;
@@ -77,8 +77,8 @@ public abstract class BaseMonster : BaseEntity {
         //this.curRoom = gameManager.spawnRoom;
 
         //Adds three traits to the trait list
-        traits = new List<BaseTrait>();
-        int rand;
+        /*traits = new List<BaseTrait>();
+        //int rand;
         List<string> traitList = new List<string>(gameManager.traits);
         for (int x = 0; x < 3; x++)
         {
@@ -98,7 +98,7 @@ public abstract class BaseMonster : BaseEntity {
             //revealedTraits.Add(traitList[rand]);
 
             traitList.RemoveAt(rand);
-        }
+        }*/
 
         //moved damage text here bc it was throwing error on pre-instantiated monsters
         damageText = this.gameObject.GetComponentInChildren<Text>();
@@ -147,7 +147,7 @@ public abstract class BaseMonster : BaseEntity {
 		this.type = type;
 		curRoom = gameManager.spawnRoom;
 		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
-        this.maxHealth *= gameManager.healthWeight;
+       /* this.maxHealth *= gameManager.healthWeight;
         switch((UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7)))
         {
             case 3: case 4:
@@ -169,12 +169,12 @@ public abstract class BaseMonster : BaseEntity {
                 this.maxHealth = (int)(this.maxHealth * 1.25f);
                 this.healthTier = 1;
                 break;
-        }
+        }*/
 		this.curHealth = this.maxHealth;
 		this.baseHealth = curHealth;
 
 		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
-        this.damage *= gameManager.attackWeight;
+        /*this.damage *= gameManager.attackWeight;
         switch((UnityEngine.Random.Range(1, 7)) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7))
         {
             case 3:
@@ -201,11 +201,11 @@ public abstract class BaseMonster : BaseEntity {
                 this.damage = (int)(this.damage * 1.25f);
                 this.attackTier = 1;
                 break;
-        }
+        }*/
         this.curDamage = damage;
 
         this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
-        this.armor *= gameManager.defenseWeight;
+        /*his.armor *= gameManager.defenseWeight;
         switch ((UnityEngine.Random.Range(1, 7)) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7))
         {
             case 3:
@@ -233,21 +233,22 @@ public abstract class BaseMonster : BaseEntity {
                 this.armor = (int)(this.armor * 1.25f);
                 this.defenseTier = 1;
                 break;
-        }
+        }*/
 
         this.threat = int.Parse(gameManager.monsters.data [type] ["Threat"]);
-		this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
-		this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
-		this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
-		this.archetype = gameManager.monsters.data [type] ["Archetype"];
+		//this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
+		//this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
+		//this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
+		//this.archetype = gameManager.monsters.data [type] ["Archetype"];
         this.SetSpeed(int.Parse(gameManager.monsters.data [type] ["Speed"]));
-        int num = UnityEngine.Random.Range (1, 25);
+        this.SetBaseSpeed(this.GetSpeed());
+        /*int num = UnityEngine.Random.Range (1, 25);
         bool useArchetype = (UnityEngine.Random.value > .3f);
         if (useArchetype)
     		this.monName = gameManager.monNames.data [num.ToString ()] [this.archetype];
         else
             this.monName = gameManager.monNames.data[num.ToString()]["Any"];
-        this.name = monName;
+        this.name = monName;*/
 
 		/*this.stress = 0f;
 		this.morale = .5f;
@@ -475,6 +476,17 @@ public abstract class BaseMonster : BaseEntity {
 			return;
 		}
 
+        /*foreach (BaseTrait trait in this.traits)
+        {
+            if (trait is Aggressive)
+            {
+                foreach (GameObject monObject in this.curRoom.GetComponent<BaseRoom>().roomMembers)
+                {
+
+                }
+            }
+        }*/
+
 		BaseHero heroScript;
 		BaseHero highThreat = null;
 		int threat = int.MinValue;
@@ -522,20 +534,27 @@ public abstract class BaseMonster : BaseEntity {
         //anim.SetTrigger("death");
         //anim.Play("hellhound_death");
 		curRoom.GetComponent<BaseRoom>().roomMembers.Remove(gameObject);
-        gameManager.monsterList.Remove(gameObject);
+        //gameManager.monsterList.Remove(gameObject);
 		if (curRoom.GetComponent<BaseRoom>().roomMembers.Count == 0)
 		{
 			curRoom.GetComponent<BaseRoom>().monsterInRoom = false;
 		}
-		//Destroy(gameObject);
-		gameObject.SetActive(false);
-        gameManager.AddToDepartment(gameObject, gameManager.deadMonsters);
-        uiManager.UpdateDepartments();
+        //Destroy(gameObject);
+        gameObject.SetActive(false);
+        //gameManager.AddToDepartment(gameObject, gameManager.deadMonsters);
+        //uiManager.UpdateDepartments();
 	}
 
-	//Applies personality effects to the monster, as well as other stat modifiers
-	//Called at end of each work day
-	public void DayHandler()
+    //Returns this monster to life and to the room they were in previously
+    public void Reset()
+    {
+        this.curHealth = this.maxHealth;
+        curRoom.GetComponent<BaseRoom>().roomMembers.Add(this.gameObject);
+    }
+
+    //Applies personality effects to the monster, as well as other stat modifiers
+    //Called at end of each work day
+    public void DayHandler()
     {
 
 	}
