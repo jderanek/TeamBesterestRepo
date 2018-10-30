@@ -618,8 +618,9 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                hellhoundImage.SetActive(true);
-                goblinImage.SetActive(false);
+                //hellhoundImage.SetActive(true);
+                //goblinImage.SetActive(false);
+                goblinImage.SetActive(true);
             }
             interviewsRemaining--;
             //this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
