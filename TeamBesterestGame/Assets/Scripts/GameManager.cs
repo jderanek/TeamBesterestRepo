@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     public bool paused = true;
     public int timePerDay = 24; //public to be edited it editor
     public int currentTime;
-    public float timeSpeed = 3.0f; //public to be edited in editor
+    public float timeSpeed = 1.0f; //public to be edited in editor
     public Text timeUnitText; //public to be assigned in editor
     public Text pauseButtonText; //public to be assigned in editor
     private bool dungeonEmpty = false;
@@ -687,7 +687,7 @@ public class GameManager : MonoBehaviour
         attackParties.RemoveAll(item => item.markedForDelete());
 
         //Spawns a party if needed. Should be changed to have a list of parties to spawn.
-        if (enemiesToSpawn > 0)
+        if (enemiesToSpawn > 0 && attackParties.Count < 2)
         {
             GameObject[] newHero = new GameObject[1];
             //grabs a hero from spawn set with equal weight. Maybe best way to affect spawn %s is to just add duplicates to spawn set?
