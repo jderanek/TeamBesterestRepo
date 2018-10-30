@@ -37,7 +37,7 @@ public abstract class BaseMonster : BaseEntity {
 	bool hasFought;
 	bool monsterGrabbed;
 	bool heroInRoom;
-	GameObject curRoom;
+	public GameObject curRoom;
 	Text damageText;
 	GameManager gameManager;
     UIManager uiManager;
@@ -145,7 +145,7 @@ public abstract class BaseMonster : BaseEntity {
 	public void AssignStats(string type) {
 		//gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
 		this.type = type;
-		curRoom = gameManager.spawnRoom;
+		//curRoom = gameManager.spawnRoom;
 		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
        /* this.maxHealth *= gameManager.healthWeight;
         switch((UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7)))
@@ -258,6 +258,16 @@ public abstract class BaseMonster : BaseEntity {
 		damageText = this.gameObject.GetComponentInChildren<Text>();
         damageText.text = this.getCurHealth().ToString() + "hp";
         anim = this.gameObject.GetComponentInChildren<Animator>();
+
+        //Type t = System.Type.GetType(gameManager.monsters.data[monName]["Trait"]);
+        //Debug.Log(t.ToString());
+        this.traits.Add(System.Activator.CreateInstance(
+           System.Type.GetType(gameManager.monsters.data[type]["Trait"])) as BaseTrait);
+
+        gameManager.monsterList.Add(this.gameObject);
+        this.getCurRoom().roomMembers.Add(this.gameObject);
+        this.getCurRoom().UpdateMonsters();
+        this.getCurRoom().monsterInRoom = true;
     }
 
 	//Getters for most stats

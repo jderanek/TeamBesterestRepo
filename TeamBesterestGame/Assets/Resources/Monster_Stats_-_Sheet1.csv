@@ -1,6 +1,6 @@
 Monster,Health,Attack,Defense,Speed,Threat,Trait,Notes
 Gabbin,50,10,0,15,3,Friendly,25% Bonus to Attack and Speed to other monsters in this room
-Goblenn,50,20,0,30,2,Cowardly,Runs away when alone
+Goblenn,50,20,0,30,2,Coward,Runs away when alone
 Nilbog,50,15,0,15,3,Loner,Attack and Speed is doubled when alone/ Halved when with other monsters
 Geoff,75,30,0,15,5,Aggressive,Fights other Aggressive monsters in room
 Jeff,75,30,0,15,5,Aggressive,Fights other Aggressive monsters in room

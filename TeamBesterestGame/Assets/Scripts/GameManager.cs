@@ -629,8 +629,8 @@ public class GameManager : MonoBehaviour
                 break;
             case "Action":
                 canSkip = true;
-                phase = "Combat";
-                //ToggleTrainingMenu();
+                phase = "Start";
+                ToggleTrainingMenu();
                 break;
         }
     }
