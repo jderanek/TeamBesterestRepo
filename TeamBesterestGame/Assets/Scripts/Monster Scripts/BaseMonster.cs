@@ -52,6 +52,7 @@ public abstract class BaseMonster : BaseEntity {
     public int healthTier;
     public int defenseTier;
     public int attackTier;
+    public int cNum;//made to cut corners temporarily get rid of this later
 
     public Animator anim; //= this.gameObject.GetComponentInChildren<Animator>();
 

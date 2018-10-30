@@ -155,6 +155,9 @@ public class GameManager : MonoBehaviour
     public GameObject trainingMenuSlot;
     public int actionsRemaining;
 
+    public GameObject interviewMenu;
+    public GameObject interviewMenuSlot;
+
     #endregion
 
     #region Initialization
@@ -521,29 +524,110 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+
+    public void ToggleInterviewMenu()
+    {
+
+        int childNum = 0;
+        foreach (Transform child in interviewMenu.transform.GetChild(0).transform)
+        {
+            if (childNum != 0)
+            {
+                Destroy(child.gameObject);
+            }
+            childNum++;
+        }
+        interviewsRemaining = 3;
+        interviewMenu.SetActive(!interviewMenu.activeSelf);
+        foreach (GameObject monster in monsterList)
+        {
+            
+            GameObject slot = Instantiate(interviewMenuSlot, new Vector3(), Quaternion.identity);
+            slot.transform.GetChild(0).GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            slot.transform.GetChild(0).GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+            slot.transform.GetChild(0).GetComponent<RectTransform>().position = Vector3.zero;
+            slot.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(175f, 365f);
+
+            slot.transform.SetParent(interviewMenu.transform.GetChild(0));
+            slot.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = monster.name;
+            slot.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
+            slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate {
+                this.Interview(monster);
+                interviewMenu.SetActive(false);
+            });
+
+        }
+    }
+
+    public Text q1Text;
+    public Text q2Text;
+    public Text q3Text;
+    public Text q4Text;
+
     //enables interview UI and hides other UI elements that are in the way
     public void Interview(GameObject monster)
     {
-        monsterInstance = monster; //might wanna use selectedObject for consistency - Nate
-        interviewing = true;
-        uiManager.ToggleMenu(0);
-
-        interviewCanvas.SetActive(true);
-        interviewResponse.SetActive(true);
-        //interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
-
-        if (monsterInstance.GetComponent<BaseMonster>().getType().Equals("Goblin"))
+        if (interviewsRemaining > 0)
         {
-            hellhoundImage.SetActive(false);
-            goblinImage.SetActive(true);
+            monsterInstance = monster; //might wanna use selectedObject for consistency - Nate
+            interviewing = true;
+            //uiManager.ToggleMenu(0);
+
+            interviewCanvas.SetActive(true);
+            interviewResponse.SetActive(true);
+            //interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
+
+            switch (monsterInstance.GetComponent<BaseMonster>().cNum)
+            {
+                case 1: //gabbin
+                    q1Text.text = "Can you tell me about Geoff?";
+                    q2Text.text = "Can you tell me about Jeff?";
+                    q3Text.text = "Can you tell me about Goblenn?";
+                    q4Text.text = "Can you tell me about Nilbog?";
+                    break;
+                case 2: //goblenn
+                    q1Text.text = "Can you tell me about Geoff?";
+                    q2Text.text = "Can you tell me about Jeff?";
+                    q3Text.text = "Can you tell me about Gabbin?";
+                    q4Text.text = "Can you tell me about Nilbog?";
+                    break;
+                case 3: //nilbog
+                    q1Text.text = "Can you tell me about Geoff?";
+                    q2Text.text = "Can you tell me about Jeff?";
+                    q3Text.text = "Can you tell me about Goblenn?";
+                    q4Text.text = "Can you tell me about Gabbin?";
+                    break;
+                case 4: //geoff
+                    q1Text.text = "Can you tell me about Gabbin?";
+                    q2Text.text = "Can you tell me about Goblenn?";
+                    q3Text.text = "Can you tell me about Nilbog?";
+                    q4Text.text = "Can you tell me about Jeff?";
+                    break;
+                case 5: //jeff
+                    q1Text.text = "Can you tell me about Gabbin?";
+                    q2Text.text = "Can you tell me about Goblenn?";
+                    q3Text.text = "Can you tell me about Nilbog?";
+                    q4Text.text = "Can you tell me about Geoff?";
+                    break;
+            }
+
+            if (monsterInstance.GetComponent<BaseMonster>().getType().Equals("Goblin"))
+            {
+                hellhoundImage.SetActive(false);
+                goblinImage.SetActive(true);
+            }
+            else
+            {
+                hellhoundImage.SetActive(true);
+                goblinImage.SetActive(false);
+            }
+            interviewsRemaining--;
+            //this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
         }
         else
         {
-            hellhoundImage.SetActive(true);
-            goblinImage.SetActive(false);
+            ToggleInterviewMenu();
         }
-
-        this.gameObject.GetComponentInChildren<InterviewManager>().UpdateQuestions();
     }
 
     #region Time Stuff
@@ -625,7 +709,8 @@ public class GameManager : MonoBehaviour
             case "Interview":
                 canSkip = true;
                 phase = "Action";
-                //this.Interview();
+                this.interviewsRemaining = 3;
+                ToggleInterviewMenu();
                 break;
             case "Action":
                 canSkip = true;
@@ -1235,6 +1320,10 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             ToggleTrainingMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            ToggleInterviewMenu();
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))

@@ -89,7 +89,7 @@ public class InterviewManager : MonoBehaviour {
         }
     }
 
-    public void Question1()
+    /*public void Question1()
     {
         GetResponse(q11);
         monsterInstance.GetComponent<BaseMonster>().RevealTraits();
@@ -114,7 +114,7 @@ public class InterviewManager : MonoBehaviour {
         gameManager.GetComponent<GameManager>().PassTime(1);
         UpdateTraitText();
         UpdateQuestions();
-    }
+    }*/
 
     //old interview questions
     /*
@@ -322,6 +322,134 @@ public class InterviewManager : MonoBehaviour {
 		q3Text.text = statQuestions[q31][q32];
 		q4Text.text = statQuestions[q41][q42];
 	}*/
+
+
+    public void StatQuestion()
+    {
+        switch (monsterInstance.GetComponent<BaseMonster>().cNum)
+        {
+            case 1: //gabbin
+                responseText.text = "Oh, I like to stay hidden. I don't fight that much myself. I prefer to cheer on my coworkers from the sidelines.";
+                break;
+            case 2: //goblenn
+                responseText.text = "I used to run for the Goblin Tech track team, so I can be pretty fast! It's kept me out of trouble when things get dire around here, let me tell you! And that's been a bit of a problem of late! Heard management picked up someone to help deal with that, though. What a sucker.";
+                break;
+            case 3: //nilbog
+                responseText.text = "People might look at me and see weakness. They will change their mind once the feel my fist on their face...";
+                break;
+            case 4: //geoff
+                responseText.text = "I kill things, and kill them hard. I tend to also be quite popular with the end of a hero's sword.";
+                break;
+            case 5: //jeff
+                responseText.text = "Just point me at the enemy, and watch me work. You can't go wrong with me";
+                break;
+        }
+    }
+    public void PersonalityQuestion()
+    {
+        switch (monsterInstance.GetComponent<BaseMonster>().cNum)
+        {
+            case 1: //gabbin
+                responseText.text = "I just love to talk to everyone! Also my favorite pasttime is cheering everyone else up!";
+                break;
+            case 2: //goblenn
+                responseText.text = "I tend to stay pretty low-profile around here. If someone wants to take the spotlight when humans show up, they can be my guest! As long as I'm not the center of attention... And there are clearly marked escape routes...";
+                break;
+            case 3: //nilbog
+                responseText.text = "I dont need the help of anyone here, they will just get in my way...";
+                break;
+            case 4: //geoff
+                responseText.text = "Fighting is what I do best. I tend to get a little heated at times so don't expect me to get along with everyone";
+                break;
+            case 5: //jeff
+                responseText.text = "I have been training my whole life. I live for battle! But I can sometimes get overzealous and bring some of the bloodlust off the battlefield. ";
+                break;
+        }
+    }
+    public void CoworkerQuestion1()
+        {
+            switch (monsterInstance.GetComponent<BaseMonster>().cNum)
+            {
+                case 1: //gabbin
+                    responseText.text = "Eh, Geoff seems kinda violent. That doesn't really match my happy go lucky attitude to be honest. We don't talk all that much.";
+                    break;
+                case 2: //goblenn
+                    responseText.text = "I've heard Geoff is one of the harder hitters around here.  Loves to fight, and I mean lives for it! I have heard they've got some beef with Jeff though. I definitely don't want to be around if that goes bad!  Judging by the looks they give each other during breaks...";
+                    break;
+                case 3: //nilbog
+                    responseText.text = "Geoff's not my type. Too often do I want to punch them over punching a hero";
+                    break;
+                case 4: //geoff
+                    responseText.text = "Gabbin? Seems like a decent guy. He will annoyingly talk your ear off though sometimes.";
+                    break;
+                case 5: //jeff
+                    responseText.text = "For the most part, Gabbin seems like a goody-two shoes. As long as he stays out of my way, we won't have any issues.";
+                    break;
+            }
+    }
+    public void CoworkerQuestion2()
+    {
+        switch (monsterInstance.GetComponent<BaseMonster>().cNum)
+        {
+            case 1: //gabbin
+                responseText.text = "Seems like Jeff can take a hit, but easy to anger. They don't when I try and start a conversation. They also get angry when Geoff talks to them.";
+                break;
+            case 2: //goblenn
+                responseText.text = "Jeff scares me. Someone who loves fighting that much has to have some sort of anger problem. I know I wouldn't want to be the one on the receiving end of that! They're probably handy to have around when the humans show up, though...";
+                break;
+            case 3: //nilbog
+                responseText.text = "Jeff is all out showboating. I cant work properly when someone is just flailing around.";
+                break;
+            case 4: //geoff
+                responseText.text = "Goblenn needs to goblin up and stop whining about everything. He always needs someone to bail him out of a jam.";
+                break;
+            case 5: //jeff
+                responseText.text = "I think Goblenn is in dire need of a wake up call. He can't just run away all the time when things get rough.";
+                break;
+        }
+    }
+    public void CoworkerQuestion3()
+    {
+        switch (monsterInstance.GetComponent<BaseMonster>().cNum)
+        {
+            case 1: //gabbin
+                responseText.text = "Seems like Goblenn doesn't like to be alone. They also run away from a fight if they ARE alone. I would love to talk to[Coward] but I don't see them around all that often.";
+                break;
+            case 2: //goblenn
+                responseText.text = "Oh, Gabbin? They're a treat to work with, but I don't know how good they are in a fight themself. They try to amp me up for work, but I usually prefer to place myself in the back of a fight anyway...";
+                break;
+            case 3: //nilbog
+                responseText.text = "Why do we need Goblenn? If they want to run away from a fight, let them... I wont need 'em.";
+                break;
+            case 4: //geoff
+                responseText.text = "That Nilbog dude is kinda weird. Everytime I try talking to him, he just clams up. Better to just live and let live I guess.";
+                break;
+            case 5: //jeff
+                responseText.text = "I always see Nilbog skulking around and never talking during meetings. Doesn't seem the type to have many friends";
+                break;
+        }
+    }
+    public void CoworkerQuestion4()
+    {
+        switch (monsterInstance.GetComponent<BaseMonster>().cNum)
+        {
+            case 1: //gabbin
+                responseText.text = "Nilbog kinda creeps me out. They never want to talk. It honestly brings down my whole mood.";
+                break;
+            case 2: //goblenn
+                responseText.text = "Nilbog tends to give most everyone the cold shoulder. The idea of fighting without any friends is inconceivable, but they seem to prefer it that way! What a weirdo!";
+                break;
+            case 3: //nilbog
+                responseText.text = "Gabbin seems like a nice guy. But seems like they're not cut out for this line of work. I'll be all you need.";
+                break;
+            case 4: //geoff
+                responseText.text = "Jeff is the worst man. 1 He has the same name as me. 2. He spells it wrong 3. I'm pretty sure he stole my sweetroll at lunch!";
+                break;
+            case 5: //jeff
+                responseText.text = "You had to bring up that guy huh? Geoff is a hotheaded idiot who apparently can't even spell his own name! If you talk to him after me, tell him the sweetroll was delicious.";
+                break;
+        }
+    }
 
     //replaces text on the stat questions
     public void UpdateQuestions()
@@ -638,6 +766,7 @@ public class InterviewManager : MonoBehaviour {
     {
         gameManager.GetComponent<GameManager>().monsterInstance = null;
         gameManager.GetComponent<GameManager>().interviewCanvas.SetActive(false);
+        gameManager.GetComponent<GameManager>().interviewMenu.SetActive(true);
 
         interviewResponse.SetActive(false);
         responseText.text = "Hello";
@@ -653,9 +782,10 @@ public class InterviewManager : MonoBehaviour {
             //monsterInstance.GetComponent<BaseMonster>().setApplicationLife(1);
             gameManager.GetComponent<GameManager>().applicationsList.Remove(monsterInstance);
             gameManager.GetComponent<UIManager>().UpdateApplications();
-            Destroy(monsterInstance);
+            //Destroy(monsterInstance);
+            gameManager.GetComponent<GameManager>().interviewMenu.SetActive(true);
             monsterInstance = null;
-            UpdateTraitText();
+            //UpdateTraitText();
         }
     }
 
