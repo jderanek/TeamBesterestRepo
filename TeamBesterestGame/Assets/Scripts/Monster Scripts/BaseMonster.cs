@@ -566,6 +566,7 @@ public abstract class BaseMonster : BaseEntity {
     {
         this.curHealth = this.maxHealth;
         curRoom.GetComponent<BaseRoom>().roomMembers.Add(this.gameObject);
+        this.getCurRoom().monsterInRoom = true;
     }
 
     //Applies personality effects to the monster, as well as other stat modifiers

@@ -686,7 +686,8 @@ public class GameManager : MonoBehaviour
             }
 			//PassTime (1);
 		}
-	}
+        TogglePlay();
+    }
 
     //Starts the next phase when the button is clicked.
     //Only works when canSkip is true
@@ -725,7 +726,6 @@ public class GameManager : MonoBehaviour
     //Returns true when all heroes have left or been killed
     public bool CombatStep()
     {
-        Debug.Log("Running Combat");
         //Changes time and moves clock
         dungeonEmpty = true;
         if (currentTime < 23)
