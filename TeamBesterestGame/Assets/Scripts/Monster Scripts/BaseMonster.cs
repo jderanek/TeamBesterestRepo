@@ -492,16 +492,28 @@ public abstract class BaseMonster : BaseEntity {
 			return;
 		}
 
-        /*foreach (BaseTrait trait in this.traits)
+        foreach (BaseTrait trait in this.traits)
         {
             if (trait is Aggressive)
             {
                 foreach (GameObject monObject in this.curRoom.GetComponent<BaseRoom>().roomMembers)
                 {
+                    if (monObject == this.gameObject)
+                        continue;
 
+                    BaseMonster monScript = monObject.GetComponent<BaseMonster>();
+                    foreach (BaseTrait trait2 in monScript.traits)
+                    {
+                        if (trait2 is Aggressive)
+                        {
+                            //this.getCurRoom().heroInRoom = true;
+                            monScript.TakeDamage(this.getCurDamage());
+                            return;
+                        }
+                    }
                 }
             }
-        }*/
+        }
 
 		BaseHero heroScript;
 		BaseHero highThreat = null;
