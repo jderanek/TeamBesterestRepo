@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
     private int days = 0;
 
     //Current phase of the game, as well as the enemies to spawn next combat
+    public Button phaseButton;
     string phase = "Start";
     int enemiesToSpawn = 3;
     bool canSkip = true;
@@ -164,6 +165,7 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        phaseButton.GetComponentInChildren<Text>().text = "Start";
         uiManager = this.GetComponent<UIManager>();
         constructionScript = this.GetComponent<ConstructionScript>();
         roomList = new GameObject[20, 20];
@@ -627,6 +629,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            phaseButton.gameObject.SetActive(true);
             ToggleInterviewMenu();
         }
     }
@@ -682,6 +685,7 @@ public class GameManager : MonoBehaviour
             if (CombatStep())
             {
                 canSkip = true;
+                phaseButton.GetComponentInChildren<Text>().text = "Reset Dungeon";
                 break;
             }
 			//PassTime (1);
@@ -703,21 +707,27 @@ public class GameManager : MonoBehaviour
                 phase = "Combat";
                 enemiesToSpawn = 3;
                 TogglePlay();
+                phaseButton.GetComponentInChildren<Text>().text = "Combat In Progress";
                 break;
             case "Combat":
                 phase = "Interview";
                 ResetPhase();
+                phaseButton.GetComponentInChildren<Text>().text = "Begin Interviews";
                 break;
             case "Interview":
                 canSkip = true;
                 phase = "Action";
                 this.interviewsRemaining = 3;
+                phaseButton.GetComponentInChildren<Text>().text = "Begin Interactions";
+                phaseButton.gameObject.SetActive(false);
                 ToggleInterviewMenu();
                 break;
             case "Action":
                 canSkip = true;
                 phase = "Start";
+                phaseButton.gameObject.SetActive(false);
                 ToggleTrainingMenu();
+                phaseButton.GetComponentInChildren<Text>().text = "Start Combat";
                 break;
         }
     }
@@ -1306,6 +1316,7 @@ public class GameManager : MonoBehaviour
         if (actionsRemaining == 0)
         {
             StartCoroutine(CloseMenuButSlowly());
+            phaseButton.gameObject.SetActive(true);
         }
     }
 
