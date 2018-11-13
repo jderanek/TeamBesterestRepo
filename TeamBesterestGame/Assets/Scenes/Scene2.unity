@@ -11274,6 +11274,7 @@ MonoBehaviour:
   interviewing: 0
   phaseButton: {fileID: 984771302}
   interviewsRemaining: 0
+  dialogueRunner: {fileID: 2082834031}
   inConstructionMode: 0
   interviewCanvas: {fileID: 1256514714}
   interviewResponse: {fileID: 369298016}
@@ -11299,10 +11300,6 @@ MonoBehaviour:
   interviewMenu: {fileID: 363629753}
   interviewMenuSlot: {fileID: 1314090393131026, guid: dc400bb281fda7e4b91f19935b19c601,
     type: 2}
-  q1Text: {fileID: 516112911}
-  q2Text: {fileID: 1259359501}
-  q3Text: {fileID: 132482220}
-  q4Text: {fileID: 682318248}
 --- !u!4 &1031783965
 Transform:
   m_ObjectHideFlags: 0

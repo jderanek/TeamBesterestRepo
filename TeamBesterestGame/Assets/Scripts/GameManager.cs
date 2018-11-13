@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
 {
@@ -110,6 +111,7 @@ public class GameManager : MonoBehaviour
     bool canSkip = true;
     public readonly int maxInterviews = 3;
     public int interviewsRemaining;
+    public GameObject dialogueRunner;
 
     //construction stuff
     //TODO getters and setters
@@ -554,17 +556,17 @@ public class GameManager : MonoBehaviour
             slot.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = monster.name;
             slot.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
             slot.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().onClick.AddListener(delegate {
-                this.Interview(monster);
+                this.Interview2();
                 interviewMenu.SetActive(false);
             });
 
         }
     }
 
-    public Text q1Text;
+    /*public Text q1Text;
     public Text q2Text;
     public Text q3Text;
-    public Text q4Text;
+    public Text q4Text;*/
 
     //enables interview UI and hides other UI elements that are in the way
     public void Interview(GameObject monster)
@@ -579,7 +581,7 @@ public class GameManager : MonoBehaviour
             interviewResponse.SetActive(true);
             //interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
 
-            switch (monsterInstance.GetComponent<BaseMonster>().cNum)
+            /*switch (monsterInstance.GetComponent<BaseMonster>().cNum)
             {
                 case 1: //gabbin
                     q1Text.text = "Can you tell me about Geoff?";
@@ -611,7 +613,7 @@ public class GameManager : MonoBehaviour
                     q3Text.text = "Can you tell me about Nilbog?";
                     q4Text.text = "Can you tell me about Geoff?";
                     break;
-            }
+            } */
 
             if (monsterInstance.GetComponent<BaseMonster>().getType().Equals("Goblin"))
             {
@@ -632,6 +634,12 @@ public class GameManager : MonoBehaviour
             phaseButton.gameObject.SetActive(true);
             ToggleInterviewMenu();
         }
+    }
+
+    public void Interview2()
+    {
+        interviewCanvas.SetActive(true);
+        dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
     }
 
     #region Time Stuff
