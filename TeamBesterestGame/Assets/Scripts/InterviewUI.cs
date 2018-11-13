@@ -3,8 +3,9 @@ using System.Collections;
 using UnityEngine.UI;
 using System.Text;
 using System.Collections.Generic;
+using Yarn.Unity;
 
-namespace Yarn.Unity.Example
+namespace Yarn.Unity
 {
     /// Displays dialogue lines to the player, and sends
     /// user choices back to the dialogue system.
