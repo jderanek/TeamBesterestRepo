@@ -541,7 +541,7 @@ public class GameManager : MonoBehaviour
             }
             childNum++;
         }
-        interviewsRemaining = 3;
+        interviewsRemaining = 1;
         interviewMenu.SetActive(!interviewMenu.activeSelf);
         foreach (GameObject monster in monsterList)
         {
@@ -613,7 +613,7 @@ public class GameManager : MonoBehaviour
                     q3Text.text = "Can you tell me about Nilbog?";
                     q4Text.text = "Can you tell me about Geoff?";
                     break;
-            } */
+            }*/
 
             if (monsterInstance.GetComponent<BaseMonster>().getType().Equals("Goblin"))
             {
@@ -632,14 +632,23 @@ public class GameManager : MonoBehaviour
         else
         {
             phaseButton.gameObject.SetActive(true);
-            ToggleInterviewMenu();
+            interviewMenu.SetActive(!interviewMenu.activeSelf);
         }
     }
 
     public void Interview2()
     {
-        interviewCanvas.SetActive(true);
-        dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
+        if (interviewsRemaining > 0)
+        {
+            interviewCanvas.SetActive(true);
+            dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
+            interviewsRemaining--;
+        }
+        else
+        {
+            phaseButton.gameObject.SetActive(true);
+            ToggleInterviewMenu();
+        }
     }
 
     #region Time Stuff
