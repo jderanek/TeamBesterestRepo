@@ -1,0 +1,136 @@
+title: Start
+tags: 
+colorID: 0
+position: 541,258
+---
+Hello.
+[[How are you?|how are you]] 
+===
+title: how are you
+tags: 
+colorID: 0
+position: 849,274
+---
+Geoff: I'm pissed off! Someone ate my scone and I wanna know who!!!
+[[Get over it. |get over it]]
+[[That sucks |that sucks]]
+[[I bet it was delicious, what a shame. |it was delicious]]
+[[Who did this? |who did this]]
+===
+title: it was delicious
+tags: 
+colorID: 0
+position: 1244,684
+---
+Geoff: grr...
+===
+title: get over it
+tags: 
+colorID: 0
+position: 1242,197
+---
+Geoff: Grr...
+===
+title: that sucks
+tags: 
+colorID: 0
+position: 1241,441
+---
+Geoff: That asshole Jeff did it!
+[[Why don't you fight him for it? |fight him]]
+[[Want me to talk to him for you? |ill talk to him]]
+[[What're you gonna do about it? |whatll you do]]
+[[Y'all believe this? |you guys believe this]]
+===
+title: who did this
+tags: 
+colorID: 0
+position: 852,577
+---
+Jeff: I did.
+Gabbin: I heard Jeff did it.
+Goblenn: Dont get me involved... I just work here.
+Nilbog: Jeff. I thought it was obvious.
+[[Sounds like Jeff did it |that sucks]]
+===
+title: fight him
+tags: 
+colorID: 0
+position: 1586,19
+---
+Geoff: You're right! I'm gonna kill that bastard!
+[[|im gonna kill him]]
+===
+title: ill talk to him
+tags: 
+colorID: 0
+position: 1813,324
+---
+Geoff: I can fight my own battles!
+[[Go for it. |fight him]]
+[[Please don't actually. |please dont]]
+===
+title: whatll you do
+tags: 
+colorID: 0
+position: 1619,573
+---
+Geoff: I was thinking about stomping his face in actually!
+[[Go for it. |fight him]]
+[[Please don't actually. |please dont]]
+===
+title: you guys believe this
+tags: 
+colorID: 0
+position: 1628,861
+---
+Jeff: Yes?
+Gabbin: Yes?
+Coward: Yes?
+Loner: Yes?
+[[|that sucks]]
+===
+title: please dont
+tags: 
+colorID: 0
+position: 2079,538
+---
+Geoff: Why shouldn't I
+[[You know what never mind |im gonna kill him]]
+[[Because you'll lose |youll lose]]
+[[Because sharing is caring. |sharing is caring]]
+[[why shouldn't he? |why shouldnt he]]
+===
+title: im gonna kill him
+tags: 
+colorID: 0
+position: 2004,63
+---
+Geoff walks away with killing intent
+===
+title: youll lose
+tags: 
+colorID: 0
+position: 2384,445
+---
+Geoff: I'll show you!
+[[|im gonna kill him]]
+===
+title: sharing is caring
+tags: 
+colorID: 0
+position: 2383,676
+---
+Geoff: Maybe if it was voluntary...
+===
+title: why shouldnt he
+tags: 
+colorID: 0
+position: 2384,918
+---
+Jeff: Bring it punk!
+Gabbin: Because shouldn't everyone just be friends!
+Goblenn: Fighting is scary...
+Nilbog: they should save this energy for the humans.
+[[|please dont]]
+===

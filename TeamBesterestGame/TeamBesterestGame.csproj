@@ -326,6 +326,8 @@
     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\StablePriorityQueue.cs" />
     <Compile Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\Priority Queue\StablePriorityQueueNode.cs" />
     <Compile Include="Assets\Scripts\InterviewManager.cs" />
+    <Compile Include="Assets\Scripts\InterviewUI.cs" />
+    <Compile Include="Assets\Scripts\InterviewVariableStorage.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\BaseMonster.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\BestialMosnter.cs" />
     <Compile Include="Assets\Scripts\Monster Scripts\DemonMonster.cs" />
@@ -531,6 +533,7 @@
     <Compile Include="Assets\YarnSpinner\Examples\DemoScripts\SpriteSwitcher.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Resources\Yarn Files\Jeff_Dialogue_1.yarn.txt" />
     <None Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\LICENSE.txt" />
     <None Include="Assets\Sprites\2D Pixel Top-Down Dungeon Tileset\How to use Tilesets.txt" />
     <None Include="Assets\Sprites\2D Pixel Top-Down Dungeon Tileset\Read_Me.txt" />
