@@ -251,7 +251,7 @@ public abstract class BaseParty {
 			toMove = this.FindNextRoom ();
 
 			//Loops until there is a room with no hero, or there are no rooms
-			while (toMove != null && toMove.heroInRoom) {
+			while (toMove != null && (toMove.heroInRoom && toMove.roomMembers.Count > 0)) {
 				curRoom = toMove;
 				toMove = this.FindNextRoom ();
 			}
@@ -283,7 +283,7 @@ public abstract class BaseParty {
 			toMove = this.Backtrack ();
 
 			//Loops until there is a room with no hero, or there are no rooms
-			while (toMove != null && toMove.heroInRoom)
+			while (toMove != null && (toMove.heroInRoom && toMove.roomMembers.Count > 0))
 				toMove = this.Backtrack ();
 
 			if (toMove == null || this.curRoom == gameManager.spawnRoom.GetComponent<BaseRoom> ())

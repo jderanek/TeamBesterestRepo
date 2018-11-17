@@ -800,7 +800,7 @@ public class GameManager : MonoBehaviour
         attackParties.RemoveAll(item => item.markedForDelete());
 
         //Spawns a party if needed. Should be changed to have a list of parties to spawn.
-        if (enemiesToSpawn > 0 && attackParties.Count < 2)
+        if (enemiesToSpawn > 0)
         {
             GameObject[] newHero = new GameObject[1];
             //grabs a hero from spawn set with equal weight. Maybe best way to affect spawn %s is to just add duplicates to spawn set?
