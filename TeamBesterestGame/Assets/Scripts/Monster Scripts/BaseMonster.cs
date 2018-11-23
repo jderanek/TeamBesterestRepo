@@ -616,4 +616,11 @@ public abstract class BaseMonster : BaseEntity {
             }
         }
     }
+
+    //Clears list of previous traits, and adds the new trait
+    public void SwapTrait(string toSwap) {
+        this.traits.Clear();
+        this.traits.Add(System.Activator.CreateInstance(
+           System.Type.GetType(toSwap)) as BaseTrait);
+    }
 }
