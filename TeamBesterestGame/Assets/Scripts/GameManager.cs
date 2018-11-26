@@ -532,7 +532,7 @@ public class GameManager : MonoBehaviour
     public void ToggleInterviewMenu()
     {
 
-        int childNum = 0;
+        /*int childNum = 0;
         foreach (Transform child in interviewMenu.transform.GetChild(0).transform)
         {
             if (childNum != 0)
@@ -560,7 +560,7 @@ public class GameManager : MonoBehaviour
                 interviewMenu.SetActive(false);
             });
 
-        }
+        }*/
     }
 
     /*public Text q1Text;
