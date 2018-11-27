@@ -1,0 +1,144 @@
+title: Geoff1Base
+tags: 
+colorID: 0
+position: 108,336
+---
+Geoff: ...Hello, I'm Geoff.
+Geoff: ...and I'm mad that my scone got eaten!
+Geoff: What kind of jerk does that!
+[[Shake it off, we have actual work to talk about here.|Geoff11]]
+[[I'm sorry to hear that... Geoff?|Geoff12]]
+[[A shame, I bet it was a darned good scone too.|Geoff13]]
+[[(At all) Who did this?|Geoff14]]
+===
+title: Geoff11
+tags: 
+colorID: 0
+position: 312,36
+---
+Geoff: ...Actual work?
+Geoff: There's nothing in this world more important to me than that scone!
+Geoff: And it's gone FOREVER!
+Geoff: Jeff is gonna pay for that!
+//Mood kill
+//Enraged?
+//Unlock tree Jeff2: about that scone
+===
+title: Geoff12
+tags: 
+colorID: 0
+position: 380,341
+---
+Geoff: Something needs to be done about Jeff!
+Geoff: That guy's a real menace!
+[[Nothing a little fisticuffs can't fix!|Geoff121]]
+[[Want me to talk to Jeff for you?|Geoff122]]
+[[What do you plan on doing about it?|Geoff123]]
+[[(At all) Did Jeff really do this?|Geoff124]]
+===
+title: Geoff121
+tags: 
+colorID: 0
+position: 650,91
+---
+Geoff: That's probably the smartest thing you've said since you walked in here!
+//Mood Kill
+//Unlock Jeff2: about the scone
+===
+title: Geoff122
+tags: 
+colorID: 0
+position: 634,337
+---
+//Mood hit
+Geoff: ...I can fight my own battles, but thanks, I guess...
+[[I'd actually prefer that you didn't. Literally speaking, that is.|Geoff1221]]
+[[Go for it!|Geoff121]]
+===
+title: Geoff1221
+tags: 
+colorID: 0
+position: 856,334
+---
+Geoff: Why not?
+Geoff: Jeff is a dirty, scone-eating tyrant!
+Geoff: He HAS to be stopped!
+[[*sigh* Just make sure it's dealt with before the heroes arrive, ok?|Geoff12211]]
+[[Because you're strengthening the bonds of your coworkers by sharing food with each other!|Geoff12212]]
+[[I'd rather we not be short-staffed, this dungeon isn't doing so hot as is.|Geoff12213]]
+===
+title: Geoff12211
+tags: 
+colorID: 0
+position: 1074,126
+---
+Geoff: I'll show him, just you wait!
+//Mood kill
+//Enraged?
+//Unlock Jeff2: about that scone
+===
+title: Geoff12212
+tags: 
+colorID: 0
+position: 1076,336
+---
+Geoff: It'd be one thing if it were voluntary...
+Geoff: He's just stealing!
+Geoff: And everyone knows scones are my favorite...
+//Unlocks Jeff2: about that scone
+===
+title: Geoff12213
+tags: 
+colorID: 0
+position: 1076,557
+---
+//Mood Hit
+Geoff: Fine...
+Geoff: ...but if you don't do anything about it, I will!
+//Unlock Jeff2: about that scone
+===
+title: Geoff123
+tags: 
+colorID: 0
+position: 631,587
+---
+Geoff: I planned on stomping his face in later, actually.
+Geoff: It'll be a nice workout before the Heroes show up!
+[[As entertaining as that'd be, as a temporary HR rep, I'd prefer if you didn't.|Geoff1221]]
+[[Go for it!|Geoff12211]]
+===
+title: Geoff124
+tags: 
+colorID: 0
+position: 629,844
+---
+Goblenn: I believe it.
+Jeff: Yes.
+Gabbin: Said it himself!
+Nilbog: Of course.
+//Unlock Jeff2: about that scone
+===
+title: Geoff13
+tags: 
+colorID: 0
+position: 289,709
+---
+//Mood hit
+Geoff: Wow.
+Geoff: Thanks for the sympathies there, buddy.
+[[If it really means that much to you, you can confront him about it.|Geoff121]]
+[[Want me to talk to Jeff for you?|Geoff122]]
+[[What do you plan on doing about it?|Geoff123]]
+[[(At all) Did Jeff *really* do this?|Geoff124]]
+===
+title: Geoff14
+tags: 
+colorID: 0
+position: 284,984
+---
+Goblenn: ...I th-think Jeff ate it?
+Jeff: Yep!
+Gabbin: Heard it from the goblin himself!
+Nilbog: Sounds about right.
+//Unlocks Jeff2: about that scone
+===

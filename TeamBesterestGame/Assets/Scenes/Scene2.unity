@@ -292,12 +292,12 @@ MonoBehaviour:
   continuePrompt: {fileID: 0}
   textSpeed: 0.025
   optionButtons:
-  - {fileID: 1670627660}
-  - {fileID: 386306949}
-  - {fileID: 1111984984}
-  - {fileID: 1663072202}
-  - {fileID: 964969974}
-  - {fileID: 256175004}
+  - {fileID: 1681591161}
+  - {fileID: 202467217}
+  - {fileID: 1963752913}
+  - {fileID: 1853014271}
+  - {fileID: 2051826531}
+  - {fileID: 2139380147}
   gameControlsContainer: {fileID: 0}
 --- !u!114 &5239700
 MonoBehaviour:
@@ -311,13 +311,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceText:
-  - {fileID: 4900000, guid: 092d5f8781e843a4e9ed56ae5f6c5a45, type: 3}
+  - {fileID: 4900000, guid: 7174db6f821d18e4d809b5fb27ccac75, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 5239698}
   dialogueUI: {fileID: 5239699}
-  startNode: Start
+  startNode: Geoff1Base
   startAutomatically: 0
   automaticCommands: 1
 --- !u!4 &5239701
@@ -600,12 +600,12 @@ MonoBehaviour:
   continuePrompt: {fileID: 0}
   textSpeed: 0.025
   optionButtons:
-  - {fileID: 1670627660}
-  - {fileID: 386306949}
-  - {fileID: 1111984984}
-  - {fileID: 1663072202}
-  - {fileID: 964969974}
-  - {fileID: 256175004}
+  - {fileID: 1039311461}
+  - {fileID: 1148004525}
+  - {fileID: 825474208}
+  - {fileID: 637157688}
+  - {fileID: 1878310173}
+  - {fileID: 1571043631}
   gameControlsContainer: {fileID: 0}
 --- !u!114 &41062057
 MonoBehaviour:
@@ -619,13 +619,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceText:
-  - {fileID: 4900000, guid: 092d5f8781e843a4e9ed56ae5f6c5a45, type: 3}
+  - {fileID: 4900000, guid: 57f2fd0e2e9c0d24cb3854a285f2cc3e, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 41062055}
   dialogueUI: {fileID: 41062056}
-  startNode: Start
+  startNode: Coward1Base
   startAutomatically: 0
   automaticCommands: 1
 --- !u!4 &41062058
@@ -2627,7 +2627,7 @@ GameObject:
   - component: {fileID: 202467218}
   - component: {fileID: 202467217}
   m_Layer: 5
-  m_Name: Option2
+  m_Name: geoffOption2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3051,7 +3051,17 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 895976259}
+      objectReference: {fileID: 895976262}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc400bb281fda7e4b91f19935b19c601, type: 2}
   m_IsPrefabParent: 0
@@ -3967,7 +3977,7 @@ GameObject:
   - component: {fileID: 256175005}
   - component: {fileID: 256175004}
   m_Layer: 5
-  m_Name: Option6
+  m_Name: jeffOption6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5698,7 +5708,7 @@ GameObject:
   - component: {fileID: 386306950}
   - component: {fileID: 386306949}
   m_Layer: 5
-  m_Name: Option2
+  m_Name: jeffOption2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7938,12 +7948,12 @@ MonoBehaviour:
   continuePrompt: {fileID: 0}
   textSpeed: 0.025
   optionButtons:
-  - {fileID: 1670627660}
-  - {fileID: 386306949}
-  - {fileID: 1111984984}
-  - {fileID: 1663072202}
-  - {fileID: 964969974}
-  - {fileID: 256175004}
+  - {fileID: 813791960}
+  - {fileID: 1204288451}
+  - {fileID: 1101915907}
+  - {fileID: 1651268507}
+  - {fileID: 1364065098}
+  - {fileID: 839498538}
   gameControlsContainer: {fileID: 0}
 --- !u!114 &594745392
 MonoBehaviour:
@@ -8265,7 +8275,7 @@ GameObject:
   - component: {fileID: 637157689}
   - component: {fileID: 637157688}
   m_Layer: 5
-  m_Name: Option4
+  m_Name: goblennOption4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10772,7 +10782,7 @@ GameObject:
   - component: {fileID: 813791961}
   - component: {fileID: 813791960}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: nilbogOption1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10894,7 +10904,7 @@ GameObject:
   - component: {fileID: 825474209}
   - component: {fileID: 825474208}
   m_Layer: 5
-  m_Name: Option3
+  m_Name: goblennOption3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11164,7 +11174,7 @@ GameObject:
   - component: {fileID: 839498539}
   - component: {fileID: 839498538}
   m_Layer: 5
-  m_Name: Option6
+  m_Name: nilbogOption6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12717,7 +12727,7 @@ GameObject:
   - component: {fileID: 964969975}
   - component: {fileID: 964969974}
   m_Layer: 5
-  m_Name: Option5
+  m_Name: jeffOption5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13047,7 +13057,17 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5239697}
+      objectReference: {fileID: 5239700}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc400bb281fda7e4b91f19935b19c601, type: 2}
   m_IsPrefabParent: 0
@@ -13836,7 +13856,7 @@ GameObject:
   - component: {fileID: 1039311462}
   - component: {fileID: 1039311461}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: goblennOption1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14514,7 +14534,7 @@ GameObject:
   - component: {fileID: 1101915908}
   - component: {fileID: 1101915907}
   m_Layer: 5
-  m_Name: Option3
+  m_Name: nilbogOption3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14682,7 +14702,7 @@ GameObject:
   - component: {fileID: 1111984985}
   - component: {fileID: 1111984984}
   m_Layer: 5
-  m_Name: Option3
+  m_Name: jeffOption3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15214,7 +15234,7 @@ GameObject:
   - component: {fileID: 1148004526}
   - component: {fileID: 1148004525}
   m_Layer: 5
-  m_Name: Option2
+  m_Name: goblennOption2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15845,7 +15865,7 @@ GameObject:
   - component: {fileID: 1204288452}
   - component: {fileID: 1204288451}
   m_Layer: 5
-  m_Name: Option2
+  m_Name: nilbogOption2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17786,7 +17806,7 @@ GameObject:
   - component: {fileID: 1364065099}
   - component: {fileID: 1364065098}
   m_Layer: 5
-  m_Name: Option5
+  m_Name: nilbogOption5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18957,7 +18977,17 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 41062054}
+      objectReference: {fileID: 41062057}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc400bb281fda7e4b91f19935b19c601, type: 2}
   m_IsPrefabParent: 0
@@ -20257,7 +20287,7 @@ GameObject:
   - component: {fileID: 1571043632}
   - component: {fileID: 1571043631}
   m_Layer: 5
-  m_Name: Option6
+  m_Name: goblennOption6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20993,7 +21023,7 @@ GameObject:
   - component: {fileID: 1651268508}
   - component: {fileID: 1651268507}
   m_Layer: 5
-  m_Name: Option4
+  m_Name: nilbogOption4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21115,7 +21145,7 @@ GameObject:
   - component: {fileID: 1663072203}
   - component: {fileID: 1663072202}
   m_Layer: 5
-  m_Name: Option4
+  m_Name: jeffOption4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21399,7 +21429,7 @@ GameObject:
   - component: {fileID: 1670627661}
   - component: {fileID: 1670627660}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: jeffOption1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21812,7 +21842,7 @@ GameObject:
   - component: {fileID: 1681591162}
   - component: {fileID: 1681591161}
   m_Layer: 5
-  m_Name: Option1
+  m_Name: geoffOption1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22938,7 +22968,7 @@ GameObject:
   - component: {fileID: 1853014272}
   - component: {fileID: 1853014271}
   m_Layer: 5
-  m_Name: Option4
+  m_Name: geoffOption4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23060,7 +23090,7 @@ GameObject:
   - component: {fileID: 1878310174}
   - component: {fileID: 1878310173}
   m_Layer: 5
-  m_Name: Option5
+  m_Name: goblennOption5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23708,7 +23738,7 @@ GameObject:
   - component: {fileID: 1963752914}
   - component: {fileID: 1963752913}
   m_Layer: 5
-  m_Name: Option3
+  m_Name: geoffOption3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24193,7 +24223,7 @@ GameObject:
   - component: {fileID: 2051826532}
   - component: {fileID: 2051826531}
   m_Layer: 5
-  m_Name: Option5
+  m_Name: geoffOption5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24744,7 +24774,7 @@ GameObject:
   - component: {fileID: 2139380148}
   - component: {fileID: 2139380147}
   m_Layer: 5
-  m_Name: Option6
+  m_Name: geoffOption6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

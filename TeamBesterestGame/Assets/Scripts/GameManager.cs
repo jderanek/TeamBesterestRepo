@@ -742,19 +742,19 @@ public class GameManager : MonoBehaviour
                 break;
             case "Interview":
                 canSkip = true;
-                phase = "Action";
+                phase = "Start";
                 this.interviewsRemaining = 3;
-                phaseButton.GetComponentInChildren<Text>().text = "Begin Interactions";
+                phaseButton.GetComponentInChildren<Text>().text = "Start Combat";
                 //phaseButton.gameObject.SetActive(false);
                 ToggleInterviewMenu();
                 break;
-            case "Action":
+            /*case "Action":
                 canSkip = true;
                 phase = "Start";
-                phaseButton.gameObject.SetActive(false);
+                //phaseButton.gameObject.SetActive(false);
                 ToggleTrainingMenu();
                 phaseButton.GetComponentInChildren<Text>().text = "Start Combat";
-                break;
+                break;*/
         }
     }
 
