@@ -561,6 +561,14 @@ public class GameManager : MonoBehaviour
             });
 
         }*/
+        if (interviewing)
+        {
+            interviewCanvas.SetActive(!interviewCanvas.activeSelf);
+        }
+        else
+        {
+            interviewCanvas.SetActive(!interviewCanvas.activeSelf);
+        }
     }
 
     /*public Text q1Text;
@@ -642,6 +650,7 @@ public class GameManager : MonoBehaviour
         {
             interviewCanvas.SetActive(true);
             dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
+            interviewing = true;
             interviewsRemaining--;
         }
         else
@@ -736,7 +745,7 @@ public class GameManager : MonoBehaviour
                 phase = "Action";
                 this.interviewsRemaining = 3;
                 phaseButton.GetComponentInChildren<Text>().text = "Begin Interactions";
-                phaseButton.gameObject.SetActive(false);
+                //phaseButton.gameObject.SetActive(false);
                 ToggleInterviewMenu();
                 break;
             case "Action":

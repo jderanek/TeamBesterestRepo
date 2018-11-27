@@ -1,0 +1,238 @@
+title: Start
+tags: 
+colorID: 0
+position: 540,260
+---
+Nilbog: ...
+[[How are you?|silence]]
+===
+title: silence
+tags: 
+colorID: 0
+position: 856,167
+---
+Nilbog: ...
+[[Looks like someone's ignoring me here.|silence2]]
+[[(Confused Stare) ... |silence2]]
+[[(Intentful Stare) ... |response1]]
+===
+title: silence2
+tags: 
+colorID: 0
+position: 1227,69
+---
+Nilbog: ...
+[[We're gonna have some fun here.|response2]]
+[[...|response2]]
+[[Is there a reason that you're ignoring me?|justfeellikeit]]
+===
+title: response1
+tags: 
+colorID: 0
+position: 1206,387
+---
+Nilbog: Hmph ...
+[[We're gonna have some fun here.|response2]]
+[[...|response2]]
+[[Is there a reason that you're ignoring me?|justfeellikeit]]
+===
+title: response2
+tags: 
+colorID: 0
+position: 1646,13
+---
+Nilbog: *sigh*
+Nilbog: Okay, lets get this started...
+[[Sure, go right ahead, seems like you have something to say.|goahead]]
+[[There you go buddy. You can open up to me.|buddy]]
+===
+title: justfeellikeit
+tags: 
+colorID: 0
+position: 1626,403
+---
+Nilbog: I just feel like it.
+[[And why is that?|whyisthat]]
+[[Do you have any reasons, or are you just trying to keep an image?|image]]
+[[Fine. Be that way.|bethatway]]
+===
+title: bethatway
+tags: 
+colorID: 0
+position: 1114,729
+---
+Nilbog: ...
+===
+title: whyisthat
+tags: 
+colorID: 0
+position: 1835,740
+---
+Nilbogg: Why do you want to know?
+[[At this point, I don't even know myself.|idk]]
+===
+title: image
+tags: 
+colorID: 0
+position: 1500,747
+---
+Nilbog: And what image do you think that is?
+[[Someone who doesn't need anyone's help.|doesntneedhelp]]
+[[Your're the type of person who says three lines per episode, but is somehow a main character.|mc]]
+===
+title: mc
+tags: 
+colorID: 0
+position: 1318,1019
+---
+Nilbog gives you a confused look.
+Nilbog: What is that supposed to mean?
+[[You want to be noticed, but don't try to.|whydat]]
+[[You try to be an enigma, where no one knows who you really are.|imjustquiet]]
+[[You never get the girl.|what]]
+===
+title: doesntneedhelp
+tags: 
+colorID: 0
+position: 1604,1035
+---
+Nilbog: And what if I don't need any of these buffoons for help?
+[[You do though.|youdothough]]
+===
+title: idk
+tags: 
+colorID: 0
+position: 1952,1068
+---
+Nilbog: You do though.
+[[What do you mean?|whatdoyoumean]]
+===
+title: whatdoyoumean
+tags: 
+colorID: 0
+position: 1959,1325
+---
+[[The only reason you are here, is because you know they need your help, just as much as you need them, work or not.|needthem]]
+===
+title: youdothough
+tags: 
+colorID: 0
+position: 1593,1306
+---
+Nilbog: why do you say that?
+[[The only reason you are here, is because you know they need your help, just as much as you need them, work or not.|needthem]]
+===
+title: needthem
+tags: 
+colorID: 0
+position: 1853,1714
+---
+Nilbog: Maybe...
+Nilbog: We'll se about it this coming shift...
+===
+title: whydat
+tags: 
+colorID: 0
+position: 987,1105
+---
+Nilbog: Why do you say that?
+[[Because once given the chance, I know there is a raging demon waiting to be released...|ragingdemon]]
+===
+title: ragingdemon
+tags: 
+colorID: 0
+position: 656,1166
+---
+Nilbog: Weird way to say it, but who knows...
+Nilbog: Maybe this demon just needed to hear that...
+===
+title: imjustquiet
+tags: 
+colorID: 0
+position: 812,1453
+---
+Nilbog: Maybe I'm just a queit person.
+[[Maybe you tell yourself that but wish you weren't.|needthem]]
+[[Maybe, once given the chance, I know there is a raging demon waiting to be released...|ragingdemon]]
+===
+title: what
+tags: 
+colorID: 0
+position: 1286,1297
+---
+Nilbog looks confused and angry.
+Nilbog: What does that have to do with anything?
+[[What do you think it means?|silence3]]
+[[Think about it.|no]]
+===
+title: no
+tags: 
+colorID: 0
+position: 1455,1755
+---
+Nilbog: No.
+===
+title: silence3
+tags: 
+colorID: 0
+position: 1147,1761
+---
+Nilbog: ...
+===
+title: buddy
+tags: 
+colorID: 0
+position: 1988,246
+---
+Nilbog gives you a blank stare before walking away.
+===
+title: goahead
+tags: 
+colorID: 0
+position: 1987,-5
+---
+Nilbog: Well I'm not sure if I like you, but you seem more useful than these so-called "Goblins."
+[[What makes me useful?|imuseful]]
+[[Why do you view your co-workers this way?|coworkers]]
+[[Well, I'm not a goblin so I'm not sure if that's a compliment or not.|youdecide]]
+===
+title: imuseful
+tags: 
+colorID: 0
+position: 2448,-245
+---
+Nilbog: You're unrelenting.
+Nilbog: You just don't give up, and that makes you useful.
+[[How do you know your coworkers aren't as unrelenting as me?|agg]]
+===
+title: coworkers
+tags: 
+colorID: 0
+position: 2446,35
+---
+Nilbog: Not sure if you've seen these guys in action before, but we don't really "get the job done"
+[[You wouldn't even know...|agg]]
+===
+title: youdecide
+tags: 
+colorID: 0
+position: 2300,282
+---
+Nilbog: I'll let you decide.
+[[Compliment it is then.|bingo]]
+[[Sounds like an insult.|silence3]]
+===
+title: Bingo
+tags: 
+colorID: 0
+position: 2581,278
+---
+Nilbog: Bingo...
+===
+title: agg
+tags: 
+colorID: 0
+position: 2783,-88
+---
+Nilbog: Maybe one day you'll get to experience this mess of a dungeon.
+===
