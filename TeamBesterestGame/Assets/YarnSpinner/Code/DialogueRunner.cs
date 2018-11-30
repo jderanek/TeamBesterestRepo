@@ -65,6 +65,10 @@ namespace Yarn.Unity
         /// Which node to start from
         public string startNode = Yarn.Dialogue.DEFAULT_START;
 
+        //Determines what dialogue voice is used
+
+        public int dialogueVoice = 1;
+
         /// Whether we should start dialogue when the scene starts
         public bool startAutomatically = true;
 
@@ -72,6 +76,8 @@ namespace Yarn.Unity
         public bool isDialogueRunning { get; private set; }
 
         public bool automaticCommands = true;
+
+        public int goblinID;
 
         /// Our conversation engine
         /** Automatically created on first access
@@ -192,6 +198,7 @@ namespace Yarn.Unity
 
         /// Start the dialogue
         public void StartDialogue () {
+            SoundManager.goblinToTalk = this.goblinID;
             StartDialogue(startNode);
         }
 

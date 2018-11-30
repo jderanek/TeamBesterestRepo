@@ -212,6 +212,424 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" ShortID="513608638">
+					<PropertyList>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>7</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>500</Value>
+							</ValueList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="nick" ID="{EFD85D62-0603-42FB-92F3-B817618D1C7F}" ShortID="1036306342">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="eeeh" ID="{63390E4A-45D1-48F0-B36A-BAB3E800CAF2}" ShortID="129915420">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="eeeh" ID="{2645BB03-1126-4B73-96BD-0DEAB6F63919}" ShortID="108524988">
+											<Language>SFX</Language>
+											<AudioFile>nick\eeeh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="eeeh" ID="{2645BB03-1126-4B73-96BD-0DEAB6F63919}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="eneh" ID="{E77D04E6-31CE-4F15-95AE-C036FEA75095}" ShortID="228163914">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="eneh" ID="{3324D878-DB5A-4D70-8A44-1430CA7A4D25}" ShortID="760017874">
+											<Language>SFX</Language>
+											<AudioFile>nick\eneh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="eneh" ID="{3324D878-DB5A-4D70-8A44-1430CA7A4D25}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="gargle" ID="{90050BA7-4E53-4112-A245-38E73BA74774}" ShortID="720976597">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="gargle" ID="{FA9A42A1-8F89-4520-8491-FBBE6A6F4AC4}" ShortID="992144050">
+											<Language>SFX</Language>
+											<AudioFile>nick\gargle.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="gargle" ID="{FA9A42A1-8F89-4520-8491-FBBE6A6F4AC4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="gargle2" ID="{FC4C73E6-5867-4FF8-A258-E0A715706CF2}" ShortID="678188626">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="gargle2" ID="{B89126AE-8B1A-43EC-AD44-B1594D006B05}" ShortID="385919720">
+											<Language>SFX</Language>
+											<AudioFile>nick\gargle2.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="gargle2" ID="{B89126AE-8B1A-43EC-AD44-B1594D006B05}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="meeeh" ID="{7B83FD79-C67C-4BEE-877E-C5E61E5532AC}" ShortID="355202012">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="meeeh" ID="{2F04AE42-D5CD-4305-9138-5965D6D6F2D7}" ShortID="698926266">
+											<Language>SFX</Language>
+											<AudioFile>nick\meeeh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="meeeh" ID="{2F04AE42-D5CD-4305-9138-5965D6D6F2D7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="meh" ID="{76634BF6-29FA-487A-90B3-6025B8368596}" ShortID="319620942">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="meh" ID="{B54864DE-EEAF-4E0B-872D-F895DBD4B2E1}" ShortID="1024632925">
+											<Language>SFX</Language>
+											<AudioFile>nick\meh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="meh" ID="{B54864DE-EEAF-4E0B-872D-F895DBD4B2E1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nawh" ID="{BFD4B15D-CBFD-49FD-A2E0-34F1666B72A3}" ShortID="352812502">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nawh" ID="{699D514A-63B2-4279-BF35-1A3F8217A6EC}" ShortID="890556887">
+											<Language>SFX</Language>
+											<AudioFile>nick\nawh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nawh" ID="{699D514A-63B2-4279-BF35-1A3F8217A6EC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="neh" ID="{23A8AAAC-FA9C-4483-9E48-AC283374D38A}" ShortID="932164226">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="neh" ID="{A8398C90-49DF-4BA3-9034-DDE1AD1A00DF}" ShortID="3055567">
+											<Language>SFX</Language>
+											<AudioFile>nick\neh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="neh" ID="{A8398C90-49DF-4BA3-9034-DDE1AD1A00DF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="neheheh" ID="{FF0E84CA-15F5-48DF-B1FF-0370471725EF}" ShortID="872233142">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="neheheh" ID="{1E61ED1C-05E9-4041-84F9-F741C1940229}" ShortID="931185461">
+											<Language>SFX</Language>
+											<AudioFile>nick\neheheh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="neheheh" ID="{1E61ED1C-05E9-4041-84F9-F741C1940229}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nehhh" ID="{5AA9D737-6945-4818-98B0-3D8329DAB381}" ShortID="176520208">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nehhh" ID="{FCAEB169-45AF-4C4F-8CFC-4CD2C8FEF425}" ShortID="171965651">
+											<Language>SFX</Language>
+											<AudioFile>nick\nehhh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nehhh" ID="{FCAEB169-45AF-4C4F-8CFC-4CD2C8FEF425}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nnnnnnnnnnnnnnneh" ID="{BA031600-60D2-4AD8-80CD-7F76CDD60D31}" ShortID="319513340">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nnnnnnnnnnnnnnneh" ID="{C17C4576-3D55-42D3-897D-D70226F033AE}" ShortID="243024414">
+											<Language>SFX</Language>
+											<AudioFile>nick\nnnnnnnnnnnnnnneh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nnnnnnnnnnnnnnneh" ID="{C17C4576-3D55-42D3-897D-D70226F033AE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nnnnnnnnnnnnnnnoeh" ID="{675291F2-C210-4F67-91C6-687955BE5E96}" ShortID="375933477">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nnnnnnnnnnnnnnnoeh" ID="{0F14824F-788A-4918-AAA9-562BFFDEAF76}" ShortID="699859022">
+											<Language>SFX</Language>
+											<AudioFile>nick\nnnnnnnnnnnnnnnoeh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nnnnnnnnnnnnnnnoeh" ID="{0F14824F-788A-4918-AAA9-562BFFDEAF76}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nyah" ID="{20E951FD-6244-4C89-841F-D4D837804C43}" ShortID="673903643">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nyah" ID="{A58647AE-95EB-4C0F-84BD-759077C8B9A5}" ShortID="686304453">
+											<Language>SFX</Language>
+											<AudioFile>nick\nyah.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nyah" ID="{A58647AE-95EB-4C0F-84BD-759077C8B9A5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nyeh" ID="{1766BD67-A2E6-4AD5-935D-2D4C9FA3D9FB}" ShortID="38034824">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nyeh" ID="{E8BFFDA2-F35C-4183-97A5-DD9F00EA5F80}" ShortID="1072483486">
+											<Language>SFX</Language>
+											<AudioFile>nick\nyeh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nyeh" ID="{E8BFFDA2-F35C-4183-97A5-DD9F00EA5F80}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nyheh" ID="{CEB1A9DF-96BF-41E0-B2E3-CC26E00CE11D}" ShortID="769809771">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nyheh" ID="{8CC69C5F-1B44-45FE-8484-7287C554886D}" ShortID="908293922">
+											<Language>SFX</Language>
+											<AudioFile>nick\nyheh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nyheh" ID="{8CC69C5F-1B44-45FE-8484-7287C554886D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nyoh" ID="{EA9E4C1C-7C70-4A29-9812-97016E290BD7}" ShortID="94518741">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nyoh" ID="{7D054481-F46E-4547-BEFB-79575A9DD32E}" ShortID="783707622">
+											<Language>SFX</Language>
+											<AudioFile>nick\nyoh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nyoh" ID="{7D054481-F46E-4547-BEFB-79575A9DD32E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nyoinger" ID="{44349BF0-26F7-4195-878D-E9FF06F67DF9}" ShortID="684064765">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nyoinger" ID="{673C1F2E-6342-4EE3-BBDA-7EF11F0C5924}" ShortID="556135923">
+											<Language>SFX</Language>
+											<AudioFile>nick\nyoinger.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nyoinger" ID="{673C1F2E-6342-4EE3-BBDA-7EF11F0C5924}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="nyoooh" ID="{367AE03E-19E0-434E-B096-AFBFA67EC3EA}" ShortID="445418077">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="nyoooh" ID="{AE3E522B-579A-4962-BFB8-4A9C2230AA8D}" ShortID="844346717">
+											<Language>SFX</Language>
+											<AudioFile>nick\nyoooh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="nyoooh" ID="{AE3E522B-579A-4962-BFB8-4A9C2230AA8D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="ohhhnh" ID="{4D440FBF-9554-4BAD-A2AF-4221573062E7}" ShortID="641050237">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="ohhhnh" ID="{FB62177E-1548-492F-A485-A182F455C871}" ShortID="213933606">
+											<Language>SFX</Language>
+											<AudioFile>nick\ohhhnh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="ohhhnh" ID="{FB62177E-1548-492F-A485-A182F455C871}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="unnh" ID="{73195E27-AEA3-490E-9549-E1D797E84566}" ShortID="517212257">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="unnh" ID="{DD289AD1-EA4D-4160-B9F9-685939520F3A}" ShortID="16432662">
+											<Language>SFX</Language>
+											<AudioFile>nick\unnh.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="unnh" ID="{DD289AD1-EA4D-4160-B9F9-685939520F3A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

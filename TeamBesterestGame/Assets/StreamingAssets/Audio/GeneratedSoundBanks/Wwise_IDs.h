@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID BACKGROUND_MUSIC = 1585661381U;
         static const AkUniqueID BUTTON_PRESS = 2698747613U;
         static const AkUniqueID HERO_COMBAT = 64054188U;
+        static const AkUniqueID NICK_GOBLIN = 715378510U;
     } // namespace EVENTS
 
     namespace STATES

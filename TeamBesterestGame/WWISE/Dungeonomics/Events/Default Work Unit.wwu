@@ -45,6 +45,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Nick_Goblin" ID="{E4C02630-A450-4499-A07A-A5955AE57212}">
+					<ChildrenList>
+						<Action Name="" ID="{7047509D-C611-4D82-AC39-81F82A4CE7AB}" ShortID="170387309">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

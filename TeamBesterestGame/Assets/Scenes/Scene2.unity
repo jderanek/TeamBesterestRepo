@@ -318,8 +318,10 @@ MonoBehaviour:
   variableStorage: {fileID: 5239698}
   dialogueUI: {fileID: 5239699}
   startNode: Geoff1Base
+  dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
+  goblinID: 1
 --- !u!4 &5239701
 Transform:
   m_ObjectHideFlags: 0
@@ -626,8 +628,10 @@ MonoBehaviour:
   variableStorage: {fileID: 41062055}
   dialogueUI: {fileID: 41062056}
   startNode: Coward1Base
+  dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
+  goblinID: 0
 --- !u!4 &41062058
 Transform:
   m_ObjectHideFlags: 0
@@ -2896,7 +2900,7 @@ Prefab:
     - target: {fileID: 224488335502794326, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.40000153
+      value: 0.3999939
       objectReference: {fileID: 0}
     - target: {fileID: 224488335502794326, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -5234,7 +5238,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.44250003, y: 0.033}
   m_AnchorMax: {x: 0.9872501, y: 0.7645983}
-  m_AnchoredPosition: {x: -0.19999695, y: 1.5}
+  m_AnchoredPosition: {x: -0.2000122, y: 1.5}
   m_SizeDelta: {x: 154, y: 113.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &363629755
@@ -7974,8 +7978,10 @@ MonoBehaviour:
   variableStorage: {fileID: 594745390}
   dialogueUI: {fileID: 594745391}
   startNode: Start
+  dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
+  goblinID: 4
 --- !u!4 &594745393
 Transform:
   m_ObjectHideFlags: 0
@@ -8593,7 +8599,7 @@ Prefab:
     - target: {fileID: 224488335502794326, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.40000153
+      value: 0.3999939
       objectReference: {fileID: 0}
     - target: {fileID: 224488335502794326, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -11825,8 +11831,10 @@ MonoBehaviour:
   variableStorage: {fileID: 895976260}
   dialogueUI: {fileID: 895976261}
   startNode: Start
+  dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
+  goblinID: 3
 --- !u!4 &895976263
 Transform:
   m_ObjectHideFlags: 0
@@ -13158,6 +13166,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18827,7 +18846,7 @@ Prefab:
     - target: {fileID: 224488335502794326, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.40000153
+      value: 0.3999939
       objectReference: {fileID: 0}
     - target: {fileID: 224488335502794326, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -24734,8 +24753,10 @@ MonoBehaviour:
   variableStorage: {fileID: 2082834035}
   dialogueUI: {fileID: 2082834032}
   startNode: Start
+  dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
+  goblinID: 2
 --- !u!4 &2082834034
 Transform:
   m_ObjectHideFlags: 0

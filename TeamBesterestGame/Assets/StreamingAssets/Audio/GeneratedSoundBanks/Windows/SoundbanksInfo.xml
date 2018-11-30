@@ -29,11 +29,40 @@
 				<Event Id="1585661381" Name="BackGround_Music" ObjectPath="\Events\Default Work Unit\BackGround_Music"/>
 				<Event Id="2698747613" Name="Button_Press" ObjectPath="\Events\Default Work Unit\Button_Press"/>
 				<Event Id="64054188" Name="Hero_Combat" ObjectPath="\Events\Default Work Unit\Hero_Combat"/>
+				<Event Id="715378510" Name="Nick_Goblin" ObjectPath="\Events\Default Work Unit\Nick_Goblin"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="3055567" Language="SFX">
+					<ShortName>nick\neh.wav</ShortName>
+					<Path>SFX\nick\neh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="16432662" Language="SFX">
+					<ShortName>nick\unnh.wav</ShortName>
+					<Path>SFX\nick\unnh_1C9C67B2.wem</Path>
+				</File>
 				<File Id="61280742" Language="SFX">
 					<ShortName>Dungeonomics Trailer Score LOOP.wav</ShortName>
 					<Path>SFX\Dungeonomics Trailer Score LOOP_F17FB28C.wem</Path>
+				</File>
+				<File Id="108524988" Language="SFX">
+					<ShortName>nick\eeeh.wav</ShortName>
+					<Path>SFX\nick\eeeh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="171965651" Language="SFX">
+					<ShortName>nick\nehhh.wav</ShortName>
+					<Path>SFX\nick\nehhh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="213933606" Language="SFX">
+					<ShortName>nick\ohhhnh.wav</ShortName>
+					<Path>SFX\nick\ohhhnh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="243024414" Language="SFX">
+					<ShortName>nick\nnnnnnnnnnnnnnneh.wav</ShortName>
+					<Path>SFX\nick\nnnnnnnnnnnnnnneh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="385919720" Language="SFX">
+					<ShortName>nick\gargle2.wav</ShortName>
+					<Path>SFX\nick\gargle2_1C9C67B2.wem</Path>
 				</File>
 				<File Id="514974851" Language="SFX">
 					<ShortName>BUTTON_Click_Compressor_Small_01_stereo.wav</ShortName>
@@ -43,6 +72,10 @@
 					<ShortName>BUTTON_Click_Compressor_Small_02_stereo.wav</ShortName>
 					<Path>SFX\BUTTON_Click_Compressor_Small_02_stereo_1C9C67B2.wem</Path>
 				</File>
+				<File Id="556135923" Language="SFX">
+					<ShortName>nick\nyoinger.wav</ShortName>
+					<Path>SFX\nick\nyoinger_1C9C67B2.wem</Path>
+				</File>
 				<File Id="652342185" Language="SFX">
 					<ShortName>BATTLE_Medieval_Segment_01_stereo.wav</ShortName>
 					<Path>SFX\BATTLE_Medieval_Segment_01_stereo_1C9C67B2.wem</Path>
@@ -51,17 +84,65 @@
 					<ShortName>BATTLE_Medieval_Segment_02_stereo.wav</ShortName>
 					<Path>SFX\BATTLE_Medieval_Segment_02_stereo_1C9C67B2.wem</Path>
 				</File>
+				<File Id="686304453" Language="SFX">
+					<ShortName>nick\nyah.wav</ShortName>
+					<Path>SFX\nick\nyah_1C9C67B2.wem</Path>
+				</File>
+				<File Id="698926266" Language="SFX">
+					<ShortName>nick\meeeh.wav</ShortName>
+					<Path>SFX\nick\meeeh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="699859022" Language="SFX">
+					<ShortName>nick\nnnnnnnnnnnnnnnoeh.wav</ShortName>
+					<Path>SFX\nick\nnnnnnnnnnnnnnnoeh_1C9C67B2.wem</Path>
+				</File>
 				<File Id="704055876" Language="SFX">
 					<ShortName>SCORE ENTRANCE.wav</ShortName>
 					<Path>SFX\SCORE ENTRANCE_F17FB28C.wem</Path>
+				</File>
+				<File Id="760017874" Language="SFX">
+					<ShortName>nick\eneh.wav</ShortName>
+					<Path>SFX\nick\eneh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="783707622" Language="SFX">
+					<ShortName>nick\nyoh.wav</ShortName>
+					<Path>SFX\nick\nyoh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="844346717" Language="SFX">
+					<ShortName>nick\nyoooh.wav</ShortName>
+					<Path>SFX\nick\nyoooh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="890556887" Language="SFX">
+					<ShortName>nick\nawh.wav</ShortName>
+					<Path>SFX\nick\nawh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="908293922" Language="SFX">
+					<ShortName>nick\nyheh.wav</ShortName>
+					<Path>SFX\nick\nyheh_1C9C67B2.wem</Path>
 				</File>
 				<File Id="930739875" Language="SFX">
 					<ShortName>BUTTON_Spring_Press_mono.wav</ShortName>
 					<Path>SFX\BUTTON_Spring_Press_mono_1C9C67B2.wem</Path>
 				</File>
+				<File Id="931185461" Language="SFX">
+					<ShortName>nick\neheheh.wav</ShortName>
+					<Path>SFX\nick\neheheh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="992144050" Language="SFX">
+					<ShortName>nick\gargle.wav</ShortName>
+					<Path>SFX\nick\gargle_1C9C67B2.wem</Path>
+				</File>
+				<File Id="1024632925" Language="SFX">
+					<ShortName>nick\meh.wav</ShortName>
+					<Path>SFX\nick\meh_1C9C67B2.wem</Path>
+				</File>
 				<File Id="1036189582" Language="SFX">
 					<ShortName>BUTTON_Click_Compressor_stereo.wav</ShortName>
 					<Path>SFX\BUTTON_Click_Compressor_stereo_1C9C67B2.wem</Path>
+				</File>
+				<File Id="1072483486" Language="SFX">
+					<ShortName>nick\nyeh.wav</ShortName>
+					<Path>SFX\nick\nyeh_1C9C67B2.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

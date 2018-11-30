@@ -15,6 +15,7 @@ namespace Yarn.Unity
      * is that you provide the RunLine, RunOptions, RunCommand
      * and DialogueComplete coroutines; what they do is up to you.
      */
+    //public class SoundManager : MonoBehaviour 
     public class InterviewUI : Yarn.Unity.DialogueUIBehaviour
     {
 
@@ -45,8 +46,9 @@ namespace Yarn.Unity
         /// Make it possible to temporarily disable the controls when
         /// dialogue is active and to restore them when dialogue ends
         public RectTransform gameControlsContainer;
+    
 
-        void Awake()
+            void Awake()
         {
             // Start by hiding the container, line and option buttons
             if (dialogueContainer != null)
@@ -72,6 +74,9 @@ namespace Yarn.Unity
 
             if (textSpeed > 0.0f)
             {
+                ////Calls the voice activation
+                SoundManager.SetSoundBank();
+
                 // Display the line one character at a time
                 var stringBuilder = new StringBuilder();
 
@@ -87,6 +92,7 @@ namespace Yarn.Unity
                 // Display the line immediately if textSpeed == 0
                 responseText.text = line.text;
             }
+            SoundManager.StopDialogue();
 
             // Show the 'press any key' prompt when done, if we have one
             if (continuePrompt != null)
