@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9E346FC2-0773-491E-83F4-2F205A43138B}" SchemaVersion="85">
+	<Events>
+		<WorkUnit Name="Voice Clips" ID="{9E346FC2-0773-491E-83F4-2F205A43138B}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Goblenn_Voice" ID="{E4C02630-A450-4499-A07A-A5955AE57212}">
+					<ChildrenList>
+						<Action Name="" ID="{04170786-6C93-4674-8BDE-2118073F1CB6}" ShortID="485026571">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="100"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{7047509D-C611-4D82-AC39-81F82A4CE7AB}" ShortID="170387309">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Gabbin_Voice" ID="{1D0D387E-8B81-4235-86C6-44CBE602DB46}">
+					<ChildrenList>
+						<Action Name="" ID="{732851BD-38FE-4841-B785-6D37B62E63E2}" ShortID="1065487710">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="750"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{BB5C006E-FEFF-4821-A5DA-2AD036F8611B}" ShortID="63437610">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Jeff_Voice" ID="{F6608D57-A9CD-4FE2-93B7-421DB701E859}">
+					<ChildrenList>
+						<Action Name="" ID="{110CA48B-9A90-4CA5-8511-7A6C48A585F2}" ShortID="824294212">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="-500"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{655C29C6-06B2-4722-90F6-C1004CFD5AA2}" ShortID="859240738">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Geoff_Voice" ID="{35A33D38-EED8-466B-B6B1-F04A20798D60}">
+					<ChildrenList>
+						<Action Name="" ID="{FEC53318-77B1-423D-B3A8-2BC188F0EE98}" ShortID="515624909">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="-300"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{CF27265E-3844-4FCD-8C84-48BBBCBC04DB}" ShortID="916211383">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Nilbog_Voice" ID="{C25EE9C6-71BF-45C8-A25D-DD2F6D3A1DDF}">
+					<ChildrenList>
+						<Action Name="" ID="{DBA24642-DD11-4160-A725-F02C313A3512}" ShortID="304841990">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="13"/>
+								<Property Name="Pitch" Type="int32" Value="-750"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{6FED02E9-AD72-4BC2-8A38-024F6E43DB93}" ShortID="702340530">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

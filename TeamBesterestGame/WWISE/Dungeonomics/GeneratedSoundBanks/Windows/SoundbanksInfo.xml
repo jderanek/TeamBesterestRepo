@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -28,8 +28,12 @@
 			<IncludedEvents>
 				<Event Id="1585661381" Name="BackGround_Music" ObjectPath="\Events\Default Work Unit\BackGround_Music"/>
 				<Event Id="2698747613" Name="Button_Press" ObjectPath="\Events\Default Work Unit\Button_Press"/>
+				<Event Id="1636882115" Name="Gabbin_Voice" ObjectPath="\Events\Voice Clips\Gabbin_Voice"/>
+				<Event Id="671786679" Name="Geoff_Voice" ObjectPath="\Events\Voice Clips\Geoff_Voice"/>
+				<Event Id="2102311253" Name="Goblenn_Voice" ObjectPath="\Events\Voice Clips\Goblenn_Voice"/>
 				<Event Id="64054188" Name="Hero_Combat" ObjectPath="\Events\Default Work Unit\Hero_Combat"/>
-				<Event Id="715378510" Name="Nick_Goblin" ObjectPath="\Events\Default Work Unit\Nick_Goblin"/>
+				<Event Id="2067637633" Name="Jeff_Voice" ObjectPath="\Events\Voice Clips\Jeff_Voice"/>
+				<Event Id="1181445569" Name="Nilbog_Voice" ObjectPath="\Events\Voice Clips\Nilbog_Voice"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3055567" Language="SFX">
@@ -40,10 +44,6 @@
 					<ShortName>nick\unnh.wav</ShortName>
 					<Path>SFX\nick\unnh_1C9C67B2.wem</Path>
 				</File>
-				<File Id="61280742" Language="SFX">
-					<ShortName>Dungeonomics Trailer Score LOOP.wav</ShortName>
-					<Path>SFX\Dungeonomics Trailer Score LOOP_F17FB28C.wem</Path>
-				</File>
 				<File Id="108524988" Language="SFX">
 					<ShortName>nick\eeeh.wav</ShortName>
 					<Path>SFX\nick\eeeh_1C9C67B2.wem</Path>
@@ -51,6 +51,10 @@
 				<File Id="171965651" Language="SFX">
 					<ShortName>nick\nehhh.wav</ShortName>
 					<Path>SFX\nick\nehhh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="177897640" Language="SFX">
+					<ShortName>Body_Clips.wav</ShortName>
+					<Path>SFX\Body_Clips_F17FB28C.wem</Path>
 				</File>
 				<File Id="213933606" Language="SFX">
 					<ShortName>nick\ohhhnh.wav</ShortName>
@@ -88,6 +92,10 @@
 					<ShortName>nick\nyah.wav</ShortName>
 					<Path>SFX\nick\nyah_1C9C67B2.wem</Path>
 				</File>
+				<File Id="698543523" Language="SFX">
+					<ShortName>Dungeonomics Trailer Score LOOP.wav</ShortName>
+					<Path>SFX\Dungeonomics Trailer Score LOOP_F17FB28C.wem</Path>
+				</File>
 				<File Id="698926266" Language="SFX">
 					<ShortName>nick\meeeh.wav</ShortName>
 					<Path>SFX\nick\meeeh_1C9C67B2.wem</Path>
@@ -111,6 +119,10 @@
 				<File Id="844346717" Language="SFX">
 					<ShortName>nick\nyoooh.wav</ShortName>
 					<Path>SFX\nick\nyoooh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="860957945" Language="SFX">
+					<ShortName>Intro_Clips.wav</ShortName>
+					<Path>SFX\Intro_Clips_F17FB28C.wem</Path>
 				</File>
 				<File Id="890556887" Language="SFX">
 					<ShortName>nick\nawh.wav</ShortName>

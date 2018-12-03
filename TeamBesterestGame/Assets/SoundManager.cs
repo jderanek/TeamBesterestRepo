@@ -17,10 +17,19 @@ public static class SoundManager
         switch (goblinToTalk)
         {
             case 0:
-                AkSoundEngine.PostEvent("Nick_Goblin", goblins[goblinToTalk]); //Goblenn Dialogue voices
+                AkSoundEngine.PostEvent("Goblenn_Voice", goblins[goblinToTalk]); //Goblenn Dialogue voices
                 break;
             case 1:
-                Debug.Log("Case 2");//goblin #2 talks
+                AkSoundEngine.PostEvent("Geoff_Voice", goblins[goblinToTalk]); //Geoff Dialogue Voice
+                break;
+            case 2:
+                AkSoundEngine.PostEvent("Jeff_Voice", goblins[goblinToTalk]); //Jeff Dialogue Voice
+                break;
+            case 3:
+                AkSoundEngine.PostEvent("Gabbin_Voice", goblins[goblinToTalk]); //Gabbin Dialogue Voice
+                break;
+            case 4:
+                AkSoundEngine.PostEvent("Nilbog_Voice", goblins[goblinToTalk]); // Nilbog Dialogue Voice
                 break;
             default:
                 Debug.Log("Default case"); //You shouooldnt be heere

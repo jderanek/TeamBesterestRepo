@@ -1,36 +1,42 @@
 Event	ID	Name			Wwise Object Path	Notes
 	64054188	Hero_Combat			\Default Work Unit\Hero_Combat	
-	715378510	Nick_Goblin			\Default Work Unit\Nick_Goblin	
+	671786679	Geoff_Voice			\Voice Clips\Geoff_Voice	
+	1181445569	Nilbog_Voice			\Voice Clips\Nilbog_Voice	
 	1585661381	BackGround_Music			\Default Work Unit\BackGround_Music	
+	1636882115	Gabbin_Voice			\Voice Clips\Gabbin_Voice	
+	2067637633	Jeff_Voice			\Voice Clips\Jeff_Voice	
+	2102311253	Goblenn_Voice			\Voice Clips\Goblenn_Voice	
 	2698747613	Button_Press			\Default Work Unit\Button_Press	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	3055567	neh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\neh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\neh		79940
-	16432662	unnh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\unnh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\unnh		95292
-	61280742	Dungeonomics Trailer Score LOOP	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\Dungeonomics Trailer Score LOOP_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Background Music\Main Theme LOOP\Dungeonomics Trailer Score LOOP		9405444
-	108524988	eeeh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\eeeh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\eeeh		77092
-	171965651	nehhh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nehhh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nehhh		77608
-	213933606	ohhhnh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\ohhhnh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\ohhhnh		124580
-	243024414	nnnnnnnnnnnnnnneh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nnnnnnnnnnnnnnneh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nnnnnnnnnnnnnnneh		140572
-	385919720	gargle2	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\gargle2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\gargle2		174808
-	514974851	BUTTON_Click_Compressor_Small_01_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_Small_01_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_Small_01_stereo		57892
-	518377828	BUTTON_Click_Compressor_Small_02_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_Small_02_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_Small_02_stereo		47392
-	556135923	nyoinger	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyoinger_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyoinger		100952
-	652342185	BATTLE_Medieval_Segment_01_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BATTLE_Medieval_Segment_01_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Battle_Hero\BATTLE_Medieval_Segment_01_stereo		1241628
-	653834363	BATTLE_Medieval_Segment_02_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BATTLE_Medieval_Segment_02_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Battle_Hero\BATTLE_Medieval_Segment_02_stereo		851604
-	686304453	nyah	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyah_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyah		95112
-	698926266	meeeh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\meeeh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\meeeh		96468
-	699859022	nnnnnnnnnnnnnnnoeh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nnnnnnnnnnnnnnnoeh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nnnnnnnnnnnnnnnoeh		173328
-	704055876	SCORE ENTRANCE	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\SCORE ENTRANCE_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Background Music\Main Theme INTRO\SCORE ENTRANCE		781404
-	760017874	eneh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\eneh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\eneh		69844
-	783707622	nyoh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyoh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyoh		98436
-	844346717	nyoooh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyoooh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyoooh		77288
-	890556887	nawh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nawh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nawh		69668
-	908293922	nyheh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyheh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyheh		95836
-	930739875	BUTTON_Spring_Press_mono	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Spring_Press_mono_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Spring_Press_mono		49396
-	931185461	neheheh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\neheheh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\neheheh		96620
-	992144050	gargle	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\gargle_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\gargle		173808
-	1024632925	meh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\meh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\meh		57468
-	1036189582	BUTTON_Click_Compressor_stereo	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_stereo		62564
-	1072483486	nyeh	C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyeh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyeh		88880
+	3055567	neh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\neh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\neh		79940
+	16432662	unnh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\unnh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\unnh		95292
+	108524988	eeeh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\eeeh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\eeeh		77092
+	171965651	nehhh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nehhh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nehhh		77608
+	177897640	Body_Clips	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\Body_Clips_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Body_Clips\Body_Clips		29506264
+	213933606	ohhhnh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\ohhhnh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\ohhhnh		124580
+	243024414	nnnnnnnnnnnnnnneh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nnnnnnnnnnnnnnneh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nnnnnnnnnnnnnnneh		140572
+	385919720	gargle2	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\gargle2_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\gargle2		174808
+	514974851	BUTTON_Click_Compressor_Small_01_stereo	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_Small_01_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_Small_01_stereo		57892
+	518377828	BUTTON_Click_Compressor_Small_02_stereo	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_Small_02_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_Small_02_stereo		47392
+	556135923	nyoinger	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyoinger_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyoinger		100952
+	652342185	BATTLE_Medieval_Segment_01_stereo	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BATTLE_Medieval_Segment_01_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Battle_Hero\BATTLE_Medieval_Segment_01_stereo		1241628
+	653834363	BATTLE_Medieval_Segment_02_stereo	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BATTLE_Medieval_Segment_02_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Battle_Hero\BATTLE_Medieval_Segment_02_stereo		851604
+	686304453	nyah	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyah_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyah		95112
+	698543523	Dungeonomics Trailer Score LOOP	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\Dungeonomics Trailer Score LOOP_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Background Music\Main Theme LOOP\Dungeonomics Trailer Score LOOP		9405444
+	698926266	meeeh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\meeeh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\meeeh		96468
+	699859022	nnnnnnnnnnnnnnnoeh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nnnnnnnnnnnnnnnoeh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nnnnnnnnnnnnnnnoeh		173328
+	704055876	SCORE ENTRANCE	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\SCORE ENTRANCE_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Background Music\Main Theme INTRO\SCORE ENTRANCE		781404
+	760017874	eneh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\eneh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\eneh		69844
+	783707622	nyoh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyoh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyoh		98436
+	844346717	nyoooh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyoooh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyoooh		77288
+	860957945	Intro_Clips	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\Intro_Clips_F17FB28C.wem		\Interactive Music Hierarchy\Default Work Unit\Music\Intro_Clips\Intro_Clips		930936
+	890556887	nawh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nawh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nawh		69668
+	908293922	nyheh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyheh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyheh		95836
+	930739875	BUTTON_Spring_Press_mono	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Spring_Press_mono_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Spring_Press_mono		49396
+	931185461	neheheh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\neheheh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\neheheh		96620
+	992144050	gargle	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\gargle_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\gargle		173808
+	1024632925	meh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\meh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\meh		57468
+	1036189582	BUTTON_Click_Compressor_stereo	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\BUTTON_Click_Compressor_stereo_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Button_Click\BUTTON_Click_Compressor_stereo		62564
+	1072483486	nyeh	C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\SFX\nick\nyeh_1C9C67B2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Nick_Sounds\nick\nyeh		88880
 

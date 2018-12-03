@@ -219,11 +219,6 @@
 								<Value>7</Value>
 							</ValueList>
 						</Property>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>500</Value>
-							</ValueList>
-						</Property>
 						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 					</PropertyList>

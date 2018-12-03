@@ -10,11 +10,15 @@
 				</SoundBank>
 				<SoundBank Name="Main" ID="{1B4FD462-5237-4EE6-922F-B276A93CA0F2}">
 					<ObjectInclusionList>
-						<ObjectRef Name="Nick_Goblin" ID="{E4C02630-A450-4499-A07A-A5955AE57212}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Gabbin_Voice" ID="{1D0D387E-8B81-4235-86C6-44CBE602DB46}" WorkUnitID="{9E346FC2-0773-491E-83F4-2F205A43138B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Goblenn_Voice" ID="{E4C02630-A450-4499-A07A-A5955AE57212}" WorkUnitID="{9E346FC2-0773-491E-83F4-2F205A43138B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Background Music" ID="{D7EE6ED1-1F1D-450D-BBB5-D9271E0C0D89}" WorkUnitID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Nilbog_Voice" ID="{C25EE9C6-71BF-45C8-A25D-DD2F6D3A1DDF}" WorkUnitID="{9E346FC2-0773-491E-83F4-2F205A43138B}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Geoff_Voice" ID="{35A33D38-EED8-466B-B6B1-F04A20798D60}" WorkUnitID="{9E346FC2-0773-491E-83F4-2F205A43138B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="BackGround_Music" ID="{18DAD7C5-3750-48FF-BE1A-7250F7FE4799}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Hero_Combat" ID="{981B465B-A683-4CE2-9F49-D905BBECFC9D}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Button_Press" ID="{9E0EA4D5-E18F-4EDB-9E23-808A0240BFAE}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Jeff_Voice" ID="{F6608D57-A9CD-4FE2-93B7-421DB701E859}" WorkUnitID="{9E346FC2-0773-491E-83F4-2F205A43138B}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

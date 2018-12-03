@@ -15,8 +15,12 @@ namespace AK
     {
         static const AkUniqueID BACKGROUND_MUSIC = 1585661381U;
         static const AkUniqueID BUTTON_PRESS = 2698747613U;
+        static const AkUniqueID GABBIN_VOICE = 1636882115U;
+        static const AkUniqueID GEOFF_VOICE = 671786679U;
+        static const AkUniqueID GOBLENN_VOICE = 2102311253U;
         static const AkUniqueID HERO_COMBAT = 64054188U;
-        static const AkUniqueID NICK_GOBLIN = 715378510U;
+        static const AkUniqueID JEFF_VOICE = 2067637633U;
+        static const AkUniqueID NILBOG_VOICE = 1181445569U;
     } // namespace EVENTS
 
     namespace STATES
