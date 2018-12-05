@@ -767,6 +767,7 @@ public class InterviewManager : MonoBehaviour {
         gameManager.GetComponent<GameManager>().monsterInstance = null;
         gameManager.GetComponent<GameManager>().interviewCanvas.SetActive(false);
         gameManager.GetComponent<GameManager>().interviewMenu.SetActive(true);
+        SoundManager.StopDialogue();
 
         interviewResponse.SetActive(false);
         responseText.text = "Hello";
