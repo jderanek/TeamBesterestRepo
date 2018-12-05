@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 1335600113}
   sourceText:
   - {fileID: 4900000, guid: 7134edff0df03ca45b1686e20cd3e8c7, type: 3}
   stringGroups: []
@@ -415,6 +416,7 @@ MonoBehaviour:
   effects: []
   revealedTraits: []
   revealedTags: 
+  interviewable: 1
 --- !u!212 &14465736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -620,6 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 1765382683}
   sourceText:
   - {fileID: 4900000, guid: 7f6f9b100d840b446bc6a36b031b3f99, type: 3}
   stringGroups: []
@@ -7970,6 +7973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 14465732}
   sourceText:
   - {fileID: 4900000, guid: 7620f72335dbf0940994cb6444e2f353, type: 3}
   stringGroups: []
@@ -11823,6 +11827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 906177782}
   sourceText:
   - {fileID: 4900000, guid: 975dd577d60008e4bbf4b28012bdca12, type: 3}
   stringGroups: []
@@ -11928,6 +11933,7 @@ MonoBehaviour:
   effects: []
   revealedTraits: []
   revealedTags: 
+  interviewable: 1
 --- !u!212 &906177786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12452,6 +12458,7 @@ MonoBehaviour:
   effects: []
   revealedTraits: []
   revealedTags: 
+  interviewable: 1
 --- !u!212 &951470859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17507,6 +17514,7 @@ MonoBehaviour:
   effects: []
   revealedTraits: []
   revealedTags: 
+  interviewable: 1
 --- !u!212 &1335600117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22407,6 +22415,7 @@ MonoBehaviour:
   effects: []
   revealedTraits: []
   revealedTags: 
+  interviewable: 1
 --- !u!212 &1765382687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24745,6 +24754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bec29c0a230741bdac901dba8da47ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monster: {fileID: 951470855}
   sourceText:
   - {fileID: 4900000, guid: 53d14545e47c52d458b735c91ab946e5, type: 3}
   stringGroups: []

@@ -20,7 +20,9 @@ position: 801,-191
 Geoff; Don't look at me, he started it.
 Jeff; Yeah right, you are one to talk loser!
 Gabbin; Welcome to my normal day, at least they haven't got physical... today.
-[[Can I ask what is the cause of all this?|WhyFight]] [[How bad is it?|HowBad]] [[You two need to knock it off immediately, that is an order.|BreakUp]]
+[[Can I ask what is the cause of all this?|WhyFight]]
+[[How bad is it?|HowBad]]
+[[You two need to knock it off immediately, that is an order.|BreakUp]]
 ===
 title: Branch2
 tags: 
@@ -113,6 +115,8 @@ Jeff; I will just imagine every hero's face I bash in is yours then.
 Geoff; Funny, I thought the same about you...
 Gabbin; M-maybe this is fixed now? I guess..
 //Ends Branch, +3 all stats for Jeff and Geoff, no longer fight each other, extra 10% damage if in same room
+<<SwapTrait Jeff Friendly>>
+<<SwapTrait Geoff Friendly>>
 ===
 title: Calm
 tags: 
@@ -124,6 +128,7 @@ Geoff; Agreed, lets just move on.
 Gabbin; Glad you two made up! I hope you guys become fast friends!
 Jeff; Don't get your hopes up.
 //Ends Branch, Jeff and Geoff no longer fight each other
+<<SwapTrait Jeff Friendly>>
 ===
 title: GeneralQ
 tags: 
@@ -140,7 +145,7 @@ Gabbin; I am doing fine for the most part, work is going along well. Can I ask w
 title: BreakUp
 tags: 
 colorID: 0
-position: 1312,70
+position: 1386,-87
 ---
 //if Mood is high, both will no longer fight
 Geoff; I will try if this jerk does too.

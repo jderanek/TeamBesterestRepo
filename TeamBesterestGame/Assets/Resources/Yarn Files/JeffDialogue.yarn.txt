@@ -44,7 +44,7 @@ position: 2229,-502
 Nilbog: I don't like to be a snitch, but I like to eavesdrop on people sometimes. I have a report here all about their complaints.
 
 //Returns to Info, removes Nilbog from choices, unlocks AngerManage
-
+[[Node44]]
 ===
 title: WhyYell
 tags: 
@@ -69,7 +69,7 @@ Geoff: Yeah, I am not so sure about "talking away my problems" when my fists wor
 title: SupportGeoff
 tags: 
 colorID: 0
-position: 2571,-587
+position: 2950,-641
 ---
 [[You can't go around stealing people's lunches. You need to make things right Geoff.|GeoffR]]
 ===
@@ -115,12 +115,6 @@ Jeff: Oh please, if you annoyed them as much as you do me, they'd be on my side.
 [[I know you are a loner, but you must have seen SOMETHING Nilbog.|Nilbog]]
 [[You seem to get along ok with everyone Gabbin, what about you?|Gabbin]]
 [[Goblenn, have you seen anything?|Goblenn]]
-
-//Can only pick two workers, after 2nd this dialogue occurs
-Jeff: What do you think boss? Can't you see I am right?
-Geoff: He is clearly in the wrong. Do not let him confuse you.
-[[Support Geoff|SupportGeoff]]
-[[Support Jeff|SupportJeff]]
 ===
 title: Goblenn
 tags: 
@@ -129,6 +123,7 @@ position: 2252,-1038
 ---
 Goblenn: I-I don't know much, just that they are loud and mean... please keep them away from me.
 //Removes Goblenn from choices, returns to Info
+[[Node44]]
 ===
 title: Gabbin
 tags: 
@@ -137,11 +132,12 @@ position: 2267,-774
 ---
 Gabbin: From what I gathered it all started over something in the kitchen, I think Jeff stole Geoff's lunch or something.
 //Returns to Info, removes Gabbin from choices
+[[Node44]]
 ===
 title: SupportJeff
 tags: 
 colorID: 0
-position: 2593,-997
+position: 2943,-994
 ---
 [[I think Geoff's grievances are legitimate. I am sorry Jeff, but you need to apologize.|JeffR]]
 ===
@@ -156,27 +152,27 @@ Jeff and Geoff: We promise.
 title: JeffR
 tags: 
 colorID: 0
-position: 2858,-998
+position: 3323,-1017
 ---
 //if Mood High
 Jeff: Sigh, you are right. I will do as you say boss.
 //Ends Branch, Jeff and Geoff no longer fight, but Jeff does 25% less damage
-
+<<SwapTrait Jeff Coward>>
 //if Mood Low
-Jeff: Seriously boss?! You side with this jerk over me?! I am done.
+//Jeff: Seriously boss?! You side with this jerk over me?! I am done.
 //Ends Branch, Jeff quits
 ===
 title: GeoffR
 tags: 
 colorID: 0
-position: 2866,-602
+position: 3323,-649
 ---
 //If Mood High
 Geoff: I was just hungry! You are correct however, it was wrong of me. I am sorry Jeff.
 //Ends Branch, Jeff and Geoff no longer fight, Jeff does -25% less damage
-
+<<SwapTrait Geoff Friendly>>
 //If Mood Low
-Geoff: You must be joking, you are taking his side over mine? No job is worth this.
+//Geoff: You must be joking, you are taking his side over mine? No job is worth this.
 //Ends Branch, Geoff quits
 ===
 title: Help
@@ -187,6 +183,8 @@ position: 2120,-98
 Geoff: I will work beside him, doesn't mean I will like it...
 Jeff: Trust me, the feeling is shared immensely...
 //Ends Branch, Geoff and Jeff no longer fight, but both do 15% less damage if in the same room
+<<SwapTrait Geoff Coward>>
+<<SwapTrait Jeff Coward>>
 ===
 title: JeffFollowup
 tags: 
@@ -272,4 +270,14 @@ position: 865,2109
 ---
 Jeff:Sure thing boss. I will tell him.
 //Mood hit
+===
+title: Node44
+tags: 
+colorID: 0
+position: 2624,-789
+---
+Jeff: What do you think boss? Can't you see I am right?
+Geoff: He is clearly in the wrong. Do not let him confuse you.
+[[Support Geoff|SupportGeoff]]
+[[Support Jeff|SupportJeff]]
 ===

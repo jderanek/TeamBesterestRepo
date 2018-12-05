@@ -3,23 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Yarn.Unity;
 
 public abstract class BaseMonster : BaseEntity {
     public List<GameObject> department;
 
-	//Private variables for this monsters stats
-	//Some made TEMPORARILY public for test purposes
-	string type;
-	public string monName;
-	string archetype;
-	public int curHealth;
-	int maxHealth;
-	int baseHealth;
-	public int curDamage;
-	int damage;
+    //Private variables for this monsters stats
+    //Some made TEMPORARILY public for test purposes
+    string type;
+    public string monName;
+    string archetype;
+    public int curHealth;
+    int maxHealth;
+    int baseHealth;
+    public int curDamage;
+    int damage;
     public List<BaseTrait> traits = new List<BaseTrait>();
     public List<PersonalityTags.Tag> tags;
-	int salary;
+    int salary;
     /*float stress;
 	float morale;
 	float moraleGain = 1f;
@@ -28,26 +29,26 @@ public abstract class BaseMonster : BaseEntity {
 	float vacationStressLoss;*/
     int mood = 50;
     int infamyGain;
-	int threat;
-	int armor;
-	int workEthic;
-	int size;
-	int tier;
-	bool inCombat;
-	bool hasFought;
-	bool monsterGrabbed;
-	bool heroInRoom;
-	public GameObject curRoom;
-	Text damageText;
-	GameManager gameManager;
+    int threat;
+    int armor;
+    int workEthic;
+    int size;
+    int tier;
+    bool inCombat;
+    bool hasFought;
+    bool monsterGrabbed;
+    bool heroInRoom;
+    public GameObject curRoom;
+    Text damageText;
+    GameManager gameManager;
     UIManager uiManager;
-	float xpMod = 1f;
-	float goldMod = 1f;
-	int breakdowns = 3;
-	public bool canBeDebuffed = true;
-	float promotionMod = 1f;
+    float xpMod = 1f;
+    float goldMod = 1f;
+    int breakdowns = 3;
+    public bool canBeDebuffed = true;
+    float promotionMod = 1f;
     int applicationLife = 15;
-	bool stunned = false;
+    bool stunned = false;
 
     public int healthTier;
     public int defenseTier;
@@ -56,25 +57,27 @@ public abstract class BaseMonster : BaseEntity {
 
     public Animator anim; //= this.gameObject.GetComponentInChildren<Animator>();
 
-	//List to hold everything currently affecting the monster
-	public List<string> effects = new List<string>();
-    
+    //List to hold everything currently affecting the monster
+    public List<string> effects = new List<string>();
+
     public List<BaseTrait> traitsToReveal = new List<BaseTrait>();
     public List<string> revealedTraits = new List<string>();
 
     public List<PersonalityTags.Tag> revealedTags = new List<PersonalityTags.Tag>();
 
+    public bool interviewable = true;
+
 
     void Awake() {
-		gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         uiManager = gameManager.GetComponent<UIManager>();
-		//monsterGrabbed = true; //this is outdated I think, need to sort that out soon
+        //monsterGrabbed = true; //this is outdated I think, need to sort that out soon
         //setCurRoom(GameObject.FindGameObjectWithTag("Room"));
-       // this.transform.position.Set(curRoom.transform.position.x, curRoom.transform.position.y, 0);
-		heroInRoom = false;
-		//Temp measure to suppress errors
-		//this.AssignStats (gameObject.name);
-		this.workEthic = UnityEngine.Random.Range (-1, 1);
+        // this.transform.position.Set(curRoom.transform.position.x, curRoom.transform.position.y, 0);
+        heroInRoom = false;
+        //Temp measure to suppress errors
+        //this.AssignStats (gameObject.name);
+        this.workEthic = UnityEngine.Random.Range(-1, 1);
         //this.curRoom = gameManager.spawnRoom;
 
         //Adds three traits to the trait list
@@ -106,75 +109,75 @@ public abstract class BaseMonster : BaseEntity {
         anim = this.gameObject.GetComponentInChildren<Animator>();
     }
 
-	///<summary>
-	///Assigns all stats to this monster, to be used in place of super.
-	/// Defaults stress and morale, as well as gain, loss and infamy
-	///</summary>
-	/// <param name="nm">Name of Monster</param>
-	/// <param name="hp">Total Health</param>
-	/// <param name="dam">Base Damage</param>
-	/// <param name="trait">Personality Trait</param>
-	/// <param name="sal">Base Salary</param>
-	/// <param name="thr">Threat</param>
-	/// <param name="arm">Base Armor</param>
-	/// <param name="ethic">Work Ethic</param>
-	/// <param name="sz">Monster Size</param>
-	public void AssignStats(string nm, int hp, int dam, int sal, int thr, int arm, int ethic, int sz) {
-		this.monName = nm;
-		this.maxHealth = hp;
-		this.baseHealth = hp;
-		this.curHealth = maxHealth;
-		this.damage = dam;
-		this.curDamage = this.damage;
-		this.salary = sal;
-		this.threat = thr;
-		/*this.stress = 0f;
+    ///<summary>
+    ///Assigns all stats to this monster, to be used in place of super.
+    /// Defaults stress and morale, as well as gain, loss and infamy
+    ///</summary>
+    /// <param name="nm">Name of Monster</param>
+    /// <param name="hp">Total Health</param>
+    /// <param name="dam">Base Damage</param>
+    /// <param name="trait">Personality Trait</param>
+    /// <param name="sal">Base Salary</param>
+    /// <param name="thr">Threat</param>
+    /// <param name="arm">Base Armor</param>
+    /// <param name="ethic">Work Ethic</param>
+    /// <param name="sz">Monster Size</param>
+    public void AssignStats(string nm, int hp, int dam, int sal, int thr, int arm, int ethic, int sz) {
+        this.monName = nm;
+        this.maxHealth = hp;
+        this.baseHealth = hp;
+        this.curHealth = maxHealth;
+        this.damage = dam;
+        this.curDamage = this.damage;
+        this.salary = sal;
+        this.threat = thr;
+        /*this.stress = 0f;
 		this.morale = .5f;
 		this.stressGain = .02f;
 		this.vacationStressLoss = .15f;*/
-		this.infamyGain = 1;
-		this.armor = arm;
-		//damageText = this.gameObject.GetComponentInChildren<Text>();
-		this.workEthic = ethic;
-		this.size = sz;
-	}
+        this.infamyGain = 1;
+        this.armor = arm;
+        //damageText = this.gameObject.GetComponentInChildren<Text>();
+        this.workEthic = ethic;
+        this.size = sz;
+    }
 
-	///<summary>
-	///Assigns all stats to this monster from monster stats sheet
-	///</summary>
-	/// <param name="type">Name of Monster Type</param>
-	public void AssignStats(string type) {
-		//gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
-		this.type = type;
-		//curRoom = gameManager.spawnRoom;
-		this.maxHealth = int.Parse(gameManager.monsters.data [type] ["Health"]);
-       /* this.maxHealth *= gameManager.healthWeight;
-        switch((UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7)))
-        {
-            case 3: case 4:
-                this.maxHealth = (int)(this.maxHealth * 0.75f);
-                this.healthTier = -1;
-                break;
-            case 5: case 6: case 7:
-                this.maxHealth = (int)(this.maxHealth * 0.9f);
-                this.healthTier = -1;
-                break;
-            default:
-                this.healthTier = 0;
-                break;
-            case 14: case 15: case 16:
-                this.maxHealth = (int)(this.maxHealth * 1.1f);
-                this.healthTier = 1;
-                break;
-            case 17: case 18:
-                this.maxHealth = (int)(this.maxHealth * 1.25f);
-                this.healthTier = 1;
-                break;
-        }*/
-		this.curHealth = this.maxHealth;
-		this.baseHealth = curHealth;
+    ///<summary>
+    ///Assigns all stats to this monster from monster stats sheet
+    ///</summary>
+    /// <param name="type">Name of Monster Type</param>
+    public void AssignStats(string type) {
+        //gameManager = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager> ();
+        this.type = type;
+        //curRoom = gameManager.spawnRoom;
+        this.maxHealth = int.Parse(gameManager.monsters.data[type]["Health"]);
+        /* this.maxHealth *= gameManager.healthWeight;
+         switch((UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7)))
+         {
+             case 3: case 4:
+                 this.maxHealth = (int)(this.maxHealth * 0.75f);
+                 this.healthTier = -1;
+                 break;
+             case 5: case 6: case 7:
+                 this.maxHealth = (int)(this.maxHealth * 0.9f);
+                 this.healthTier = -1;
+                 break;
+             default:
+                 this.healthTier = 0;
+                 break;
+             case 14: case 15: case 16:
+                 this.maxHealth = (int)(this.maxHealth * 1.1f);
+                 this.healthTier = 1;
+                 break;
+             case 17: case 18:
+                 this.maxHealth = (int)(this.maxHealth * 1.25f);
+                 this.healthTier = 1;
+                 break;
+         }*/
+        this.curHealth = this.maxHealth;
+        this.baseHealth = curHealth;
 
-		this.damage = int.Parse(gameManager.monsters.data [type] ["Attack"]);
+        this.damage = int.Parse(gameManager.monsters.data[type]["Attack"]);
         /*this.damage *= gameManager.attackWeight;
         switch((UnityEngine.Random.Range(1, 7)) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7))
         {
@@ -205,7 +208,7 @@ public abstract class BaseMonster : BaseEntity {
         }*/
         this.curDamage = damage;
 
-        this.armor = int.Parse(gameManager.monsters.data [type] ["Defense"]);
+        this.armor = int.Parse(gameManager.monsters.data[type]["Defense"]);
         /*his.armor *= gameManager.defenseWeight;
         switch ((UnityEngine.Random.Range(1, 7)) + UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7))
         {
@@ -236,12 +239,12 @@ public abstract class BaseMonster : BaseEntity {
                 break;
         }*/
 
-        this.threat = int.Parse(gameManager.monsters.data [type] ["Threat"]);
-		//this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
-		//this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
-		//this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
-		//this.archetype = gameManager.monsters.data [type] ["Archetype"];
-        this.SetSpeed(int.Parse(gameManager.monsters.data [type] ["Speed"]));
+        this.threat = int.Parse(gameManager.monsters.data[type]["Threat"]);
+        //this.size = int.Parse (gameManager.monsters.data [type] ["Size"]);
+        //this.tier = int.Parse (gameManager.monsters.data [type] ["Tier"]);
+        //this.salary = int.Parse (gameManager.monsters.data [type] ["Cost"]);
+        //this.archetype = gameManager.monsters.data [type] ["Archetype"];
+        this.SetSpeed(int.Parse(gameManager.monsters.data[type]["Speed"]));
         this.SetBaseSpeed(this.GetSpeed());
         /*int num = UnityEngine.Random.Range (1, 25);
         bool useArchetype = (UnityEngine.Random.value > .3f);
@@ -251,12 +254,12 @@ public abstract class BaseMonster : BaseEntity {
             this.monName = gameManager.monNames.data[num.ToString()]["Any"];
         this.name = monName;*/
 
-		/*this.stress = 0f;
+        /*this.stress = 0f;
 		this.morale = .5f;
 		this.stressGain = .02f;
 		this.vacationStressLoss = .15f;*/
-		this.infamyGain = 1;
-		damageText = this.gameObject.GetComponentInChildren<Text>();
+        this.infamyGain = 1;
+        damageText = this.gameObject.GetComponentInChildren<Text>();
         damageText.text = this.getCurHealth().ToString() + "hp";
         anim = this.gameObject.GetComponentInChildren<Animator>();
 
@@ -271,52 +274,52 @@ public abstract class BaseMonster : BaseEntity {
         this.getCurRoom().monsterInRoom = true;
     }
 
-	//Getters for most stats
+    //Getters for most stats
     public void setMaxHealth(int newHealth)
     {
         maxHealth = newHealth;
     }
 
-	public int getCurHealth() {
-		return this.curHealth;
-	}
-	public int getMaxHealth() {
-		return this.maxHealth;
-	}
-	public int getBaseHealth() {
-		return this.baseHealth;
-	}
-	public int getCurDamage() {
-		return this.curDamage;
-	}
-	public int getBaseDamage() {
-		return this.damage;
-	}
-	public void addDamage(int d) {
-		this.curDamage += d;
-	}
-	public void setDamage(int d) {
-		this.damage = d;
-	}
-	public void setCurDamage(int d) {
-		this.curDamage = d;
-	}
-	public int getSalary() {
-		return this.salary;
-	}
-	public int getThreat() {
-		return this.threat;
-	}
-	public void setThreat(int t) {
-		this.threat = t;
-	}
-	public void addThreat(int t) {
-		this.threat += t;
-	}
-	public int getArmor() {
-		return this.armor;
-	}
-	/*public float getMorale() {
+    public int getCurHealth() {
+        return this.curHealth;
+    }
+    public int getMaxHealth() {
+        return this.maxHealth;
+    }
+    public int getBaseHealth() {
+        return this.baseHealth;
+    }
+    public int getCurDamage() {
+        return this.curDamage;
+    }
+    public int getBaseDamage() {
+        return this.damage;
+    }
+    public void addDamage(int d) {
+        this.curDamage += d;
+    }
+    public void setDamage(int d) {
+        this.damage = d;
+    }
+    public void setCurDamage(int d) {
+        this.curDamage = d;
+    }
+    public int getSalary() {
+        return this.salary;
+    }
+    public int getThreat() {
+        return this.threat;
+    }
+    public void setThreat(int t) {
+        this.threat = t;
+    }
+    public void addThreat(int t) {
+        this.threat += t;
+    }
+    public int getArmor() {
+        return this.armor;
+    }
+    /*public float getMorale() {
 		return this.morale;
 	}
 	public void setMorale(float newM) {
@@ -360,17 +363,17 @@ public abstract class BaseMonster : BaseEntity {
     {
         mood = newMood;
     }
-	public int getInfamyGain() {
-		return this.infamyGain;
-	}
-	public void setInfamyGain(int gain) {
-		this.infamyGain = gain;
-	}
-	public bool isInCombat() {
-		return this.inCombat;
-	}
-	public void setInCombat(bool value) {
-		this.inCombat = value;
+    public int getInfamyGain() {
+        return this.infamyGain;
+    }
+    public void setInfamyGain(int gain) {
+        this.infamyGain = gain;
+    }
+    public bool isInCombat() {
+        return this.inCombat;
+    }
+    public void setInCombat(bool value) {
+        this.inCombat = value;
         if (this.inCombat)
         {
             anim.SetBool("inCombat", true);
@@ -379,68 +382,68 @@ public abstract class BaseMonster : BaseEntity {
         {
             anim.SetBool("inCombat", false);
         }
-	}
-	public bool getHasFought() {
-		return this.hasFought;
-	}
-	public void setHasFought(bool value) {
-		this.hasFought = value;
-	}
-	public string getName() {
-		return this.monName;
-	}
-	public void setName(string nm) {
-		this.name = nm;
-	}
-	public int getWorkEthic() {
-		return this.workEthic;
-	}
-	public int getSize() {
-		return this.size;
-	}
-	public BaseRoom getCurRoom() {
+    }
+    public bool getHasFought() {
+        return this.hasFought;
+    }
+    public void setHasFought(bool value) {
+        this.hasFought = value;
+    }
+    public string getName() {
+        return this.monName;
+    }
+    public void setName(string nm) {
+        this.name = nm;
+    }
+    public int getWorkEthic() {
+        return this.workEthic;
+    }
+    public int getSize() {
+        return this.size;
+    }
+    public BaseRoom getCurRoom() {
         if (curRoom != null)
         {
             return this.curRoom.GetComponent<BaseRoom>();
         }
-		else
+        else
         {
             return null;
         }
-	}
-	public void setCurRoom(GameObject room) {
-		this.curRoom = room;
-	}
-	public string getType() {
-		return this.type;
-	}
-	public string getArchetype() {
-		return this.archetype;
-	}
-	public float getXPMod() {
-		return this.xpMod;
-	}
-	public void setXPMod(float newM) {
-		this.xpMod = newM;
-	}
-	public float getGoldMod() {
-		return this.goldMod;
-	}
-	public void setGoldMod(float newM) {
-		this.goldMod = newM;
-	}
-	public int getBreakdowns() {
-		return this.breakdowns;
-	}
-	public void setBreakdowns(int breaks) {
-		this.breakdowns = breaks;
-	}
-	public float getPromotionMod() {
-		return this.promotionMod;
-	}
-	public void setPromotionMod(float mod) {
-		this.promotionMod = mod;
-	}
+    }
+    public void setCurRoom(GameObject room) {
+        this.curRoom = room;
+    }
+    public string getType() {
+        return this.type;
+    }
+    public string getArchetype() {
+        return this.archetype;
+    }
+    public float getXPMod() {
+        return this.xpMod;
+    }
+    public void setXPMod(float newM) {
+        this.xpMod = newM;
+    }
+    public float getGoldMod() {
+        return this.goldMod;
+    }
+    public void setGoldMod(float newM) {
+        this.goldMod = newM;
+    }
+    public int getBreakdowns() {
+        return this.breakdowns;
+    }
+    public void setBreakdowns(int breaks) {
+        this.breakdowns = breaks;
+    }
+    public float getPromotionMod() {
+        return this.promotionMod;
+    }
+    public void setPromotionMod(float mod) {
+        this.promotionMod = mod;
+    }
     public int getApplicationLife()
     {
         return applicationLife;
@@ -457,40 +460,40 @@ public abstract class BaseMonster : BaseEntity {
     {
         this.defenseTier = def;
     }
-	public void Stun() {
-		this.stunned = true;
-	}
-    
+    public void Stun() {
+        this.stunned = true;
+    }
+
     public void addApplicationLife(int newLife)
     {
         this.applicationLife += newLife;
     }
 
-	//Function to make monster lose health
-	public void TakeDamage(int dam, BaseHero attacker = null) {
+    //Function to make monster lose health
+    public void TakeDamage(int dam, BaseHero attacker = null) {
         foreach (BaseTrait trait in this.traits)
         {
             dam = trait.OnAttacked(dam, this, attacker);
         }
-		this.curHealth = Mathf.Clamp (this.curHealth - dam, 0, this.maxHealth);
-		damageText.text = this.curHealth.ToString() + "hp";
-		if (curHealth <= 0) {
-			this.Death ();
-		}
-	}
+        this.curHealth = Mathf.Clamp(this.curHealth - dam, 0, this.maxHealth);
+        damageText.text = this.curHealth.ToString() + "hp";
+        if (curHealth <= 0) {
+            this.Death();
+        }
+    }
 
-	//Function to make monster gain health
-	public void Heal(int heal) {
-		this.curHealth = Mathf.Clamp (this.curHealth + heal, 0, this.maxHealth);
-	}
+    //Function to make monster gain health
+    public void Heal(int heal) {
+        this.curHealth = Mathf.Clamp(this.curHealth + heal, 0, this.maxHealth);
+    }
 
-	//Default attack function that hits the hero with the highest threat
-	public override void Attack() {
-		//Breaks attack function if stunned
-		if (stunned) {
-			this.stunned = false;
-			return;
-		}
+    //Default attack function that hits the hero with the highest threat
+    public override void Attack() {
+        //Breaks attack function if stunned
+        if (stunned) {
+            this.stunned = false;
+            return;
+        }
 
         foreach (BaseTrait trait in this.traits)
         {
@@ -515,9 +518,9 @@ public abstract class BaseMonster : BaseEntity {
             }
         }
 
-		BaseHero heroScript;
-		BaseHero highThreat = null;
-		int threat = int.MinValue;
+        BaseHero heroScript;
+        BaseHero highThreat = null;
+        int threat = int.MinValue;
         if (curRoom != null)
         {
             foreach (GameObject hero in this.getCurRoom().heroesInRoom)
@@ -548,11 +551,11 @@ public abstract class BaseMonster : BaseEntity {
             }
             highThreat.TakeDamage(dmg, this);
         }
-	}
+    }
 
     //Plays animations, and kills this monster
-	private void Death()
-	{
+    private void Death()
+    {
         //Runs all trait death functions before removing monster
         foreach (BaseTrait trait in this.traits)
         {
@@ -561,17 +564,17 @@ public abstract class BaseMonster : BaseEntity {
 
         //anim.SetTrigger("death");
         //anim.Play("hellhound_death");
-		curRoom.GetComponent<BaseRoom>().roomMembers.Remove(gameObject);
+        curRoom.GetComponent<BaseRoom>().roomMembers.Remove(gameObject);
         //gameManager.monsterList.Remove(gameObject);
-		if (curRoom.GetComponent<BaseRoom>().roomMembers.Count == 0)
-		{
-			curRoom.GetComponent<BaseRoom>().monsterInRoom = false;
-		}
+        if (curRoom.GetComponent<BaseRoom>().roomMembers.Count == 0)
+        {
+            curRoom.GetComponent<BaseRoom>().monsterInRoom = false;
+        }
         //Destroy(gameObject);
         gameObject.SetActive(false);
         //gameManager.AddToDepartment(gameObject, gameManager.deadMonsters);
         //uiManager.UpdateDepartments();
-	}
+    }
 
     //Returns this monster to life and to the room they were in previously
     public void Reset()
@@ -586,7 +589,7 @@ public abstract class BaseMonster : BaseEntity {
     public void DayHandler()
     {
 
-	}
+    }
 
     private void OnMouseDown()
     {
@@ -618,9 +621,40 @@ public abstract class BaseMonster : BaseEntity {
     }
 
     //Clears list of previous traits, and adds the new trait
+    [YarnCommand("SwapTrait")]
     public void SwapTrait(string toSwap) {
         this.traits.Clear();
         this.traits.Add(System.Activator.CreateInstance(
            System.Type.GetType(toSwap)) as BaseTrait);
+    }
+
+    //subtracts 1 from mood then checks if mood is <= to 0 if so, end's interview and makes monster uninterviewable till next day
+    [YarnCommand("MoodHit")]
+    public void MoodHit()
+    {
+        this.mood -= 1;
+        if (this.mood <= 0)
+        {
+            StormOut();
+        }
+    }
+
+    [YarnCommand("StormOut")]
+    public void StormOut()
+    {
+        this.interviewable = false;
+        //use helper function to disable monster's dialogue options and grey out portrait
+
+        //use function to incur strike then check if strikes are >= 3 if so end interview phase and reset strikes
+        gameManager.interviewing = false;
+    }
+
+    //ends conversation and makes monster uninterviewable till next day with no penalty
+    [YarnCommand("EndInterview")]
+    public void EndInterview()
+    {
+        this.interviewable = false;
+        //use helper function to disable monster's dialogue options and grey out portrait
+        gameManager.interviewing = false;
     }
 }
