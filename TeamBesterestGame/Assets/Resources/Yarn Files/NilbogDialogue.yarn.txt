@@ -1,0 +1,332 @@
+title: Tree1Start
+tags: 
+colorID: 0
+position: 125,281
+---
+How are you?
+Nilbog: .........
+[[I think this guys volume is turned down?|Silence1]]
+[[(Questionable Staring)...........|Silence1]]
+[[(Mocking Staring)...........|Annoyed1]]
+===
+title: Silence1
+tags: 
+colorID: 0
+position: 458,139
+---
+Nilbog:..............
+[[Should you just quit now or.....|Confrontational1]]
+[[(Mocking Stare).............|Confrontational1]]//Mood Hit
+[[Can you explain why you are ignored me?|Concerned1]]
+===
+title: Annoyed1
+tags: 
+colorID: 0
+position: 448,396
+---
+Nilbog: *Hmph* .............
+[[Should you just quit now or.....|Confrontational1]]
+[[(Mocking Stare).............|Confrontational1]]//Mood Hit
+[[Can you explain why you are ignored me?|Concerned1]]
+===
+title: Confrontational1
+tags: 
+colorID: 0
+position: 871,-53
+---
+Nilbog:.........Ok, let's get this started........
+[[Sure, go right ahead. Seems like you have something to say.|Enabling1]]
+[[There you go, I'm here for you. What do you need to say?|Condescending1]]//Mood Hit
+[[O, I'm sorry. Where you saying something?|Ignoring1]]
+===
+title: Concerned1
+tags: 
+colorID: 0
+position: 877,630
+---
+Nilbog:Because I feel like it.
+[[And why is that?|Enabling1]]//Mood Gain
+[[Got any particular reasons, or are you trying to keep an image?|Digging1]]//Mood Hit
+[[Okay, be that way.|Angry1]]
+===
+title: Enabling1
+tags: 
+colorID: 0
+position: 1189,-288
+---
+Nilbog:Maybe I do, but this doesn't seem like the place to spill our guts. Why dont we save that for the Heroes?
+[[Well... you guys aren't really doing the best job of that. This could help everyone.|Optimistic1]]
+[[See it more as ... I don't know... fixing a leak in a pipe.|Rephrasing1]]
+[[Why should we? You guys are Goblins, you should love the opportunity for gut-spilling.|Morbid1]]
+===
+title: Condescending1
+tags: 
+colorID: 0
+position: 1181,-57
+---
+Nilbog:This is a waste of time.
+[[O...... *crying*|Cringe1]]
+[[Yeah... well... your FACE is!|Cringe1]]
+[[Why would you say that? We are here to create a Mean, Green, Fighting Machine!|Cringe1]]
+===
+title: Ignoring1
+tags: 
+colorID: 0
+position: 1192,169
+---
+Nilbog:Good one, almost like it was natural.
+[[Hey, I had a good teacher.|Comradery1]]
+[[I try my best. If you need advice, feel free to reach out. Hey, maybe you fellow employees could teach you a few things.|Normality1]]
+[[...............|Angry1]]
+===
+title: Digging1
+tags: 
+colorID: 0
+position: 1190,774
+---
+Nilbog:What kind of Image are you seeing?
+[[Someone who thinks they dont need anyones help.|Blunt1]]
+[[Your'e the type of person who says 3 lines per episode, but is somehow still a main character.|Anime1]]
+[[Actually, all I'm seeing is a pretty boring picture. Like my two year old has something like you on our fridge.|Angry1]]
+===
+title: Cringe1
+tags: 
+colorID: 0
+position: 1423,-60
+---
+Nilbog:........... //Mood Kill
+===
+title: Angry1
+tags: 
+colorID: 0
+position: 1192,421
+---
+Nilbog:............ //Mood Kill
+===
+title: Optimistic1
+tags: 
+colorID: 0
+position: 1443,-773
+---
+Nilbog:Yeah, maybe it will. Who knows, I might find a use from these Goblins.//Unlocks Coworker Branch
+===
+title: Rephrasing1
+tags: 
+colorID: 0
+position: 1444,-538
+---
+Maybe these guys are the just the tools I need. I do have a background as a Plumber, and I for sure know how to fix a leaky pipe.//Unlocks Tool Branch
+===
+title: Morbid1
+tags: 
+colorID: 0
+position: 1442,-301
+---
+Nilbog:Uh... sure boss. Ill get right one that.//Increased Damage
+===
+title: Comradery1
+tags: 
+colorID: 0
+position: 1727,-66
+---
+Nilbog:Still got a long ways to go if you want to be like me.//Inceased Health
+===
+title: Normality1
+tags: 
+colorID: 0
+position: 1731,172
+---
+Nilbog:Yeah who knows, maybe these Goblins do have some tricks up their sleves. Maybe ones good at cooking or something.//Unlocks Coworker Branch
+===
+title: Anime1
+tags: 
+colorID: 0
+position: 1469,772
+---
+Nilbog:What is that supposed to mean?
+[[You want to be noticed, but dont really try to.|Cutting1]]
+[[You try to be an enigma, where no one knows who you really are.|Cutting1]]
+[[You never get the main girl.|Deep1]]
+===
+title: Blunt1
+tags: 
+colorID: 0
+position: 1437,415
+---
+Nilbog:And what if I don't need any of these buffoons help?
+[[Well I would call you a liar.|Straight1]]
+[[But they need your help. The only reason you come to work is because you know they need you.|Team1]]
+[[Well then should I just tell all these other guys to go home? Not show up for work anymore? You got everything covered.|Fear1]]Mood Hit
+===
+title: Fear1
+tags: 
+colorID: 0
+position: 1960,559
+---
+Nilbog:C'mon, dont even joke about that. Whatever, I'll do my job. Just make sure they do theirs.//Mood Hit
+===
+title: Team1
+tags: 
+colorID: 0
+position: 1966,331
+---
+Nilbog:Sure... we'll see about it this coming shift.//Mood Gain
+===
+title: Straight1
+tags: 
+colorID: 0
+position: 1740,411
+---
+Nilbog:Call me what you want, I don't care anymore.//Mood Hit
+===
+title: Cutting1
+tags: 
+colorID: 0
+position: 1724,768
+---
+Nilbog:*Tear Drops*.........//Nilbog now reveals more information when being asked about others.
+===
+title: Deep1
+tags: 
+colorID: 0
+position: 1596,1014
+---
+Nilbog:What you mean is...I never reach my own goals... because... I'm too scared to fail...
+[[.............|Cutting1]]
+[[No, what I meant was your ugly. That seemed pretty clear.|Angry1]]
+===
+title: Tree2Start
+tags: 
+colorID: 0
+position: 0,2887
+---
+Nilbog:................what?
+[[I think we can solve our isolation problemd through embracing your skills as a solo operative.|Solo1]]
+[[How about you treat this job as a machine, and your role is fix all the cracks that have began to form in the metal.|Plumber1]]//Unlocked in Tree 1
+[[If you won't talk or work with others, I will have to be the bad guy.|Stern1]]
+[[Let us focus on your relationships with your fellow goblins.|Teamwork1]]//Unlocked in Tree 1
+===
+title: Solo1
+tags: 
+colorID: 0
+position: 293,1807
+---
+Nilbog:Finally you understand...
+[[If you are so averse to other people, train more on working alone.|Neccesity1]]
+[[Your current work is terrible, you always end up dead or barely alive.|Sucking1]]
+[[Keep up the way you work by yourself and the necromancers might leave you dead this time.|Scared1]]
+===
+title: Teamwork1
+tags: 
+colorID: 0
+position: 304,3821
+---
+Nilbog:....how so?
+[[They are trying their best and you need to do so as well.|Trying1]]
+[[If you help them, they will aid you in kind.|Mutual1]]
+[[Allowing other people to aid you in battle is not a bad thing you know?|Personal1]]
+===
+title: Plumber1
+tags: 
+colorID: 0
+position: 287,2484
+---
+Nilbog:Fix them in what ways?
+[[Go at it until everything is done.|Screwdriver1]]//Nilbog needs to work constantly harder and harder until the work is done (like a screwdriver)
+[[Work on group cohesion|Tape1]]//Nilbog should work on connecting the group together, in order to hold the place up
+[[You need to open up with your coworkers more.|Wrench1]]//Maybe you just dont have the right size wrench, dont be afraid the adjust the size in order to grip around a bolt
+===
+title: Stern1
+tags: 
+colorID: 0
+position: 312,3167
+---
+Nilbog:You can't scare me.
+[[Maybe you refusing to work with others because you are weak.|Weak1]]
+[[You sound like a petulent child when you complain about the other goblins.|Whiney1]]/
+[[Perhaps you are what is holding everyone back.|Weakest1]]
+===
+title: Sucking1
+tags: 
+colorID: 0
+position: 546,1786
+---
+Nilbog:Got me on that one boss, I will work harder.//Even more damage when Solo
+===
+title: Screwdriver1
+tags: 
+colorID: 0
+position: 548,2268
+---
+Nilbog:As long as you keep the pay coming in, that is all that matters.// Increase HP and Armor
+===
+title: Scared1
+tags: 
+colorID: 0
+position: 552,2024
+---
+Nilbog:H-hey now, no need for all that. I can handle myself just fine.//Always lower threat then Gabbin, more HP
+===
+title: Neccesity1
+tags: 
+colorID: 0
+position: 551,1563
+---
+Nilbog:As long as a higher bodycount means more salary.//Increase damage
+===
+title: Tape1
+tags: 
+colorID: 0
+position: 546,2476
+---
+Nilbog:If you vouch for them, I guess I will give them a pass.//No longer loses stats with Gabbin, keeps Loner buff
+===
+title: Wrench1
+tags: 
+colorID: 0
+position: 546,2708
+---
+Nilbog:Gabbin has been insisting on "game night". I guess I will take him up on his offer.//He might need to try being friendly instead of a loner (different tool) (loses loner, gains Friendly trait)
+===
+title: Weakest1
+tags: 
+colorID: 0
+position: 551,3395
+---
+Nilbog:I am only looking out for who is important, me. My strength is wasted on them.//Lower threat, better Solo buffs)
+===
+title: Whiney1
+tags: 
+colorID: 0
+position: 552,3172
+---
+Nilbog:I am not a child and I will not be treated like one!//Loses Loner trait)
+===
+title: Weak1
+tags: 
+colorID: 0
+position: 546,2929
+---
+Nilbog:Me?! Weak?! I am anything but! Let me prove it.//Massive HP Increase)
+===
+title: Trying1
+tags: 
+colorID: 0
+position: 545,3618
+---
+Nilbog:Gabbin does remind of a kid I used to know, I could do more to help him out.//Gabbin gains increased HP and Damage)
+===
+title: Personal1
+tags: 
+colorID: 0
+position: 551,4048
+---
+Nilbog:Ha! Problem is these guys are not reliable, so I can't expect much help from them. //Massive stat increase when Solo)
+===
+title: Mutual1
+tags: 
+colorID: 0
+position: 549,3831
+---
+Nilbog:As long as you make sure they do.//All other Goblins gain slight damage buffs
+===

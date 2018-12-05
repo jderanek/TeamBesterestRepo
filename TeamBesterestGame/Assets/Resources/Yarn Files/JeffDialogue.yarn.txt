@@ -1,0 +1,275 @@
+title: Start
+tags: 
+colorID: 0
+position: 540,261
+---
+[[Is there anything in the workplace you would like to talk about?|GeneralQ]]
+===
+title: GeneralQ
+tags: 
+colorID: 0
+position: 897,261
+---
+Geoff: Yeah, you put me alongside a complete jerk. He keeps bothering me.
+Jeff: Bothering you? More like the other way around buddy.
+Geoff: Don't start that crap again pal!
+Jeff: You did, not me!
+[[I will ask your coworkers then about all this.|Info]]
+[[What is with all the yelling?!|WhyYell]]
+[[One of your coworkers told me all about your little issues. You two seriously need some anger management.|AngerManage]]
+[[If I seperate you two, would you stop fighting all the time?|B3]]
+===
+title: B3
+tags: 
+colorID: 0
+position: 917,766
+---
+//if mood is high
+Jeff: That would probably be the best option.
+Geoff: For once we agree on something.
+[[Do you two promise?|Split]]
+
+//if mood is low
+Geoff: He still hasn't apologized!
+Jeff: Neither have you!
+Geoff: I think you haven't learned your lesson yet!
+Jeff: Bring it on!
+//Ends Branch
+===
+title: Nilbog
+tags: 
+colorID: 0
+position: 2229,-502
+---
+Nilbog: I don't like to be a snitch, but I like to eavesdrop on people sometimes. I have a report here all about their complaints.
+
+//Returns to Info, removes Nilbog from choices, unlocks AngerManage
+
+===
+title: WhyYell
+tags: 
+colorID: 0
+position: 1414,26
+---
+Jeff and Geoff: *incoherent yelling over each other*
+Gabbin: Typical...
+[[Cut it out! I am trying to help so can you please keep it down? Can you just tolerate each other while at work?|Help]]
+[[I CAN YELL TOO YOU KNOW! IT IS EASY!|Yelled]]
+===
+title: AngerManage
+tags: 
+colorID: 0
+position: 1383,391
+---
+Jeff: I have tried that in the past boss, I don't think it'll work.
+Geoff: Yeah, I am not so sure about "talking away my problems" when my fists work just fine.
+[[If you two don't get your act together you are looking at docked pay or termination of employment!|ThreatenA]]
+[[If I give you an extra lunch portion, would you two please move past this?|CoerceA]]
+===
+title: SupportGeoff
+tags: 
+colorID: 0
+position: 2571,-587
+---
+[[You can't go around stealing people's lunches. You need to make things right Geoff.|GeoffR]]
+===
+title: Yelled
+tags: 
+colorID: 0
+position: 2117,156
+---
+Jeff and Geoff: *more incoherent yelling*
+Gabbin: Really boss? Don't encourage them.
+Jeff: Gabbin, you are about as annoying as Geoff.
+Gabbin: W-what?
+Geoff: If you are gonna act like a push-over, we are going to treat you like one!
+//Ends branch, massivve mood hit, Jeff and Geoff will also fight Gabbin
+===
+title: ThreatenA
+tags: 
+colorID: 0
+position: 1776,355
+---
+Jeff: Ok! Ok! No need to go that far boss.
+Geoff: Loud and clear, no need for any of that. We will work it out.
+Gabbin: While I don't approve of your methods, at least the issue is solved.
+//Ends branch, Geoff and Jeff no longer fight, mood hit
+===
+title: CoerceA
+tags: 
+colorID: 0
+position: 1799,582
+---
+Jeff: A tempting offer, I will agree.
+Geoff: As will I.
+Gabbin: You can't go wrong with more food!
+//Ends Branch, Jeff and Geoff no longer fight, but their damage is 10% less due to overeating, mood gain
+===
+title: Info
+tags: 
+colorID: 0
+position: 1858,-739
+---
+Geoff: They just don't understand why I hate his guts so much.
+Jeff: Oh please, if you annoyed them as much as you do me, they'd be on my side.
+[[I know you are a loner, but you must have seen SOMETHING Nilbog.|Nilbog]]
+[[You seem to get along ok with everyone Gabbin, what about you?|Gabbin]]
+[[Goblenn, have you seen anything?|Goblenn]]
+
+//Can only pick two workers, after 2nd this dialogue occurs
+Jeff: What do you think boss? Can't you see I am right?
+Geoff: He is clearly in the wrong. Do not let him confuse you.
+[[Support Geoff|SupportGeoff]]
+[[Support Jeff|SupportJeff]]
+===
+title: Goblenn
+tags: 
+colorID: 0
+position: 2252,-1038
+---
+Goblenn: I-I don't know much, just that they are loud and mean... please keep them away from me.
+//Removes Goblenn from choices, returns to Info
+===
+title: Gabbin
+tags: 
+colorID: 0
+position: 2267,-774
+---
+Gabbin: From what I gathered it all started over something in the kitchen, I think Jeff stole Geoff's lunch or something.
+//Returns to Info, removes Gabbin from choices
+===
+title: SupportJeff
+tags: 
+colorID: 0
+position: 2593,-997
+---
+[[I think Geoff's grievances are legitimate. I am sorry Jeff, but you need to apologize.|JeffR]]
+===
+title: Split
+tags: 
+colorID: 0
+position: 1264,772
+---
+Jeff and Geoff: We promise.
+//Ends branch, mood gain, both gain damage increase but will still fight each if placed together by player
+===
+title: JeffR
+tags: 
+colorID: 0
+position: 2858,-998
+---
+//if Mood High
+Jeff: Sigh, you are right. I will do as you say boss.
+//Ends Branch, Jeff and Geoff no longer fight, but Jeff does 25% less damage
+
+//if Mood Low
+Jeff: Seriously boss?! You side with this jerk over me?! I am done.
+//Ends Branch, Jeff quits
+===
+title: GeoffR
+tags: 
+colorID: 0
+position: 2866,-602
+---
+//If Mood High
+Geoff: I was just hungry! You are correct however, it was wrong of me. I am sorry Jeff.
+//Ends Branch, Jeff and Geoff no longer fight, Jeff does -25% less damage
+
+//If Mood Low
+Geoff: You must be joking, you are taking his side over mine? No job is worth this.
+//Ends Branch, Geoff quits
+===
+title: Help
+tags: 
+colorID: 0
+position: 2120,-98
+---
+Geoff: I will work beside him, doesn't mean I will like it...
+Jeff: Trust me, the feeling is shared immensely...
+//Ends Branch, Geoff and Jeff no longer fight, but both do 15% less damage if in the same room
+===
+title: JeffFollowup
+tags: 
+colorID: 0
+position: 467,1552
+---
+Jeff:Yeah boss? What do you need?
+//If Jeff apologized
+[[Did Geoff accept your apology?|JeffApologized]]
+//If you told them to tolerate each other
+[[So have you two made up yet?|PostTolerate]]
+[[Just checking up. How are you doing?|Standard]]
+===
+title: JeffApologized
+tags: 
+colorID: 0
+position: 853,1276
+---
+Jeff: Yeah he did. I think so at least. He isn't giving me any more dirty looks at any rate.
+[[That is a good start. Keep at it!|DontEncourage]]
+[[I think you can win him over a lot faster if you open up to him|Encourage]]
+===
+title: Standard
+tags: 
+colorID: 0
+position: 604,1915
+---
+Jeff: Doing ok so far. I think Gabbin is still worried about me and Geoff however.
+[[Can you reassure him that I have everything under control?|GabbinWorry]]
+[[It is an internal issue, don't let him get involved.|PrivateMatter]]
+===
+title: PostTolerate
+tags: 
+colorID: 0
+position: 879,1572
+---
+Jeff:As long as he keeps to his side of the room, we will do just fine.
+[[Has there been any issues with that?|PersonalSpace]]
+[[Glad to hear it. Just keep your distance, that is all I ask|Distance]]
+===
+title: DontEncourage
+tags: 
+colorID: 0
+position: 1201,1140
+---
+Jeff:I will boss, don't worry.//Mood Gain
+===
+title: Encourage
+tags: 
+colorID: 0
+position: 1200,1382
+---
+Jeff:I... I am not that kind of person, but I am willing to give it a shot.//Remove Apology Debuff
+===
+title: PersonalSpace
+tags: 
+colorID: 0
+position: 1199,1617
+---
+Jeff: For the most part no, but Gabbin thinks that Geoff and I are best bros now. He won't stop talking about it...
+//10% Damage decrease for Jeff and Geoff if they are together in the same room as Gabbin
+===
+title: Distance
+tags: 
+colorID: 0
+position: 1189,1836
+---
+Jeff: Yep. As long as he keeps doing the same, we won't have problems.
+//Mood Gain
+===
+title: GabbinWorry
+tags: 
+colorID: 0
+position: 879,1845
+---
+Jeff:I will try. You know Gabbin though boss, he is a bit of a worrywort.
+//Gabbin minor damage increase, mood gain
+===
+title: PrivateMatter
+tags: 
+colorID: 0
+position: 865,2109
+---
+Jeff:Sure thing boss. I will tell him.
+//Mood hit
+===
