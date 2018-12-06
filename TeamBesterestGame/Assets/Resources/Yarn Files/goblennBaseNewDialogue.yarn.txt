@@ -1,7 +1,7 @@
 title: Coward1Base
 tags: 
 colorID: 0
-position: -167,666
+position: -586,888
 ---
 Goblenn: H-huh?
 Goblenn: Oh, yea! That's me, Goblenn!
@@ -9,6 +9,9 @@ Goblenn: I'm the... front-line fighter around here.
 [[Front-line fighter? That must make you the most brave of the goblins here!|Coward11]]
 [[You must see a lot of combat then, yes?|Coward12]]
 [[Tell me about yourself, Goblenn.|Coward13]]
+<<if $ambushTactics == 1>>
+[[Maybe we could discuss some ambush tactics.|CowTree2Start]]
+<<endif>>
 ===
 title: Coward11
 tags: 
@@ -35,12 +38,15 @@ Goblenn: Heroes are scary!
 title: Coward1111
 tags: 
 colorID: 0
-position: 1297,-414
+position: 1396,-477
 ---
 //Mood Hit
 Goblenn: Eeep!!
 Goblenn: Ok, ok, I'll consider it...
 //Unlock Coward2
+<<MoodHit Goblenn>>
+<<set $ambushTactics to 1>>
+<<EndInterview Goblenn>>
 ===
 title: Coward112
 tags: 
@@ -58,7 +64,7 @@ Goblenn: ...reviving my coworkers...
 title: Coward1122
 tags: 
 colorID: 0
-position: 1279,-41
+position: 1292,-41
 ---
 Goblenn: I know all the best hiding spots, and escape routes, so...
 //Unlocks an option in C2: Ambush Tactics. Will update with appropriate label when that's actually layed out
@@ -69,29 +75,34 @@ Goblenn: I know all the best hiding spots, and escape routes, so...
 title: Coward11222
 tags: 
 colorID: 0
-position: 1590,-91
+position: 1695,4
 ---
 Goblenn: You think so?
 Goblenn: Hiding and running IS a lot easier...
 //Unlock Coward2
+<<set $ambushTactics to 1>>
+<<EndInterview Goblenn>>
 ===
 title: Coward113
 tags: 
 colorID: 0
-position: 1009,231
+position: 1100,270
 ---
 Geoff: He's a coward.
 Jeff: Probably the worst fighter here.
 Gabbin: ...how do you put a positive spin on "Runs away"? Hmm...
 Loner: ...Definitely a coward.
 //Mood Hit
+<<MoodHit Goblenn>>
 //Unlocks Coward2
+<<set $ambushTactics to 1>>
 //Unlocks Coward2 option regarding Coworkers opinions
+<<EndInterview Goblenn>>
 ===
 title: Coward12
 tags: 
 colorID: 0
-position: 345,679
+position: 208,724
 ---
 Goblenn: Wellllll...
 Goblenn: ...not reeeeaaally...
@@ -104,11 +115,12 @@ Goblenn: ...not usually, actually...
 title: Coward122
 tags: 
 colorID: 0
-position: 580,559
+position: 432,432
 ---
 Goblenn: Pretty well, if you ask me!
 Goblenn: I know all the best hiding spots and escape routes, so I tend to get out ok!
 //Unlock Coward2 Option about Ambush Tactics
+<<set $ambushTactics to 1>>
 [[(At all) What do you all think about this?|Coward113]]
 [[Are you afraid to fight?|Coward1222]]
 ===
@@ -129,6 +141,7 @@ colorID: 0
 position: 570,773
 ---
 //Mood Hit
+<<MoodHit Goblenn>>
 Goblenn: You could say that, I guess...
 Goblenn: I call it being smart!
 Goblenn: Heroes are so scary...
@@ -137,12 +150,13 @@ Goblenn: Heroes are so scary...
 title: Coward13
 tags: 
 colorID: 0
-position: 336,1251
+position: -177,1350
 ---
 Goblenn: W-well...
 Goblenn: ...I like to run...
 Goblenn: Ooh! And I know all the best hiding spots in the dungeon!
 //Unlocks Coward2 option about Ambush Tactics
+<<set $ambushTactics to 1>>
 [[...hiding spots? Aren't you the front line fighter here?|Coward131]]
 [[I bet those skills are great for catching heroes off guard!|Coward132]]
 [[How do those help you kill heroes?|Coward133]]
@@ -161,7 +175,7 @@ Goblenn: ...Technically.
 title: Coward1311
 tags: 
 colorID: 0
-position: 1183,1028
+position: 1277,908
 ---
 Goblenn: Not particularly..?
 [[You're wasting the companies resources by not participating. If you want to keep your job, we're going to have to address this immediately!|Coward1111]]
@@ -193,31 +207,39 @@ Goblenn: You say that like it's a bad thing!
 title: Coward1322
 tags: 
 colorID: 0
-position: 1178,1497
+position: 1383,1522
 ---
 Goblenn: Why not?
 Goblenn: They can't stop the heroes, and they all think I'm a coward anyway...
 //Mood hit for every other monster.
+<<MoodHit Gabbin>>
+<<MoodHit Geoff>>
+<<MoodHit Jeff>>
+<<MoodHit Nilbog>>
 //Unlocks Coward2
 //Unlocks option in Coward 2 about Coworkers Opinions
 ===
 title: Coward13211
 tags: 
 colorID: 0
-position: 1440,1287
+position: 1576,1212
 ---
 Goblenn: That's an awful impersonal way to look at things...
 //Unlocks Coward2
+<<set $ambushTactics to 1>>
+<<EndInterview Goblenn>>
 ===
 title: Coward1323
 tags: 
 colorID: 0
-position: 1173,1712
+position: 1242,1857
 ---
 //Mood Hit
 Goblenn: Not... really...
 //Unlocks Coward2
 //Unlocks option in Coward2 about Coworkers Opinions
+<<set $ambushTactics to 1>>
+<<EndInterview Goblenn>>
 ===
 title: Coward133
 tags: 
@@ -229,6 +251,9 @@ Goblenn: ...I guess they technically don't...
 [[You're wasting the companies resources by not participating. If you want to keep your job, we're going to have to address this immediately!|Coward1111]]
 [[You'd really leave your friends to die like that?|Coward1322]]
 [[So you're a coward, then?|Coward123]]
+<<if $ambushTactics == 1>>
+[[Maybe we could discuss some ambush tactics.|CowTree2Start]]
+<<endif>>
 ===
 title: CowTree2Start
 tags: 
@@ -245,7 +270,7 @@ Goblenn:Y-yes? What do you need?
 title: RPsychology
 tags: 
 colorID: 0
-position: 231,4564
+position: 115,4521
 ---
 Goblenn:T-tell me...
 [[If you keep running away and leaving your fellow workers to die, there will no one left to save you when YOU need help|Inevitable]]
@@ -272,7 +297,7 @@ Goblenn:Tell me what I need to do to change, I am tired of running away..
 title: Stealth
 tags: 
 colorID: 0
-position: 221,2397
+position: 223,2354
 ---
 Goblenn:I-I am good at laying low...
 [[You can use your hiding skills to ambush any unsuspecting heroes!|Preying]]
@@ -287,40 +312,41 @@ Goblenn:Well, they couldn't like me any less...
 [[You are the tip of the spear, you need to prove why you were assigned there.|Teamwork]]
 [[As the vanguard, your role is to inspire your fellow goblins to victory.|Leader]]
 ===
-title: Node28
-tags: 
-colorID: 0
-position: 1084,468
----
-Empty Text
-===
 title: Preying
 tags: 
 colorID: 0
-position: 485,2382
+position: 878,2446
 ---
 Goblenn:L-like a ninja? T-that sounds cool!//Damage increase, threat decrease
+<<SwapTrait Goblenn Aggressive>>
+<<EndInterview Goblenn>>
 ===
 title: Leader
 tags: 
 colorID: 0
-position: 502,3177
+position: 539,3177
 ---
-Goblenn:M-me?! That is a hard task... but you are right. I will try to boost morale in battle...//All monsters in room with Goblenn attack increase
+Goblenn: M-me?! That is a hard task... but you are right. 
+Goblenn: I will try to boost morale in battle...//All monsters in room with Goblenn attack increase
+<<SwapTrait Goblenn Friendly>>
+<<EndInterview Goblenn>>
 ===
 title: Teamwork
 tags: 
 colorID: 0
-position: 489,2898
+position: 660,2897
 ---
 Goblenn:I can maybe talk to Jeff or Geoff about training some more then.//All stats except threat minor increase
+<<EndInterview Goblenn>>
 ===
 title: Stalking
 tags: 
 colorID: 0
-position: 499,2647
+position: 559,2624
 ---
 Goblenn:Wouldn't hurt to try I guess...//Damage increase
+<<SwapTrait Goblenn Aggressive>>
+<<EndInterview Goblenn>>
 ===
 title: Inevitable
 tags: 
@@ -328,6 +354,8 @@ colorID: 0
 position: 517,4567
 ---
 Goblenn:Y-you are right... I need to not let them down anymore!//Loses Coward Trait, damange and armor increase
+<<SwapTrait Goblenn Aggressive>>
+<<EndInterview Goblenn>>
 ===
 title: Unemployed
 tags: 
@@ -335,27 +363,34 @@ colorID: 0
 position: 517,3719
 ---
 Goblenn:N-no please! I promise I will change! Don't be hasty!//Loses Coward trait, damage increase
+<<SwapTrait Goblenn Aggressive>>
+<<EndInterview Goblenn>>
 ===
 title: Abandon
 tags: 
 colorID: 0
-position: 520,3448
+position: 557,3472
 ---
 Goblenn:I-I will! Please don't fire me! //Loses Coward trait, damage decrease
+<<SwapTrait Goblenn Friendly>>
+<<EndInterview Goblenn>>
 ===
 title: Respect
 tags: 
 colorID: 0
-position: 506,3989
+position: 593,3983
 ---
 Goblenn:N-no! I am a proud goblin! They should cower in fear of me!//loses Coward trait, damage and HP increase
+<<SwapTrait Goblenn Aggressive>>
+<<EndInterview Goblenn>>
 ===
 title: Smarter
 tags: 
 colorID: 0
-position: 516,4250
+position: 549,4261
 ---
 Goblenn:Surviving is high up there on my to-do list. My fear can be useful sometimes, haha...//Massive HP increase
+<<EndInterview Goblenn>>
 ===
 title: Alone
 tags: 
@@ -363,4 +398,5 @@ colorID: 0
 position: 512,4812
 ---
 Goblenn:They are fighting harder than I am... maybe one day I can be as strong as them!//Massive damage increase
+<<EndInterview Goblenn>>
 ===

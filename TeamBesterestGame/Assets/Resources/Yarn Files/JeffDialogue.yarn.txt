@@ -84,26 +84,40 @@ Jeff: Gabbin, you are about as annoying as Geoff.
 Gabbin: W-what?
 Geoff: If you are gonna act like a push-over, we are going to treat you like one!
 //Ends branch, massivve mood hit, Jeff and Geoff will also fight Gabbin
+<<MoodHit Jeff>>
+<<MoodHit Jeff>>
+<<MoodHit Jeff>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+<<EndInterview Jeff>>
 ===
 title: ThreatenA
 tags: 
 colorID: 0
-position: 1776,355
+position: 1824,342
 ---
 Jeff: Ok! Ok! No need to go that far boss.
 Geoff: Loud and clear, no need for any of that. We will work it out.
 Gabbin: While I don't approve of your methods, at least the issue is solved.
 //Ends branch, Geoff and Jeff no longer fight, mood hit
+<<MoodHit Jeff>>
+<<MoodHit Geoff>>
+<<SwapTrait Jeff Friendly>>
+<<EndInterview Jeff>>
 ===
 title: CoerceA
 tags: 
 colorID: 0
-position: 1799,582
+position: 1838,612
 ---
 Jeff: A tempting offer, I will agree.
 Geoff: As will I.
 Gabbin: You can't go wrong with more food!
 //Ends Branch, Jeff and Geoff no longer fight, but their damage is 10% less due to overeating, mood gain
+<<SwapTrait Geoff Friendly>>
+<<SwapTrait Jeff Friendly>>
+<<EndInterview Jeff>>
 ===
 title: Info
 tags: 
@@ -128,7 +142,7 @@ Goblenn: I-I don't know much, just that they are loud and mean... please keep th
 title: Gabbin
 tags: 
 colorID: 0
-position: 2267,-774
+position: 2240,-784
 ---
 Gabbin: From what I gathered it all started over something in the kitchen, I think Jeff stole Geoff's lunch or something.
 //Returns to Info, removes Gabbin from choices
@@ -152,12 +166,13 @@ Jeff and Geoff: We promise.
 title: JeffR
 tags: 
 colorID: 0
-position: 3323,-1017
+position: 3323,-1015
 ---
 //if Mood High
 Jeff: Sigh, you are right. I will do as you say boss.
 //Ends Branch, Jeff and Geoff no longer fight, but Jeff does 25% less damage
 <<SwapTrait Jeff Coward>>
+<<EndInterview Jeff>>
 //if Mood Low
 //Jeff: Seriously boss?! You side with this jerk over me?! I am done.
 //Ends Branch, Jeff quits
@@ -174,17 +189,19 @@ Geoff: I was just hungry! You are correct however, it was wrong of me. I am sorr
 //If Mood Low
 //Geoff: You must be joking, you are taking his side over mine? No job is worth this.
 //Ends Branch, Geoff quits
+<<EndInterview Jeff>>
 ===
 title: Help
 tags: 
 colorID: 0
-position: 2120,-98
+position: 2141,-127
 ---
 Geoff: I will work beside him, doesn't mean I will like it...
 Jeff: Trust me, the feeling is shared immensely...
 //Ends Branch, Geoff and Jeff no longer fight, but both do 15% less damage if in the same room
 <<SwapTrait Geoff Coward>>
 <<SwapTrait Jeff Coward>>
+<<EndInterview Jeff>>
 ===
 title: JeffFollowup
 tags: 

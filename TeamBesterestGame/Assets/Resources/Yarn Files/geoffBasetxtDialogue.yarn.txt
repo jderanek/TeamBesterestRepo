@@ -1,7 +1,7 @@
 title: Geoff1Base
 tags: 
 colorID: 0
-position: 108,336
+position: -1291,1050
 ---
 Geoff: ...Hello, I'm Geoff.
 Geoff: ...and I'm mad that my scone got eaten!
@@ -10,11 +10,14 @@ Geoff: What kind of jerk does that!
 [[I'm sorry to hear that... Geoff?|Geoff12]]
 [[A shame, I bet it was a darned good scone too.|Geoff13]]
 [[(At all) Who did this?|Geoff14]]
+<<if $sconeScene == 1>>
+[[Hey I wanna talk to you about your scone debacle.|GeoffTree2Start]]
+<<endif>>
 ===
 title: Geoff11
 tags: 
 colorID: 0
-position: 312,36
+position: 133,-91
 ---
 Geoff: ...Actual work?
 Geoff: There's nothing in this world more important to me than that scone!
@@ -23,11 +26,15 @@ Geoff: Jeff is gonna pay for that!
 //Mood kill
 //Enraged?
 //Unlock tree Jeff2: about that scone
+<<set $sconeScene to 1>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
 ===
 title: Geoff12
 tags: 
 colorID: 0
-position: 380,341
+position: 51,311
 ---
 Geoff: Something needs to be done about Jeff!
 Geoff: That guy's a real menace!
@@ -39,26 +46,31 @@ Geoff: That guy's a real menace!
 title: Geoff121
 tags: 
 colorID: 0
-position: 650,91
+position: 675,-102
 ---
 Geoff: That's probably the smartest thing you've said since you walked in here!
 //Mood Kill
+<<set $sconeScene to 1>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
 //Unlock Jeff2: about the scone
 ===
 title: Geoff122
 tags: 
 colorID: 0
-position: 634,337
+position: 596,268
 ---
 //Mood hit
 Geoff: ...I can fight my own battles, but thanks, I guess...
+<<MoodHit Geoff>>
 [[I'd actually prefer that you didn't. Literally speaking, that is.|Geoff1221]]
 [[Go for it!|Geoff121]]
 ===
 title: Geoff1221
 tags: 
 colorID: 0
-position: 856,334
+position: 1030,397
 ---
 Geoff: Why not?
 Geoff: Jeff is a dirty, scone-eating tyrant!
@@ -70,37 +82,46 @@ Geoff: He HAS to be stopped!
 title: Geoff12211
 tags: 
 colorID: 0
-position: 1074,126
+position: 1037,63
 ---
 Geoff: I'll show him, just you wait!
 //Mood kill
+<<set $sconeScene to 1>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
 //Enraged?
 //Unlock Jeff2: about that scone
 ===
 title: Geoff12212
 tags: 
 colorID: 0
-position: 1076,336
+position: 1630,475
 ---
 Geoff: It'd be one thing if it were voluntary...
 Geoff: He's just stealing!
 Geoff: And everyone knows scones are my favorite...
 //Unlocks Jeff2: about that scone
+<<set $sconeScene to 1>>
+<<EndInterview Geoff>>
 ===
 title: Geoff12213
 tags: 
 colorID: 0
-position: 1076,557
+position: 1127,820
 ---
 //Mood Hit
 Geoff: Fine...
 Geoff: ...but if you don't do anything about it, I will!
 //Unlock Jeff2: about that scone
+<<MoodHit Geoff>>
+<<set $sconeScene to 1>>
+[[GeoffTree2Start]]
 ===
 title: Geoff123
 tags: 
 colorID: 0
-position: 639,599
+position: 574,619
 ---
 Geoff: I planned on stomping his face in later, actually.
 Geoff: It'll be a nice workout before the Heroes show up!
@@ -110,22 +131,25 @@ Geoff: It'll be a nice workout before the Heroes show up!
 title: Geoff124
 tags: 
 colorID: 0
-position: 629,844
+position: 96,977
 ---
 Goblenn: I believe it.
 Jeff: Yes.
 Gabbin: Said it himself!
 Nilbog: Of course.
 //Unlock Jeff2: about that scone
+<<set $sconeScene to 1>>
+[[GeoffTree2Start]]
 ===
 title: Geoff13
 tags: 
 colorID: 0
-position: 289,709
+position: 73,648
 ---
 //Mood hit
 Geoff: Wow.
 Geoff: Thanks for the sympathies there, buddy.
+<<MoodHit Geoff>>
 [[If it really means that much to you, you can confront him about it.|Geoff121]]
 [[Want me to talk to Jeff for you?|Geoff122]]
 [[What do you plan on doing about it?|Geoff123]]
@@ -134,20 +158,23 @@ Geoff: Thanks for the sympathies there, buddy.
 title: Geoff14
 tags: 
 colorID: 0
-position: 284,984
+position: -323,1077
 ---
 Goblenn: ...I th-think Jeff ate it?
 Jeff: Yep!
 Gabbin: Heard it from the goblin himself!
 Nilbog: Sounds about right.
 //Unlocks Jeff2: about that scone
+<<set $sconeScene to 1>>
+[[GeoffTree2Start]]
 ===
 title: GeoffTree2Start
 tags: 
 colorID: 0
-position: -220,2575
+position: -954,1721
 ---
-Geoff:What do you need now boss?
+Geoff: If it's about my scone I'm all ears.
+Geoff: What do you need boss?
 [[I can understand where you are coming from. But you need to learn something.|Understanding]]
 [[Your anger is not missplaced, but you need to control it.|Angry]]
 [[Why is this scone so important to you?|Sconeless]]
@@ -165,7 +192,7 @@ Geoff:And what is that exactly?
 title: Angry
 tags: 
 colorID: 0
-position: 251,2227
+position: 227,2224
 ---
 Geoff:Lay it on me boss.
 [[I think I have been holding you back. You have free license to go wild on heroes. Just leave Jeff alone in exchange.|Wild]]
@@ -188,6 +215,8 @@ colorID: 0
 position: 514,1337
 ---
 Geoff:Fine... maybe I'll focus on making heroes tremble in their boots more, that is always fun to watch!//No longer attacks Jeff
+<<TraitSwap Geoff Coward>>
+<<EndInterview Geoff>>
 ===
 title: Fat
 tags: 
@@ -195,6 +224,7 @@ colorID: 0
 position: 505,2880
 ---
 Geoff:I-I thought my armor was a bit tight this morning... I think I will refrain from them for the time being.//Increase Armor and HP
+<<EndInterview Geoff>>
 ===
 title: Bland
 tags: 
@@ -202,6 +232,8 @@ colorID: 0
 position: 510,3105
 ---
 Geoff:I did buy it off the street market for very cheap, maybe it WOULD taste awful. I only wish I could see Jeff's face when he ate it if so.//No longer attacks Jeff, lower HP
+<<SwapTrait Geoff Coward>>
+<<EndInterview Geoff>>
 ===
 title: Mold
 tags: 
@@ -209,6 +241,8 @@ colorID: 0
 position: 516,1561
 ---
 Geoff:Using my anger for Jeff against heroes? That is not a bad idea boss. I like your style of "anger management".//No longer attacks Jeff, more damage and HP
+<<TraitSwap Geoff Friendly>>
+<<EndInterview Geoff>>
 ===
 title: Unfair
 tags: 
@@ -216,6 +250,8 @@ colorID: 0
 position: 516,1784
 ---
 Geoff: If this world isn't fair, I'll just watch out for myself then. No need for others to hold me back.//No longer attacks Jeff, more Armor
+<<SwapTrait Geoff Friendly>>
+<<EndInterview Geoff>>
 ===
 title: Poison
 tags: 
@@ -223,6 +259,8 @@ colorID: 0
 position: 506,2661
 ---
 Geoff:Who would've done that? If it was, I hope Jeff falls over dead soon.//No longer attacks Jeff
+<<SwapTrait Geoff Coward>>
+<<EndInterview Geoff>>
 ===
 title: Freedom
 tags: 
@@ -230,6 +268,8 @@ colorID: 0
 position: 513,2218
 ---
 Geoff:Kick some hero butt for more scones? You are too kind to me boss.//No longer attacks Jeff, increase damage but lower HP
+<<SwapTrait Geoff Friendly>>
+<<EndInterview Geoff>>
 ===
 title: Sucks
 tags: 
@@ -237,11 +277,14 @@ colorID: 0
 position: 511,2435
 ---
 Geoff:*Sigh* You are right boss, I will try to calm down. It is not that important.//No longer attacks Jeff, lower damage
+<<SwapTrait Geoff Coward>>
 ===
 title: Wild
 tags: 
 colorID: 0
-position: 512,2003
+position: 509,2000
 ---
 Geoff:That is a fair trade boss. A fair trade indeed...//No longer attacks Jeff, massive damage increase
+<<SwapTrait Geoff Friendly>>
+<<EndInterview Geoff>>
 ===

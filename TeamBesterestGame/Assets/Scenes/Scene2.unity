@@ -274,7 +274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4716557ee1669e4f8b6a2d29409c0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVariables: []
+  defaultVariables:
+  - name: sconeScene
+    value: 0
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &5239699
 MonoBehaviour:
@@ -595,7 +598,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4716557ee1669e4f8b6a2d29409c0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVariables: []
+  defaultVariables:
+  - name: ambushTactics
+    value: 0
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &41062056
 MonoBehaviour:
@@ -8243,7 +8249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4716557ee1669e4f8b6a2d29409c0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVariables: []
+  defaultVariables:
+  - name: tool
+    value: 0
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &594745391
 MonoBehaviour:
