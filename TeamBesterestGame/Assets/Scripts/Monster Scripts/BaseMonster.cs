@@ -66,7 +66,8 @@ public abstract class BaseMonster : BaseEntity {
     public List<PersonalityTags.Tag> revealedTags = new List<PersonalityTags.Tag>();
 
     public bool interviewable = true;
-
+    public GameObject[] interviewOptions;
+    public GameObject response;
 
     void Awake() {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
@@ -655,6 +656,10 @@ public abstract class BaseMonster : BaseEntity {
     {
         this.interviewable = false;
         //use helper function to disable monster's dialogue options and grey out portrait
+        foreach (GameObject option in interviewOptions)
+            {
+
+            }
         gameManager.interviewing = false;
     }
 }

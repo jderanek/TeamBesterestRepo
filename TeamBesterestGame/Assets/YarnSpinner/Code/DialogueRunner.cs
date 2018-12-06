@@ -45,6 +45,7 @@ namespace Yarn.Unity
     [AddComponentMenu("Scripts/Yarn Spinner/Dialogue Runner")]
     public class DialogueRunner : MonoBehaviour
     {
+        public GameObject gameManager;
         public GameObject monster;
         /// The JSON files to load the conversation from
         public TextAsset[] sourceText;
@@ -199,8 +200,9 @@ namespace Yarn.Unity
 
         /// Start the dialogue
         public void StartDialogue () {
-            if (monster.GetComponent<BaseMonster>().interviewable)
+            if (monster.GetComponent<BaseMonster>().interviewable && !gameManager.GetComponent<GameManager>().interviewing)
             {
+                gameManager.GetComponent<GameManager>().interviewing = true;
                 SoundManager.goblinToTalk = this.goblinID;
                 StartDialogue(startNode);
             }

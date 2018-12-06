@@ -786,6 +786,7 @@ public class InterviewManager : MonoBehaviour {
             //Destroy(monsterInstance);
             gameManager.GetComponent<GameManager>().interviewMenu.SetActive(true);
             monsterInstance = null;
+            gameManager.GetComponent<GameManager>().interviewing = false;
             //UpdateTraitText();
         }
     }

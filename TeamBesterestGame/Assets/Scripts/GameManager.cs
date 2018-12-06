@@ -587,41 +587,6 @@ public class GameManager : MonoBehaviour
 
             interviewCanvas.SetActive(true);
             interviewResponse.SetActive(true);
-            //interviewHireButton.GetComponent<Button>().onClick.AddListener(delegate { HireButton(monsterInstance); });
-
-            /*switch (monsterInstance.GetComponent<BaseMonster>().cNum)
-            {
-                case 1: //gabbin
-                    q1Text.text = "Can you tell me about Geoff?";
-                    q2Text.text = "Can you tell me about Jeff?";
-                    q3Text.text = "Can you tell me about Goblenn?";
-                    q4Text.text = "Can you tell me about Nilbog?";
-                    break;
-                case 2: //goblenn
-                    q1Text.text = "Can you tell me about Geoff?";
-                    q2Text.text = "Can you tell me about Jeff?";
-                    q3Text.text = "Can you tell me about Gabbin?";
-                    q4Text.text = "Can you tell me about Nilbog?";
-                    break;
-                case 3: //nilbog
-                    q1Text.text = "Can you tell me about Geoff?";
-                    q2Text.text = "Can you tell me about Jeff?";
-                    q3Text.text = "Can you tell me about Goblenn?";
-                    q4Text.text = "Can you tell me about Gabbin?";
-                    break;
-                case 4: //geoff
-                    q1Text.text = "Can you tell me about Gabbin?";
-                    q2Text.text = "Can you tell me about Goblenn?";
-                    q3Text.text = "Can you tell me about Nilbog?";
-                    q4Text.text = "Can you tell me about Jeff?";
-                    break;
-                case 5: //jeff
-                    q1Text.text = "Can you tell me about Gabbin?";
-                    q2Text.text = "Can you tell me about Goblenn?";
-                    q3Text.text = "Can you tell me about Nilbog?";
-                    q4Text.text = "Can you tell me about Geoff?";
-                    break;
-            }*/
 
             if (monsterInstance.GetComponent<BaseMonster>().getType().Equals("Goblin"))
             {
@@ -644,21 +609,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Interview2()
-    {
-        if (interviewsRemaining > 0)
-        {
-            interviewCanvas.SetActive(true);
-            dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
-            interviewing = true;
-            interviewsRemaining--;
-        }
-        else
-        {
-            phaseButton.gameObject.SetActive(true);
-            ToggleInterviewMenu();
-        }
-    }
+
 
     #region Time Stuff
     public void NewCycle()
