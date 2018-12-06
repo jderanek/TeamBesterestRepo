@@ -27,7 +27,7 @@ public abstract class BaseMonster : BaseEntity {
 	float moraleLoss = 1f;
 	float stressGain;
 	float vacationStressLoss;*/
-    int mood = 50;
+    int mood = 3;
     int infamyGain;
     int threat;
     int armor;
@@ -581,6 +581,8 @@ public abstract class BaseMonster : BaseEntity {
     public void Reset()
     {
         this.curHealth = this.maxHealth;
+        this.mood = 3;
+        this.interviewable = true;
         curRoom.GetComponent<BaseRoom>().roomMembers.Add(this.gameObject);
         this.getCurRoom().monsterInRoom = true;
     }

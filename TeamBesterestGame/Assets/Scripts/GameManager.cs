@@ -795,6 +795,7 @@ public class GameManager : MonoBehaviour
     public void ResetPhase()
     {
         currentCurrency = StartingGold;
+        strikes = 0;
 
         foreach (GameObject monster in monsterList)
         {
