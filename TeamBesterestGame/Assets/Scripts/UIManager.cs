@@ -53,6 +53,8 @@ public class UIManager : MonoBehaviour {
     public GameObject hourSwivel;
     //public EventSystem eventSystem;
 
+    public GameObject[] speechBubbles;
+
     //Opens any menu
     public void ToggleMenu(int menuToOpen)
     {
@@ -549,5 +551,22 @@ public class UIManager : MonoBehaviour {
     {
         infamyLevelText.text = "InfamyLevel: " + gameManager.infamyLevel;
         infamyXPText.text = "InfamyXP: " + gameManager.infamyXP + "/" + gameManager.xpToNextInfamyLevel;
+    }
+
+    public void ToggleSpeechBubbles(int goblin)
+    {
+        GameObject speaker = null;
+        for (int i = 0; i < speechBubbles.Length; i++)
+        {            
+            if (i == goblin)
+            {
+                speaker = speechBubbles[i];
+            }
+            else
+            {
+                speechBubbles[i].SetActive(false);
+            }
+        }
+        speaker.SetActive(true);
     }
 }
