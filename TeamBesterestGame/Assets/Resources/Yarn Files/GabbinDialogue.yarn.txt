@@ -1,162 +1,152 @@
-title: Start
-tags: 
-colorID: 0
-position: -249,291
----
-[[So how are you doing today?|GeneralQ]]
-===
-title: Branch1
-tags: 
-colorID: 0
-position: 350,-55
----
-[[Geoff? Your thoughts|B1A]]
-===
-title: B1A
-tags: 
-colorID: 0
-position: 778,-231
----
-Geoff; Don't look at me, he started it.
-Jeff; Yeah right, you are one to talk loser!
-Gabbin; Welcome to my normal day, at least they haven't got physical... today.
-[[Can I ask what is the cause of all this?|WhyFight]]
-[[How bad is it?|HowBad]]
-[[You two need to knock it off immediately, that is an order.|BreakUp]]
-===
-title: Branch2
-tags: 
-colorID: 0
-position: 522,279
----
-Gabbin; Yeah, sure thing boss. What you do need me to do? 
-[[I would like you to help me out in defusing any rowdy situations that might arise in the dungeon.|Aid1]]
-[[There some areas I would like you to train harder in.|Aid2]]
-===
-title: WhyFight
-tags: 
-colorID: 0
-position: 1340,-536
----
-Jeff; Look at how he spells his name, who does that?
-Geoff; Who steals someone's pastry? Who does that?!
-Jeff; It was in the fridge and not labeled, how could I know?!
-Gabbin; Seriously, all this over things like that?
-//Unlocks Report
-<<$WhyFight = 1>>
-[[So Jeff and Geoff are fighting.... over a scone?|Report]]
-===
-title: Aid1
-tags: 
-colorID: 0
-position: 1031,88
----
-Gabbin; Definitely boss, I can do that for you!
-//Ends Branch, mood gain, all monsters in room with Gabbin minor damage increase
-<<EndInterview Gabbin>>
-===
-title: Aid2
-tags: 
-colorID: 0
-position: 1026,348
----
-Gabbin; Ahh, I see what you mean. I'll get on that immediately boss!
-//Ends Branch, mood gain, +2 all stat increase for Gabbin
-<<EndInterview Gabbin>>
-===
-title: Branch3
-tags: 
-colorID: 0
-position: 421,649
----
-Gabbin; Well, I don't want to be rude and not help when someone asks! But what do you think I need to change?
-[[I think your efforts should focus on yourself, not others.|Solo]]
-[[Can you find more ways to look out for your coworkers?|All]]
-===
-title: Report
-tags: 
-colorID: 0
-position: 23,1226
----
-//If Mood is low
-Jeff; That report is correct. I can't stand working with this guy!
-Geoff; The feeling is mutual "buddy". 
-Gabbin; Can you two please learn to let bygones be bygones?
-Jeff and Geoff; NO
-//Mood hit 
-[[Listen, I hired you two for a reason, but you need to take out your anger on something else, not each other. Understand?|Rage]]
-[[You two seem to have calmed down now, can you work together now?|Calm]]
-===
-title: Solo
-tags: 
-colorID: 0
-position: 850,625
----
-Gabbin; Well, if you say so boss, orders are orders.
-//Ends branch, Mood hit, Gabbin +5 all stat increase, no longer boosts ally monsters
-<<SwapTrait Gabbin Aggressive>>
-<<EndInterview Gabbin>>
-===
-title: All
-tags: 
-colorID: 0
-position: 870,941
----
-Gabbin; Might take away from my own work, but if it is for the betterment of the dungeon, I will.
-//Ends Branch, -3 all stats Gabbin, increase damage of ally monsters in room by 25%
-<<EndInterview Gabbin>>
-===
-title: Rage
-tags: 
-colorID: 0
-position: 584,1359
----
-Jeff; I will just imagine every hero's face I bash in is yours then.
-Geoff; Funny, I thought the same about you...
-Gabbin; M-maybe this is fixed now? I guess..
-//Ends Branch, +3 all stats for Jeff and Geoff, no longer fight each other, extra 10% damage if in same room
-<<SwapTrait Jeff Friendly>>
-<<SwapTrait Geoff Friendly>>
-===
-title: Calm
-tags: 
-colorID: 0
-position: 581,1614
----
-Jeff; I can bury the hatchet if you will.
-Geoff; Agreed, lets just move on.
-Gabbin; Glad you two made up! I hope you guys become fast friends!
-Jeff; Don't get your hopes up.
-//Ends Branch, Jeff and Geoff no longer fight each other
-<<SwapTrait Jeff Friendly>>
-===
-title: GeneralQ
-tags: 
-colorID: 0
-position: 69,284
----
-Gabbin; I am doing fine for the most part, work is going along well. Can I ask why you brought me in here?"
-[[There have been some altercation with your coworkwers recently, can you tell me about that?|Branch1]]
-[[I know you already help out your fellow goblins a lot, but I think there are ways to improve.|Branch2]]
-[[The other monsters tell me you need to be more assertive.|Branch3]]
-//if unlocked by WhyFight
-[[I have a report here that Jeff and Geoff are fighting.... over a scone.|Report]] <<if $WhyFight > 0>>
-===
-title: BreakUp
-tags: 
-colorID: 0
-position: 1386,-87
----
-//if Mood is high, both will no longer fight
-Geoff; I will try if this jerk does too.
-Jeff; That is not a great starting point... but I'll go along as well.
-Gabbin; Let's see how long this lasts...
-
-//if Mood is low, No change
-//Geoff; Why should I when it is his fault?
-//Jeff; My fault?! Really?! After all you did?! 
-//Gabbin; Here we go again...
-
-//Ends branch
-<<EndInterview Gabbin>>
-===
+[
+	{
+		"title": "Start",
+		"tags": "",
+		"body": "[[So how are you doing today?|GeneralQ]]\n",
+		"position": {
+			"x": -249,
+			"y": 291
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Branch1",
+		"tags": "",
+		"body": "[[Geoff? Your thoughts|B1A]]\n",
+		"position": {
+			"x": 350,
+			"y": -55
+		},
+		"colorID": 0
+	},
+	{
+		"title": "B1A",
+		"tags": "",
+		"body": "Geoff; Don't look at me, he started it.\nJeff; Yeah right, you are one to talk loser!\nGabbin; Welcome to my normal day, at least they haven't got physical... today.\n[[Can I ask what is the cause of all this?|WhyFight]]\n[[You two need to knock it off immediately, that is an order.|BreakUp]]\n",
+		"position": {
+			"x": 742,
+			"y": -360
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Branch2",
+		"tags": "",
+		"body": "Gabbin; Yeah, sure thing boss. What you do need me to do? \n[[I would like you to help me out in defusing any rowdy situations that might arise in the dungeon.|Aid1]]\n[[There some areas I would like you to train harder in.|Aid2]]\n",
+		"position": {
+			"x": 522,
+			"y": 279
+		},
+		"colorID": 0
+	},
+	{
+		"title": "WhyFight",
+		"tags": "",
+		"body": "Jeff; Look at how he spells his name, who does that?\nGeoff; Who steals someone's pastry? Who does that?!\nJeff; It was in the fridge and not labeled, how could I know?!\nGabbin; Seriously, all this over things like that?\n<<MoodHit Gabbin>>\n//Unlocks Report\n<<set $whyFight to 1>>\n[[So Jeff and Geoff are fighting.... over a scone?|GeneralQ]]\n",
+		"position": {
+			"x": 1436,
+			"y": -344
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Aid1",
+		"tags": "",
+		"body": "Gabbin; Definitely boss, I can do that for you!\n//Ends Branch, mood gain, all monsters in room with Gabbin minor damage increase\n<<EndInterview Gabbin>>\n",
+		"position": {
+			"x": 1031,
+			"y": 88
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Aid2",
+		"tags": "",
+		"body": "Gabbin; Ahh, I see what you mean. I'll get on that immediately boss!\n//Ends Branch, mood gain, +2 all stat increase for Gabbin\n<<EndInterview Gabbin>>\n",
+		"position": {
+			"x": 1026,
+			"y": 348
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Branch3",
+		"tags": "",
+		"body": "Gabbin; Well, I don't want to be rude and not help when someone asks! But what do you think I need to change?\n[[I think your efforts should focus on yourself, not others.|Solo]]\n[[Can you find more ways to look out for your coworkers?|All]]\n",
+		"position": {
+			"x": 421,
+			"y": 649
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Report",
+		"tags": "",
+		"body": "//If Mood is low\nJeff; That report is correct. I can't stand working with this guy!\nGeoff; The feeling is mutual \"buddy\". \nGabbin; Can you two please learn to let bygones be bygones?\nJeff and Geoff; NO\n//Mood hit \n<<MoodHit Gabbin>>\n[[Listen, I hired you two for a reason, but you need to take out your anger on something else, not each other. Understand?|Rage]]\n[[You two seem to have calmed down now, can you work together now?|Calm]]\n",
+		"position": {
+			"x": 23,
+			"y": 1226
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Solo",
+		"tags": "",
+		"body": "Gabbin; Well, if you say so boss, orders are orders.\n//Ends branch, Mood hit, Gabbin +5 all stat increase, no longer boosts ally monsters\n<<SwapTrait Gabbin Aggressive>>\n<<EndInterview Gabbin>>\n",
+		"position": {
+			"x": 850,
+			"y": 625
+		},
+		"colorID": 0
+	},
+	{
+		"title": "All",
+		"tags": "",
+		"body": "Gabbin; Might take away from my own work, but if it is for the betterment of the dungeon, I will.\n//Ends Branch, -3 all stats Gabbin, increase damage of ally monsters in room by 25%\n<<EndInterview Gabbin>>\n",
+		"position": {
+			"x": 870,
+			"y": 941
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Rage",
+		"tags": "",
+		"body": "Jeff; I will just imagine every hero's face I bash in is yours then.\nGeoff; Funny, I thought the same about you...\nGabbin; M-maybe this is fixed now? I guess..\n//Ends Branch, +3 all stats for Jeff and Geoff, no longer fight each other, extra 10% damage if in same room\n<<SwapTrait Jeff Friendly>>\n<<SwapTrait Geoff Friendly>>\n<<EndInterview Gabbin>>",
+		"position": {
+			"x": 569,
+			"y": 1351
+		},
+		"colorID": 0
+	},
+	{
+		"title": "Calm",
+		"tags": "",
+		"body": "Jeff; I can bury the hatchet if you will.\nGeoff; Agreed, lets just move on.\nGabbin; Glad you two made up! I hope you guys become fast friends!\nJeff; Don't get your hopes up.\n//Ends Branch, Jeff and Geoff no longer fight each other\n<<SwapTrait Jeff Friendly>>\n<<EndInterview Gabbin>>",
+		"position": {
+			"x": 567,
+			"y": 1609
+		},
+		"colorID": 0
+	},
+	{
+		"title": "GeneralQ",
+		"tags": "",
+		"body": "Gabbin; I am doing fine for the most part, work is going along well. Can I ask why you brought me in here?\"\n[[There have been some altercation with your coworkwers recently, can you tell me about that?|Branch1]]\n[[I know you already help out your fellow goblins a lot, but I think there are ways to improve.|Branch2]]\n[[The other monsters tell me you need to be more assertive.|Branch3]]\n//if unlocked by WhyFight\n<<if $whyFight == 1>>\n[[I have a report here that Jeff and Geoff are fighting.... over a scone.|Report]]\n<<endif>>",
+		"position": {
+			"x": 69,
+			"y": 284
+		},
+		"colorID": 0
+	},
+	{
+		"title": "BreakUp",
+		"tags": "",
+		"body": "//if Mood is high, both will no longer fight\nGeoff; I will try if this jerk does too.\nJeff; That is not a great starting point... but I'll go along as well.\nGabbin; Let's see how long this lasts...\n\n//if Mood is low, No change\n//Geoff; Why should I when it is his fault?\n//Jeff; My fault?! Really?! After all you did?! \n//Gabbin; Here we go again...\n\n//Ends branch\n<<EndInterview Gabbin>>\n",
+		"position": {
+			"x": 1368,
+			"y": -8
+		},
+		"colorID": 0
+	}
+]

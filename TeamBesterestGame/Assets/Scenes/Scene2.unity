@@ -12434,8 +12434,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultVariables:
   - name: whyFight
-    value: false
-    type: 2
+    value: 0
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &895976261
 MonoBehaviour:
