@@ -19,6 +19,7 @@ public abstract class BaseMonster : BaseEntity {
     public int curDamage;
     int damage;
     public List<BaseTrait> traits = new List<BaseTrait>();
+    private BaseTrait originalTrait;
     public List<PersonalityTags.Tag> tags;
     int salary;
     /*float stress;
@@ -271,6 +272,7 @@ public abstract class BaseMonster : BaseEntity {
         //Debug.Log(t.ToString());
         this.traits.Add(System.Activator.CreateInstance(
            System.Type.GetType(gameManager.monsters.data[type]["Trait"])) as BaseTrait);
+        originalTrait = traits[0];
 
         gameManager.monsterList.Add(this.gameObject);
         this.getCurRoom().roomMembers.Add(this.gameObject);
@@ -588,9 +590,12 @@ public abstract class BaseMonster : BaseEntity {
         this.curHealth = this.maxHealth;
         this.mood = 3;
         this.interviewable = true;
-        curRoom.GetComponent<BaseRoom>().roomMembers.Add(this.gameObject);
+        if (!this.getCurRoom().roomMembers.Contains(this.gameObject))
+            this.getCurRoom().roomMembers.Add(this.gameObject);
         this.getCurRoom().monsterInRoom = true;
         this.getCurRoom().UpdateMonsters();
+        this.traits.Clear();
+        this.traits.Add(originalTrait);
     }
 
     //Applies personality effects to the monster, as well as other stat modifiers
