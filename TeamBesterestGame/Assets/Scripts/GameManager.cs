@@ -612,7 +612,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void EndInterview()
+    {
+        this.gameObject.GetComponentInChildren<InterviewManager>().ExitInterview();
+    }
 
     #region Time Stuff
     public void NewCycle()

@@ -634,6 +634,7 @@ public abstract class BaseMonster : BaseEntity {
     public void MoodHit()
     {
         this.mood -= 1;
+        //TODO: add slider for mood on the interview menu
         if (this.mood <= 0)
         {
             StormOut();
@@ -649,6 +650,7 @@ public abstract class BaseMonster : BaseEntity {
         if (this.gameManager.strikes >= 3)
         {
             //function that ends the interview phase
+            this.gameManager.EndInterview();
         }
         this.EndInterview();
     }
@@ -663,6 +665,11 @@ public abstract class BaseMonster : BaseEntity {
         {
             option.SetActive(false);
         }
+
+        response.GetComponentInChildren<Text>().text = "Hello.";
+        response.SetActive(false);
+        //grey out portrait
+
         this.gameManager.interviewing = false;
     }
 }
