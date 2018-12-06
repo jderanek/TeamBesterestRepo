@@ -645,9 +645,12 @@ public abstract class BaseMonster : BaseEntity {
     {
         this.interviewable = false;
         //use helper function to disable monster's dialogue options and grey out portrait
-
-        //use function to incur strike then check if strikes are >= 3 if so end interview phase and reset strikes
-        gameManager.interviewing = false;
+        this.gameManager.strikes += 1;
+        if (this.gameManager.strikes >= 3)
+        {
+            //function that ends the interview phase
+        }
+        this.EndInterview();
     }
 
     //ends conversation and makes monster uninterviewable till next day with no penalty
@@ -657,9 +660,9 @@ public abstract class BaseMonster : BaseEntity {
         this.interviewable = false;
         //use helper function to disable monster's dialogue options and grey out portrait
         foreach (GameObject option in interviewOptions)
-            {
-
-            }
-        gameManager.interviewing = false;
+        {
+            option.SetActive(false);
+        }
+        this.gameManager.interviewing = false;
     }
 }

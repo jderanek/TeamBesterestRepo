@@ -161,6 +161,9 @@ public class GameManager : MonoBehaviour
     public GameObject interviewMenu;
     public GameObject interviewMenuSlot;
 
+    //
+    public int strikes = 0;
+
     #endregion
 
     #region Initialization

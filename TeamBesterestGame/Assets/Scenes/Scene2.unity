@@ -418,8 +418,14 @@ MonoBehaviour:
   revealedTraits: []
   revealedTags: 
   interviewable: 1
-  interviewOptions: []
-  response: {fileID: 0}
+  interviewOptions:
+  - {fileID: 813791958}
+  - {fileID: 1204288449}
+  - {fileID: 1101915905}
+  - {fileID: 1651268505}
+  - {fileID: 1364065096}
+  - {fileID: 839498536}
+  response: {fileID: 369298016}
 --- !u!212 &14465736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12570,8 +12576,14 @@ MonoBehaviour:
   revealedTraits: []
   revealedTags: 
   interviewable: 1
-  interviewOptions: []
-  response: {fileID: 0}
+  interviewOptions:
+  - {fileID: 344413573}
+  - {fileID: 1846732445}
+  - {fileID: 1991639908}
+  - {fileID: 2062099939}
+  - {fileID: 745533733}
+  - {fileID: 737690096}
+  response: {fileID: 369298016}
 --- !u!212 &906177786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13097,8 +13109,14 @@ MonoBehaviour:
   revealedTraits: []
   revealedTags: 
   interviewable: 1
-  interviewOptions: []
-  response: {fileID: 0}
+  interviewOptions:
+  - {fileID: 1670627658}
+  - {fileID: 386306947}
+  - {fileID: 1111984982}
+  - {fileID: 1663072200}
+  - {fileID: 964969972}
+  - {fileID: 256175002}
+  response: {fileID: 369298016}
 --- !u!212 &951470859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18246,8 +18264,14 @@ MonoBehaviour:
   revealedTraits: []
   revealedTags: 
   interviewable: 1
-  interviewOptions: []
-  response: {fileID: 0}
+  interviewOptions:
+  - {fileID: 1681591159}
+  - {fileID: 202467215}
+  - {fileID: 1963752911}
+  - {fileID: 1853014269}
+  - {fileID: 2051826529}
+  - {fileID: 2139380145}
+  response: {fileID: 369298016}
 --- !u!212 &1335600117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23313,8 +23337,14 @@ MonoBehaviour:
   revealedTraits: []
   revealedTags: 
   interviewable: 1
-  interviewOptions: []
-  response: {fileID: 0}
+  interviewOptions:
+  - {fileID: 1039311459}
+  - {fileID: 1148004523}
+  - {fileID: 825474206}
+  - {fileID: 637157686}
+  - {fileID: 1878310171}
+  - {fileID: 1571043629}
+  response: {fileID: 369298016}
 --- !u!212 &1765382687
 SpriteRenderer:
   m_ObjectHideFlags: 0
