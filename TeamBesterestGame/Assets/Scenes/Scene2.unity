@@ -12432,7 +12432,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4716557ee1669e4f8b6a2d29409c0cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVariables: []
+  defaultVariables:
+  - name: whyFight
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &895976261
 MonoBehaviour:
@@ -14470,6 +14473,7 @@ MonoBehaviour:
   interviewMenu: {fileID: 363629753}
   interviewMenuSlot: {fileID: 1314090393131026, guid: dc400bb281fda7e4b91f19935b19c601,
     type: 2}
+  strikes: 0
 --- !u!4 &1031783965
 Transform:
   m_ObjectHideFlags: 0
