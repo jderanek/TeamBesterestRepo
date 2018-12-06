@@ -69,6 +69,9 @@ public abstract class BaseMonster : BaseEntity {
     public GameObject[] interviewOptions;
     public GameObject response;
 
+    //bool to check if monster is fleeing
+    private bool isFleeing = false;
+
     void Awake() {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         uiManager = gameManager.GetComponent<UIManager>();
@@ -572,7 +575,9 @@ public abstract class BaseMonster : BaseEntity {
             curRoom.GetComponent<BaseRoom>().monsterInRoom = false;
         }
         //Destroy(gameObject);
-        gameObject.SetActive(false);
+        //Prevents disabling while fleeing
+        if (!isFleeing)
+            gameObject.SetActive(false);
         //gameManager.AddToDepartment(gameObject, gameManager.deadMonsters);
         //uiManager.UpdateDepartments();
     }
@@ -585,6 +590,7 @@ public abstract class BaseMonster : BaseEntity {
         this.interviewable = true;
         curRoom.GetComponent<BaseRoom>().roomMembers.Add(this.gameObject);
         this.getCurRoom().monsterInRoom = true;
+        this.getCurRoom().UpdateMonsters();
     }
 
     //Applies personality effects to the monster, as well as other stat modifiers
@@ -673,5 +679,29 @@ public abstract class BaseMonster : BaseEntity {
         //grey out portrait
 
         this.gameManager.interviewing = false;
+    }
+
+    //Starts invoking flee movement, then disables it and the monster
+    //Prevents disabling until movement finishes
+    public void StartFleeing()
+    {
+        this.isFleeing = true;
+        InvokeRepeating("Flee", 0f, .05f);
+        Invoke("StopFleeing", 5f);
+    }
+
+    //Stops monster fleeing
+    private void StopFleeing()
+    {
+        CancelInvoke("Flee");
+        gameObject.SetActive(false);
+    }
+
+    //Moves monster a tiny amount to the left.
+    private void Flee()
+    {
+        Vector3 pos = transform.position;
+        pos.x = pos.x - .5f;
+        transform.position = pos;
     }
 }
