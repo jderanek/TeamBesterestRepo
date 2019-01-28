@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BasePortrait : MonoBehaviour
 {
+
+    public bool interviewable = true;
     SpriteRenderer sprite;
     // Use this for initialization
     void Start()

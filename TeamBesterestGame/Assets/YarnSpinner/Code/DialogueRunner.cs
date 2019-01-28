@@ -200,12 +200,14 @@ namespace Yarn.Unity
 
         /// Start the dialogue
         public void StartDialogue () {
-            if (monster.GetComponent<BaseMonster>().interviewable && !gameManager.GetComponent<GameManager>().interviewing)
+            
+            if (monster.GetComponent<BasePortrait>().interviewable && !gameManager.GetComponent<GameManager>().interviewing)
             {
                 gameManager.GetComponent<GameManager>().interviewing = true;
                 SoundManager.goblinToTalk = this.goblinID;
                 StartDialogue(startNode);
             }
+            
         }
 
         /// Start the dialogue from a given node
