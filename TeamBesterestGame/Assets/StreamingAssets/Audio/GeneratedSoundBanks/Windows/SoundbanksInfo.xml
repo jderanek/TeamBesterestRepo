@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\raven\Desktop\WWISE\Dungeonomics\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\raven\Desktop\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\raven\Desktop\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\raven\Desktop\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -68,10 +68,6 @@
 					<ShortName>Nate Sounds\Nate_19.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_19_1C9C67B2.wem</Path>
 				</File>
-				<File Id="61280742" Language="SFX">
-					<ShortName>Dungeonomics Trailer Score LOOP.wav</ShortName>
-					<Path>SFX\Dungeonomics Trailer Score LOOP_F17FB28C.wem</Path>
-				</File>
 				<File Id="84950044" Language="SFX">
 					<ShortName>Nate Sounds\Nate_9.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_9_1C9C67B2.wem</Path>
@@ -119,10 +115,6 @@
 				<File Id="171965651" Language="SFX">
 					<ShortName>nick\nehhh.wav</ShortName>
 					<Path>SFX\nick\nehhh_1C9C67B2.wem</Path>
-				</File>
-				<File Id="177897640" Language="SFX">
-					<ShortName>Body_Clips.wav</ShortName>
-					<Path>SFX\Body_Clips_F17FB28C.wem</Path>
 				</File>
 				<File Id="188368845" Language="SFX">
 					<ShortName>Nate Sounds\Nate_11.wav</ShortName>
@@ -203,6 +195,14 @@
 				<File Id="403639939" Language="SFX">
 					<ShortName>Avery Sounds\Nyaaah_question.wav</ShortName>
 					<Path>SFX\Avery Sounds\Nyaaah_question_1C9C67B2.wem</Path>
+				</File>
+				<File Id="409767051" Language="SFX">
+					<ShortName>Outro.wav</ShortName>
+					<Path>SFX\Outro_F17FB28C.wem</Path>
+				</File>
+				<File Id="418490334" Language="SFX">
+					<ShortName>Section C.wav</ShortName>
+					<Path>SFX\Section C_F17FB28C.wem</Path>
 				</File>
 				<File Id="423182914" Language="SFX">
 					<ShortName>Steven Sounds\Steven_9.wav</ShortName>
@@ -296,6 +296,10 @@
 					<ShortName>Steven Sounds\Steven_11.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_11_1C9C67B2.wem</Path>
 				</File>
+				<File Id="609279146" Language="SFX">
+					<ShortName>Section B.wav</ShortName>
+					<Path>SFX\Section B_F17FB28C.wem</Path>
+				</File>
 				<File Id="621419851" Language="SFX">
 					<ShortName>Avery Sounds\angery.wav</ShortName>
 					<Path>SFX\Avery Sounds\angery_1C9C67B2.wem</Path>
@@ -336,6 +340,10 @@
 					<ShortName>James Sounds\James_21.wav</ShortName>
 					<Path>SFX\James Sounds\James_21_1C9C67B2.wem</Path>
 				</File>
+				<File Id="668744582" Language="SFX">
+					<ShortName>Section A.wav</ShortName>
+					<Path>SFX\Section A_F17FB28C.wem</Path>
+				</File>
 				<File Id="682032088" Language="SFX">
 					<ShortName>Avery Sounds\is this a sheep.wav</ShortName>
 					<Path>SFX\Avery Sounds\is this a sheep_1C9C67B2.wem</Path>
@@ -359,10 +367,6 @@
 				<File Id="699859022" Language="SFX">
 					<ShortName>nick\nnnnnnnnnnnnnnnoeh.wav</ShortName>
 					<Path>SFX\nick\nnnnnnnnnnnnnnnoeh_1C9C67B2.wem</Path>
-				</File>
-				<File Id="704055876" Language="SFX">
-					<ShortName>SCORE ENTRANCE.wav</ShortName>
-					<Path>SFX\SCORE ENTRANCE_F17FB28C.wem</Path>
 				</File>
 				<File Id="719347781" Language="SFX">
 					<ShortName>Nate Sounds\Nate_23.wav</ShortName>
@@ -444,10 +448,6 @@
 					<ShortName>nick\nyoooh.wav</ShortName>
 					<Path>SFX\nick\nyoooh_1C9C67B2.wem</Path>
 				</File>
-				<File Id="860957945" Language="SFX">
-					<ShortName>Intro_Clips.wav</ShortName>
-					<Path>SFX\Intro_Clips_F17FB28C.wem</Path>
-				</File>
 				<File Id="867127730" Language="SFX">
 					<ShortName>Steven Sounds\Steven_31.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_31_1C9C67B2.wem</Path>
@@ -527,6 +527,10 @@
 				<File Id="1011203690" Language="SFX">
 					<ShortName>Avery Sounds\nyyyyyaaaahhh.wav</ShortName>
 					<Path>SFX\Avery Sounds\nyyyyyaaaahhh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="1021343306" Language="SFX">
+					<ShortName>Intro.wav</ShortName>
+					<Path>SFX\Intro_F17FB28C.wem</Path>
 				</File>
 				<File Id="1024632925" Language="SFX">
 					<ShortName>nick\meh.wav</ShortName>

@@ -33,13 +33,13 @@
 				</Event>
 				<Event Name="BackGround_Music" ID="{18DAD7C5-3750-48FF-BE1A-7250F7FE4799}">
 					<ChildrenList>
-						<Action Name="" ID="{9B4E2F2C-0C7B-495A-9FBF-7CA56EC5AD01}" ShortID="287685268">
+						<Action Name="" ID="{E9487652-1832-47FD-BEE6-4AF58710DDCA}" ShortID="1054941967">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Music" ID="{DD1B3792-CC74-44A8-B835-DFF4AFC6CBE4}" WorkUnitID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}"/>
+									<ObjectRef Name="Music" ID="{D7EE6ED1-1F1D-450D-BBB5-D9271E0C0D89}" WorkUnitID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
