@@ -100,7 +100,12 @@ public class GameManager : MonoBehaviour
     //TODO getters and setters
     [HideInInspector]
     public bool interviewing = false; //public to be accessed in interview script
-
+    public GameObject combatCanvas;
+    public GameObject goblennPortrait;
+    public GameObject geoffPortrait;
+    public GameObject jeffPortrait;
+    public GameObject gabbinPortrait;
+    public GameObject nilbogPortrait;
     //Day counter to increase week
     private int days = 0;
 
@@ -163,6 +168,8 @@ public class GameManager : MonoBehaviour
 
     //
     public int strikes = 0;
+    public int shift = 1;
+
 
     #endregion
 

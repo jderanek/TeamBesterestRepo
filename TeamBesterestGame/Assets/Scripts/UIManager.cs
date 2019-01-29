@@ -64,7 +64,7 @@ public class UIManager : MonoBehaviour {
         {
             if (menuToOpen == i)
             {
-                sideBar.SetActive(true);
+                //sideBar.SetActive(true);
                 menu.SetActive(!menu.activeInHierarchy);
                 //eventSystem.SetSelectedGameObject(null);
                 if (menu.activeInHierarchy == true)
@@ -77,7 +77,7 @@ public class UIManager : MonoBehaviour {
             {
                 if (j == 0)
                 {
-                    HideSideBar();
+                    //HideSideBar();
                     
                 }
                 menu.SetActive(false);
