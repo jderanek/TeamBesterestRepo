@@ -680,7 +680,7 @@ GameObject:
   - component: {fileID: 556138463}
   - component: {fileID: 556138462}
   m_Layer: 0
-  m_Name: Portrait
+  m_Name: Goblenn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -804,7 +804,7 @@ MonoBehaviour:
   gameManager: {fileID: 556936032}
   monster: {fileID: 556138458}
   sourceText:
-  - {fileID: 0}
+  - {fileID: 4900000, guid: 013a6cd76979e48458606bd10d37cd33, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10

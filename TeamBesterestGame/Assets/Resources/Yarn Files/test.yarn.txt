@@ -1,0 +1,53 @@
+title: Start
+tags: 
+colorID: 0
+position: 540,258
+---
+Hello World!
+This is line 2!
+[[I can tell |Node2]]
+===
+title: Node2
+tags: 
+colorID: 0
+position: 821,259
+---
+Wow you can click on things!
+<<Move Goblenn 20.0 10.0>>
+...
+[[Come back here |Node3]]
+[[Where'd you go? |Node6]]
+===
+title: Node3
+tags: 
+colorID: 0
+position: 1073,261
+---
+<<Move Goblenn -20.0 10.0>>
+Sorry I just wanted to show off this awesome feature Nate made (he's the best)
+Wanna see something else thats cool?
+[[Sure I guess? |Node4]]
+[[Not really |Node5]]
+===
+title: Node4
+tags: 
+colorID: 0
+position: 1320,259
+---
+<<Shake Goblenn 10.0 10.0 10.0>>
+AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+===
+title: Node5
+tags: 
+colorID: 0
+position: 1071,539
+---
+Empty Text
+===
+title: Node6
+tags: 
+colorID: 0
+position: 820,537
+---
+Empty Text
+===

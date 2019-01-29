@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class BasePortrait : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class BasePortrait : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
-        StartCoroutine(Shake(20f, 50f, 5f));
     }
 
     // Update is called once per frame
@@ -20,12 +20,38 @@ public class BasePortrait : MonoBehaviour
 
     }
 
-    IEnumerator Move(float distance, float speed)
+    [YarnCommand("Move")]
+    public void YarnMove(string distance, string duration)
     {
-        Vector3 targetPosition = new Vector3(0f, this.transform.position.x - distance, 0f);
-        while (Vector3.Distance(transform.position, targetPosition) > 0.05f)
+        StartCoroutine(Move(float.Parse(distance), float.Parse(duration) * 20));
+    }
+
+    [YarnCommand("Shake")]
+    public void YarnShake(string tilt, string speed, string duration)
+    {
+        StartCoroutine(Shake(float.Parse(tilt), float.Parse(speed) * 10, float.Parse(duration)));
+    }
+
+    [YarnCommand("Bob")]
+    public void YarnBob(string duration, string speed, string magnitude)
+    {
+        StartCoroutine(Bob(float.Parse(duration), float.Parse(speed) * 10, float.Parse(magnitude)));
+    }
+
+    [YarnCommand("ChangeOppacity")]
+    public void YarnOppacity(string alpha, string speed)
+    {
+        StartCoroutine(ChangeOppacity(float.Parse(alpha), float.Parse(speed) * 10));
+    }
+
+    public IEnumerator Move(float distance, float duration)
+    {
+        float startTime = Time.time;
+        print("boop");
+        Vector3 targetPosition = new Vector3(this.transform.position.x - distance, 0f, 0f);
+        while (Time.time < startTime + duration) //Vector3.Distance(transform.position, targetPosition) > 0.05f)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, ((Time.time - startTime) / duration));
 
             yield return null;
         }
