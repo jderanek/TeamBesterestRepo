@@ -542,6 +542,12 @@
     <None Include="Assets\Resources\Yarn Files\NilbogDialogue.yarn.txt" />
     <None Include="Assets\Resources\Yarn Files\geoffBasetxtDialogue.yarn.txt" />
     <None Include="Assets\Resources\Yarn Files\goblennBaseNewDialogue.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\pointsStuff\GabbinDialoguePoints.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\pointsStuff\JeffDialoguePoints.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\pointsStuff\NilbogDialoguePointsRevised.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\pointsStuff\file.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\pointsStuff\geoffBasetxtDialoguePointsRevise.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\pointsStuff\goblennBaseNewDialoguePointsRevised.yarn.txt" />
     <None Include="Assets\Resources\Yarn Files\test.yarn.txt" />
     <None Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\LICENSE.txt" />
     <None Include="Assets\Sprites\2D Pixel Top-Down Dungeon Tileset\How to use Tilesets.txt" />

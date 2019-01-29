@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
     //
     public int strikes = 0;
     public int shift = 1;
-
+    int finalScore = 0;
 
     #endregion
 
@@ -701,6 +701,7 @@ public class GameManager : MonoBehaviour
                 phase = "Combat";
                 //enemiesToSpawn = 3;
                 //TogglePlay();
+                combatCanvas.SetActive(true);
                 combatManager.GetComponent<DialogueRunner>().StartDialogue();
                 phaseButton.GetComponentInChildren<Text>().text = "Combat In Progress";
                 break;
@@ -727,11 +728,46 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void countPoints()
+    [YarnCommand("ChangeShift")]
+    public void ChangeShift()
+    {
+        if (this.shift < 3)
+        {
+            shift++;
+            if (shift == 2) //second shift, enable second shift portraits (first is on by default)
+            {
+                goblennPortrait.SetActive(false);
+                gabbinPortrait.SetActive(false);
+                nilbogPortrait.SetActive(false);
+                jeffPortrait.SetActive(true);
+                geoffPortrait.SetActive(true);
+            }
+            else //third shift
+            {
+                goblennPortrait.SetActive(false);
+                gabbinPortrait.SetActive(true);
+                nilbogPortrait.SetActive(true);
+                jeffPortrait.SetActive(false);
+                geoffPortrait.SetActive(false);
+            }
+        }
+        else //resets shift to 1
+        {
+            combatCanvas.SetActive(false);
+            shift = 0;
+            goblennPortrait.SetActive(true);
+            gabbinPortrait.SetActive(false);
+            nilbogPortrait.SetActive(false);
+            jeffPortrait.SetActive(false);
+            geoffPortrait.SetActive(false);
+        }
+    }
+
+    public void FinalScore() //accumulates all the monsters' points for the final score
     {
         foreach (GameObject monster in monsterList)
         {
-
+            finalScore += monster.GetComponent<BaseMonster>().points;
         }
     }
 
