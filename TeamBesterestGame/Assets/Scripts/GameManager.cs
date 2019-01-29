@@ -701,7 +701,7 @@ public class GameManager : MonoBehaviour
                 phase = "Combat";
                 //enemiesToSpawn = 3;
                 //TogglePlay();
-                setGoblinPoints();
+                this.setGoblinPoints();
                 combatCanvas.SetActive(true);
                 combatManager.GetComponent<DialogueRunner>().StartDialogue();
                 phaseButton.GetComponentInChildren<Text>().text = "Combat In Progress";
@@ -768,30 +768,30 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject monster in monsterList)
         {
-            if(monster.GetComponent<BaseMonster>().getName() == "Goblenn")
+            if(monster.GetComponent<BaseMonster>().monName == "Goblenn")
             {
-                var varToSet = new Yarn.Value(monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("goblennPoints", varToSet);
+                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
+                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$goblennPoints", varToSet);
             }
-            if (monster.GetComponent<BaseMonster>().getName() == "Geoff")
+            if (monster.GetComponent<BaseMonster>().monName == "Geoff")
             {
-                var varToSet = new Yarn.Value(monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("geoffPoints", varToSet);
+                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
+                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$geoffPoints", varToSet);
             }
-            if (monster.GetComponent<BaseMonster>().getName() == "Jeff")
+            if (monster.GetComponent<BaseMonster>().monName == "Jeff")
             {
-                var varToSet = new Yarn.Value(monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("jeffPoints", varToSet);
+                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
+                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$jeffPoints", varToSet);
             }
-            if (monster.GetComponent<BaseMonster>().getName() == "Gabbin")
+            if (monster.GetComponent<BaseMonster>().monName == "Gabbin")
             {
-                var varToSet = new Yarn.Value(monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("gabbinPoints", varToSet);
+                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
+                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$gabbinPoints", varToSet);
             }
-            if (monster.GetComponent<BaseMonster>().getName() == "Nilbog")
+            if (monster.GetComponent<BaseMonster>().monName == "Nilbog")
             {
-                var varToSet = new Yarn.Value(monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("nilbogPoints", varToSet);
+                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
+                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$nilbogPoints", varToSet);
             }
         }
     }
