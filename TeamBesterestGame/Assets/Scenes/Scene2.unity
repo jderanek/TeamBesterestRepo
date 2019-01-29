@@ -811,7 +811,7 @@ MonoBehaviour:
   gameManager: {fileID: 1031783963}
   monster: {fileID: 1765382683}
   sourceText:
-  - {fileID: 4900000, guid: f6c3ec3cd23cff14f8299afa40ac9ced, type: 3}
+  - {fileID: 4900000, guid: a26fbdf1693ccf1498b081c673dcec51, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
@@ -833,7 +833,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &47029003
 GameObject:
@@ -8806,7 +8806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605705651
 GameObject:

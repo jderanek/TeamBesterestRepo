@@ -31,7 +31,7 @@ Gabbin:Yeah, sure thing boss. What you do need me to do?
 title: WhyFight
 tags: 
 colorID: 0
-position: 838,-582
+position: 839,-582
 ---
 Jeff:Look at how he spells his name, who does that?
 Geoff:Who steals someone's pastry? Who does that?!
@@ -50,7 +50,7 @@ Gabbin:Definitely boss, I can do that for you!
 <<addPoint Gabbin>>
 <<addPoint Gabbin>>
 <<EndInterview Gabbin>>
-#Points 2
+
 ===
 title: Aid2
 tags: 
@@ -61,7 +61,7 @@ Gabbin:Ahh, I see what you mean. I'll get on that immediately boss!
 <<addPoint Gabbin>>
 <<addPoint Gabbin>>
 <<EndInterview Gabbin>>
-#Points 2
+
 ===
 title: Branch3
 tags: 
@@ -95,17 +95,16 @@ Gabbin; Well, if you say so boss, orders are orders.
 <<addPoint Gabbin>>
 <<addPoint Gabbin>>
 <<EndInterview Gabbin>>
-#Points 2
+
 ===
 title: All
 tags: 
 colorID: 0
-position: 870,939
+position: 870,937
 ---
 Gabbin:Might take away from my own work, but if it is for the betterment of the dungeon, I will.
 <<addPoint Gabbin>>
 <<EndInterview Gabbin>>
-#Points 1
 ===
 title: Rage
 tags: 
@@ -119,7 +118,7 @@ Gabbin:M-maybe this is fixed now? I guess..
 <<addPoint Gabbin>>
 <<addPoint Gabbin>>
 <<EndInterview Gabbin>>
-#Points 3, Jeff and Geoff no longer can be interviewed
+
 ===
 title: Calm
 tags: 
@@ -138,7 +137,7 @@ Jeff:Don't get your hopes up.
 <<addPoint Gabbin>>
 <<addPoint Gabbin>>
 <<EndInterview Gabbin>>
-#Points 6, Jeff and Geoff no longer interviewable
+
 ===
 title: GeneralQ
 tags: 
@@ -159,15 +158,15 @@ tags:
 colorID: 0
 position: 1386,-87
 ---
-#if Mood is high, both will try to talk
+//if Mood is high, both will try to talk
 Geoff:I will try to settle down if this jerk does too.
 Jeff:That is not a great starting point... but I'll go along as well.
 Gabbin:Let's see how long this lasts...
 
-#if Mood is low, No change
-#Geoff:Why should I when it is his fault?
-#Jeff:My fault?! Really?! After all you did?! 
-#Gabbin:Here we go again...
+//if Mood is low, No change
+//Geoff:Why should I when it is his fault?
+//Jeff:My fault?! Really?! After all you did?! 
+//Gabbin:Here we go again...
 
 //Ends branch
 <<addPoint Gabbin>>
@@ -175,6 +174,6 @@ Gabbin:Let's see how long this lasts...
 <<addPoint Gabbin>>
 <<EndInterview Gabbin>>
 
-#Mood High: Points 5, Jeff and Geoff no longer can be interviewed
-#Mood Low: Points 0
+//Mood High: Points 5, Jeff and Geoff no longer can be interviewed
+//Mood Low: Points 0
 ===

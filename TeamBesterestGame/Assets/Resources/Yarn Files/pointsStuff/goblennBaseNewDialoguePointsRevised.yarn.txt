@@ -213,111 +213,102 @@ Goblenn:Well, they couldn't like me any less...
 title: Preying
 tags: 
 colorID: 0
-position: 878,2446
+position: 838,2263
 ---
-Goblenn:L-like a ninja? T-that sounds cool!//Damage increase, threat decrease
+Goblenn:L-like a ninja? T-that sounds cool!
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 4
 ===
 title: Leader
 tags: 
 colorID: 0
-position: 539,3177
+position: 537,3175
 ---
 Goblenn: M-me?! That is a hard task... but you are right. 
-Goblenn: I will try to boost morale in battle...//All monsters in room with Goblenn attack increase
-<<addPoint Goblenn>>
+Goblenn: I will try to boost morale in battle...
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 2
 ===
 title: Teamwork
 tags: 
 colorID: 0
-position: 661,2880
+position: 661,2876
 ---
-Goblenn:I can maybe talk to Jeff or Geoff about training some more then.//All stats except threat minor increase
+Goblenn:I can maybe talk to Jeff or Geoff about training some more then.
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 3
+
 ===
 title: Stalking
 tags: 
 colorID: 0
-position: 559,2624
+position: 821,2549
 ---
-Goblenn:Wouldn't hurt to try I guess...//Damage increase
+Goblenn:Wouldn't hurt to try I guess...
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 3
+
 ===
 title: Inevitable
 tags: 
 colorID: 0
 position: 517,4567
 ---
-Goblenn:Y-you are right... I need to not let them down anymore!//Loses Coward Trait, damange and armor increase
+Goblenn:Y-you are right... I need to not let them down anymore!
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 1
 ===
 title: Unemployed
 tags: 
 colorID: 0
 position: 517,3719
 ---
-Goblenn:N-no please! I promise I will change! Don't be hasty!//Loses Coward trait, damage increase
+Goblenn:N-no please! I promise I will change! Don't be hasty!
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 1
 ===
 title: Abandon
 tags: 
 colorID: 0
 position: 557,3472
 ---
-Goblenn:I-I will! Please don't fire me! //Loses Coward trait, damage decrease
+Goblenn:I-I will! Please don't fire me!
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 1
 ===
 title: Respect
 tags: 
 colorID: 0
 position: 593,3983
 ---
-Goblenn:N-no! I am a proud goblin! They should cower in fear of me!//loses Coward trait, damage and HP increase
+Goblenn:N-no! I am a proud goblin! They should cower in fear of me!
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 1
 ===
 title: Smarter
 tags: 
 colorID: 0
 position: 549,4261
 ---
-Goblenn:Surviving is high up there on my to-do list. My fear can be useful sometimes, haha...//Massive HP increase
+Goblenn:Surviving is high up there on my to-do list. My fear can be useful sometimes, haha...
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 2
 ===
 title: Alone
 tags: 
 colorID: 0
 position: 512,4812
 ---
-Goblenn:They are fighting harder than I am... maybe one day I can be as strong as them!//Massive damage increase
+Goblenn:They are fighting harder than I am... maybe one day I can be as strong as them!
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
-#Points 2
 ===

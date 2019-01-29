@@ -186,7 +186,6 @@ Geoff:Fine... maybe I'll focus on making heroes tremble in their boots more, tha
 <<addPoint Geoff>>
 <<addPoint Geoff>>
 <<EndInterview Geoff>>
-#Points 2
 ===
 title: Fat
 tags: 
@@ -197,7 +196,7 @@ Geoff:I-I thought my armor was a bit tight this morning... I think I will refrai
 <<addPoint Geoff>>
 <<addPoint Geoff>>
 <<EndInterview Geoff>>
-#Points 2
+
 ===
 title: Bland
 tags: 
@@ -208,7 +207,6 @@ Geoff:I did buy it off the street market for very cheap, maybe it WOULD taste aw
 <<addPoint Geoff>>
 <<addPoint Geoff>>
 <<EndInterview Geoff>>
-#Points 1
 ===
 title: Mold
 tags: 
@@ -221,7 +219,6 @@ Geoff:Using my anger for Jeff against heroes? That is not a bad idea boss. I lik
 <<addPoint Geoff>>
 <<addPoint Geoff>>
 <<EndInterview Geoff>>
-#Points 4
 ===
 title: Unfair
 tags: 
@@ -232,7 +229,7 @@ Geoff:If this world isn't fair, I'll just watch out for myself then. No need for
 <<addPoint Geoff>>
 <<addPoint Geoff>>
 <<EndInterview Geoff>>
-#Points 2
+
 ===
 title: Poison
 tags: 
@@ -254,7 +251,7 @@ Geoff:Kick some hero butt for more scones? You are too kind to me boss.//No long
 <<addPoint Geoff>>
 <<addPoint Geoff>>
 <<EndInterview Geoff>>
-#Points 2
+
 ===
 title: Sucks
 tags: 
@@ -264,7 +261,7 @@ position: 512,2433
 Geoff:*Sigh* You are right boss, I will try to calm down. It is not that important.//No longer attacks Jeff, lower damage
 <<addPoint Geoff>>
 <<EndInterview Geoff>>
-#Points 1
+
 ===
 title: Wild
 tags: 
@@ -276,5 +273,5 @@ Geoff:That is a fair trade boss. A fair trade indeed...//No longer attacks Jeff,
 <<addPoint Geoff>>
 <<addPoint Geoff>>
 <<EndInterview Geoff>>
-#Points 3
+
 ===

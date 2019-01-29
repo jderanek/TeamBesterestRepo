@@ -82,12 +82,11 @@ Jeff and Geoff: *more incoherent yelling*
 <<MoodHit Geoff>>
 <<EndInterview Jeff>>
 
-#Points 0
 ===
 title: ThreatenA
 tags: 
 colorID: 0
-position: 1824,342
+position: 1855,342
 ---
 Jeff:Ok! Ok! No need to go that far boss.
 Geoff:Loud and clear, no need for any of that. We will work it out.
@@ -98,7 +97,6 @@ Gabbin:While I don't approve of your methods, at least the issue is solved.
 <<addPoint Jeff>>
 <<addPoint Jeff>>
 <<EndInterview Jeff>>
-#Points 2
 ===
 title: CoerceA
 tags: 
@@ -113,8 +111,6 @@ Geoff: As will I.
 <<addPoint Jeff>>
 <<addPoint Jeff>>
 <<EndInterview Jeff>>
-
-#Points 4
 ===
 title: Info
 tags: 
@@ -173,9 +169,9 @@ Jeff: Sigh, you are right. I will do as you say boss.
 //Jeff: Seriously boss?! You side with this jerk over me?!
 //Ends Branch, Jeff mood kill
 
-Points
-Mood High:6
-Mood Low:0
+//Points
+//Mood High:6
+//Mood Low:0
 ===
 title: GeoffR
 tags: 
@@ -193,9 +189,9 @@ Geoff: I was just hungry! You are correct however, it was wrong of me. I am sorr
 //Ends Branch
 <<EndInterview Jeff>>
 
-#Points
-#Mood High:6
-#Mood Low:0
+//Points
+//Mood High:6
+//Mood Low:0
 ===
 title: Help
 tags: 
@@ -208,7 +204,6 @@ Jeff:Trust me, the feeling is shared immensely...
 <<addPoint Jeff>>
 <<addPoint Jeff>>
 <<EndInterview Jeff>>
-#Points 2
 ===
 title: JeffFollowup
 tags: 
@@ -259,7 +254,6 @@ Jeff:I will boss, don't worry.//Mood Gain
 <<addPoint Jeff>>
 <<addPoint Jeff>>
 <<EndInterview Jeff>>
-#Points 3
 ===
 title: Encourage
 tags: 
@@ -270,7 +264,6 @@ Jeff:I... I am not that kind of person, but I am willing to give it a shot.//Rem
 <<addPoint Jeff>>
 <<addPoint Jeff>>
 <<EndInterview Jeff>>
-#Points 2
 ===
 title: PersonalSpace
 tags: 
@@ -283,7 +276,7 @@ Jeff: For the most part no, but Gabbin thinks that Geoff and I are best bros now
 <<addPoint Jeff>>
 <<addPoint Jeff>>
 <<EndInterview Jeff>>
-#Points 3
+
 ===
 title: Distance
 tags: 
