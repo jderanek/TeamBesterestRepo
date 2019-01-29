@@ -1,0 +1,59 @@
+title: shift1
+tags: 
+colorID: 0
+position: 229,232
+---
+<<if $goblennPoints < 1>>
+Goblenn gets scared of the hero and runs away.
+<<elseif $goblennPoints > 2>>
+Goblenn lurks behind a corner and ambushes the hero, killing him from the shadows.
+<<endif>>
+[[shift21]]
+===
+title: shift21
+tags: 
+colorID: 0
+position: 531,240
+---
+<<if $jeffPoints < 1>>
+Jeff is too busy fighting Geoff and is killed by the hero.
+<<elseif $jeffPoints > 2>>
+Jeff puts aside his difference with Geoff and kills the hero.
+<<endif>>
+[[shift22]]
+===
+title: shift22
+tags: 
+colorID: 0
+position: 827,237
+---
+<<if $geoffPoints < 1>>
+Geoff is too busy fighting with Jeff and is killed by the hero.
+<<elseif $geoffPoints > 2>>
+Geoff puts aside his difference with Jeff and kill the hero.
+<<endif>>
+[[shift31]]
+===
+title: shift31
+tags: 
+colorID: 0
+position: 1113,232
+---
+<<if $gabbinPoints < 1>>
+Gabbin is too busy chatting up Nilbog and is killed by the hero.
+<<elseif $gabbinPoints > 2>>
+Gabbin quits bothering Nilbog and fights the hero.
+<<endif>>
+[[shift32]]
+===
+title: shift32
+tags: 
+colorID: 0
+position: 1408,232
+---
+<<if $nilbogPoints < 1>>
+Nilbog is too annoyed by Gabbin and is killed by the hero while distracted.
+<<elseif $nilbogPoints > 2>>
+Nilbog learned to tolerate Gabbin and defeats the hero.
+<<endif>>
+===

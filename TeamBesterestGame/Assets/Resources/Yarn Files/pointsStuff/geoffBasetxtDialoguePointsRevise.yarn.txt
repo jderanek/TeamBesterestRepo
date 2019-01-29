@@ -1,0 +1,280 @@
+title: Geoff1Base
+tags: 
+colorID: 0
+position: -495,406
+---
+Geoff:Hello, I'm Geoff.
+Geoff:I'm sorry boss, I am mad right now. Someone here stole my scone and ate it!
+Geoff:What kind of jerk does that?
+[[Why was this scone so important to you?|Geoff11]]
+[[Who do you think did it?|Geoff12]]
+[[A shame, I bet it was a tasty scone too.|Geoff13]]
+<<if $sconeScene == 1>>
+[[I would like to talk to you about your scone.|GeoffTree2Start]]
+<<endif>>
+===
+title: Geoff11
+tags: 
+colorID: 0
+position: 133,-93
+---
+Geoff:I was looking forward to eating it all day!
+Geoff:And now it is gone!
+Geoff:Jeff is gonna pay for that!
+//Mood kill
+//Enraged?
+//Unlock tree Jeff2: about that scone
+<<set $sconeScene to 1>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+===
+title: Geoff12
+tags: 
+colorID: 0
+position: 51,311
+---
+Geoff:I am sure it was Jeff!
+Geoff:Something needs to be done about Jeff!
+[[Nothing a little fisticuffs can't fix.|Geoff121]]
+[[Do you want me to talk to Jeff for you?|Geoff122]]
+[[What were you thinking about doing?|Geoff123]]
+===
+title: Geoff121
+tags: 
+colorID: 0
+position: 675,-102
+---
+Geoff:I totally agree boss! Finally someone understands.
+//Mood Kill
+<<set $sconeScene to 1>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+//Unlock Jeff2: about the scone
+===
+title: Geoff122
+tags: 
+colorID: 0
+position: 596,268
+---
+//Mood hit
+Geoff:I guess it wouldn't hurt, but he still needs to get punished somehow!
+<<MoodHit Geoff>>
+[[Why do you hate Jeff so much?|Geoff1221]]
+===
+title: Geoff1221
+tags: 
+colorID: 0
+position: 1357,350
+---
+Geoff:Why not?
+Geoff:Jeff is a dirty, scone-eating jerk!
+Geoff:He needs to be stopped!
+[[Just make sure this is dealt with before the heroes arrive, ok?|Geoff12211]]
+[[Would you have prefered him at least asking first?|Geoff12212]]
+[[I will see what I can do about Jeff.|Geoff12213]]
+===
+title: Geoff12211
+tags: 
+colorID: 0
+position: 1773,593
+---
+Geoff:I'll show him, just watch me!
+//Mood kill
+<<set $sconeScene to 1>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+<<MoodHit Geoff>>
+//Enraged?
+//Unlock Jeff2: about that scone
+===
+title: Geoff12212
+tags: 
+colorID: 0
+position: 1773,270
+---
+Geoff:I would probably still say no...
+Geoff:But he is just a thief!
+Geoff:And he knows scones are my favorite snack...
+//Unlocks Jeff2: about that scone
+<<set $sconeScene to 1>>
+<<EndInterview Geoff>>
+===
+title: Geoff12213
+tags: 
+colorID: 0
+position: 1771,877
+---
+//Mood Hit
+Geoff:Fine...
+Geoff:but if you don't do anything about it, I will!
+//Unlock Jeff2: about that scone
+<<MoodHit Geoff>>
+<<set $sconeScene to 1>>
+[[GeoffTree2Start]]
+===
+title: Geoff123
+tags: 
+colorID: 0
+position: 702,620
+---
+Geoff:I planned on stomping his face in later, actually.
+Geoff:It would be a nice workout before the Heroes show up!
+[[I... don't think that would be great for team morale.|Geoff1221]]
+[[Sure whatever, go for it!|Geoff12211]]
+===
+title: Geoff13
+tags: 
+colorID: 0
+position: 71,644
+---
+//Mood hit
+Geoff:Uh... thanks for the sympathies there I guess?
+<<MoodHit Geoff>>
+[[Want me to talk to Jeff for you?|Geoff122]]
+[[What do you plan on doing about it?|Geoff123]]
+
+===
+title: GeoffTree2Start
+tags: 
+colorID: 0
+position: -954,1721
+---
+Geoff:If it's about my scone, I'm all ears.
+Geoff:What do you need boss?
+[[I can understand where you are coming from. But you need to learn something.|Understanding]]
+[[Your anger is not missplaced, but you need to control it.|Angry]]
+[[Why is this scone so important to you?|Sconeless]]
+===
+title: Understanding
+tags: 
+colorID: 0
+position: 163,1560
+---
+Geoff:And what is that exactly?
+[[You need to move past your issues with Jeff, maybe direct your anger at heroes instead.|Reshape]]
+[[Your ferocity in combat is great, however I believe you can increase it with using your anger as another tool in your arsenal.|Mold]]
+[[Life is not fair, you need to get that through your thick skull. Stop getting mad over trivial stuff like this.|Unfair]]
+===
+title: Angry
+tags: 
+colorID: 0
+position: 227,2224
+---
+Geoff:Lay it on me boss.
+[[I think I have been holding you back. You have free license to go wild on heroes. Just leave Jeff alone in exchange.|Wild]]
+[[Control that anger and focus it on the heroes invading our dungeon instead. I will get you plenty of scones in exchange.|Freedom]]
+[[You can't let your anger control you like this, especially over something this small.|Sucks]]
+===
+title: Sconeless
+tags: 
+colorID: 0
+position: 244,2894
+---
+Geoff:It was supposed to be my snack during our break! It is my favorite food and had my name on it!
+[[Who knows what could've been in there, might be poison for all we know.|Poison]]
+[[You need to lay off the snacks altogether, you need to stay in shape for this job.|Fat]]
+[[I saw it earlier and it didn't look very appealing to me.|Bland]]
+===
+title: Reshape
+tags: 
+colorID: 0
+position: 514,1337
+---
+Geoff:Fine... maybe I'll focus on making heroes tremble in their boots more, that is always fun to watch!//No longer attacks Jeff
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+#Points 2
+===
+title: Fat
+tags: 
+colorID: 0
+position: 505,2880
+---
+Geoff:I-I thought my armor was a bit tight this morning... I think I will refrain from them for the time being.//Increase Armor and HP
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+#Points 2
+===
+title: Bland
+tags: 
+colorID: 0
+position: 510,3103
+---
+Geoff:I did buy it off the street market for very cheap, maybe it WOULD taste awful. I only wish I could see Jeff's face when he ate it if so.//No longer attacks Jeff, lower HP
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+#Points 1
+===
+title: Mold
+tags: 
+colorID: 0
+position: 516,1561
+---
+Geoff:Using my anger for Jeff against heroes? That is not a bad idea boss. I like your style of "anger management".//No longer attacks Jeff, more damage and HP
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+#Points 4
+===
+title: Unfair
+tags: 
+colorID: 0
+position: 516,1778
+---
+Geoff:If this world isn't fair, I'll just watch out for myself then. No need for others to hold me back.//No longer attacks Jeff, more Armor
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+#Points 2
+===
+title: Poison
+tags: 
+colorID: 0
+position: 504,2659
+---
+Geoff:Who would've done that? If it was, I hope Jeff falls over dead soon.//No longer attacks Jeff
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+===
+title: Freedom
+tags: 
+colorID: 0
+position: 513,2217
+---
+Geoff:Kick some hero butt for more scones? You are too kind to me boss.//No longer attacks Jeff, increase damage but lower HP
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+#Points 2
+===
+title: Sucks
+tags: 
+colorID: 0
+position: 512,2433
+---
+Geoff:*Sigh* You are right boss, I will try to calm down. It is not that important.//No longer attacks Jeff, lower damage
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+#Points 1
+===
+title: Wild
+tags: 
+colorID: 0
+position: 506,1994
+---
+Geoff:That is a fair trade boss. A fair trade indeed...//No longer attacks Jeff, massive damage increase
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<addPoint Geoff>>
+<<EndInterview Geoff>>
+#Points 3
+===

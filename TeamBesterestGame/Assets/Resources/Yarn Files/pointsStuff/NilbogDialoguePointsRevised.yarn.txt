@@ -1,0 +1,293 @@
+title: Tree1Start
+tags: 
+colorID: 0
+position: -803,-617
+---
+Nilbog:.........
+[[Not much of a talker I take it?|Silence1]]
+[[The silent type huh?|Annoyed1]]
+<<if $tool == 1>>
+[[I want to talk about your work here.|Tree2Start]]
+<<endif>>
+===
+title: Silence1
+tags: 
+colorID: 0
+position: -338,-759
+---
+Nilbog:..............
+<<MoodHit Nilbog>>
+[[The faster you talk, the faster we both can leave.|Confrontational1]]
+
+===
+title: Annoyed1
+tags: 
+colorID: 0
+position: -327,-417
+---
+Nilbog:.............
+[[All I want to know is what are the problems with this dungeon then I will leave you be alright?|Concerned1]]
+===
+title: Confrontational1
+tags: 
+colorID: 0
+position: -48,-1089
+---
+Nilbog:...fine, what do you want to know?
+[[You don't seem to get along with anyone here, might I inquire why?|Enabling1]]
+===
+title: Concerned1
+tags: 
+colorID: 0
+position: 70,-590
+---
+Nilbog:Fine, go ahead...
+<<MoodHit Nilbog>>
+[[What is with the lone warrior thing? Do you not like your coworkers?|Enabling1]]//Mood Gain
+[[I will be blunt, you are not the most popular person here.|Digging1]]//Mood Hit
+===
+title: Enabling1
+tags: 
+colorID: 0
+position: 336,-1477
+---
+Nilbog:I just prefer to keep to myself. I don't get paid to make friends.
+[[Maybe you could learn a thing or two from them? You might be surprised.|Optimistic1]]
+[[Could you possibly try to work on new methods of fighting?|Rephrasing1]]
+[[Very well, focus on doing your own thing then.|Morbid1]]
+===
+title: Digging1
+tags: 
+colorID: 0
+position: 433,-895
+---
+Nilbog:I just don't make friends easy, that is all.
+[[Why is that? Do you mind telling me?|Blunt1]]
+===
+title: Optimistic1
+tags: 
+colorID: 0
+position: 635,-1764
+---
+Nilbog: *sigh* If you say so boss, I will give it a shot.//Unlocks Coworker Branch
+<<set $tool to 1>>
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Rephrasing1
+tags: 
+colorID: 0
+position: 666,-1501
+---
+Nilbog:Sure, what ideas did you have in mind?
+<<set $tool to 1>>
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Morbid1
+tags: 
+colorID: 0
+position: 662,-1277
+---
+Nilbog:Thanks boss. Trust me, this is the best option.//Increased Damage
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Blunt1
+tags: 
+colorID: 0
+position: 690,-884
+---
+Nilbog:I got betrayed by a close associate on a previous job, I never want to go through that ever again.
+[[I understand your pain, but these goblins haven't done anything that I know of to earn this sort of treatment. Can you please try to work with them?|Straight1]]
+[[You can't let your past dictate your future. You need to move on.|Fear1]]Mood Hit
+===
+title: Fear1
+tags: 
+colorID: 0
+position: 1329,-656
+---
+Nilbog:You have no idea what I went through. This is pointless, I am done talking.//Mood Hit
+<<MoodHit Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Straight1
+tags: 
+colorID: 0
+position: 1336,-888
+---
+Nilbog:I guess talking about it did help. Thanks for that boss.//Mood Hit
+<<MoodHit Nilbog>>
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Tree2Start
+tags: 
+colorID: 0
+position: -381,1391
+---
+Nilbog:................what?
+[[I think we can solve our isolation problem through embracing your skills as a solo operative.|Solo1]]
+[[How about you treat this job as a machine, and your role is fix all the cracks that have began to form in the metal.|Plumber1]]//Unlocked in Tree 1
+[[If you won't talk or work with others, I will have to be the bad guy.|Stern1]]
+[[Let us focus on your relationships with your fellow goblins.|Teamwork1]]//Unlocked in Tree 1
+===
+title: Solo1
+tags: 
+colorID: 0
+position: -41,315
+---
+Nilbog:Finally you understand...
+[[If you are so averse to other people, train more on working alone.|Neccesity1]]
+[[Your current work is terrible, you always end up dead or barely alive.|Sucking1]]
+[[Keep up the way you work by yourself and the necromancers might leave you dead this time.|Scared1]]
+===
+title: Teamwork1
+tags: 
+colorID: 0
+position: -176,2225
+---
+Nilbog:....how so?
+[[They are trying their best and you need to do so as well.|Trying1]]
+[[If you help them, they will aid you in kind.|Mutual1]]
+[[Allowing other people to aid you in battle is not a bad thing you know?|Personal1]]
+===
+title: Plumber1
+tags: 
+colorID: 0
+position: -47,992
+---
+Nilbog:Fix them in what ways?
+[[Go at it until every task is done.|Screwdriver1]]//Nilbog needs to work constantly harder and harder until the work is done (like a screwdriver)
+[[Perhaps Work on group cohesion?|Tape1]]//Nilbog should work on connecting the group together, in order to hold the place up
+[[You need to open up with your coworkers more.|Wrench1]]//Maybe you just dont have the right size wrench, dont be afraid the adjust the size in order to grip around a bolt
+===
+title: Stern1
+tags: 
+colorID: 0
+position: -22,1675
+---
+Nilbog:You can't scare me.
+[[Maybe you refusing to work with others because you are weak.|Weak1]]
+[[You sound like a petulent child when you complain about the other goblins.|Whiney1]]/
+[[Perhaps you are what is holding everyone back.|Weakest1]]
+===
+title: Sucking1
+tags: 
+colorID: 0
+position: 648,400
+---
+Nilbog:Got me on that one boss, I will work harder.//Even more damage when Solo
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Screwdriver1
+tags: 
+colorID: 0
+position: 227,763
+---
+Nilbog:As long as you keep the pay coming in, that is all that matters.// Increase HP and Armor
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Scared1
+tags: 
+colorID: 0
+position: 697,642
+---
+Nilbog:H-hey now, no need for all that. I can handle myself just fine.//Always lower threat then Gabbin, more HP
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Neccesity1
+tags: 
+colorID: 0
+position: 642,123
+---
+Nilbog:As long as a higher bodycount means more salary.//Increase damage
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Tape1
+tags: 
+colorID: 0
+position: 223,978
+---
+Nilbog:If you vouch for them, I guess I will give them a pass.//No longer loses stats with Gabbin, keeps Loner buff
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>>
+<<EndInterview Nilbog>>
+===
+title: Wrench1
+tags: 
+colorID: 0
+position: 225,1212
+---
+Nilbog:Gabbin has been insisting on "game night". I guess I will take him up on his offer.
+//He might need to try being friendly instead of a loner (different tool) (loses loner, gains Friendly trait)
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Weakest1
+tags: 
+colorID: 0
+position: 217,1903
+---
+Nilbog:I am only looking out for who is important, me. My strength is wasted on them.//Lower threat, better Solo buffs)
+<<EndInterview Nilbog>>
+===
+title: Whiney1
+tags: 
+colorID: 0
+position: 218,1680
+---
+Nilbog:I am not a child and I will not be treated like one!//Loses Loner trait)
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Weak1
+tags: 
+colorID: 0
+position: 208,1438
+---
+Nilbog:Me?! Weak?! I am anything but! Let me prove it.//Massive HP Increase)\
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Trying1
+tags: 
+colorID: 0
+position: 211,2126
+---
+Nilbog:Gabbin does remind of a kid I used to know, I could do more to help him out.//Gabbin gains increased HP and Damage)
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===
+title: Personal1
+tags: 
+colorID: 0
+position: 217,2556
+---
+Nilbog:Ha! Problem is these guys are not reliable, so I can't expect much help from them. //Massive stat increase when Solo)
+<<EndInterview Nilbog>>
+===
+title: Mutual1
+tags: 
+colorID: 0
+position: 215,2339
+---
+Nilbog:As long as you make sure they do.//All other Goblins gain slight damage buffs
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<addPoint Nilbog>>
+<<EndInterview Nilbog>>
+===

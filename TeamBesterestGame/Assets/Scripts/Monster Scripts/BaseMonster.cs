@@ -643,7 +643,7 @@ public abstract class BaseMonster : BaseEntity {
            System.Type.GetType(toSwap)) as BaseTrait);
     }
 
-    [YarnCommand("AddPoint")]
+    [YarnCommand("addPoint")]
     public void addPoint()
     {
         this.points++;
