@@ -13,13 +13,13 @@ public class GameManager : MonoBehaviour
     //Test Party
     public TestPart party;
 
-	//Door object to be spawned when constructing rooms
-	//Assigned in editor for ease of use
-	public GameObject door;
-	//Sprites used for doors, also assigned by editor for ease of use
-	public Sprite wall;
-	public Sprite closed;
-	public Sprite open;
+    //Door object to be spawned when constructing rooms
+    //Assigned in editor for ease of use
+    public GameObject door;
+    //Sprites used for doors, also assigned by editor for ease of use
+    public Sprite wall;
+    public Sprite closed;
+    public Sprite open;
 
     //Public readonly stats meant for global settings
     public readonly int StartingGold = 500;
@@ -64,10 +64,10 @@ public class GameManager : MonoBehaviour
     public int attackWeight = 3; //public for testing in editor
     public int defenseWeight = 2; //public for testing in editor
 
-	//Money Stuff
+    //Money Stuff
     //TODO getters and setters
-	public Text currencyText; //public to assign reference in editor
-	public int currentCurrency; //public to be accessed by other scripts
+    public Text currencyText; //public to assign reference in editor
+    public int currentCurrency; //public to be accessed by other scripts
     public int maximumCurrency = 1500; //public to be edited in editor
 
     //infamy
@@ -100,12 +100,16 @@ public class GameManager : MonoBehaviour
     //TODO getters and setters
     [HideInInspector]
     public bool interviewing = false; //public to be accessed in interview script
+
     public GameObject combatCanvas;
     public GameObject goblennPortrait;
     public GameObject geoffPortrait;
     public GameObject jeffPortrait;
     public GameObject gabbinPortrait;
     public GameObject nilbogPortrait;
+
+    public GameObject combatManager;
+
     //Day counter to increase week
     private int days = 0;
 
@@ -149,9 +153,9 @@ public class GameManager : MonoBehaviour
 
     //CSVImporter for Monsters and Heroes
     //public CSVImporter monsters = new CSVImporter(22, 9, "Monster_Stats_-_Sheet1.csv");
-	public CSVImporter monsters;
-	public CSVImporter monNames;
-	public CSVImporter heroStats;
+    public CSVImporter monsters;
+    public CSVImporter monNames;
+    public CSVImporter heroStats;
     public CSVImporter traitTagSheet;
     public Dictionary<string, List<PersonalityTags.Tag>> traitTags;
 
@@ -297,8 +301,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-	void Start() {			
-		/*
+    void Start() {
+        /*
 		//Test for CSVImporter
 		foreach (KeyValuePair<string, Dictionary<string, string>> monster in monsters.data) {
 			print (monster.Key);
@@ -327,8 +331,8 @@ public class GameManager : MonoBehaviour
 		}
         */
 
-		//Room merge test
-		/*
+        //Room merge test
+        /*
 		MergedRoom merged = MergedRoom.MergeBase (this.roomList [5, 6].GetComponent<BaseRoom> (),
 			                    this.roomList [5, 7].GetComponent<BaseRoom> ());
 		MergedRoom merged2 = MergedRoom.MergeBase (this.roomList [6, 7].GetComponent<BaseRoom> (),
@@ -419,16 +423,16 @@ public class GameManager : MonoBehaviour
 
     //Spawns a new applicant monster
     public void CreateNewResume(int resumesToCreate)
-	{
-		for (int i = 0; i < resumesToCreate; i++)
-		{
-			//monsterInstance = SpawnMonster();
+    {
+        for (int i = 0; i < resumesToCreate; i++)
+        {
+            //monsterInstance = SpawnMonster();
             applicationsList.Add(SpawnMonster());
             applicationsList[applicationsList.Count - 1].SetActive(false);
             //monsterInstance.SetActive(false);
-		}
+        }
         uiManager.UpdateApplications();
-	}
+    }
 
     //Pass to here when an option is selected in the room menu to add the proper funcionality to the confirm and cancel buttons in it
     public void RoomMenuHandler(int optionSelected)
@@ -438,46 +442,46 @@ public class GameManager : MonoBehaviour
         {
             switch (optionSelected)
             {
-			case -1: //destroy room
-				//Adds delegate to check and destroy all possible rooms in the list of objects
-				uiManager.roomMenuConfirm.onClick.AddListener (delegate {
-					bool canContinue = true;
-					int iters = 0;
-					while (canContinue)  {
-						canContinue = false;
-						iters++;
+                case -1: //destroy room
+                         //Adds delegate to check and destroy all possible rooms in the list of objects
+                    uiManager.roomMenuConfirm.onClick.AddListener(delegate {
+                        bool canContinue = true;
+                        int iters = 0;
+                        while (canContinue) {
+                            canContinue = false;
+                            iters++;
 
-						GameObject toDelete = null;
-						foreach (GameObject room in selectedObjects) {
-							if (room.GetComponent<BaseRoom>() != null && room.GetComponent<BaseRoom>().CanRemove()) {
-								CurrencyChanged (50);
-								roomList [room.GetComponent<BaseRoom> ().myX, room.GetComponent<BaseRoom> ().myY] = null;
-								room.GetComponent<BaseRoom> ().RemoveAdjacent();
-								//selectedObjects.Remove (room);
-								//Destroy (room);
-								//room.SetActive(false);
-								roomCount--;
-								canContinue = true;
-								toDelete = room;
-								break;
-							}
-						}
-						if (toDelete != null) {
-							selectedObjects.Remove(toDelete);
-							Destroy (toDelete);
-						}
-						//Removes the newly deleted room
-						//selectedObjects.RemoveAll(item => item == null);
+                            GameObject toDelete = null;
+                            foreach (GameObject room in selectedObjects) {
+                                if (room.GetComponent<BaseRoom>() != null && room.GetComponent<BaseRoom>().CanRemove()) {
+                                    CurrencyChanged(50);
+                                    roomList[room.GetComponent<BaseRoom>().myX, room.GetComponent<BaseRoom>().myY] = null;
+                                    room.GetComponent<BaseRoom>().RemoveAdjacent();
+                                    //selectedObjects.Remove (room);
+                                    //Destroy (room);
+                                    //room.SetActive(false);
+                                    roomCount--;
+                                    canContinue = true;
+                                    toDelete = room;
+                                    break;
+                                }
+                            }
+                            if (toDelete != null) {
+                                selectedObjects.Remove(toDelete);
+                                Destroy(toDelete);
+                            }
+                            //Removes the newly deleted room
+                            //selectedObjects.RemoveAll(item => item == null);
 
-						if (iters > 500)
-							break;
-					}
-								//uiManager.ToggleMenu(4);
-					this.GetComponent<ConstructionScript> ().ClearConstructionIcons ();
-					this.GetComponent<ConstructionScript> ().StartConstruction ();
-					selectedObjects.Clear();
-				});
-		
+                            if (iters > 500)
+                                break;
+                        }
+                        //uiManager.ToggleMenu(4);
+                        this.GetComponent<ConstructionScript>().ClearConstructionIcons();
+                        this.GetComponent<ConstructionScript>().StartConstruction();
+                        selectedObjects.Clear();
+                    });
+
                     //selectedObjects.Clear();
                     uiManager.roomMenuConfirm.onClick.AddListener(delegate { uiManager.ToggleMenu(4); });
                     break;
@@ -626,20 +630,20 @@ public class GameManager : MonoBehaviour
 
     #region Time Stuff
     public void NewCycle()
-	{
-		currentTime = timePerDay;
-		doingSetup = false;
-		//cycleImage.SetActive(false);
-		//cycleTimer = 0f;
+    {
+        currentTime = timePerDay;
+        doingSetup = false;
+        //cycleImage.SetActive(false);
+        //cycleTimer = 0f;
 
-		//Script to run dayhandler and weekhandler
-		days += 1;
-		DayHandler();
-		if (days == 7) {
-			WeekHandler();
-			days = 0;
-		}
-	}
+        //Script to run dayhandler and weekhandler
+        days += 1;
+        DayHandler();
+        if (days == 7) {
+            WeekHandler();
+            days = 0;
+        }
+    }
 
     public void ChangeSpeed()
     {
@@ -651,7 +655,7 @@ public class GameManager : MonoBehaviour
         timeSpeed = newSpeed;
     }
 
-	public IEnumerator Play() {
+    public IEnumerator Play() {
         //Applies friendly effect, and then loner effect
         foreach (GameObject monster in monsterList)
         {
@@ -671,15 +675,15 @@ public class GameManager : MonoBehaviour
         }
 
         while (true) {
-			yield return new WaitForSeconds(timeSpeed);
+            yield return new WaitForSeconds(timeSpeed);
             if (CombatStep())
             {
                 canSkip = true;
                 phaseButton.GetComponentInChildren<Text>().text = "Reset Dungeon";
                 break;
             }
-			//PassTime (1);
-		}
+            //PassTime (1);
+        }
         TogglePlay();
     }
 
@@ -693,10 +697,11 @@ public class GameManager : MonoBehaviour
         switch (phase)
         {
             case "Start":
-                canSkip = false;
+                //canSkip = false;
                 phase = "Combat";
-                enemiesToSpawn = 3;
-                TogglePlay();
+                //enemiesToSpawn = 3;
+                //TogglePlay();
+                combatManager.GetComponent<DialogueRunner>().StartDialogue();
                 phaseButton.GetComponentInChildren<Text>().text = "Combat In Progress";
                 break;
             case "Combat":
@@ -712,13 +717,21 @@ public class GameManager : MonoBehaviour
                 //phaseButton.gameObject.SetActive(false);
                 ToggleInterviewMenu();
                 break;
-            /*case "Action":
-                canSkip = true;
-                phase = "Start";
-                //phaseButton.gameObject.SetActive(false);
-                ToggleTrainingMenu();
-                phaseButton.GetComponentInChildren<Text>().text = "Start Combat";
-                break;*/
+                /*case "Action":
+                    canSkip = true;
+                    phase = "Start";
+                    //phaseButton.gameObject.SetActive(false);
+                    ToggleTrainingMenu();
+                    phaseButton.GetComponentInChildren<Text>().text = "Start Combat";
+                    break;*/
+        }
+    }
+
+    public void countPoints()
+    {
+        foreach (GameObject monster in monsterList)
+        {
+
         }
     }
 

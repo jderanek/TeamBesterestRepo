@@ -69,7 +69,7 @@ public abstract class BaseMonster : BaseEntity {
     public bool interviewable = true;
     public GameObject[] interviewOptions;
     public GameObject response;
-    public int points;
+    public int points = 0;
 
     //bool to check if monster is fleeing
     private bool isFleeing = false;
@@ -641,6 +641,12 @@ public abstract class BaseMonster : BaseEntity {
         this.traits.Clear();
         this.traits.Add(System.Activator.CreateInstance(
            System.Type.GetType(toSwap)) as BaseTrait);
+    }
+
+    [YarnCommand("AddPoint")]
+    public void addPoint()
+    {
+        this.points++;
     }
 
     //subtracts 1 from mood then checks if mood is <= to 0 if so, end's interview and makes monster uninterviewable till next day
