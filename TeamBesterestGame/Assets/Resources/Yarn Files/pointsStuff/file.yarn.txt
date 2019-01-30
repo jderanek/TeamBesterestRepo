@@ -14,11 +14,11 @@ Goblenn lurks behind a corner and ambushes the hero, killing him from the shadow
 title: shift21
 tags: 
 colorID: 0
-position: 531,240
+position: 532,232
 ---
-<<if $jeffPoints < 1>>
+<<if $goblennPoints < 1>>
 Jeff is too busy fighting Geoff and is killed by the hero.
-<<elseif $jeffPoints > 2>>
+<<elseif $goblennPoints > 2>>
 Jeff puts aside his difference with Geoff and kills the hero.
 <<endif>>
 [[shift22]]

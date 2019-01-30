@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
             case "Start":
                 //canSkip = false;
                 phase = "Combat";
-                this.setGoblinPoints();
+                this.SetGoblinPoints();
                 combatCanvas.SetActive(true);
                 combatManager.GetComponent<DialogueRunner>().StartDialogue();
                 phaseButton.GetComponentInChildren<Text>().text = "Combat In Progress";
@@ -135,9 +135,10 @@ public class GameManager : MonoBehaviour
             jeffPortrait.SetActive(false);
             geoffPortrait.SetActive(false);
         }
+        print("boop");
     }
 
-    public void setGoblinPoints() //set the yarn variables according to each goblin's int point values
+    public void SetGoblinPoints() //set the yarn variables according to each goblin's int point values
     {
         foreach (GameObject monster in monsterList)
         {

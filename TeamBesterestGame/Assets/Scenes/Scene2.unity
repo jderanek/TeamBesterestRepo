@@ -407,19 +407,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   department: []
   monName: Nilbog
-  curHealth: 0
-  curDamage: 0
-  tags: 
-  curRoom: {fileID: 786735285}
-  canBeDebuffed: 1
-  healthTier: 0
-  defenseTier: 0
-  attackTier: 0
   cNum: 3
   anim: {fileID: 0}
-  effects: []
-  revealedTraits: []
-  revealedTags: 
   interviewable: 1
   interviewOptions:
   - {fileID: 813791958}
@@ -3029,19 +3018,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   department: []
   monName: Gabbin
-  curHealth: 0
-  curDamage: 0
-  tags: 
-  curRoom: {fileID: 786735285}
-  canBeDebuffed: 1
-  healthTier: 0
-  defenseTier: 0
-  attackTier: 0
   cNum: 1
   anim: {fileID: 0}
-  effects: []
-  revealedTraits: []
-  revealedTags: 
   interviewable: 1
   interviewOptions:
   - {fileID: 344413573}
@@ -6444,13 +6422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8792b3e5f50844045ae694a489bd275e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1031783964}
-  playButton: {fileID: 21300000, guid: 3613980cb77e2814990e0239ec96a3ce, type: 3}
-  playButtonDepressed: {fileID: 21300000, guid: ddcf9644a3eb55e4e8d8e47988766eb0,
-    type: 3}
-  pauseButton: {fileID: 21300000, guid: a589d563bf1a7074994859c27ba37629, type: 3}
-  pauseButtonDepressed: {fileID: 21300000, guid: 8977564d5d377ff48b1883976260130e,
-    type: 3}
 --- !u!114 &383253793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11370,11 +11341,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &786735285 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
-    type: 2}
-  m_PrefabInternal: {fileID: 786735284}
 --- !u!1 &789472383
 GameObject:
   m_ObjectHideFlags: 0
@@ -13165,19 +13131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   department: []
   monName: Gabbin
-  curHealth: 0
-  curDamage: 0
-  tags: 
-  curRoom: {fileID: 786735285}
-  canBeDebuffed: 1
-  healthTier: 0
-  defenseTier: 0
-  attackTier: 0
   cNum: 1
   anim: {fileID: 0}
-  effects: []
-  revealedTraits: []
-  revealedTags: 
   interviewable: 1
   interviewOptions:
   - {fileID: 344413573}
@@ -13699,19 +13654,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   department: []
   monName: Jeff
-  curHealth: 0
-  curDamage: 0
-  tags: 
-  curRoom: {fileID: 1952476467}
-  canBeDebuffed: 1
-  healthTier: 0
-  defenseTier: 0
-  attackTier: 0
   cNum: 5
   anim: {fileID: 0}
-  effects: []
-  revealedTraits: []
-  revealedTags: 
   interviewable: 1
   interviewOptions:
   - {fileID: 1670627658}
@@ -15131,52 +15075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e107284f5aef1846b5c170995f40d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 1720928684111470, guid: 058985dedd2beed49bacbe55e715dd5e, type: 2}
-  wall: {fileID: 21300000, guid: b3e2cefe615393b41a9ba4a7bebeaa1d, type: 3}
-  closed: {fileID: 21300000, guid: 026d90b8f1749a84194dc54833b8eb60, type: 3}
-  open: {fileID: 21300000, guid: 518a3d82769461f48b7b99de1dab3bbe, type: 3}
-  possibleMonsters:
-  - {fileID: 1484436021157160, guid: 3849f2e0383594b469bddd666579b1b1, type: 2}
-  - {fileID: 1078517849305682, guid: 2bda6a842a515a543a527f9bcc4514c2, type: 2}
-  monsterInstance: {fileID: 1627720604894886, guid: 0b8228639b99b904bb90bf33f598594c,
-    type: 2}
-  possibleHeroes:
-  - {fileID: 1820813238502166, guid: 2e4d688e4d279e341b54bca22c3d2174, type: 2}
-  possibleRooms:
-  - {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-  - {fileID: 1566428048444222, guid: 9f5a6c6a54624084782763b0cad1d35c, type: 2}
-  roomCount: 5
   monsterList: []
-  breakRoomList: []
-  dungeonList: []
-  prList: []
-  deadMonsters: []
-  applicationsList: []
-  selectedObjects: []
-  roomsToBuild: []
-  healthWeight: 10
-  attackWeight: 3
-  defenseWeight: 2
-  currencyText: {fileID: 935864226}
-  currentCurrency: 0
-  maximumCurrency: 1500
-  infamyLevel: 0
-  infamyXP: 0
-  xpToNextInfamyLevel: 20
-  baseXP: 20
-  infamyLevelText: {fileID: 1261450294}
-  infamyXPText: {fileID: 1321988804}
-  paused: 1
-  timePerDay: 16
-  currentTime: 0
-  timeSpeed: 1
-  timeUnitText: {fileID: 0}
-  pauseButtonText: {fileID: 0}
-  baseHeroSpawnRate: 0.45
-  spawnRateIncrement: 0.1
-  peakHoursSpawnRateBonus: 0.25
-  peakHourStart: 0.5
-  peakHourEnd: 1
   interviewing: 0
   combatCanvas: {fileID: 1275434399}
   goblennPortrait: {fileID: 1829431195}
@@ -15188,31 +15087,10 @@ MonoBehaviour:
   phaseButton: {fileID: 984771302}
   interviewsRemaining: 0
   dialogueRunner: {fileID: 2082834031}
-  inConstructionMode: 0
   interviewCanvas: {fileID: 1256514714}
   interviewResponse: {fileID: 369298016}
   interviewHireButton: {fileID: 1072718359}
-  hellhoundImage: {fileID: 590095008}
-  goblinImage: {fileID: 1397081036}
-  spawnRoom: {fileID: 1893377716}
-  bossRoom: {fileID: 0}
-  stressImage: {fileID: 0}
-  traits:
-  - HeavySleeper
-  - Procrastinator
-  - Opportunist
-  - Reckless
-  - Claustrophobic
-  - Cliquey
-  - Predator
-  - BrownNoser
-  trainingMenu: {fileID: 1419954896}
-  trainingMenuSlot: {fileID: 1152687738953254, guid: 668ab25f0438ba646a56d9b3ec498893,
-    type: 2}
-  actionsRemaining: 0
   interviewMenu: {fileID: 363629753}
-  interviewMenuSlot: {fileID: 1314090393131026, guid: dc400bb281fda7e4b91f19935b19c601,
-    type: 2}
   strikes: 0
   shift: 1
 --- !u!4 &1031783965
@@ -15262,15 +15140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62ac43b94c4537743b9a4a1fe934c557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1031783964}
-  canvas: {fileID: 1495284374}
-  constructionIcon: {fileID: 1155967508596460, guid: da683292365309744b2e6dbf3c9e8964,
-    type: 2}
-  selectedConstructionIcon: {fileID: 21300000, guid: cfadd050e268fd9428cd53ba79cebd9c,
-    type: 3}
-  room: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
-  confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
-    type: 2}
 --- !u!114 &1031783968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15572,13 +15441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649c5d1879b66524b86fa5b444b44dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1031783964}
-  slow: {fileID: 21300000, guid: b3e6dc05da4f06f4b9378f9e6b40c2c6, type: 3}
-  slowDepressed: {fileID: 21300000, guid: 0589ea732133f544b851e86184c7c083, type: 3}
-  normal: {fileID: 21300000, guid: 6f1eb88068f07ce46807dc1ea9256b28, type: 3}
-  normalDepressed: {fileID: 21300000, guid: 7cdf9594c2063f84480f49af08c8802c, type: 3}
-  fast: {fileID: 21300000, guid: dd88a2dbbd52230449e34fd9cb948be1, type: 3}
-  fastDepressed: {fileID: 21300000, guid: 690ff33ccbfb8a246811055c0eb12e09, type: 3}
 --- !u!114 &1054625155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19408,19 +19270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   department: []
   monName: Geoff
-  curHealth: 0
-  curDamage: 0
-  tags: 
-  curRoom: {fileID: 1952476467}
-  canBeDebuffed: 1
-  healthTier: 0
-  defenseTier: 0
-  attackTier: 0
   cNum: 4
   anim: {fileID: 0}
-  effects: []
-  revealedTraits: []
-  revealedTags: 
   interviewable: 1
   interviewOptions:
   - {fileID: 1681591159}
@@ -20495,11 +20346,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1429245900 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1429245899}
 --- !u!1 &1431481489
 GameObject:
   m_ObjectHideFlags: 0
@@ -22739,31 +22585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc79b434302a8d6499856bb748f84b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 3
-  gameManager: {fileID: 0}
-  canvas: {fileID: 0}
-  confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
-    type: 2}
-  neighborRooms: []
-  adjacentRooms: []
-  roomMembers: []
-  myX: 6
-  myY: 5
-  heroesInRoom: []
-  monsterInRoom: 0
-  heroInRoom: 0
-  northDoorBool: 0
-  southDoorBool: 0
-  eastDoorBool: 0
-  westDoorBool: 0
-  roomThreat: 0
-  goldCapacity: 300
-  currentGold: 0
-  emptyCoin: {fileID: 21300000, guid: 6bbf5c900c3b80a4c9ae540944a6c7cc, type: 3}
-  filledCoin: {fileID: 21300000, guid: ef7c1a33e177bd143b09d4a8bb8e3d47, type: 3}
-  highlight: {fileID: 0}
-  monsterSize: 0
-  master: {fileID: 0}
 --- !u!65 &1612243522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24676,19 +24497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   department: []
   monName: Goblenn
-  curHealth: 0
-  curDamage: 0
-  tags: 
-  curRoom: {fileID: 1429245900}
-  canBeDebuffed: 1
-  healthTier: 0
-  defenseTier: 0
-  attackTier: 0
   cNum: 2
   anim: {fileID: 0}
-  effects: []
-  revealedTraits: []
-  revealedTags: 
   interviewable: 1
   interviewOptions:
   - {fileID: 1039311459}
@@ -25898,31 +25708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc79b434302a8d6499856bb748f84b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 3
-  gameManager: {fileID: 0}
-  canvas: {fileID: 1495284374}
-  confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
-    type: 2}
-  neighborRooms: []
-  adjacentRooms: []
-  roomMembers: []
-  myX: 2
-  myY: 5
-  heroesInRoom: []
-  monsterInRoom: 0
-  heroInRoom: 0
-  northDoorBool: 0
-  southDoorBool: 0
-  eastDoorBool: 0
-  westDoorBool: 0
-  roomThreat: 0
-  goldCapacity: 300
-  currentGold: 0
-  emptyCoin: {fileID: 21300000, guid: 6bbf5c900c3b80a4c9ae540944a6c7cc, type: 3}
-  filledCoin: {fileID: 21300000, guid: ef7c1a33e177bd143b09d4a8bb8e3d47, type: 3}
-  highlight: {fileID: 0}
-  monsterSize: 0
-  master: {fileID: 0}
 --- !u!65 &1893377718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26377,11 +26162,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc360d4d794cb6a46a9bda73560d62e1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1952476467 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1696128822791202, guid: dc360d4d794cb6a46a9bda73560d62e1,
-    type: 2}
-  m_PrefabInternal: {fileID: 1952476466}
 --- !u!1 &1962731638
 GameObject:
   m_ObjectHideFlags: 0

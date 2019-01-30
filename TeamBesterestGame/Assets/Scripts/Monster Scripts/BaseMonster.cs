@@ -131,8 +131,6 @@ public abstract class BaseMonster : BaseEntity {
         {
             option.SetActive(false);
         }
-
-        response.GetComponentInChildren<Text>().text = "Hello.";
         response.SetActive(false);
         //grey out portrait
 
