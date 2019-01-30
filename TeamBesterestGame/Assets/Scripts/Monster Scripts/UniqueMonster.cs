@@ -4,10 +4,4 @@ using UnityEngine;
 
 //Script for personally created monsters, calls stats from given name
 public class UniqueMonster : BaseMonster {
-    
-
-    public void Start()
-    {
-        this.AssignStats(monName);
-    }
 }
