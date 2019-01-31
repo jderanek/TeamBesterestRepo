@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
             nilbogPortrait.SetActive(false);
             jeffPortrait.SetActive(false);
             geoffPortrait.SetActive(false);
+            this.interviewing = false;
         }
         print("boop");
     }
