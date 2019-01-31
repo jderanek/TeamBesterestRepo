@@ -8,7 +8,7 @@ Goblenn gets scared of the hero and runs away.
 <<elseif $goblennPoints > 2>>
 Goblenn lurks behind a corner and ambushes the hero, killing him from the shadows.
 <<endif>>
-<<ChangeShift GameManager>>
+<<ChangeShift Goblenn>>
 [[shift21]]
 ===
 title: shift21
@@ -16,9 +16,9 @@ tags:
 colorID: 0
 position: 532,232
 ---
-<<if $goblennPoints < 1>>
+<<if $jeffPoints < 1>>
 Jeff is too busy fighting Geoff and is killed by the hero.
-<<elseif $goblennPoints > 2>>
+<<elseif $jeffPoints > 2>>
 Jeff puts aside his difference with Geoff and kills the hero.
 <<endif>>
 [[shift22]]
@@ -33,7 +33,7 @@ Geoff is too busy fighting with Jeff and is killed by the hero.
 <<elseif $geoffPoints > 2>>
 Geoff puts aside his difference with Jeff and kill the hero.
 <<endif>>
-<<ChangeShift GameManager>>
+<<ChangeShift Goblenn>>
 [[shift31]]
 ===
 title: shift31
@@ -58,5 +58,5 @@ Nilbog is too annoyed by Gabbin and is killed by the hero while distracted.
 <<elseif $nilbogPoints > 2>>
 Nilbog learned to tolerate Gabbin and defeats the hero.
 <<endif>>
-<<ChangeShift GameManager>>
+<<ChangeShift Goblenn>>
 ===

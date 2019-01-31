@@ -137,6 +137,12 @@ public abstract class BaseMonster : BaseEntity {
         this.gameManager.interviewing = false;
     }
 
+    [YarnCommand("ChangeShift")]
+    public void ChangeShift()
+    {
+        this.gameManager.ChangeShift();
+    }
+
     //Starts invoking flee movement, then disables it and the monster
     //Prevents disabling until movement finishes
     public void StartFleeing()
