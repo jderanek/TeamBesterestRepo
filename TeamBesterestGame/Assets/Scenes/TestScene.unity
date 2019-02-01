@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 556138464}
   - component: {fileID: 556138463}
   - component: {fileID: 556138462}
+  - component: {fileID: 556138465}
   m_Layer: 0
   m_Name: Goblenn
   m_TagString: Untagged
@@ -815,6 +816,25 @@ MonoBehaviour:
   startAutomatically: 1
   automaticCommands: 1
   goblinID: 0
+--- !u!114 &556138465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 556138458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c8bdc5376ec6b94686f2cbc0b497c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  department: []
+  monName: 
+  cNum: 0
+  anim: {fileID: 0}
+  interviewable: 1
+  interviewOptions: []
+  response: {fileID: 0}
+  points: 0
 --- !u!1 &556936032
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,8 +845,8 @@ GameObject:
   - component: {fileID: 556936034}
   - component: {fileID: 556936033}
   m_Layer: 0
-  m_Name: Game Manager
-  m_TagString: Untagged
+  m_Name: GameController
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -842,74 +862,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e107284f5aef1846b5c170995f40d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 0}
-  wall: {fileID: 0}
-  closed: {fileID: 0}
-  open: {fileID: 0}
-  possibleMonsters: []
-  monsterInstance: {fileID: 0}
-  possibleHeroes: []
-  possibleRooms: []
-  roomCount: 5
   monsterList: []
-  breakRoomList: []
-  dungeonList: []
-  prList: []
-  deadMonsters: []
-  applicationsList: []
-  selectedObjects: []
-  roomsToBuild: []
-  healthWeight: 10
-  attackWeight: 3
-  defenseWeight: 2
-  currencyText: {fileID: 0}
-  currentCurrency: 0
-  maximumCurrency: 1500
-  infamyLevel: 0
-  infamyXP: 0
-  xpToNextInfamyLevel: 20
-  baseXP: 20
-  infamyLevelText: {fileID: 0}
-  infamyXPText: {fileID: 0}
-  paused: 1
-  timePerDay: 24
-  currentTime: 0
-  timeSpeed: 1
-  timeUnitText: {fileID: 0}
-  pauseButtonText: {fileID: 0}
-  baseHeroSpawnRate: 0.25
-  spawnRateIncrement: 0.1
-  peakHoursSpawnRateBonus: 0.25
-  peakHourStart: 0.5
-  peakHourEnd: 1
   interviewing: 0
+  combatCanvas: {fileID: 0}
+  goblennPortrait: {fileID: 0}
+  geoffPortrait: {fileID: 0}
+  jeffPortrait: {fileID: 0}
+  gabbinPortrait: {fileID: 0}
+  nilbogPortrait: {fileID: 0}
+  combatManager: {fileID: 0}
   phaseButton: {fileID: 0}
   interviewsRemaining: 0
   dialogueRunner: {fileID: 0}
-  inConstructionMode: 0
   interviewCanvas: {fileID: 0}
   interviewResponse: {fileID: 0}
   interviewHireButton: {fileID: 0}
-  hellhoundImage: {fileID: 0}
-  goblinImage: {fileID: 0}
-  spawnRoom: {fileID: 0}
-  bossRoom: {fileID: 0}
-  stressImage: {fileID: 0}
-  traits:
-  - HeavySleeper
-  - Procrastinator
-  - Opportunist
-  - Reckless
-  - Claustrophobic
-  - Cliquey
-  - Predator
-  - BrownNoser
-  trainingMenu: {fileID: 0}
-  trainingMenuSlot: {fileID: 0}
-  actionsRemaining: 0
   interviewMenu: {fileID: 0}
-  interviewMenuSlot: {fileID: 0}
   strikes: 0
+  shift: 1
 --- !u!4 &556936034
 Transform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,8 @@ public class BasePortrait : MonoBehaviour
     void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
+        //this.YarnBob("10", "3", ".75");
+        //this.YarnMove("-20", "3");
     }
 
     // Update is called once per frame
@@ -38,36 +40,39 @@ public class BasePortrait : MonoBehaviour
         StartCoroutine(Bob(float.Parse(duration), float.Parse(speed) * 10, float.Parse(magnitude)));
     }
 
-    [YarnCommand("ChangeOppacity")]
+    [YarnCommand("ChangeOpacity")]
     public void YarnOppacity(string alpha, string speed)
     {
-        StartCoroutine(ChangeOppacity(float.Parse(alpha), float.Parse(speed) * 10));
+        StartCoroutine(ChangeOpacity(float.Parse(alpha), float.Parse(speed) * 10));
     }
 
     public IEnumerator Move(float distance, float duration)
     {
-        float startTime = Time.time;
-        print("boop");
-        Vector3 targetPosition = new Vector3(this.transform.position.x - distance, 0f, 0f);
-        while (Time.time < startTime + duration) //Vector3.Distance(transform.position, targetPosition) > 0.05f)
+        print("Moving");
+        Vector3 targetPosition = new Vector3(this.transform.position.x - distance, this.transform.position.y, this.transform.position.z);
+        while (this.transform.position != targetPosition) //Vector3.Distance(transform.position, targetPosition) > 0.05f)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPosition, ((Time.time - startTime) / duration));
+            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Mathf.Abs(distance / duration));
 
             yield return null;
         }
 
+        StopCoroutine("Move");
+        Debug.Log("Move finished");
     }
 
     IEnumerator Bob(float duration, float speed, float magnitude)
     {
         while (duration > 0.05f)
         {
-            Vector3 pos = new Vector3(0f, Mathf.Sin(Time.time * speed) * magnitude, 0f);
-            transform.position = Vector3.Lerp(transform.position, pos, speed * Time.deltaTime);
+            Vector3 pos = new Vector3(this.transform.position.x, Mathf.Sin(Time.time * speed) * magnitude, this.transform.position.z);
+            transform.position = Vector3.MoveTowards(transform.position, pos, speed * Time.deltaTime);
             duration -= Time.deltaTime;
 
             yield return null;
         }
+
+        StopCoroutine("Bob");
     }
 
     IEnumerator Shake(float tilt, float speed, float duration)
@@ -85,15 +90,25 @@ public class BasePortrait : MonoBehaviour
 
             yield return null;
         }
+
+        ResetRot();
+        StopCoroutine("Shake");
     }
 
-    IEnumerator ChangeOppacity(float alpha, float speed)
+    IEnumerator ChangeOpacity(float alpha, float speed)
     {
         while(Mathf.Abs(sprite.color.a - alpha) > 0.05f)
         {
-            sprite.color = new Color (sprite.color.r, sprite.color.g, sprite.color.b, Mathf.Lerp(sprite.color.a, alpha, speed));
+            sprite.color = new Color (sprite.color.r, sprite.color.g, sprite.color.b, Mathf.MoveTowards(sprite.color.a, alpha, speed));
 
             yield return null;
         }
+
+        StopCoroutine("ChangeOpacity");
+    }
+
+    private void ResetRot()
+    {
+        this.transform.rotation = Quaternion.identity;
     }
 }
