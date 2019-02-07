@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
         switch (phase)
         {
             case "Start":
-                //canSkip = false;
+                canSkip = false;
                 phase = "Combat";
                 this.SetGoblinPoints();
                 combatCanvas.SetActive(true);
@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
         }
         else //resets shift to 1
         {
+            canSkip = true;
             combatCanvas.SetActive(false);
             shift = 0;
             goblennPortrait.SetActive(true);
@@ -136,7 +137,6 @@ public class GameManager : MonoBehaviour
             geoffPortrait.SetActive(false);
             this.interviewing = false;
         }
-        print("boop");
     }
 
     public void SetGoblinPoints() //set the yarn variables according to each goblin's int point values
