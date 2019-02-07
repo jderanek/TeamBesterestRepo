@@ -1173,7 +1173,7 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -1184,11 +1184,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2082834033}
+      objectReference: {fileID: 1031783968}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartDialogue
+      value: ToggleSpeechBubbles
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -1215,16 +1215,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1031783968}
+      objectReference: {fileID: 2082834033}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleSpeechBubbles
+      value: StartDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -1239,6 +1239,36 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2082834033}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2365,7 +2395,7 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -2376,11 +2406,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 895976262}
+      objectReference: {fileID: 1031783968}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartDialogue
+      value: ToggleSpeechBubbles
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -2400,7 +2430,7 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -2411,11 +2441,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1031783968}
+      objectReference: {fileID: 895976262}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleSpeechBubbles
+      value: StartDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -2425,6 +2455,36 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 895976262}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5923,7 +5983,7 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -5934,11 +5994,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 594745392}
+      objectReference: {fileID: 1031783968}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartDialogue
+      value: ToggleSpeechBubbles
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -5965,16 +6025,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1031783968}
+      objectReference: {fileID: 594745392}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleSpeechBubbles
+      value: StartDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -5989,6 +6049,36 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 594745392}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9059,7 +9149,7 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -9070,11 +9160,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5239700}
+      objectReference: {fileID: 1031783968}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartDialogue
+      value: ToggleSpeechBubbles
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -9101,16 +9191,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1031783968}
+      objectReference: {fileID: 5239700}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleSpeechBubbles
+      value: StartDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -9125,6 +9215,36 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 5239700}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13187,7 +13307,7 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -13198,11 +13318,11 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 41062057}
+      objectReference: {fileID: 1031783968}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartDialogue
+      value: ToggleSpeechBubbles
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -13228,7 +13348,7 @@ Prefab:
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
@@ -13239,15 +13359,40 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1031783968}
+      objectReference: {fileID: 41062057}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ToggleSpeechBubbles
+      value: StartDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 41062057}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StartDialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 114228044798072862, guid: dc400bb281fda7e4b91f19935b19c601,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
