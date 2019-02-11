@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         {
             canSkip = true;
             combatCanvas.SetActive(false);
-            shift = 0;
+            shift = 1;
             goblennPortrait.SetActive(true);
             gabbinPortrait.SetActive(false);
             nilbogPortrait.SetActive(false);
