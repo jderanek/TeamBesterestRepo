@@ -1,0 +1,285 @@
+title: LazyStart
+tags: 
+colorID: 0
+position: 540,261
+---
+So, what's your deal?
+Lazy: Pay sucks, die a lot, always tired
+[[|Sucks]]#Wow, that does sound like it sucks
+[[|Tired]]#Why do you seem so tired
+[[|Sleeping]]#Did I catch you sleeping in dungeon
+[[|Dying]]#Well, you could either be really bad at killing heroes, or maybe you're just really good at dying
+[[|Brick]]#Do you have a brick? (*UNLOCKED BY FINDING OUT DISTRACTEDS PHONE)
+===
+title: Sucks
+tags: 
+colorID: 0
+position: 884,-227
+---
+Lazy:    #Of course, Im not paid enough to make me try harder, can you ask the boss for a raise
+#I'm a time-wizard, not a miracle worker...
+===
+title: Tired
+tags: 
+colorID: 0
+position: 884,-23
+---
+Lazy:    #Lazy likes to use all the free time he can, since necromancers dont come in until later
+[[|FreeTime]]#Well what do you like doing in your free time?
+[[|Sleep]]#Well why dont you make sleeping a hobby?
+===
+title: Sleeping
+tags: 
+colorID: 0
+position: 884,184
+---
+Lazy:    #Not that I remember. Who knows really. Maybe I disquised myself as asleep to lure in the Heroes closer
+[[|Confused]]#But didnt I see your partner get killed by a couple of Heroes and they proceeded to walk on through?
+[[|Stern]]#I think I know the difference between faking and a goblin knocked out cold, why are you so tired?
+[[|Believe]]#O sorry, my bad. Didn't notice the tactics being used in the moment. Please continue using your skills as such.
+===
+title: Dying
+tags: 
+colorID: 0
+position: 885,388
+---
+Lazy:    #Could be either or, who knows.
+
+#Mood Hit
+===
+title: Brick
+tags: 
+colorID: 0
+position: 884,593
+---
+Lazy:    #Of course not, I actually have the new Cinderblock, its much higher tech compared to those weak Bricks.
+[[|Inquisitive]]#How do you know so much about the Bricks?
+[[|Lying]]#Pshhh, I knew that... who doesnt know that...Bricks are so last-year...
+===
+title: FreeTime
+tags: 
+colorID: 0
+position: 1230,-232
+---
+Lazy:    #I'm a pretty big tech junky, im hoping one day to get out of the dungeon business, and start a phone line thats the best the world has seen
+[[|Realization]]#But, you can do that until you have made enough money from working here right? And you dont get enough money because you keep dying on the job
+[[|Insult]]#Well, from what I've seen of your dungeon work, not so sure you have what it takes to make phones. Stick to the hero killing bud
+===
+title: Sleep
+tags: 
+colorID: 0
+position: 1230,-30
+---
+Lazy:    #That doesn't seem like a real hobby?
+[[|Insult]]#Well you do seem better at Sleeping then you do at killing Heroes
+[[|Encourage]]#Cmon, what you wouldn't give to get an extra couple hours of sleep a night. You know you want it
+===
+title: Realization
+tags: 
+colorID: 0
+position: 1505,-447
+---
+Lazy:    #Yeah, I guess your right. Need to finish my job here before I can move onto the big stage
+
+#Unlocks "Tech Knowledge"
+#Unlocks Tree2
+===
+title: Insult
+tags: 
+colorID: 0
+position: 1501,-236
+---
+Lazy:    #sure, whatever you say
+
+#Mood Hit
+===
+title: Encourage
+tags: 
+colorID: 0
+position: 1505,-29
+---
+Lazy:    #Those extra hours of sleep would only take away from my passion. Im not willing to sacrifice that so I'm better at this job
+
+#Mood Hit
+#Unlocks Tree2
+===
+title: Believe
+tags: 
+colorID: 0
+position: 1580,309
+---
+Lazy:    #Thank you.
+===
+title: Stern
+tags: 
+colorID: 0
+position: 1788,196
+---
+Lazy:    #I am too busy when I get home after a days shift. I dont have the luxury of getting a good nights sleep like some of these other goblins.
+[[|Accept]]#Well then, I guess we will just have to work with that.
+===
+title: Confused
+tags: 
+colorID: 0
+position: 1788,-29
+---
+Lazy:    #It's a possibility...
+[[|Angry]]#Not anymore. Ill see it through that the heroes know to attack ALL goblins before moving on, even if they appear to be asleep.
+===
+title: Angry
+tags: 
+colorID: 0
+position: 2069,-251
+---
+Lazy:    #Fine, ill work on myself not being so tired at work. You happy?
+
+#Mood Hit
+#Unlocks Tree2
+===
+title: Accept
+tags: 
+colorID: 0
+position: 2072,-29
+---
+Lazy:    #I guess we will.
+
+#Unlocks Tree2
+===
+title: Node68
+tags: 
+colorID: 0
+position: 1218,810
+---
+Lazy:   #Amatuer... hearing you talk only makes me more tired.
+
+#Unlocks Tree2
+===
+title: Inquisitive
+tags: 
+colorID: 0
+position: 1219,595
+---
+Lazy:    #Ive been working with technology all my life, its the whole reason im tired every day. Everyday after I get home, its right back to tinkering with tech.
+
+Unlocks "Tech Knowledge"
+Unlocks Tree2
+===
+title: EnergyDrink
+tags: 
+colorID: 0
+position: 562,1276
+---
+Lazy: #Havent tried them before, why?
+[[|Trick]]#No reason, but hey, want to try this awesome tasting potion I just found? You can only drink them before a shift though.
+[[|Persuade]]#There is this new potion that is sold as "Energizing". Its supposed to keep you awake for longer. Want to try it?
+===
+title: Lazy2Start
+tags: 
+colorID: 0
+position: 329,1496
+---
+#So how are we going to solve your laziness?
+Lazy: #I dont know, give me some suggestions?
+[[|EnergyDrink]]#Whats your opinion on "energy potions"?
+[[|Sleepwalk]]#Do you happen to sleepwalk?
+[[|Robot]]#How about instead of you fighting the heroes, why dont you just build something to fight for you? (*Requires Tech Knowledge)
+[[|Steal]]#HEY LOOK OVER THERE!
+===
+title: Trick
+tags: 
+colorID: 0
+position: 791,1059
+---
+Lazy:    #Im fine, thanks though.
+[[|Persuade]]#Do it or Ill tell the necromancers to skip your body.
+===
+title: Persuade
+tags: 
+colorID: 0
+position: 1052,1205
+---
+Lazy:    #Okay, Ill try it.
+
+#CombatScale:1
+===
+title: Sleepwalk
+tags: 
+colorID: 0
+position: 564,1493
+---
+Lazy:   #Sometimes I do wake up in places I dont remember falling asleep in, why?
+[[|Elude]]#No reason, but if you happen to wake up with swords attached to your arms, dont look at me.
+[[|Truth]]#How about we attach swords to your arms and legs? That way if you sleepwalk on your shift you will attack the Heroes?
+===
+title: Elude
+tags: 
+colorID: 0
+position: 794,1403
+---
+Lazy:   #Do you plan on attaching swords to my arms and legs when Im asleep?
+[[|Truth]]#Most assuradly.
+===
+title: Truth
+tags: 
+colorID: 0
+position: 1051,1498
+---
+Lazy:   #Let's do it!
+
+#CombatScale:2
+===
+title: Robot
+tags: 
+colorID: 0
+position: 570,1761
+---
+Lazy:  #You might have too much faith in me, but I can give it a shot.
+[[|Intelligent]]#Do you think you'll be able to build it before next shift?
+[[|Dumb]]#Can you make it look like a dragon? I like dragons.
+===
+title: Dumb
+tags: 
+colorID: 6
+position: 800,1846
+---
+Lazy:   #No.
+
+#CombatScale:2
+===
+title: Intelligent
+tags: 
+colorID: 0
+position: 799,1632
+---
+Lazy:   #Yes. It will be a rough timeline, but I think I can do it. I can build and upgrade anything if I put my mind to it.
+
+#CombatScale:2
+#Unlocks "Phone Upgrade"
+===
+title: Steal
+tags: 
+colorID: 0
+position: 570,2162
+---
+Lazy:   #Look over where......
+[[|GrabPhone]]#*Steal Lazy's Phone
+[[|Wasted]]#Ha ha, made you look!
+===
+title: GrabPhone
+tags: 
+colorID: 0
+position: 800,2069
+---
+Lazy:   #I dont see anything? But.... wait.... WHERES MY PHONE!
+
+#CombatScale:0
+===
+title: Wasted
+tags: 
+colorID: 0
+position: 800,2288
+---
+Lazy:   #What was that for? You might be losing it...
+
+#CombatScale:0
+===

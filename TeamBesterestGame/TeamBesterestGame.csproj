@@ -493,7 +493,16 @@
     <None Include="Assets\Resources\Yarn Files\level one\file.yarn.txt" />
     <None Include="Assets\Resources\Yarn Files\level one\geoffBasetxtDialoguePointsRevise.yarn.txt" />
     <None Include="Assets\Resources\Yarn Files\level one\goblennBaseNewDialoguePointsRevised.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\level two\Clumsy.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\level two\Distracted.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\level two\Exp.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\level two\Lazy.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\level two\Sporty.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\level two\Unex.yarn.txt" />
     <None Include="Assets\Resources\Yarn Files\test.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\tutorial\Gax.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\tutorial\Skord.yarn.txt" />
+    <None Include="Assets\Resources\Yarn Files\tutorial\TutorialMain.yarn.txt" />
     <None Include="Assets\Scripts\High-Speed-Priority-Queue-for-C-Sharp\LICENSE.txt" />
     <None Include="Assets\Sprites\2D Pixel Top-Down Dungeon Tileset\How to use Tilesets.txt" />
     <None Include="Assets\Sprites\2D Pixel Top-Down Dungeon Tileset\Read_Me.txt" />

@@ -1,0 +1,245 @@
+title: ClumsyStart
+tags: 
+colorID: 0
+position: 540,260
+---
+#So, what is your deal?
+Clumsy:    #Well, if you dont know me, you should, because I am the best juggler you will ever know, and my specialty, is throwing knives.
+[[|Example]]#Really, sorry I didn't know of you prior, can you show me?
+[[|Question]]#Why do you prefer throwing knives?
+[[|Wannabe]]#So, you a Goblin, but also a wannabe Ninja... o boy... not much to work with here I see.
+[[|Sports]]#Do you like sports? (*Requires knowledge of Sporty's sport love)
+[[|PutDown]]#Before we move further, put down those knives Clumsy. No questions, NOW.(*Requires knowledge of Sporty's prior death)
+===
+title: Wannabe
+tags: 
+colorID: 0
+position: 868,390
+---
+Clumsy:   #Well, if you want to know, I believe the Ninja Warriors are some of the greatest fighters of all time. There is no group of monsters OR heroes that could take these guys on.
+[[|Confused]]#But Ninjas are usually stealthy right, not going around yelling how they are Ninjas right?
+[[|Knowledge]]#But you are a Goblin in a corporate Dungeon, how do you know so much about Ninjas?
+[[|Example]]#Well, if you idolize Ninjas, show me your knife juggling why dont cha?
+===
+title: PutDown
+tags: 
+colorID: 0
+position: 863,859
+---
+Clumsy:   #Okay, okay, jeez...
+
+#Unlocks Tree2
+===
+title: Sports
+tags: 
+colorID: 0
+position: 864,631
+---
+Clumsy:   #Not particulary, why?
+===
+title: Question
+tags: 
+colorID: 0
+position: 867,164
+---
+Clumsy:   #Because they remind me of the great Ninja Warrior told about in pasts long ago. The stealthy fighters who were able to control knives with upmost precision, able to hit a target from miles away.
+[[|Disprove]]#Well, if these warriors were so stealthy, then how come you know about them? Shouldn't the world not know of their prescence? And why would you tell me about them?
+[[|History]]#Yeah, but could they survive a Dungeon being invaded by Heroes? Because one thing I do know is that so far you haven't been able to.
+[[|Example]]#Sounds interesting, why dont you show me these awesome knife throwing technique?
+===
+title: Example
+tags: 
+colorID: 0
+position: 867,-67
+---
+Clumsy:   #Why sure I will.
+Sporty:   #WAIT, DONT DO IT!!!!!!
+[[|Encourage]]#Sporty, calm down, now go ahead Clumsy.
+[[|Discourage]]#Maybe Sporty is right, stop it Clumsy.
+===
+title: Discourage
+tags: 
+colorID: 0
+position: 1176,-74
+---
+Clumsy:    #Okay, FINEEEEE. Have it your way... maybe just one knife.
+*Clumsy stands up and runs towards a target on the way, however Clumsy begins to trip and throws the knife anyways, the knife turns around mid air and hits Sports in the leg.
+#Okay, it appears you might be a big clumsy there Clumsy.
+Clumsy:    #Oopsies.
+
+#Unlocks Tree2
+===
+title: Encourage
+tags: 
+colorID: 0
+position: 1177,-310
+---
+Clumsy: #Okay, here we go!
+*Clumsy throws the knives in the air, all of them miraculously hits Sporty and kill him.
+#Were done here Clumsy.
+
+#CombatScale:1 (Clumsy), 0 (Sporty)
+===
+title: History
+tags: 
+colorID: 0
+position: 1441,227
+---
+Clumsy:    #You are right, my skill would shame the Ninjas. I need to practice my knife juggling and throwing more, mind if I show you?
+[[|Example]]#Only if you plan on showing skill.
+===
+title: Disprove
+tags: 
+colorID: 0
+position: 1440,17
+---
+Clumsy:    #By god... your right... how could I have betrayed them like this. Im so sorry my Ninja bretheren, I have failed you.
+[[|Failure]]#You have failed them Clumsy, you dont deserve them as your idols. You are too clumsy with your words pupil.
+===
+title: Failure
+tags: 
+colorID: 0
+position: 1701,14
+---
+Clumsy:    #You are right Time-Wizard, my clumsiness has shown through. I must hone my grace, become more elegant with my knives and words.
+
+#Unlock Tree2
+===
+title: Confused
+tags: 
+colorID: 0
+position: 1182,529
+---
+I am no Ninja yet, I must first hone my body, before I begin to sharpen my mind. And I do that by practicing my knife throwing techniques.
+[[|Example]]#Okay, mind if you show me these skills?
+===
+title: Knowledge
+tags: 
+colorID: 0
+position: 1182,750
+---
+Because my phsyical appearance as a Goblin doesn't hide my soul as a Ninja. I was born with this knowledge, born with this ability to learn the ways of the Ninja... and the local library had a couple books on shelf.
+[[|Example]]#Well, dont dissapoint your Ninja family, show me your skills with the blade.
+===
+title: Node15
+tags: 
+colorID: 0
+position: 547,1561
+---
+#So, how are we going to deal with your clumsiness?
+Clumsy:   #Not sure, what would you recommend Time-Wizard?
+[[|PutOff]]#Why not just wait to practice knife throwing at home?
+[[|DifWeapon]]#How about instead of Knives, you use a different weapon?
+[[|Practice]]#Ill encourage you to practice ALL DAY, but promise me youll wear gloves as to not hurt yourself.
+[[|TeamAttack]]#Why dont you and Sporty take time to learn some form of "Team Combo" that utilizes both of your strengths? (*Requires Sporty being willing to do team combo)
+[[|Range]]#Why dont you go down to the shooting range and get some practice done there? (*Requires knowledge of Range from Sporty)
+===
+title: Range
+tags: 
+colorID: 0
+position: 870,2034
+---
+Clumsy:   #I guess me just throwing knives around the office isnt the best place to pratice. Maybe a shooting range is just the type of thing a true Ninja like me could use.
+
+#Mood Gain
+#CombatScale:2 (Clumsy)
+===
+title: TeamAttack
+tags: 
+colorID: 0
+position: 864,1820
+---
+Clumsy:   #I have never thoguht about that, but with Sporty's physical prowess and my awesome ninja skills, I can guarentee that us two will come up with some terrifying Ninja Sport combo! Believe it!
+
+#Mood Gain
+#CombatScale:2 (Clumsy), 3 (Sporty)
+===
+title: Practice
+tags: 
+colorID: 0
+position: 867,1611
+---
+Clumsy:  #I guess practicing with gloves on could only help me improve in the long term. I've already lost 3 fingers, probably best not to lose anymore.
+
+#Mood Gain
+#CombatScale:3 (Clumsy), 0 (Sporty, dies)
+===
+title: DifWeapon
+tags: 
+colorID: 0
+position: 864,1394
+---
+Clumsy:   #But my Ninja training has only taught me how to use knives? I dont know any other weapon arts?
+[[|Katana]]#Arent Ninjas welled trained in the use of the Katana? Why not start using one of those?
+[[|Shuriken]]#Ninjas use Shurikens just as much as throwing knives right? Why not use those?
+[[|Fist]]#Ninjas dont only rely on tools to get the job done, why not train your body and your fist to do the fighting? A.K.A. Punch the Heroes.
+[[|Ninjutsu]]#Ninjas are expert spell users right? They can like shoot fireballs from their hands im pretty sure, you should learn that. That would be cool.
+===
+title: PutOff
+tags: 
+colorID: 0
+position: 867,1168
+---
+Clumsy: #That is a possibility. However, it would be a horrible misuse of my precious time dedicated to the study of the Ninja Arts.
+[[|Possible]]#So what you're saying is... theres a chance.
+[[|Callback]]#You might be a horrible misuse of my precious time. That is a possibility.
+===
+title: Possible
+tags: 
+colorID: 0
+position: 1098,1028
+---
+Clumsy:   #Yes, there's a chance that I wont practice anymore until the heroes show up...I wont like it however.
+
+#CombatScale:2 (Clumsy), 0 (Sporty, dies)
+===
+title: Callback
+tags: 
+colorID: 0
+position: 1097,1235
+---
+Clumsy:   #Alright I get it, I wont throw knives until the heroes arrive...
+
+#Mood Hit
+#CombatScale: 1 (Clumsy), 0 (Sporty, dies)
+===
+title: Ninjutsu
+tags: 
+colorID: 0
+position: 2119,1402
+---
+Clumsy:   #I've only heard rumors of such techiques used before. But if a Time-Wizard has as well, the must exist. I will dedicate the remaining of my life to learn such skills.
+
+#Mood Gain
+#CombatScale:0
+===
+title: Fist
+tags: 
+colorID: 0
+position: 1862,1399
+---
+Clumsy:   #You're right! I've only been training my eyes and my mind. I havent attempted to train my hands before. This will be a big change for me, but this will be for the better. Believe it!
+
+#Mood Gain
+#CombatScale:3
+===
+title: Shuriken
+tags: 
+colorID: 0
+position: 1619,1401
+---
+Clumsy:   #Ive always like the feel of a large object in my hand, but maybe the small stature of the Shuriken would leave me to be more accurate when aiming towards my enemies. Ill do it.
+
+#Mood Gain
+#CombatScale:1 (Clumsy), 0 (Sporty, dies)
+===
+title: Katana
+tags: 
+colorID: 0
+position: 1362,1401
+---
+Clumsy:   #Ive always wanted to bring my katana into work, but was always afraid that I would decimate me enemies too hard. They should know the face of their killer. Ill do it.
+
+#Mood Gain
+#CombatScale:1 (Clumsy), 0 (Sporty, dies)
+===
