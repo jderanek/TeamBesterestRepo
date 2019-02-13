@@ -10,19 +10,22 @@ public class GameManager : MonoBehaviour
     #region Declarations
     UIManager uiManager;
 
-    //WHOLE BUNCH OF FUCKING LISSSTTSSSTSTTST
-    [HideInInspector]
     public List<GameObject> monsterList = new List<GameObject>();
 
     [HideInInspector]
     public bool interviewing = false; //public to be accessed in interview script
 
     public GameObject combatCanvas;
+
     public GameObject goblennPortrait;
     public GameObject geoffPortrait;
     public GameObject jeffPortrait;
     public GameObject gabbinPortrait;
     public GameObject nilbogPortrait;
+
+    public GameObject shiftOnePortraits;
+    public GameObject shiftTwoPortraits;
+    public GameObject shiftThreePortraits;
 
     public GameObject combatManager;
 
@@ -110,31 +113,40 @@ public class GameManager : MonoBehaviour
             shift++;
             if (shift == 2) //second shift, enable second shift portraits (first is on by default)
             {
-                goblennPortrait.SetActive(false);
+                shiftOnePortraits.SetActive(false);
+                shiftTwoPortraits.SetActive(true);
+                shiftThreePortraits.SetActive(false);
+                /*goblennPortrait.SetActive(false);
                 gabbinPortrait.SetActive(false);
                 nilbogPortrait.SetActive(false);
                 jeffPortrait.SetActive(true);
-                geoffPortrait.SetActive(true);
+                geoffPortrait.SetActive(true);*/
             }
             else //third shift
             {
-                goblennPortrait.SetActive(false);
+                shiftOnePortraits.SetActive(false);
+                shiftTwoPortraits.SetActive(false);
+                shiftThreePortraits.SetActive(true);
+                /*goblennPortrait.SetActive(false);
                 gabbinPortrait.SetActive(true);
                 nilbogPortrait.SetActive(true);
                 jeffPortrait.SetActive(false);
-                geoffPortrait.SetActive(false);
+                geoffPortrait.SetActive(false);*/
             }
         }
         else //resets shift to 1
         {
+            shiftOnePortraits.SetActive(true);
+            shiftTwoPortraits.SetActive(false);
+            shiftThreePortraits.SetActive(false);
             canSkip = true;
             combatCanvas.SetActive(false);
             shift = 1;
-            goblennPortrait.SetActive(true);
+            /*goblennPortrait.SetActive(true);
             gabbinPortrait.SetActive(false);
             nilbogPortrait.SetActive(false);
             jeffPortrait.SetActive(false);
-            geoffPortrait.SetActive(false);
+            geoffPortrait.SetActive(false);*/
             this.interviewing = false;
         }
     }
@@ -147,6 +159,7 @@ public class GameManager : MonoBehaviour
             {
                 var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
                 combatManager.GetComponent<InterviewVariableStorage>().SetValue("$goblennPoints", varToSet);
+                print(combatManager.GetComponent<InterviewVariableStorage>().GetValue("$goblennPoints"));
             }
             if (monster.GetComponent<BaseMonster>().monName == "Geoff")
             {
