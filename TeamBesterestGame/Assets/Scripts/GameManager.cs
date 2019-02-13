@@ -159,7 +159,6 @@ public class GameManager : MonoBehaviour
             {
                 var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
                 combatManager.GetComponent<InterviewVariableStorage>().SetValue("$goblennPoints", varToSet);
-                print(combatManager.GetComponent<InterviewVariableStorage>().GetValue("$goblennPoints"));
             }
             if (monster.GetComponent<BaseMonster>().monName == "Geoff")
             {
