@@ -1,0 +1,601 @@
+title: Geoff1
+tags: 
+colorID: 0
+position: 4051,144
+---
+Geoff: Hello, I'm Geoff.
+Geoff: I'm sorry boss, I am mad right now. Someone here stole my scone and ate it!
+Geoff: What kind of jerk does that?
+[[Why was this scone so important to you?|Geoff11]]
+[[Who do you think did it?|Geoff12]]
+[[A shame, I bet it was a tasty scone too.|Geoff13]]
+
+===
+title: Geoff11
+tags: 
+colorID: 1
+position: 4624,-240
+---
+Geoff: I was looking forward to eating it all day!
+Geoff: And now it is gone!
+Geoff: Jeff is gonna pay for that!
+
+<<EndInterview Geoff>>
+#No change in behavior
+#Journal Note: #Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+#escalated the situation.
+
+
+===
+title: Geoff12
+tags: 
+colorID: 0
+position: 4542,164
+---
+Geoff: I am sure it was Jeff!
+Geoff: Something needs to be done about Jeff!
+[[Nothing a little fisticuffs can't fix.|Geoff121]]
+[[Do you want me to talk to Jeff for you?|Geoff122]]
+[[What were you thinking about doing?|Geoff123]]
+===
+title: Geoff121
+tags: 
+colorID: 1
+position: 5166,-249
+---
+Geoff: I totally agree boss! Finally someone understands.
+<<EndInterview Geoff>>
+
+#No change in behavior.
+#Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+#escalated the situation.
+
+===
+title: Geoff122
+tags: 
+colorID: 0
+position: 5102,121
+---
+Geoff: I guess it wouldn't hurt, but he still needs to get punished somehow!
+<<MoodHit Geoff>>
+[[Why do you hate Jeff so much?|Geoff1221]]
+===
+title: Geoff1221
+tags: 
+colorID: 0
+position: 5850,203
+---
+Geoff: Why shouldn't I?
+Geoff: Jeff is a dirty, scone-eating jerk!
+Geoff: He needs to be stopped!
+[[Just make sure this is dealt with before the heroes arrive, ok?|Geoff12211]]
+[[Would you have prefered him at least asking first?|Geoff12212]]
+[[I will see what I can do about Jeff.|Geoff12213]]
+===
+title: Geoff12211
+tags: 
+colorID: 1
+position: 6262,414
+---
+Geoff: I'll show him, just watch me!
+<<EndInterview Geoff>>
+
+#No change in behavior.
+
+#Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+#escalated the situation.
+===
+title: Geoff12212
+tags: 
+colorID: 0
+position: 6270,120
+---
+Geoff: I would probably still say no...
+Geoff: But he is just a thief!
+Geoff: And he knows scones are my favorite snack...
+
+[[I'll see if I can get him to apologize.|Geoff122131]]
+[[That's still no excuse to attack him on the job.|Geoff122132]]
+
+===
+title: Geoff12213
+tags: 
+colorID: 0
+position: 6265,885
+---
+Geoff:Fine...
+Geoff:but if you don't do anything about it, I will!
+
+[[What would you suggest, then?|Geoff122131]]
+[[Yea, yea.|Geoff122132]]
+===
+title: Geoff123
+tags: 
+colorID: 0
+position: 5193,473
+---
+Geoff: I planned on stomping his face in later, actually.
+Geoff: It would be a nice workout before the Heroes show up!
+[[You shouldn't fight him. Really.|Geoff1221]]
+[[Sure whatever, go for it!|Geoff12211]]
+===
+title: Geoff13
+tags: 
+colorID: 0
+position: 4562,497
+---
+Geoff: Uh... thanks for the sympathies there I guess?
+<<MoodHit Geoff>>
+[[Want me to talk to Jeff for you?|Geoff122]]
+[[What do you plan on doing about it?|Geoff123]]
+
+===
+title: Jeff1
+tags: 
+colorID: 0
+position: 464,259
+---
+Jeff: Hi boss... what do you need?
+[[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
+===
+title: Jeff11
+tags: 
+colorID: 0
+position: 897,260
+---
+Jeff: I don't know what you're talkin' about.
+[[I can just ask anyone else, I'm sure they'll talk.|Jeff111]]
+[[There were two goblins one second, none the next. You know what I meant.|Jeff112]]
+
+<<if $TalkedTo Geoff is true>>
+[[Whatever you did, Geoff is pretty riled up about it.|Jeff114]]
+
+<<else>>
+[[You and Geoff got some sort of beef, and I'm going to figure it out.|Jeff113]]
+<<endif>>
+===
+title: Jeff112
+tags: 
+colorID: 0
+position: 1414,26
+---
+Jeff: Alright, fine. Geoff and I have been fightin'.
+Jeff: All started because of some stupid scone of his.
+[[What happened to it?|Jeff1121]]
+
+===
+title: Jeff111
+tags: 
+colorID: 0
+position: 1365,-336
+---
+Jeff: Psh! Please, they'd just tell you the same thing.
+Jeff: Geoff is a maniac! When he isn't crying about losing food, he's picking fights!
+Jeff: ...Not that he wins those, mind you.
+[[This still doesn't tell me why you two are fighting.|Jeff1121]]
+[[You don't seem like a very nice goblin.|Jeff1112]]
+
+===
+title: Jeff1121
+tags: 
+colorID: 0
+position: 1865,-28
+---
+Jeff: Oh, nothing much really. I just ate his scone, is all!
+Jeff: Haha! He was so mad when he found out it was gone.
+
+[[You need to apologize to Geoff.|Jeff11211]]
+[[Wait, what? Why?|Jeff11212]]
+[[You *really* aren't that nice of a goblin.|Jeff1112]]
+===
+title: Geoff122132
+tags: 
+colorID: 1
+position: 6824,674
+---
+Geoff: ...
+<<EndInterview Geoff>>
+
+#No change in behavior.
+#Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+#escalated the situation.
+===
+title: Geoff122131
+tags: 
+colorID: 1
+position: 6828,384
+---
+Geoff: If he apologizes... I'll think about workin' with him again!
+Geoff: But *not* until then!
+<<EndInterview Geoff>>
+
+<<set $Apologize2 to true>>
+
+#Journal Note: Geoff hates Jeff for stealing his scone, but if he gets an apology,
+#I might be able to get this to work.
+===
+title: JeffGeoffSolution1
+tags: 
+colorID: 2
+position: 4150,2097
+---
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: Well? What's it gonna be?
+
+<<GameManager ChangeSpeaker Geoff>>
+Geoff: Yea, what's the deal, Boss?
+
+[[Geoff, you need to get over yourself. It wasn't that big of a deal.|JeffGeoffSolution11]]
+[[Jeff, apologize to Geoff already so we can get things working again.|JeffGeoffSolution12]]
+===
+title: Jeff113
+tags: 
+colorID: 0
+position: 1348,646
+---
+Jeff: Beef? With Geoff? Who could *possibly* be mad at someone so ridiculous?
+Jeff: He complains about food all day then picks fights with me when things don't work out.
+Jeff: He gets what's comin' to him.
+
+[[What was he complaining about?|Jeff1121]]
+[[And you're the picture of perfection?|Jeff1132]]
+
+#IF you have talked to Geoff already
+<<if $TalkedTo Geoff is true>>
+[[Quite a thing to say considering you stole it.|Jeff1133]]
+<<endif>>
+===
+title: Jeff114
+tags: 
+colorID: 0
+position: 1334,1503
+---
+Jeff: Is he now? That doesn't surprise me.
+Jeff: He conscript you to get his precious scone back?
+Jeff: Spoiler alert, I ate it yesterday. Good luck with that one.
+
+[[He seems pretty intent on fighting you, actually.|Jeff1141]]
+[[Would it be a lost cause to ask you to apologize?|Jeff1142]]
+[[Can't imagine why anyone would be mad at such a class act.|Jeff1112]]
+===
+title: JeffGeoffSolution11
+tags: 
+colorID: 2
+position: 4414,1900
+---
+<<GameManager ChangeSpeaker Geoff>>
+Geoff: Wait, what?!
+Geoff: He stole from me! I don't care how minor it was!
+
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: Haha!
+Jeff: Settle down already, we gotta go get ready for those heroes.
+
+<<GameManager ChangeSpeaker default>>
+[As the two leave, you see Geoff staring daggers at you and Jeff.]
+[You're sure this isn't going to end well.]
+
+#Default Case for combat
+#0 points
+===
+title: JeffGeoffSolution12
+tags: 
+colorID: 2
+position: 4412,2199
+---
+#IF Jeff AND Geoff are flagged Apology:
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: Alright, look, I'm sorry for taking your scone, ok?
+
+<<GameManager ChangeSpeaker Geoff>>
+Geoff: ...Do you really mean it?
+
+<<GameManager ChangeSpeaker default>>
+[Jeff shoots you a dirty look, and sighs heavily.]
+
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: Yes. Really. Can we please get back to work so we can clobber those heroes already?
+
+<<GameManager ChangeSpeaker Geoff>>
+Geoff: Well... alright. I bet we'll really mess them up this time!
+Geoff: ....Just please don't touch my food again.
+
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: Yea, sure, whatever.
+
+#Flag: Apology
+#4 points
+
+#------------------
+#IF ONLY Jeff is flagged Apology:
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: Alright, look, I'm sorry for taking your scone, ok?
+
+<<GameManager ChangeSpeaker Geoff>>
+Geoff: What, an apology? That's not going to un-eat my scone!
+
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: Un-eat? Are you really as stupid as you look?
+
+<<GameManager ChangeSpeaker Geoff>>
+Geoff: You want to say that to my face, tough guy?!
+
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: It'll go just as well as it did last time. Try it! I dare you!
+
+<<GameManager ChangeSpeaker default>>
+[The two continue to bicker back and forth at each other until they leave.]
+[You're sure this isn't going to end well.]
+
+#Default Case
+#0 points
+
+#------------------
+#ELSE:
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: What? No. If he's got a problem, he can solve it himself.
+
+<<GameManager ChangeSpeaker Geoff>>
+Geoff: You wanna say that to my face, tough guy?!
+
+<<GameManager ChangeSpeaker Jeff>>
+Jeff: It'll go just as well as it did last time. Try it! I dare you!
+
+<<GameManager ChangeSpeaker default>>
+[The two continue to bicker back and forth at each other until they leave.]
+[You're sure this isn't going to end well.]
+
+#Default Case
+#0 points
+===
+title: Jeff1112
+tags: 
+colorID: 0
+position: 1937,-634
+---
+Jeff: Oh yea? The heroes ain't exactly kind, neither.
+Jeff: ...Would be nice to kick their butts, for a change.
+
+[[You know, the fastest way to do that would be to apologize.|Jeff11121]]
+[[If you can beat Geoff in a fight so easily, why do you lose to heroes?|Jeff11122]]
+[[I'm going to kick your butt if you don't shape up.|Jeff11123]]
+===
+title: Jeff11123
+tags: 
+colorID: 1
+position: 2236,-349
+---
+Jeff: Ha! Now *that* I would like to see!
+Jeff: A wizard, beating a goblin warrior in a fight. *That* will be the day!
+
+<<EndInterview Jeff>>
+#No change in behavior
+#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+#If I can somehow get him to apologize, maybe this can work.
+===
+title: Jeff11121
+tags: 
+colorID: 1
+position: 2628,-963
+---
+Jeff: You know what, fine.
+Jeff: I was going to get on your case about how weak that'd make me look...
+Jeff: ...but losing to heroes day in and day out is already bruising my ego.
+Jeff: I'll apologize to the guy, but if he loses his cool again, I'm going to defend myself!
+
+<<EndInterview Jeff>>
+
+<<set $Apologize1 to true>>
+
+#Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
+#make sure Geoff is in the mood to accept his apology, and maybe they'll work 
+#together again.
+===
+title: Jeff11122
+tags: 
+colorID: 0
+position: 2339,-618
+---
+Jeff: Because Geoff is so busy trying to kill me that the heroes win every time!
+Jeff: It's clearly his fault.
+[[You *really* can't see how this is your fault?|Jeff111221]]
+[[I bet if you apologize, you'll stop losing to the heroes.|Jeff11121]]
+===
+title: Jeff111221
+tags: 
+colorID: 1
+position: 2702,-620
+---
+Jeff: Nope! He attacks me, that's all I care about.
+Jeff: Now, if you're going to sit here and ask dumb questions all day, I've got heroes to prepare for.
+
+<<EndInterview Jeff>>
+#No change in behavior.
+
+#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+#If I can somehow get him to apologize, maybe this can work.
+===
+title: Jeff11211
+tags: 
+colorID: 0
+position: 2335,-41
+---
+Jeff: Oh? And why would I do that?
+
+[[Because it's the right thing to do!|Jeff112111]]
+[[Because if you don't, the heroes are going to wipe the floor with you. Again.|Jeff11121]]
+[[Because I told you to?|Jeff112113]]
+===
+title: Jeff112111
+tags: 
+colorID: 1
+position: 2658,-184
+---
+Jeff: Right, and I'm known for doing charity work.
+Jeff: Look, unless you can offer me a raise or something, you're wasting your time.
+
+<<EndInterview Jeff>>
+#No change in behavior.
+
+#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+#If I can somehow get him to apologize, maybe this can work.
+===
+title: Jeff112113
+tags: 
+colorID: 1
+position: 2662,58
+---
+Jeff: Ha! Haha!
+Jeff: I'll tell you what, I like your moxie. 
+Jeff: I'll do it, if for no other reason than the look on your face right now.
+Jeff: ...and so I can stop losing to those darned heroes all the time.
+
+<<EndInterview Jeff>>
+
+<<set $Apologize1 to true>>
+
+#Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
+#make sure Geoff is in the mood to accept his apology, and maybe they'll work 
+#together again.
+===
+title: Jeff11212
+tags: 
+colorID: 0
+position: 2329,406
+---
+Jeff: Because I was hungry? Looked real good, too. Really hit the spot.
+
+[[You need to apologize to Geoff.|Jeff11211]]
+[[Well, I guess that's reasonable enough. Nevermind.|Jeff112122]]
+===
+title: Jeff112122
+tags: 
+colorID: 1
+position: 2626,397
+---
+Jeff: Darned straight!
+
+<<EndInterview Jeff>>
+
+#No change in behavior.
+
+#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+#If I can somehow get him to apologize, maybe this can work.
+===
+title: Jeff1142
+tags: 
+colorID: 0
+position: 3272,1396
+---
+Jeff: Not if you can find a good enough reason for me to!
+
+[[Because it's the right thing to do!|Jeff112111]]
+[[Because if you don't, the heroes are going to wipe the floor with you. Again.|Jeff11121]]
+[[Because I told you to?|Jeff112113]]
+===
+title: Jeff1141
+tags: 
+colorID: 0
+position: 1585,1813
+---
+Jeff: Really? He's going to try and fight me, huh?
+Jeff: Wouldn't be the first time. Probably won't end well for him.
+Jeff: Per the usual.
+
+[[I didn't see you come out of that scrape pretty last time.|Jeff11411]]
+[[...And it'll result in you both losing all the gold. Per the usual.|Jeff114111]]
+[[If you win this time, do you think you'll be able to take the heroes alone?|Jeff11413]]
+===
+title: Jeff11413
+tags: 
+colorID: 1
+position: 1881,2184
+---
+Jeff: Honestly? Maybe.
+Jeff: With the heads up, maybe I can get the jump on him. Who knows!
+Jeff: Can't hurt to try!
+
+<<EndInterview Jeff>>
+
+#No change in behavior
+#Journal Note: Jeff seems to be a rather aggressive goblin. He and Geoff hate each other.
+===
+title: Jeff11411
+tags: 
+colorID: 0
+position: 1918,1637
+---
+Jeff: Hey, if the heroes weren't there, that would've worked differently!
+
+[[An odd thing to say, considering your line of work.|Jeff114111]]
+[[I wouldn't be so sure.|Jeff114112]]
+[[Look, can't you just apologize and be done with this?|Jeff11211]]
+===
+title: Jeff114111
+tags: 
+colorID: 1
+position: 2425,1781
+---
+Jeff: ....Alright, you got me there.
+Jeff: Alright, look, I'll apologize to the guy.
+Jeff: Not because I want him to feel better, but I *really* don't want to lose to those heroes again!
+Jeff: He better appreciate this.
+
+<<EndInterview Jeff>>
+
+<<set $Apologize1 to true>>
+
+#Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
+#make sure Geoff is in the mood to accept his apology, and maybe they'll work 
+#together again.
+===
+title: Jeff114112
+tags: 
+colorID: 1
+position: 2419,2052
+---
+Jeff: Really? Me, lose to that guy?
+Jeff: If you think *that* is realistic, you need your eyes checked.
+Jeff: I'm done here.
+
+<<EndInterview Jeff>>
+
+#No change in behavior.
+
+#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+#If I can somehow get him to apologize, maybe this can work.
+===
+title: Jeff1133
+tags: 
+colorID: 0
+position: 1752,632
+---
+Jeff: Guilty as charged.
+
+[[You need to apologize to Geoff.|Jeff11211]]
+[[Really? Why would you do that?|Jeff11212]]
+[[You *really* aren't that nice of a goblin.|Jeff1112]]
+===
+title: Jeff1132
+tags: 
+colorID: 0
+position: 1743,916
+---
+Jeff: Nothing less!
+
+[[That's rich. Truly.|Jeff11321]]
+[[Clearly, since you both got into a fight neither of you walked away from.|Jeff11411]]
+===
+title: Jeff11321
+tags: 
+colorID: 1
+position: 2307,919
+---
+Jeff: Just like this conversation, pal. I think we're done.
+<<EndInterview Jeff>>
+
+#No change in behavior.
+
+#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+#If I can somehow get him to apologize, maybe this can work.
+===
