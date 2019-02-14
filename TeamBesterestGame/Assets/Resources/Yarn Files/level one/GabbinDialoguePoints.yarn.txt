@@ -3,6 +3,7 @@ tags:
 colorID: 0
 position: -249,291
 ---
+<<ChangeSpeaker Gabbin Goblenn>>
 Gabbin:Hi boss!
 [[So how are you doing today?|GeneralQ]]
 ===
@@ -144,6 +145,7 @@ tags:
 colorID: 0
 position: 69,284
 ---
+<<ChangeSpeaker Gabbin Geoff>>
 Gabbin:I am doing fine for the most part, work is going along well. Can I ask why you brought me in here?"
 [[There have been some altercation with your coworkers recently, can you tell me about that?|B1A]]
 [[I know you already help out your fellow goblins a lot, but I think there are ways to improve.|Branch2]]

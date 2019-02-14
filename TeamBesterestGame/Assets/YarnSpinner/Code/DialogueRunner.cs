@@ -79,7 +79,7 @@ namespace Yarn.Unity
 
         public bool automaticCommands = true;
 
-        public int goblinID;
+        //public int goblinID;
 
         /// Our conversation engine
         /** Automatically created on first access
@@ -204,7 +204,7 @@ namespace Yarn.Unity
             if (monster.GetComponent<BaseMonster>().interviewable && !gameManager.GetComponent<GameManager>().interviewing)
             {
                 gameManager.GetComponent<GameManager>().interviewing = true;
-                SoundManager.goblinToTalk = this.goblinID;
+                //SoundManager.goblinToTalk = this.goblinID;
                 StartDialogue(startNode);
             }
             

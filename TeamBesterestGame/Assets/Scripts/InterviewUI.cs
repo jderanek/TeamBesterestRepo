@@ -15,7 +15,6 @@ namespace Yarn.Unity
      * is that you provide the RunLine, RunOptions, RunCommand
      * and DialogueComplete coroutines; what they do is up to you.
      */
-    //public class SoundManager : MonoBehaviour 
     public class InterviewUI : Yarn.Unity.DialogueUIBehaviour
     {
 
@@ -75,7 +74,7 @@ namespace Yarn.Unity
             if (textSpeed > 0.0f)
             {
                 ////Calls the voice activation
-                SoundManager.SetSoundBank();
+                //SoundManager.SetSoundBank();
 
                 // Display the line one character at a time
                 var stringBuilder = new StringBuilder();
