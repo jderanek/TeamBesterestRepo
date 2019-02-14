@@ -91,4 +91,12 @@ public class UIManager : MonoBehaviour {
             speaker.SetActive(true);
         }
     }
+
+    public void SpeechBubblesOff()
+    {
+        foreach (GameObject bubble in speechBubbles)
+        {
+            bubble.SetActive(false);
+        }
+    }
 }

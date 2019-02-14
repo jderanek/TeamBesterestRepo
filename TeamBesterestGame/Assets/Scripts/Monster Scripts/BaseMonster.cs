@@ -126,15 +126,15 @@ public abstract class BaseMonster : BaseEntity {
     public void EndInterview()
     {
         this.interviewable = false;
+        this.gameManager.interviewing = false;
         //use helper function to disable monster's dialogue options and grey out portrait
         foreach (GameObject option in interviewOptions)
         {
             option.SetActive(false);
         }
         response.SetActive(false);
+        this.uiManager.SpeechBubblesOff();
         //grey out portrait
-
-        this.gameManager.interviewing = false;
     }
 
     [YarnCommand("ChangeShift")]
