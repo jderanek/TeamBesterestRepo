@@ -2928,11 +2928,6 @@
 				<RandomSequenceContainer Name="Avery_Sounds" ID="{58B4712E-B4E6-41EF-BDD1-E865B7EFAA78}" ShortID="703814699">
 					<PropertyList>
 						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-						<Property Name="Pitch" Type="int32">
-							<ValueList>
-								<Value>450</Value>
-							</ValueList>
-						</Property>
 						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
@@ -2943,11 +2938,7 @@
 						</Reference>
 						<Reference Name="Effect0">
 							<Custom>
-								<Effect Name="Wwise Time Stretch (Custom)" ID="{9E2A63C1-C958-48C5-A547-2A2FCF0D4351}" ShortID="759302055" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3">
-									<PropertyList>
-										<Property Name="TimeStretch" Type="Real32" Value="95"/>
-									</PropertyList>
-								</Effect>
+								<Effect Name="Wwise Time Stretch (Custom)" ID="{9E2A63C1-C958-48C5-A547-2A2FCF0D4351}" ShortID="759302055" PluginName="Wwise Time Stretch" CompanyID="0" PluginID="130" PluginType="3"/>
 							</Custom>
 						</Reference>
 						<Reference Name="OutputBus">

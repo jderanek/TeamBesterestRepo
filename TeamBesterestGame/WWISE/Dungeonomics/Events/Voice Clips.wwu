@@ -84,6 +84,21 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Boss_Voice" ID="{5E433FC4-0108-4F53-8CB3-015F3FBA97B4}">
+					<ChildrenList>
+						<Action Name="" ID="{1E1EC609-75F3-4784-B4A5-CFAD6F82DC58}" ShortID="448580109">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Avery_Sounds" ID="{58B4712E-B4E6-41EF-BDD1-E865B7EFAA78}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Voiceless" ID="{9C4B780B-CE93-43E0-85BC-860CB1971736}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

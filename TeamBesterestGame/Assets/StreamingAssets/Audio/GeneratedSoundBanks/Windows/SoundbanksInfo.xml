@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Users\raven\Desktop\WWISE\Dungeonomics\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\raven\Desktop\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\raven\Desktop\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\raven\Desktop\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -27,6 +27,7 @@
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
 				<Event Id="1585661381" Name="BackGround_Music" ObjectPath="\Events\Default Work Unit\BackGround_Music"/>
+				<Event Id="199922741" Name="Boss_Voice" ObjectPath="\Events\Voice Clips\Boss_Voice"/>
 				<Event Id="2698747613" Name="Button_Press" ObjectPath="\Events\Default Work Unit\Button_Press"/>
 				<Event Id="1636882115" Name="Gabbin_Voice" ObjectPath="\Events\Voice Clips\Gabbin_Voice"/>
 				<Event Id="671786679" Name="Geoff_Voice" ObjectPath="\Events\Voice Clips\Geoff_Voice"/>
@@ -34,6 +35,7 @@
 				<Event Id="64054188" Name="Hero_Combat" ObjectPath="\Events\Default Work Unit\Hero_Combat"/>
 				<Event Id="2067637633" Name="Jeff_Voice" ObjectPath="\Events\Voice Clips\Jeff_Voice"/>
 				<Event Id="1181445569" Name="Nilbog_Voice" ObjectPath="\Events\Voice Clips\Nilbog_Voice"/>
+				<Event Id="818841426" Name="Voiceless" ObjectPath="\Events\Voice Clips\Voiceless" MaxAttenuation="0.000000"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
 				<File Id="3055567" Language="SFX">

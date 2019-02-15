@@ -37,6 +37,8 @@ public class SoundManager : MonoBehaviour
         goblins[2] = GameObject.Find("Jeff");
         goblins[3] = GameObject.Find("Gabbin");
         goblins[4] = GameObject.Find("Nilbog");
+        goblins[5] = GameObject.Find("Boss");
+        goblins[6] = GameObject.Find("Voiceless");
 
         goblinVoiceName = new string[5];
 
@@ -45,6 +47,8 @@ public class SoundManager : MonoBehaviour
         goblinVoiceName[2] = "JefF_Voice";
         goblinVoiceName[3] = "Gabbin_Voice";
         goblinVoiceName[4] = "Nilbog_Voice";
+        goblinVoiceName[5] = "Boss_Voice";
+        goblinVoiceName[6] = "Voiceless";
     }
 
     [YarnCommand("ChangeSpeaker")]
@@ -66,6 +70,14 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Nilbog":
                 goblinToTalk = 4;
+                break;
+            case "Boss":
+                goblinToTalk = 5;
+                break;
+            case "Voiceless":
+                goblinToTalk = 6;
+                break;
+            default:
                 break;
         }
 
