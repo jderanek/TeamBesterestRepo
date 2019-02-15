@@ -200,6 +200,11 @@ public class GameManager : MonoBehaviour
         {
             monster.GetComponent<BaseMonster>().Reset();
         }
+        foreach (GameObject monster in monsterList)
+        {
+            monster.GetComponent<DialogueRunner>().Stop();
+        }
+        
     }
 
     public void ExitGame()
