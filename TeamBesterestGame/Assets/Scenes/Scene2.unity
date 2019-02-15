@@ -316,13 +316,13 @@ MonoBehaviour:
   gameManager: {fileID: 1031783963}
   monster: {fileID: 1335600113}
   sourceText:
-  - {fileID: 4900000, guid: 11c01719117d51f4498f2c48346e3d65, type: 3}
+  - {fileID: 4900000, guid: c3551ab8b2d519c48b28fb670ecbeba2, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 5239698}
   dialogueUI: {fileID: 5239699}
-  startNode: Geoff1Base
+  startNode: Geoff1
   dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
@@ -5284,13 +5284,13 @@ MonoBehaviour:
   gameManager: {fileID: 1031783963}
   monster: {fileID: 14465732}
   sourceText:
-  - {fileID: 4900000, guid: 84555eb2c475abd44b59b2906d4ee864, type: 3}
+  - {fileID: 4900000, guid: d82fc8e47db8afa4ea0aaf29cf08fb4e, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 594745390}
   dialogueUI: {fileID: 594745391}
-  startNode: Tree1Start
+  startNode: Nilbog1
   dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
@@ -8413,13 +8413,13 @@ MonoBehaviour:
   gameManager: {fileID: 1031783963}
   monster: {fileID: 906177782}
   sourceText:
-  - {fileID: 4900000, guid: a84054903b3fd7a408396981086d1fcb, type: 3}
+  - {fileID: 4900000, guid: d82fc8e47db8afa4ea0aaf29cf08fb4e, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 895976260}
   dialogueUI: {fileID: 895976261}
-  startNode: Start
+  startNode: Gabbin1
   dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
@@ -17111,13 +17111,13 @@ MonoBehaviour:
   gameManager: {fileID: 1031783963}
   monster: {fileID: 951470855}
   sourceText:
-  - {fileID: 4900000, guid: bf1d10160a8ed9d448d95baf2599c944, type: 3}
+  - {fileID: 4900000, guid: c3551ab8b2d519c48b28fb670ecbeba2, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 2082834035}
   dialogueUI: {fileID: 2082834032}
-  startNode: Start
+  startNode: Jeff1
   dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1
