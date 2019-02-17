@@ -3,11 +3,12 @@ tags:
 colorID: 0
 position: 807,410
 ---
-Hello! Welcome to my dungeon. I have been having some issues with my employees, goblins killing each other, running away and so on.
-I heard that you might be able to fix things around here, so I would like to discuss parts of your submitted resume. So you told me
-you had a degree in spellcraft?
+Hello! Welcome to my dungeon, thanks for meeting me at such short notice. 
+I have been having some issues with my employees, goblins killing each other, running away and so on.
+I heard that you might be able to fix things around here, so I would like to discuss parts of your submitted resume. 
+So you told me you had a degree in spellcraft, where did you study?
 [[Uh no? School is for losers.|Tutorial11]]
-[[Yes, I was magus cum laude at Placeholder U.|Tutorial12]]
+[[Yes, I was magus cum laude at Albion U.|Tutorial12]]
 ===
 title: Tutorial122
 tags: 
@@ -17,8 +18,12 @@ position: 1454,700
 Really now? So what number am I thinking of?
 <<if $guessProof is false>>
 [[Uh.. 42?|Tutorial1221]]
+[[It is 1 for sure|Tutorial1221]]
+[[Let me guess, 501?|Tutorial1221]]
+[[1453, definitely|Tutorial1221]]
 <<if $guessProof is true>>
-[[24,601|Tutorial1222]]
+[[24,601.|Tutorial1222]]
+<<endif>>
 ===
 title: Tutorial121
 tags: 
@@ -26,7 +31,7 @@ colorID: 0
 position: 1455,416
 ---
 So you can you cast fireballs or something?
-[[W-well... not actually|Tutorial1211]]
+[[W-well... not actually.|Tutorial1211]]
 ===
 title: Tutorial11
 tags: 
@@ -34,6 +39,7 @@ colorID: 1
 position: 1132,-94
 ---
 What?! Then we are done here, find some other fool to hire you. 
+//PerhapsIShouldn'tBeSoFlippantAboutMyEducation.
 ===
 title: Tutorial12
 tags: 
@@ -42,9 +48,10 @@ position: 1133,409
 ---
 Oh really? What was your speciality?
 <<if $timeMagicSpecific is false>>
-[[I did not really focus on one area, more like a general knowledge of wizardy|Tutorial121]]
+[[I did not really focus on one area, more like a general knowledge of wizardy.|Tutorial121]]
 <<if $timeMagicSpecific is true>>
-[[I did my dissertation on the morals and ethics of time magic|Tutorial122]]
+[[I did my dissertation on the morals and ethics of time magic.|Tutorial122]]
+<<endif>>
 ===
 title: Tutorial1211
 tags: 
@@ -53,19 +60,25 @@ position: 1738,418
 ---
 I don't think this job would be the best fit for you. Good luck in your other endeavors. 
 <<set $timeMagicSpecific to true>>
+//MaybeIShouldMentionMyDoctoralWorkOnTimeMagic.
 ===
 title: Tutorial1221
 tags: 
 colorID: 1
 position: 1732,694
 ---
-Not even close, nice try though. I really am looking for a wizard with time magic skills so I'm sorry you won't get the job here.
+Not even close, nice try though. It was 24,601. 
+I was really looking for a wizard with time magic skills. 
+I'm sorry but you won't get the job here.
 <<set $guessProof to true>>
+//NowToProveHimWrong.
 ===
 title: Tutorial1222
 tags: 
 colorID: 1
 position: 1742,962
 ---
-That... how did you? Was that luck? I will give you one shot, let me show you what is going wrong around here.
+That... how did you? Was that luck? 
+Interesting, let me show you what is going wrong around here.
+<<EndInterview Boss>>
 ===
