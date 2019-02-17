@@ -60,6 +60,10 @@ public class GameManager : MonoBehaviour
     {
         phaseButton.GetComponentInChildren<Text>().text = "Start";
         uiManager = this.GetComponent<UIManager>();
+
+        //Debug.Log("Start Tests:");
+        //Debug.Log(Scissors.CamelToSentence("ThisStringShouldTurnIntoAProperSentence"));
+        //Debug.Log(Scissors.CamelToSentence("IfThereAreMultipleSentences.ThenTheWordFollowingThePeriodShouldBeCapitilized."));
     }
 
     public void ToggleInterviewMenu()
