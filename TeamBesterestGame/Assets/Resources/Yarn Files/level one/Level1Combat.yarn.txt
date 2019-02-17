@@ -1,0 +1,68 @@
+title: Shift11
+tags: 
+colorID: 0
+position: 426,260
+---
+<<if $shift11Combat is 0>>
+Goblenn saw heroes enter the dungeon, and instantly fled.
+//0 points
+
+<<elseif $shift12Combat is 1>>
+Goblenn saw heroes enter the dungeon, but they did not see him.
+He sneak attacks the heroes, defeating them!
+//4 points
+
+<<endif>>
+[[shift12]]
+===
+title: Shift12
+tags: 
+colorID: 0
+position: 742,260
+---
+<<if $shift12Combat is 0>>
+Jeff is stabbed by Geoff.
+//Jeff fades to black/white
+Geoff is stabbed by Jeff.
+//Geoff fades to black/white
+//0 points
+
+<<elseif $shift12Combat is 1>>
+Jeff works with Geoff, and clobbers a hero.
+Geoff works with Jeff, and defeats a hero.
+//4 points
+
+<<endif>>
+
+[[Shift13]]
+===
+title: Shift13
+tags: 
+colorID: 0
+position: 1066,262
+---
+<<if $shift13Combat is 0>>
+Gabbin runs around trying to find Nilbog, and is taken down by the heroes.
+//Gabbin fades to black/white.
+Nilbog, hiding from Gabbin, is found and overwhelmed by the heroes.
+//Nilbog fades to black/white.
+//0 points
+
+<<elseif $shift13Combat is 1>>
+Gabbin enthusiastically takes down some heroes with the help of Nilbog.
+Nilbog begrudgingly helps Gabbin, and takes down a hero.
+//2 points
+
+<<elseif $shift13Combat is 2>>
+Gabbin focuses on fighting alone, and takes down some heroes.
+Nilbog fights alone, taking down the other heroes.
+//2 points
+
+<<elseif $shift13Combat is 3>>
+Gabbin confidently attacks the heroes alone.
+Gabbin isn't alone-- Nilbog attacks from the shadows!
+All the heroes are swiftly defeated.
+//4 points
+
+<<endif>>
+===
