@@ -30,6 +30,9 @@ public abstract class BaseMonster : BaseEntity {
     //bool to check if monster is fleeing
     private bool isFleeing = false;
 
+    public GameObject notes;
+    public GameObject newNote;
+
     void Awake() {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         uiManager = gameManager.GetComponent<UIManager>();
@@ -166,5 +169,13 @@ public abstract class BaseMonster : BaseEntity {
         Vector3 pos = transform.position;
         pos.x = pos.x - .5f;
         transform.position = pos;
+    }
+
+    [YarnCommand("RevealText")]
+    public void RevealText(string text)
+    {
+        GameObject note = Instantiate(newNote, notes.transform.GetChild(0).transform);
+        //here goes avery code
+        note.GetComponent<Text>().text = text;
     }
 }

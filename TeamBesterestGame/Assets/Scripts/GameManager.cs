@@ -49,6 +49,13 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    public GameObject notebook;
+    public GameObject goblennNotes;
+    public GameObject nilbogNotes;
+    public GameObject geoffNotes;
+    public GameObject jeffNotes;
+    public GameObject gabbinNotes;
+
     void Awake()
     {
         phaseButton.GetComponentInChildren<Text>().text = "Start";
@@ -219,5 +226,52 @@ public class GameManager : MonoBehaviour
         {
             ToggleInterviewMenu();
         }
+    }
+
+    public void ChangeTabs(int tab)
+    {
+        switch(tab)
+        {
+            case 1:
+                goblennNotes.SetActive(true);
+                nilbogNotes.SetActive(false);
+                geoffNotes.SetActive(false);
+                jeffNotes.SetActive(false);
+                gabbinNotes.SetActive(false);
+                break;
+            case 2:
+                goblennNotes.SetActive(false);
+                nilbogNotes.SetActive(true);
+                geoffNotes.SetActive(false);
+                jeffNotes.SetActive(false);
+                gabbinNotes.SetActive(false);
+                break;
+            case 3:
+                goblennNotes.SetActive(false);
+                nilbogNotes.SetActive(false);
+                geoffNotes.SetActive(true);
+                jeffNotes.SetActive(false);
+                gabbinNotes.SetActive(false);
+                break;
+            case 4:
+                goblennNotes.SetActive(false);
+                nilbogNotes.SetActive(false);
+                geoffNotes.SetActive(false);
+                jeffNotes.SetActive(true);
+                gabbinNotes.SetActive(false);
+                break;
+            case 5:
+                goblennNotes.SetActive(false);
+                nilbogNotes.SetActive(false);
+                geoffNotes.SetActive(false);
+                jeffNotes.SetActive(false);
+                gabbinNotes.SetActive(true);
+                break;
+        }
+    }
+
+    public void ToggleNotebook()
+    {
+        notebook.SetActive(!notebook.activeInHierarchy);
     }
 }
