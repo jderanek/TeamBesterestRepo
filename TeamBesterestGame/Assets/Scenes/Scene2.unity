@@ -418,6 +418,7 @@ MonoBehaviour:
   - {fileID: 839498536}
   response: {fileID: 369298016}
   points: 0
+  dialogueRunner: {fileID: 594745389}
 --- !u!212 &14465736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1795,6 +1796,7 @@ MonoBehaviour:
   - {fileID: 737690096}
   response: {fileID: 369298016}
   points: 0
+  dialogueRunner: {fileID: 0}
 --- !u!212 &186385155
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8486,6 +8488,7 @@ MonoBehaviour:
   - {fileID: 737690096}
   response: {fileID: 369298016}
   points: 0
+  dialogueRunner: {fileID: 895976259}
 --- !u!212 &906177786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8626,6 +8629,7 @@ MonoBehaviour:
   - {fileID: 256175002}
   response: {fileID: 369298016}
   points: 0
+  dialogueRunner: {fileID: 2082834031}
 --- !u!212 &951470859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12266,6 +12270,7 @@ MonoBehaviour:
   - {fileID: 2139380145}
   response: {fileID: 369298016}
   points: 0
+  dialogueRunner: {fileID: 5239697}
 --- !u!212 &1335600117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14806,6 +14811,7 @@ MonoBehaviour:
   - {fileID: 1571043629}
   response: {fileID: 369298016}
   points: 0
+  dialogueRunner: {fileID: 41062054}
 --- !u!212 &1765382687
 SpriteRenderer:
   m_ObjectHideFlags: 0
