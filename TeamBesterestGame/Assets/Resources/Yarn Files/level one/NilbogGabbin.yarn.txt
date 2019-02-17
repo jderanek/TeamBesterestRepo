@@ -55,6 +55,8 @@ It'll work eventually, and everything will turn around!
 <<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
 
+//GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
+
 ===
 title: Gabbin11111
 tags: 
@@ -92,6 +94,8 @@ I hope we can still work this out!
 <<set $respectful to true>>
 <<EndInterview Gabbin>>
 
+//GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
+
 
 ===
 title: Gabbin111112
@@ -108,6 +112,8 @@ That's kind of sad.
 <<set $sad to true>>
 <<EndInterview Gabbin>>
 
+//GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
+
 ===
 title: Gabbin111113
 tags: 
@@ -121,6 +127,8 @@ Thanks for the confidence booster!
 <<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
 //No change in behavior.
+
+//GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
 ===
 title: Gabbin111132
 tags: 
@@ -135,6 +143,8 @@ That's a *very* negative way to look at things...
 <<set $talkedToGabbin to true>>
 <<set $sad to true>>
 <<EndInterview Gabbin>>
+
+//GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
 
 
 ===
@@ -175,6 +185,8 @@ There has to be some way we can fix things, though...
 <<set $respectful to true>>
 <<EndInterview Gabbin>>
 
+//GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
+
 
 
 ===
@@ -213,6 +225,8 @@ position: 3713,-1543
 <<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
 //No change in behavior.
+
+//GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
 ===
 title: Gabbin113
 tags: 
@@ -300,6 +314,8 @@ position: 3901,-369
 <<set $sad to true>>
 <<EndInterview Gabbin>>
 
+//GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
+
 
 ===
 title: Gabbin13222
@@ -315,6 +331,8 @@ Hopefully I can find a way to cheer him up while giving him some space!
 <<set $respectful to true>>
 <<EndInterview Gabbin>>
 
+//GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
+
 ===
 title: Gabbin13223
 tags: 
@@ -328,6 +346,7 @@ I'll figure him out, then this whole operation will turn around!
 <<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
 
+//GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
 ===
 title: NilbogGabbinSolution1
 tags: 
@@ -538,6 +557,8 @@ position: -851,-492
 
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
+
+//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 //No change in behavior
 ===
 title: Nilbog111
@@ -582,7 +603,7 @@ position: -533,-1491
 title: Nilbog1212
 tags: 
 colorID: 1
-position: -566,-1090
+position: -570,-1090
 ---
 ...tch. You came here to say that?
 Nice.
@@ -591,8 +612,7 @@ Nice.
 <<EndInterview Nilbog>>
 //No change in behavior
 
-//Journal Note: Nilbog doesn't seem to enjoy working with Gabbin. Maybe
-//Gabbin is coming on too strong?
+//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 ===
 title: Nilbog1213
 tags: 
@@ -666,8 +686,7 @@ position: -134,-1086
 <<set $patient to true>>
 <<EndInterview Nilbog>>
 
-//Journal Note: Nilbog likes personal space, and says Gabbin keeps invading it.
-//If I can get Gabbin to respect Nilbog's boundaries, maybe I can get them to work together.
+//NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
 ===
 title: Nilbog1111
 tags: 
@@ -705,6 +724,8 @@ position: 586,-4047
 <<EndInterview Nilbog>>
 
 //Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
+
+//NilbogSeemsDefeated,MaybeHe'llGoAlongWithMySuggestionsBetterNow.
 ===
 title: Nilbog111112
 tags: 
@@ -719,8 +740,10 @@ But Gabbin is going to be hard to control, good luck.
 <<set $patient to true>>
 <<EndInterview Nilbog>>
 
-//Journal Note: Nilbog seems to get the picture. If I can get Gabbin to cool it,
+//Journal Note: Nilbog is willing to work with Gabbin now. If I can get Gabbin to cool it,
 //maybe the two can actually work together!
+
+//NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
 ===
 title: Nilbog11112
 tags: 
@@ -736,6 +759,8 @@ position: 278,-3380
 
 //Journal Note: Nilbog claims that if Gabbin stops bothering him, everything will 
 //work better in the long run.
+
+//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 ===
 title: Nilbog1113
 tags: 
@@ -771,8 +796,8 @@ position: 190,-1874
 <<EndInterview Nilbog>>
 
 //No change in behavior
-//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-//to leave him alone, Nilbog claims things will work out better.
+
+//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 ===
 title: Nilbog121113
 tags: 
@@ -788,6 +813,8 @@ position: 194,-1592
 <<EndInterview Nilbog>>
 
 //Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
+
+//NilbogSeemsDefeated,MaybeHe'llGoAlongWithMySuggestionsBetterNow.
 ===
 title: Nilbog12132
 tags: 
@@ -802,8 +829,7 @@ position: -136,-825
 
 //No change in behavior
 
-//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-//to leave him alone, Nilbog claims things will work out better.
+//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 ===
 title: Nilbog12133
 tags: 
@@ -827,8 +853,7 @@ position: 503,-486
 
 //No change in behavior
 
-//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-//to leave him alone, Nilbog claims things will work out better.
+//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 ===
 title: Nilbog123
 tags: 
@@ -857,6 +882,8 @@ position: -754,-121
 
 //Journal Note: Nilbog seems to be bothered by Gabbin. When pressed, I may have
 //pushed him a little too far.
+
+//NilbogSeemsBotheredByGabbin.WhenPressed,IMayHavePushedHimALittleTooFar.
 ===
 title: Nilbog1233
 tags: 
@@ -870,8 +897,7 @@ The sooner you deal with him, the better.
 <<EndInterview Nilbog>>
 //No change in behavior.
 
-//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-//to leave him alone, Nilbog claims things will work out better.
+//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 ===
 title: Nilbog1232
 tags: 
@@ -899,8 +925,7 @@ position: -81,-151
 <<EndInterview Nilbog>>
 
 
-//Journal Note: If I can get Gabbin to respect Nilbog's personal space, that will
-//be the key to getting them to work together.
+//NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
 ===
 title: Nilbog12322
 tags: 
@@ -914,8 +939,7 @@ position: -93,156
 
 //No change in behavior.
 
-//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-//to leave him alone, Nilbog claims things will work out better.
+//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 ===
 title: Nilbog12323
 tags: 
