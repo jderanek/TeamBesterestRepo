@@ -202,7 +202,7 @@ public class GameManager : MonoBehaviour
         }
         foreach (GameObject monster in monsterList)
         {
-            monster.GetComponent<DialogueRunner>().Stop();
+            monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().Stop();
         }
         
     }

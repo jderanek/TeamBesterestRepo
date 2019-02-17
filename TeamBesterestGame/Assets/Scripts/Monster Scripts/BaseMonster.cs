@@ -25,6 +25,7 @@ public abstract class BaseMonster : BaseEntity {
     public GameObject[] interviewOptions;
     public GameObject response;
     public int points = 0;
+    public GameObject dialogueRunner;
 
     //bool to check if monster is fleeing
     private bool isFleeing = false;
