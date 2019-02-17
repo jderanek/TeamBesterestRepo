@@ -13,7 +13,7 @@ He sneak attacks the heroes, defeating them!
 //4 points
 
 <<endif>>
-[[shift12]]
+[[Shift12]]
 ===
 title: Shift12
 tags: 
