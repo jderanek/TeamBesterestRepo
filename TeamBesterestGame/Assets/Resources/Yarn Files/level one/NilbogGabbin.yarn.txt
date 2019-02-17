@@ -3,8 +3,8 @@ tags:
 colorID: 0
 position: 1893,-983
 ---
-Gabbin: Hello! I'm Gabbin! Nice to meet you!
-Gabbin: I hope you've had an excellent time with us all so far!
+Hello! I'm Gabbin! Nice to meet you!
+I hope you've had an excellent time with us all so far!
 [[You seem rather chipper.|Gabbin11]]
 [[Coming on a little strong, aren't you?|Gabbin12]]
 [[You seem pleasant, all things considered.|Gabbin13]]
@@ -14,7 +14,7 @@ tags:
 colorID: 0
 position: 2410,-1555
 ---
-Gabbin: Yep! I love to keep things positive!
+Yep! I love to keep things positive!
 [[I bet that attitude is helpful around here.|Gabbin111]]
 [[That's certainly one way to look at things.|Gabbin112]]
 [[Weird outlook, for someone who just got resurrected recently.|Gabbin113]]
@@ -22,48 +22,47 @@ Gabbin: Yep! I love to keep things positive!
 title: Gabbin111
 tags: 
 colorID: 0
-position: 2939,-2222
+position: 2876,-2236
 ---
-Gabbin: I like to think so!
-Gabbin: Nilbog doesn't seem to appreciate it very much, though.
-Gabbin: ...but I won't be dissuaded!
+I like to think so!
+Nilbog doesn't seem to appreciate it very much, though.
+...but I won't be dissuaded!
 [[What do you mean?|Gabbin1111]]
 [[That sounds a bit forced.|Gabbin1112]]
 
-<<if $TalkedTo Nilbog is true>>
-[[I got that impression almost immediately.|Gabbin1114]]
-<<endif>>
 ===
 title: Gabbin1111
 tags: 
 colorID: 0
 position: 3107,-2662
 ---
-Gabbin: Nilbog likes to act like a lone wolf!
-Gabbin: He won't talk to me, or work as a team when heroes show up!
-Gabbin: I keep trying to reach out to him, but he just ignores me.
-Gabbin: He'll listen eventually! I think!
+Nilbog likes to act like a lone wolf!
+He won't talk to me, or work as a team when heroes show up!
+I keep trying to reach out to him, but he just ignores me.
+He'll listen eventually! I think!
 [[That sounds rather invasive.|Gabbin11111]]
 [[I'm sure if you keep at it, he'll come around!|Gabbin11112]]
 [[You need to cut that out. It's probably annoying.|Gabbin11113]]
 ===
 title: Gabbin11112
 tags: 
-colorID: 0
+colorID: 1
 position: 3713,-3087
 ---
-Gabbin: That's what I keep saying!
-Gabbin: It'll work eventually, and everything will turn around!
-#Ends conversation
-#No change in Gabbin behavior
+That's what I keep saying!
+It'll work eventually, and everything will turn around!
+
+<<set $talkedToGabbin to true>>
+<<EndInterview Gabbin>>
+
 ===
 title: Gabbin11111
 tags: 
 colorID: 0
 position: 3604,-3440
 ---
-Gabbin: Invasive? What do you mean?
-Gabbin: We have to become friends and work together!
+Invasive? What do you mean?
+We have to become friends and work together!
 [[If you really want to be friends, you have to respect each other's boundaries.|Gabbin111111]]
 [[No, you don't. You both just work the same job. It's not deeper than that.|Gabbin111112]]
 [[I guess that makes sense. Teamwork, and all that.|Gabbin111113]]
@@ -73,9 +72,8 @@ tags:
 colorID: 0
 position: 3745,-2740
 ---
-<<MoodHit Gabbin>>
-Gabbin: That's mean...
-Gabbin: Why would I do that?
+That's mean...
+Why would I do that?
 [[Just because you're coworkers, doesn't mean you're friends. You're probably annoying him.|Gabbin111112]]
 [[Because whatever you're trying, it obviously hasn't worked so far.|Gabbin111132]]
 [[Invading someone's personal space isn't a good way to befriend someone.|Gabbin111111]]
@@ -85,35 +83,42 @@ tags:
 colorID: 1
 position: 4088,-3671
 ---
-Gabbin: ...
-Gabbin: I guess you're right.
-Gabbin: He's not going to listen to me if I keep forcing it like this.
-Gabbin: I hope we can still work this out!
+...
+I guess you're right.
+He's not going to listen to me if I keep forcing it like this.
+I hope we can still work this out!
+
+<<set $talkedToGabbin to true>>
+<<set $respectful to true>>
 <<EndInterview Gabbin>>
 
-<<set $Respectful to true>>
+
 ===
 title: Gabbin111112
 tags: 
 colorID: 1
 position: 4191,-3408
 ---
-Gabbin: ...
-Gabbin: That's kind of sad.
-Gabbin: ...I guess that does explain why he ignores me.
-Gabbin: ...oh well...
+...
+That's kind of sad.
+...I guess that does explain why he ignores me.
+...oh well...
+
+<<set $talkedToGabbin to true>>
+<<set $sad to true>>
 <<EndInterview Gabbin>>
 
-<<set $Sad to true>>
 ===
 title: Gabbin111113
 tags: 
 colorID: 1
-position: 4279,-3132
+position: 4288,-3132
 ---
-Gabbin: I knew it!
-Gabbin: It'll eventually work out, I just have to keep trying!
-Gabbin: Thanks for the confidence booster!
+I knew it!
+It'll eventually work out, I just have to keep trying!
+Thanks for the confidence booster!
+
+<<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
 #No change in behavior.
 ===
@@ -122,22 +127,25 @@ tags:
 colorID: 1
 position: 4214,-2724
 ---
-Gabbin: ...
-Gabbin: That's a *very* negative way to look at things...
-Gabbin: ...but you're right. We haven't beaten the Heroes in a *long* time...
-Gabbin: .....
+...
+That's a *very* negative way to look at things...
+...but you're right. We haven't beaten the Heroes in a *long* time...
+.....
+
+<<set $talkedToGabbin to true>>
+<<set $sad to true>>
 <<EndInterview Gabbin>>
 
-<<set $Sad to true>>
+
 ===
 title: Gabbin1112
 tags: 
 colorID: 0
 position: 3337,-2400
 ---
-Gabbin: That's what Nilbog says a lot. I'm just like this!
-Gabbin: Things will work out if I stay positive, and keep talking to him! 
-Gabbin: Nilbog will come around eventually!
+That's what Nilbog says a lot. I'm just like this!
+Things will work out if I stay positive, and keep talking to him! 
+Nilbog will come around eventually!
 [[That sounds rather invasive.|Gabbin11111]]
 [[You're definitely forcing it. That's not how people work.|Gabbin11122]]
 [[You *really* can't see why Nilbog would find you annoying? This needs to stop.|Gabbin11113]]
@@ -148,7 +156,7 @@ tags:
 colorID: 0
 position: 3860,-2400
 ---
-Gabbin: What do you mean?
+What do you mean?
 [[Just because you're coworkers, doesn't mean you're friends. You're probably annoying him.|Gabbin111112]]
 [[Has Nilbog *ever* responded to this well? Once?|Gabbin111222]]
 [[Invading someone's personal space isn't a good way to befriend someone.|Gabbin111111]]
@@ -158,13 +166,16 @@ tags:
 colorID: 1
 position: 4240,-2410
 ---
-Gabbin: ...
-Gabbin: ...You're right.
-Gabbin: He's never responded well to my attempts. Maybe I am forcing it too much.
-Gabbin: There has to be some way we can fix things, though...
+...
+...You're right.
+He's never responded well to my attempts. Maybe I am forcing it too much.
+There has to be some way we can fix things, though...
+
+<<set $talkedToGabbin to true>>
+<<set $respectful to true>>
 <<EndInterview Gabbin>>
 
-<<set $Respectful to true>>
+
 
 ===
 title: Gabbin112
@@ -172,9 +183,9 @@ tags:
 colorID: 0
 position: 3098,-1542
 ---
-Gabbin: Positivity can make any situation less bleak!
-Gabbin: ...except maybe our success against Heroes.
-Gabbin: But I'm sure I can get Nilbog to turn around if I can get him to talk! 
+Positivity can make any situation less bleak!
+...except maybe our success against Heroes.
+But I'm sure I can get Nilbog to turn around if I can get him to talk! 
 [[Nilbog not working well with you?|Gabbin1111]]
 [[Sounds more like an interrogation than being friendly.|Gabbin11122]]
 [[I'm sure ceaselessly annoying someone will work out!|Gabbin1123]]
@@ -194,10 +205,12 @@ tags:
 colorID: 1
 position: 3713,-1543
 ---
-<<GameManager ChangeSpeaker default>>
+<<ChangeSpeaker SoundManager Voiceless>>
 [Gabbin seems to be ignoring you now.]
 [He keeps babbling to himself about new methods of starting a conversation with Nilbog.]
 [You don't think this will end well.]
+
+<<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
 #No change in behavior.
 ===
@@ -206,10 +219,10 @@ tags:
 colorID: 0
 position: 2898,-1256
 ---
-Gabbin: The necromancers are real professionals!
-Gabbin: I tend to feel a bit loopy afterwards, but it beats being dead!
-Gabbin: We're perfectly safe with them around!
-Gabbin: If only Nilbog would work with me...
+The necromancers are real professionals!
+I tend to feel a bit loopy afterwards, but it beats being dead!
+We're perfectly safe with them around!
+If only Nilbog would work with me...
 [[You're missing the point.|Gabbin1131]]
 [[Nilbog not being cooperative?|Gabbin1111]]
 ===
@@ -218,9 +231,9 @@ tags:
 colorID: 0
 position: 3505,-1234
 ---
-Gabbin: What am I missing?
-Gabbin: Once Nilbog and I work together, the heroes won't stand a chance!
-Gabbin: He just needs to actually talk to me so we can become friends!
+What am I missing?
+Once Nilbog and I work together, the heroes won't stand a chance!
+He just needs to actually talk to me so we can become friends!
 [[That sounds rather invasive.|Gabbin11111]]
 [[You know what? Keep at it, he'll come around. Maybe.|Gabbin11112]]
 [[You need to cut that out. It's probably annoying.|Gabbin11113]]
@@ -232,9 +245,9 @@ tags:
 colorID: 0
 position: 2473,-983
 ---
-Gabbin: If being positive made me strong, those heroes wouldn't stand a chance!
-Gabbin: Man, if only that were the case!
-Gabbin: Once I get Nilbog to get with the program, we'll be unstoppable!
+If being positive made me strong, those heroes wouldn't stand a chance!
+Man, if only that were the case!
+Once I get Nilbog to get with the program, we'll be unstoppable!
 [[Get Nilbog with the program? What?|Gabbin1111]]
 [[I think you're missing the point.|Gabbin1131]]
 
@@ -245,8 +258,8 @@ tags:
 colorID: 0
 position: 2949,-180
 ---
-Gabbin: Only thing on my mind is getting Nilbog to cheer up!
-Gabbin: ...and recovering from being dead. But that's not unusual around here.
+Only thing on my mind is getting Nilbog to cheer up!
+...and recovering from being dead. But that's not unusual around here.
 [[What's up with Nilbog?|Gabbin1111]]
 [[Shouldn't you be focusing on what went wrong when the heroes arrived?|Gabbin132]]
 [[...failure is the usual around here?|Gabbin133]]
@@ -256,9 +269,9 @@ tags:
 colorID: 0
 position: 3313,-172
 ---
-Gabbin: I am! I have to get Nilbog to cheer up, or we'll never work together!
-Gabbin: He refuses to talk to me, no matter how hard I try!
-Gabbin: Usually positivity is contagious, but not with this guy!
+I am! I have to get Nilbog to cheer up, or we'll never work together!
+He refuses to talk to me, no matter how hard I try!
+Usually positivity is contagious, but not with this guy!
 [[The problem isn't just him.|Gabbin11122]]
 [[I can't imagine why he'd find that annoying.|Gabbin1322]]
 ===
@@ -267,10 +280,9 @@ tags:
 colorID: 0
 position: 3649,-166
 ---
-<<MoodHit Gabbin>>
-Gabbin: That wasn't very nice...
-Gabbin: ...but you might have a point.
-Gabbin: Do you think it's possible I'm being too much?
+That wasn't very nice...
+...but you might have a point.
+Do you think it's possible I'm being too much?
 [[Absolutely.|Gabbin13221]]
 [[He might just be a Goblin who needs his boundaries respected.|Gabbin13222]]
 [[On second thought... maybe you're right.|Gabbin13223]]
@@ -280,50 +292,53 @@ tags:
 colorID: 1
 position: 3901,-369
 ---
-<<MoodHit Gabbin>>
-Gabbin: ....
-Gabbin: ...I think you might be right...
-Gabbin: ...It's not like my previous attempts ever worked anyway...
+....
+...I think you might be right...
+...It's not like my previous attempts ever worked anyway...
+
+<<set $talkedToGabbin to true>>
+<<set $sad to true>>
 <<EndInterview Gabbin>>
 
-<<set $Sad to true>>
-#Flag: Gabbin is now Sad. He will accept conclusions where he is told to 
-#step off and respect Nilbog's boundaries.
+
 ===
 title: Gabbin13222
 tags: 
 colorID: 1
 position: 3905,-136
 ---
-Gabbin: ...boundaries, huh?
-Gabbin: I'll think about that.
-Gabbin: Hopefully I can find a way to cheer him up while giving him some space!
-<<EndInterview Gabbin>>
+...boundaries, huh?
+I'll think about that.
+Hopefully I can find a way to cheer him up while giving him some space!
 
-<<set $Respectful to true>>
+<<set $talkedToGabbin to true>>
+<<set $respectful to true>>
+<<EndInterview Gabbin>>
 
 ===
 title: Gabbin13223
 tags: 
 colorID: 1
-position: 3909,89
+position: 3911,91
 ---
-Gabbin: Oh, thank goodness!
-Gabbin: You had me going for a second there!
-Gabbin: I'll figure him out, then this whole operation will turn around!
+Oh, thank goodness!
+You had me going for a second there!
+I'll figure him out, then this whole operation will turn around!
+
+<<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
-#No change in behavior
+
 ===
 title: NilbogGabbinSolution1
 tags: 
 colorID: 2
 position: 1491,718
 ---
-<<GameManager ChangeSpeaker default>>
+<<ChangeSpeaker SoundManager Voiceless>>
 [Nilbog eyes you expectantly.]
 
-<<GameManager ChangeSpeaker Gabbin>>
-Gabbin: So, what's the plan?
+<<ChangeSpeaker SoundManager Gabbin>>
+So, what's the plan?
 
 [[Nilbog, you need to come out of your shell and work with Gabbin to make this work.|NilbogGabbinSolution11]]
 [[Gabbin, you need to leave Nilbog alone during work.|NilbogGabbinSolution12]]
@@ -332,44 +347,63 @@ Gabbin: So, what's the plan?
 title: NilbogGabbinSolution11
 tags: 
 colorID: 2
-position: 1812,425
+position: 1814,425
 ---
 #IF Nilbog flagged Defeated or Patient:
+<<if $defeated is true>>
+<<ChangeSpeaker SoundManager Nilbog>>
+...fine.
+...just please... keep yourself at least an arms distance away.
 
-<<GameManager ChangeSpeaker Nilbog>>
-Nilbog: ...fine.
-Nilbog: ...just please... keep yourself at least an arms distance away.
+<<ChangeSpeaker SoundManager Gabbin>>
+Oh!! This is fantastic!
+We're going to get along so well, just wait until the heroes get a load of us!
+I've been thinking of a new combat technique, I can't wait to--
 
-<<GameManager ChangeSpeaker Gabbin>>
-Gabbin: Oh!! This is fantastic!
-Gabbin: We're going to get along so well, just wait until the heroes get a load of us!
-Gabbin: I've been thinking of a new combat technique, I can't wait to--
-
-<<GameManager ChangeSpeaker default>>
+<<ChangeSpeaker SoundManager Voiceless>>
 [Gabbin proceeds to babble to Nilbog about combat plans.]
 [Nilbog appears to be just tolerating it.]
 
+<<set $shift13Combat to 1>>
+
+<<elseif $patient is true>>
+<<ChangeSpeaker SoundManager Nilbog>>
+...fine.
+...just please... keep yourself at least an arms distance away.
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Oh!! This is fantastic!
+We're going to get along so well, just wait until the heroes get a load of us!
+I've been thinking of a new combat technique, I can't wait to--
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gabbin proceeds to babble to Nilbog about combat plans.]
+[Nilbog appears to be just tolerating it.]
+
+<<set $shift13Combat to 1>>
 #Ends conversation
 #Combat succeeds. Flag: OpenUp
 #2 points
 
-#ELSE
+<<else>>
 
-<<GameManager ChangeSpeaker Nilbog>>
-Nilbog: ....
-Nilbog: ...why would I want to do that?
+<<ChangeSpeaker SoundManager Nilbog>>
+....
+...why would I want to do that?
 
-<<GameManager ChangeSpeaker Gabbin>>
-Gabbin: Oh this will be great!
-Gabbin: I've already got loads of plans for us until the heroes arrive, like--
+<<ChangeSpeaker SoundManager Gabbin>>
+Oh this will be great!
+I've already got loads of plans for us until the heroes arrive, like--
 
-<<GameManager ChangeSpeaker default>>
+<<ChangeSpeaker SoundManager Voiceless>>
 [Gabbin proceeds to list off a bunch of activities he's apparently been planning.]
 [Nilbog glares at you.]
 
 #Ends conversation
 #Combat fails, default case
 #0 points
+<<set $shift13Combat to 0>>
+<<endif>>
 ===
 title: NilbogGabbinSolution12
 tags: 
@@ -377,29 +411,46 @@ colorID: 2
 position: 1817,733
 ---
 #IF Gabbin flagged Sad OR Respectful:
+<<if $sad is true>>
 
-<<GameManager ChangeSpeaker Gabbin>>
-Gabbin: ...alright... I'll step off.
+<<ChangeSpeaker SoundManager Gabbin>>
+...alright... I'll step off.
 
-<<GameManager ChangeSpeaker default>>
+<<ChangeSpeaker SoundManager Voiceless>>
 [Nilbog gives you an approving look.]
 
+<<set $shift13Combat to 2>>
+
+<<elseif $respectful is true>>
+
+<<ChangeSpeaker SoundManager Gabbin>>
+...alright... I'll step off.
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Nilbog gives you an approving look.]
+
+<<set $shift13Combat to 2>>
 #Ends Conversation
 #Combat succeeds. Flag: StepOff
 #2 points
 
 #ELSE
+<<else>>
 
-<<GameManager ChangeSpeaker Gabbin>>
-Gabbin: ...but how else are we supposed to work together??
-Gabbin: Surely there's a better way. Isn't that right, Nilbog?
+<<ChangeSpeaker SoundManager Gabbin>>
+...but how else are we supposed to work together??
+Surely there's a better way. Isn't that right, Nilbog?
 
-<<GameManager ChangeSpeaker Nilbog>>
-Nilbog: .......
+<<ChangeSpeaker SoundManager Nilbog>>
+.......
 
 #Ends conversation
 #Combat fails, default case
 #0 points
+
+<<set $shift13Combat to 0>>
+
+<<endif>>
 ===
 title: NilbogGabbinSolution13
 tags: 
@@ -407,46 +458,50 @@ colorID: 2
 position: 1809,997
 ---
 #IF Gabbin flagged Respectful AND Nilbog flagged Patient
+<<if $respectful and $patient is true>>
 
-<<GameManager ChangeSpeaker Nilbog>>
-Nilbog: ...If you'll give me some space when I ask, fine.
+<<ChangeSpeaker SoundManager Nilbog>>
+...If you'll give me some space when I ask, fine.
 
-<<GameManager ChangeSpeaker Gabbin>>
-Gabbin: Ok! Just give me a signal and I'll go do something else when you're overwhelmed!
-Gabbin: Want to talk about some combat techniques I've been thinking about?
+<<ChangeSpeaker SoundManager Gabbin>>
+Ok! Just give me a signal and I'll go do something else when you're overwhelmed!
+Want to talk about some combat techniques I've been thinking about?
 
-<<GameManager ChangeSpeaker Nilbog>>
-Nilbog: ...
-Nilbog: ...Actually, sure.
+<<ChangeSpeaker SoundManager Nilbog>>
+...
+...Actually, sure.
 
-<<GameManager ChangeSpeaker default>>
+<<ChangeSpeaker SoundManager Voiceless>>
 [The two goblins begin to talk strategy for the battle ahead.]
 [They appear to be content for the time being!]
 
+<<set $shift13Combat to 3>>
 #Ends conversation
 #Combat succeeds. Flag: Friends
 #4 points
+<<else>>
 
-#ELSE
+<<ChangeSpeaker SoundManager Gabbin>>
+...that's a *great* idea!
+I've got so many ideas on how we can work together! Like--
 
-<<GameManager ChangeSpeaker Gabbin>>
-Gabbin: ...that's a *great* idea!
-Gabbin: I've got so many ideas on how we can work together! Like--
-
-<<GameManager ChangeSpeaker Nilbog>>
-Nilbog: ...stop. You're giving me a headache.
-Nilbog: I'm not going to deal with this...
+<<ChangeSpeaker SoundManager Nilbog>>
+...stop. You're giving me a headache.
+I'm not going to deal with this...
 
 #ends conversation
 #Combat fails, default case
 #0 points
+<<set $shift13Combat to 0>>
+
+<<endif>>
 ===
 title: Nilbog1
 tags: 
 colorID: 0
 position: -1580,-1770
 ---
-Nilbog: ...
+...
 
 [[...|Nilbog11]]
 [[...hello? You in there?|Nilbog12]]
@@ -456,7 +511,7 @@ tags:
 colorID: 0
 position: -867,-2744
 ---
-Nilbog: ......
+......
 
 [[......|Nilbog111]]
 [[Is this how we're going to play it? Fine. I've got better things to do.|Nilbog112]]
@@ -467,9 +522,8 @@ tags:
 colorID: 0
 position: -1119,-500
 ---
-<<MoodHit Nilbog>>
-Nilbog: ...Just because I'm not talking to you, doesn't mean I'm stupid.
-Nilbog: ...I just prefer some isolation.
+...Just because I'm not talking to you, doesn't mean I'm stupid.
+...I just prefer some isolation.
 
 [[Is this why there's been trouble at work?|Nilbog121]]
 [[Guess I'll just leave you alone then.|Nilbog122]]
@@ -480,7 +534,9 @@ tags:
 colorID: 1
 position: -851,-492
 ---
-Nilbog: ...Thank you.
+...Thank you.
+
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 #No change in behavior
 ===
@@ -489,7 +545,7 @@ tags:
 colorID: 0
 position: -542,-3475
 ---
-Nilbog: ...You're definitely more pleasant to be around than Gabbin, that's for sure.
+...You're definitely more pleasant to be around than Gabbin, that's for sure.
 
 [[What's the beef with Gabbin?|Nilbog1111]]
 [[...Huh? Sorry, I fell asleep for a second there.|Nilbog1113]]
@@ -499,13 +555,13 @@ tags:
 colorID: 0
 position: -887,-968
 ---
-Nilbog: ...You could say that. Gabbin is a real pain.
-Nilbog: ...He doesn't stop bothering me... ever.
+...You could say that. Gabbin is a real pain.
+...He doesn't stop bothering me... ever.
 
 [[Is it possible he just wants to be friends?|Nilbog1211]]
 [[He's your coworker, deal with it.|Nilbog1212]]
 
-<<if $TalkedTo Gabbin is true>>
+<<if $TalkedToGabbin is true>>
 [[I got that impression when I talked to him.|Nilbog1213]]
 
 <<else>>
@@ -517,7 +573,7 @@ tags:
 colorID: 0
 position: -533,-1491
 ---
-Nilbog: ...We're not going to be friends.
+...We're not going to be friends.
 
 [[Why not?|Nilbog12111]]
 [[Not with that attitude, you aren't.|Nilbog12112]]
@@ -528,10 +584,10 @@ tags:
 colorID: 1
 position: -566,-1090
 ---
-<<MoodHit Nilbog>>
-Nilbog: ...tch. You came here to say that?
-Nilbog: Nice.
+...tch. You came here to say that?
+Nice.
 
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 #No change in behavior
 
@@ -543,8 +599,8 @@ tags:
 colorID: 0
 position: -531,-819
 ---
-Nilbog: Then you know exactly what the problem is.
-Nilbog: He doesn't leave me alone. I like my space.
+Then you know exactly what the problem is.
+He doesn't leave me alone. I like my space.
 
 [[If he respects your boundaries, will you try to work with him?|Nilbog12131]]
 [[You think getting him to step off would be best?|Nilbog12132]]
@@ -552,10 +608,11 @@ Nilbog: He doesn't leave me alone. I like my space.
 ===
 title: Nilbog112
 tags: 
-colorID: 0
+colorID: 1
 position: -577,-2940
 ---
-Nilbog: ...
+...
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 #No change in behavior
 
@@ -566,7 +623,7 @@ tags:
 colorID: 0
 position: -498,-2667
 ---
-Nilbog: ...darn, and here I thought we understood each other.
+...darn, and here I thought we understood each other.
 
 [[...Anyway, what's up with you and Gabbin?|Nilbog1111]]
 [[You *do* talk!|Nilbog1132]]
@@ -577,8 +634,8 @@ tags:
 colorID: 0
 position: -512,-391
 ---
-Nilbog: ...I just want Gabbin to leave me alone.
-Nilbog: The guy really pushes my buttons.
+...I just want Gabbin to leave me alone.
+The guy really pushes my buttons.
 
 [[What if I can get him to respect your boundaries? Think you two can work?|Nilbog111112]]
 [[You think getting him to step off would be best?|Nilbog12132]]
@@ -589,8 +646,8 @@ tags:
 colorID: 0
 position: -216,-1712
 ---
-Nilbog: ...Because he annoys me. Simple as that.
-Nilbog: He doesn't respect my personal space, and never stops talking.
+...Because he annoys me. Simple as that.
+He doesn't respect my personal space, and never stops talking.
 
 [[I'll get him off your back then.|Nilbog121111]]
 [[If I get Gabbin to calm down, can I trust you to *try* to cooperate?|Nilbog111112]]
@@ -602,12 +659,12 @@ tags:
 colorID: 1
 position: -134,-1086
 ---
-Nilbog: ...if you can pull that off, sure.
-Nilbog: ...I doubt such a thing is possible, though.
+...if you can pull that off, sure.
+...I doubt such a thing is possible, though.
 
+<<set $talkedToNilbog to true>>
+<<set $patient to true>>
 <<EndInterview Nilbog>>
-
-<<set $Patient to true>>
 
 #Journal Note: Nilbog likes personal space, and says Gabbin keeps invading it.
 #If I can get Gabbin to respect Nilbog's boundaries, maybe I can get them to work together.
@@ -617,8 +674,8 @@ tags:
 colorID: 0
 position: -217,-3638
 ---
-Nilbog: The guy will simply *not* leave me alone.
-Nilbog: ...I can't work like this. I need my space.
+The guy will simply *not* leave me alone.
+...I can't work like this. I need my space.
 
 [[I need you both to work together.|Nilbog11111]]
 [[So if he backs off, things will work smoother?|Nilbog11112]]
@@ -628,8 +685,8 @@ tags:
 colorID: 0
 position: 99,-3797
 ---
-Nilbog: ...why?
-Nilbog: ...I don't want to do that.
+...why?
+...I don't want to do that.
 
 [[Because if you don't, the Heroes win. Every time. *You* have to change.|Nilbog111111]]
 [[Because if you two both respect each other, you can come out on top!|Nilbog111112]]]
@@ -639,13 +696,13 @@ tags:
 colorID: 1
 position: 586,-4047
 ---
-Nilbog: ...
-Nilbog: ...You're right. We've really been getting our butts handed to us.
-Nilbog: ...If I *have* to, I guess I'll go along with it...
+...
+...You're right. We've really been getting our butts handed to us.
+...If I *have* to, I guess I'll go along with it...
 
+<<set $talkedToNilbog to true>>
+<<set $defeated to true>>
 <<EndInterview Nilbog>>
-
-<<set $Defeated to true>>
 
 #Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
 ===
@@ -654,12 +711,13 @@ tags:
 colorID: 1
 position: 787,-3733
 ---
-Nilbog: ...Hmm.
-Nilbog: ...If you think you can pull that off, fine. I'll go along with it.
-Nilbog: But Gabbin is going to be hard to control, good luck.
-<<EndInterview Nilbog>>
+...Hmm.
+...If you think you can pull that off, fine. I'll go along with it.
+But Gabbin is going to be hard to control, good luck.
 
-<<set $Patient to true>>
+<<set $talkedToNilbog to true>>
+<<set $patient to true>>
+<<EndInterview Nilbog>>
 
 #Journal Note: Nilbog seems to get the picture. If I can get Gabbin to cool it,
 #maybe the two can actually work together!
@@ -669,8 +727,9 @@ tags:
 colorID: 1
 position: 278,-3380
 ---
-Nilbog: ...works for me. It's for the best.
+...works for me. It's for the best.
 
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
 #No change in behavior.
@@ -683,10 +742,9 @@ tags:
 colorID: 0
 position: -153,-3271
 ---
-<<MoodHit Nilbog>>
-Nilbog: ...Nevermind.
-Nilbog: ...Since you're here, can you get Nilbog off my back?
-Nilbog: ...Make things easier for the two of us.
+...Nevermind.
+...Since you're here, can you get Nilbog off my back?
+...Make things easier for the two of us.
 
 [[Oh no, I need you both to work together.|Nilbog11111]]
 [[So if he backs off, things will work smoother?|Nilbog11112]]
@@ -696,9 +754,8 @@ tags:
 colorID: 0
 position: -169,-2672
 ---
-<<MoodHit Nilbog>>
-Nilbog: ....
-Nilbog: ...Look. I need Gabbin off my back. Can you at least do that?
+....
+...Look. I need Gabbin off my back. Can you at least do that?
 
 [[Oh no, I need you both to work together.|Nilbog11111]]
 [[So if he backs off, things will work smoother?|Nilbog11112]]
@@ -706,9 +763,11 @@ Nilbog: ...Look. I need Gabbin off my back. Can you at least do that?
 title: Nilbog121111
 tags: 
 colorID: 1
-position: 190,-1869
+position: 190,-1874
 ---
-Nilbog: ...See that you do.
+...See that you do.
+
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
 #No change in behavior
@@ -720,12 +779,13 @@ tags:
 colorID: 1
 position: 194,-1592
 ---
-Nilbog: ...
-Nilbog: ...You're right. We've really been getting our butts handed to us.
-Nilbog: ...If I *have* to, I guess I'll go along with it...
-<<EndInterview Nilbog>>
+...
+...You're right. We've really been getting our butts handed to us.
+...If I *have* to, I guess I'll go along with it...
 
-<<set $Defeated to true>>
+<<set $talkedToNilbog to true>>
+<<set $defeated to true>>
+<<EndInterview Nilbog>>
 
 #Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
 ===
@@ -734,8 +794,10 @@ tags:
 colorID: 1
 position: -136,-825
 ---
-Nilbog: ...yep. I work best alone.
-Nilbog: ...Best of luck. You'll need it.
+...yep. I work best alone.
+...Best of luck. You'll need it.
+
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
 #No change in behavior
@@ -748,7 +810,7 @@ tags:
 colorID: 0
 position: 245,-485
 ---
-Nilbog: ...I work alone.
+...I work alone.
 
 [[...ok, then.|Nilbog121331]]
 [[You don't have a choice. Work with him, or continue to fail against the heroes.|Nilbog121113]]
@@ -759,7 +821,8 @@ tags:
 colorID: 1
 position: 503,-486
 ---
-Nilbog: ...
+...
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
 #No change in behavior
@@ -772,10 +835,9 @@ tags:
 colorID: 0
 position: -916,-81
 ---
-<<MoodHit Nilbog>>
-Nilbog: ....Fine. I'll spell it out for you.
-Nilbog: Gabbin is a pain. I need him to leave me alone.
-Nilbog: Until that happens, things aren't going to work.
+....Fine. I'll spell it out for you.
+Gabbin is a pain. I need him to leave me alone.
+Until that happens, things aren't going to work.
 
 [[That sounds like a personal problem.|Nilbog1231]]
 [[How would you recommend dealing with the problem?|Nilbog1232]]
@@ -786,9 +848,10 @@ tags:
 colorID: 1
 position: -640,-170
 ---
-Nilbog: .....
-Nilbog: ...I don't need to take this from you.
+.....
+...I don't need to take this from you.
 
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 #No change in behavior
 
@@ -800,9 +863,10 @@ tags:
 colorID: 1
 position: -707,265
 ---
-Nilbog: ...Glad you get the picture.
-Nilbog: The sooner you deal with him, the better.
+...Glad you get the picture.
+The sooner you deal with him, the better.
 
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 #No change in behavior.
 
@@ -814,8 +878,8 @@ tags:
 colorID: 0
 position: -463,62
 ---
-Nilbog: ...Easy. Get him to respect my personal space.
-Nilbog: ...Or just get him to leave me alone, period. Either works for me.
+...Easy. Get him to respect my personal space.
+...Or just get him to leave me alone, period. Either works for me.
 
 [[That first choice sounds good to me.|Nilbog12321]]
 [[Getting him to leave you alone should be simple enough.|Nilbog12322]]
@@ -826,12 +890,14 @@ tags:
 colorID: 1
 position: -117,-234
 ---
-Nilbog: ...Ha! Good luck with that.
-Nilbog: ...But if by some miracle it does work, I'll go along with it.
-Nilbog: .....*If* it does work.
+...Ha! Good luck with that.
+...But if by some miracle it does work, I'll go along with it.
+.....*If* it does work.
+
+<<set $talkedToNilbog to true>>
+<<set $patient to true>>
 <<EndInterview Nilbog>>
 
-<<set $Patient to true>>
 
 #Journal Note: If I can get Gabbin to respect Nilbog's personal space, that will
 #be the key to getting them to work together.
@@ -841,7 +907,9 @@ tags:
 colorID: 1
 position: -115,-16
 ---
-Nilbog: ...Best of luck to you, then.
+...Best of luck to you, then.
+
+<<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
 #No change in behavior.
@@ -854,7 +922,7 @@ tags:
 colorID: 0
 position: 722,381
 ---
-Nilbog: ...How do you figure that?
+...How do you figure that?
 
 [[Because if you don't get along, you're never going to beat the Heroes. You can't win alone.|Nilbog111111]]
 [[You fight better together. If I can get Gabbin to respect your boundaries, you think it'll work?|Nilbog111112]]
