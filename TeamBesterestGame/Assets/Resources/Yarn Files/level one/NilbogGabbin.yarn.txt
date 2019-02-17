@@ -120,12 +120,12 @@ Thanks for the confidence booster!
 
 <<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
-#No change in behavior.
+//No change in behavior.
 ===
 title: Gabbin111132
 tags: 
 colorID: 1
-position: 4214,-2724
+position: 4216,-2726
 ---
 ...
 That's a *very* negative way to look at things...
@@ -212,7 +212,7 @@ position: 3713,-1543
 
 <<set $talkedToGabbin to true>>
 <<EndInterview Gabbin>>
-#No change in behavior.
+//No change in behavior.
 ===
 title: Gabbin113
 tags: 
@@ -332,7 +332,7 @@ I'll figure him out, then this whole operation will turn around!
 title: NilbogGabbinSolution1
 tags: 
 colorID: 2
-position: 1491,718
+position: 1491,719
 ---
 <<ChangeSpeaker SoundManager Voiceless>>
 [Nilbog eyes you expectantly.]
@@ -349,7 +349,7 @@ tags:
 colorID: 2
 position: 1814,425
 ---
-#IF Nilbog flagged Defeated or Patient:
+//IF Nilbog flagged Defeated or Patient:
 <<if $defeated is true>>
 <<ChangeSpeaker SoundManager Nilbog>>
 ...fine.
@@ -381,9 +381,9 @@ I've been thinking of a new combat technique, I can't wait to--
 [Nilbog appears to be just tolerating it.]
 
 <<set $shift13Combat to 1>>
-#Ends conversation
-#Combat succeeds. Flag: OpenUp
-#2 points
+//Ends conversation
+//Combat succeeds. Flag: OpenUp
+//2 points
 
 <<else>>
 
@@ -399,9 +399,9 @@ I've already got loads of plans for us until the heroes arrive, like--
 [Gabbin proceeds to list off a bunch of activities he's apparently been planning.]
 [Nilbog glares at you.]
 
-#Ends conversation
-#Combat fails, default case
-#0 points
+//Ends conversation
+//Combat fails, default case
+//0 points
 <<set $shift13Combat to 0>>
 <<endif>>
 ===
@@ -410,7 +410,7 @@ tags:
 colorID: 2
 position: 1817,733
 ---
-#IF Gabbin flagged Sad OR Respectful:
+//IF Gabbin flagged Sad OR Respectful:
 <<if $sad is true>>
 
 <<ChangeSpeaker SoundManager Gabbin>>
@@ -430,11 +430,11 @@ position: 1817,733
 [Nilbog gives you an approving look.]
 
 <<set $shift13Combat to 2>>
-#Ends Conversation
-#Combat succeeds. Flag: StepOff
-#2 points
+//Ends Conversation
+//Combat succeeds. Flag: StepOff
+//2 points
 
-#ELSE
+//ELSE
 <<else>>
 
 <<ChangeSpeaker SoundManager Gabbin>>
@@ -444,9 +444,9 @@ Surely there's a better way. Isn't that right, Nilbog?
 <<ChangeSpeaker SoundManager Nilbog>>
 .......
 
-#Ends conversation
-#Combat fails, default case
-#0 points
+//Ends conversation
+//Combat fails, default case
+//0 points
 
 <<set $shift13Combat to 0>>
 
@@ -457,7 +457,7 @@ tags:
 colorID: 2
 position: 1809,997
 ---
-#IF Gabbin flagged Respectful AND Nilbog flagged Patient
+//IF Gabbin flagged Respectful AND Nilbog flagged Patient
 <<if $respectful and $patient is true>>
 
 <<ChangeSpeaker SoundManager Nilbog>>
@@ -476,9 +476,9 @@ Want to talk about some combat techniques I've been thinking about?
 [They appear to be content for the time being!]
 
 <<set $shift13Combat to 3>>
-#Ends conversation
-#Combat succeeds. Flag: Friends
-#4 points
+//Ends conversation
+//Combat succeeds. Flag: Friends
+//4 points
 <<else>>
 
 <<ChangeSpeaker SoundManager Gabbin>>
@@ -489,9 +489,9 @@ I've got so many ideas on how we can work together! Like--
 ...stop. You're giving me a headache.
 I'm not going to deal with this...
 
-#ends conversation
-#Combat fails, default case
-#0 points
+//ends conversation
+//Combat fails, default case
+//0 points
 <<set $shift13Combat to 0>>
 
 <<endif>>
@@ -538,7 +538,7 @@ position: -851,-492
 
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
-#No change in behavior
+//No change in behavior
 ===
 title: Nilbog111
 tags: 
@@ -589,15 +589,15 @@ Nice.
 
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
-#No change in behavior
+//No change in behavior
 
-#Journal Note: Nilbog doesn't seem to enjoy working with Gabbin. Maybe
-#Gabbin is coming on too strong?
+//Journal Note: Nilbog doesn't seem to enjoy working with Gabbin. Maybe
+//Gabbin is coming on too strong?
 ===
 title: Nilbog1213
 tags: 
 colorID: 0
-position: -531,-819
+position: -537,-820
 ---
 Then you know exactly what the problem is.
 He doesn't leave me alone. I like my space.
@@ -614,9 +614,9 @@ position: -577,-2940
 ...
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
-#No change in behavior
+//No change in behavior
 
-#Journal note: Nilbog is a very quiet individual.
+//Journal note: Nilbog is a very quiet individual.
 ===
 title: Nilbog113
 tags: 
@@ -666,8 +666,8 @@ position: -134,-1086
 <<set $patient to true>>
 <<EndInterview Nilbog>>
 
-#Journal Note: Nilbog likes personal space, and says Gabbin keeps invading it.
-#If I can get Gabbin to respect Nilbog's boundaries, maybe I can get them to work together.
+//Journal Note: Nilbog likes personal space, and says Gabbin keeps invading it.
+//If I can get Gabbin to respect Nilbog's boundaries, maybe I can get them to work together.
 ===
 title: Nilbog1111
 tags: 
@@ -704,7 +704,7 @@ position: 586,-4047
 <<set $defeated to true>>
 <<EndInterview Nilbog>>
 
-#Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
+//Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
 ===
 title: Nilbog111112
 tags: 
@@ -719,8 +719,8 @@ But Gabbin is going to be hard to control, good luck.
 <<set $patient to true>>
 <<EndInterview Nilbog>>
 
-#Journal Note: Nilbog seems to get the picture. If I can get Gabbin to cool it,
-#maybe the two can actually work together!
+//Journal Note: Nilbog seems to get the picture. If I can get Gabbin to cool it,
+//maybe the two can actually work together!
 ===
 title: Nilbog11112
 tags: 
@@ -732,10 +732,10 @@ position: 278,-3380
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Nilbog claims that if Gabbin stops bothering him, everything will 
-#work better in the long run.
+//Journal Note: Nilbog claims that if Gabbin stops bothering him, everything will 
+//work better in the long run.
 ===
 title: Nilbog1113
 tags: 
@@ -770,9 +770,9 @@ position: 190,-1874
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
-#No change in behavior
-#Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-#to leave him alone, Nilbog claims things will work out better.
+//No change in behavior
+//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
+//to leave him alone, Nilbog claims things will work out better.
 ===
 title: Nilbog121113
 tags: 
@@ -787,7 +787,7 @@ position: 194,-1592
 <<set $defeated to true>>
 <<EndInterview Nilbog>>
 
-#Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
+//Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
 ===
 title: Nilbog12132
 tags: 
@@ -800,10 +800,10 @@ position: -136,-825
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
-#No change in behavior
+//No change in behavior
 
-#Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-#to leave him alone, Nilbog claims things will work out better.
+//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
+//to leave him alone, Nilbog claims things will work out better.
 ===
 title: Nilbog12133
 tags: 
@@ -825,15 +825,15 @@ position: 503,-486
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
-#No change in behavior
+//No change in behavior
 
-#Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-#to leave him alone, Nilbog claims things will work out better.
+//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
+//to leave him alone, Nilbog claims things will work out better.
 ===
 title: Nilbog123
 tags: 
 colorID: 0
-position: -916,-81
+position: -1144,-95
 ---
 ....Fine. I'll spell it out for you.
 Gabbin is a pain. I need him to leave me alone.
@@ -846,32 +846,32 @@ Until that happens, things aren't going to work.
 title: Nilbog1231
 tags: 
 colorID: 1
-position: -640,-170
+position: -754,-121
 ---
 .....
 ...I don't need to take this from you.
 
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
-#No change in behavior
+//No change in behavior
 
-#Journal Note: Nilbog seems to be bothered by Gabbin. When pressed, I may have
-#pushed him a little too far.
+//Journal Note: Nilbog seems to be bothered by Gabbin. When pressed, I may have
+//pushed him a little too far.
 ===
 title: Nilbog1233
 tags: 
 colorID: 1
-position: -707,265
+position: -727,234
 ---
 ...Glad you get the picture.
 The sooner you deal with him, the better.
 
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-#to leave him alone, Nilbog claims things will work out better.
+//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
+//to leave him alone, Nilbog claims things will work out better.
 ===
 title: Nilbog1232
 tags: 
@@ -888,7 +888,7 @@ position: -463,62
 title: Nilbog12321
 tags: 
 colorID: 1
-position: -117,-234
+position: -81,-151
 ---
 ...Ha! Good luck with that.
 ...But if by some miracle it does work, I'll go along with it.
@@ -899,28 +899,28 @@ position: -117,-234
 <<EndInterview Nilbog>>
 
 
-#Journal Note: If I can get Gabbin to respect Nilbog's personal space, that will
-#be the key to getting them to work together.
+//Journal Note: If I can get Gabbin to respect Nilbog's personal space, that will
+//be the key to getting them to work together.
 ===
 title: Nilbog12322
 tags: 
 colorID: 1
-position: -115,-16
+position: -93,156
 ---
 ...Best of luck to you, then.
 
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
 
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
-#to leave him alone, Nilbog claims things will work out better.
+//Journal Note: Nilbog seems bothered by Gabbin's enthusiasm. If I can get Gabbin
+//to leave him alone, Nilbog claims things will work out better.
 ===
 title: Nilbog12323
 tags: 
 colorID: 0
-position: 722,381
+position: 719,381
 ---
 ...How do you figure that?
 

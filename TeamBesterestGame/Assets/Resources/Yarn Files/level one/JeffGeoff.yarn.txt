@@ -1,7 +1,7 @@
 title: Geoff1
 tags: 
 colorID: 0
-position: 4051,144
+position: 4051,147
 ---
 Hello, I'm Geoff.
 I'm sorry boss, I am mad right now. Someone here stole my scone and ate it!
@@ -22,9 +22,9 @@ Jeff is gonna pay for that!
 
 <<set $talkedToGeoff to true>>
 <<EndInterview Geoff>>
-#No change in behavior
-#Journal Note: #Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
-#escalated the situation.
+//No change in behavior
+//Journal Note: #Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
 
 
 ===
@@ -42,16 +42,16 @@ Something needs to be done about Jeff!
 title: Geoff121
 tags: 
 colorID: 1
-position: 5166,-249
+position: 5169,-249
 ---
 I totally agree boss! Finally someone understands.
 
 <<set $talkedToGeoff to true>>
 <<EndInterview Geoff>>
 
-#No change in behavior.
-#Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
-#escalated the situation.
+//No change in behavior.
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
 
 ===
 title: Geoff122
@@ -66,7 +66,7 @@ I guess it wouldn't hurt, but he still needs to get punished somehow!
 title: Geoff1221
 tags: 
 colorID: 0
-position: 5850,203
+position: 5846,203
 ---
 Why shouldn't I?
 Jeff is a dirty, scone-eating jerk!
@@ -84,15 +84,15 @@ I'll show him, just watch me!
 <<set $talkedToGeoff to true>>
 <<EndInterview Geoff>>
 
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
-#escalated the situation.
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
 ===
 title: Geoff12212
 tags: 
 colorID: 0
-position: 6270,120
+position: 6266,120
 ---
 I would probably still say no...
 But he is just a thief!
@@ -105,7 +105,7 @@ And he knows scones are my favorite snack...
 title: Geoff12213
 tags: 
 colorID: 0
-position: 6265,885
+position: 6261,885
 ---
 Fine...
 ...But if you don't do anything about it, I will!
@@ -201,14 +201,14 @@ position: 6824,674
 <<set $talkedToGeoff to true>>
 <<EndInterview Geoff>>
 
-#No change in behavior.
-#Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
-#escalated the situation.
+//No change in behavior.
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
 ===
 title: Geoff122131
 tags: 
 colorID: 1
-position: 6828,384
+position: 6828,387
 ---
 If he apologizes... I'll think about workin' with him again!
 But *not* until then!
@@ -217,13 +217,13 @@ But *not* until then!
 <<set $apologize2 to true>>
 <<EndInterview Geoff>>
 
-#Journal Note: Geoff hates Jeff for stealing his scone, but if he gets an apology,
-#I might be able to get this to work.
+//Journal Note: Geoff hates Jeff for stealing his scone, but if he gets an apology,
+//I might be able to get this to work.
 ===
 title: JeffGeoffSolution1
 tags: 
 colorID: 2
-position: 4150,2097
+position: 3974,2083
 ---
 <<ChangeSpeaker SoundManager Jeff>>
 Well? What's it gonna be?
@@ -246,7 +246,7 @@ He gets what's comin' to him.
 [[What was he complaining about?|Jeff1121]]
 [[And you're the picture of perfection?|Jeff1132]]
 
-#IF you have talked to Geoff already
+//IF you have talked to Geoff already
 <<if $talkedToGeoff is true>>
 [[Quite a thing to say considering you stole it.|Jeff1133]]
 <<endif>>
@@ -281,15 +281,15 @@ Settle down already, we gotta go get ready for those heroes.
 [As the two leave, you see Geoff staring daggers at you and Jeff.]
 [You're sure this isn't going to end well.]
 
-#Default Case for combat
-#0 points
+//Default Case for combat
+//0 points
 ===
 title: JeffGeoffSolution12
 tags: 
 colorID: 2
 position: 4412,2199
 ---
-#IF Jeff AND Geoff are flagged Apology:
+//IF Jeff AND Geoff are flagged Apology:
 <<if $apologize1 is true and $apologize2 are true>>
 
 <<ChangeSpeaker SoundManager Jeff>>
@@ -312,10 +312,10 @@ Well... alright. I bet we'll really mess them up this time!
 Yea, sure, whatever.
 
 <<set $shift12Combat 1>>
-#4 points
-#------------------
+//4 points
+//------------------
 <<elseif $apologize1 is true and $apologize2 is false>>
-#IF ONLY Jeff is flagged Apology:
+//IF ONLY Jeff is flagged Apology:
 <<ChangeSpeaker SoundManager Jeff>>
 Alright, look, I'm sorry for taking your scone, ok?
 
@@ -335,12 +335,12 @@ It'll go just as well as it did last time. Try it! I dare you!
 [The two continue to bicker back and forth at each other until they leave.]
 [You're sure this isn't going to end well.]
 
-#Default Case
-#0 points
+//Default Case
+//0 points
 
-#------------------
+//------------------
 <<else>>
-#ELSE:
+//ELSE:
 <<ChangeSpeaker SoundManager Jeff>>
 What? No. If he's got a problem, he can solve it himself.
 
@@ -354,8 +354,8 @@ It'll go just as well as it did last time. Try it! I dare you!
 [The two continue to bicker back and forth at each other until they leave.]
 [You're sure this isn't going to end well.]
 
-#Default Case
-#0 points
+//Default Case
+//0 points
 <<endif>>
 ===
 title: Jeff1112
@@ -380,9 +380,9 @@ A wizard, beating a goblin warrior in a fight. *That* will be the day!
 
 <<set $talkToJeff to true>>
 <<EndInterview Jeff>>
-#No change in behavior
-#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-#If I can somehow get him to apologize, maybe this can work.
+//No change in behavior
+//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+//If I can somehow get him to apologize, maybe this can work.
 ===
 title: Jeff11121
 tags: 
@@ -398,9 +398,9 @@ I'll apologize to the guy, but if he loses his cool again, I'm going to defend m
 <<set $apologize1 to true>>
 <<EndInterview Jeff>>
 
-#Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
-#make sure Geoff is in the mood to accept his apology, and maybe they'll work 
-#together again.
+//Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
+//make sure Geoff is in the mood to accept his apology, and maybe they'll work 
+//together again.
 ===
 title: Jeff11122
 tags: 
@@ -415,17 +415,17 @@ It's clearly his fault.
 title: Jeff111221
 tags: 
 colorID: 1
-position: 2702,-620
+position: 2698,-621
 ---
 Nope! He attacks me, that's all I care about.
 Now, if you're going to sit here and ask dumb questions all day, I've got heroes to prepare for.
 
 <<set $talkToJeff to true>>
 <<EndInterview Jeff>>
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-#If I can somehow get him to apologize, maybe this can work.
+//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+//If I can somehow get him to apologize, maybe this can work.
 ===
 title: Jeff11211
 tags: 
@@ -448,10 +448,10 @@ Look, unless you can offer me a raise or something, you're wasting your time.
 
 <<set $talkToJeff to true>>
 <<EndInterview Jeff>>
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-#If I can somehow get him to apologize, maybe this can work.
+//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+//If I can somehow get him to apologize, maybe this can work.
 ===
 title: Jeff112113
 tags: 
@@ -469,7 +469,7 @@ I'll do it, if for no other reason than the look on your face right now.
 <<EndInterview Jeff>>
 
 
-#Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
+//Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
 #make sure Geoff is in the mood to accept his apology, and maybe they'll work 
 #together again.
 ===
@@ -493,10 +493,10 @@ Darned straight!
 <<set $talkToJeff to true>>
 <<EndInterview Jeff>>
 
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-#If I can somehow get him to apologize, maybe this can work.
+//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+//If I can somehow get him to apologize, maybe this can work.
 ===
 title: Jeff1142
 tags: 
@@ -533,8 +533,8 @@ Can't hurt to try!
 <<set $talkToJeff to true>>
 <<EndInterview Jeff>>
 
-#No change in behavior
-#Journal Note: Jeff seems to be a rather aggressive goblin. He and Geoff hate each other.
+//No change in behavior
+//Journal Note: Jeff seems to be a rather aggressive goblin. He and Geoff hate each other.
 ===
 title: Jeff11411
 tags: 
@@ -562,9 +562,9 @@ He better appreciate this.
 
 <<EndInterview Jeff>>
 
-#Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
-#make sure Geoff is in the mood to accept his apology, and maybe they'll work 
-#together again.
+//Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
+//make sure Geoff is in the mood to accept his apology, and maybe they'll work 
+//together again.
 ===
 title: Jeff114112
 tags: 
@@ -578,10 +578,10 @@ I'm done here.
 <<set $talkToJeff to true>>
 <<EndInterview Jeff>>
 
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-#If I can somehow get him to apologize, maybe this can work.
+//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+//If I can somehow get him to apologize, maybe this can work.
 ===
 title: Jeff1133
 tags: 
@@ -614,8 +614,8 @@ Just like this conversation, pal. I think we're done.
 <<set $talkToJeff to true>>
 <<EndInterview Jeff>>
 
-#No change in behavior.
+//No change in behavior.
 
-#Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-#If I can somehow get him to apologize, maybe this can work.
+//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+//If I can somehow get him to apologize, maybe this can work.
 ===

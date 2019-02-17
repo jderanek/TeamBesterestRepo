@@ -82,15 +82,17 @@ public class GameManager : MonoBehaviour
         switch (phase)
         {
             case "Start":
-                canSkip = false;
+                canSkip = true;
                 phase = "Combat";
                 this.SetGoblinPoints();
                 combatCanvas.SetActive(true);
                 combatManager.GetComponent<DialogueRunner>().StartDialogue();
-                phaseButton.GetComponentInChildren<Text>().text = "Combat In Progress";
+                phaseButton.GetComponentInChildren<Text>().text = "Skip Combat";
                 break;
             case "Combat":
                 phase = "Interview";
+                combatManager.GetComponent<DialogueRunner>().Stop();
+                combatCanvas.SetActive(false);
                 ResetPhase();
                 phaseButton.GetComponentInChildren<Text>().text = "Begin Interviews";
                 break;

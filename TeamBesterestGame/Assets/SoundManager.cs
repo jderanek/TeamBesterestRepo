@@ -30,7 +30,7 @@ public class SoundManager : MonoBehaviour
 
     public static void GetGoblinObjects()
     {
-        goblins = new GameObject[5];
+        goblins = new GameObject[7];
 
         goblins[0] = GameObject.Find("Goblenn");
         goblins[1] = GameObject.Find("Geoff");
@@ -40,7 +40,7 @@ public class SoundManager : MonoBehaviour
         goblins[5] = GameObject.Find("Boss");
         goblins[6] = GameObject.Find("Voiceless");
 
-        goblinVoiceName = new string[5];
+        goblinVoiceName = new string[7];
 
         goblinVoiceName[0] = "Goblenn_Voice";
         goblinVoiceName[1] = "Geoff_Voice";
