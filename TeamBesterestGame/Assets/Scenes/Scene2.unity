@@ -393,7 +393,7 @@ MonoBehaviour:
   - {fileID: 839498536}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 594745389}
   notes: {fileID: 1975713363}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &14465736
@@ -8407,7 +8407,7 @@ MonoBehaviour:
   - {fileID: 839498536}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 594745389}
   notes: {fileID: 14202393}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &906177786
@@ -8657,7 +8657,7 @@ MonoBehaviour:
   - {fileID: 256175002}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 2082834031}
   notes: {fileID: 1877343969}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &951470859
@@ -12502,7 +12502,7 @@ MonoBehaviour:
   - {fileID: 256175002}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 2082834031}
   notes: {fileID: 2005550718}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &1335600117
@@ -13962,6 +13962,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1031783968}
+          m_MethodName: SpeechBubblesOff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -15287,7 +15298,7 @@ MonoBehaviour:
   - {fileID: 1571043629}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 41062054}
   notes: {fileID: 253172324}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &1765382687
