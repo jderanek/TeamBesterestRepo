@@ -8399,12 +8399,12 @@ MonoBehaviour:
   anim: {fileID: 0}
   interviewable: 1
   interviewOptions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 813791958}
+  - {fileID: 1204288449}
+  - {fileID: 1101915905}
+  - {fileID: 1651268505}
+  - {fileID: 1364065096}
+  - {fileID: 839498536}
   response: {fileID: 369298016}
   points: 0
   dialogueRunner: {fileID: 0}
@@ -9229,7 +9229,8 @@ MonoBehaviour:
   responseText: {fileID: 1971129431}
   continuePrompt: {fileID: 0}
   textSpeed: 0.025
-  optionButtons: []
+  optionButtons:
+  - {fileID: 813791960}
   gameControlsContainer: {fileID: 0}
 --- !u!114 &984599862
 MonoBehaviour:
@@ -9350,17 +9351,6 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12504,12 +12494,12 @@ MonoBehaviour:
   anim: {fileID: 0}
   interviewable: 1
   interviewOptions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1670627658}
+  - {fileID: 386306947}
+  - {fileID: 1111984982}
+  - {fileID: 1663072200}
+  - {fileID: 964969972}
+  - {fileID: 256175002}
   response: {fileID: 369298016}
   points: 0
   dialogueRunner: {fileID: 0}

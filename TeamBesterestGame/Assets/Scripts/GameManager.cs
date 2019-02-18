@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
                     monster.GetComponent<BaseMonster>().EndInterview();
                 }
 
-                EndInterview();
+                //EndInterview();
                 this.SetGoblinPoints();
                 interviewing = false;
                 interviewCanvas.SetActive(false);
