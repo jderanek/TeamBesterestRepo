@@ -16825,6 +16825,9 @@ MonoBehaviour:
   - name: combat
     value: 0
     type: 0
+  - name: shift12Combat
+    value: 0
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!1001 &2085675266
 Prefab:

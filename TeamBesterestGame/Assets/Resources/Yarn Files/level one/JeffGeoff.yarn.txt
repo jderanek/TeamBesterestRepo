@@ -307,7 +307,7 @@ Alright, look, I'm sorry for taking your scone, ok?
 <<ChangeSpeaker SoundManager Geoff>>
 ...Do you really mean it?
 
-//<<ChangeSpeaker SoundManager Voiceless>>
+<<ChangeSpeaker SoundManager Voiceless>>
 Jeff shoots you a dirty look, and sighs heavily.
 
 <<ChangeSpeaker SoundManager Jeff>>
@@ -320,10 +320,10 @@ Well... alright. I bet we'll really mess them up this time!
 <<ChangeSpeaker SoundManager Jeff>>
 Yea, sure, whatever.
 
-<<set $shift12Combat 1>>
+<<set $shift12Combat to 1>>
 //4 points
 //------------------
-<<elseif $apologize1 is true and $apologize2 is false>>
+<<elseif $apologize1 is true and $apologize2 is true>>
 //IF ONLY Jeff is flagged Apology:
 <<ChangeSpeaker SoundManager Jeff>>
 Alright, look, I'm sorry for taking your scone, ok?
@@ -340,7 +340,7 @@ You want to say that to my face, tough guy?!
 <<ChangeSpeaker SoundManager Jeff>>
 It'll go just as well as it did last time. Try it! I dare you!
 
-//<<ChangeSpeaker SoundManager Voiceless>>
+<<ChangeSpeaker SoundManager Voiceless>>
 The two continue to bicker back and forth at each other until they leave.
 You're sure this isn't going to end well.
 
@@ -359,7 +359,7 @@ You wanna say that to my face, tough guy?!
 <<ChangeSpeaker SoundManager Jeff>>
 It'll go just as well as it did last time. Try it! I dare you!
 
-//<<ChangeSpeaker SoundManager Voiceless>>
+<<ChangeSpeaker SoundManager Voiceless>>
 The two continue to bicker back and forth at each other until they leave.
 You're sure this isn't going to end well.
 
