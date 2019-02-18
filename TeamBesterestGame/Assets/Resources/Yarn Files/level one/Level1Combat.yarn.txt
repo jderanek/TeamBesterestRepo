@@ -7,7 +7,7 @@ position: 426,260
 Goblenn saw heroes enter the dungeon, and instantly fled.
 //0 points
 
-<<elseif $shift12Combat is 1>>
+<<elseif $shift11Combat is 1>>
 Goblenn saw heroes enter the dungeon, but they did not see him.
 He sneak attacks the heroes, defeating them!
 //4 points

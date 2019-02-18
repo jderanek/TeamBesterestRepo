@@ -232,7 +232,7 @@ But *not* until then!
 title: JeffGeoffSolution1
 tags: 
 colorID: 2
-position: 3974,2083
+position: 3974,2085
 ---
 <<ChangeSpeaker SoundManager Jeff>>
 Well? What's it gonna be?
@@ -287,8 +287,8 @@ Haha!
 Settle down already, we gotta go get ready for those heroes.
 
 <<ChangeSpeaker SoundManager Voiceless>>
-[As the two leave, you see Geoff staring daggers at you and Jeff.]
-[You're sure this isn't going to end well.]
+As the two leave, you see Geoff staring daggers at you and Jeff.
+You're sure this isn't going to end well.
 
 //Default Case for combat
 //0 points
@@ -299,7 +299,7 @@ colorID: 2
 position: 4412,2199
 ---
 //IF Jeff AND Geoff are flagged Apology:
-<<if $apologize1 is true and $apologize2 are true>>
+<<if $apologize1 is true and $apologize2 is true>>
 
 <<ChangeSpeaker SoundManager Jeff>>
 Alright, look, I'm sorry for taking your scone, ok?
@@ -307,8 +307,8 @@ Alright, look, I'm sorry for taking your scone, ok?
 <<ChangeSpeaker SoundManager Geoff>>
 ...Do you really mean it?
 
-<<ChangeSpeaker SoundManager Voiceless>>
-[Jeff shoots you a dirty look, and sighs heavily.]
+//<<ChangeSpeaker SoundManager Voiceless>>
+Jeff shoots you a dirty look, and sighs heavily.
 
 <<ChangeSpeaker SoundManager Jeff>>
 Yes. Really. Can we please get back to work so we can clobber those heroes already?
@@ -340,9 +340,9 @@ You want to say that to my face, tough guy?!
 <<ChangeSpeaker SoundManager Jeff>>
 It'll go just as well as it did last time. Try it! I dare you!
 
-<<ChangeSpeaker SoundManager Voiceless>>
-[The two continue to bicker back and forth at each other until they leave.]
-[You're sure this isn't going to end well.]
+//<<ChangeSpeaker SoundManager Voiceless>>
+The two continue to bicker back and forth at each other until they leave.
+You're sure this isn't going to end well.
 
 //Default Case
 //0 points
@@ -359,9 +359,9 @@ You wanna say that to my face, tough guy?!
 <<ChangeSpeaker SoundManager Jeff>>
 It'll go just as well as it did last time. Try it! I dare you!
 
-<<ChangeSpeaker SoundManager Voiceless>>
-[The two continue to bicker back and forth at each other until they leave.]
-[You're sure this isn't going to end well.]
+//<<ChangeSpeaker SoundManager Voiceless>>
+The two continue to bicker back and forth at each other until they leave.
+You're sure this isn't going to end well.
 
 //Default Case
 //0 points
