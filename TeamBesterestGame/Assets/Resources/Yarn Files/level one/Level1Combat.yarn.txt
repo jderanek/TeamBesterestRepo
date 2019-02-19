@@ -13,6 +13,7 @@ He sneak attacks the heroes, defeating them!
 //4 points
 
 <<endif>>
+<<ChangeShift Gabbin>>
 [[Shift12]]
 ===
 title: Shift12
@@ -33,7 +34,7 @@ Geoff works with Jeff, and defeats a hero.
 //4 points
 
 <<endif>>
-
+<<ChangeShift Gabbin>>
 [[Shift13]]
 ===
 title: Shift13
@@ -65,4 +66,5 @@ All the heroes are swiftly defeated.
 //4 points
 
 <<endif>>
+<<ChangeShift Gabbin>>
 ===

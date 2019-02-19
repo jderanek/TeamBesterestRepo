@@ -9198,19 +9198,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultVariables:
-  - name: goblennPoints
+  - name: shift11Combat
     value: 0
     type: 0
-  - name: geoffPoints
+  - name: shift12Combat
     value: 0
     type: 0
-  - name: jeffPoints
-    value: 0
-    type: 0
-  - name: gabbinPoints
-    value: 0
-    type: 0
-  - name: nilbogPoints
+  - name: shift13Combat
     value: 0
     type: 0
   debugTextView: {fileID: 0}
@@ -9246,13 +9240,13 @@ MonoBehaviour:
   gameManager: {fileID: 1031783963}
   monster: {fileID: 186385151}
   sourceText:
-  - {fileID: 4900000, guid: 615c5b6325964bf4fb4f6640bc5d4cba, type: 3}
+  - {fileID: 4900000, guid: 8f6a0aa663ae1854c866c9c0d4f6a2e7, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
   variableStorage: {fileID: 984599860}
   dialogueUI: {fileID: 984599861}
-  startNode: shift1
+  startNode: Shift11
   dialogueVoice: 1
   startAutomatically: 0
   automaticCommands: 1

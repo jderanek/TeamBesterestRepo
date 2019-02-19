@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
                 interviewing = false;
                 interviewCanvas.SetActive(false);
                 combatCanvas.SetActive(true);
-                combatManager.GetComponent<DialogueRunner>().StartDialogue("shift1");
+                combatManager.GetComponent<DialogueRunner>().StartDialogue("Shift11");
                 phaseButton.GetComponentInChildren<Text>().text = "Skip Combat";
                 break;
             case "Interview":
