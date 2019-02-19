@@ -21,7 +21,7 @@ Really now? So what number am I thinking of?
 [[It is 1 for sure|Tutorial1221]]
 [[Let me guess, 501?|Tutorial1221]]
 [[1453, definitely|Tutorial1221]]
-<<if $guessProof is true>>
+<<elseif $guessProof is true>>
 [[24,601.|Tutorial1222]]
 <<endif>>
 ===
@@ -44,12 +44,12 @@ What?! Then we are done here, find some other fool to hire you.
 title: Tutorial12
 tags: 
 colorID: 0
-position: 1133,409
+position: 1131,409
 ---
 Oh really? What was your speciality?
 <<if $timeMagicSpecific is false>>
 [[I did not really focus on one area, more like a general knowledge of wizardy.|Tutorial121]]
-<<if $timeMagicSpecific is true>>
+<<elseif $timeMagicSpecific is true>>
 [[I did my dissertation on the morals and ethics of time magic.|Tutorial122]]
 <<endif>>
 ===
