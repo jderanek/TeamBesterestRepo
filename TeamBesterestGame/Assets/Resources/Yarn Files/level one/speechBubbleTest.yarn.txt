@@ -1,0 +1,34 @@
+title: Start
+tags: 
+colorID: 0
+position: 540,260
+---
+<<ChangeSpeaker SoundManager Goblenn>>
+you are testing the speech bubble changes
+[[neat |next]]
+===
+title: next
+tags: 
+colorID: 0
+position: 779,266
+---
+<<ChangeSpeaker SoundManager Nilbog>>
+did it work?
+[[yes!!! :D |happy]]
+[[no :( |sad]]
+===
+title: happy
+tags: 
+colorID: 0
+position: 1035,120
+---
+<<ChangeSpeaker SoundManager Goblenn>>
+:)
+===
+title: sad
+tags: 
+colorID: 0
+position: 1050,343
+---
+:(
+===

@@ -8067,6 +8067,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9275924ca9439b6408260fbbf6c1d002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoblennDialogueMarker: {fileID: 1309227401}
+  GabbinDialogueMarker: {fileID: 1099031334}
+  GeoffDialogueMarker: {fileID: 1663927626}
+  JeffDialogueMarker: {fileID: 37360780}
+  NilbogDialogueMarker: {fileID: 1105812795}
 --- !u!4 &837441192
 Transform:
   m_ObjectHideFlags: 0
