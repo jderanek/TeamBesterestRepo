@@ -3,14 +3,14 @@
 	<Platform GUID="{EF13DD8D-2B0F-4CA8-99B2-D6BD7C85F27C}">
 		<Banks>
 			<Language ID="393239870">
-				<File Name="Default" Hash="825844009" Timestamp="1550271254"/>
-				<File Name="Init" Hash="1847278410" Timestamp="1550271256"/>
-				<File Name="Main" Hash="894413800" Timestamp="1550271256"/>
+				<File Name="Default" Hash="825844009" Timestamp="1550597022"/>
+				<File Name="Init" Hash="1847278410" Timestamp="1550597024"/>
+				<File Name="Main" Hash="2664238597" Timestamp="1550597023"/>
 			</Language>
 		</Banks>
 		<XMLInfo>
 			<Language ID="-1">
-				<File Name="" Hash="1453310813" Timestamp="1550271256"/>
+				<File Name="" Hash="480597930" Timestamp="1550597024"/>
 			</Language>
 		</XMLInfo>
 	</Platform>

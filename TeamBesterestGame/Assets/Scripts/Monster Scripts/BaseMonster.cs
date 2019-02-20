@@ -139,6 +139,7 @@ public abstract class BaseMonster : BaseEntity {
         response.SetActive(false);
         this.uiManager.SpeechBubblesOff();
         //grey out portrait
+        uiManager.speaker.SetActive(false);
     }
 
     [YarnCommand("ChangeShift")]

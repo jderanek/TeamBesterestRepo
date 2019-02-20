@@ -86,19 +86,32 @@
 				</Event>
 				<Event Name="Boss_Voice" ID="{5E433FC4-0108-4F53-8CB3-015F3FBA97B4}">
 					<ChildrenList>
-						<Action Name="" ID="{1E1EC609-75F3-4784-B4A5-CFAD6F82DC58}" ShortID="448580109">
+						<Action Name="" ID="{C8737DB9-8623-4ADD-9882-71545987DFA3}" ShortID="281450942">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Avery_Sounds" ID="{58B4712E-B4E6-41EF-BDD1-E865B7EFAA78}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+									<ObjectRef Name="Steven_Sounds" ID="{BE8B4485-6BB4-4212-8612-5E608B05A71D}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Voiceless" ID="{9C4B780B-CE93-43E0-85BC-860CB1971736}"/>
+				<Event Name="Voiceless" ID="{9C4B780B-CE93-43E0-85BC-860CB1971736}">
+					<ChildrenList>
+						<Action Name="" ID="{A4D4C96A-525A-4181-905A-273EE841D337}" ShortID="920849694">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button_Click" ID="{BFD0F46B-2EAB-487A-9A8F-F8539469AD67}" WorkUnitID="{8EBC96C7-2321-49D9-A2BE-A1851AA20A2A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

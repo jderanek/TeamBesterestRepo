@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour {
 
     public GameObject[] speechBubbles;
 
+    public GameObject speaker = null;
+
     //Opens any menu
     public void ToggleMenu(int menuToOpen)
     {

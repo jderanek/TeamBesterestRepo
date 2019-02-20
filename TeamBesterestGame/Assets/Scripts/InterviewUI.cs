@@ -74,7 +74,7 @@ namespace Yarn.Unity
             if (textSpeed > 0.0f)
             {
                 ////Calls the voice activation
-                //SoundManager.SetSoundBank();
+                SoundManager.SetSoundBank();
 
                 // Display the line one character at a time
                 var stringBuilder = new StringBuilder();

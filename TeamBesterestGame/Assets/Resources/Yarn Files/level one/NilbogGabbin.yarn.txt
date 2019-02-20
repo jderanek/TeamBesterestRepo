@@ -3,6 +3,7 @@ tags:
 colorID: 0
 position: 1893,-983
 ---
+<<ChangeSpeaker SoundManager Gabbin>>
 Hello! I'm Gabbin! Nice to meet you!
 I hope you've had an excellent time with us all so far!
 [[You seem rather chipper.|Gabbin11]]
@@ -306,7 +307,9 @@ tags:
 colorID: 1
 position: 3901,-369
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 ....
+<<ChangeSpeaker Soundmanager Gabbin>>
 ...I think you might be right...
 ...It's not like my previous attempts ever worked anyway...
 
@@ -520,6 +523,7 @@ tags:
 colorID: 0
 position: -1580,-1770
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 ...
 
 [[...|Nilbog11]]
@@ -541,6 +545,7 @@ tags:
 colorID: 0
 position: -1119,-500
 ---
+<<ChangeSpeaker SoundManager Nilbog>>
 ...Just because I'm not talking to you, doesn't mean I'm stupid.
 ...I just prefer some isolation.
 
@@ -566,6 +571,7 @@ tags:
 colorID: 0
 position: -542,-3475
 ---
+<<ChangeSpeaker SoundManager Nilbog>>
 ...You're definitely more pleasant to be around than Gabbin, that's for sure.
 
 [[What's the beef with Gabbin?|Nilbog1111]]
@@ -643,6 +649,7 @@ tags:
 colorID: 0
 position: -498,-2667
 ---
+<<ChangeSpeaker SoundManager Nilbog>>
 ...darn, and here I thought we understood each other.
 
 [[...Anyway, what's up with you and Gabbin?|Nilbog1111]]
@@ -715,7 +722,9 @@ tags:
 colorID: 1
 position: 586,-4047
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 ...
+<<ChangeSpeaker SoundManager Nilbog>>
 ...You're right. We've really been getting our butts handed to us.
 ...If I *have* to, I guess I'll go along with it...
 
@@ -779,7 +788,9 @@ tags:
 colorID: 0
 position: -169,-2672
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 ....
+<<ChangeSpeaker SoundManager Nilbog>>
 ...Look. I need Gabbin off my back. Can you at least do that?
 
 [[Oh no, I need you both to work together.|Nilbog11111]]
@@ -804,7 +815,9 @@ tags:
 colorID: 1
 position: 194,-1592
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 ...
+<<ChangeSpeaker SoundManager Nilbog>>
 ...You're right. We've really been getting our butts handed to us.
 ...If I *have* to, I guess I'll go along with it...
 
@@ -847,6 +860,7 @@ tags:
 colorID: 1
 position: 503,-486
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 ...
 <<set $talkedToNilbog to true>>
 <<EndInterview Nilbog>>
@@ -873,7 +887,9 @@ tags:
 colorID: 1
 position: -754,-121
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 .....
+<<ChangeSpeaker SoundManager Nilbog>>
 ...I don't need to take this from you.
 
 <<set $talkedToNilbog to true>>
