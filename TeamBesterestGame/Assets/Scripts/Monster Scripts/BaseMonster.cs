@@ -142,6 +142,13 @@ public abstract class BaseMonster : BaseEntity {
         uiManager.speaker.SetActive(false);
     }
 
+    [YarnCommand("EndTutorial")]
+    public void EndTutorial()
+    {
+        this.gameManager.interviewing = false;
+        this.gameManager.LoadLevelOne();
+    }
+
     [YarnCommand("ChangeShift")]
     public void ChangeShift()
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
@@ -225,6 +226,30 @@ public class GameManager : MonoBehaviour
             monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().Stop();
         }
         
+    }
+
+    public void TutorialReset()
+    {
+        this.interviewing = false;
+        foreach (GameObject monster in monsterList)
+        {
+            monster.GetComponent<BaseMonster>().Reset();
+        }
+        foreach (GameObject monster in monsterList)
+        {
+            monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().Stop();
+        }
+        foreach (GameObject monster in monsterList)
+        {
+            monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
+        }
+
+    }
+
+    public void LoadLevelOne()
+    {
+        print("loading level 1");
+        SceneManager.LoadScene("Scene2");
     }
 
     public void ExitGame()

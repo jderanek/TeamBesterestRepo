@@ -3707,6 +3707,80 @@ RectTransform:
   m_AnchoredPosition: {x: 142.075, y: -25}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &509780441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 509780442}
+  - component: {fileID: 509780444}
+  - component: {fileID: 509780443}
+  m_Layer: 5
+  m_Name: RewindText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &509780442
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 509780441}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1256514715}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.90624994, y: 0.19100001}
+  m_AnchorMax: {x: 1, y: 0.26987955}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 2.0200043}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &509780443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 509780441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Rewind Time
+--- !u!222 &509780444
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 509780441}
 --- !u!1 &510383508
 GameObject:
   m_ObjectHideFlags: 0
@@ -5616,6 +5690,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9275924ca9439b6408260fbbf6c1d002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoblennDialogueMarker: {fileID: 0}
+  GabbinDialogueMarker: {fileID: 0}
+  GeoffDialogueMarker: {fileID: 0}
+  JeffDialogueMarker: {fileID: 0}
+  NilbogDialogueMarker: {fileID: 0}
 --- !u!4 &837441192
 Transform:
   m_ObjectHideFlags: 0
@@ -5969,7 +6048,7 @@ GameObject:
   - component: {fileID: 951470857}
   - component: {fileID: 951470856}
   m_Layer: 9
-  m_Name: Jeff
+  m_Name: Boss
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6572,10 +6651,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterList:
   - {fileID: 951470855}
-  - {fileID: 1335600113}
-  - {fileID: 14465732}
-  - {fileID: 1765382683}
-  - {fileID: 906177782}
   interviewing: 0
   combatCanvas: {fileID: 0}
   goblennPortrait: {fileID: 0}
@@ -6682,6 +6757,7 @@ MonoBehaviour:
   - {fileID: 1105812795}
   - {fileID: 1663927626}
   - {fileID: 37360780}
+  speaker: {fileID: 951470855}
 --- !u!114 &1031783969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8057,6 +8133,7 @@ RectTransform:
   - {fileID: 1105812796}
   - {fileID: 1663927627}
   - {fileID: 37360781}
+  - {fileID: 509780442}
   - {fileID: 1560712351}
   m_Father: {fileID: 1495284378}
   m_RootOrder: 0
@@ -9308,10 +9385,10 @@ RectTransform:
   m_Father: {fileID: 363629754}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -168.98288}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0.5, y: 0.07953638}
+  m_AnchorMax: {x: 0.5, y: 0.07953638}
+  m_AnchoredPosition: {x: 0, y: 2}
+  m_SizeDelta: {x: 160, y: 31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514192121
 MonoBehaviour:
@@ -9632,7 +9709,7 @@ RectTransform:
   - {fileID: 714831717}
   - {fileID: 1219348025}
   m_Father: {fileID: 1256514715}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -9689,18 +9766,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1031783964}
-          m_MethodName: ResetPhase
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1031783968}
-          m_MethodName: SpeechBubblesOff
+          m_MethodName: TutorialReset
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

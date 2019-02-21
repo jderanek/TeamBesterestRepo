@@ -44,7 +44,7 @@ What?! Then we are done here, find some other fool to hire you.
 title: Tutorial12
 tags: 
 colorID: 0
-position: 1131,409
+position: 1128,404
 ---
 Oh really? What was your speciality?
 <<if $timeMagicSpecific is false>>
@@ -80,5 +80,5 @@ position: 1742,962
 ---
 That... how did you? Was that luck? 
 Interesting, let me show you what is going wrong around here.
-<<EndInterview Boss>>
+<<EndTutorial Boss>>
 ===
