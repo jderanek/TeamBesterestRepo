@@ -1,0 +1,286 @@
+title: Coward1Base
+tags: 
+colorID: 0
+position: -190,547
+---
+<<ChangeSpeaker SoundManager Goblenn>>
+H-huh?
+Oh, yeah. I-I'm Goblenn...
+I'm the... front-line fighter around here.
+[[Front-line fighter? That is quite brave.|Coward11]]
+[[You must see a lot of combat then.|Coward12]]
+[[Tell me about yourself.|Coward13]]
+<<if $ambushTactics == 1>>
+[[I get the feeling you know many great hiding spots, I think you can use them to ambush heroes.|Coward1332]]
+<<endif>>
+===
+title: Coward11
+tags: 
+colorID: 0
+position: 363,-316
+---
+I wouldn't exactly call myself brave...
+[[What would you call yourself then?|Coward111]]
+[[Why would you say that?|Coward112]]
+
+===
+title: Coward111
+tags: 
+colorID: 0
+position: 938,-734
+---
+Usually I try to avoid fighting where I can, so a coward I guess.. 
+[[A coward as the pointman in combat? I can see why I got asked to come here.|Coward1111]]
+
+===
+title: Coward1111
+tags: 
+colorID: 1
+position: 1838,-943
+---
+I do appreciate all the help you are doing for us, I know you are trying your best...
+<<MoodHit Goblenn>>
+<<EndInterview Goblenn>>
+//Goblenn_seems_to_be_lacking_in_confidence.
+===
+title: Coward112
+tags: 
+colorID: 0
+position: 1312,-447
+---
+I always hear snide remarks about me being a deserter between shifts, almost daily in fact...
+[[Well, hopefully with me here, I can fix that for you somehow.|Coward1111]]
+[[Maybe there is a way for you to change their opinion?|Coward11222]]
+===
+title: Coward11222
+tags: 
+colorID: 1
+position: 1827,-510
+---
+Goblenn: You think so? Maybe I can use my hiding spots in some way?
+//Unlock Coward2
+<<set $ambushTactics to 1>>
+<<EndInterview Goblenn>>
+//Goblenn_knows_a_lot_about_dark_corners_and_spaces_in_the_dungeon,_might be useful
+===
+title: Coward12
+tags: 
+colorID: 0
+position: 628,-27
+---
+Well...
+not reaally...
+not always...
+not usually, actually...
+[[Not actually? You are on the front line, how does that work?|Coward122]]
+[[So you are a coward, then?|Coward121]]
+===
+title: Coward122
+tags: 
+colorID: 0
+position: 1522,203
+---
+<<MoodHit Goblenn>>
+You could say that, I guess.. but I call it being smart!
+Heroes are so scary...
+[[Are you adverse to fighting them too?|Coward1321]]
+===
+title: Coward13
+tags: 
+colorID: 0
+position: 535,689
+---
+W-well...
+I like to run...
+And I know all the best hiding spots in the dungeon!
+//Unlocks Coward2 option about Ambush Tactics
+<<set $ambushTactics to 1>>
+[[Hiding spots? Aren't you the front line fighter here?|Coward131]]
+[[I bet those skills are great for catching heroes off guard.|Coward132]]
+[[How do those spots help you kill heroes?|Coward133]]
+===
+title: Coward131
+tags: 
+colorID: 0
+position: 810,314
+---
+Well...
+yes...technically.
+[[Are you afraid of fighting?|Coward1321]]
+===
+title: Coward132
+tags: 
+colorID: 0
+position: 1419,749
+---
+//Mood Gain
+You are right, but is also lets me get away safely when heroes arrive.
+[[You are the first line of defense, but yet you run away?|Coward1321]]
+[[The vanguard retreating at first contact? I imagine that makes you quite unpopular.|Coward1321]]
+[[That doesn't sound like it helps out in combat|Coward133]]
+===
+title: Coward1321
+tags: 
+colorID: 0
+position: 1902,575
+---
+I don't mind fighting, it is just the dying part that scares me...
+[[That is understandable, but you still need to fight heroes, that is your job.|Coward13211]]
+
+===
+title: Coward1331
+tags: 
+colorID: 1
+position: 1657,1184
+---
+I see.. 
+Just tell me when you think of something then!
+<<EndInterview Goblenn>>
+//Perhaps_his_hiding_spots_could_be_used_in_another_way
+===
+title: Coward13211
+tags: 
+colorID: 1
+position: 2337,614
+---
+Goblenn:I know that, b-but I still think my way is working out. Let me try again boss.
+<<EndInterview Goblenn>>
+//Currently_Goblenn_is_always_losing,_something_needs_to_change.
+===
+title: Coward133
+tags: 
+colorID: 0
+position: 965,1002
+---
+I-I guess they technically don't...
+[[Perhaps not in the way you are utilizing them, but I have a few ideas.|Coward1331]]
+<<if $ambushTactics == 1>>
+[[Maybe we could discuss some ambush tactics.|Coward1332]]
+<<endif>>
+===
+title: CowTree2Start
+tags: 
+colorID: 0
+position: 2876,244
+---
+<<ChangeSpeaker SoundManager Goblenn>>
+W-what did you have in mind?
+[[Do you think you could try to attack from a hidden position?|Stealth]]
+[[I know of a way to endear yourself to your comrades.|Coworkers]]
+[[You need to shape up and work harder or you are out of here!|Stern]]
+[[I understand your issues, what I can do to help?|Understanding]]
+===
+title: Understanding
+tags: 
+colorID: 0
+position: 3816,777
+---
+Tell me what I need to do to change, I am tired of running away..
+[[Running away makes the heroes laugh at you. Do you really want that?|Respect]]
+[[You can learn from your fear, use it to survive.|Smarter]]
+===
+title: Stealth
+tags: 
+colorID: 0
+position: 3903,-32
+---
+I-I am good at laying low...
+[[You can use your hiding skills to ambush any unsuspecting heroes!|Preying]]
+[[Use that speed of yours in combat to outmanuever heroes instead of running away.|Stalking]]
+===
+title: Coworkers
+tags: 
+colorID: 0
+position: 3885,317
+---
+Well, they couldn't like me any less...
+[[You are the tip of the spear, you need to prove why you were assigned there.|Teamwork]]
+[[As the vanguard, your role is to inspire your fellow goblins to victory.|Leader]]
+===
+title: Preying
+tags: 
+colorID: 2
+position: 4403,-408
+---
+L-like a ninja? T-that sounds cool!
+<<set $Ninja to true>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
+<<EndInterview Goblenn>>
+===
+title: Leader
+tags: 
+colorID: 2
+position: 4324,420
+---
+M-me?! That is a hard task... but you are right. 
+I will try to boost morale in battle...
+<<set $Leader to true>>
+<<addPoint Goblenn>>
+<<EndInterview Goblenn>>
+===
+title: Teamwork
+tags: 
+colorID: 2
+position: 4351,160
+---
+I-I can maybe talk to Jeff or Geoff about training some more then.
+<<set $Teamwork to true>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
+<<EndInterview Goblenn>>
+
+===
+title: Stalking
+tags: 
+colorID: 2
+position: 4372,-104
+---
+Wouldn't hurt to try I guess...
+<<set $Stalking to true>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
+<<EndInterview Goblenn>>
+
+===
+title: Respect
+tags: 
+colorID: 2
+position: 4349,839
+---
+N-no! I am a proud goblin! They should cower in fear of me!
+<<set $Respect to true>>
+<<addPoint Goblenn>>
+<<EndInterview Goblenn>>
+===
+title: Smarter
+tags: 
+colorID: 2
+position: 4349,1093
+---
+Surviving IS high up there on my to-do list. My fear can be useful sometimes, haha...
+<<set $Smarter to true>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
+<<EndInterview Goblenn>>
+===
+title: Coward1332
+tags: 
+colorID: 1
+position: 406,1245
+---
+A-ambush? That seems scary... but also smart! Let me think for a bit then.
+<<EndInterview Goblenn>>
+===
+title: Coward121
+tags: 
+colorID: 0
+position: 1313,-86
+---
+I guess you could say that... the other goblins say it too...
+[[They do? Can you tell me when and what they say exactly?|Coward112]]
+===
