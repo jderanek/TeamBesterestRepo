@@ -216,7 +216,7 @@ public class GameManager : MonoBehaviour
     public void ResetPhase()
     {
         strikes = 0;
-
+        this.interviewing = false;
         foreach (GameObject monster in monsterList)
         {
             monster.GetComponent<BaseMonster>().Reset();
@@ -224,6 +224,10 @@ public class GameManager : MonoBehaviour
         foreach (GameObject monster in monsterList)
         {
             monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().Stop();
+            foreach (GameObject option in monster.GetComponent<BaseMonster>().interviewOptions)
+            {
+                option.SetActive(false);
+            }
         }
         
     }
