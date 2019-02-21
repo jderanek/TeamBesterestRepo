@@ -10,6 +10,7 @@ I'm the... front-line fighter around here.
 [[Front-line fighter? That is quite brave.|Coward11]]
 [[You must see a lot of combat then.|Coward12]]
 [[Tell me about yourself.|Coward13]]
+
 <<if $ambushTactics == 1>>
 [[I get the feeling you know many great hiding spots, I think you can use them to ambush heroes.|Coward1332]]
 <<endif>>
@@ -39,9 +40,13 @@ colorID: 1
 position: 1838,-943
 ---
 I do appreciate all the help you are doing for us, I know you are trying your best...
-<<MoodHit Goblenn>>
+
+<<if $goblennNoChangeNote is false>>
+<<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
+<<set $goblennNoChangeNote to true>>
+<<endif>>
+
 <<EndInterview Goblenn>>
-//Goblenn_seems_to_be_lacking_in_confidence.
 ===
 title: Coward112
 tags: 
@@ -57,11 +62,16 @@ tags:
 colorID: 1
 position: 1827,-510
 ---
-Goblenn: You think so? Maybe I can use my hiding spots in some way?
-//Unlock Coward2
+You think so? Maybe I can use my hiding spots in some way?
+
 <<set $ambushTactics to 1>>
+
+<<if $goblennAmbushNote is false>>
+<<RevealText Goblenn Goblenn_knows_a_lot_about_dark_corners_and_spaces_in_the_dungeon,_maybe_this_can_be_helpful.>>
+<<set $goblennAmbushNote to true>>
+<<endif>>
+
 <<EndInterview Goblenn>>
-//Goblenn_knows_a_lot_about_dark_corners_and_spaces_in_the_dungeon,_might be useful
 ===
 title: Coward12
 tags: 
@@ -80,7 +90,6 @@ tags:
 colorID: 0
 position: 1522,203
 ---
-<<MoodHit Goblenn>>
 You could say that, I guess.. but I call it being smart!
 Heroes are so scary...
 [[Are you adverse to fighting them too?|Coward1321]]
@@ -93,7 +102,7 @@ position: 535,689
 W-well...
 I like to run...
 And I know all the best hiding spots in the dungeon!
-//Unlocks Coward2 option about Ambush Tactics
+
 <<set $ambushTactics to 1>>
 [[Hiding spots? Aren't you the front line fighter here?|Coward131]]
 [[I bet those skills are great for catching heroes off guard.|Coward132]]
@@ -113,7 +122,6 @@ tags:
 colorID: 0
 position: 1419,749
 ---
-//Mood Gain
 You are right, but is also lets me get away safely when heroes arrive.
 [[You are the first line of defense, but yet you run away?|Coward1321]]
 [[The vanguard retreating at first contact? I imagine that makes you quite unpopular.|Coward1321]]
@@ -135,17 +143,27 @@ position: 1657,1184
 ---
 I see.. 
 Just tell me when you think of something then!
+
+<<if $goblennNoChangeNote is false>>
+<<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
+<<set $goblennNoChangeNote to true>>
+<<endif>>
+
 <<EndInterview Goblenn>>
-//Perhaps_his_hiding_spots_could_be_used_in_another_way
 ===
 title: Coward13211
 tags: 
 colorID: 1
 position: 2337,614
 ---
-Goblenn:I know that, b-but I still think my way is working out. Let me try again boss.
+I know that, b-but I still think my way is working out. Let me try again boss.
+
+<<if $goblennNoChangeNote is false>>
+<<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
+<<set $goblennNoChangeNote to true>>
+<<endif>>
+
 <<EndInterview Goblenn>>
-//Currently_Goblenn_is_always_losing,_something_needs_to_change.
 ===
 title: Coward133
 tags: 
@@ -153,6 +171,7 @@ colorID: 0
 position: 965,1002
 ---
 I-I guess they technically don't...
+
 [[Perhaps not in the way you are utilizing them, but I have a few ideas.|Coward1331]]
 <<if $ambushTactics == 1>>
 [[Maybe we could discuss some ambush tactics.|Coward1332]]
@@ -203,7 +222,7 @@ colorID: 2
 position: 4403,-408
 ---
 L-like a ninja? T-that sounds cool!
-<<set $Ninja to true>>
+<<set $ninja to true>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
@@ -217,7 +236,7 @@ position: 4324,420
 ---
 M-me?! That is a hard task... but you are right. 
 I will try to boost morale in battle...
-<<set $Leader to true>>
+<<set $leader to true>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
 ===
@@ -227,7 +246,7 @@ colorID: 2
 position: 4351,160
 ---
 I-I can maybe talk to Jeff or Geoff about training some more then.
-<<set $Teamwork to true>>
+<<set $teamwork to true>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
@@ -240,7 +259,7 @@ colorID: 2
 position: 4372,-104
 ---
 Wouldn't hurt to try I guess...
-<<set $Stalking to true>>
+<<set $stalking to true>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
@@ -253,7 +272,7 @@ colorID: 2
 position: 4349,839
 ---
 N-no! I am a proud goblin! They should cower in fear of me!
-<<set $Respect to true>>
+<<set $respect to true>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
 ===
@@ -263,7 +282,7 @@ colorID: 2
 position: 4349,1093
 ---
 Surviving IS high up there on my to-do list. My fear can be useful sometimes, haha...
-<<set $Smarter to true>>
+<<set $smarter to true>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
@@ -274,6 +293,14 @@ colorID: 1
 position: 406,1245
 ---
 A-ambush? That seems scary... but also smart! Let me think for a bit then.
+
+<<set $ambushTactics to 1>>
+
+<<if $goblennAmbushNote is false>>
+<<RevealText Goblenn Goblenn_knows_a_lot_about_dark_corners_and_spaces_in_the_dungeon,_maybe_this_can_be_helpful.>>
+<<set $goblennAmbushNote to true>>
+<<endif>>
+
 <<EndInterview Goblenn>>
 ===
 title: Coward121
