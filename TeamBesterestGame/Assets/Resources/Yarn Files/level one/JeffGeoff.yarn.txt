@@ -10,6 +10,8 @@ What kind of jerk does that?
 [[Who do you think did it?|Geoff12]]
 [[A shame, I bet it was a tasty scone too.|Geoff13]]
 
+<<if $talkedToJeff is true>>
+[[I talked to Jeff already.|Geoff14]]
 ===
 title: Geoff11
 tags: 
@@ -21,13 +23,18 @@ And now it is gone!
 Jeff is gonna pay for that!
 
 <<set $talkedToGeoff to true>>
-<<EndInterview Geoff>>
 
-//No change in behavior
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
 //escalated the situation.
 
-//GeoffHatesJeffForStealingHisScone.IThinkIAccidentallyEscalatedTheSituation.
+<<EndInterview Geoff>>
+
 
 ===
 title: Geoff12
@@ -49,13 +56,16 @@ position: 5169,-249
 I totally agree boss! Finally someone understands.
 
 <<set $talkedToGeoff to true>>
-<<EndInterview Geoff>>
 
-//No change in behavior.
+
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
 //escalated the situation.
-
-//GeoffHatesJeffForStealingHisScone.IThinkIAccidentallyEscalatedTheSituation.
 ===
 title: Geoff122
 tags: 
@@ -85,14 +95,16 @@ position: 6262,414
 ---
 I'll show him, just watch me!
 <<set $talkedToGeoff to true>>
+
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
 <<EndInterview Geoff>>
-
-//No change in behavior.
-
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
 //escalated the situation.
 
-//GeoffHatesJeffForStealingHisScone.IThinkIAccidentallyEscalatedTheSituation.
 ===
 title: Geoff12212
 tags: 
@@ -110,7 +122,7 @@ And he knows scones are my favorite snack...
 title: Geoff12213
 tags: 
 colorID: 0
-position: 6261,885
+position: 6132,811
 ---
 Fine...
 ...But if you don't do anything about it, I will!
@@ -142,7 +154,7 @@ Uh... thanks for the sympathies there I guess?
 title: Jeff1
 tags: 
 colorID: 0
-position: 464,259
+position: -336,750
 ---
 Hi boss... what do you need?
 [[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
@@ -150,7 +162,7 @@ Hi boss... what do you need?
 title: Jeff11
 tags: 
 colorID: 0
-position: 897,260
+position: 97,751
 ---
 I don't know what you're talkin' about.
 [[I can just ask anyone else, I'm sure they'll talk.|Jeff111]]
@@ -166,7 +178,7 @@ I don't know what you're talkin' about.
 title: Jeff112
 tags: 
 colorID: 0
-position: 1414,26
+position: 614,517
 ---
 Alright, fine. Geoff and I have been fightin'.
 All started because of some stupid scone of his.
@@ -176,7 +188,7 @@ All started because of some stupid scone of his.
 title: Jeff111
 tags: 
 colorID: 0
-position: 1365,-336
+position: 565,155
 ---
 Psh! Please, they'd just tell you the same thing.
 Geoff is a maniac! When he isn't crying about losing food, he's picking fights!
@@ -188,7 +200,7 @@ Geoff is a maniac! When he isn't crying about losing food, he's picking fights!
 title: Jeff1121
 tags: 
 colorID: 0
-position: 1865,-28
+position: 1065,463
 ---
 Oh, nothing much really. I just ate his scone, is all!
 Haha! He was so mad when he found out it was gone.
@@ -204,13 +216,15 @@ position: 6824,674
 ---
 ...
 <<set $talkedToGeoff to true>>
-<<EndInterview Geoff>>
 
-//No change in behavior.
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
 //escalated the situation.
-
-//GeoffHatesJeffForStealingHisScone.IThinkIAccidentallyEscalatedTheSituation.
 ===
 title: Geoff122131
 tags: 
@@ -222,17 +236,21 @@ But *not* until then!
 
 <<set $talkedToGeoff to true>>
 <<set $apologize2 to true>>
+
+<<if geoffApologyReadyNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
+<<set geoffApologyReadyNote to true>>
+<<endif>>
+
 <<EndInterview Geoff>>
 
 //Journal Note: Geoff hates Jeff for stealing his scone, but if he gets an apology,
 //I might be able to get this to work.
-
-//GeoffHatesJeffForStealingHisScone,ButIfHeGetsAnApology,IMightBeAbleToGetThisToWork.
 ===
 title: JeffGeoffSolution1
 tags: 
 colorID: 2
-position: 3974,2085
+position: 3091,3295
 ---
 <<ChangeSpeaker SoundManager Jeff>>
 Well? What's it gonna be?
@@ -246,7 +264,7 @@ Yea, what's the deal, Boss?
 title: Jeff113
 tags: 
 colorID: 0
-position: 1348,646
+position: 548,1137
 ---
 Beef? With Geoff? Who could *possibly* be mad at someone so ridiculous?
 He complains about food all day then picks fights with me when things don't work out.
@@ -263,7 +281,7 @@ He gets what's comin' to him.
 title: Jeff114
 tags: 
 colorID: 0
-position: 1334,1503
+position: 534,1994
 ---
 Is he now? That doesn't surprise me.
 He conscript you to get his precious scone back?
@@ -276,7 +294,7 @@ Spoiler alert, I ate it yesterday. Good luck with that one.
 title: JeffGeoffSolution11
 tags: 
 colorID: 2
-position: 4414,1900
+position: 3531,3110
 ---
 <<ChangeSpeaker SoundManager Geoff>>
 Wait, what?!
@@ -296,7 +314,7 @@ You're sure this isn't going to end well.
 title: JeffGeoffSolution12
 tags: 
 colorID: 2
-position: 4412,2199
+position: 3529,3409
 ---
 //IF Jeff AND Geoff are flagged Apology:
 <<if $apologize1 is true and $apologize2 is true>>
@@ -370,7 +388,7 @@ You're sure this isn't going to end well.
 title: Jeff1112
 tags: 
 colorID: 0
-position: 1937,-634
+position: 1137,-143
 ---
 Oh yea? The heroes ain't exactly kind, neither.
 ...Would be nice to kick their butts, for a change.
@@ -382,22 +400,26 @@ Oh yea? The heroes ain't exactly kind, neither.
 title: Jeff11123
 tags: 
 colorID: 1
-position: 2236,-349
+position: 1436,142
 ---
 Ha! Now *that* I would like to see!
 A wizard, beating a goblin warrior in a fight. *That* will be the day!
 
 <<set $talkedToJeff to true>>
-<<EndInterview Jeff>>
-//No change in behavior
-//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+<<if jeffLittleInfoNote is false>>
+<<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
+<<set jeffLittleInfoNote to true>>
+<<endif>>
 
-//JeffSeemsToHaveAntagonizedGeoff,AndIsn'tVeryFriendly
+<<EndInterview Jeff>>
+//No change in behavior.
+
+//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
 ===
 title: Jeff11121
 tags: 
 colorID: 1
-position: 2628,-963
+position: 1828,-472
 ---
 You know what, fine.
 I was going to get on your case about how weak that'd make me look...
@@ -406,18 +428,23 @@ I'll apologize to the guy, but if he loses his cool again, I'm going to defend m
 
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
+
+<<if jeffApologyReadyNote is false>>
+<<RevealText Jeff Somehow,_I_convinced_Jeff_to_apologize_to_Goeff._Now_I_just_need_to_make_sure_Goeff_is_in_the_mood_to_accept_his_apology,_and_maybe_they'll_work_together_again.>>
+<<set jeffApologyReadyNote to true>>
+<<endif>>
+
 <<EndInterview Jeff>>
 
 //Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
 //make sure Geoff is in the mood to accept his apology, and maybe they'll work 
 //together again.
 
-//Somehow,IConvincedJeffToApologizeToGeoff.NowIJustNeedToMakeSureGeoffIsInTheMoodToAcceptHisApology,AndMaybeThey'llWorkTogetherAgain.
 ===
 title: Jeff11122
 tags: 
 colorID: 0
-position: 2339,-618
+position: 1539,-127
 ---
 Because Geoff is so busy trying to kill me that the heroes win every time!
 It's clearly his fault.
@@ -427,23 +454,27 @@ It's clearly his fault.
 title: Jeff111221
 tags: 
 colorID: 1
-position: 2698,-621
+position: 1898,-130
 ---
 Nope! He attacks me, that's all I care about.
 Now, if you're going to sit here and ask dumb questions all day, I've got heroes to prepare for.
 
 <<set $talkedToJeff to true>>
+
+<<if jeffLittleInfoNote is false>>
+<<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
+<<set jeffLittleInfoNote to true>>
+<<endif>>
+
 <<EndInterview Jeff>>
 //No change in behavior.
 
 //Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-
-//JeffSeemsToHaveAntagonizedGeoff,AndIsn'tVeryFriendly
 ===
 title: Jeff11211
 tags: 
 colorID: 0
-position: 2335,-41
+position: 1535,450
 ---
 Oh? And why would I do that?
 
@@ -454,23 +485,26 @@ Oh? And why would I do that?
 title: Jeff112111
 tags: 
 colorID: 1
-position: 2658,-184
+position: 1858,307
 ---
 Right, and I'm known for doing charity work.
 Look, unless you can offer me a raise or something, you're wasting your time.
 
 <<set $talkedToJeff to true>>
+<<if jeffLittleInfoNote is false>>
+<<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
+<<set jeffLittleInfoNote to true>>
+<<endif>>
+
 <<EndInterview Jeff>>
 //No change in behavior.
 
 //Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-
-//JeffSeemsToHaveAntagonizedGeoff,AndIsn'tVeryFriendly
 ===
 title: Jeff112113
 tags: 
 colorID: 1
-position: 2662,58
+position: 1862,549
 ---
 Ha! Haha!
 I'll tell you what, I like your moxie. 
@@ -480,19 +514,23 @@ I'll do it, if for no other reason than the look on your face right now.
 
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
-<<EndInterview Jeff>>
 
+<<if jeffApologyReadyNote is false>>
+<<RevealText Jeff Somehow,_I_convinced_Jeff_to_apologize_to_Goeff._Now_I_just_need_to_make_sure_Goeff_is_in_the_mood_to_accept_his_apology,_and_maybe_they'll_work_together_again.>>
+<<set jeffApologyReadyNote to true>>
+<<endif>>
+
+<<EndInterview Jeff>>
 
 //Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
 //make sure Geoff is in the mood to accept his apology, and maybe they'll work 
 //together again.
 
-//Somehow,IConvincedJeffToApologizeToGeoff.NowIJustNeedToMakeSureGeoffIsInTheMoodToAcceptHisApology,AndMaybeThey'llWorkTogetherAgain.
 ===
 title: Jeff11212
 tags: 
 colorID: 0
-position: 2329,406
+position: 1529,897
 ---
 Because I was hungry? Looked real good, too. Really hit the spot.
 
@@ -502,23 +540,25 @@ Because I was hungry? Looked real good, too. Really hit the spot.
 title: Jeff112122
 tags: 
 colorID: 1
-position: 2626,397
+position: 1826,888
 ---
 Darned straight!
 
 <<set $talkedToJeff to true>>
-<<EndInterview Jeff>>
+<<if jeffLittleInfoNote is false>>
+<<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
+<<set jeffLittleInfoNote to true>>
+<<endif>>
 
+<<EndInterview Jeff>>
 //No change in behavior.
 
 //Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-
-//JeffSeemsToHaveAntagonizedGeoff,AndIsn'tVeryFriendly
 ===
 title: Jeff1142
 tags: 
 colorID: 0
-position: 3272,1396
+position: 2472,1887
 ---
 Not if you can find a good enough reason for me to!
 
@@ -529,7 +569,7 @@ Not if you can find a good enough reason for me to!
 title: Jeff1141
 tags: 
 colorID: 0
-position: 1585,1813
+position: 785,2304
 ---
 Really? He's going to try and fight me, huh?
 Wouldn't be the first time. Probably won't end well for him.
@@ -542,23 +582,27 @@ Per the usual.
 title: Jeff11413
 tags: 
 colorID: 1
-position: 1881,2184
+position: 1081,2675
 ---
 Honestly? Maybe.
 With the heads up, maybe I can get the jump on him. Who knows!
 Can't hurt to try!
+
 <<set $talkedToJeff to true>>
+<<if jeffLittleInfoNote is false>>
+<<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
+<<set jeffLittleInfoNote to true>>
+<<endif>>
+
 <<EndInterview Jeff>>
+//No change in behavior.
 
-//No change in behavior
-//Journal Note: Jeff seems to be a rather aggressive goblin. He and Geoff hate each other.
-
-//JeffSeemsToBeARatherAggressiveGoblin.HeAndGeoffHateEachOther.
+//Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
 ===
 title: Jeff11411
 tags: 
 colorID: 0
-position: 1918,1637
+position: 1118,2128
 ---
 Hey, if the heroes weren't there, that would've worked differently!
 
@@ -569,7 +613,7 @@ Hey, if the heroes weren't there, that would've worked differently!
 title: Jeff114111
 tags: 
 colorID: 1
-position: 2425,1781
+position: 1625,2272
 ---
 ....Alright, you got me there.
 Alright, look, I'll apologize to the guy.
@@ -579,36 +623,41 @@ He better appreciate this.
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
 
+<<if jeffApologyReadyNote is false>>
+<<RevealText Jeff Somehow,_I_convinced_Jeff_to_apologize_to_Goeff._Now_I_just_need_to_make_sure_Goeff_is_in_the_mood_to_accept_his_apology,_and_maybe_they'll_work_together_again.>>
+<<set jeffApologyReadyNote to true>>
+<<endif>>
+
 <<EndInterview Jeff>>
 
 //Journal Note: Somehow, I convinced Jeff to apologize to Geoff. Now I just need to 
 //make sure Geoff is in the mood to accept his apology, and maybe they'll work 
 //together again.
-
-//Somehow,IConvincedJeffToApologizeToGeoff.NowIJustNeedToMakeSureGeoffIsInTheMoodToAcceptHisApology,AndMaybeThey'llWorkTogetherAgain.
 ===
 title: Jeff114112
 tags: 
 colorID: 1
-position: 2419,2052
+position: 1625,2543
 ---
 Really? Me, lose to that guy?
 If you think *that* is realistic, you need your eyes checked.
 I'm done here.
 
 <<set $talkedToJeff to true>>
-<<EndInterview Jeff>>
+<<if jeffLittleInfoNote is false>>
+<<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
+<<set jeffLittleInfoNote to true>>
+<<endif>>
 
+<<EndInterview Jeff>>
 //No change in behavior.
 
 //Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
-
-//JeffSeemsToHaveAntagonizedGeoff,AndIsn'tVeryFriendly
 ===
 title: Jeff1133
 tags: 
 colorID: 0
-position: 1752,632
+position: 952,1123
 ---
 Jeff: Guilty as charged.
 
@@ -619,7 +668,7 @@ Jeff: Guilty as charged.
 title: Jeff1132
 tags: 
 colorID: 0
-position: 1743,916
+position: 943,1407
 ---
 Nothing less!
 
@@ -629,16 +678,360 @@ Nothing less!
 title: Jeff11321
 tags: 
 colorID: 1
-position: 2307,919
+position: 1507,1410
 ---
 Just like this conversation, pal. I think we're done.
 
 <<set $talkedToJeff to true>>
-<<EndInterview Jeff>>
+<<if jeffLittleInfoNote is false>>
+<<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
+<<set jeffLittleInfoNote to true>>
+<<endif>>
 
+<<EndInterview Jeff>>
 //No change in behavior.
 
 //Journal Note: Jeff seems to have antagonized Geoff, and isn't very friendly.
+===
+title: Geoff14
+tags: 
+colorID: 0
+position: 4393,2794
+---
+Wait, what?
 
-//JeffSeemsToHaveAntagonizedGeoff,AndIsn'tVeryFriendly
+<<ChangeSpeaker SoundManager Jeff>>
+We're all in the same room, genius.
+
+<<ChangeSpeaker SoundManager Geoff>>
+...Then you know what he did!
+We have to do something about him!
+
+<<if $apologize1 is true>>
+[[He's ready to apologize about the whole scone thing.|Geoff141]]
+<<else>>
+[[I can see why you two don't get along.|Geoff142]]
+<<endif>>
+
+[[What did you have in mind?|Geoff143]]
+[[The only thing I *have* to do is get you two to fight better.|Geoff144]]
+===
+title: Geoff141
+tags: 
+colorID: 0
+position: 4987,1790
+---
+He admits it then, huh?!
+I'll clobber him!
+
+[[Can't you accept his apology and move on?|Geoff1411]]
+[[Wait, why would you do that?|Geoff1412]]
+[[Your first response to an apology is to attack him? How nice.|Geoff1413]]
+===
+title: Geoff1413
+tags: 
+colorID: 1
+position: 5301,2178
+---
+I've fought Jeff for less!
+He's gonna get it this time!
+
+<<set $talkedToGeoff to true>>
+
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
+===
+title: Geoff1411
+tags: 
+colorID: 0
+position: 5363,1236
+---
+How do I know he even means it?!
+This wouldn't be the first time things like this have happened!
+
+[[Because you need to trust people if you really want things to improve.|Geoff14111]]
+[[How do you know he doesn't?|Geoff14112]]
+[[If it keeps happening, you need to stand up for yourself!|Geoff14113]]
+
+===
+title: Geoff14113
+tags: 
+colorID: 1
+position: 6494,1600
+---
+That *was* my original plan!
+Just you watch!
+I don't need his help!
+
+<<set $talkedToGeoff to true>>
+
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
+===
+title: Geoff14111
+tags: 
+colorID: 1
+position: 6490,1087
+---
+*grumble grumble*
+Fine. If you're *sure* this is going to work!
+I don't have to like it, though!
+
+<<set $apologize2 to true>>
+<<set $talkedToGeoff to true>>
+
+<<if geoffApologyReadyNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
+<<set geoffApologyReadyNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
+
+//Journal Note: Geoff hates Jeff for stealing his scone, but if he gets an apology,
+//I might be able to get this to work.
+===
+title: Geoff14112
+tags: 
+colorID: 0
+position: 6496,1357
+---
+I--
+He--
+...
+I guess you might have a small point.
+
+[[Well?|Geoff14111]]
+===
+title: Geoff1412
+tags: 
+colorID: 0
+position: 5351,1788
+---
+He just admitted to eating my scone!
+Why shouldn't I?!
+
+[[Because he said he's ready to apologize!|Geoff14112]]
+[[Violence never solved anything.|Geoff14122]]
+[[...why *should* you?|Geoff14123]]
+===
+title: Geoff14123
+tags: 
+colorID: 0
+position: 5718,1970
+---
+...uh...
+I asked first!
+...and he ate my scone!
+[[Look, if he apologizes, you both can move past this.|Geoff14111]]
+[[Accept his apology or you can accept defeat by the heroes!|Geoff141232]]
+[[It's that or fight him, and seeing how that usually goes...|Geoff14113]]
+===
+title: Geoff141232
+tags: 
+colorID: 0
+position: 6122,2024
+---
+You don't know it'll end up like that!
+[[I'm a time wizard. Of course I do!|Geoff14112]]
+[[You want to tempt fate? Try it.|Geoff14113]]
+===
+title: Geoff144
+tags: 
+colorID: 1
+position: 4800,4060
+---
+If you don't do anything about Geoff, I will!
+I don't need him!
+
+<<set $talkedToGeoff to true>>
+
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
+===
+title: Geoff143
+tags: 
+colorID: 0
+position: 4914,3585
+---
+I was thinking of stomping him into the dirt!
+
+<<ChangeSpeaker SoundManager Jeff>>
+Go ahead and try. Won't change anthing!
+
+<<ChangeSpeaker SoundManager Geoff>>
+It'll shut you up good, good enough for me!
+
+[[I'd rather prefer if you didn't.|Geoff14222]]
+[[This is rich.|Geoff1432]]
+===
+title: Geoff1432
+tags: 
+colorID: 1
+position: 5192,3863
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[Jeff and Geoff continue to bicker back and forth at each other.]
+[It occurs to you apathy may not have been the most helpful contribution.]
+[You don't think this is going to end well.]
+
+<<set $talkedToGeoff to true>>
+
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
+===
+title: Geoff142
+tags: 
+colorID: 0
+position: 4945,2815
+---
+He's the worst, right?
+Only one more useless around here is that Goblenn.
+
+<<ChangeSpeaker SoundManager Goblenn>>
+...thanks, pal.
+
+<<ChangeSpeaker SoundManager Geoff>>
+...At least *he* isn't a jerk, though!
+
+[[You need to work together to make this whole gig work.|Geoff1421]]
+[[Takes two to party.|Geoff1422]]
+[[Did you have some sort of brilliant plan?|Geoff143]]
+===
+title: Geoff1422
+tags: 
+colorID: 0
+position: 5589,3223
+---
+Huh??
+...what does *that* mean?
+
+[[Jeff isn't the only problem here.|Geoff14221]]
+[[You two need to work together. As in both of you.|Geoff14222]]
+===
+title: Geoff14221
+tags: 
+colorID: 0
+position: 5896,2971
+---
+What do you mean by that, huh?!
+
+[[If you both continue to fight, the heroes are going to beat you.|Geoff141232]]
+[[You're just as much at blame here for the shift's failure as he is.|Geoff142212]]
+===
+title: Geoff142212
+tags: 
+colorID: 1
+position: 6260,3019
+---
+I'm the victim here!
+If you don't see that, then fine! I'll handle it myself!
+
+<<set $talkedToGeoff to true>>
+
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
+===
+title: Geoff14222
+tags: 
+colorID: 0
+position: 5960,3831
+---
+But he stole my scone!
+He can't just get off scot-free!
+
+[[You both won't get off scot-free if the heroes show up and you're still fighting.|Geoff141232]]
+[[Sometimes you just need to be the bigger man. ...er, Goblin.|Geoff142222]]
+[[If you really feel that strongly, just try to settle things before the heroes show.|Geoff142223]]
+===
+title: Geoff1421
+tags: 
+colorID: 0
+position: 5596,2589
+---
+Why would I want to work with him?!
+He's such a jerk!
+Especially about leftover food!
+
+[[Look, if he apologizes, you both can move past this.|Geoff14111]]
+[[Because if you don't, you're both doomed to fail.|Geoff141232]]
+[[Don't be unreasonable.|Geoff14213]]
+===
+title: Geoff14213
+tags: 
+colorID: 0
+position: 6256,2677
+---
+Unreasonable? Who's being unreasonable?!
+
+[[If you both continue to fight, the heroes are going to beat you.|Geoff141232]]
+[[You're just as much at blame here for the shift's failure as he is.|Geoff142212]]
+
+===
+title: Geoff142222
+tags: 
+colorID: 1
+position: 6295,3651
+---
+I'm *definitely* the bigger Goblin here...
+...but I can try. I guess.
+
+<<set $talkedToGeoff to true>>
+<<set $apologize2 to true>>
+
+<<if geoffApologyReadyNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
+<<set geoffApologyReadyNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
+
+//Journal Note: Geoff hates Jeff for stealing his scone, but if he gets an apology,
+//I might be able to get this to work.
+===
+title: Geoff142223
+tags: 
+colorID: 1
+position: 6300,3965
+---
+I'll show him, just watch me!
+<<set $talkedToGeoff to true>>
+
+<<if geoffEscalatedNote is false>>
+<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<set geoffEscalatedNote to true>>
+<<endif>>
+
+<<EndInterview Geoff>>
+//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
+//escalated the situation.
 ===
