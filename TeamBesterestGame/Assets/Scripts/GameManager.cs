@@ -252,6 +252,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevelOne()
     {
+        //AkSoundEngine.StopAll();
         print("loading level 1");
         SceneManager.LoadScene("Scene2");
     }

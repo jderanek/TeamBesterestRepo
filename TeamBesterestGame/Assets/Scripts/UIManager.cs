@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Yarn.Unity;
 
 public class UIManager : MonoBehaviour {
 
@@ -28,6 +29,11 @@ public class UIManager : MonoBehaviour {
     public GameObject[] speechBubbles;
 
     public GameObject speaker = null;
+
+    public GameObject optionsMenu;
+    public Text slowText;
+    public Text mediumText;
+    public Text fastText;
 
     //Opens any menu
     public void ToggleMenu(int menuToOpen)
@@ -99,6 +105,35 @@ public class UIManager : MonoBehaviour {
         foreach (GameObject bubble in speechBubbles)
         {
             bubble.SetActive(false);
+        }
+    }
+
+    public void ToggleOptionsMenu()
+    {
+        optionsMenu.SetActive(!optionsMenu.gameObject.activeInHierarchy);
+        pauseMenu.SetActive(!pauseMenu.gameObject.activeInHierarchy);
+    }
+
+    public void SetTextSpeed(int textSpeed)
+    {
+        switch(textSpeed)
+        {
+            case 1: //slow
+                slowText.fontStyle = FontStyle.Bold;
+                mediumText.fontStyle = FontStyle.Normal;
+                fastText.fontStyle = FontStyle.Normal;
+                InterviewUI.textSpeed = .025f; //load whatever interviewui is ontop of.
+                break;
+            case 2: //medium
+                mediumText.fontStyle = FontStyle.Bold;
+                slowText.fontStyle = FontStyle.Normal;
+                fastText.fontStyle = FontStyle.Normal;
+                break;
+            case 3: //fast
+                fastText.fontStyle = FontStyle.Bold;
+                slowText.fontStyle = FontStyle.Normal;
+                mediumText.fontStyle = FontStyle.Normal;
+                break;
         }
     }
 }
