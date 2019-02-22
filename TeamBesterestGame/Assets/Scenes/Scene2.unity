@@ -393,9 +393,9 @@ MonoBehaviour:
   - {fileID: 839498536}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 594745389}
-  notes: {fileID: 1975713363}
-  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  dialogueRunner: {fileID: 0}
+  notes: {fileID: 0}
+  newNote: {fileID: 0}
 --- !u!212 &14465736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1288,9 +1288,9 @@ RectTransform:
   m_Father: {fileID: 2095628240}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 142.075, y: -25}
   m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &81860792
@@ -4503,7 +4503,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8686,9 +8686,9 @@ MonoBehaviour:
   - {fileID: 839498536}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 594745389}
-  notes: {fileID: 14202393}
-  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  dialogueRunner: {fileID: 0}
+  notes: {fileID: 0}
+  newNote: {fileID: 0}
 --- !u!212 &906177786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8936,9 +8936,9 @@ MonoBehaviour:
   - {fileID: 256175002}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 2082834031}
-  notes: {fileID: 1877343969}
-  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  dialogueRunner: {fileID: 0}
+  notes: {fileID: 0}
+  newNote: {fileID: 0}
 --- !u!212 &951470859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9905,9 +9905,9 @@ MonoBehaviour:
   jeffPortrait: {fileID: 1756703232}
   gabbinPortrait: {fileID: 838111115}
   nilbogPortrait: {fileID: 1795124961}
-  shiftOnePortraits: {fileID: 1577959470}
-  shiftTwoPortraits: {fileID: 1668785781}
-  shiftThreePortraits: {fileID: 824344357}
+  shiftOnePortraits: {fileID: 0}
+  shiftTwoPortraits: {fileID: 0}
+  shiftThreePortraits: {fileID: 0}
   combatManager: {fileID: 984599859}
   phaseButton: {fileID: 984771302}
   interviewsRemaining: 0
@@ -9986,17 +9986,12 @@ MonoBehaviour:
   canvas: {fileID: 1495284377}
   arial: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   menus:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 1431481489}
-  sideBar: {fileID: 0}
+  - {fileID: 2095628239}
+  - {fileID: 1176545098}
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
   pauseMenu: {fileID: 1431481489}
-  currencyText: {fileID: 0}
   hourSwivel: {fileID: 1219348024}
   speechBubbles:
   - {fileID: 1099031334}
@@ -10004,10 +9999,13 @@ MonoBehaviour:
   - {fileID: 1105812795}
   - {fileID: 1663927626}
   - {fileID: 37360780}
-  speaker: {fileID: 951470855}
+  speaker: {fileID: 0}
   optionsMenu: {fileID: 2095628239}
+  slowTextSpeed: 0.04
   slowText: {fileID: 1494495221}
+  mediumTextSpeed: 0.025
   mediumText: {fileID: 1381179262}
+  fastTextSpeed: 0.01
   fastText: {fileID: 822166190}
 --- !u!114 &1031783969
 MonoBehaviour:
@@ -10084,9 +10082,9 @@ RectTransform:
   m_Father: {fileID: 2095628240}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 142.075, y: -109.119995}
   m_SizeDelta: {x: 110, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035089796
@@ -12897,9 +12895,9 @@ RectTransform:
   m_Father: {fileID: 2095628240}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 142.075, y: -73.31}
   m_SizeDelta: {x: 100, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1315200363
@@ -13059,9 +13057,9 @@ MonoBehaviour:
   - {fileID: 256175002}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 2082834031}
-  notes: {fileID: 2005550718}
-  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  dialogueRunner: {fileID: 0}
+  notes: {fileID: 0}
+  newNote: {fileID: 0}
 --- !u!212 &1335600117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13469,15 +13467,15 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 12
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Medium
 --- !u!222 &1381179263
@@ -16224,9 +16222,9 @@ MonoBehaviour:
   - {fileID: 1571043629}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 41062054}
-  notes: {fileID: 253172324}
-  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  dialogueRunner: {fileID: 0}
+  notes: {fileID: 0}
+  newNote: {fileID: 0}
 --- !u!212 &1765382687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17954,7 +17952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2095628240
 RectTransform:
   m_ObjectHideFlags: 0
