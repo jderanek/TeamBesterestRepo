@@ -393,7 +393,7 @@ MonoBehaviour:
   - {fileID: 839498536}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 594745389}
   notes: {fileID: 0}
   newNote: {fileID: 0}
 --- !u!212 &14465736
@@ -8686,7 +8686,7 @@ MonoBehaviour:
   - {fileID: 839498536}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 594745389}
   notes: {fileID: 0}
   newNote: {fileID: 0}
 --- !u!212 &906177786
@@ -8936,7 +8936,7 @@ MonoBehaviour:
   - {fileID: 256175002}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 2082834031}
   notes: {fileID: 0}
   newNote: {fileID: 0}
 --- !u!212 &951470859
@@ -9905,9 +9905,9 @@ MonoBehaviour:
   jeffPortrait: {fileID: 1756703232}
   gabbinPortrait: {fileID: 838111115}
   nilbogPortrait: {fileID: 1795124961}
-  shiftOnePortraits: {fileID: 0}
-  shiftTwoPortraits: {fileID: 0}
-  shiftThreePortraits: {fileID: 0}
+  shiftOnePortraits: {fileID: 1577959470}
+  shiftTwoPortraits: {fileID: 1668785781}
+  shiftThreePortraits: {fileID: 824344357}
   combatManager: {fileID: 984599859}
   phaseButton: {fileID: 984771302}
   interviewsRemaining: 0
@@ -9999,7 +9999,7 @@ MonoBehaviour:
   - {fileID: 1105812795}
   - {fileID: 1663927626}
   - {fileID: 37360780}
-  speaker: {fileID: 0}
+  speaker: {fileID: 951470855}
   optionsMenu: {fileID: 2095628239}
   slowTextSpeed: 0.04
   slowText: {fileID: 1494495221}
@@ -13057,7 +13057,7 @@ MonoBehaviour:
   - {fileID: 256175002}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 2082834031}
   notes: {fileID: 0}
   newNote: {fileID: 0}
 --- !u!212 &1335600117
@@ -16222,7 +16222,7 @@ MonoBehaviour:
   - {fileID: 1571043629}
   response: {fileID: 369298016}
   points: 0
-  dialogueRunner: {fileID: 0}
+  dialogueRunner: {fileID: 41062054}
   notes: {fileID: 0}
   newNote: {fileID: 0}
 --- !u!212 &1765382687
@@ -17827,6 +17827,18 @@ MonoBehaviour:
   - name: shift12Combat
     value: 0
     type: 0
+  - name: geoffApologyReadyNote
+    value: false
+    type: 2
+  - name: geoffEscalatedNote
+    value: false
+    type: 2
+  - name: jeffApologyReadyNote
+    value: false
+    type: 2
+  - name: jeffLittleInfoNote
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!1001 &2085675266
 Prefab:

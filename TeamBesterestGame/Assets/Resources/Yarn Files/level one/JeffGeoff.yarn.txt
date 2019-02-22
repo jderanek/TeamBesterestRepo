@@ -12,6 +12,7 @@ What kind of jerk does that?
 
 <<if $talkedToJeff is true>>
 [[I talked to Jeff already.|Geoff14]]
+<<endif>>
 ===
 title: Geoff11
 tags: 
@@ -24,16 +25,14 @@ Jeff is gonna pay for that!
 
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
 //escalated the situation.
-
-<<EndInterview Geoff>>
 
 
 ===
@@ -58,9 +57,9 @@ I totally agree boss! Finally someone understands.
 <<set $talkedToGeoff to true>>
 
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -96,9 +95,9 @@ position: 6262,414
 I'll show him, just watch me!
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -217,9 +216,9 @@ position: 6824,674
 ...
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -237,9 +236,9 @@ But *not* until then!
 <<set $talkedToGeoff to true>>
 <<set $apologize2 to true>>
 
-<<if geoffApologyReadyNote is false>>
+<<if $geoffApologyReadyNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
-<<set geoffApologyReadyNote to true>>
+<<set $geoffApologyReadyNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -406,9 +405,9 @@ Ha! Now *that* I would like to see!
 A wizard, beating a goblin warrior in a fight. *That* will be the day!
 
 <<set $talkedToJeff to true>>
-<<if jeffLittleInfoNote is false>>
+<<if $jeffLittleInfoNote is false>>
 <<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
-<<set jeffLittleInfoNote to true>>
+<<set $jeffLittleInfoNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -429,9 +428,9 @@ I'll apologize to the guy, but if he loses his cool again, I'm going to defend m
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
 
-<<if jeffApologyReadyNote is false>>
+<<if $jeffApologyReadyNote is false>>
 <<RevealText Jeff Somehow,_I_convinced_Jeff_to_apologize_to_Goeff._Now_I_just_need_to_make_sure_Goeff_is_in_the_mood_to_accept_his_apology,_and_maybe_they'll_work_together_again.>>
-<<set jeffApologyReadyNote to true>>
+<<set $jeffApologyReadyNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -461,9 +460,9 @@ Now, if you're going to sit here and ask dumb questions all day, I've got heroes
 
 <<set $talkedToJeff to true>>
 
-<<if jeffLittleInfoNote is false>>
+<<if $jeffLittleInfoNote is false>>
 <<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
-<<set jeffLittleInfoNote to true>>
+<<set $jeffLittleInfoNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -491,9 +490,9 @@ Right, and I'm known for doing charity work.
 Look, unless you can offer me a raise or something, you're wasting your time.
 
 <<set $talkedToJeff to true>>
-<<if jeffLittleInfoNote is false>>
+<<if $jeffLittleInfoNote is false>>
 <<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
-<<set jeffLittleInfoNote to true>>
+<<set $jeffLittleInfoNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -515,9 +514,9 @@ I'll do it, if for no other reason than the look on your face right now.
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
 
-<<if jeffApologyReadyNote is false>>
+<<if $jeffApologyReadyNote is false>>
 <<RevealText Jeff Somehow,_I_convinced_Jeff_to_apologize_to_Goeff._Now_I_just_need_to_make_sure_Goeff_is_in_the_mood_to_accept_his_apology,_and_maybe_they'll_work_together_again.>>
-<<set jeffApologyReadyNote to true>>
+<<set $jeffApologyReadyNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -545,9 +544,9 @@ position: 1826,888
 Darned straight!
 
 <<set $talkedToJeff to true>>
-<<if jeffLittleInfoNote is false>>
+<<if $jeffLittleInfoNote is false>>
 <<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
-<<set jeffLittleInfoNote to true>>
+<<set $jeffLittleInfoNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -589,9 +588,9 @@ With the heads up, maybe I can get the jump on him. Who knows!
 Can't hurt to try!
 
 <<set $talkedToJeff to true>>
-<<if jeffLittleInfoNote is false>>
+<<if $jeffLittleInfoNote is false>>
 <<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
-<<set jeffLittleInfoNote to true>>
+<<set $jeffLittleInfoNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -623,9 +622,9 @@ He better appreciate this.
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
 
-<<if jeffApologyReadyNote is false>>
+<<if $jeffApologyReadyNote is false>>
 <<RevealText Jeff Somehow,_I_convinced_Jeff_to_apologize_to_Goeff._Now_I_just_need_to_make_sure_Goeff_is_in_the_mood_to_accept_his_apology,_and_maybe_they'll_work_together_again.>>
-<<set jeffApologyReadyNote to true>>
+<<set $jeffApologyReadyNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -644,9 +643,9 @@ If you think *that* is realistic, you need your eyes checked.
 I'm done here.
 
 <<set $talkedToJeff to true>>
-<<if jeffLittleInfoNote is false>>
+<<if $jeffLittleInfoNote is false>>
 <<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
-<<set jeffLittleInfoNote to true>>
+<<set $jeffLittleInfoNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -683,9 +682,9 @@ position: 1507,1410
 Just like this conversation, pal. I think we're done.
 
 <<set $talkedToJeff to true>>
-<<if jeffLittleInfoNote is false>>
+<<if $jeffLittleInfoNote is false>>
 <<RevealText Jeff Jeff_seems_to_have_antagonized_Geoff,_and_isn't_very_friendly.>>
-<<set jeffLittleInfoNote to true>>
+<<set $jeffLittleInfoNote to true>>
 <<endif>>
 
 <<EndInterview Jeff>>
@@ -738,9 +737,9 @@ He's gonna get it this time!
 
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -771,9 +770,9 @@ I don't need his help!
 
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -792,9 +791,9 @@ I don't have to like it, though!
 <<set $apologize2 to true>>
 <<set $talkedToGeoff to true>>
 
-<<if geoffApologyReadyNote is false>>
+<<if $geoffApologyReadyNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
-<<set geoffApologyReadyNote to true>>
+<<set $geoffApologyReadyNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -857,9 +856,9 @@ I don't need him!
 
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -894,9 +893,9 @@ position: 5192,3863
 
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -952,9 +951,9 @@ If you don't see that, then fine! I'll handle it myself!
 
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -1008,9 +1007,9 @@ I'm *definitely* the bigger Goblin here...
 <<set $talkedToGeoff to true>>
 <<set $apologize2 to true>>
 
-<<if geoffApologyReadyNote is false>>
+<<if $geoffApologyReadyNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
-<<set geoffApologyReadyNote to true>>
+<<set $geoffApologyReadyNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
@@ -1021,14 +1020,14 @@ I'm *definitely* the bigger Goblin here...
 title: Geoff142223
 tags: 
 colorID: 1
-position: 6300,3965
+position: 6300,3966
 ---
 I'll show him, just watch me!
 <<set $talkedToGeoff to true>>
 
-<<if geoffEscalatedNote is false>>
+<<if $geoffEscalatedNote is false>>
 <<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
-<<set geoffEscalatedNote to true>>
+<<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<EndInterview Geoff>>
