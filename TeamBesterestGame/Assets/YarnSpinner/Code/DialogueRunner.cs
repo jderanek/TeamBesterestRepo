@@ -468,7 +468,7 @@ namespace Yarn.Unity
 
         /// The conversation has ended.
         public virtual IEnumerator DialogueComplete () {
-            // Default implementation does nothing.
+            //Node is no longer running
             yield break;
         }
     }

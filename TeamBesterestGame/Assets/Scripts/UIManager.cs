@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour {
     public float fastTextSpeed;
     public Text fastText;
 
-    private InterviewUI[] monsters;
+    public InterviewUI[] monsters;
 
     //List<InterviewUI> monsters = new List<InterviewUI>();
 
@@ -50,50 +50,15 @@ public class UIManager : MonoBehaviour {
     //Opens any menu
     public void ToggleMenu(int menuToOpen)
     {
-        
         menus[menuToOpen].SetActive(!menus[menuToOpen].activeInHierarchy);
-        /*
-        int i = 0;
-        int j = 0;
-        foreach (GameObject menu in menus)
-        {
-            if (menuToOpen == i)
-            {
-                //sideBar.SetActive(true);
-                menu.SetActive(!menu.activeInHierarchy);
-                //eventSystem.SetSelectedGameObject(null);
-                if (menu.activeInHierarchy == true)
-                {
-                    j++;
-                }
-                
-            }
-            else
-            {
-                if (j == 0)
-                {
-                    //HideSideBar();
-                    
-                }
-                menu.SetActive(false);
-            }
-            i++;
-        }\
-        */
     }
     
     public void ToggleMenusOff()
     {
         foreach (GameObject menu in menus)
         {
-            //sideBar.SetActive(false);
             menu.SetActive(false);
         }
-    }
-
-    public void HideSideBar()
-    {
-        //sideBar.SetActive(false);
     }
 
     public void ToggleSpeechBubbles(int goblin)

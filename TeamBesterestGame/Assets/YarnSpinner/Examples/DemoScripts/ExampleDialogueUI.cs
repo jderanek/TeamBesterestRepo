@@ -90,6 +90,8 @@ namespace Yarn.Unity.Example {
         /// Show a line of dialogue, gradually
         public override IEnumerator RunLine (Yarn.Line line)
         {
+            //In the middle of a node?
+
             // Show the text
             lineText.gameObject.SetActive (true);
 
