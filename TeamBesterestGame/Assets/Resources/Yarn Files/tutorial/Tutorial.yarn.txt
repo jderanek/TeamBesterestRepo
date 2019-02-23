@@ -1,7 +1,7 @@
 title: Tutorial1
 tags: 
 colorID: 0
-position: 614,520
+position: 611,519
 ---
 Welcome to my dungeon, thanks for meeting me at such short notice. 
 I have been having some problems with my employees such as goblins killing each other and running away from combat.
@@ -15,7 +15,7 @@ I would like to discuss parts of your submitted resume, you told me you had a de
 [[Yes, I was magus cum laude at Albion U.|Tutorial12]]
 <<elseif $timeMagicSpecific is true>>
 [[At Albion U, I did my graduate work in time magic.|Tutorial122]]
-[[Uh no... scholl is for losers.|Tutorial11]]
+[[Uh no... school is for losers.|Tutorial11]]
 [[Yes, I was magus cum laude at Albion U.|Tutorial12]]
 ===
 title: Tutorial122
