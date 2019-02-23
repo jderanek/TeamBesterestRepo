@@ -39,12 +39,12 @@ tags:
 colorID: 1
 position: 1838,-943
 ---
-I do appreciate all the help you are doing for us, I know you are trying your best...
-
 <<if $goblennNoChangeNote is false>>
 <<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
 <<set $goblennNoChangeNote to true>>
 <<endif>>
+
+I do appreciate all the help you are doing for us, I know you are trying your best...
 
 <<EndInterview Goblenn>>
 ===
@@ -62,14 +62,14 @@ tags:
 colorID: 1
 position: 1827,-510
 ---
-You think so? Maybe I can use my hiding spots in some way?
-
 <<set $ambushTactics to 1>>
 
 <<if $goblennAmbushNote is false>>
 <<RevealText Goblenn Goblenn_knows_a_lot_about_dark_corners_and_spaces_in_the_dungeon,_maybe_this_can_be_helpful.>>
 <<set $goblennAmbushNote to true>>
 <<endif>>
+
+You think so? Maybe I can use my hiding spots in some way?
 
 <<EndInterview Goblenn>>
 ===
@@ -141,13 +141,13 @@ tags:
 colorID: 1
 position: 1657,1184
 ---
-I see.. 
-Just tell me when you think of something then!
-
 <<if $goblennNoChangeNote is false>>
 <<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
 <<set $goblennNoChangeNote to true>>
 <<endif>>
+
+I see.. 
+Just tell me when you think of something then!
 
 <<EndInterview Goblenn>>
 ===
@@ -156,12 +156,12 @@ tags:
 colorID: 1
 position: 2337,614
 ---
-I know that, b-but I still think my way is working out. Let me try again boss.
-
 <<if $goblennNoChangeNote is false>>
 <<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
 <<set $goblennNoChangeNote to true>>
 <<endif>>
+
+I know that, b-but I still think my way is working out. Let me try again boss.
 
 <<EndInterview Goblenn>>
 ===
@@ -292,14 +292,14 @@ tags:
 colorID: 1
 position: 406,1245
 ---
-A-ambush? That seems scary... but also smart! Let me think for a bit then.
-
 <<set $ambushTactics to 1>>
 
 <<if $goblennAmbushNote is false>>
 <<RevealText Goblenn Goblenn_knows_a_lot_about_dark_corners_and_spaces_in_the_dungeon,_maybe_this_can_be_helpful.>>
 <<set $goblennAmbushNote to true>>
 <<endif>>
+
+A-ambush? That seems scary... but also smart! Let me think for a bit then.
 
 <<EndInterview Goblenn>>
 ===

@@ -50,19 +50,17 @@ tags:
 colorID: 1
 position: 3713,-3087
 ---
-That's what I keep saying!
-It'll work eventually, and everything will turn around!
-
 <<set $talkedToGabbin to true>>
-<<EndInterview Gabbin>>
-
-//GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
-
 
 <<if $gabbinAnnoyingNote is false>>
 <<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
 <<set $gabbinAnnoyingNote to true>>
 <<endif>>
+
+That's what I keep saying!
+It'll work eventually, and everything will turn around!
+
+<<EndInterview Gabbin>>
 ===
 title: Gabbin11111
 tags: 
@@ -91,21 +89,20 @@ tags:
 colorID: 1
 position: 4088,-3671
 ---
-...
-I guess you're right.
-He's not going to listen to me if I keep forcing it like this.
-I hope we can still work this out!
-
 <<set $talkedToGabbin to true>>
 <<set $respectful to true>>
-<<EndInterview Gabbin>>
-
-//GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
 
 <<if $gabbinRespectNote is false>>
 <<RevealText Gabbin Gabbin_said_he'll_respect_Nilbog's_boundaries_now._Hope_this_can_mend_their_relationship.>>
 <<set $gabbinRepectNote to true>>
 <<endif>>
+
+...
+I guess you're right.
+He's not going to listen to me if I keep forcing it like this.
+I hope we can still work this out!
+
+<<EndInterview Gabbin>>
 
 
 ===
@@ -114,62 +111,58 @@ tags:
 colorID: 1
 position: 4191,-3408
 ---
-...
-That's kind of sad.
-...I guess that does explain why he ignores me.
-...oh well...
-
 <<set $talkedToGabbin to true>>
 <<set $sad to true>>
-<<EndInterview Gabbin>>
-
-//GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
 
 <<if $gabbinBeatenDownNote is false>>
 <<RevealText Gabbin Gabbin_seems_beaten_down,_but_maybe_he'll_be_easier_to_work_with_now.>>
 <<set $gabbinBeatenDownNote to true>>
 <<endif>>
+
+...
+That's kind of sad.
+...I guess that does explain why he ignores me.
+...oh well...
+
+<<EndInterview Gabbin>>
 ===
 title: Gabbin111113
 tags: 
 colorID: 1
 position: 4288,-3132
 ---
-I knew it!
-It'll eventually work out, I just have to keep trying!
-Thanks for the confidence booster!
-
 <<set $talkedToGabbin to true>>
-<<EndInterview Gabbin>>
-//No change in behavior.
-
-//GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
 
 <<if $gabbinAnnoyingNote is false>>
 <<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
 <<set $gabbinAnnoyingNote to true>>
 <<endif>>
+
+I knew it!
+It'll eventually work out, I just have to keep trying!
+Thanks for the confidence booster!
+
+<<EndInterview Gabbin>>
 ===
 title: Gabbin111132
 tags: 
 colorID: 1
 position: 4216,-2726
 ---
-...
-That's a *very* negative way to look at things...
-...but you're right. We haven't beaten the Heroes in a *long* time...
-.....
-
 <<set $talkedToGabbin to true>>
 <<set $sad to true>>
-<<EndInterview Gabbin>>
-
-//GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
 
 <<if $gabbinBeatenDownNote is false>>
 <<RevealText Gabbin Gabbin_seems_beaten_down,_but_maybe_he'll_be_easier_to_work_with_now.>>
 <<set $gabbinBeatenDownNote to true>>
 <<endif>>
+
+...
+That's a *very* negative way to look at things...
+...but you're right. We haven't beaten the Heroes in a *long* time...
+.....
+
+<<EndInterview Gabbin>>
 
 ===
 title: Gabbin1112
@@ -200,21 +193,20 @@ tags:
 colorID: 1
 position: 4240,-2410
 ---
-...
-...You're right.
-He's never responded well to my attempts. Maybe I am forcing it too much.
-There has to be some way we can fix things, though...
-
 <<set $talkedToGabbin to true>>
 <<set $respectful to true>>
-<<EndInterview Gabbin>>
-
-//GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
 
 <<if $gabbinRespectNote is false>>
 <<RevealText Gabbin Gabbin_said_he'll_respect_Nilbog's_boundaries_now._Hope_this_can_mend_their_relationship.>>
 <<set $gabbinRepectNote to true>>
 <<endif>>
+
+...
+...You're right.
+He's never responded well to my attempts. Maybe I am forcing it too much.
+There has to be some way we can fix things, though...
+
+<<EndInterview Gabbin>>
 ===
 title: Gabbin112
 tags: 
@@ -243,21 +235,19 @@ tags:
 colorID: 1
 position: 3713,-1543
 ---
-<<ChangeSpeaker SoundManager Voiceless>>
-[Gabbin seems to be ignoring you now.]
-[He keeps babbling to himself about new methods of starting a conversation with Nilbog.]
-[You don't think this will end well.]
-
 <<set $talkedToGabbin to true>>
-<<EndInterview Gabbin>>
-//No change in behavior.
-
-//GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
 
 <<if $gabbinAnnoyingNote is false>>
 <<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
 <<set $gabbinAnnoyingNote to true>>
 <<endif>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gabbin seems to be ignoring you now.]
+[He keeps babbling to himself about new methods of starting a conversation with Nilbog.]
+[You don't think this will end well.]
+
+<<EndInterview Gabbin>>
 ===
 title: Gabbin113
 tags: 
@@ -337,61 +327,59 @@ tags:
 colorID: 1
 position: 3901,-369
 ---
-<<ChangeSpeaker SoundManager Voiceless>>
-....
-<<ChangeSpeaker Soundmanager Gabbin>>
-...I think you might be right...
-...It's not like my previous attempts ever worked anyway...
-
 <<set $talkedToGabbin to true>>
 <<set $sad to true>>
-<<EndInterview Gabbin>>
-
-//GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
 
 <<if $gabbinBeatenDownNote is false>>
 <<RevealText Gabbin Gabbin_seems_beaten_down,_but_maybe_he'll_be_easier_to_work_with_now.>>
 <<set $gabbinBeatenDownNote to true>>
 <<endif>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+....
+
+<<ChangeSpeaker Soundmanager Gabbin>>
+...I think you might be right...
+...It's not like my previous attempts ever worked anyway...
+
+<<EndInterview Gabbin>>
 ===
 title: Gabbin13222
 tags: 
 colorID: 1
 position: 3905,-136
 ---
-...boundaries, huh?
-I'll think about that.
-Hopefully I can find a way to cheer him up while giving him some space!
-
 <<set $talkedToGabbin to true>>
 <<set $respectful to true>>
-<<EndInterview Gabbin>>
-
-//GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
 
 <<if $gabbinRespectNote is false>>
 <<RevealText Gabbin Gabbin_said_he'll_respect_Nilbog's_boundaries_now._Hope_this_can_mend_their_relationship.>>
 <<set $gabbinRepectNote to true>>
 <<endif>>
+
+...boundaries, huh?
+I'll think about that.
+Hopefully I can find a way to cheer him up while giving him some space!
+
+<<EndInterview Gabbin>>
 ===
 title: Gabbin13223
 tags: 
 colorID: 1
 position: 3911,91
 ---
-Oh, thank goodness!
-You had me going for a second there!
-I'll figure him out, then this whole operation will turn around!
-
 <<set $talkedToGabbin to true>>
-<<EndInterview Gabbin>>
-
-//GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
 
 <<if $gabbinAnnoyingNote is false>>
 <<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
 <<set $gabbinAnnoyingNote to true>>
 <<endif>>
+
+Oh, thank goodness!
+You had me going for a second there!
+I'll figure him out, then this whole operation will turn around!
+
+<<EndInterview Gabbin>>
 ===
 title: NilbogGabbinSolution1
 tags: 
@@ -415,6 +403,8 @@ position: 1814,425
 ---
 //IF Nilbog flagged Defeated or Patient:
 <<if $defeated is true>>
+<<set $shift13Combat to 1>>
+
 <<ChangeSpeaker SoundManager Nilbog>>
 ...fine.
 ...just please... keep yourself at least an arms distance away.
@@ -427,10 +417,11 @@ I've been thinking of a new combat technique, I can't wait to--
 <<ChangeSpeaker SoundManager Voiceless>>
 [Gabbin proceeds to babble to Nilbog about combat plans.]
 [Nilbog appears to be just tolerating it.]
-
-<<set $shift13Combat to 1>>
+//--------
 
 <<elseif $patient is true>>
+<<set $shift13Combat to 1>>
+
 <<ChangeSpeaker SoundManager Nilbog>>
 ...fine.
 ...just please... keep yourself at least an arms distance away.
@@ -444,11 +435,10 @@ I've been thinking of a new combat technique, I can't wait to--
 [Gabbin proceeds to babble to Nilbog about combat plans.]
 [Nilbog appears to be just tolerating it.]
 
-<<set $shift13Combat to 1>>
 //Ends conversation
 //Combat succeeds. Flag: OpenUp
 //2 points
-
+//-----------
 <<else>>
 
 <<ChangeSpeaker SoundManager Nilbog>>
@@ -466,7 +456,6 @@ I've already got loads of plans for us until the heroes arrive, like--
 //Ends conversation
 //Combat fails, default case
 //0 points
-<<set $shift13Combat to 0>>
 <<endif>>
 ===
 title: NilbogGabbinSolution12
@@ -476,6 +465,7 @@ position: 1817,733
 ---
 //IF Gabbin flagged Sad OR Respectful:
 <<if $sad is true>>
+<<set $shift13Combat to 2>>
 
 <<ChangeSpeaker SoundManager Gabbin>>
 ...alright... I'll step off.
@@ -493,12 +483,11 @@ position: 1817,733
 <<ChangeSpeaker SoundManager Voiceless>>
 [Nilbog gives you an approving look.]
 
-<<set $shift13Combat to 2>>
 //Ends Conversation
 //Combat succeeds. Flag: StepOff
 //2 points
+//---------------
 
-//ELSE
 <<else>>
 
 <<ChangeSpeaker SoundManager Gabbin>>
@@ -511,9 +500,6 @@ Surely there's a better way. Isn't that right, Nilbog?
 //Ends conversation
 //Combat fails, default case
 //0 points
-
-<<set $shift13Combat to 0>>
-
 <<endif>>
 ===
 title: NilbogGabbinSolution13
@@ -523,6 +509,7 @@ position: 1809,997
 ---
 //IF Gabbin flagged Respectful AND Nilbog flagged Patient
 <<if $respectful and $patient is true>>
+<<set $shift13Combat to 3>>
 
 <<ChangeSpeaker SoundManager Nilbog>>
 ...If you'll give me some space when I ask, fine.
@@ -539,10 +526,10 @@ Want to talk about some combat techniques I've been thinking about?
 [The two goblins begin to talk strategy for the battle ahead.]
 [They appear to be content for the time being!]
 
-<<set $shift13Combat to 3>>
 //Ends conversation
-//Combat succeeds. Flag: Friends
 //4 points
+//------------------------
+
 <<else>>
 
 <<ChangeSpeaker SoundManager Gabbin>>
@@ -556,7 +543,6 @@ I'm not going to deal with this...
 //ends conversation
 //Combat fails, default case
 //0 points
-<<set $shift13Combat to 0>>
 
 <<endif>>
 ===
@@ -600,18 +586,16 @@ tags:
 colorID: 1
 position: -851,-492
 ---
-...Thank you.
-
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-
-//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
-//No change in behavior
 
 <<if $nilbogChangeGabbinNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
+
+...Thank you.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog111
 tags: 
@@ -658,19 +642,17 @@ tags:
 colorID: 1
 position: -570,-1090
 ---
-...tch. You came here to say that?
-Nice.
-
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-//No change in behavior
-
-//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 
 <<if $nilbogChangeGabbinNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
+
+...tch. You came here to say that?
+Nice.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog1213
 tags: 
@@ -689,17 +671,18 @@ tags:
 colorID: 1
 position: -577,-2940
 ---
-...
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-//No change in behavior
-
-//Journal note: Nilbog is a very quiet individual.
 
 <<if $nilbogQuietNote is false>>
 <<RevealText Nilbog Nilbog_sure_is_mysterious.>>
 <<set $nilbogQuietNote to true>>
 <<endif>>
+
+...
+
+//Journal note: Nilbog is a very quiet individual.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog113
 tags: 
@@ -743,19 +726,18 @@ tags:
 colorID: 1
 position: -134,-1086
 ---
-...if you can pull that off, sure.
-...I doubt such a thing is possible, though.
-
 <<set $talkedToNilbog to true>>
 <<set $patient to true>>
-<<EndInterview Nilbog>>
-
-//NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
 
 <<if $nilbogPatientNote is false>>
 <<RevealText Nilbog Nilbog_is_willing_to_cooperate_with_Gabbin_now_if_Gabbin_would_just_cool_it_down.>>
 <<set $nilbogPatientNote to true>>
 <<endif>>
+
+...if you can pull that off, sure.
+...I doubt such a thing is possible, though.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog1111
 tags: 
@@ -784,65 +766,62 @@ tags:
 colorID: 1
 position: 586,-4047
 ---
+<<set $talkedToNilbog to true>>
+<<set $defeated to true>>
+
+<<if $nilbogDefeatedNote is false>>
+<<RevealText Nilbog Nilbog_seems_defeated,_maybe_he'll_go_along_with_my_suggestions_better_now.>>
+<<set $nilbogDefeatedNote to true>>
+<<endif>>
+
 <<ChangeSpeaker SoundManager Voiceless>>
 ...
 <<ChangeSpeaker SoundManager Nilbog>>
 ...You're right. We've really been getting our butts handed to us.
 ...If I *have* to, I guess I'll go along with it...
 
-<<set $talkedToNilbog to true>>
-<<set $defeated to true>>
 <<EndInterview Nilbog>>
-
-<<if $nilbogDefeatedNote is false>>
-<<RevealText Nilbog Nilbog_seems_defeated,_maybe_he'll_go_along_with_my_suggestions_better_now.>>
-<<set $nilbogDefeatedNote to true>>
-<<endif>>
 ===
 title: Nilbog111112
 tags: 
 colorID: 1
 position: 787,-3733
 ---
-...Hmm.
-...If you think you can pull that off, fine. I'll go along with it.
-But Gabbin is going to be hard to control, good luck.
-
 <<set $talkedToNilbog to true>>
 <<set $patient to true>>
-<<EndInterview Nilbog>>
-
-//Journal Note: Nilbog is willing to work with Gabbin now. If I can get Gabbin to cool it,
-//maybe the two can actually work together!
-
-//NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
 
 <<if $nilbogPatientNote is false>>
 <<RevealText Nilbog Nilbog_is_willing_to_cooperate_with_Gabbin_now_if_Gabbin_would_just_cool_it_down.>>
 <<set $nilbogPatientNote to true>>
 <<endif>>
+
+...Hmm.
+...If you think you can pull that off, fine. I'll go along with it.
+But Gabbin is going to be hard to control, good luck.
+
+//Journal Note: Nilbog is willing to work with Gabbin now. If I can get Gabbin to cool it,
+//maybe the two can actually work together!
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog11112
 tags: 
 colorID: 1
 position: 278,-3380
 ---
-...works for me. It's for the best.
-
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-
-//No change in behavior.
-
-//Journal Note: Nilbog claims that if Gabbin stops bothering him, everything will 
-//work better in the long run.
-
-//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 
 <<if $nilbogChangeGabbinNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
+
+...works for me. It's for the best.
+
+//Journal Note: Nilbog claims that if Gabbin stops bothering him, everything will 
+//work better in the long run.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog1113
 tags: 
@@ -874,60 +853,58 @@ tags:
 colorID: 1
 position: 190,-1874
 ---
-...See that you do.
-
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-
-//No change in behavior
 
 <<if $nilbogChangeGabbinNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
+
+...See that you do.
+
+//No change in behavior
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog121113
 tags: 
 colorID: 1
 position: 194,-1592
 ---
-<<ChangeSpeaker SoundManager Voiceless>>
-...
-<<ChangeSpeaker SoundManager Nilbog>>
-...You're right. We've really been getting our butts handed to us.
-...If I *have* to, I guess I'll go along with it...
-
 <<set $talkedToNilbog to true>>
 <<set $defeated to true>>
-<<EndInterview Nilbog>>
-
-//Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
 
 <<if $nilbogDefeatedNote is false>>
 <<RevealText Nilbog Nilbog_seems_defeated,_maybe_he'll_go_along_with_my_suggestions_better_now.>>
 <<set $nilbogDefeatedNote to true>>
 <<endif>>
 
+<<ChangeSpeaker SoundManager Voiceless>>
+...
+<<ChangeSpeaker SoundManager Nilbog>>
+...You're right. We've really been getting our butts handed to us.
+...If I *have* to, I guess I'll go along with it...
+
+//Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog12132
 tags: 
 colorID: 1
 position: -136,-825
 ---
-...yep. I work best alone.
-...Best of luck. You'll need it.
-
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-
-//No change in behavior
-
-//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 
 <<if $nilbogChangeGabbinNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
+
+...yep. I work best alone.
+...Best of luck. You'll need it.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog12133
 tags: 
@@ -945,19 +922,17 @@ tags:
 colorID: 1
 position: 503,-486
 ---
-<<ChangeSpeaker SoundManager Voiceless>>
-...
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-
-//No change in behavior
-
-//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 
 <<if $nilbogChangeGabbinNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+...
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog123
 tags: 
@@ -977,24 +952,22 @@ tags:
 colorID: 1
 position: -754,-121
 ---
-<<ChangeSpeaker SoundManager Voiceless>>
-.....
-<<ChangeSpeaker SoundManager Nilbog>>
-...I don't need to take this from you.
-
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-//No change in behavior
-
-//Journal Note: Nilbog seems to be bothered by Gabbin. When pressed, I may have
-//pushed him a little too far.
-
-//NilbogSeemsBotheredByGabbin.WhenPressed,IMayHavePushedHimALittleTooFar.
 
 <<if $nilbogBotheredNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_be_bothered_by_Gabbin._I_may_have_pushed_him_a_little_too_far.>>
 <<set $nilbogBotheredNote to true>>
 <<endif>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+.....
+<<ChangeSpeaker SoundManager Nilbog>>
+...I don't need to take this from you.
+
+//Journal Note: Nilbog seems to be bothered by Gabbin. When pressed, I may have
+//pushed him a little too far.
+
+<<EndInterview Nilbog>>
 
 
 ===
@@ -1003,19 +976,17 @@ tags:
 colorID: 1
 position: -727,234
 ---
-...Glad you get the picture.
-The sooner you deal with him, the better.
-
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-//No change in behavior.
-
-//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 
 <<if $nilbogChangeGabbinNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
+
+...Glad you get the picture.
+The sooner you deal with him, the better.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog1232
 tags: 
@@ -1034,40 +1005,35 @@ tags:
 colorID: 1
 position: -81,-151
 ---
-...Ha! Good luck with that.
-...But if by some miracle it does work, I'll go along with it.
-.....*If* it does work.
-
 <<set $talkedToNilbog to true>>
 <<set $patient to true>>
-<<EndInterview Nilbog>>
-
-
-//NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
 
 <<if $nilbogPatientNote is false>>
 <<RevealText Nilbog Nilbog_is_willing_to_cooperate_with_Gabbin_now_if_Gabbin_would_just_cool_it_down.>>
 <<set $nilbogPatientNote to true>>
 <<endif>>
+
+...Ha! Good luck with that.
+...But if by some miracle it does work, I'll go along with it.
+.....*If* it does work.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog12322
 tags: 
 colorID: 1
 position: -93,156
 ---
-...Best of luck to you, then.
-
 <<set $talkedToNilbog to true>>
-<<EndInterview Nilbog>>
-
-//No change in behavior.
-
-//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 
 <<if $nilbogChangeGabbinNote is false>>
 <<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
+
+...Best of luck to you, then.
+
+<<EndInterview Nilbog>>
 ===
 title: Nilbog12323
 tags: 
