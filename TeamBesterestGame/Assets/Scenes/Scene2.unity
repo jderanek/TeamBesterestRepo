@@ -814,6 +814,9 @@ MonoBehaviour:
   - name: goblennAmbushNote
     value: false
     type: 2
+  - name: shift11Combat
+    value: 0
+    type: 0
   debugTextView: {fileID: 0}
 --- !u!114 &41062056
 MonoBehaviour:
@@ -5344,7 +5347,7 @@ MonoBehaviour:
   - name: talkedToGabbin
     value: false
     type: 2
-  - name: combat
+  - name: shift13Combat
     value: 0
     type: 0
   - name: nilbogDefeatedNote
@@ -17102,7 +17105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.2, y: -3.7686996}
+  m_AnchoredPosition: {x: -1.2, y: -3.7687073}
   m_SizeDelta: {x: -12.3, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971129431
