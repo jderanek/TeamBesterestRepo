@@ -2802,10 +2802,10 @@ RectTransform:
   m_Father: {fileID: 1256514715}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.0275, y: 0.577}
-  m_AnchorMax: {x: 0.425, y: 0.8747992}
-  m_AnchoredPosition: {x: -2.6999512, y: -5.5}
-  m_SizeDelta: {x: 6.799988, y: -0.5}
+  m_AnchorMin: {x: 0.01875, y: 0.577}
+  m_AnchorMax: {x: 0.41750002, y: 0.8661635}
+  m_AnchoredPosition: {x: 3.8000488, y: -3.5}
+  m_SizeDelta: {x: 5.799988, y: 3.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &369298018
 MonoBehaviour:
@@ -3781,10 +3781,10 @@ RectTransform:
   m_Father: {fileID: 1256514715}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.90624994, y: 0.19100001}
-  m_AnchorMax: {x: 1, y: 0.26987955}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 2.0200043}
+  m_AnchorMin: {x: 0.90624994, y: 0.16450964}
+  m_AnchorMax: {x: 1, y: 0.2416731}
+  m_AnchoredPosition: {x: 0, y: -1.1000004}
+  m_SizeDelta: {x: 0, y: 3.0200043}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509780443
 MonoBehaviour:
@@ -6372,7 +6372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   department: []
-  monName: Jeff
+  monName: Boss
   cNum: 5
   anim: {fileID: 0}
   interviewable: 1
@@ -8231,10 +8231,10 @@ RectTransform:
   m_Father: {fileID: 1560712351}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 26, y: 26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1223368199
 GameObject:
@@ -10323,10 +10323,10 @@ RectTransform:
   m_Father: {fileID: 1256514715}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.90624994, y: 0}
+  m_AnchorMax: {x: 1, y: 0.16450964}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 75, y: 75}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1560712352
 MonoBehaviour:
@@ -11720,7 +11720,7 @@ GameObject:
   - component: {fileID: 1877343972}
   - component: {fileID: 1877343971}
   m_Layer: 5
-  m_Name: Jeff Notes
+  m_Name: Boss Notes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12473,24 +12473,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultVariables:
-  - name: apologize1
+  - name: timeMagicSpecific
     value: false
     type: 2
-  - name: talkedToJeff
+  - name: guessProof
     value: false
     type: 2
-  - name: apologize2
+  - name: bossFlippantNote
     value: false
     type: 2
-  - name: talkedToGeoff
+  - name: bossTimeMagicNote
     value: false
     type: 2
-  - name: combat
-    value: 0
-    type: 0
-  - name: shift12Combat
-    value: 0
-    type: 0
+  - name: bossGuessNote
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!1001 &2085675266
 Prefab:
