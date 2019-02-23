@@ -83,6 +83,14 @@ namespace Yarn.Unity
                 {
                     stringBuilder.Append(c);
                     responseText.text = stringBuilder.ToString();
+
+                    if (Input.GetMouseButton(1))
+                    {
+                        responseText.text = line.text;
+                        yield return new WaitForSeconds(.25f);
+                        break;
+                    }
+
                     yield return new WaitForSeconds(textSpeed);
                 }
             }
