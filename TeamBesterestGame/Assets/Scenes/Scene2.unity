@@ -808,6 +808,12 @@ MonoBehaviour:
   - name: ambushTactics
     value: 0
     type: 0
+  - name: goblennNoChangeNote
+    value: false
+    type: 2
+  - name: goblennAmbushNote
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &41062056
 MonoBehaviour:
