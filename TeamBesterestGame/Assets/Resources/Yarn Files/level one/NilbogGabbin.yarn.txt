@@ -58,6 +58,11 @@ It'll work eventually, and everything will turn around!
 
 //GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
 
+
+<<if $gabbinAnnoyingNote is false>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<set $gabbinAnnoyingNote to true>>
+<<endif>>
 ===
 title: Gabbin11111
 tags: 
@@ -97,6 +102,11 @@ I hope we can still work this out!
 
 //GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
 
+<<if $gabbinRespectNote is false>>
+<<RevealText Gabbin Gabbin_said_he'll_respect_Nilbog's_boundaries_now._Hope_this_can_mend_their_relationship.>>
+<<set $gabbinRepectNote to true>>
+<<endif>>
+
 
 ===
 title: Gabbin111112
@@ -115,6 +125,10 @@ That's kind of sad.
 
 //GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
 
+<<if $gabbinBeatenDownNote is false>>
+<<RevealText Gabbin Gabbin_seems_beaten_down,_but_maybe_he'll_be_easier_to_work_with_now.>>
+<<set $gabbinBeatenDownNote to true>>
+<<endif>>
 ===
 title: Gabbin111113
 tags: 
@@ -130,6 +144,11 @@ Thanks for the confidence booster!
 //No change in behavior.
 
 //GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
+
+<<if $gabbinAnnoyingNote is false>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<set $gabbinAnnoyingNote to true>>
+<<endif>>
 ===
 title: Gabbin111132
 tags: 
@@ -147,6 +166,10 @@ That's a *very* negative way to look at things...
 
 //GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
 
+<<if $gabbinBeatenDownNote is false>>
+<<RevealText Gabbin Gabbin_seems_beaten_down,_but_maybe_he'll_be_easier_to_work_with_now.>>
+<<set $gabbinBeatenDownNote to true>>
+<<endif>>
 
 ===
 title: Gabbin1112
@@ -188,8 +211,10 @@ There has to be some way we can fix things, though...
 
 //GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
 
-
-
+<<if $gabbinRespectNote is false>>
+<<RevealText Gabbin Gabbin_said_he'll_respect_Nilbog's_boundaries_now._Hope_this_can_mend_their_relationship.>>
+<<set $gabbinRepectNote to true>>
+<<endif>>
 ===
 title: Gabbin112
 tags: 
@@ -228,6 +253,11 @@ position: 3713,-1543
 //No change in behavior.
 
 //GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
+
+<<if $gabbinAnnoyingNote is false>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<set $gabbinAnnoyingNote to true>>
+<<endif>>
 ===
 title: Gabbin113
 tags: 
@@ -319,7 +349,10 @@ position: 3901,-369
 
 //GabbinSeemsBeatenDown,ButMaybeHe'llBeEasierToWorkWithNow.
 
-
+<<if $gabbinBeatenDownNote is false>>
+<<RevealText Gabbin Gabbin_seems_beaten_down,_but_maybe_he'll_be_easier_to_work_with_now.>>
+<<set $gabbinBeatenDownNote to true>>
+<<endif>>
 ===
 title: Gabbin13222
 tags: 
@@ -336,6 +369,10 @@ Hopefully I can find a way to cheer him up while giving him some space!
 
 //GabbinSaidHe'llRespectNilbog'sBoundariesNow.IfICanGetNilbogToOpenUp,ICanGetTheTwoToWorkTogether!
 
+<<if $gabbinRespectNote is false>>
+<<RevealText Gabbin Gabbin_said_he'll_respect_Nilbog's_boundaries_now._Hope_this_can_mend_their_relationship.>>
+<<set $gabbinRepectNote to true>>
+<<endif>>
 ===
 title: Gabbin13223
 tags: 
@@ -350,6 +387,11 @@ I'll figure him out, then this whole operation will turn around!
 <<EndInterview Gabbin>>
 
 //GabbinIsUnusuallyFriendly,WhichAnnoysNilbog.MaybeICanGetNilbogToOpenUpToGabbin.
+
+<<if $gabbinAnnoyingNote is false>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<set $gabbinAnnoyingNote to true>>
+<<endif>>
 ===
 title: NilbogGabbinSolution1
 tags: 
@@ -565,6 +607,11 @@ position: -851,-492
 
 //NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
 //No change in behavior
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
 ===
 title: Nilbog111
 tags: 
@@ -619,6 +666,11 @@ Nice.
 //No change in behavior
 
 //NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
 ===
 title: Nilbog1213
 tags: 
@@ -643,6 +695,11 @@ position: -577,-2940
 //No change in behavior
 
 //Journal note: Nilbog is a very quiet individual.
+
+<<if $nilbogQuietNote is false>>
+<<RevealText Nilbog Nilbog_sure_is_mysterious.>>
+<<set $nilbogQuietNote to true>>
+<<endif>>
 ===
 title: Nilbog113
 tags: 
@@ -694,6 +751,11 @@ position: -134,-1086
 <<EndInterview Nilbog>>
 
 //NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
+
+<<if $nilbogPatientNote is false>>
+<<RevealText Nilbog Nilbog_is_willing_to_cooperate_with_Gabbin_now_if_Gabbin_would_just_cool_it_down.>>
+<<set $nilbogPatientNote to true>>
+<<endif>>
 ===
 title: Nilbog1111
 tags: 
@@ -732,9 +794,10 @@ position: 586,-4047
 <<set $defeated to true>>
 <<EndInterview Nilbog>>
 
-//Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
-
-//NilbogSeemsDefeated,MaybeHe'llGoAlongWithMySuggestionsBetterNow.
+<<if $nilbogDefeatedNote is false>>
+<<RevealText Nilbog Nilbog_seems_defeated,_maybe_he'll_go_along_with_my_suggestions_better_now.>>
+<<set $nilbogDefeatedNote to true>>
+<<endif>>
 ===
 title: Nilbog111112
 tags: 
@@ -753,6 +816,11 @@ But Gabbin is going to be hard to control, good luck.
 //maybe the two can actually work together!
 
 //NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
+
+<<if $nilbogPatientNote is false>>
+<<RevealText Nilbog Nilbog_is_willing_to_cooperate_with_Gabbin_now_if_Gabbin_would_just_cool_it_down.>>
+<<set $nilbogPatientNote to true>>
+<<endif>>
 ===
 title: Nilbog11112
 tags: 
@@ -770,6 +838,11 @@ position: 278,-3380
 //work better in the long run.
 
 //NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
 ===
 title: Nilbog1113
 tags: 
@@ -808,7 +881,10 @@ position: 190,-1874
 
 //No change in behavior
 
-//NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
 ===
 title: Nilbog121113
 tags: 
@@ -827,7 +903,11 @@ position: 194,-1592
 
 //Journal Note: Nilbog seems defeated, maybe he'll go along with my suggestions better now.
 
-//NilbogSeemsDefeated,MaybeHe'llGoAlongWithMySuggestionsBetterNow.
+<<if $nilbogDefeatedNote is false>>
+<<RevealText Nilbog Nilbog_seems_defeated,_maybe_he'll_go_along_with_my_suggestions_better_now.>>
+<<set $nilbogDefeatedNote to true>>
+<<endif>>
+
 ===
 title: Nilbog12132
 tags: 
@@ -843,6 +923,11 @@ position: -136,-825
 //No change in behavior
 
 //NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
 ===
 title: Nilbog12133
 tags: 
@@ -868,6 +953,11 @@ position: 503,-486
 //No change in behavior
 
 //NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
 ===
 title: Nilbog123
 tags: 
@@ -900,6 +990,13 @@ position: -754,-121
 //pushed him a little too far.
 
 //NilbogSeemsBotheredByGabbin.WhenPressed,IMayHavePushedHimALittleTooFar.
+
+<<if $nilbogBotheredNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_be_bothered_by_Gabbin._I_may_have_pushed_him_a_little_too_far.>>
+<<set $nilbogBotheredNote to true>>
+<<endif>>
+
+
 ===
 title: Nilbog1233
 tags: 
@@ -914,6 +1011,11 @@ The sooner you deal with him, the better.
 //No change in behavior.
 
 //NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
 ===
 title: Nilbog1232
 tags: 
@@ -942,6 +1044,11 @@ position: -81,-151
 
 
 //NilbogIsWillingToWorkWithGabbinNow.IfICanGetGabbinToCoolIt,MaybeTheTwoCanActuallyWorkTogether!
+
+<<if $nilbogPatientNote is false>>
+<<RevealText Nilbog Nilbog_is_willing_to_cooperate_with_Gabbin_now_if_Gabbin_would_just_cool_it_down.>>
+<<set $nilbogPatientNote to true>>
+<<endif>>
 ===
 title: Nilbog12322
 tags: 
@@ -956,11 +1063,16 @@ position: -93,156
 //No change in behavior.
 
 //NilbogClaimsThatIfGabbinStopsBotheringHim,EverythingWillWorkBetterInTheLongRun.
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
 ===
 title: Nilbog12323
 tags: 
 colorID: 0
-position: 719,381
+position: 389,-53
 ---
 ...How do you figure that?
 
