@@ -5347,6 +5347,30 @@ MonoBehaviour:
   - name: combat
     value: 0
     type: 0
+  - name: nilbogDefeatedNote
+    value: false
+    type: 2
+  - name: nilbogPatientNote
+    value: false
+    type: 2
+  - name: nilbogChangeGabbinNote
+    value: false
+    type: 2
+  - name: nilbogQuietNote
+    value: false
+    type: 2
+  - name: nilbogBotheredNote
+    value: false
+    type: 2
+  - name: gabbinRespectNote
+    value: false
+    type: 2
+  - name: gabbinBeatenDownNote
+    value: false
+    type: 2
+  - name: gabbinAnnoyingNote
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &594745391
 MonoBehaviour:
