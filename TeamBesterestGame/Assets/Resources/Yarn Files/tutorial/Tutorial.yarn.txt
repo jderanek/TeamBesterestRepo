@@ -1,34 +1,46 @@
 title: Tutorial1
 tags: 
 colorID: 0
-position: 807,410
+position: 614,520
 ---
-Hello! Welcome to my dungeon, thanks for meeting me at such short notice. 
-I have been having some issues with my employees, goblins killing each other, running away and so on.
-I heard that you might be able to fix things around here, so I would like to discuss parts of your submitted resume. 
-So you told me you had a degree in spellcraft, where did you study?
-[[Uh no? School is for losers.|Tutorial11]]
+Welcome to my dungeon, thanks for meeting me at such short notice. 
+I have been having some problems with my employees such as goblins killing each other and running away from combat.
+This dungeon is pretty popular for a lot of adventuring heroes.
+What is it with random people wanting to explore caves?
+Anyway, I heard that you might be able to fix things around here, hopefully it won't take too long, heroes normally arrive very soon.
+All of this is affecting my bottom-line, not sure I can meet my gold quota if this keeps up for too much longer.
+I would like to discuss parts of your submitted resume, you told me you had a degree in spellcraft, where did you study?
+<<if $timeMagicSpecifis is false>>
+[[Uh no... school is for losers.|Tutorial11]]
+[[Yes, I was magus cum laude at Albion U.|Tutorial12]]
+<<elseif $timeMagicSpecific is true>>
+[[At Albion U, I did my graduate work in time magic.|Tutorial122]]
+[[Uh no... scholl is for losers.|Tutorial11]]
 [[Yes, I was magus cum laude at Albion U.|Tutorial12]]
 ===
 title: Tutorial122
 tags: 
 colorID: 0
-position: 1454,700
+position: 1124,842
 ---
 Really now? So what number am I thinking of?
 <<if $guessProof is false>>
 [[Uh.. 42?|Tutorial1221]]
-[[It is 1 for sure|Tutorial1221]]
+[[It is 1 for sure.|Tutorial1221]]
 [[Let me guess, 501?|Tutorial1221]]
-[[1453, definitely|Tutorial1221]]
+[[1453, definitely.|Tutorial1221]]
 <<elseif $guessProof is true>>
 [[24,601.|Tutorial1222]]
+[[Uh.. 42?|Tutorial1221]]
+[[It is 1 for sure.|Tutorial1221]]
+[[Let me guess, 501?|Tutorial1221]]
+[[1453, definitely.|Tutorial1221]]
 <<endif>>
 ===
 title: Tutorial121
 tags: 
 colorID: 0
-position: 1455,416
+position: 1431,504
 ---
 So you can you cast fireballs or something?
 [[W-well... not actually.|Tutorial1211]]
@@ -36,15 +48,18 @@ So you can you cast fireballs or something?
 title: Tutorial11
 tags: 
 colorID: 1
-position: 1132,-94
+position: 1068,242
 ---
 What?! Then we are done here, find some other fool to hire you. 
-//PerhapsIShouldn'tBeSoFlippantAboutMyEducation.
+<<if $bossFlippantNote is false>>
+<<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education.>>
+<<set $bossFlippantNote to true>>
+<<endif>>
 ===
 title: Tutorial12
 tags: 
 colorID: 0
-position: 1128,404
+position: 1002,522
 ---
 Oh really? What was your speciality?
 <<if $timeMagicSpecific is false>>
@@ -56,22 +71,28 @@ Oh really? What was your speciality?
 title: Tutorial1211
 tags: 
 colorID: 1
-position: 1738,418
+position: 1740,427
 ---
 I don't think this job would be the best fit for you. Good luck in your other endeavors. 
 <<set $timeMagicSpecific to true>>
-//MaybeIShouldMentionMyDoctoralWorkOnTimeMagic.
+<<if $bossTimeMagicNote is false>>
+<<RevealTest Boss Maybe_I_should_mention_my_doctoral_work_on_time_magic.>>
+<<set $bossTimeMagicNote is true>>
+<<endif>>
 ===
 title: Tutorial1221
 tags: 
 colorID: 1
-position: 1732,694
+position: 1742,671
 ---
 Not even close, nice try though. It was 24,601. 
 I was really looking for a wizard with time magic skills. 
 I'm sorry but you won't get the job here.
 <<set $guessProof to true>>
-//NowToProveHimWrong.
+<<if $bossGuessNote is false>>
+<<RevealText Boss Now_to_prove_him_wrong.>>
+<<set $bossGuessNote to true>>
+<<endif>>
 ===
 title: Tutorial1222
 tags: 
@@ -79,6 +100,7 @@ colorID: 1
 position: 1742,962
 ---
 That... how did you? Was that luck? 
-Interesting, let me show you what is going wrong around here.
+Interesting, I will be the goblins into meet you.
+I hope you get all of this fixed quick, heroes are going to arrive soon.
 <<EndTutorial Boss>>
 ===
