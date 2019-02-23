@@ -45,7 +45,8 @@ namespace Yarn.Unity
         /// Make it possible to temporarily disable the controls when
         /// dialogue is active and to restore them when dialogue ends
         public RectTransform gameControlsContainer;
-    
+
+        private IEnumerator coroutine;
 
             void Awake()
         {
@@ -65,6 +66,11 @@ namespace Yarn.Unity
                 continuePrompt.SetActive(false);
         }
 
+        public IEnumerator B()
+        {
+            yield return true;
+        }
+
         /// Show a line of dialogue, gradually
         public override IEnumerator RunLine(Yarn.Line line)
         {
@@ -73,17 +79,26 @@ namespace Yarn.Unity
 
             if (textSpeed > 0.0f)
             {
-                ////Calls the voice activation
+                //Calls the voice activation
                 SoundManager.SetSoundBank();
 
                 // Display the line one character at a time
                 var stringBuilder = new StringBuilder();
+                coroutine = B();
 
                 foreach (char c in line.text)
                 {
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        responseText.text = line.text;
+                        break;
+                    }
                     stringBuilder.Append(c);
                     responseText.text = stringBuilder.ToString();
-                    yield return new WaitForSeconds(textSpeed);
+                    var studpie = StartCoroutine(coroutine);
+                    bool stusadlfkasjdlfjlkasfdnlkj = (bool)studpie;
+                    yield return new WaitUntil(() => (Input.GetMouseButtonDown(0) || (bool)StartCoroutine(coroutine) ));
+                    //WaitForSeconds(textSpeed);
                 }
             }
             else

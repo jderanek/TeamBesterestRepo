@@ -57,11 +57,14 @@ public class GameManager : MonoBehaviour
     public GameObject jeffNotes;
     public GameObject gabbinNotes;
 
+    private DialogueRunner[] dialogueRunners;
+
     void Awake()
     {
         phaseButton.GetComponentInChildren<Text>().text = "Start";
         uiManager = this.GetComponent<UIManager>();
 
+        dialogueRunners = FindObjectsOfType<DialogueRunner>();
         //Debug.Log("Start Tests:");
         //Debug.Log(Scissors.CamelToSentence("ThisStringShouldTurnIntoAProperSentence"));
         //Debug.Log(Scissors.CamelToSentence("IfThereAreMultipleSentences.ThenTheWordFollowingThePeriodShouldBeCapitilized."));
