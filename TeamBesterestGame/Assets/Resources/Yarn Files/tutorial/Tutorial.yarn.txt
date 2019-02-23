@@ -10,13 +10,13 @@ What is it with random people wanting to explore caves?
 Anyway, I heard that you might be able to fix things around here, hopefully it won't take too long, heroes normally arrive very soon.
 All of this is affecting my bottom-line, not sure I can meet my gold quota if this keeps up for too much longer.
 I would like to discuss parts of your submitted resume, you told me you had a degree in spellcraft, where did you study?
-<<if $timeMagicSpecifis is false>>
+
 [[Uh no... school is for losers.|Tutorial11]]
 [[Yes, I was magus cum laude at Albion U.|Tutorial12]]
-<<elseif $timeMagicSpecific is true>>
+
+<<if $timeMagicSpecific is true>>
 [[At Albion U, I did my graduate work in time magic.|Tutorial122]]
-[[Uh no... school is for losers.|Tutorial11]]
-[[Yes, I was magus cum laude at Albion U.|Tutorial12]]
+<<endif>>
 ===
 title: Tutorial122
 tags: 
@@ -24,17 +24,14 @@ colorID: 0
 position: 1124,842
 ---
 Really now? So what number am I thinking of?
-<<if $guessProof is false>>
+
 [[Uh.. 42?|Tutorial1221]]
 [[It is 1 for sure.|Tutorial1221]]
 [[Let me guess, 501?|Tutorial1221]]
 [[1453, definitely.|Tutorial1221]]
-<<elseif $guessProof is true>>
+
+<<if $guessProof is true>>
 [[24,601.|Tutorial1222]]
-[[Uh.. 42?|Tutorial1221]]
-[[It is 1 for sure.|Tutorial1221]]
-[[Let me guess, 501?|Tutorial1221]]
-[[1453, definitely.|Tutorial1221]]
 <<endif>>
 ===
 title: Tutorial121
@@ -43,6 +40,7 @@ colorID: 0
 position: 1431,504
 ---
 So you can you cast fireballs or something?
+
 [[W-well... not actually.|Tutorial1211]]
 ===
 title: Tutorial11
@@ -50,11 +48,13 @@ tags:
 colorID: 1
 position: 1068,242
 ---
-What?! Then we are done here, find some other fool to hire you. 
 <<if $bossFlippantNote is false>>
 <<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education.>>
 <<set $bossFlippantNote to true>>
 <<endif>>
+
+What?! Then we are done here, find some other fool to hire you. 
+
 ===
 title: Tutorial12
 tags: 
@@ -62,9 +62,10 @@ colorID: 0
 position: 1002,522
 ---
 Oh really? What was your speciality?
-<<if $timeMagicSpecific is false>>
+
 [[I did not really focus on one area, more like a general knowledge of wizardy.|Tutorial121]]
-<<elseif $timeMagicSpecific is true>>
+
+<<if $timeMagicSpecific is true>>
 [[I did my dissertation on the morals and ethics of time magic.|Tutorial122]]
 <<endif>>
 ===
@@ -73,26 +74,31 @@ tags:
 colorID: 1
 position: 1740,427
 ---
-I don't think this job would be the best fit for you. Good luck in your other endeavors. 
 <<set $timeMagicSpecific to true>>
+
 <<if $bossTimeMagicNote is false>>
-<<RevealTest Boss Maybe_I_should_mention_my_doctoral_work_on_time_magic.>>
+<<RevealText Boss Maybe_I_should_mention_my_doctoral_work_on_time_magic.>>
 <<set $bossTimeMagicNote is true>>
 <<endif>>
+
+I don't think this job would be the best fit for you. Good luck in your other endeavors. 
+
 ===
 title: Tutorial1221
 tags: 
 colorID: 1
 position: 1742,671
 ---
-Not even close, nice try though. It was 24,601. 
-I was really looking for a wizard with time magic skills. 
-I'm sorry but you won't get the job here.
 <<set $guessProof to true>>
 <<if $bossGuessNote is false>>
 <<RevealText Boss Now_to_prove_him_wrong.>>
 <<set $bossGuessNote to true>>
 <<endif>>
+
+Not even close, nice try though. It was 24,601. 
+I was really looking for a wizard with time magic skills. 
+I'm sorry but you won't get the job here.
+
 ===
 title: Tutorial1222
 tags: 
@@ -100,7 +106,7 @@ colorID: 1
 position: 1742,962
 ---
 That... how did you? Was that luck? 
-Interesting, I will be the goblins into meet you.
+Interesting, I will bring the goblins in to meet you.
 I hope you get all of this fixed quick, heroes are going to arrive soon.
 <<EndTutorial Boss>>
 ===
