@@ -34,9 +34,9 @@ public class InterviewVariableStorage : VariableStorageBehaviour
     //Saving and loading utilities
     public void SaveData()
     {
-        foreach (DefaultVariable variable in defaultVariables)
+        foreach (KeyValuePair<string, Yarn.Value> variable in variables)
         {
-            PlayerPrefs.SetString(gameObject.name + "_" + variable.name, variable.value);
+            PlayerPrefs.SetString(gameObject.name + "_" + variable.Key, variable.Value.AsString);
         }
     }
 
@@ -46,6 +46,7 @@ public class InterviewVariableStorage : VariableStorageBehaviour
         {
            variable.value =  PlayerPrefs.GetString(gameObject.name + "_" + variable.name);
         }
+        ResetToDefaults();
     }
 
     /// Reset to our default values when the game starts
