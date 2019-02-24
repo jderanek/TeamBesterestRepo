@@ -39,15 +39,18 @@ namespace Yarn.Unity
         [Tooltip("How quickly to show the text, in seconds per character")]
         public float textSpeed = 0.025f;
 
+        private float textSpeedConstant; 
+
         /// The buttons that let the user choose an option
         public List<Button> optionButtons;
 
         /// Make it possible to temporarily disable the controls when
         /// dialogue is active and to restore them when dialogue ends
         public RectTransform gameControlsContainer;
+        private float timer;
     
 
-            void Awake()
+        private void Awake()
         {
             // Start by hiding the container, line and option buttons
             if (dialogueContainer != null)
@@ -65,15 +68,24 @@ namespace Yarn.Unity
                 continuePrompt.SetActive(false);
         }
 
+        private void Update()
+        {
+            if (isTalking)
+            {
+                timer += Time.deltaTime;
+            }
+        }
+
+
         /// Show a line of dialogue, gradually
         public override IEnumerator RunLine(Yarn.Line line)
         {
             // Show the text
             responseText.gameObject.SetActive(true);
-
+            yield return new WaitForSeconds(.1f);
             if (textSpeed > 0.0f)
             {
-                ////Calls the voice activation
+                //Calls the voice activation
                 SoundManager.SetSoundBank();
 
                 // Display the line one character at a time
@@ -84,35 +96,32 @@ namespace Yarn.Unity
                     stringBuilder.Append(c);
                     responseText.text = stringBuilder.ToString();
 
-                    if (Input.GetMouseButton(1))
+                    if (Input.GetMouseButtonDown(0))
                     {
                         responseText.text = line.text;
-                        yield return new WaitForSeconds(.25f);
+                        yield return new WaitForSeconds(.025f);
                         break;
                     }
-
-                    yield return new WaitForSeconds(textSpeed);
+                    timer = 0f;
+                    yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || (timer >= textSpeed));
                 }
             }
             else
             {
-                // Display the line immediately if textSpeed == 0
+                //Display the line immediately if textSpeed == 0
                 responseText.text = line.text;
             }
-            SoundManager.StopDialogue();
 
+            SoundManager.StopDialogue();
             // Show the 'press any key' prompt when done, if we have one
             if (continuePrompt != null)
                 continuePrompt.SetActive(true);
 
             // Wait for any user input
-            while (Input.anyKeyDown == false)
-            {
-                yield return null;
-            }
+            yield return new WaitUntil(() => Input.anyKeyDown);
 
             // Hide the text and prompt
-            responseText.gameObject.SetActive(false);
+            //responseText.gameObject.SetActive(false); //Commented out so that player can see the dialogue while choosing answer
 
             if (continuePrompt != null)
                 continuePrompt.SetActive(false);

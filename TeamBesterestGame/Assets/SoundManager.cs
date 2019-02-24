@@ -20,9 +20,16 @@ public class SoundManager : MonoBehaviour
     static GameObject[] goblins;
     static string[] goblinVoiceName;
 
+    private float volume;
+
     private void Awake()
     {
         GetGoblinObjects();
+    }
+
+    public void ChangeVolume(float newVolume)
+    {
+        volume = newVolume;
     }
 
     public static void SetSoundBank()
