@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
     public GameObject gabbinNotes;
 
     private DialogueRunner[] dialogueRunners;
+    private InterviewVariableStorage[] storages;
 
     void Awake()
     {
@@ -65,6 +67,7 @@ public class GameManager : MonoBehaviour
         uiManager = this.GetComponent<UIManager>();
 
         dialogueRunners = FindObjectsOfType<DialogueRunner>();
+        storages = FindObjectsOfType<InterviewVariableStorage>();
         //Debug.Log("Start Tests:");
         //Debug.Log(Scissors.CamelToSentence("ThisStringShouldTurnIntoAProperSentence"));
         //Debug.Log(Scissors.CamelToSentence("IfThereAreMultipleSentences.ThenTheWordFollowingThePeriodShouldBeCapitilized."));
@@ -272,6 +275,14 @@ public class GameManager : MonoBehaviour
         {
             ToggleInterviewMenu();
         }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Save();
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Load();
+        }
     }
 
     public void ChangeTabs(int tab)
@@ -319,5 +330,21 @@ public class GameManager : MonoBehaviour
     public void ToggleNotebook()
     {
         notebook.SetActive(!notebook.activeInHierarchy);
+    }
+
+    //Loads or saves all variable storages
+    public void Load()
+    {
+        foreach (InterviewVariableStorage storage in storages)
+            storage.LoadData();
+        Debug.Log("Loaded");
+    }
+
+    public void Save()
+    {
+        foreach (InterviewVariableStorage storage in storages)
+            storage.SaveData();
+        PlayerPrefs.Save();
+        Debug.Log("Saved");
     }
 }

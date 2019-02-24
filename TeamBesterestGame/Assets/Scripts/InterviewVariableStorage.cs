@@ -31,6 +31,23 @@ public class InterviewVariableStorage : VariableStorageBehaviour
     /// A UI.Text that can show the current list of all variables. Optional.
     public UnityEngine.UI.Text debugTextView;
 
+    //Saving and loading utilities
+    public void SaveData()
+    {
+        foreach (DefaultVariable variable in defaultVariables)
+        {
+            PlayerPrefs.SetString(gameObject.name + "_" + variable.name, variable.value);
+        }
+    }
+
+    public void LoadData()
+    {
+        foreach (DefaultVariable variable in defaultVariables)
+        {
+           variable.value =  PlayerPrefs.GetString(gameObject.name + "_" + variable.name);
+        }
+    }
+
     /// Reset to our default values when the game starts
     void Awake()
     {
