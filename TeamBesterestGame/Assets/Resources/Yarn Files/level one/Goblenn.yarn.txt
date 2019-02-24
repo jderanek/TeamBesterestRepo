@@ -1,7 +1,7 @@
 title: Coward1Base
 tags: 
 colorID: 0
-position: -190,547
+position: -606,-60
 ---
 <<ChangeSpeaker SoundManager Goblenn>>
 H-huh?
@@ -18,7 +18,7 @@ I'm the... front-line fighter around here.
 title: Coward11
 tags: 
 colorID: 0
-position: 363,-316
+position: 353,-581
 ---
 I wouldn't exactly call myself brave...
 [[What would you call yourself then?|Coward111]]
@@ -28,7 +28,7 @@ I wouldn't exactly call myself brave...
 title: Coward111
 tags: 
 colorID: 0
-position: 938,-734
+position: 928,-999
 ---
 Usually I try to avoid fighting where I can, so a coward I guess.. 
 [[A coward as the pointman in combat? I can see why I got asked to come here.|Coward1111]]
@@ -37,7 +37,7 @@ Usually I try to avoid fighting where I can, so a coward I guess..
 title: Coward1111
 tags: 
 colorID: 1
-position: 1838,-943
+position: 1828,-1209
 ---
 <<if $goblennNoChangeNote is false>>
 <<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
@@ -51,7 +51,7 @@ I do appreciate all the help you are doing for us, I know you are trying your be
 title: Coward112
 tags: 
 colorID: 0
-position: 1312,-447
+position: 1302,-712
 ---
 I always hear snide remarks about me being a deserter between shifts, almost daily in fact...
 [[Well, hopefully with me here, I can fix that for you somehow.|Coward1111]]
@@ -60,7 +60,7 @@ I always hear snide remarks about me being a deserter between shifts, almost dai
 title: Coward11222
 tags: 
 colorID: 1
-position: 1827,-510
+position: 2018,-737
 ---
 <<set $ambushTactics to 1>>
 
@@ -76,7 +76,7 @@ You think so? Maybe I can use my hiding spots in some way?
 title: Coward12
 tags: 
 colorID: 0
-position: 628,-27
+position: 618,-292
 ---
 Well...
 not reaally...
@@ -88,16 +88,17 @@ not usually, actually...
 title: Coward122
 tags: 
 colorID: 0
-position: 1522,203
+position: 1582,33
 ---
 You could say that, I guess.. but I call it being smart!
 Heroes are so scary...
 [[Are you adverse to fighting them too?|Coward1321]]
+[[Smart? How so?|Coward1322]]
 ===
 title: Coward13
 tags: 
 colorID: 0
-position: 539,689
+position: 270,241
 ---
 W-well...
 I like to run...
@@ -111,7 +112,7 @@ And I know all the best hiding spots in the dungeon!
 title: Coward131
 tags: 
 colorID: 0
-position: 810,314
+position: 1005,209
 ---
 Well...
 yes...technically.
@@ -120,26 +121,26 @@ yes...technically.
 title: Coward132
 tags: 
 colorID: 0
-position: 1419,744
+position: 1128,530
 ---
 You are right, but is also lets me get away safely when heroes arrive.
 [[You are the first line of defense, but yet you run away?|Coward1321]]
 [[The vanguard retreating at first contact? I imagine that makes you quite unpopular.|Coward1321]]
-[[That doesn't sound like it helps out in combat|Coward133]]
+[[That doesn't sound like it helps out in combat.|Coward133]]
 ===
 title: Coward1321
 tags: 
 colorID: 0
-position: 1902,575
+position: 1695,358
 ---
 I don't mind fighting, it is just the dying part that scares me...
 [[That is understandable, but you still need to fight heroes, that is your job.|Coward13211]]
-
+[[But how does hiding factor into your combat style?|Coward1322]]
 ===
 title: Coward1331
 tags: 
 colorID: 1
-position: 1657,1179
+position: 1924,1026
 ---
 <<if $goblennNoChangeNote is false>>
 <<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
@@ -154,7 +155,7 @@ Just tell me when you think of something then!
 title: Coward13211
 tags: 
 colorID: 1
-position: 2337,609
+position: 2222,496
 ---
 <<if $goblennNoChangeNote is false>>
 <<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
@@ -168,7 +169,7 @@ I know that, b-but I still think my way is working out. Let me try again boss.
 title: Coward133
 tags: 
 colorID: 0
-position: 965,1002
+position: 695,734
 ---
 I-I guess they technically don't...
 
@@ -180,7 +181,7 @@ I-I guess they technically don't...
 title: CowTree2Start
 tags: 
 colorID: 2
-position: 3192,238
+position: 4322,772
 ---
 <<ChangeSpeaker SoundManager Goblenn>>
 W-what did you have in mind?
@@ -191,43 +192,60 @@ W-what did you have in mind?
 title: Ninja
 tags: 
 colorID: 2
-position: 3688,-60
+position: 4782,491
 ---
-L-like a ninja? That sounds cool! Sure!
-<<set $ninja to true>>
+<<if $goblennNinja is true>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
+L-like a ninja? That sounds cool! 
+I will try that out then.
+<<elseif>>
+I-I am not so sure about that...
+but it wouldn't hurt to experiment I guess...
+<<endif>>
 <<EndInterview Goblenn>>
 ===
 title: Leader
 tags: 
 colorID: 2
-position: 3663,243
+position: 4767,775
 ---
+<<if $goblennLeader is true>>
+<<addPoint Goblenn>>
+<<addPoint Goblenn>>
 M-me?! As a leader? 
 That is a difficult task... but...
 I will try to boost morale in battle...
-<<set $leader to true>>
-<<addPoint Goblenn>>
+<<elseif>>
+A-are you sure about this?
+I will try at least...
+<<endif>>
 <<EndInterview Goblenn>>
 ===
 title: Smarter
 tags: 
 colorID: 2
-position: 3668,499
+position: 4771,1003
 ---
-Surviving IS high up there on my to-do list. My fear can be useful sometimes...
-<<set $smarter to true>>
+<<if $goblennSmarter is true>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
+<<addPoint Goblenn>>
+Surviving IS high up there on my to-do list. 
+My fear can be useful sometimes...
+<<elseif>>
+Y-you really think so?
+I am not so sure...
+But thanks I guess...
+<<endif>>
 <<EndInterview Goblenn>>
 ===
 title: Coward1332
 tags: 
 colorID: 1
-position: 406,1245
+position: 577,1124
 ---
 <<set $ambushTactics to 1>>
 
@@ -243,8 +261,35 @@ A-ambush? That seems scary... but also smart! Let me think for a bit then.
 title: Coward121
 tags: 
 colorID: 0
-position: 1313,-86
+position: 1490,-313
 ---
 I guess you could say that... the other goblins say it too...
 [[They do? Can you tell me when and what they say exactly?|Coward112]]
+===
+title: Coward1322
+tags: 
+colorID: 0
+position: 2068,-165
+---
+I think that stealth is important aspect of combat.
+Discretion is the better part of valor as they say.
+[[That makes sense, I can see your reasoning.|Coward13221]]
+[[Seems to me that you are just a coward.|Coward13222]]
+===
+title: Coward13221
+tags: 
+colorID: 1
+position: 2371,-294
+---
+Thanks! Now if only the other goblins understood it too...
+<<set $goblennSmarter to true>>
+<<EndInterview Goblenn>>
+===
+title: Coward13222
+tags: 
+colorID: 1
+position: 2376,10
+---
+You too? *Sigh* That is what they all say... 
+<<EndInterview Goblenn>>
 ===
