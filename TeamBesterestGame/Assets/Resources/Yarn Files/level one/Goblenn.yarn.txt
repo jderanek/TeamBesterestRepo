@@ -195,16 +195,16 @@ colorID: 2
 position: 4782,491
 ---
 <<if $goblennNinja is true>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
 L-like a ninja? That sounds cool! 
 I will try that out then.
+//4 points
+
 <<elseif>>
 I-I am not so sure about that...
 but it wouldn't hurt to experiment I guess...
+//no change
 <<endif>>
+
 <<EndInterview Goblenn>>
 ===
 title: Leader
@@ -213,14 +213,16 @@ colorID: 2
 position: 4767,775
 ---
 <<if $goblennLeader is true>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
+
 M-me?! As a leader? 
 That is a difficult task... but...
 I will try to boost morale in battle...
+//2 points
+
 <<elseif>>
 A-are you sure about this?
 I will try at least...
+
 <<endif>>
 <<EndInterview Goblenn>>
 ===
@@ -230,15 +232,16 @@ colorID: 2
 position: 4771,1003
 ---
 <<if $goblennSmarter is true>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
+
 Surviving IS high up there on my to-do list. 
 My fear can be useful sometimes...
+//3 points
+
 <<elseif>>
 Y-you really think so?
 I am not so sure...
 But thanks I guess...
+
 <<endif>>
 <<EndInterview Goblenn>>
 ===
@@ -281,8 +284,10 @@ tags:
 colorID: 1
 position: 2371,-294
 ---
-Thanks! Now if only the other goblins understood it too...
 <<set $goblennSmarter to true>>
+
+Thanks! Now if only the other goblins understood it too...
+
 <<EndInterview Goblenn>>
 ===
 title: Coward13222
