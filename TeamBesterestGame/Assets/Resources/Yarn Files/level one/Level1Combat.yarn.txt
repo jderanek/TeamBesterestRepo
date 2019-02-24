@@ -3,6 +3,7 @@ tags:
 colorID: 0
 position: 426,260
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 <<if $shift11Combat is 0>>
 Goblenn saw heroes enter the dungeon, and instantly fled.
 //0 points
@@ -21,6 +22,7 @@ tags:
 colorID: 0
 position: 742,260
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 <<if $shift12Combat is 0>>
 Jeff is stabbed by Geoff.
 //Jeff fades to black/white
@@ -42,6 +44,7 @@ tags:
 colorID: 0
 position: 1066,262
 ---
+<<ChangeSpeaker SoundManager Voiceless>>
 <<if $shift13Combat is 0>>
 Gabbin runs around trying to find Nilbog, and is taken down by the heroes.
 //Gabbin fades to black/white.
