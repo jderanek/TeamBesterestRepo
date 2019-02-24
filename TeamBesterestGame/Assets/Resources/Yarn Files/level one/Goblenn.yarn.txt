@@ -97,7 +97,7 @@ Heroes are so scary...
 title: Coward13
 tags: 
 colorID: 0
-position: 535,689
+position: 539,689
 ---
 W-well...
 I like to run...
@@ -120,7 +120,7 @@ yes...technically.
 title: Coward132
 tags: 
 colorID: 0
-position: 1419,749
+position: 1419,744
 ---
 You are right, but is also lets me get away safely when heroes arrive.
 [[You are the first line of defense, but yet you run away?|Coward1321]]
@@ -139,7 +139,7 @@ I don't mind fighting, it is just the dying part that scares me...
 title: Coward1331
 tags: 
 colorID: 1
-position: 1657,1184
+position: 1657,1179
 ---
 <<if $goblennNoChangeNote is false>>
 <<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
@@ -154,7 +154,7 @@ Just tell me when you think of something then!
 title: Coward13211
 tags: 
 colorID: 1
-position: 2337,614
+position: 2337,609
 ---
 <<if $goblennNoChangeNote is false>>
 <<RevealText Goblenn Goblenn_seems_to_have_serious_self_confidence_issues.>>
@@ -179,49 +179,21 @@ I-I guess they technically don't...
 ===
 title: CowTree2Start
 tags: 
-colorID: 0
-position: 2876,244
+colorID: 2
+position: 3192,238
 ---
 <<ChangeSpeaker SoundManager Goblenn>>
 W-what did you have in mind?
-[[Do you think you could try to attack from a hidden position?|Stealth]]
-[[I know of a way to endear yourself to your comrades.|Coworkers]]
-[[You need to shape up and work harder or you are out of here!|Stern]]
-[[I understand your issues, what I can do to help?|Understanding]]
+[[Do you think you could try to attack from a hidden position? Like a ninja.|Ninja]]
+[[I know of a way to endear yourself to your comrades. You are the vanguard, inspire them to victory!|Leader]]
+[[Your skills in stealth are vital, use them to survive and live to fight another day.|Smarter]]
 ===
-title: Understanding
-tags: 
-colorID: 0
-position: 3816,777
----
-Tell me what I need to do to change, I am tired of running away..
-[[Running away makes the heroes laugh at you. Do you really want that?|Respect]]
-[[You can learn from your fear, use it to survive.|Smarter]]
-===
-title: Stealth
-tags: 
-colorID: 0
-position: 3903,-32
----
-I-I am good at laying low...
-[[You can use your hiding skills to ambush any unsuspecting heroes!|Preying]]
-[[Use that speed of yours in combat to outmanuever heroes instead of running away.|Stalking]]
-===
-title: Coworkers
-tags: 
-colorID: 0
-position: 3885,317
----
-Well, they couldn't like me any less...
-[[You are the tip of the spear, you need to prove why you were assigned there.|Teamwork]]
-[[As the vanguard, your role is to inspire your fellow goblins to victory.|Leader]]
-===
-title: Preying
+title: Ninja
 tags: 
 colorID: 2
-position: 4403,-408
+position: 3688,-60
 ---
-L-like a ninja? T-that sounds cool!
+L-like a ninja? That sounds cool! Sure!
 <<set $ninja to true>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
@@ -232,56 +204,21 @@ L-like a ninja? T-that sounds cool!
 title: Leader
 tags: 
 colorID: 2
-position: 4324,420
+position: 3663,243
 ---
-M-me?! That is a hard task... but you are right. 
+M-me?! As a leader? 
+That is a difficult task... but...
 I will try to boost morale in battle...
 <<set $leader to true>>
-<<addPoint Goblenn>>
-<<EndInterview Goblenn>>
-===
-title: Teamwork
-tags: 
-colorID: 2
-position: 4351,160
----
-I-I can maybe talk to Jeff or Geoff about training some more then.
-<<set $teamwork to true>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
-<<EndInterview Goblenn>>
-
-===
-title: Stalking
-tags: 
-colorID: 2
-position: 4372,-104
----
-Wouldn't hurt to try I guess...
-<<set $stalking to true>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
-<<addPoint Goblenn>>
-<<EndInterview Goblenn>>
-
-===
-title: Respect
-tags: 
-colorID: 2
-position: 4349,839
----
-N-no! I am a proud goblin! They should cower in fear of me!
-<<set $respect to true>>
 <<addPoint Goblenn>>
 <<EndInterview Goblenn>>
 ===
 title: Smarter
 tags: 
 colorID: 2
-position: 4349,1093
+position: 3668,499
 ---
-Surviving IS high up there on my to-do list. My fear can be useful sometimes, haha...
+Surviving IS high up there on my to-do list. My fear can be useful sometimes...
 <<set $smarter to true>>
 <<addPoint Goblenn>>
 <<addPoint Goblenn>>
