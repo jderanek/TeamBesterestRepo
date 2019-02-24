@@ -431,8 +431,8 @@ MonoBehaviour:
   response: {fileID: 369298016}
   points: 0
   dialogueRunner: {fileID: 594745389}
-  notes: {fileID: 0}
-  newNote: {fileID: 0}
+  notes: {fileID: 1975713363}
+  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &14465736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8709,8 +8709,8 @@ MonoBehaviour:
   response: {fileID: 369298016}
   points: 0
   dialogueRunner: {fileID: 594745389}
-  notes: {fileID: 0}
-  newNote: {fileID: 0}
+  notes: {fileID: 14202393}
+  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &906177786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9033,8 +9033,8 @@ MonoBehaviour:
   response: {fileID: 369298016}
   points: 0
   dialogueRunner: {fileID: 2082834031}
-  notes: {fileID: 0}
-  newNote: {fileID: 0}
+  notes: {fileID: 1877343969}
+  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &951470859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13194,8 +13194,8 @@ MonoBehaviour:
   response: {fileID: 369298016}
   points: 0
   dialogueRunner: {fileID: 2082834031}
-  notes: {fileID: 0}
-  newNote: {fileID: 0}
+  notes: {fileID: 2005550718}
+  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &1335600117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16325,8 +16325,8 @@ MonoBehaviour:
   response: {fileID: 369298016}
   points: 0
   dialogueRunner: {fileID: 41062054}
-  notes: {fileID: 0}
-  newNote: {fileID: 0}
+  notes: {fileID: 253172324}
+  newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &1765382687
 SpriteRenderer:
   m_ObjectHideFlags: 0

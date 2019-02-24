@@ -4,9 +4,10 @@ colorID: 0
 position: 611,519
 ---
 Welcome to my dungeon, thanks for meeting me at such short notice. 
-I have been having some problems with my employees such as goblins killing each other and running away from combat.
+I have been having some problems with my employees, and I've been told you can help.
+Some of the goblins are killing each other, others running away from combat, you get the idea.
 This dungeon is pretty popular for a lot of adventuring heroes.
-What is it with random people wanting to explore caves?
+Random people wanting to explore caves provide excellent profits... if we can take care of them first.
 Anyway, I heard that you might be able to fix things around here, hopefully it won't take too long, heroes normally arrive very soon.
 All of this is affecting my bottom-line, not sure I can meet my gold quota if this keeps up for too much longer.
 I would like to discuss parts of your submitted resume, you told me you had a degree in spellcraft, where did you study?
@@ -21,7 +22,7 @@ I would like to discuss parts of your submitted resume, you told me you had a de
 title: Tutorial122
 tags: 
 colorID: 0
-position: 1124,842
+position: 1124,840
 ---
 Really now? So what number am I thinking of?
 
@@ -37,7 +38,7 @@ Really now? So what number am I thinking of?
 title: Tutorial121
 tags: 
 colorID: 0
-position: 1431,504
+position: 1395,466
 ---
 So you can you cast fireballs or something?
 
@@ -53,7 +54,7 @@ position: 1068,242
 <<set $bossFlippantNote to true>>
 <<endif>>
 
-What?! Then we are done here, find some other fool to hire you. 
+What?! Then we're done here, find some other fool to hire you. 
 
 ===
 title: Tutorial12
@@ -108,5 +109,6 @@ position: 1742,962
 That... how did you? Was that luck? 
 Interesting, I will bring the goblins in to meet you.
 I hope you get all of this fixed quick, heroes are going to arrive soon.
+You have one meeting to make this work, or I'm going to get my money back out of your hide.
 <<EndTutorial Boss>>
 ===
