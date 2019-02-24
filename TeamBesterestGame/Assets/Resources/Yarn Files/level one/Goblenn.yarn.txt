@@ -186,20 +186,21 @@ position: 4322,772
 <<ChangeSpeaker SoundManager Goblenn>>
 W-what did you have in mind?
 [[Do you think you could try to attack from a hidden position? Like a ninja.|Ninja]]
-[[I know of a way to endear yourself to your comrades. You are the vanguard, inspire them to victory!|Leader]]
 [[Your skills in stealth are vital, use them to survive and live to fight another day.|Smarter]]
 ===
 title: Ninja
 tags: 
 colorID: 2
-position: 4782,491
+position: 4780,492
 ---
 <<if $goblennNinja is true>>
+<<set $shift11Combat 1>>
 L-like a ninja? That sounds cool! 
 I will try that out then.
 //4 points
 
 <<elseif>>
+<<set $shift11 Combat 0>>
 I-I am not so sure about that...
 but it wouldn't hurt to experiment I guess...
 //no change
@@ -207,37 +208,19 @@ but it wouldn't hurt to experiment I guess...
 
 <<EndInterview Goblenn>>
 ===
-title: Leader
-tags: 
-colorID: 2
-position: 4767,775
----
-<<if $goblennLeader is true>>
-
-M-me?! As a leader? 
-That is a difficult task... but...
-I will try to boost morale in battle...
-//2 points
-
-<<elseif>>
-A-are you sure about this?
-I will try at least...
-
-<<endif>>
-<<EndInterview Goblenn>>
-===
 title: Smarter
 tags: 
 colorID: 2
-position: 4771,1003
+position: 4734,938
 ---
 <<if $goblennSmarter is true>>
-
+<<set $shift11Combat 2>>
 Surviving IS high up there on my to-do list. 
 My fear can be useful sometimes...
 //3 points
 
 <<elseif>>
+<<set $shift11Combat 0>>
 Y-you really think so?
 I am not so sure...
 But thanks I guess...
