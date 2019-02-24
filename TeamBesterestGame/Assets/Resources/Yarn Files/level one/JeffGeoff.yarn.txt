@@ -3,6 +3,8 @@ tags:
 colorID: 0
 position: 4051,147
 ---
+<<ChangeSpeaker SoundManager Geoff>>
+
 Hello, I'm Geoff.
 I'm sorry boss, I am mad right now. Someone here stole my scone and ate it!
 What kind of jerk does that?
@@ -155,6 +157,7 @@ tags:
 colorID: 0
 position: -336,750
 ---
+<<ChangeSpeaker SoundManager Jeff>>
 Hi boss... what do you need?
 [[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
 ===
