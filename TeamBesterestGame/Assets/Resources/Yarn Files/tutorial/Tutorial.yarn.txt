@@ -79,7 +79,7 @@ position: 1740,427
 
 <<if $bossTimeMagicNote is false>>
 <<RevealText Boss Maybe_I_should_mention_my_doctoral_work_on_time_magic.>>
-<<set $bossTimeMagicNote is true>>
+<<set $bossTimeMagicNote to true>>
 <<endif>>
 
 I don't think this job would be the best fit for you. Good luck in your other endeavors. 
