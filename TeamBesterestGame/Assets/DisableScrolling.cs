@@ -23,6 +23,6 @@ public class DisableScrolling : MonoBehaviour {
 
     public void OnMouseExit()
     {
-        sceneCamera.GetComponent<CameraControls>().scrollLock = true;
+        //sceneCamera.GetComponent<CameraControls>().scrollLock = true;
     }
 }
