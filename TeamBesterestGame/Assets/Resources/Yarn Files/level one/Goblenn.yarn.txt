@@ -194,13 +194,13 @@ colorID: 2
 position: 4780,492
 ---
 <<if $goblennNinja is true>>
-<<set $shift11Combat 1>>
+<<set $shift11Combat to 1>>
 L-like a ninja? That sounds cool! 
 I will try that out then.
 //4 points
 
-<<elseif>>
-<<set $shift11 Combat 0>>
+<<elseif $goblennNinja is false>>
+<<set $shift11Combat to 0>>
 I-I am not so sure about that...
 but it wouldn't hurt to experiment I guess...
 //no change
@@ -214,13 +214,13 @@ colorID: 2
 position: 4734,938
 ---
 <<if $goblennSmarter is true>>
-<<set $shift11Combat 2>>
+<<set $shift11Combat to 2>>
 Surviving IS high up there on my to-do list. 
 My fear can be useful sometimes...
 //3 points
 
-<<elseif>>
-<<set $shift11Combat 0>>
+<<elseif $goblennSmarter is false>>
+<<set $shift11Combat to 0>>
 Y-you really think so?
 I am not so sure...
 But thanks I guess...

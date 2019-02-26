@@ -711,6 +711,12 @@ MonoBehaviour:
   - name: shift11Combat
     value: 0
     type: 0
+  - name: goblennSmarter
+    value: false
+    type: 2
+  - name: goblennNinja
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &41062056
 MonoBehaviour:

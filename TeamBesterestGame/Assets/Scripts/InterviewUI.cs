@@ -70,7 +70,7 @@ namespace Yarn.Unity
 
         private void Update()
         {
-            if (isTalking)
+            //if (isTalking)
             {
                 timer += Time.deltaTime;
             }
