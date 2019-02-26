@@ -27,6 +27,26 @@ public class SoundManager : MonoBehaviour
         GetGoblinObjects();
     }
 
+    private void ChangeMasterVolume()
+    {
+        return;
+    }
+
+    private void ChangeVoiceVolume()
+    {
+        return;
+    }
+
+    private void ChangeSFXVolume()
+    {
+        return;
+    }
+
+    private void ChangeMusicVolume()
+    {
+        return;
+    }
+
     public void ChangeVolume(float newVolume)
     {
         volume = newVolume;
