@@ -1,0 +1,11 @@
+title: victory
+tags: 
+colorID: 0
+position: 540,260
+---
+<<ChangeSpeaker SoundManager Boss>>
+I don't know how you did it, but you did it! Those goblins are a killing machine!
+...it's like you've already met them before, somehow!
+Skills like yours could get you far in an industry like this. I'll pass your performance report along to some people who could also use the help.
+Thanks for the help! I know who to call if I need a skilled wizard's help again!
+===
