@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Yarn.Unity;
 
 //integer that manages the dialogue voice that is called based on the character
@@ -27,29 +28,29 @@ public class SoundManager : MonoBehaviour
         GetGoblinObjects();
     }
 
-    private void ChangeMasterVolume()
+    public void ChangeMasterVolume(GameObject scrollBar)
     {
+        print(scrollBar.GetComponent<Scrollbar>().value);
+        AkSoundEngine.SetRTPCValue("Master_Volume", scrollBar.GetComponent<Scrollbar>().value * 100); //multiply by 100 because the float passed counts as a percent
         return;
     }
 
-    private void ChangeVoiceVolume()
+    public void ChangeVoiceVolume(GameObject scrollBar)
     {
+        AkSoundEngine.SetRTPCValue("Voice_Volume", scrollBar.GetComponent<Scrollbar>().value * 100); //multiply by 100 because the float passed counts as a percent
         return;
     }
 
-    private void ChangeSFXVolume()
+    public void ChangeSFXVolume(GameObject scrollBar)
     {
+        AkSoundEngine.SetRTPCValue("Sound_Effects", scrollBar.GetComponent<Scrollbar>().value * 100); //multiply by 100 because the float passed counts as a percent
         return;
     }
 
-    private void ChangeMusicVolume()
+    public void ChangeMusicVolume(GameObject scrollBar)
     {
+        AkSoundEngine.SetRTPCValue("Music_Volume", scrollBar.GetComponent<Scrollbar>().value * 100); //multiply by 100 because the float passed counts as a percent
         return;
-    }
-
-    public void ChangeVolume(float newVolume)
-    {
-        volume = newVolume;
     }
 
     public static void SetSoundBank()
