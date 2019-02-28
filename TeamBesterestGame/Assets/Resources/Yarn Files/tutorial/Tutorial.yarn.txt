@@ -1,16 +1,12 @@
 title: Tutorial1
 tags: 
 colorID: 0
-position: 611,519
+position: 611,517
 ---
-Welcome to my dungeon, thanks for meeting me at such short notice. 
-I have been having some problems with my employees, and I've been told you can help.
-Some of the goblins are killing each other, others running away from combat, you get the idea.
-This dungeon is pretty popular for a lot of adventuring heroes.
-Random people wanting to explore caves provide excellent profits... if we can take care of them first.
-Anyway, I heard that you might be able to fix things around here, hopefully it won't take too long, heroes normally arrive very soon.
-All of this is affecting my bottom-line, not sure I can meet my gold quota if this keeps up for too much longer.
-I would like to discuss parts of your submitted resume, you told me you had a degree in spellcraft, where did you study?
+Finally! Took you long enough! 
+All of my goblins keep dying to pillaging heroes! 
+I really to get this fixed, hopefully we can get you started immediately.
+Your resume here says you have a degree in spellcraft, where did you study?
 
 [[Uh no... school is for losers.|Tutorial11]]
 [[Yes, I was magus cum laude at Albion U.|Tutorial12]]
@@ -22,14 +18,14 @@ I would like to discuss parts of your submitted resume, you told me you had a de
 title: Tutorial122
 tags: 
 colorID: 0
-position: 1124,840
+position: 1124,836
 ---
 Really now? So what number am I thinking of?
 
 [[Uh.. 42?|Tutorial1221]]
-[[It is 1 for sure.|Tutorial1221]]
-[[Let me guess, 501?|Tutorial1221]]
-[[1453, definitely.|Tutorial1221]]
+[[It is 7 for sure.|Tutorial1221]]
+[[Let me guess, 410?|Tutorial1221]]
+[[1066, definitely.|Tutorial1221]]
 
 <<if $guessProof is true>>
 [[24,601.|Tutorial1222]]
@@ -47,7 +43,7 @@ So you can you cast fireballs or something?
 title: Tutorial11
 tags: 
 colorID: 1
-position: 1068,242
+position: 1066,242
 ---
 <<if $bossFlippantNote is false>>
 <<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education.>>
