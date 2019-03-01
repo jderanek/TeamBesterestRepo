@@ -19,13 +19,15 @@ public abstract class BaseMonster : BaseEntity {
 
     public int cNum;//made to cut corners temporarily get rid of this later
 
-    public Animator anim; //= this.gameObject.GetComponentInChildren<Animator>();
+    //public Animator anim; //= this.gameObject.GetComponentInChildren<Animator>();
 
     public bool interviewable = true;
     public GameObject[] interviewOptions;
     public GameObject response;
     public int points = 0;
     public GameObject dialogueRunner;
+    public Image picture;
+    public Button button;
 
     //bool to check if monster is fleeing
     private bool isFleeing = false;
@@ -39,7 +41,7 @@ public abstract class BaseMonster : BaseEntity {
         
         //moved damage text here bc it was throwing error on pre-instantiated monsters
         damageText = this.gameObject.GetComponentInChildren<Text>();
-        anim = this.gameObject.GetComponentInChildren<Animator>();
+        //anim = this.gameObject.GetComponentInChildren<Animator>();
     }
 
     ///<summary>
@@ -86,6 +88,8 @@ public abstract class BaseMonster : BaseEntity {
     {
         this.mood = 3;
         this.interviewable = true;
+        picture.color = new Color(picture.color.r, picture.color.g, picture.color.b, 1.0f);
+        button.interactable = true;
     }
     
     //Clears list of previous traits, and adds the new trait
@@ -140,6 +144,8 @@ public abstract class BaseMonster : BaseEntity {
         this.uiManager.SpeechBubblesOff();
         //grey out portrait
         uiManager.speaker.SetActive(false);
+        picture.color = new Color (picture.color.r, picture.color.g, picture.color.b, 0.5f);
+        button.interactable = false;
     }
 
     [YarnCommand("EndTutorial")]
