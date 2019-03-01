@@ -256,6 +256,44 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void EnableFollowup(string shift)
+    {
+        switch (shift)
+        {
+            case "shift1":
+                //change button text to followup
+                //button function switches to RunDialogue(Cow2TreeStart)
+                //or
+                //create new button, switch one off, switch the other on //easier
+                break;
+            case "shift2":
+
+                break;
+            case "shift3":
+
+                break;
+        }
+    }
+
+    public void DisableFollowup(string shift)
+    {
+        switch (shift)
+        {
+            case "shift1": //Goblenn
+                //change button text back to interview 
+
+                //button function switches to RunDialogue()
+
+                break;
+            case "shift2": //Jeff and Geoff
+
+                break;
+            case "shift3": //Nilbog and Gabbin
+
+                break;
+        }
+    }
+
     public void LoadLevelOne()
     {
         //AkSoundEngine.StopAll();
