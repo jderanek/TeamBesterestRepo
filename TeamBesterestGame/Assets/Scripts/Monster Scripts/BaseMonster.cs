@@ -27,6 +27,7 @@ public abstract class BaseMonster : BaseEntity {
     public int points = 0;
     public GameObject dialogueRunner;
     public Image picture;
+    public Button button;
 
     //bool to check if monster is fleeing
     private bool isFleeing = false;
@@ -88,6 +89,7 @@ public abstract class BaseMonster : BaseEntity {
         this.mood = 3;
         this.interviewable = true;
         picture.color = new Color(picture.color.r, picture.color.g, picture.color.b, 1.0f);
+        button.interactable = true;
     }
     
     //Clears list of previous traits, and adds the new trait
@@ -143,6 +145,7 @@ public abstract class BaseMonster : BaseEntity {
         //grey out portrait
         uiManager.speaker.SetActive(false);
         picture.color = new Color (picture.color.r, picture.color.g, picture.color.b, 0.5f);
+        button.interactable = false;
     }
 
     [YarnCommand("EndTutorial")]
