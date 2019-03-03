@@ -256,40 +256,57 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void EnableFollowup(string shift)
-    {
-        switch (shift)
-        {
-            case "shift1":
-                //change button text to followup
-                //button function switches to RunDialogue(Cow2TreeStart)
-                //or
-                //create new button, switch one off, switch the other on //easier
-                break;
-            case "shift2":
-
-                break;
-            case "shift3":
-
-                break;
-        }
-    }
-
-    public void DisableFollowup(string shift)
+    public void EnableFollowup(string shift) //to be called in EndInterview, unlocks followup
     {
         switch (shift)
         {
             case "shift1": //Goblenn
-                //change button text back to interview 
-
-                //button function switches to RunDialogue()
-
+                if (!this.monsterList[3].GetComponent<BaseMonster>().interviewable)
+                {
+                    this.monsterList[3].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[3].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                }
                 break;
             case "shift2": //Jeff and Geoff
-
+                if (!this.monsterList[0].GetComponent<BaseMonster>().interviewable && !this.monsterList[1].GetComponent<BaseMonster>().interviewable)
+                {
+                    this.monsterList[0].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[0].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                    this.monsterList[1].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[1].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                }
                 break;
             case "shift3": //Nilbog and Gabbin
+                if (!this.monsterList[2].GetComponent<BaseMonster>().interviewable && !this.monsterList[4].GetComponent<BaseMonster>().interviewable)
+                {
+                    this.monsterList[2].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[2].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                    this.monsterList[4].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[4].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                }
+                break;
+        }
+    }
 
+    public void DisableFollowup(string shift) //to be called at end of followup conversation
+    {
+        switch (shift)
+        {
+            case "shift1": //Goblenn
+                this.monsterList[3].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[3].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                break;
+            case "shift2": //Jeff and Geoff
+                this.monsterList[0].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[0].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                this.monsterList[1].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[1].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                break;
+            case "shift3": //Nilbog and Gabbin
+                this.monsterList[2].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[2].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                this.monsterList[4].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[4].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
                 break;
         }
     }
