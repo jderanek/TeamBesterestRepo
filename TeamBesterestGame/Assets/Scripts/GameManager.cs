@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
         this.interviewing = false;
         foreach (GameObject monster in monsterList)
         {
-            monster.GetComponent<BaseMonster>().Reset();
+            monster.GetComponent<BaseMonster>().interviewable = true;
         }
         foreach (GameObject monster in monsterList)
         {
