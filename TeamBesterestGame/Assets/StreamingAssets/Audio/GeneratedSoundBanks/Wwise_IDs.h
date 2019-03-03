@@ -22,6 +22,7 @@ namespace AK
         static const AkUniqueID HERO_COMBAT = 64054188U;
         static const AkUniqueID JEFF_VOICE = 2067637633U;
         static const AkUniqueID NILBOG_VOICE = 1181445569U;
+        static const AkUniqueID TEXT = 2972449336U;
         static const AkUniqueID VOICELESS = 818841426U;
     } // namespace EVENTS
 

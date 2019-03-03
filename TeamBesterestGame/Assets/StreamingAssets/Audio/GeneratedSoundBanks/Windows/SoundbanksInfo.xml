@@ -478,6 +478,10 @@
 					<ShortName>Avery Sounds\nyah-ow.wav</ShortName>
 					<Path>SFX\Avery Sounds\nyah-ow_1C9C67B2.wem</Path>
 				</File>
+				<File Id="798194017" Language="SFX">
+					<ShortName>Fast Click.wav</ShortName>
+					<Path>SFX\Fast Click_1C9C67B2.wem</Path>
+				</File>
 				<File Id="802377938" Language="SFX">
 					<ShortName>Steven Sounds\Steven_17.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_17_1C9C67B2.wem</Path>

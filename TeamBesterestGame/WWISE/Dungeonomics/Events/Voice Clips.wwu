@@ -115,13 +115,27 @@
 				</Event>
 				<Event Name="Voiceless" ID="{9C4B780B-CE93-43E0-85BC-860CB1971736}">
 					<ChildrenList>
-						<Action Name="" ID="{A4D4C96A-525A-4181-905A-273EE841D337}" ShortID="920849694">
+						<Action Name="" ID="{FEE88AF8-BD24-4873-9186-DB477AEC2A72}" ShortID="271585656">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Button_Click" ID="{BFD0F46B-2EAB-487A-9A8F-F8539469AD67}" WorkUnitID="{2169E8BC-7269-4A78-BE25-BB79C4649A06}"/>
+									<ObjectRef Name="Text_Blip" ID="{C9CA1415-FFEC-448C-A0DF-6477FB3CE772}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Text" ID="{B4E10076-6AA4-48F4-AF09-94D7B884F7DE}">
+					<ChildrenList>
+						<Action Name="" ID="{79ABE6F1-9DA7-4FFC-8532-0B45E4A22D8A}" ShortID="823248312">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Text_Blip" ID="{C9CA1415-FFEC-448C-A0DF-6477FB3CE772}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

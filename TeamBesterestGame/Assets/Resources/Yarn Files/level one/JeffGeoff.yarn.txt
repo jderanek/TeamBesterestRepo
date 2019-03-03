@@ -310,7 +310,7 @@ Settle down already, we gotta go get ready for those heroes.
 <<ChangeSpeaker SoundManager Voiceless>>
 As the two leave, you see Geoff staring daggers at you and Jeff.
 You're sure this isn't going to end well.
-
+<<DisableFollowup Geoff shift2>>
 //Default Case for combat
 //0 points
 ===
@@ -387,6 +387,7 @@ You're sure this isn't going to end well.
 //Default Case
 //0 points
 <<endif>>
+<<DisableFollowup Geoff shift2>>
 ===
 title: Jeff1112
 tags: 
