@@ -163,7 +163,7 @@ colorID: 0
 position: -336,750
 ---
 <<ChangeSpeaker SoundManager Jeff>>
-Hi, boss guy... what do you need?
+Hey, boss guy... what do you need?
 [[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
 ===
 title: Jeff11
@@ -198,8 +198,7 @@ colorID: 0
 position: 565,155
 ---
 Psh! Please, they'd just tell you the same thing.
-Geoff is a maniac! When he isn't crying about losing food, he's picking fights!
-...Not that he wins those, mind you.
+Geoff is a maniac! When he isn't crying about losing food, he's picking fights! ...Not that he wins those, mind you.
 [[This still doesn't tell me why you two are fighting.|Jeff1121]]
 [[You don't seem like a very nice goblin.|Jeff1112]]
 
@@ -275,8 +274,7 @@ colorID: 0
 position: 548,1137
 ---
 Beef? With Geoff? Who could *possibly* be mad at someone so ridiculous?
-He complains about food all day then picks fights with me when things don't work out.
-He gets what's comin' to him.
+He complains about food all day then picks fights with me when things don't work out. He gets what's comin' to him.
 
 [[What was he complaining about?|Jeff1121]]
 [[And you're the picture of perfection?|Jeff1132]]
@@ -291,8 +289,7 @@ tags:
 colorID: 0
 position: 534,1994
 ---
-Is he now? That doesn't surprise me.
-He conscript you to get his precious scone back?
+Is he now? That doesn't surprise me. He conscript you to get his precious scone back?
 Spoiler alert, I ate it yesterday. Good luck with that one.
 
 [[He seems pretty intent on fighting you, actually.|Jeff1141]]
@@ -315,7 +312,7 @@ Settle down already, we gotta go get ready for those heroes.
 <<ChangeSpeaker SoundManager Voiceless>>
 As the two leave, you see Geoff staring daggers at you and Jeff.
 You're sure this isn't going to end well.
-<<DisableFollowup Geoff shift2>>
+
 //Default Case for combat
 //0 points
 ===
@@ -392,7 +389,6 @@ You're sure this isn't going to end well.
 //Default Case
 //0 points
 <<endif>>
-<<DisableFollowup Geoff shift2>>
 ===
 title: Jeff1112
 tags: 
@@ -438,8 +434,7 @@ position: 1828,-472
 <<set $jeffApologyReadyNote to true>>
 <<endif>>
 
-You know what, fine.
-I was going to get on your case about how weak that'd make me look...
+You know what, fine. I was going to get on your case about how weak that'd make me look...
 ...but losing to heroes day in and day out is already bruising my ego.
 I'll apologize to the guy, but if he loses his cool again, I'm going to defend myself!
 
@@ -523,8 +518,7 @@ position: 1862,549
 <<set $jeffApologyReadyNote to true>>
 <<endif>>
 
-Ha! Haha!
-I'll tell you what, I like your moxie. 
+Ha! Haha! I'll tell you what, I like your moxie. 
 I'll do it, if for no other reason than the look on your face right now.
 ...and so I can stop losing to those darned heroes all the time.
 
@@ -578,9 +572,8 @@ tags:
 colorID: 0
 position: 785,2304
 ---
-Really? He's going to try and fight me, huh?
-Wouldn't be the first time. Probably won't end well for him.
-Per the usual.
+Really? He's going to try and fight me, huh? Wouldn't be the first time. 
+Probably won't end well for him. Per the usual.
 
 [[I didn't see you come out of that scrape pretty last time.|Jeff11411]]
 [[...And it'll result in you both losing all the gold. Per the usual.|Jeff114111]]
@@ -597,8 +590,7 @@ position: 1081,2675
 <<set $jeffLittleInfoNote to true>>
 <<endif>>
 
-Honestly? Maybe.
-With the heads up, maybe I can get the jump on him. Who knows!
+Honestly? Maybe. With the heads up, maybe I can get the jump on him. Who knows!
 Can't hurt to try!
 
 <<EndInterview Jeff>>
@@ -629,8 +621,7 @@ position: 1625,2272
 <<set $jeffApologyReadyNote to true>>
 <<endif>>
 
-....Alright, you got me there.
-Alright, look, I'll apologize to the guy.
+....Alright, you got me there. Alright, look, I'll apologize to the guy.
 Not because I want him to feel better, but I *really* don't want to lose to those heroes again!
 He better appreciate this.
 
@@ -651,8 +642,7 @@ position: 1625,2543
 <<set $jeffLittleInfoNote to true>>
 <<endif>>
 
-Really? Me, lose to that guy?
-If you think *that* is realistic, you need your brain checked.
+Really? Me, lose to that guy? If you think *that* is realistic, you need your brain checked.
 I'm done here.
 
 <<EndInterview Jeff>>
@@ -664,7 +654,7 @@ tags:
 colorID: 0
 position: 952,1123
 ---
-Jeff: Guilty as charged.
+Guilty as charged.
 
 [[You need to apologize to Geoff.|Jeff11211]]
 [[Really? Why would you do that?|Jeff11212]]
