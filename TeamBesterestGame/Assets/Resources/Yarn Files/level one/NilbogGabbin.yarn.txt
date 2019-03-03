@@ -558,7 +558,7 @@ position: -1580,-1770
 ...
 
 [[...|Nilbog11]]
-[[...hello? You in there?|Nilbog12]]
+[[...Hello? You in there?|Nilbog12]]
 ===
 title: Nilbog11
 tags: 
@@ -587,7 +587,7 @@ position: -1119,-500
 title: Nilbog122
 tags: 
 colorID: 1
-position: -851,-492
+position: -786,-484
 ---
 <<set $talkedToNilbog to true>>
 
@@ -652,7 +652,7 @@ position: -570,-1090
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
 
-...tch. You came here to say that?
+...Hmph. You came here to say that?
 Nice.
 
 <<EndInterview Nilbog>>
@@ -693,11 +693,10 @@ colorID: 0
 position: -498,-2667
 ---
 <<ChangeSpeaker SoundManager Nilbog>>
-...darn, and here I thought we understood each other.
+...Darn, and here I thought we understood each other.
 
 [[...Anyway, what's up with you and Gabbin?|Nilbog1111]]
 [[You *do* talk!|Nilbog1132]]
-[[You like your personal space, I assume?|Nilbog1133]]
 ===
 title: Nilbog1214
 tags: 
@@ -737,8 +736,8 @@ position: -134,-1086
 <<set $nilbogPatientNote to true>>
 <<endif>>
 
-...if you can pull that off, sure.
-...I doubt such a thing is possible, though.
+...If you can pull that off, sure.
+I doubt such a thing is possible, though.
 
 <<EndInterview Nilbog>>
 ===
@@ -758,11 +757,11 @@ tags:
 colorID: 0
 position: 99,-3797
 ---
-...why?
+...Why?
 ...I don't want to do that.
 
 [[Because if you don't, the Heroes win. Every time. *You* have to change.|Nilbog111111]]
-[[Because if you two both respect each other, you can come out on top!|Nilbog111112]]]
+[[Because if you two both respect each other, you can come out on top!|Nilbog111112]]
 ===
 title: Nilbog111111
 tags: 
@@ -819,7 +818,7 @@ position: 278,-3380
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
 
-...works for me. It's for the best.
+...Works for me. It's for the best.
 
 //Journal Note: Nilbog claims that if Gabbin stops bothering him, everything will 
 //work better in the long run.
@@ -904,7 +903,7 @@ position: -136,-825
 <<set $nilbogChangeGabbinNote to true>>
 <<endif>>
 
-...yep. I work best alone.
+...Yup. I work best alone.
 ...Best of luck. You'll need it.
 
 <<EndInterview Nilbog>>
@@ -916,7 +915,7 @@ position: 245,-485
 ---
 ...I work alone.
 
-[[...ok, then.|Nilbog121331]]
+[[...Ok, then.|Nilbog121331]]
 [[You don't have a choice. Work with him, or continue to fail against the heroes.|Nilbog121113]]
 [[Look, if I can get Gabbin to give you some space, will you try to work with him?|Nilbog111112]]
 ===
