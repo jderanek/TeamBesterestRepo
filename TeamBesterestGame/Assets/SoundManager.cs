@@ -21,10 +21,17 @@ public class SoundManager : MonoBehaviour
     static GameObject[] goblins;
     static string[] goblinVoiceName;
 
+    public bool MusicPlaying = false;
+
     private float volume;
 
     private void Awake()
     {
+        if (MusicPlaying == false)
+        {
+            AkSoundEngine.PostEvent("Background_Music", goblins[goblinToTalk]);
+            MusicPlaying = true;ss
+        }
         GetGoblinObjects();
     }
 

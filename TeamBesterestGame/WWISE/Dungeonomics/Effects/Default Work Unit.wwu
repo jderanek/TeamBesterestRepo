@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{FFC64025-700A-4E40-A6FC-15922025AAE8}" SchemaVersion="85">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{FFC64025-700A-4E40-A6FC-15922025AAE8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{FFC64025-700A-4E40-A6FC-15922025AAE8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="Music" ID="{7BB76B7A-FEB0-453F-A83B-24E7F517CCC6}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+					<PropertyList>
+						<Property Name="Ratio" Type="Real32" Value="1"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

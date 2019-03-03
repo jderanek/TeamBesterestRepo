@@ -9,6 +9,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2067637633	Jeff_Voice			\Voice Clips\Jeff_Voice	
 	2102311253	Goblenn_Voice			\Voice Clips\Goblenn_Voice	
 	2698747613	Button_Press			\Default Work Unit\Button_Press	
+	2972449336	Text			\Voice Clips\Text	
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1006694123	Music_Volume			\Default Work Unit\Music_Volume	

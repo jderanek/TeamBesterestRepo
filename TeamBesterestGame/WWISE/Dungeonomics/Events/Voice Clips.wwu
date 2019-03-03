@@ -33,10 +33,25 @@
 						<Action Name="" ID="{EEE8BB32-65FD-4086-A9AF-85F1A1C8ECFB}" ShortID="19217875">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Avery_Sounds" ID="{58B4712E-B4E6-41EF-BDD1-E865B7EFAA78}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B6177B3A-D563-4B85-AC86-C1B62915F8AB}" ShortID="505870749">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Steven_Sounds" ID="{BE8B4485-6BB4-4212-8612-5E608B05A71D}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -104,10 +119,25 @@
 						<Action Name="" ID="{C8737DB9-8623-4ADD-9882-71545987DFA3}" ShortID="281450942">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Steven_Sounds" ID="{BE8B4485-6BB4-4212-8612-5E608B05A71D}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{900E30C9-DDE6-4771-B567-8247475799E4}" ShortID="703416350">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Avery_Sounds" ID="{58B4712E-B4E6-41EF-BDD1-E865B7EFAA78}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
