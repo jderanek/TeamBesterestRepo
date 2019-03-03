@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9499493, g: 0.9632353, b: 0, a: 1}
+  m_Color: {r: 0.86274517, g: 0.7019608, b: 0.36078432, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3161,7 +3161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9499493, g: 0.9632353, b: 0, a: 1}
+  m_Color: {r: 0.86274517, g: 0.7019608, b: 0.36078432, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4351,7 +4351,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -4363,22 +4363,11 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 369298019}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1031783966}
-        m_MethodName: InterviewResponse
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &369298019
@@ -9032,7 +9021,6 @@ MonoBehaviour:
   GeoffDialogueMarker: {fileID: 0}
   JeffDialogueMarker: {fileID: 0}
   NilbogDialogueMarker: {fileID: 0}
-  MusicPlaying: 0
 --- !u!4 &837441192
 Transform:
   m_ObjectHideFlags: 0
@@ -10676,7 +10664,7 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 132.5
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -10686,7 +10674,7 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -10722,6 +10710,21 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u2022 Goblenn runs away"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
@@ -11591,17 +11594,17 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -11631,12 +11634,27 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u2022 Nilbog is found and overwhelmed"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
@@ -12751,7 +12769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.86274517, g: 0.7019608, b: 0.36078432, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -13385,8 +13403,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 132.5, y: -155}
+  m_SizeDelta: {x: 265, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252625017
 MonoBehaviour:
@@ -15407,8 +15425,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 132.5, y: -155}
+  m_SizeDelta: {x: 265, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1466899097
 MonoBehaviour:
@@ -15970,8 +15988,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 132.5, y: -155}
+  m_SizeDelta: {x: 265, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1515650094
 MonoBehaviour:
@@ -16130,7 +16148,7 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 132.5
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -16140,7 +16158,7 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -16176,6 +16194,21 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u2022 Jeff is stabbed by Geoff"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
@@ -16405,8 +16438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 132.5, y: -155}
+  m_SizeDelta: {x: 265, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1563823789
 MonoBehaviour:
@@ -17503,7 +17536,7 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 132.5
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -17513,7 +17546,7 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -17549,6 +17582,21 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u2022 Gabbin is killed while looking for Nilbog "
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
@@ -17788,8 +17836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 65, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 132.5, y: -155}
+  m_SizeDelta: {x: 265, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1771645849
 MonoBehaviour:
@@ -18397,7 +18445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9499493, g: 0.9632353, b: 0, a: 1}
+  m_Color: {r: 0.86274517, g: 0.7019608, b: 0.36078432, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -18879,7 +18927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9499493, g: 0.9632353, b: 0, a: 1}
+  m_Color: {r: 0.86274517, g: 0.7019608, b: 0.36078432, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -19096,7 +19144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9499493, g: 0.9632353, b: 0, a: 1}
+  m_Color: {r: 0.86274517, g: 0.7019608, b: 0.36078432, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -20031,7 +20079,7 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 80
+      value: 132.5
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -20041,7 +20089,7 @@ Prefab:
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 265
       objectReference: {fileID: 0}
     - target: {fileID: 224759918736676638, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -20077,6 +20125,21 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u2022 Geoff is stabbed by Jeff"
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}

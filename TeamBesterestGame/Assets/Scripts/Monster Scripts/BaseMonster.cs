@@ -215,7 +215,7 @@ public abstract class BaseMonster : BaseEntity {
     public void RevealText(string text)
     {
         GameObject note = Instantiate(newNote, notes.transform.GetChild(0).transform);
-        //here goes avery code
-        note.GetComponent<Text>().text = text;
+        char bulletPoint = '•';
+        note.GetComponent<Text>().text = bulletPoint + " " + Scissors.UnderScoresToSentence(text);
     }
 }
