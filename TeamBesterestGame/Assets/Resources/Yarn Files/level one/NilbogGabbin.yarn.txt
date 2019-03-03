@@ -16,6 +16,7 @@ colorID: 0
 position: 2410,-1555
 ---
 Yep! I love to keep things positive!
+Being positive makes everything better, easier, and more fun!
 [[I bet that attitude is helpful around here.|Gabbin111]]
 [[That's certainly one way to look at things.|Gabbin112]]
 [[Weird outlook, for someone who just got resurrected recently.|Gabbin113]]
@@ -27,7 +28,7 @@ position: 2876,-2236
 ---
 I like to think so!
 Nilbog doesn't seem to appreciate it very much, though.
-...but I won't be dissuaded!
+...But I won't be dissuaded!
 [[What do you mean?|Gabbin1111]]
 [[That sounds a bit forced.|Gabbin1112]]
 
@@ -67,7 +68,7 @@ tags:
 colorID: 0
 position: 3604,-3440
 ---
-Invasive? What do you mean?
+Invasive! What do you mean?
 We have to become friends and work together!
 [[If you really want to be friends, you have to respect each other's boundaries.|Gabbin111111]]
 [[No, you don't. You both just work the same job. It's not deeper than that.|Gabbin111112]]
@@ -78,7 +79,7 @@ tags:
 colorID: 0
 position: 3745,-2740
 ---
-That's mean...
+That's mean!
 Why would I do that?
 [[Just because you're coworkers, doesn't mean you're friends. You're probably annoying him.|Gabbin111112]]
 [[Because whatever you're trying, it obviously hasn't worked so far.|Gabbin111132]]
@@ -214,7 +215,7 @@ colorID: 0
 position: 3098,-1542
 ---
 Positivity can make any situation less bleak!
-...except maybe our success against Heroes.
+...Except maybe our success against Heroes.
 But I'm sure I can get Nilbog to turn around if I can get him to talk! 
 [[Nilbog not working well with you?|Gabbin1111]]
 [[Sounds more like an interrogation than being friendly.|Gabbin11122]]
@@ -226,6 +227,7 @@ colorID: 0
 position: 3407,-1543
 ---
 Exactly! I just have to keep positive about it, and things *will* work!
+And if they dont, it's because we weren't positive enough!
 [[Wait, what?|Gabbin11231]]
 [[Thats... not... what?|Gabbin11231]]
 [[Hold on, that's not what I meant!|Gabbin11231]]
@@ -257,7 +259,7 @@ position: 2898,-1256
 The necromancers are real professionals!
 I tend to feel a bit loopy afterwards, but it beats being dead!
 We're perfectly safe with them around!
-If only Nilbog would work with me...
+If only Nilbog saw the benefits of working together with me!
 [[You're missing the point.|Gabbin1131]]
 [[Nilbog not being cooperative?|Gabbin1111]]
 ===
@@ -294,10 +296,10 @@ colorID: 0
 position: 2949,-180
 ---
 Only thing on my mind is getting Nilbog to cheer up!
-...and recovering from being dead. But that's not unusual around here.
+Being dead is a little inconvenient. But that's not unusual around here!
 [[What's up with Nilbog?|Gabbin1111]]
 [[Shouldn't you be focusing on what went wrong when the heroes arrived?|Gabbin132]]
-[[...failure is the usual around here?|Gabbin133]]
+[[...Failure is the usual around here?|Gabbin133]]
 ===
 title: Gabbin132
 tags: 
@@ -316,7 +318,7 @@ colorID: 0
 position: 3649,-166
 ---
 That wasn't very nice...
-...but you might have a point.
+...but you might have a point!
 Do you think it's possible I'm being too much?
 [[Absolutely.|Gabbin13221]]
 [[He might just be a Goblin who needs his boundaries respected.|Gabbin13222]]
@@ -357,7 +359,7 @@ position: 3905,-136
 <<set $gabbinRepectNote to true>>
 <<endif>>
 
-...boundaries, huh?
+...Boundaries, huh?
 I'll think about that.
 Hopefully I can find a way to cheer him up while giving him some space!
 
