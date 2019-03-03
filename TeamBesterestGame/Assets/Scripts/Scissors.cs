@@ -29,4 +29,9 @@ public static class Scissors {
 
         return output;
     }
+
+    public static string UnderScoresToSentence(string input)
+    {
+        return input.Replace('_', ' ');
+    }
 }
