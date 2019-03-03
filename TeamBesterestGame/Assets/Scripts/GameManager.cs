@@ -19,11 +19,13 @@ public class GameManager : MonoBehaviour
 
     public GameObject combatCanvas;
 
+    /*
     public GameObject goblennPortrait;
     public GameObject geoffPortrait;
     public GameObject jeffPortrait;
     public GameObject gabbinPortrait;
     public GameObject nilbogPortrait;
+    */
 
     public GameObject shiftOnePortraits;
     public GameObject shiftTwoPortraits;
@@ -57,6 +59,20 @@ public class GameManager : MonoBehaviour
     public GameObject geoffNotes;
     public GameObject jeffNotes;
     public GameObject gabbinNotes;
+
+    public Text nameTag;
+    public GameObject responseBubble;
+    public Image currentSpeakerPortrait;
+    public Sprite goblennSprite;
+    public Sprite gabbinSprite;
+    public Sprite nilbogSprite;
+    public Sprite geoffSprite;
+    public Sprite jeffSprite;
+    public GameObject goblennInterviewPortrait;
+    public GameObject gabbinInterviewPortrait;
+    public GameObject nilbogInterviewPortrait;
+    public GameObject geoffInterviewPortrait;
+    public GameObject jeffInterviewPortrait;
 
     private DialogueRunner[] dialogueRunners;
     private InterviewVariableStorage[] storages;
@@ -147,22 +163,12 @@ public class GameManager : MonoBehaviour
                 shiftOnePortraits.SetActive(false);
                 shiftTwoPortraits.SetActive(true);
                 shiftThreePortraits.SetActive(false);
-                /*goblennPortrait.SetActive(false);
-                gabbinPortrait.SetActive(false);
-                nilbogPortrait.SetActive(false);
-                jeffPortrait.SetActive(true);
-                geoffPortrait.SetActive(true);*/
             }
             else //third shift
             {
                 shiftOnePortraits.SetActive(false);
                 shiftTwoPortraits.SetActive(false);
                 shiftThreePortraits.SetActive(true);
-                /*goblennPortrait.SetActive(false);
-                gabbinPortrait.SetActive(true);
-                nilbogPortrait.SetActive(true);
-                jeffPortrait.SetActive(false);
-                geoffPortrait.SetActive(false);*/
             }
         }
         else //resets shift to 1
@@ -173,11 +179,6 @@ public class GameManager : MonoBehaviour
             canSkip = true;
             combatCanvas.SetActive(false);
             shift = 1;
-            /*goblennPortrait.SetActive(true);
-            gabbinPortrait.SetActive(false);
-            nilbogPortrait.SetActive(false);
-            jeffPortrait.SetActive(false);
-            geoffPortrait.SetActive(false);*/
             this.interviewing = false;
         }
     }
@@ -405,5 +406,76 @@ public class GameManager : MonoBehaviour
             storage.SaveData();
         PlayerPrefs.Save();
         Debug.Log("Saved");
+    }
+
+    public void SetCurrentSpeaker(int speaker)
+    {
+        switch(speaker)
+        {
+            case 0: //No current speaker
+                goblennInterviewPortrait.SetActive(true);
+                gabbinInterviewPortrait.SetActive(true);
+                nilbogInterviewPortrait.SetActive(true);
+                geoffInterviewPortrait.SetActive(true);
+                jeffInterviewPortrait.SetActive(true);
+                currentSpeakerPortrait.gameObject.SetActive(false);
+                responseBubble.SetActive(false);
+                break;
+            case 1: //Goblenn
+                goblennInterviewPortrait.SetActive(false);
+                gabbinInterviewPortrait.SetActive(false);
+                nilbogInterviewPortrait.SetActive(false);
+                geoffInterviewPortrait.SetActive(false);
+                jeffInterviewPortrait.SetActive(false);
+                currentSpeakerPortrait.gameObject.SetActive(true);
+                currentSpeakerPortrait.sprite = goblennSprite;
+                responseBubble.SetActive(true);
+                nameTag.text = "Goblenn";
+                break;
+            case 2: //Gabbin
+                goblennInterviewPortrait.SetActive(false);
+                gabbinInterviewPortrait.SetActive(false);
+                nilbogInterviewPortrait.SetActive(false);
+                geoffInterviewPortrait.SetActive(false);
+                jeffInterviewPortrait.SetActive(false);
+                currentSpeakerPortrait.gameObject.SetActive(true);
+                currentSpeakerPortrait.sprite = gabbinSprite;
+                responseBubble.SetActive(true);
+                nameTag.text = "Gabbin";
+                break;
+            case 3: //Nilbog
+                goblennInterviewPortrait.SetActive(false);
+                gabbinInterviewPortrait.SetActive(false);
+                nilbogInterviewPortrait.SetActive(false);
+                geoffInterviewPortrait.SetActive(false);
+                jeffInterviewPortrait.SetActive(false);
+                currentSpeakerPortrait.gameObject.SetActive(true);
+                currentSpeakerPortrait.sprite = nilbogSprite;
+                responseBubble.SetActive(true);
+                nameTag.text = "Nilbog";
+                break;
+            case 4: //Geoff
+                goblennInterviewPortrait.SetActive(false);
+                gabbinInterviewPortrait.SetActive(false);
+                nilbogInterviewPortrait.SetActive(false);
+                geoffInterviewPortrait.SetActive(false);
+                jeffInterviewPortrait.SetActive(false);
+                currentSpeakerPortrait.gameObject.SetActive(true);
+                currentSpeakerPortrait.sprite = geoffSprite;
+                responseBubble.SetActive(true);
+                nameTag.text = "Geoff";
+                break;
+            case 5: //Jeff
+                goblennInterviewPortrait.SetActive(false);
+                gabbinInterviewPortrait.SetActive(false);
+                nilbogInterviewPortrait.SetActive(false);
+                geoffInterviewPortrait.SetActive(false);
+                jeffInterviewPortrait.SetActive(false);
+                currentSpeakerPortrait.gameObject.SetActive(true);
+                currentSpeakerPortrait.sprite = jeffSprite;
+                responseBubble.SetActive(true);
+                nameTag.text = "Jeff";
+                break;
+        }
     }
 }

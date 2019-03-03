@@ -142,11 +142,11 @@ public abstract class BaseMonster : BaseEntity {
             option.SetActive(false);
         }
         response.SetActive(false);
-        this.uiManager.SpeechBubblesOff();
         //grey out portrait
         uiManager.speaker.SetActive(false);
         picture.color = new Color (picture.color.r, picture.color.g, picture.color.b, 0.5f);
         button.interactable = false;
+        gameManager.SetCurrentSpeaker(0);
 
         switch (this.monName)
         {

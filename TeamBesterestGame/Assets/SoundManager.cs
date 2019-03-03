@@ -7,7 +7,7 @@ using Yarn.Unity;
 //integer that manages the dialogue voice that is called based on the character
 public class SoundManager : MonoBehaviour
 {
-
+    public GameManager gameManager;
     public static int goblinToTalk = 0;
 
     //for speech bubble calling
@@ -27,12 +27,17 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
+        GetGoblinObjects();
+    }
+
+    private void Start()
+    {
         if (MusicPlaying == false)
         {
-            AkSoundEngine.PostEvent("Background_Music", goblins[goblinToTalk]);
-            MusicPlaying = true;ss
+            AkSoundEngine.PostEvent("BackGround_Music", gameObject);
+            MusicPlaying = true;
         }
-        GetGoblinObjects();
     }
 
     public void ChangeMasterVolume(GameObject scrollBar)
@@ -100,43 +105,23 @@ public class SoundManager : MonoBehaviour
         {
             case "Goblenn":
                 goblinToTalk = 0;
-                GoblennDialogueMarker.SetActive(true);
-                GeoffDialogueMarker.SetActive(false);
-                JeffDialogueMarker.SetActive(false);
-                GabbinDialogueMarker.SetActive(false);
-                NilbogDialogueMarker.SetActive(false);
+                gameManager.SetCurrentSpeaker(1);
                 break;
             case "Geoff":
                 goblinToTalk = 1;
-                GoblennDialogueMarker.SetActive(false);
-                GeoffDialogueMarker.SetActive(true);
-                JeffDialogueMarker.SetActive(false);
-                GabbinDialogueMarker.SetActive(false);
-                NilbogDialogueMarker.SetActive(false);
+                gameManager.SetCurrentSpeaker(4);
                 break;
             case "Jeff":
                 goblinToTalk = 2;
-                GoblennDialogueMarker.SetActive(false);
-                GeoffDialogueMarker.SetActive(false);
-                JeffDialogueMarker.SetActive(true);
-                GabbinDialogueMarker.SetActive(false);
-                NilbogDialogueMarker.SetActive(false);
+                gameManager.SetCurrentSpeaker(5);
                 break;
             case "Gabbin":
                 goblinToTalk = 3;
-                GoblennDialogueMarker.SetActive(false);
-                GeoffDialogueMarker.SetActive(false);
-                GabbinDialogueMarker.SetActive(true);
-                JeffDialogueMarker.SetActive(false);
-                NilbogDialogueMarker.SetActive(false);
+                gameManager.SetCurrentSpeaker(2);
                 break;
             case "Nilbog":
                 goblinToTalk = 4;
-                GoblennDialogueMarker.SetActive(false);
-                GeoffDialogueMarker.SetActive(false);
-                NilbogDialogueMarker.SetActive(true);
-                JeffDialogueMarker.SetActive(false);
-                GabbinDialogueMarker.SetActive(false);
+                gameManager.SetCurrentSpeaker(3);
                 break;
             case "Boss":
                 goblinToTalk = 5;

@@ -61,34 +61,6 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-    public void ToggleSpeechBubbles(int goblin)
-    {
-        if (!this.gameManager.GetComponent<GameManager>().interviewing)
-        {
-            GameObject speaker = null;
-            for (int i = 0; i < speechBubbles.Length; i++)
-            {
-                if (i == goblin)
-                {
-                    speaker = speechBubbles[i];
-                }
-                else
-                {
-                    speechBubbles[i].SetActive(false);
-                }
-            }
-            speaker.SetActive(true);
-        }
-    }
-
-    public void SpeechBubblesOff()
-    {
-        foreach (GameObject bubble in speechBubbles)
-        {
-            bubble.SetActive(false);
-        }
-    }
-
     public void ToggleOptionsMenu()
     {
         optionsMenu.SetActive(!optionsMenu.gameObject.activeInHierarchy);
