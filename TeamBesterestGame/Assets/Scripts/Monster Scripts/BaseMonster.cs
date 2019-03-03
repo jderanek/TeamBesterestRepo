@@ -147,6 +147,31 @@ public abstract class BaseMonster : BaseEntity {
         uiManager.speaker.SetActive(false);
         picture.color = new Color (picture.color.r, picture.color.g, picture.color.b, 0.5f);
         button.interactable = false;
+
+        switch (this.monName)
+        {
+            case "Goblenn":
+                gameManager.GetComponent<GameManager>().EnableFollowup("shift1");
+                break;
+            case "Jeff":
+                gameManager.GetComponent<GameManager>().EnableFollowup("shift2");
+                break;
+            case "Geoff":
+                gameManager.GetComponent<GameManager>().EnableFollowup("shift2");
+                break;
+            case "Nilbog":
+                gameManager.GetComponent<GameManager>().EnableFollowup("shift3");
+                break;
+            case "Gabbin":
+                gameManager.GetComponent<GameManager>().EnableFollowup("shift3");
+                break;
+        }
+    }
+
+    [YarnCommand("DisableFollowup")]
+    public void DisableFollowup(string shift)
+    {
+        this.gameManager.DisableFollowup(shift);
     }
 
     [YarnCommand("EndTutorial")]
