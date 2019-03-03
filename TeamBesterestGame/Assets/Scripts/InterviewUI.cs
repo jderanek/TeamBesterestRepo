@@ -48,6 +48,10 @@ namespace Yarn.Unity
         /// dialogue is active and to restore them when dialogue ends
         public RectTransform gameControlsContainer;
         private float timer;
+
+        public static bool voicePlaying = false;
+
+        
     
 
         private void Awake()
@@ -85,9 +89,12 @@ namespace Yarn.Unity
             yield return new WaitForSeconds(.1f);
             if (textSpeed > 0.0f)
             {
-                //Calls the voice activation
-                SoundManager.SetSoundBank();
-
+                //Calls the voice activation if it isn't playing
+                if (voicePlaying == false)
+                {
+                    SoundManager.SetSoundBank();
+                    voicePlaying = true;
+                }
                 // Display the line one character at a time
                 var stringBuilder = new StringBuilder();
 
@@ -112,7 +119,10 @@ namespace Yarn.Unity
                 responseText.text = line.text;
             }
 
+            //sound voice to stop/ make voice check work
             SoundManager.StopDialogue();
+            voicePlaying = false;
+
             // Show the 'press any key' prompt when done, if we have one
             if (continuePrompt != null)
                 continuePrompt.SetActive(true);

@@ -21,7 +21,7 @@ public class SoundManager : MonoBehaviour
     static GameObject[] goblins;
     static string[] goblinVoiceName;
 
-    public bool MusicPlaying = false;
+    public static bool MusicPlaying = false;
 
     private float volume;
 
@@ -67,6 +67,7 @@ public class SoundManager : MonoBehaviour
 
     public static void SetSoundBank()
     {
+        InterviewUI.voicePlaying = true;
         AkSoundEngine.PostEvent(goblinVoiceName[goblinToTalk], goblins[goblinToTalk]);
     }
 
