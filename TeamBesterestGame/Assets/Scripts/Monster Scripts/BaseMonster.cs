@@ -28,6 +28,7 @@ public abstract class BaseMonster : BaseEntity {
     public GameObject dialogueRunner;
     public Image picture;
     public Button button;
+    public Button followUpButton;
 
     //bool to check if monster is fleeing
     private bool isFleeing = false;

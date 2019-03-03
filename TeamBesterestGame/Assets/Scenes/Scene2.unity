@@ -300,6 +300,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 594745389}
   picture: {fileID: 651484064}
   button: {fileID: 1752577940}
+  followUpButton: {fileID: 378638433}
   notes: {fileID: 1975713363}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &14465736
@@ -2357,6 +2358,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 0}
   picture: {fileID: 0}
   button: {fileID: 0}
+  followUpButton: {fileID: 0}
   notes: {fileID: 0}
   newNote: {fileID: 0}
 --- !u!212 &186385155
@@ -9621,6 +9623,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 594745389}
   picture: {fileID: 207332600}
   button: {fileID: 2124394169}
+  followUpButton: {fileID: 80144917}
   notes: {fileID: 14202393}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &906177786
@@ -9946,6 +9949,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 2082834031}
   picture: {fileID: 59520046}
   button: {fileID: 1550456459}
+  followUpButton: {fileID: 992615139}
   notes: {fileID: 1877343969}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &951470859
@@ -14623,6 +14627,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 2082834031}
   picture: {fileID: 972676254}
   button: {fileID: 791564099}
+  followUpButton: {fileID: 330468195}
   notes: {fileID: 2005550718}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &1335600117
@@ -18306,6 +18311,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 41062054}
   picture: {fileID: 1442665526}
   button: {fileID: 1685493048}
+  followUpButton: {fileID: 1485704802}
   notes: {fileID: 253172324}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &1765382687
@@ -19612,7 +19618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.023715416}
   m_AnchorMax: {x: 1, y: 0.231}
-  m_AnchoredPosition: {x: 0.17505348, y: -11.812759}
+  m_AnchoredPosition: {x: 0.17505348, y: -11.812744}
   m_SizeDelta: {x: 0.35003662, y: -4}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2038538962
