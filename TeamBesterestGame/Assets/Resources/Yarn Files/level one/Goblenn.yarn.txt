@@ -191,7 +191,7 @@ W-what did you have in mind?
 title: Ninja
 tags: 
 colorID: 2
-position: 4780,492
+position: 4789,478
 ---
 <<if $goblennNinja is true>>
 <<set $shift11Combat to 1>>
@@ -206,6 +206,7 @@ but it wouldn't hurt to experiment I guess...
 //no change
 <<endif>>
 
+<<DisableFollowup Goblenn shift1>>
 <<EndInterview Goblenn>>
 ===
 title: Smarter
@@ -226,6 +227,7 @@ I am not so sure...
 But thanks I guess...
 
 <<endif>>
+<<DisableFollowup Goblenn shift1>>
 <<EndInterview Goblenn>>
 ===
 title: Coward1332

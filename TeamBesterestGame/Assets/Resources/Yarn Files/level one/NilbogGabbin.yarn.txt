@@ -457,6 +457,7 @@ I've already got loads of plans for us until the heroes arrive, like--
 //Combat fails, default case
 //0 points
 <<endif>>
+<<DisableFollowup Nilbog shift3>>
 ===
 title: NilbogGabbinSolution12
 tags: 
@@ -501,6 +502,7 @@ Surely there's a better way. Isn't that right, Nilbog?
 //Combat fails, default case
 //0 points
 <<endif>>
+<<DisableFollowup Nilbog shift3>>
 ===
 title: NilbogGabbinSolution13
 tags: 
@@ -545,6 +547,7 @@ I'm not going to deal with this...
 //0 points
 
 <<endif>>
+<<DisableFollowup Nilbog shift3>>
 ===
 title: Nilbog1
 tags: 

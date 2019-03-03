@@ -110,6 +110,10 @@ public class GameManager : MonoBehaviour
                     monster.GetComponent<BaseMonster>().EndInterview();
                 }
 
+                this.DisableFollowup("shift1");
+                this.DisableFollowup("shift2");
+                this.DisableFollowup("shift3");
+
                 //EndInterview();
                 this.SetGoblinPoints();
                 interviewing = false;
@@ -243,7 +247,7 @@ public class GameManager : MonoBehaviour
         this.interviewing = false;
         foreach (GameObject monster in monsterList)
         {
-            monster.GetComponent<BaseMonster>().Reset();
+            monster.GetComponent<BaseMonster>().interviewable = true;
         }
         foreach (GameObject monster in monsterList)
         {
@@ -254,6 +258,61 @@ public class GameManager : MonoBehaviour
             monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
         }
 
+    }
+
+    public void EnableFollowup(string shift) //to be called in EndInterview, unlocks followup
+    {
+        switch (shift)
+        {
+            case "shift1": //Goblenn
+                if (!this.monsterList[3].GetComponent<BaseMonster>().interviewable)
+                {
+                    this.monsterList[3].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[3].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                }
+                break;
+            case "shift2": //Jeff and Geoff
+                if (!this.monsterList[0].GetComponent<BaseMonster>().interviewable && !this.monsterList[1].GetComponent<BaseMonster>().interviewable)
+                {
+                    this.monsterList[0].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[0].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                    this.monsterList[1].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[1].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                }
+                break;
+            case "shift3": //Nilbog and Gabbin
+                if (!this.monsterList[2].GetComponent<BaseMonster>().interviewable && !this.monsterList[4].GetComponent<BaseMonster>().interviewable)
+                {
+                    this.monsterList[2].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[2].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                    this.monsterList[4].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(true);
+                    this.monsterList[4].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
+                }
+                break;
+        }
+    }
+
+    public void DisableFollowup(string shift) //to be called at end of followup conversation
+    {
+        switch (shift)
+        {
+            case "shift1": //Goblenn
+                this.monsterList[3].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[3].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                break;
+            case "shift2": //Jeff and Geoff
+                this.monsterList[0].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[0].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                this.monsterList[1].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[1].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                break;
+            case "shift3": //Nilbog and Gabbin
+                this.monsterList[2].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[2].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                this.monsterList[4].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
+                this.monsterList[4].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
+                break;
+        }
     }
 
     public void LoadLevelOne()
