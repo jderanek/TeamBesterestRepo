@@ -35,6 +35,7 @@
 				<Event Id="64054188" Name="Hero_Combat" ObjectPath="\Events\Default Work Unit\Hero_Combat"/>
 				<Event Id="2067637633" Name="Jeff_Voice" ObjectPath="\Events\Voice Clips\Jeff_Voice"/>
 				<Event Id="1181445569" Name="Nilbog_Voice" ObjectPath="\Events\Voice Clips\Nilbog_Voice"/>
+				<Event Id="2972449336" Name="Text" ObjectPath="\Events\Voice Clips\Text"/>
 				<Event Id="818841426" Name="Voiceless" ObjectPath="\Events\Voice Clips\Voiceless"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>

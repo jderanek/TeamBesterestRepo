@@ -395,6 +395,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 0}
   picture: {fileID: 0}
   button: {fileID: 0}
+  followUpButton: {fileID: 0}
   notes: {fileID: 1975713363}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &14465736
@@ -1456,6 +1457,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 0}
   picture: {fileID: 0}
   button: {fileID: 0}
+  followUpButton: {fileID: 0}
   notes: {fileID: 0}
   newNote: {fileID: 0}
 --- !u!212 &186385155
@@ -6065,6 +6067,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 0}
   picture: {fileID: 0}
   button: {fileID: 0}
+  followUpButton: {fileID: 0}
   notes: {fileID: 14202393}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &906177786
@@ -6390,6 +6393,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 2082834031}
   picture: {fileID: 0}
   button: {fileID: 0}
+  followUpButton: {fileID: 0}
   notes: {fileID: 1877343969}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &951470859
@@ -7046,7 +7050,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1031783963}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2761a52f38fe5554fb6888b326a534e2, type: 3}
   m_Name: 
@@ -9027,6 +9031,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 2082834031}
   picture: {fileID: 0}
   button: {fileID: 0}
+  followUpButton: {fileID: 0}
   notes: {fileID: 2005550718}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &1335600117
@@ -11337,6 +11342,7 @@ MonoBehaviour:
   dialogueRunner: {fileID: 0}
   picture: {fileID: 0}
   button: {fileID: 0}
+  followUpButton: {fileID: 0}
   notes: {fileID: 253172324}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
 --- !u!212 &1765382687
