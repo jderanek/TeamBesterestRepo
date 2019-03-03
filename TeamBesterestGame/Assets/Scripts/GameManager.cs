@@ -110,6 +110,10 @@ public class GameManager : MonoBehaviour
                     monster.GetComponent<BaseMonster>().EndInterview();
                 }
 
+                this.DisableFollowup("shift1");
+                this.DisableFollowup("shift2");
+                this.DisableFollowup("shift3");
+
                 //EndInterview();
                 this.SetGoblinPoints();
                 interviewing = false;
