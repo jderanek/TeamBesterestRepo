@@ -131,7 +131,8 @@ public class GameManager : MonoBehaviour
                 this.DisableFollowup("shift3");
 
                 //EndInterview();
-                this.SetGoblinPoints();
+                //this.SetGoblinPoints();
+                this.SetCombatScore();
                 interviewing = false;
                 interviewCanvas.SetActive(false);
                 combatCanvas.SetActive(true);
@@ -211,6 +212,28 @@ public class GameManager : MonoBehaviour
             {
                 var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
                 combatManager.GetComponent<InterviewVariableStorage>().SetValue("$nilbogPoints", varToSet);
+            }
+        }
+    }
+
+    public void SetCombatScore() //set the combat manager's yarn variables according to each shifts points
+    {
+        foreach (GameObject monster in monsterList)
+        {
+            if (monster.GetComponent<BaseMonster>().monName == "Goblenn")
+            {
+                var varToSet = monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<InterviewVariableStorage>().GetValue("$shift11Combat");
+                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$shift11Combat", varToSet);
+            }
+            if (monster.GetComponent<BaseMonster>().monName == "Jeff" || monster.GetComponent<BaseMonster>().monName == "Geoff")
+            {
+                var varToSet = monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<InterviewVariableStorage>().GetValue("$shift12Combat");
+                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$shift12Combat", varToSet);
+            }
+            if (monster.GetComponent<BaseMonster>().monName == "Nilbog" || monster.GetComponent<BaseMonster>().monName == "Gabbin")
+            {
+                var varToSet = monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<InterviewVariableStorage>().GetValue("$shift13Combat");
+                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$shift13Combat", varToSet);
             }
         }
     }
