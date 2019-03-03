@@ -5,9 +5,8 @@ position: 4051,147
 ---
 <<ChangeSpeaker SoundManager Geoff>>
 
-Hello, I'm Geoff.
-I'm sorry boss, I am mad right now. Someone here stole my scone and ate it!
-What kind of jerk does that?
+*Grumble grumble* 'Ey, I'm Geoff...
+...and I'm real mad right now! Some bonehead stole my scone and ate it! What kinda jerk does that?!
 [[Why was this scone so important to you?|Geoff11]]
 [[Who do you think did it?|Geoff12]]
 [[A shame, I bet it was a tasty scone too.|Geoff13]]
@@ -15,6 +14,7 @@ What kind of jerk does that?
 <<if $talkedToJeff is true>>
 [[I talked to Jeff already.|Geoff14]]
 <<endif>>
+
 ===
 title: Geoff11
 tags: 
@@ -28,9 +28,8 @@ position: 4624,-240
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
-I was looking forward to eating it all day!
-And now it is gone!
-Jeff is gonna pay for that!
+I was looking forward to eating it *all* day, and now it's gone!
+Jeff is gonna pay for that!!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -43,8 +42,8 @@ tags:
 colorID: 0
 position: 4542,167
 ---
-I am sure it was Jeff!
-Something needs to be done about Jeff!
+It was Jeff! It *has* to be!
+Someone needs to get him taken care of!
 [[Nothing a little fisticuffs can't fix.|Geoff121]]
 [[Do you want me to talk to Jeff for you?|Geoff122]]
 [[What were you thinking about doing?|Geoff123]]
@@ -61,7 +60,7 @@ position: 5169,-249
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
-I totally agree boss! Finally someone understands.
+Ha! Finally, *someone* that understands! I'll cave his head in!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -72,7 +71,7 @@ tags:
 colorID: 0
 position: 5102,121
 ---
-I guess it wouldn't hurt, but he still needs to get punished somehow!
+Long as Jeff gets what's coming to 'em, I don't care what you do!
 
 [[Why do you hate Jeff so much?|Geoff1221]]
 ===
@@ -81,9 +80,15 @@ tags:
 colorID: 0
 position: 5846,203
 ---
-Why shouldn't I?
-Jeff is a dirty, scone-eating jerk!
+<<ChangeSpeaker SoundManager Geoff>>
+Why shouldn't I? Jeff is a dirty, no-good, scone-eating jerk!
+
+<<ChangeSpeaker SoundManager Jeff>>
+Gesundheit, ya fool!
+
+<<ChangeSpeaker SoundManager Geoff>>
 He needs to be stopped!
+
 [[Just make sure this is dealt with before the heroes arrive, ok?|Geoff12211]]
 [[Would you have prefered him at least asking first?|Geoff12212]]
 [[I will see what I can do about Jeff.|Geoff12213]]
@@ -100,7 +105,7 @@ position: 6262,414
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
-I'll show him, just watch me!
+I'll show him, just watch me! He won't stand a chance!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -125,8 +130,7 @@ tags:
 colorID: 0
 position: 6132,811
 ---
-Fine...
-...But if you don't do anything about it, I will!
+Fine! ...But if you don't do anything about it, I will!
 
 [[What would you suggest, then?|Geoff122131]]
 [[Yea, yea.|Geoff122132]]
@@ -136,8 +140,8 @@ tags:
 colorID: 0
 position: 5193,473
 ---
-I planned on stomping his face in later, actually.
-It would be a nice workout before the Heroes show up!
+I planned on giving his face a good stompin' actually, now that you mentioned it!
+It'll be a nice warmup before the Heroes show up! And it'll shut 'em up!
 [[You shouldn't fight him. Really.|Geoff1221]]
 [[Sure whatever, go for it!|Geoff12211]]
 ===
@@ -146,7 +150,8 @@ tags:
 colorID: 0
 position: 4562,497
 ---
-Uh... thanks for the sympathies there I guess?
+What was that, punk? 
+I don't settle for less than the best!
 
 [[Want me to talk to Jeff for you?|Geoff122]]
 [[What do you plan on doing about it?|Geoff123]]
@@ -158,7 +163,7 @@ colorID: 0
 position: -336,750
 ---
 <<ChangeSpeaker SoundManager Jeff>>
-Hi boss... what do you need?
+Hi, boss guy... what do you need?
 [[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
 ===
 title: Jeff11
@@ -738,8 +743,7 @@ position: 5301,2178
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
-I've fought Jeff for less!
-He's gonna get it this time!
+I've fought Jeff for less! He's gonna get it this time!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -817,8 +821,7 @@ tags:
 colorID: 0
 position: 5351,1788
 ---
-He just admitted to eating my scone!
-Why shouldn't I?!
+He just admitted to eating my scone! Why shouldn't I?!
 
 [[Because he said he's ready to apologize!|Geoff14112]]
 [[Violence never solved anything.|Geoff14122]]
@@ -830,8 +833,7 @@ colorID: 0
 position: 5718,1970
 ---
 ...uh...
-I asked first!
-...and he ate my scone!
+I asked first! ...and he ate my scone!
 [[Look, if he apologizes, you both can move past this.|Geoff14111]]
 [[Accept his apology or you can accept defeat by the heroes!|Geoff141232]]
 [[It's that or fight him, and seeing how that usually goes...|Geoff14113]]
@@ -857,8 +859,7 @@ position: 4800,4060
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
-If you don't do anything about Geoff, I will!
-I don't need him!
+If you don't do anything about Geoff, I will! I don't need him!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -924,8 +925,7 @@ tags:
 colorID: 0
 position: 5589,3223
 ---
-Huh??
-...what does *that* mean?
+Huh?? ...what does *that* mean?
 
 [[Jeff isn't the only problem here.|Geoff14221]]
 [[You two need to work together. As in both of you.|Geoff14222]]
@@ -964,8 +964,7 @@ tags:
 colorID: 0
 position: 5960,3831
 ---
-But he stole my scone!
-He can't just get off scot-free!
+But he stole my scone! He can't just get off scot-free!
 
 [[You both won't get off scot-free if the heroes show up and you're still fighting.|Geoff141232]]
 [[Sometimes you just need to be the bigger man. ...er, Goblin.|Geoff142222]]
@@ -977,8 +976,7 @@ colorID: 0
 position: 5596,2589
 ---
 Why would I want to work with him?!
-He's such a jerk!
-Especially about leftover food!
+He's such a jerk! Especially about leftover food!
 
 [[Look, if he apologizes, you both can move past this.|Geoff14111]]
 [[Because if you don't, you're both doomed to fail.|Geoff141232]]
