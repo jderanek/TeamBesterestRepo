@@ -171,6 +171,13 @@ public abstract class BaseMonster : BaseEntity {
     [YarnCommand("DisableFollowup")]
     public void DisableFollowup(string shift)
     {
+        foreach (GameObject option in interviewOptions)
+        {
+            option.SetActive(false);
+        }
+        response.SetActive(false);
+        uiManager.speaker.SetActive(false);
+        gameManager.SetCurrentSpeaker(0);
         this.gameManager.DisableFollowup(shift);
     }
 

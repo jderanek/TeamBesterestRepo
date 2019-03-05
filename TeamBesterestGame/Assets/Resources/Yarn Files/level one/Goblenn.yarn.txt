@@ -207,7 +207,6 @@ but it wouldn't hurt to experiment I guess...
 <<endif>>
 
 <<DisableFollowup Goblenn shift1>>
-<<EndInterview Goblenn>>
 ===
 title: Smarter
 tags: 
@@ -228,7 +227,6 @@ But thanks I guess...
 
 <<endif>>
 <<DisableFollowup Goblenn shift1>>
-<<EndInterview Goblenn>>
 ===
 title: Coward1332
 tags: 

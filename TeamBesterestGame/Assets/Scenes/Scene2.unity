@@ -1378,7 +1378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &91116741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4092,7 +4092,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &356408665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10477,7 +10477,7 @@ MonoBehaviour:
   dialogueUI: {fileID: 984599861}
   startNode: Shift11
   dialogueVoice: 1
-  startAutomatically: 0
+  startAutomatically: 1
   automaticCommands: 1
 --- !u!4 &984599863
 Transform:
@@ -11098,7 +11098,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speaker: {fileID: 951470855}
+  speaker: {fileID: 1523513163}
   optionsMenu: {fileID: 1159496770}
   slowTextSpeed: 0.04
   slowText: {fileID: 1494495221}
@@ -13827,7 +13827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1289316953
 MonoBehaviour:
   m_ObjectHideFlags: 0

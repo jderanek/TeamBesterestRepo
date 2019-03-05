@@ -315,11 +315,12 @@ You're sure this isn't going to end well.
 
 //Default Case for combat
 //0 points
+<<DisableFollowup Jeff shift2>>
 ===
 title: JeffGeoffSolution12
 tags: 
 colorID: 2
-position: 3529,3409
+position: 3533,3409
 ---
 //IF Jeff AND Geoff are flagged Apology:
 <<if $apologize1 is true and $apologize2 is true>>
@@ -389,6 +390,7 @@ You're sure this isn't going to end well.
 //Default Case
 //0 points
 <<endif>>
+<<DisableFollowup Jeff shift2>>
 ===
 title: Jeff1112
 tags: 

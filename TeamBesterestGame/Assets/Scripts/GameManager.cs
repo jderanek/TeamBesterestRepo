@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     //Current phase of the game, as well as the enemies to spawn next combat
     public Button phaseButton;
-    string phase = "Start";
+    string phase = "Interview";
     bool canSkip = true;
     public readonly int maxInterviews = 3;
     public int interviewsRemaining;
