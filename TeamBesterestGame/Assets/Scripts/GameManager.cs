@@ -216,7 +216,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SetCombatScore() //set the combat manager's yarn variables according to each shifts points
+    //set the combat manager's yarn variables according to each shifts points
+    public void SetCombatScore()
     {
         foreach (GameObject monster in monsterList)
         {
