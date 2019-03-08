@@ -49,14 +49,6 @@ public class UIManager : MonoBehaviour {
         monsters = FindObjectsOfType<InterviewUI>();
     }
 
-    private void Update()
-    {
-        if (notification.activeInHierarchy && Input.anyKeyDown)
-        {
-            ToggleNotification();
-        }
-    }
-
     //Opens any menu
     public void ToggleMenu(int menuToOpen)
     {
@@ -114,10 +106,10 @@ public class UIManager : MonoBehaviour {
     public void ToggleNotification()
     {
         print("sound should be called");
-        if (notification == true)
-            {
-                AkSoundEngine.PostEvent("Button_Press", notification);
-            }
+        if (!notification.activeInHierarchy)
+        {
+            AkSoundEngine.PostEvent("Button_Press", notification);
+        }
         notification.SetActive(!notification.activeInHierarchy);
     }
 }
