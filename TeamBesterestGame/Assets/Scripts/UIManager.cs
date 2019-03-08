@@ -113,6 +113,11 @@ public class UIManager : MonoBehaviour {
 
     public void ToggleNotification()
     {
+        print("sound should be called");
+        if (notification == true)
+            {
+                AkSoundEngine.PostEvent("Button_Press", notification);
+            }
         notification.SetActive(!notification.activeInHierarchy);
     }
 }
