@@ -40,11 +40,21 @@ public class UIManager : MonoBehaviour {
 
     public InterviewUI[] monsters;
 
+    public GameObject notification;
+
     //List<InterviewUI> monsters = new List<InterviewUI>();
 
     private void Start()
     {
         monsters = FindObjectsOfType<InterviewUI>();
+    }
+
+    private void Update()
+    {
+        if (notification.activeInHierarchy && Input.anyKeyDown)
+        {
+            ToggleNotification();
+        }
     }
 
     //Opens any menu
@@ -99,5 +109,10 @@ public class UIManager : MonoBehaviour {
                 }
                 break;
         }
+    }
+
+    public void ToggleNotification()
+    {
+        notification.SetActive(!notification.activeInHierarchy);
     }
 }
