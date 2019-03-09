@@ -40,6 +40,8 @@ public class UIManager : MonoBehaviour {
 
     public InterviewUI[] monsters;
 
+    public GameObject notification;
+
     //List<InterviewUI> monsters = new List<InterviewUI>();
 
     private void Start()
@@ -99,5 +101,15 @@ public class UIManager : MonoBehaviour {
                 }
                 break;
         }
+    }
+
+    public void ToggleNotification()
+    {
+        print("sound should be called");
+        if (!notification.activeInHierarchy)
+        {
+            AkSoundEngine.PostEvent("Button_Press", notification);
+        }
+        notification.SetActive(!notification.activeInHierarchy);
     }
 }

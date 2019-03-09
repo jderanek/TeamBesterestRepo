@@ -224,5 +224,6 @@ public abstract class BaseMonster : BaseEntity {
         GameObject note = Instantiate(newNote, notes.transform.GetChild(0).transform);
         char bulletPoint = '•';
         note.GetComponent<Text>().text = bulletPoint + " " + Scissors.UnderScoresToSentence(text);
+        uiManager.ToggleNotification();
     }
 }
