@@ -49,6 +49,14 @@ public class InterviewVariableStorage : VariableStorageBehaviour
         ResetToDefaults();
     }
 
+    public void DeleteData()
+    {
+        foreach (KeyValuePair<string, Yarn.Value> variable in variables)
+        {
+            PlayerPrefs.DeleteKey(gameObject.name + "_" + variable.Key);
+        }
+    }
+
     /// Reset to our default values when the game starts
     void Awake()
     {

@@ -432,6 +432,14 @@ public class GameManager : MonoBehaviour
         Debug.Log("Saved");
     }
 
+    public void DeleteSave()
+    {
+        foreach (InterviewVariableStorage storage in storages)
+            storage.DeleteData();
+        PlayerPrefs.Save();
+        Debug.Log("Save Deleted");
+    }
+
     public void SetCurrentSpeaker(int speaker)
     {
         switch(speaker)
