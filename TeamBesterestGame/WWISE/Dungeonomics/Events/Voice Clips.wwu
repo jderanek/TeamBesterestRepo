@@ -116,28 +116,13 @@
 				</Event>
 				<Event Name="Boss_Voice" ID="{5E433FC4-0108-4F53-8CB3-015F3FBA97B4}">
 					<ChildrenList>
-						<Action Name="" ID="{C8737DB9-8623-4ADD-9882-71545987DFA3}" ShortID="281450942">
-							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="1"/>
-								<Property Name="Inclusion" Type="bool">
-									<ValueList>
-										<Value>False</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Steven_Sounds" ID="{BE8B4485-6BB4-4212-8612-5E608B05A71D}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-						<Action Name="" ID="{900E30C9-DDE6-4771-B567-8247475799E4}" ShortID="703416350">
+						<Action Name="" ID="{A49F41D4-53D9-428F-8A57-5A51D7112A84}" ShortID="1009538365">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Avery_Sounds" ID="{58B4712E-B4E6-41EF-BDD1-E865B7EFAA78}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+									<ObjectRef Name="Raven_Sounds" ID="{467DB85E-EC4B-4872-AA7A-71B676EEAFF7}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -166,6 +151,34 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Text_Blip" ID="{C9CA1415-FFEC-448C-A0DF-6477FB3CE772}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Gordon_Voice" ID="{F6E239B8-41F4-4FFC-917A-CAD6D432F0E7}">
+					<ChildrenList>
+						<Action Name="" ID="{C286752D-35A6-434E-A623-78C2CA3447E5}" ShortID="899150099">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Avery_Sounds" ID="{58B4712E-B4E6-41EF-BDD1-E865B7EFAA78}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pencil_Scratch" ID="{989050BA-A30B-460F-8262-F0D35DA371C6}">
+					<ChildrenList>
+						<Action Name="" ID="{1145A7F6-801C-40D1-AD16-02DAFD3264C0}" ShortID="24503849">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pencil_Scratch" ID="{D9328429-29D1-4845-849A-D7628FE6A8AC}" WorkUnitID="{2169E8BC-7269-4A78-BE25-BB79C4649A06}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

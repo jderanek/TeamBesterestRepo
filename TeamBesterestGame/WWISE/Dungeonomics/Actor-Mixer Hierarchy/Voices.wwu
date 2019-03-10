@@ -3533,7 +3533,13 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
-				<RandomSequenceContainer Name="New Random Container" ID="{1F92CC00-6326-43D8-9EB2-BC3D949D520F}" ShortID="707805015">
+				<RandomSequenceContainer Name="Raven_Sounds" ID="{467DB85E-EC4B-4872-AA7A-71B676EEAFF7}" ShortID="1040602868">
+					<PropertyList>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="5"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
@@ -3542,6 +3548,495 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="Raven Sounds" ID="{9FDBF4FA-0DE1-432B-9800-428172A9752E}" ShortID="146914173">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Raven_Audio_1" ID="{AC33C62F-4653-4E5A-8396-0044A1405BBD}" ShortID="55803459">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_1" ID="{6A40BA43-196E-4256-A1B1-2CEC0672F2BA}" ShortID="828760940">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_1.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_1" ID="{6A40BA43-196E-4256-A1B1-2CEC0672F2BA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_10" ID="{1E0EECA3-BA13-4CBF-92D5-7643724A328F}" ShortID="969123665">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_10" ID="{264BB80F-F788-404D-88BC-DA31C119E699}" ShortID="732203067">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_10.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_10" ID="{264BB80F-F788-404D-88BC-DA31C119E699}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_11" ID="{D351CFDF-C67F-4AA7-AB9F-C1852911BB8E}" ShortID="1068907611">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_11" ID="{06818FDD-E2BF-4E31-9157-0AAE9B8A8080}" ShortID="446250589">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_11.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_11" ID="{06818FDD-E2BF-4E31-9157-0AAE9B8A8080}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_12" ID="{26022DE2-0114-41A4-BC64-A6275F77A8D5}" ShortID="1027894516">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_12" ID="{663832C9-7706-4271-90D9-73940921A8B0}" ShortID="280079981">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_12.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_12" ID="{663832C9-7706-4271-90D9-73940921A8B0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_13" ID="{48B04E5D-2C40-4C3C-A738-827474AF664D}" ShortID="694476851">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_13" ID="{3278F296-327C-4C8D-89C8-B28515026001}" ShortID="779494104">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_13.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_13" ID="{3278F296-327C-4C8D-89C8-B28515026001}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_14" ID="{20E8F5D7-C5C6-4B5F-8362-DC4DEECC8386}" ShortID="205350004">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_14" ID="{D1B588BA-D9B1-4776-B27F-2686E672D1E9}" ShortID="988127048">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_14.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_14" ID="{D1B588BA-D9B1-4776-B27F-2686E672D1E9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_16" ID="{B14517B7-32FE-4D72-821E-042AF782F5DB}" ShortID="196024535">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_16" ID="{710FBD96-381D-4061-B183-C55C3979DC47}" ShortID="146490973">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_16.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_16" ID="{710FBD96-381D-4061-B183-C55C3979DC47}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_18" ID="{5D607235-AE3C-4B59-B4BB-8D81D568BA78}" ShortID="980025859">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_18" ID="{F1F4C08C-0256-45BF-9D06-777FD0A47B7B}" ShortID="179269999">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_18.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_18" ID="{F1F4C08C-0256-45BF-9D06-777FD0A47B7B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_19" ID="{27E6E1A0-D0E7-4636-B7CE-F8AF88724215}" ShortID="575942716">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_19" ID="{C4D66D41-DE07-4655-9D05-CD0A4EC4525D}" ShortID="517669462">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_19.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_19" ID="{C4D66D41-DE07-4655-9D05-CD0A4EC4525D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_2" ID="{813526B8-BAEE-4ED4-BA69-79A7978ADE6F}" ShortID="299969659">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_2" ID="{53949086-01F3-4F2A-B9A0-4BB00449A4F0}" ShortID="144211223">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_2.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_2" ID="{53949086-01F3-4F2A-B9A0-4BB00449A4F0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_20" ID="{2E000974-7397-4239-BB1C-04CCA6906ECD}" ShortID="81699093">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_20" ID="{5000E7A6-0E46-402F-8F74-13D937C883D7}" ShortID="287382444">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_20.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_20" ID="{5000E7A6-0E46-402F-8F74-13D937C883D7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_21" ID="{FCFFCDFE-3AC1-4014-A9BF-4294D3F644EA}" ShortID="7294590">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_21" ID="{92BE7EC1-8ED5-46C8-AC20-21C663DE25D2}" ShortID="743170306">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_21.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_21" ID="{92BE7EC1-8ED5-46C8-AC20-21C663DE25D2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_22" ID="{384D3C57-6D27-4187-AA0E-78F16F759C57}" ShortID="810210732">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_22" ID="{B2713ACC-B7ED-47EC-85BB-B7DA85BB24D1}" ShortID="164462487">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_22.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_22" ID="{B2713ACC-B7ED-47EC-85BB-B7DA85BB24D1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_23" ID="{CDE1D1B4-4C34-4FE6-B44B-CB4E48F47432}" ShortID="516044914">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_23" ID="{CF4A1EA4-270F-40EC-842E-56CAFC4A9420}" ShortID="1048921922">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_23.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_23" ID="{CF4A1EA4-270F-40EC-842E-56CAFC4A9420}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_24" ID="{52BB619C-3528-4874-A00F-19DDE6C1AADA}" ShortID="700818143">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_24" ID="{F37D12F5-A216-41A5-A9E6-1659D60423CF}" ShortID="826469407">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_24.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_24" ID="{F37D12F5-A216-41A5-A9E6-1659D60423CF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_25" ID="{FC7E9A5F-BE58-4547-8E99-0B36292D0980}" ShortID="917687475">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_25" ID="{C0817C46-2094-4C87-B13C-DEF650764C90}" ShortID="111870191">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_25.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_25" ID="{C0817C46-2094-4C87-B13C-DEF650764C90}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_26" ID="{8CE6EFDE-0917-490C-8026-FC9C10E52695}" ShortID="245626202">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_26" ID="{127F26E2-0543-4EF1-BB35-9B829B5A2F57}" ShortID="364923151">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_26.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_26" ID="{127F26E2-0543-4EF1-BB35-9B829B5A2F57}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_27" ID="{8A9D950D-D9EA-4F45-838C-8FBAE3F955EA}" ShortID="870856327">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_27" ID="{4A3FDD4D-B049-4BE9-A579-B230744E0D7B}" ShortID="520904094">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_27.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_27" ID="{4A3FDD4D-B049-4BE9-A579-B230744E0D7B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_28" ID="{5BD3839C-8FA0-4AF1-8364-6DC2D5671F0A}" ShortID="186924688">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_28" ID="{512B8F21-A8D1-4DF4-B104-B1259F8F09A7}" ShortID="411000288">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_28.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_28" ID="{512B8F21-A8D1-4DF4-B104-B1259F8F09A7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_3" ID="{73E201BC-2650-4DAD-9847-51FB10A96B72}" ShortID="76972605">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_3" ID="{FCE7120F-DC15-4F47-A37D-0C1EC6F7F97F}" ShortID="753617227">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_3.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_3" ID="{FCE7120F-DC15-4F47-A37D-0C1EC6F7F97F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_4" ID="{7C6F9234-98C0-4895-A50D-418AA0A1AD54}" ShortID="441267618">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_4" ID="{D0D323A4-AB79-4A5A-921A-F2C2D8C774B6}" ShortID="371000865">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_4.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_4" ID="{D0D323A4-AB79-4A5A-921A-F2C2D8C774B6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_5" ID="{05B649A8-5204-423C-9507-AAC8DC9D8D6D}" ShortID="301714883">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_5" ID="{E4475622-7E79-440B-95FB-159DBA41886B}" ShortID="158949122">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_5.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_5" ID="{E4475622-7E79-440B-95FB-159DBA41886B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_6" ID="{1328DC34-DEC5-4476-A62F-12AD4048BBCD}" ShortID="527653307">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_6" ID="{A88BC506-1F83-4AF7-ADA9-4BC3277F56B0}" ShortID="555473689">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_6.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_6" ID="{A88BC506-1F83-4AF7-ADA9-4BC3277F56B0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_7" ID="{09B53D7A-7A0E-4F03-8664-6A5FA61EE317}" ShortID="1015130911">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_7" ID="{66C18163-E94C-424C-B9B8-77C99E7849A7}" ShortID="891077424">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_7.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_7" ID="{66C18163-E94C-424C-B9B8-77C99E7849A7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Raven_Audio_9" ID="{4821E13A-B5BC-4624-AE04-CDE56EA786ED}" ShortID="366978483">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Raven_Audio_9" ID="{CDC583C4-4CA0-4585-8C4C-EB31081C46FB}" ShortID="666931275">
+											<Language>SFX</Language>
+											<AudioFile>Raven Sounds\Raven_Audio_9.wav</AudioFile>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Raven_Audio_9" ID="{CDC583C4-4CA0-4585-8C4C-EB31081C46FB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
 				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>

@@ -6,15 +6,18 @@
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\raven\Documents\Dungeonomics\Potentional Dungeonomics Sound"/>
 				<Property Name="Event Action List\{18DAD7C5-3750-48FF-BE1A-7250F7FE4799}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1D0D387E-8B81-4235-86C6-44CBE602DB46}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{22796A56-F136-4167-A901-7D7E0E95B1D9}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{35A33D38-EED8-466B-B6B1-F04A20798D60}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{5E433FC4-0108-4F53-8CB3-015F3FBA97B4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{981B465B-A683-4CE2-9F49-D905BBECFC9D}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{989050BA-A30B-460F-8262-F0D35DA371C6}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9C4B780B-CE93-43E0-85BC-860CB1971736}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9E0EA4D5-E18F-4EDB-9E23-808A0240BFAE}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{B4E10076-6AA4-48F4-AF09-94D7B884F7DE}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{C25EE9C6-71BF-45C8-A25D-DD2F6D3A1DDF}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{E4C02630-A450-4499-A07A-A5955AE57212}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F6608D57-A9CD-4FE2-93B7-421DB701E859}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{F6E239B8-41F4-4FFC-917A-CAD6D432F0E7}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
@@ -59,7 +62,7 @@
 				<Property Name="Music Transition List\{FA77A1B4-9817-4E1E-8050-08C868EAA546}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\FirstVisible_10_1" Type="string" Value="{4C96B38B-3DB4-40C7-91C9-665510E38993}"/>
 				<Property Name="ProjectExplorer\FirstVisible_11_1" Type="string" Value="{23EC2DE3-3ED8-4B82-AC99-92E25F2E4C6B}"/>
-				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
+				<Property Name="ProjectExplorer\FirstVisible_1_1" Type="string" Value="{2388DAEA-9775-46C6-A2ED-C5222A397756}"/>
 				<Property Name="ProjectExplorer\FirstVisible_3_1" Type="string" Value="{A69BF0FC-D84A-487C-ABDD-56F71CB2A126}"/>
 				<Property Name="ProjectExplorer\FirstVisible_4_1" Type="string" Value="{CB6175F1-6080-4A23-92EF-0807E304D0C1}"/>
 				<Property Name="ProjectExplorer\FirstVisible_6_1" Type="string" Value="{C98E673F-A24C-48A8-960F-10565FFE70A0}"/>
@@ -77,7 +80,7 @@
 				<Property Name="ProjectExplorer\x64_Expanded_1_1" Type="string" Value="ZY+uZzDG/02vg7SvP3smrQ=="/>
 				<Property Name="ProjectExplorer\x64_Expanded_20_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_21_1" Type="string" Value=""/>
-				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value="x5a8jiEj2UmivqGFGqIKKrzoaSFpcnhKviW7ecRkmgZD+ebpxF/JTrvhLAzAiiwXk9ddu4XydE+NHd96S4kygA=="/>
+				<Property Name="ProjectExplorer\x64_Expanded_2_1" Type="string" Value="x5a8jiEj2UmivqGFGqIKKrzoaSFpcnhKviW7ecRkmgaT1127hfJ0T40d33pLiTKA"/>
 				<Property Name="ProjectExplorer\x64_Expanded_3_1" Type="string" Value="ibNnR//M5EiwuaQnPzOwXsJvNJ5zBx5Jg/QvIFpDE4s="/>
 				<Property Name="ProjectExplorer\x64_Expanded_4_1" Type="string" Value=""/>
 				<Property Name="ProjectExplorer\x64_Expanded_5_1" Type="string" Value=""/>
