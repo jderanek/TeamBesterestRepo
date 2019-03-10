@@ -27,6 +27,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        //set rtpc values to 100 here!
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         GetGoblinObjects();
     }
