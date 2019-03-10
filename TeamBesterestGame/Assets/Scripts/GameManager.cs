@@ -84,6 +84,10 @@ public class GameManager : MonoBehaviour
 
         dialogueRunners = FindObjectsOfType<DialogueRunner>();
         storages = FindObjectsOfType<InterviewVariableStorage>();
+
+        //Loads data if the game is supposed to
+        if (GlobalVariables.loading)
+            Load();
         //Debug.Log("Start Tests:");
         //Debug.Log(Scissors.CamelToSentence("ThisStringShouldTurnIntoAProperSentence"));
         //Debug.Log(Scissors.CamelToSentence("IfThereAreMultipleSentences.ThenTheWordFollowingThePeriodShouldBeCapitilized."));
@@ -426,6 +430,7 @@ public class GameManager : MonoBehaviour
 
     public void Save()
     {
+        PlayerPrefs.SetString("scene", SceneManager.GetActiveScene().name);
         foreach (InterviewVariableStorage storage in storages)
             storage.SaveData();
         PlayerPrefs.Save();
