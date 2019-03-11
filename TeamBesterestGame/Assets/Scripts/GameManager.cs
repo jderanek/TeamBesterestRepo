@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     public GameObject nilbogInterviewPortrait;
     public GameObject geoffInterviewPortrait;
     public GameObject jeffInterviewPortrait;
+    public Clock clock;
 
     private DialogueRunner[] dialogueRunners;
     private InterviewVariableStorage[] storages;
@@ -120,6 +121,7 @@ public class GameManager : MonoBehaviour
         switch (phase)
         {
             case "Start":
+                clock.Run();
                 this.shift = 3;
                 ChangeShift();
                 canSkip = true;
