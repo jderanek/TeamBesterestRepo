@@ -14,6 +14,7 @@ public class Clock : MonoBehaviour {
 
     public void Run()
     {
+        AkSoundEngine.PostEvent("Rewind_Time", gameObject);
         running = true;
         gameObject.SetActive(true);
     }
