@@ -35,6 +35,7 @@
 				<Event Id="64054188" Name="Hero_Combat" ObjectPath="\Events\Default Work Unit\Hero_Combat"/>
 				<Event Id="2067637633" Name="Jeff_Voice" ObjectPath="\Events\Voice Clips\Jeff_Voice"/>
 				<Event Id="1181445569" Name="Nilbog_Voice" ObjectPath="\Events\Voice Clips\Nilbog_Voice"/>
+				<Event Id="1223010781" Name="Pencil_Scratch" ObjectPath="\Events\Voice Clips\Pencil_Scratch"/>
 				<Event Id="2972449336" Name="Text" ObjectPath="\Events\Voice Clips\Text"/>
 				<Event Id="818841426" Name="Voiceless" ObjectPath="\Events\Voice Clips\Voiceless"/>
 			</IncludedEvents>
@@ -42,10 +43,6 @@
 				<File Id="3055567" Language="SFX">
 					<ShortName>nick\neh.wav</ShortName>
 					<Path>SFX\nick\neh_1C9C67B2.wem</Path>
-				</File>
-				<File Id="5331178" Language="SFX">
-					<ShortName>Avery Sounds\nyahhh question.wav</ShortName>
-					<Path>SFX\Avery Sounds\nyahhh question_1C9C67B2.wem</Path>
 				</File>
 				<File Id="16432662" Language="SFX">
 					<ShortName>nick\unnh.wav</ShortName>
@@ -62,10 +59,6 @@
 				<File Id="49871808" Language="SFX">
 					<ShortName>James Sounds\James_8.wav</ShortName>
 					<Path>SFX\James Sounds\James_8_1C9C67B2.wem</Path>
-				</File>
-				<File Id="50503286" Language="SFX">
-					<ShortName>Avery Sounds\the one true nyah.wav</ShortName>
-					<Path>SFX\Avery Sounds\the one true nyah_1C9C67B2.wem</Path>
 				</File>
 				<File Id="51557405" Language="SFX">
 					<ShortName>Matt Sunds\Matt_14.wav</ShortName>
@@ -87,10 +80,6 @@
 					<ShortName>James Sounds\James_13.wav</ShortName>
 					<Path>SFX\James Sounds\James_13_1C9C67B2.wem</Path>
 				</File>
-				<File Id="90143114" Language="SFX">
-					<ShortName>Avery Sounds\Nyeh.wav</ShortName>
-					<Path>SFX\Avery Sounds\Nyeh_1C9C67B2.wem</Path>
-				</File>
 				<File Id="108278932" Language="SFX">
 					<ShortName>James Sounds\James_17.wav</ShortName>
 					<Path>SFX\James Sounds\James_17_1C9C67B2.wem</Path>
@@ -102,6 +91,10 @@
 				<File Id="108695846" Language="SFX">
 					<ShortName>James Sounds\James_10.wav</ShortName>
 					<Path>SFX\James Sounds\James_10_1C9C67B2.wem</Path>
+				</File>
+				<File Id="111870191" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_25.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_25_1C9C67B2.wem</Path>
 				</File>
 				<File Id="117554691" Language="SFX">
 					<ShortName>Steven Sounds\Steven_4.wav</ShortName>
@@ -119,13 +112,29 @@
 					<ShortName>James Sounds\James_18.wav</ShortName>
 					<Path>SFX\James Sounds\James_18_1C9C67B2.wem</Path>
 				</File>
+				<File Id="144211223" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_2.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_2_1C9C67B2.wem</Path>
+				</File>
+				<File Id="146490973" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_16.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_16_1C9C67B2.wem</Path>
+				</File>
 				<File Id="148211543" Language="SFX">
 					<ShortName>James Sounds\James_1.wav</ShortName>
 					<Path>SFX\James Sounds\James_1_1C9C67B2.wem</Path>
 				</File>
+				<File Id="158949122" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_5.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_5_1C9C67B2.wem</Path>
+				</File>
 				<File Id="160086135" Language="SFX">
 					<ShortName>Steven Sounds\Steven_7.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_7_1C9C67B2.wem</Path>
+				</File>
+				<File Id="164462487" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_22.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_22_1C9C67B2.wem</Path>
 				</File>
 				<File Id="171096511" Language="SFX">
 					<ShortName>Matt Sunds\Matt_3.wav</ShortName>
@@ -135,6 +144,10 @@
 					<ShortName>nick\nehhh.wav</ShortName>
 					<Path>SFX\nick\nehhh_1C9C67B2.wem</Path>
 				</File>
+				<File Id="179269999" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_18.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_18_1C9C67B2.wem</Path>
+				</File>
 				<File Id="188368845" Language="SFX">
 					<ShortName>Nate Sounds\Nate_11.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_11_1C9C67B2.wem</Path>
@@ -142,10 +155,6 @@
 				<File Id="196269554" Language="SFX">
 					<ShortName>Matt Sunds\Matt_16.wav</ShortName>
 					<Path>SFX\Matt Sunds\Matt_16_1C9C67B2.wem</Path>
-				</File>
-				<File Id="196397383" Language="SFX">
-					<ShortName>Avery Sounds\hmmmnhhh.wav</ShortName>
-					<Path>SFX\Avery Sounds\hmmmnhhh_1C9C67B2.wem</Path>
 				</File>
 				<File Id="198028349" Language="SFX">
 					<ShortName>James Sounds\James_11.wav</ShortName>
@@ -163,6 +172,10 @@
 					<ShortName>nick\ohhhnh.wav</ShortName>
 					<Path>SFX\nick\ohhhnh_1C9C67B2.wem</Path>
 				</File>
+				<File Id="225849249" Language="SFX">
+					<ShortName>Pencil Scratch\Pencil_Scratch_4.wav</ShortName>
+					<Path>SFX\Pencil Scratch\Pencil_Scratch_4_1C9C67B2.wem</Path>
+				</File>
 				<File Id="227053748" Language="SFX">
 					<ShortName>Nate Sounds\Nate_12.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_12_1C9C67B2.wem</Path>
@@ -171,17 +184,9 @@
 					<ShortName>nick\nnnnnnnnnnnnnnneh.wav</ShortName>
 					<Path>SFX\nick\nnnnnnnnnnnnnnneh_1C9C67B2.wem</Path>
 				</File>
-				<File Id="248062267" Language="SFX">
-					<ShortName>Avery Sounds\angery sheep.wav</ShortName>
-					<Path>SFX\Avery Sounds\angery sheep_1C9C67B2.wem</Path>
-				</File>
 				<File Id="250184283" Language="SFX">
 					<ShortName>Matt Sunds\Matt_10.wav</ShortName>
 					<Path>SFX\Matt Sunds\Matt_10_1C9C67B2.wem</Path>
-				</File>
-				<File Id="251703541" Language="SFX">
-					<ShortName>Avery Sounds\nyaoh.wav</ShortName>
-					<Path>SFX\Avery Sounds\nyaoh_1C9C67B2.wem</Path>
 				</File>
 				<File Id="261869840" Language="SFX">
 					<ShortName>Nate Sounds\Nate_25.wav</ShortName>
@@ -190,6 +195,14 @@
 				<File Id="277433093" Language="SFX">
 					<ShortName>Nate Sounds\Nate_7.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_7_1C9C67B2.wem</Path>
+				</File>
+				<File Id="280079981" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_12.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_12_1C9C67B2.wem</Path>
+				</File>
+				<File Id="287382444" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_20.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_20_1C9C67B2.wem</Path>
 				</File>
 				<File Id="288409149" Language="SFX">
 					<ShortName>Nate Sounds\Nate_15.wav</ShortName>
@@ -207,9 +220,17 @@
 					<ShortName>Steven Sounds\Steven_14.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_14_1C9C67B2.wem</Path>
 				</File>
+				<File Id="364923151" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_26.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_26_1C9C67B2.wem</Path>
+				</File>
 				<File Id="365572203" Language="SFX">
 					<ShortName>Nate Sounds\Nate_26.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_26_1C9C67B2.wem</Path>
+				</File>
+				<File Id="371000865" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_4.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_4_1C9C67B2.wem</Path>
 				</File>
 				<File Id="374577199" Language="SFX">
 					<ShortName>Steven Sounds\Steven_10.wav</ShortName>
@@ -223,13 +244,13 @@
 					<ShortName>James Sounds\James_19.wav</ShortName>
 					<Path>SFX\James Sounds\James_19_1C9C67B2.wem</Path>
 				</File>
-				<File Id="403639939" Language="SFX">
-					<ShortName>Avery Sounds\Nyaaah_question.wav</ShortName>
-					<Path>SFX\Avery Sounds\Nyaaah_question_1C9C67B2.wem</Path>
-				</File>
 				<File Id="409767051" Language="SFX">
 					<ShortName>Outro.wav</ShortName>
 					<Path>SFX\Outro_F17FB28C.wem</Path>
+				</File>
+				<File Id="411000288" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_28.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_28_1C9C67B2.wem</Path>
 				</File>
 				<File Id="418490334" Language="SFX">
 					<ShortName>Section C.wav</ShortName>
@@ -246,6 +267,10 @@
 				<File Id="439281313" Language="SFX">
 					<ShortName>James Sounds\James_20.wav</ShortName>
 					<Path>SFX\James Sounds\James_20_1C9C67B2.wem</Path>
+				</File>
+				<File Id="446250589" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_11.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_11_1C9C67B2.wem</Path>
 				</File>
 				<File Id="458896262" Language="SFX">
 					<ShortName>James Sounds\James_16.wav</ShortName>
@@ -271,10 +296,6 @@
 					<ShortName>Steven Sounds\Steven_18.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_18_1C9C67B2.wem</Path>
 				</File>
-				<File Id="494862683" Language="SFX">
-					<ShortName>Avery Sounds\mnahhhh.wav</ShortName>
-					<Path>SFX\Avery Sounds\mnahhhh_1C9C67B2.wem</Path>
-				</File>
 				<File Id="508851355" Language="SFX">
 					<ShortName>Matt Sunds\Matt_5.wav</ShortName>
 					<Path>SFX\Matt Sunds\Matt_5_1C9C67B2.wem</Path>
@@ -299,9 +320,17 @@
 					<ShortName>BUTTON_Click_Compressor_Small_01_stereo.wav</ShortName>
 					<Path>SFX\BUTTON_Click_Compressor_Small_01_stereo_1C9C67B2.wem</Path>
 				</File>
+				<File Id="517669462" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_19.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_19_1C9C67B2.wem</Path>
+				</File>
 				<File Id="518377828" Language="SFX">
 					<ShortName>BUTTON_Click_Compressor_Small_02_stereo.wav</ShortName>
 					<Path>SFX\BUTTON_Click_Compressor_Small_02_stereo_1C9C67B2.wem</Path>
+				</File>
+				<File Id="520904094" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_27.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_27_1C9C67B2.wem</Path>
 				</File>
 				<File Id="533469334" Language="SFX">
 					<ShortName>Steven Sounds\Steven_21.wav</ShortName>
@@ -315,6 +344,10 @@
 					<ShortName>Steven Sounds\Steven_28.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_28_1C9C67B2.wem</Path>
 				</File>
+				<File Id="555473689" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_6.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_6_1C9C67B2.wem</Path>
+				</File>
 				<File Id="555561485" Language="SFX">
 					<ShortName>Steven Sounds\Steven_15.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_15_1C9C67B2.wem</Path>
@@ -322,6 +355,10 @@
 				<File Id="556135923" Language="SFX">
 					<ShortName>nick\nyoinger.wav</ShortName>
 					<Path>SFX\nick\nyoinger_1C9C67B2.wem</Path>
+				</File>
+				<File Id="556281194" Language="SFX">
+					<ShortName>Pencil Scratch\Pencil_Scratch_3.wav</ShortName>
+					<Path>SFX\Pencil Scratch\Pencil_Scratch_3_1C9C67B2.wem</Path>
 				</File>
 				<File Id="557701661" Language="SFX">
 					<ShortName>Steven Sounds\Steven_27.wav</ShortName>
@@ -350,10 +387,6 @@
 				<File Id="609279146" Language="SFX">
 					<ShortName>Section B.wav</ShortName>
 					<Path>SFX\Section B_F17FB28C.wem</Path>
-				</File>
-				<File Id="621419851" Language="SFX">
-					<ShortName>Avery Sounds\angery.wav</ShortName>
-					<Path>SFX\Avery Sounds\angery_1C9C67B2.wem</Path>
 				</File>
 				<File Id="629573657" Language="SFX">
 					<ShortName>Steven Sounds\Steven_8.wav</ShortName>
@@ -391,6 +424,10 @@
 					<ShortName>James Sounds\James_21.wav</ShortName>
 					<Path>SFX\James Sounds\James_21_1C9C67B2.wem</Path>
 				</File>
+				<File Id="666931275" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_9.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_9_1C9C67B2.wem</Path>
+				</File>
 				<File Id="668485618" Language="SFX">
 					<ShortName>Matt Sunds\Matt_1.wav</ShortName>
 					<Path>SFX\Matt Sunds\Matt_1_1C9C67B2.wem</Path>
@@ -402,10 +439,6 @@
 				<File Id="680418998" Language="SFX">
 					<ShortName>Matt Sunds\Matt_13.wav</ShortName>
 					<Path>SFX\Matt Sunds\Matt_13_1C9C67B2.wem</Path>
-				</File>
-				<File Id="682032088" Language="SFX">
-					<ShortName>Avery Sounds\is this a sheep.wav</ShortName>
-					<Path>SFX\Avery Sounds\is this a sheep_1C9C67B2.wem</Path>
 				</File>
 				<File Id="686304453" Language="SFX">
 					<ShortName>nick\nyah.wav</ShortName>
@@ -451,6 +484,14 @@
 					<ShortName>Steven Sounds\Steven_16.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_16_1C9C67B2.wem</Path>
 				</File>
+				<File Id="732203067" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_10.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_10_1C9C67B2.wem</Path>
+				</File>
+				<File Id="743170306" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_21.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_21_1C9C67B2.wem</Path>
+				</File>
 				<File Id="743359504" Language="SFX">
 					<ShortName>Steven Sounds\Steven_22.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_22_1C9C67B2.wem</Path>
@@ -458,6 +499,10 @@
 				<File Id="744634943" Language="SFX">
 					<ShortName>Nate Sounds\Nate_13.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_13_1C9C67B2.wem</Path>
+				</File>
+				<File Id="753617227" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_3.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_3_1C9C67B2.wem</Path>
 				</File>
 				<File Id="760017874" Language="SFX">
 					<ShortName>nick\eneh.wav</ShortName>
@@ -471,13 +516,13 @@
 					<ShortName>Matt Sunds\Matt_4.wav</ShortName>
 					<Path>SFX\Matt Sunds\Matt_4_1C9C67B2.wem</Path>
 				</File>
+				<File Id="779494104" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_13.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_13_1C9C67B2.wem</Path>
+				</File>
 				<File Id="783707622" Language="SFX">
 					<ShortName>nick\nyoh.wav</ShortName>
 					<Path>SFX\nick\nyoh_1C9C67B2.wem</Path>
-				</File>
-				<File Id="797679854" Language="SFX">
-					<ShortName>Avery Sounds\nyah-ow.wav</ShortName>
-					<Path>SFX\Avery Sounds\nyah-ow_1C9C67B2.wem</Path>
 				</File>
 				<File Id="798194017" Language="SFX">
 					<ShortName>Fast Click.wav</ShortName>
@@ -490,10 +535,6 @@
 				<File Id="803909754" Language="SFX">
 					<ShortName>Steven Sounds\Steven_3.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_3_1C9C67B2.wem</Path>
-				</File>
-				<File Id="806346264" Language="SFX">
-					<ShortName>Avery Sounds\nyah but sad.wav</ShortName>
-					<Path>SFX\Avery Sounds\nyah but sad_1C9C67B2.wem</Path>
 				</File>
 				<File Id="812509794" Language="SFX">
 					<ShortName>Matt Sunds\Matt_19.wav</ShortName>
@@ -515,9 +556,17 @@
 					<ShortName>Steven Sounds\Steven_25.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_25_1C9C67B2.wem</Path>
 				</File>
+				<File Id="826469407" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_24.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_24_1C9C67B2.wem</Path>
+				</File>
 				<File Id="826552607" Language="SFX">
 					<ShortName>Steven Sounds\29.wav</ShortName>
 					<Path>SFX\Steven Sounds\29_1C9C67B2.wem</Path>
+				</File>
+				<File Id="828760940" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_1.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_1_1C9C67B2.wem</Path>
 				</File>
 				<File Id="843733156" Language="SFX">
 					<ShortName>Matt Sunds\Matt_20.wav</ShortName>
@@ -526,6 +575,10 @@
 				<File Id="844346717" Language="SFX">
 					<ShortName>nick\nyoooh.wav</ShortName>
 					<Path>SFX\nick\nyoooh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="846789060" Language="SFX">
+					<ShortName>Pencil Scratch\Pencil_Scratch_5.wav</ShortName>
+					<Path>SFX\Pencil Scratch\Pencil_Scratch_5_1C9C67B2.wem</Path>
 				</File>
 				<File Id="855005715" Language="SFX">
 					<ShortName>Matt Sunds\Matt_21.wav</ShortName>
@@ -542,10 +595,6 @@
 				<File Id="880314891" Language="SFX">
 					<ShortName>Nate Sounds\Nate_17.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_17_1C9C67B2.wem</Path>
-				</File>
-				<File Id="880567902" Language="SFX">
-					<ShortName>Avery Sounds\nah.wav</ShortName>
-					<Path>SFX\Avery Sounds\nah_1C9C67B2.wem</Path>
 				</File>
 				<File Id="880894370" Language="SFX">
 					<ShortName>Nate Sounds\Nate_21.wav</ShortName>
@@ -566,6 +615,10 @@
 				<File Id="890556887" Language="SFX">
 					<ShortName>nick\nawh.wav</ShortName>
 					<Path>SFX\nick\nawh_1C9C67B2.wem</Path>
+				</File>
+				<File Id="891077424" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_7.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_7_1C9C67B2.wem</Path>
 				</File>
 				<File Id="903215154" Language="SFX">
 					<ShortName>Matt Sunds\Matt_18.wav</ShortName>
@@ -603,21 +656,17 @@
 					<ShortName>Steven Sounds\Steven_19.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_19_1C9C67B2.wem</Path>
 				</File>
-				<File Id="949589221" Language="SFX">
-					<ShortName>Avery Sounds\nyah.wav</ShortName>
-					<Path>SFX\Avery Sounds\nyah_1C9C67B2.wem</Path>
-				</File>
 				<File Id="960388157" Language="SFX">
 					<ShortName>Matt Sunds\Matt_6.wav</ShortName>
 					<Path>SFX\Matt Sunds\Matt_6_1C9C67B2.wem</Path>
 				</File>
-				<File Id="981528138" Language="SFX">
-					<ShortName>Avery Sounds\hmmmmnh but a question.wav</ShortName>
-					<Path>SFX\Avery Sounds\hmmmmnh but a question_1C9C67B2.wem</Path>
-				</File>
 				<File Id="986359641" Language="SFX">
 					<ShortName>Nate Sounds\Nate_16.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_16_1C9C67B2.wem</Path>
+				</File>
+				<File Id="988127048" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_14.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_14_1C9C67B2.wem</Path>
 				</File>
 				<File Id="990351553" Language="SFX">
 					<ShortName>Matt Sunds\Matt_11.wav</ShortName>
@@ -626,10 +675,6 @@
 				<File Id="992144050" Language="SFX">
 					<ShortName>nick\gargle.wav</ShortName>
 					<Path>SFX\nick\gargle_1C9C67B2.wem</Path>
-				</File>
-				<File Id="1011203690" Language="SFX">
-					<ShortName>Avery Sounds\nyyyyyaaaahhh.wav</ShortName>
-					<Path>SFX\Avery Sounds\nyyyyyaaaahhh_1C9C67B2.wem</Path>
 				</File>
 				<File Id="1016561363" Language="SFX">
 					<ShortName>Matt Sunds\Matt_12.wav</ShortName>
@@ -655,13 +700,9 @@
 					<ShortName>BUTTON_Click_Compressor_stereo.wav</ShortName>
 					<Path>SFX\BUTTON_Click_Compressor_stereo_1C9C67B2.wem</Path>
 				</File>
-				<File Id="1051558204" Language="SFX">
-					<ShortName>Avery Sounds\mmmmmnh.wav</ShortName>
-					<Path>SFX\Avery Sounds\mmmmmnh_1C9C67B2.wem</Path>
-				</File>
-				<File Id="1068102348" Language="SFX">
-					<ShortName>Avery Sounds\grunt.wav</ShortName>
-					<Path>SFX\Avery Sounds\grunt_1C9C67B2.wem</Path>
+				<File Id="1048921922" Language="SFX">
+					<ShortName>Raven Sounds\Raven_Audio_23.wav</ShortName>
+					<Path>SFX\Raven Sounds\Raven_Audio_23_1C9C67B2.wem</Path>
 				</File>
 				<File Id="1072483486" Language="SFX">
 					<ShortName>nick\nyeh.wav</ShortName>

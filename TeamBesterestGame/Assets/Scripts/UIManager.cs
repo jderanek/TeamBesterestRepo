@@ -108,7 +108,7 @@ public class UIManager : MonoBehaviour {
         print("sound should be called");
         if (!notification.activeInHierarchy)
         {
-            AkSoundEngine.PostEvent("Button_Press", notification);
+            AkSoundEngine.PostEvent("Pencil_Scratch", notification);
         }
         notification.SetActive(!notification.activeInHierarchy);
     }

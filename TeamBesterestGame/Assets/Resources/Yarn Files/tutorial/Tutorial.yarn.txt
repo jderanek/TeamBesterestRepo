@@ -3,6 +3,7 @@ tags:
 colorID: 0
 position: 611,517
 ---
+<<ChangeSpeaker SoundManager Boss>>
 Finally! Took you long enough! All of my goblins are dying to pillaging heroes! 
 You have to fix this! You're a wizard, right?! Where did you study?
 

@@ -27,6 +27,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        //set rtpc values to 100 here!
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         GetGoblinObjects();
     }
@@ -78,7 +79,7 @@ public class SoundManager : MonoBehaviour
 
     public static void GetGoblinObjects()
     {
-        goblins = new GameObject[7];
+        goblins = new GameObject[8];
 
         goblins[0] = GameObject.Find("Goblenn");
         goblins[1] = GameObject.Find("Geoff");
@@ -87,8 +88,9 @@ public class SoundManager : MonoBehaviour
         goblins[4] = GameObject.Find("Nilbog");
         goblins[5] = GameObject.Find("Boss");
         goblins[6] = GameObject.Find("Voiceless");
+        goblins[7] = GameObject.Find("Gordon");
 
-        goblinVoiceName = new string[7];
+        goblinVoiceName = new string[8];
 
         goblinVoiceName[0] = "Goblenn_Voice";
         goblinVoiceName[1] = "Geoff_Voice";
@@ -97,6 +99,7 @@ public class SoundManager : MonoBehaviour
         goblinVoiceName[4] = "Nilbog_Voice";
         goblinVoiceName[5] = "Boss_Voice";
         goblinVoiceName[6] = "Voiceless";
+        goblinVoiceName[7] = "Gordon_Voice";
     }
 
     [YarnCommand("ChangeSpeaker")]
