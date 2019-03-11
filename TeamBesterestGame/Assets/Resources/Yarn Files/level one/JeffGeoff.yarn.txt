@@ -1,7 +1,7 @@
 title: Geoff1
 tags: 
 colorID: 0
-position: 4051,147
+position: 3878,-404
 ---
 <<ChangeSpeaker SoundManager Geoff>>
 
@@ -12,14 +12,19 @@ position: 4051,147
 [[A shame, I bet it was a tasty scone too.|Geoff13]]
 
 <<if $talkedToJeff is true>>
-[[I talked to Jeff already.|Geoff14]]
+[[I talked to Gorgo already.|Geoff14]]
 <<endif>>
 
+<<if $geoffReady2 and $talkedToGorgo2 is true>>
+[[Let's talk about Gorgo.|Geoff2]]
+<<elseif $geoffReady2 is true>>
+[[Hold up a moment. Is there something going on between you and Gorgo?|Geoff3]]
+<<endif>>
 ===
 title: Geoff11
 tags: 
 colorID: 1
-position: 4624,-240
+position: 4451,-791
 ---
 <<set $talkedToGeoff to true>>
 
@@ -40,7 +45,7 @@ Jeff is gonna pay for that!!
 title: Geoff12
 tags: 
 colorID: 0
-position: 4542,167
+position: 4369,-384
 ---
 It was Jeff! It *has* to be!
 Someone needs to get him taken care of!
@@ -51,7 +56,7 @@ Someone needs to get him taken care of!
 title: Geoff121
 tags: 
 colorID: 1
-position: 5169,-249
+position: 4996,-800
 ---
 <<set $talkedToGeoff to true>>
 
@@ -69,7 +74,7 @@ Ha! Finally, *someone* that understands! I'll cave his head in!
 title: Geoff122
 tags: 
 colorID: 0
-position: 5102,121
+position: 4929,-430
 ---
 Long as Jeff gets what's coming to 'em, I don't care what you do!
 
@@ -78,7 +83,7 @@ Long as Jeff gets what's coming to 'em, I don't care what you do!
 title: Geoff1221
 tags: 
 colorID: 0
-position: 5846,203
+position: 5673,-348
 ---
 <<ChangeSpeaker SoundManager Geoff>>
 Why shouldn't I? Jeff is a dirty, no-good, scone-eating jerk!
@@ -96,7 +101,7 @@ He needs to be stopped!
 title: Geoff12211
 tags: 
 colorID: 1
-position: 6262,414
+position: 6089,-137
 ---
 <<set $talkedToGeoff to true>>
 
@@ -115,7 +120,7 @@ I'll show him, just watch me! He won't stand a chance!
 title: Geoff12212
 tags: 
 colorID: 0
-position: 6266,120
+position: 6093,-431
 ---
 I would probably still say no...
 But he is just a thief!
@@ -128,7 +133,7 @@ And he knows scones are my favorite snack...
 title: Geoff12213
 tags: 
 colorID: 0
-position: 6132,811
+position: 5959,260
 ---
 Fine! ...But if you don't do anything about it, I will!
 
@@ -138,7 +143,7 @@ Fine! ...But if you don't do anything about it, I will!
 title: Geoff123
 tags: 
 colorID: 0
-position: 5193,473
+position: 5020,-78
 ---
 I planned on giving his face a good stompin' actually, now that you mentioned it!
 It'll be a nice warmup before the Heroes show up! And it'll shut 'em up!
@@ -148,7 +153,7 @@ It'll be a nice warmup before the Heroes show up! And it'll shut 'em up!
 title: Geoff13
 tags: 
 colorID: 0
-position: 4562,497
+position: 4389,-54
 ---
 What was that, punk? 
 I don't settle for less than the best!
@@ -160,16 +165,24 @@ I don't settle for less than the best!
 title: Jeff1
 tags: 
 colorID: 0
-position: -336,750
+position: -2016,504
 ---
 <<ChangeSpeaker SoundManager Jeff>>
 Hey, boss guy... what do you need?
 [[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
+
+<<if gorgoStart2 is true>>
+[[Word around here is that there's something going on between you and Geoff. Care to elaborate?|Gorgo2]]
+<<endif>>
+
+<<if talkedToGorgo2 is true>>
+[[Alright, I'll cut to the chase. I know more about you than you think. I'll give you a hypothetical situation, and you tell me how it sounds, ok?|Gorgo211121]]
+<<endif>>
 ===
 title: Jeff11
 tags: 
 colorID: 0
-position: 97,751
+position: -1281,510
 ---
 I don't know what you're talkin' about.
 [[I can just ask anyone else, I'm sure they'll talk.|Jeff111]]
@@ -185,7 +198,7 @@ I don't know what you're talkin' about.
 title: Jeff112
 tags: 
 colorID: 0
-position: 614,517
+position: -832,261
 ---
 Alright, fine. Geoff and I have been fightin'.
 All started because of some stupid scone of his.
@@ -195,7 +208,7 @@ All started because of some stupid scone of his.
 title: Jeff111
 tags: 
 colorID: 0
-position: 565,155
+position: -881,-101
 ---
 Psh! Please, they'd just tell you the same thing.
 Geoff is a maniac! When he isn't crying about losing food, he's picking fights! ...Not that he wins those, mind you.
@@ -206,7 +219,7 @@ Geoff is a maniac! When he isn't crying about losing food, he's picking fights! 
 title: Jeff1121
 tags: 
 colorID: 0
-position: 1065,463
+position: -381,207
 ---
 Oh, nothing much really. I just ate his scone, is all!
 Haha! He was so mad when he found out it was gone.
@@ -218,7 +231,7 @@ Haha! He was so mad when he found out it was gone.
 title: Geoff122132
 tags: 
 colorID: 1
-position: 6824,674
+position: 6651,123
 ---
 <<set $talkedToGeoff to true>>
 
@@ -236,7 +249,7 @@ position: 6824,674
 title: Geoff122131
 tags: 
 colorID: 1
-position: 6828,387
+position: 6655,-164
 ---
 <<set $talkedToGeoff to true>>
 <<set $apologize2 to true>>
@@ -257,7 +270,7 @@ But *not* until then!
 title: JeffGeoffSolution1
 tags: 
 colorID: 2
-position: 3091,3295
+position: 2686,3312
 ---
 <<ChangeSpeaker SoundManager Jeff>>
 Well? What's it gonna be?
@@ -271,7 +284,7 @@ Yea, what's the deal, Boss?
 title: Jeff113
 tags: 
 colorID: 0
-position: 548,1137
+position: -898,881
 ---
 Beef? With Geoff? Who could *possibly* be mad at someone so ridiculous?
 He complains about food all day then picks fights with me when things don't work out. He gets what's comin' to him.
@@ -287,7 +300,7 @@ He complains about food all day then picks fights with me when things don't work
 title: Jeff114
 tags: 
 colorID: 0
-position: 534,1994
+position: -978,1619
 ---
 Is he now? That doesn't surprise me. He conscript you to get his precious scone back?
 Spoiler alert, I ate it yesterday. Good luck with that one.
@@ -299,7 +312,7 @@ Spoiler alert, I ate it yesterday. Good luck with that one.
 title: JeffGeoffSolution11
 tags: 
 colorID: 2
-position: 3531,3110
+position: 3126,3127
 ---
 <<ChangeSpeaker SoundManager Geoff>>
 Wait, what?!
@@ -320,7 +333,7 @@ You're sure this isn't going to end well.
 title: JeffGeoffSolution12
 tags: 
 colorID: 2
-position: 3533,3409
+position: 3128,3426
 ---
 //IF Jeff AND Geoff are flagged Apology:
 <<if $apologize1 is true and $apologize2 is true>>
@@ -395,7 +408,7 @@ You're sure this isn't going to end well.
 title: Jeff1112
 tags: 
 colorID: 0
-position: 1137,-143
+position: -309,-399
 ---
 Oh yea? The heroes ain't exactly kind, neither.
 ...Would be nice to kick their butts, for a change.
@@ -407,7 +420,7 @@ Oh yea? The heroes ain't exactly kind, neither.
 title: Jeff11123
 tags: 
 colorID: 1
-position: 1436,142
+position: -10,-114
 ---
 <<set $talkedToJeff to true>>
 <<if $jeffLittleInfoNote is false>>
@@ -426,7 +439,7 @@ A wizard, beating a goblin warrior in a fight. *That* will be the day!
 title: Jeff11121
 tags: 
 colorID: 1
-position: 1828,-472
+position: 382,-728
 ---
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
@@ -450,7 +463,7 @@ I'll apologize to the guy, but if he loses his cool again, I'm going to defend m
 title: Jeff11122
 tags: 
 colorID: 0
-position: 1539,-127
+position: 93,-383
 ---
 Because Geoff is so busy trying to kill me that the heroes win every time!
 It's clearly his fault.
@@ -460,7 +473,7 @@ It's clearly his fault.
 title: Jeff111221
 tags: 
 colorID: 1
-position: 2094,-147
+position: 648,-403
 ---
 <<set $talkedToJeff to true>>
 
@@ -480,7 +493,7 @@ Now, if you're going to sit here and ask dumb questions all day, I've got heroes
 title: Jeff11211
 tags: 
 colorID: 0
-position: 1535,450
+position: 89,194
 ---
 Oh? And why would I do that?
 
@@ -491,7 +504,7 @@ Oh? And why would I do that?
 title: Jeff112111
 tags: 
 colorID: 1
-position: 1858,307
+position: 412,51
 ---
 <<set $talkedToJeff to true>>
 <<if $jeffLittleInfoNote is false>>
@@ -510,7 +523,7 @@ Look, unless you can offer me a raise or something, you're wasting your time.
 title: Jeff112113
 tags: 
 colorID: 1
-position: 1862,549
+position: 416,293
 ---
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
@@ -534,7 +547,7 @@ I'll do it, if for no other reason than the look on your face right now.
 title: Jeff11212
 tags: 
 colorID: 0
-position: 1529,897
+position: 83,641
 ---
 Because I was hungry? Looked real good, too. Really hit the spot.
 
@@ -544,7 +557,7 @@ Because I was hungry? Looked real good, too. Really hit the spot.
 title: Jeff112122
 tags: 
 colorID: 1
-position: 1826,888
+position: 380,632
 ---
 <<set $talkedToJeff to true>>
 <<if $jeffLittleInfoNote is false>>
@@ -561,7 +574,7 @@ Darned straight!
 title: Jeff1142
 tags: 
 colorID: 0
-position: 2472,1887
+position: 1026,1631
 ---
 Not if you can find a good enough reason for me to!
 
@@ -572,7 +585,7 @@ Not if you can find a good enough reason for me to!
 title: Jeff1141
 tags: 
 colorID: 0
-position: 785,2304
+position: -662,1958
 ---
 Really? He's going to try and fight me, huh? Wouldn't be the first time. 
 Probably won't end well for him. Per the usual.
@@ -584,7 +597,7 @@ Probably won't end well for him. Per the usual.
 title: Jeff11413
 tags: 
 colorID: 1
-position: 1081,2675
+position: -372,2250
 ---
 <<set $talkedToJeff to true>>
 <<if $jeffLittleInfoNote is false>>
@@ -602,7 +615,7 @@ Can't hurt to try!
 title: Jeff11411
 tags: 
 colorID: 0
-position: 1118,2128
+position: -358,1800
 ---
 Hey, if the heroes weren't there, that would've worked differently!
 
@@ -613,7 +626,7 @@ Hey, if the heroes weren't there, that would've worked differently!
 title: Jeff114111
 tags: 
 colorID: 1
-position: 1625,2272
+position: 149,1944
 ---
 <<set $talkedToJeff to true>>
 <<set $apologize1 to true>>
@@ -636,7 +649,7 @@ He better appreciate this.
 title: Jeff114112
 tags: 
 colorID: 1
-position: 1625,2543
+position: 29,2214
 ---
 <<set $talkedToJeff to true>>
 <<if $jeffLittleInfoNote is false>>
@@ -654,7 +667,7 @@ I'm done here.
 title: Jeff1133
 tags: 
 colorID: 0
-position: 952,1123
+position: -494,867
 ---
 Guilty as charged.
 
@@ -665,7 +678,7 @@ Guilty as charged.
 title: Jeff1132
 tags: 
 colorID: 0
-position: 943,1407
+position: -503,1151
 ---
 Nothing less!
 
@@ -675,7 +688,7 @@ Nothing less!
 title: Jeff11321
 tags: 
 colorID: 1
-position: 1507,1410
+position: 61,1154
 ---
 <<set $talkedToJeff to true>>
 <<if $jeffLittleInfoNote is false>>
@@ -692,7 +705,7 @@ Just like this conversation, pal. I think we're done.
 title: Geoff14
 tags: 
 colorID: 0
-position: 4393,2794
+position: 4220,2243
 ---
 Wait, what?
 
@@ -715,7 +728,7 @@ We have to do something about him!
 title: Geoff141
 tags: 
 colorID: 0
-position: 4987,1790
+position: 4814,1239
 ---
 He admits it then, huh?!
 I'll clobber him!
@@ -727,7 +740,7 @@ I'll clobber him!
 title: Geoff1413
 tags: 
 colorID: 1
-position: 5301,2178
+position: 5128,1627
 ---
 <<set $talkedToGeoff to true>>
 
@@ -745,7 +758,7 @@ I've fought Jeff for less! He's gonna get it this time!
 title: Geoff1411
 tags: 
 colorID: 0
-position: 5363,1236
+position: 5190,685
 ---
 How do I know he even means it?!
 This wouldn't be the first time things like this have happened!
@@ -758,7 +771,7 @@ This wouldn't be the first time things like this have happened!
 title: Geoff14113
 tags: 
 colorID: 1
-position: 6494,1600
+position: 6321,1049
 ---
 <<set $talkedToGeoff to true>>
 
@@ -778,7 +791,7 @@ I don't need his help!
 title: Geoff14111
 tags: 
 colorID: 1
-position: 6490,1087
+position: 6317,536
 ---
 <<set $apologize2 to true>>
 <<set $talkedToGeoff to true>>
@@ -800,7 +813,7 @@ I don't have to like it, though!
 title: Geoff14112
 tags: 
 colorID: 0
-position: 6493,1357
+position: 6320,806
 ---
 I--
 He--
@@ -812,7 +825,7 @@ I guess you might have a small point.
 title: Geoff1412
 tags: 
 colorID: 0
-position: 5351,1788
+position: 5178,1237
 ---
 He just admitted to eating my scone! Why shouldn't I?!
 
@@ -823,7 +836,7 @@ He just admitted to eating my scone! Why shouldn't I?!
 title: Geoff14123
 tags: 
 colorID: 0
-position: 5718,1970
+position: 5545,1419
 ---
 ...uh...
 I asked first! ...and he ate my scone!
@@ -834,7 +847,7 @@ I asked first! ...and he ate my scone!
 title: Geoff141232
 tags: 
 colorID: 0
-position: 6122,2024
+position: 5949,1473
 ---
 You don't know it'll end up like that!
 [[I'm a time wizard. Of course I do!|Geoff14112]]
@@ -843,7 +856,7 @@ You don't know it'll end up like that!
 title: Geoff144
 tags: 
 colorID: 1
-position: 4800,4060
+position: 4627,3509
 ---
 <<set $talkedToGeoff to true>>
 
@@ -861,7 +874,7 @@ If you don't do anything about Geoff, I will! I don't need him!
 title: Geoff143
 tags: 
 colorID: 0
-position: 4914,3585
+position: 4741,3034
 ---
 I was thinking of stomping him into the dirt!
 
@@ -877,7 +890,7 @@ It'll shut you up good, good enough for me!
 title: Geoff1432
 tags: 
 colorID: 1
-position: 5192,3863
+position: 5019,3312
 ---
 <<set $talkedToGeoff to true>>
 
@@ -898,7 +911,7 @@ position: 5192,3863
 title: Geoff142
 tags: 
 colorID: 0
-position: 4945,2815
+position: 4772,2264
 ---
 He's the worst, right?
 Only one more useless around here is that Goblenn.
@@ -916,7 +929,7 @@ Only one more useless around here is that Goblenn.
 title: Geoff1422
 tags: 
 colorID: 0
-position: 5589,3223
+position: 5416,2672
 ---
 Huh?? ...what does *that* mean?
 
@@ -926,7 +939,7 @@ Huh?? ...what does *that* mean?
 title: Geoff14221
 tags: 
 colorID: 0
-position: 5896,2971
+position: 5723,2420
 ---
 What do you mean by that, huh?!
 
@@ -936,7 +949,7 @@ What do you mean by that, huh?!
 title: Geoff142212
 tags: 
 colorID: 1
-position: 6260,3019
+position: 6087,2468
 ---
 <<set $talkedToGeoff to true>>
 
@@ -955,7 +968,7 @@ If you don't see that, then fine! I'll handle it myself!
 title: Geoff14222
 tags: 
 colorID: 0
-position: 5960,3831
+position: 5787,3280
 ---
 But he stole my scone! He can't just get off scot-free!
 
@@ -966,7 +979,7 @@ But he stole my scone! He can't just get off scot-free!
 title: Geoff1421
 tags: 
 colorID: 0
-position: 5596,2589
+position: 5423,2038
 ---
 Why would I want to work with him?!
 He's such a jerk! Especially about leftover food!
@@ -978,7 +991,7 @@ He's such a jerk! Especially about leftover food!
 title: Geoff14213
 tags: 
 colorID: 0
-position: 6256,2677
+position: 6083,2126
 ---
 Unreasonable? Who's being unreasonable?!
 
@@ -989,7 +1002,7 @@ Unreasonable? Who's being unreasonable?!
 title: Geoff142222
 tags: 
 colorID: 1
-position: 6295,3651
+position: 6122,3100
 ---
 <<set $talkedToGeoff to true>>
 <<set $apologize2 to true>>
@@ -1010,7 +1023,7 @@ I'm *definitely* the bigger Goblin here...
 title: Geoff142223
 tags: 
 colorID: 1
-position: 6300,3966
+position: 6127,3415
 ---
 <<set $talkedToGeoff to true>>
 
@@ -1024,4 +1037,465 @@ I'll show him, just watch me!
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
 //escalated the situation.
+===
+title: Gorgo2
+tags: 
+colorID: 3
+position: -1801,4488
+---
+Ha... haha... you mean that deal with Geoff's scone, right?
+
+[[No, I think you know what I'm getting at.|Gorgo21]]
+===
+title: Gorgo21
+tags: 
+colorID: 3
+position: -1549,4491
+---
+Y-You think just because you're a wizard you can read minds? You ain't got nothin' on me!
+
+[[[Lie] Actually, I minored in telepathy and mind-reading. Your secrets are mine!|Gorgo211]]
+[[Don't think I haven't seen the way you look at Geoff when you think nobody is looking.|Gorgo212]]
+[[I wonder what Geoff would think.|Gorgo213]]
+===
+title: Gorgo211
+tags: 
+colorID: 3
+position: -1031,3951
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[You could swear Gorgo get's even more red, if that were possible.]
+
+<<ChangeSpeaker SoundManager Jeff>>
+Now.... N-now hold on just a second! Those thoughts are private!!
+
+[[Private, hmm? Care to explain that?|Gorgo2111]]
+[[You like Geoff, don't you Gorgo?|Gorgo2112]]
+===
+title: Gorgo2111
+tags: 
+colorID: 3
+position: -740,3689
+---
+I shouldn't have opened my mouth...
+Stay out of my head, and we can deal with this like big goblins! ...and wizards, I guess.
+
+[[You can't tell me what to do, I have ultimate power now!|Gorgo21111]]
+[[Gimme a run-down of the situation.|Gorgo21112]]
+===
+title: Gorgo21111
+tags: 
+colorID: 1
+position: -476,3428
+---
+<<set talkedToGorgo2 to true>>
+
+<<if gorgoStillSecretNote is false>>
+<<RevealText Jeff Gorgo_is_hiding_something,_but_is_really_sensitive_about_it.>>
+<<set gorgoStillSecretNote to true>>
+<<endif>>
+
+You can't force me to talk! I'm done with you, *and* your stupid powers!
+
+<<EndInterview Jeff>>
+
+===
+title: Gorgo21112
+tags: 
+colorID: 3
+position: -469,3685
+---
+With Geoff right there?! No way! I refuse to incriminate myself!
+
+<<ChangeSpeaker SoundManager Geoff>>
+Huh? What're we talkin' 'bout now?
+
+<<ChangeSpeaker SoundManager Jeff>>
+Nothin'! Shut it!
+
+[[Alright, let me present a... completely hypthetical situation.|Gorgo211121]]
+[[Might as well get it out in the open now!|Gorgo211122]]
+[[Oh, nothing, Geoff. Just talking about how Gorgo--|Gorgo211123]]
+===
+title: Gorgo211123
+tags: 
+colorID: 1
+position: 147,4175
+---
+<<set talkedToGorgo2 to true>>
+
+<<if gorgoStillSecretNote is false>>
+<<RevealText Jeff Gorgo_is_hiding_something,_but_is_really_sensitive_about_it.>>
+<<set gorgoStillSecretNote to true>>
+<<endif>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo begins to loudly drown out whatever you were going to say by yelling loudly.]
+[Every time you open your mouth to continue, Gorgo continues to yell until you get the point.]
+[You don't think you're going to get anywhere at this point, and gesture to move on.]
+
+<<EndInterview Jeff>>
+===
+title: Gorgo211122
+tags: 
+colorID: 3
+position: 8,3707
+---
+Nope! Not happening! Not on my life, buddy!
+
+[[Alright, let me present a... completely hypthetical situation.|Gorgo211121]]
+[[Hey Geoff, I think Gorgo li--|Gorgo211123]]
+===
+title: Gorgo211121
+tags: 
+colorID: 3
+position: -190,3421
+---
+...Alright.
+
+[[Let's say there's two goblins. Gorbo and... Jeff.|Gorgo2111211]]
+===
+title: Gorgo2111211
+tags: 
+colorID: 3
+position: 57,3420
+---
+Uh-huh.
+
+[[Gorbo acts mean to Jeff, but it's all an act! Because, deep down...|Gorgo21112111]]
+===
+title: Gorgo21112111
+tags: 
+colorID: 3
+position: 298,3419
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo appears at the edge of his seat.]
+
+<<ChangeSpeaker SoundManager Jeff>>
+What happens? What happens next?
+
+[[...Gorbo was actually a human disguised as a goblin!|Gorgo211121111]]
+[[...Gorbo actually likes Jeff!|Gorgo211121112]]
+[[...Gorbo just really hated Jeff. So much that he exploded.|Gorgo211121113]]
+
+<<if talkedToNilbog2 is true>>
+[[...Gorbo was actually three goblins stacked on top of each other in a trench-coat all along!|Gorgo211121114]]
+<<endif>>
+===
+title: Gorgo211121114
+tags: 
+colorID: 3
+position: 598,4007
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[If facial expressions could talk, Nilbog's face would say "I want to die right now".]
+
+<<ChangeSpeaker SoundManager Jeff>>
+Haha! That'd be hilarious! ...but I don't get it. What are you getting at?
+
+[[Uh... Nevermind. Forget I said anything.|Gorgo2111211111]]
+===
+title: Gorgo211121113
+tags: 
+colorID: 3
+position: 604,3687
+---
+Wow... that story really speaks to me, on a deep level. Too bad it's speaking in a different language, I don't get it!
+...can you really explode from hating someone enough? That sounds dangerous!
+
+[[Uh... Nevermind. Forget I said anything.|Gorgo2111211111]]
+===
+title: Gorgo211121111
+tags: 
+colorID: 3
+position: 600,3426
+---
+Now *that* is just unbelievable! Who'd fall for that?!
+...
+...You don't think Geoff is a human, do you?!
+
+[[Uh... Nevermind. Forget I said anything.|Gorgo2111211111]]
+===
+title: Gorgo2111211111
+tags: 
+colorID: 1
+position: 909,3700
+---
+<<set talkedToGorgo2 to true>>
+
+<<if gorgoStillSecretNote is false>>
+<<RevealText Jeff Gorgo_is_hiding_something,_but_is_really_sensitive_about_it.>>
+<<set gorgoStillSecretNote to true>>
+<<endif>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo gives you a weird look, and leans back into his chair, confused.]
+
+<<EndInterview Jeff>>
+
+===
+title: Gorgo211121112
+tags: 
+colorID: 3
+position: 595,3190
+---
+Aww... how sweet. Do they get a happy ending?
+
+[[Wha-- I've clearly been talking about you, you oaf!|Gorgo2111211121]]
+[[Not until Gorbo told Jeff how he really felt. And by Gorbo, I mean you.|Gorgo2111211122]]
+[[Nope!|Gorgo2111211123]]
+===
+title: Gorgo2111211123
+tags: 
+colorID: 3
+position: 896,3433
+---
+Wow. What a terrible story. I hope you didn't get your degree in literature or storytelling.
+
+[[Uh... Nevermind. Forget I said anything.|Gorgo2111211111]]
+[[For what it's worth, my degree is in time travel. So shut up.|Gorgo2111211111]]
+===
+title: Gorgo2111211122
+tags: 
+colorID: 3
+position: 900,3182
+---
+...but I don't know anyone named Jeff.
+
+[[Sorry, Jeff as in *Geoff*.|Gorgo2111211121]]
+===
+title: Gorgo2111211121
+tags: 
+colorID: 3
+position: 903,2943
+---
+...Ahhhh. I'm picking up what you're putting down.
+I-it's not like I like "Jeff" or anything... but how do you know it'll even work? What if he hates me?
+
+[[Well that's kind of your fault, don't you think?|Gorgo21112111211]]
+
+<<if geoffRomanceReady is true>>
+[[Just trust me on this. It'll work out.|Gorgo21112111212]]
+<<else>>
+[[Only one way to find out. I'll see what I can do.|Gorgo21112111213]]
+<<endif>>
+===
+title: Gorgo21112111213
+tags: 
+colorID: 1
+position: 1267,3146
+---
+<<set talkedToGorgo2 to true>>
+<<set gorgoRomanceReady to true>>
+
+<<if gorgoRomanceReadyNote is false>>
+<<RevealText Jeff Gorgo_is_hiding_a_crush_on_Geoff._I_wonder_if_playing_cupid_could work.>>
+<<set gorgoRomanceReadyNote to true>>
+<<endif>>
+
+...hmph. Ok. I'm putting my faith in you here! Don't disappoint me!
+
+<<EndInterview Jeff>>
+===
+title: Gorgo21112111212
+tags: 
+colorID: 1
+position: 1270,2921
+---
+<<set talkedToGorgo2 to true>>
+<<set gorgoRomanceReady to true>>
+
+<<if gorgoRomanceReadyNote is false>>
+<<RevealText Jeff Gorgo_is_hiding_a_crush_on_Geoff._I_wonder_if_playing_cupid_could work.>>
+<<set gorgoRomanceReadyNote to true>>
+<<endif>>
+
+You sound so certain... alright. I'll give it a shot tonight! I hope you're not lying!
+
+<<EndInterview Jeff>>
+===
+title: Gorgo2112
+tags: 
+colorID: 3
+position: -725,4138
+---
+<<ChangeSpeaker SoundManager Geoff>>
+Huh? What was that?
+
+<<ChangeSpeaker SoundManager Jeff>>
+HA! Haha, good joke. Me and Geoff are enemies!
+[Whispering] What are you doing?? Do you *want* Geoff to find out?! How did you even know that?!
+
+[[He needs to find out sooner or later if you want anything to come of this.|Gorgo211122]]
+[[I knew because you just told me, you genius!|Gorgo21122]]
+[[Call it a hunch.|Gorgo21122]]
+===
+title: Gorgo21122
+tags: 
+colorID: 3
+position: -358,4191
+---
+Blast... You're good. 
+It's not like I like-like him or anything... but I don't know what to do!
+
+[[Alright, let me present a... completely hypthetical situation.|Gorgo211121]]
+[[Might as well get it out in the open now!|Gorgo211122]]
+[[I'll tell him for you! Hey, Geoff!|Gorgo211123]]
+===
+title: Gorgo21112111211
+tags: 
+colorID: 1
+position: 1239,2683
+---
+<<set talkedToGorgo2 to true>>
+<<set gorgoRomanceReady to true>>
+
+<<if gorgoRomanceReadyNote is false>>
+<<RevealText Jeff Gorgo_is_hiding_a_crush_on_Geoff._I_wonder_if_playing_cupid_could work.>>
+<<set gorgoRomanceReadyNote to true>>
+<<endif>>
+
+Hey buddy, I don't tell you how to live your life! Doing all those... wizard-y things you do.
+If you can get this to work out though... hmm...
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo appears to be daydreaming now. It's likely time to move on to someone else.]
+
+<<EndInterview Jeff>>
+===
+title: Gorgo212
+tags: 
+colorID: 3
+position: -1267,4497
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo cringes visibly.]
+
+<<ChangeSpeaker SoundManager Jeff>>
+...have I *really* been that obvious?
+
+[[Yes.|Gorgo2121]]
+===
+title: Gorgo213
+tags: 
+colorID: 3
+position: -1170,4999
+---
+...You say a single word and we're done!
+
+[[A single word about what, hmm?|Gorgo2131]]
+[[Hey! Geoff!|Gorgo211123]]
+===
+title: Gorgo2131
+tags: 
+colorID: 3
+position: -742,4994
+---
+About-- I-- You--
+Hmph. You got me. I don't know how but you got me.
+
+[[Gimme a run-down of the situation.|Gorgo21112]]
+[[You should just tell him and get it over with.|Gorgo211122]]
+[[I got you? More like you got yourself.|Gorgo21312]]
+===
+title: Gorgo21312
+tags: 
+colorID: 3
+position: -412,4999
+---
+Ok, ok, you don't need to rub it in. Geesh. Are all wizards like this?
+
+[[Yep! We know everything! It's part of the job.|Gorgo213121]]
+[[Gimme a run-down of the situation.|Gorgo21112]]
+[[You should just tell him and get it over with.|Gorgo211122]]
+
+===
+title: Gorgo213121
+tags: 
+colorID: 3
+position: -122,5004
+---
+Riiiiight. And I'm the Gay King of Goblengland.
+
+[[Wow, really? Why would a king need to work in a place like this?|Gorgo2131211]]
+[[...anyway, just give me a run-down of the situation.|Gorgo21112]]
+[[You should just tell him and get it over with.|Gorgo211122]]
+===
+title: Gorgo2131211
+tags: 
+colorID: 1
+position: 142,5003
+---
+<<set talkedToGorgo2 to true>>
+
+<<if gorgoStillSecretNote is false>>
+<<RevealText Jeff Gorgo_is_hiding_something,_but_is_really_sensitive_about_it.>>
+<<set gorgoStillSecretNote to true>>
+<<endif>>
+
+Alright, I know when I'm being made fun of! Go get your kicks somewhere else!
+
+<<EndInterview Jeff>>
+===
+title: Gorgo2121
+tags: 
+colorID: 3
+position: -993,4495
+---
+Shoot. Well, I appreciate the honesty I guess.
+...Well, you're a wizard. Wizards are smart, right? What do I do?
+
+[[Gimme a run-down of the situation.|Gorgo21112]]
+[[You should just tell him and get it over with.|Gorgo211122]]
+===
+title: Geoff2
+tags: 
+colorID: 3
+position: 4207,4648
+---
+Empty Text
+===
+title: Geoff3
+tags: 
+colorID: 3
+position: 3874,5580
+---
+He ate my scone! I'm sure of it!
+
+[[No no, I mean like. Something. Between you two.|Geoff31]]
+[[That's not important right now, Geoff. Work with me.|Geoff32]]
+[[Does Gorgo like you?|Geoff33]]
+===
+title: Geoff33
+tags: 
+colorID: 3
+position: 4199,5787
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[You're not 100% sure, but you could've sworn Gorgo is staring daggers at you right now.]
+
+<<ChangeSpeaker SoundManager Geoff>>
+Huh? Does he like me? I don't *think* so. Jerk stole my food, after all.
+Why do you ask?
+
+[[Hmmm... I'll come back to you in a moment.|Geoff331]]
+[[You didn't notice *anything* unusual about his behavior? Nothing at all?|Geoff332]]
+===
+title: Geoff331
+tags: 
+colorID: 1
+position: 4495,5790
+---
+Uh... Ok.
+===
+title: Geoff332
+tags: 
+colorID: 3
+position: 4497,6054
+---
+Nope, can't say I have. 
+Whenever he's not being a rude jerk, he's usually giving me a funny look. I think he's just like that.
+
+[[Hmmm... I'll come back to you in a moment.|Geoff331]]
 ===
