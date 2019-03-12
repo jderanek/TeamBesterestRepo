@@ -9,6 +9,7 @@ I hope you've had an excellent time with us all so far!
 [[You seem rather chipper.|Gabbin11]]
 [[Coming on a little strong, aren't you?|Gabbin12]]
 [[You seem pleasant, all things considered.|Gabbin13]]
+[[Its been great Gabbin! But before we get things moving, what's you opinion on kids working in the dungeon business?|Gabbin2]]
 ===
 title: Gabbin11
 tags: 
@@ -561,6 +562,8 @@ position: -1580,-1770
 
 [[...|Nilbog11]]
 [[...Hello? You in there?|Nilbog12]]
+
+[[Look here, I need you to stop acting like CHILDREN!|Nilbog2]]
 ===
 title: Nilbog11
 tags: 
@@ -978,7 +981,7 @@ position: -754,-121
 title: Nilbog1233
 tags: 
 colorID: 1
-position: -727,234
+position: -727,227
 ---
 <<set $talkedToNilbog to true>>
 
@@ -1026,7 +1029,7 @@ position: -81,-151
 title: Nilbog12322
 tags: 
 colorID: 1
-position: -93,156
+position: 46,404
 ---
 <<set $talkedToNilbog to true>>
 
@@ -1048,4 +1051,567 @@ position: 389,-53
 
 [[Because if you don't get along, you're never going to beat the Heroes. You can't win alone.|Nilbog111111]]
 [[You fight better together. If I can get Gabbin to respect your boundaries, you think it'll work?|Nilbog111112]]
+===
+title: Nilbog2
+tags: 
+colorID: 3
+position: -1218,2166
+---
+<<ChangeSpeaker SoundManager Nilbog>>
+Ehem... don't you mean "Stop acting like a child"?
+[[*Push Nilbog*|Nilbog21]]
+[[Nope, im pretty sure I said what I meant.|Nilbog22]]
+[[I dont know... maybe... maybe not. Up to you...|Nilbog23]]
+[[C'mon Nilbog, I've found out your "little" secret!|Nilbog24]]
+===
+title: Gabbin2
+tags: 
+colorID: 3
+position: 2565,2341
+---
+Weird question to ask, but I would have to say I highly disaprove of it! Completely not the for the young at body!
+[[Well, good thing you aren't working with any kids am I right!|Gabbin21]]
+[[Look Gabbin, theres something I need to tell you... and it wont be easy.|Gabbin22]]
+===
+title: Nilbog221
+tags: 
+colorID: 3
+position: -578,1503
+---
+You're right, its not safe for children here.
+[[...If there were children here, I would make sure to tell them that they should leave. No matter their reason.|Nilbog2211]]
+[[If you had to guess why would children want to be in a dungeon in the first place?|Nilbog2212]]
+===
+title: Gabbin223
+tags: 
+colorID: 4
+position: 3201,3320
+---
+What is it Nilbog?
+
+<<ChangeSpeaker SoundManager Nilbog>>
+I am Nilbog. But the "Nilbog" you know is actually three goblin children in a large trench coat... Please, dont be mad or freak out.
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Wow... this is a suprise to say the least. I might need time to adjust to this... Please leave me alone for now. I should be good by next shift.
+
+
+<<set $talkedToGabbin to true>>
+<<set $gabbinKnowsTruth to true>>
+
+<<if $gabbinDisguiseNote is false>>
+<<RevealText Gabbin Gabbin_seems_to_have_the_truth_poorly,_but_seems_likely_he'll_recover_before_next_shift.>>
+<<set $gabbinDisguiseNote to true>>
+<<endif>>
+
+<<EndInterview Gabbin>>
+===
+title: Gabbin221
+tags: 
+colorID: 3
+position: 3227,2577
+---
+Nice joke there Mr. Time Wizard, and I'm a hero is disguise! You sure are a comic!
+[[Im telling the truth.|Gabbin2211]]
+[[Why thank you, I thought it was pretty good myself.|Gabbin2212]]
+===
+title: Gabbin222
+tags: 
+colorID: 3
+position: 3203,3072
+---
+Wow, that is a really nice trench coat! Maybe I should ask Nilbog for one too!
+[[No! He said he only had this one spare!|Gabbin2221]]
+===
+title: Gabbin213
+tags: 
+colorID: 3
+position: 3212,2291
+---
+Was that a serious question? What kind of answer are you looking for?
+[[A tragic and deep backstory about your life as a child.|Gabbin2131]]
+[[A tragic and deep backstory about a movie you once saw.|Gabbin2131]]
+[[A tragic and deep backstory about a story you heard once.|Gabbin2131]]
+[[A tragic and deep backstory from your best selling book.|Gabbin2131]]
+===
+title: Gabbin212
+tags: 
+colorID: 3
+position: 3236,1620
+---
+Well, I would likely report you to the Elder Council of Wizards for abusing your powers towards the innocent... but who knows, I also might just "stop" you in the process.
+[[What do you mean by "stop" me?|Gabbin2121]]
+[[What would you do if I already did what I said I was going to do? You know, the Nilbog cloning and de-aging thing.|Gabbin2122]]
+===
+title: Gabbin211
+tags: 
+colorID: 3
+position: 3253,1123
+---
+Sure! What is it? Tell me! Tell me! Tell me!
+[[Nilbog is able to move so fast that he'll appear as three different versions of himself!|Gabbin2111]]
+===
+title: Gabbin22
+tags: 
+colorID: 3
+position: 2907,3080
+---
+What is it Mr. Time Wizard?
+[[Nilbog... hes actually three different goblin children in a trench coat.|Gabbin221]]
+[[I have this really nice trench coat now. Nilbog gave it to me!|Gabbin222]]
+[[Nilbog might actually be the better person to tell you.|Gabbin223]]
+===
+title: Gabbin21
+tags: 
+colorID: 3
+position: 2892,2310
+---
+Yeah good thing too, because I would do anything to make sure sweet innocent children aren't in danger of those heroes!
+[[Hey just letting you know, just a warning, Nilbog has shown me this new sweet technique! Want to hear about it?|Gabbin211]]
+[[What if I were to rewind time of... o' I dont know... Nilbog. Turn into a tiny goblin child, and cloned him as well, what would you do?|Gabbin212]]
+[[What makes you so protectful of children?|Gabbin213]]
+===
+title: Nilbog23
+tags: 
+colorID: 3
+position: -855,2761
+---
+You've found us out haven't you...
+[[Yes.|Nilbog231]]
+[[No.|Nilbog232]]
+[[Yes...|Nilbog233]]
+[[Who's "us"?|Nilbog234]]
+[[*Push Nilbog*|Nilbog21]]
+===
+title: Nilbog21
+tags: 
+colorID: 4
+position: -680,976
+---
+O' No! How could you have done this to us!
+Boys, scram! There's nothing left for us here!
+
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogRevealedNote is false>>
+<<RevealText Nilbog I_have_exposed_Nilbog_and_crew,_I_don't_think_that_was_the_best_way_to_solve_our_problems.>>
+<<set $nilbogRevealedNote to true>>
+<<endif>>
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog24
+tags: 
+colorID: 3
+position: -917,4038
+---
+Shhhhh... dont need to go around telling everone!
+[[How about you three do me a favor, and maybe we can all walk... or ride away happen.|Nilbog241]]
+[[Why are three goblin children even here in the first place?|Nilbog242]]
+[[But I really want to...|Nilbog243]]
+[[*Push Nilbog*|Nilbog21]]
+===
+title: Nilbog22
+tags: 
+colorID: 3
+position: -871,2155
+---
+...Look, I think you are a little confused sir, maybe this dungeon isn't doing you any good.
+[[Maybe not, but this definently isn't the place for children either.|Nilbog221]]
+[[Look, just between us... I know you boys are in there. Dont make me reveal you to everyone.|Nilbog222]]
+[[This isn't the time for joking around. Just come on out already!|Nilbog223]]
+[[*Push Nilbog*|Nilbog21]]
+===
+title: Nilbog242
+tags: 
+colorID: 3
+position: -566,3970
+---
+Felt like it.
+[[Just felt like it? No deep back story?|Nilbog2421]]
+[[Understandable.|Nilbog2422]]
+===
+title: Nilbog241
+tags: 
+colorID: 3
+position: -566,3737
+---
+What type of deal are you thinking of?
+[[Look, there's still a good chance you guys get beaten next shift, just make sure that if you guys fall over, the disguise wont come apart ok? You dont want to know what happens if Gabbin finds out...|Nilbog22211]]
+[[You guys for now on are going to act as a team, not as a single goblin! Ill tell Gabbin that "Nilbog moves so fast, it looks like there's multiple copies of him!"|Nilbog222212]]
+===
+title: Nilbog234
+tags: 
+colorID: 4
+position: -569,3499
+---
+Nevermind... ignore what I said... you heard nothing.
+I think Gabbin needed you.
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog243
+tags: 
+colorID: 3
+position: -560,4192
+---
+Why? Do you just find join in exposing other people's secrets!
+[[No.|Nilbog2431]]
+[[No, but also yes.|Nilbog2431]]
+[[Yes.|Nilbog2431]]
+===
+title: Nilbog232
+tags: 
+colorID: 4
+position: -565,3020
+---
+I like how upront you are, appreciate the honesty.
+But good thing you dont know... it would be too much for you to handle.
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog231
+tags: 
+colorID: 3
+position: -566,2772
+---
+Okay, so you know we are actually three goblin children... now what?
+[[You guys need to find a way to make sure you dont reveal yourself to Gabbin. Trust me, he won't be as accepting as I am...|Nilbog2221]]
+[[Look, I dont care why your boys want to be here in a dungeon, but I do care that you three suck at fighting in that trenchcoat. We need to fix that.|Nilbog2222]]
+===
+title: Nilbog223
+tags: 
+colorID: 3
+position: -560,2527
+---
+Look man, we have... I have no idea what you are talking about!
+[[Last chance...|Nilbog2231]]
+[[*Push Nilbog*|Nilbog21]]
+===
+title: Nilbog222
+tags: 
+colorID: 3
+position: -557,2013
+---
+Okay fine! What do you need or want from us?
+[[You guys need to find a way to make sure you dont reveal yourself to Gabbin. Trust me, he won't be as accepting as I am...|Nilbog2221]]
+[[Look, I dont care why your boys want to be here in a dungeon, but I do care that you three suck at fighting in that trenchcoat. We need to fix that.|Nilbog2222]]
+===
+title: Nilbog2221
+tags: 
+colorID: 3
+position: -282,1749
+---
+Do you have any advice for us?
+[[Look, there's still a good chance you guys get beaten next shift, just make sure that if you guys fall over, the disguise wont come apart ok? You dont want to know what happens if Gabbin finds out...|Nilbog22211]]
+===
+title: Nilbog2231
+tags: 
+colorID: 3
+position: -279,2365
+---
+Please dont...
+[[*Push Nilbog*|Nilbog21]]
+===
+title: Nilbog2222
+tags: 
+colorID: 3
+position: -289,2006
+---
+How would you fix that? There's not much room in this thing for all three of us...
+[[Got any spare trench coats?|Nilbog22221]]
+===
+title: Nilbog2212
+tags: 
+colorID: 3
+position: -284,1498
+---
+Children probably think its super fun, like really fun to be in the dungeon business. Killing heroes and getting gold all day!
+[[You know what, I heard Heroes like to take goblin children back to the human world in order to turn them into boring adults, and make them do like taxes all day! Did you hear that?|Nilbog22121]]
+[[*Push Nilbog*|Nilbog21]]
+===
+title: Nilbog2211
+tags: 
+colorID: 3
+position: -289,1193
+---
+We... *ahem* I would make sure to do the same. Children shouldn't be in dungeons!
+[[*Push Nilbog*|Nilbog21]]
+===
+title: Nilbog2431
+tags: 
+colorID: 4
+position: -193,4203
+---
+Doesn't matter anymore, go ahead and tell Gabbin, maybe he'll be more understanding then I think.
+
+<<set $talkedToNilbog to true>>
+<<set $nilbogGabbinHope to true>>
+
+<<if $nilbogHopeNote is false>>
+<<RevealText Nilbog Nilbog_and_crew_seem_to_have_hope_that_Gabbin_might_be_accepting_of_their_true_selves._Maybe_it's_time_to_tell_Gabbin_the_truth_to_warn_him_before_it's_too_late.>>
+<<set $nilbogHopeNote to true>>
+<<endif>>
+
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog2422
+tags: 
+colorID: 4
+position: -192,3974
+---
+Finally someone who gets it.
+But then you must understand also why we try to avoid Gabbin, he's always a little to close to finding out.
+
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogReasonNote is false>>
+<<RevealText Nilbog Nilbog_and_crew's_reason_for_doing_this_seems_to_be_because_"They_felt_like_it". But their secret is also why they try to avoid Gabbin.>>
+<<set $nilbogReasonNote to true>>
+<<endif>>
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog2421
+tags: 
+colorID: 4
+position: -190,3757
+---
+Nope. But my secret is why I try to avoid Gabbin, sometimes he get way to close and I get scared he'll somehow find out.
+
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogReasonNote is false>>
+<<RevealText Nilbog Nilbog_and_crew's_reason_for_doing_this_seems_to_be_because_"They_felt_like_it". But their secret is also why they try to avoid Gabbin.>>
+<<set $nilbogReasonNote to true>>
+<<endif>>
+
+<<EndInterview Nilbog>>
+===
+title: Gabbin2111
+tags: 
+colorID: 3
+position: 3488,1116
+---
+Really! I never heard of such a technique before! Surely we would be unstoppable now!
+[[Be preared though, for some reason this technique makes hime also appear shorter for some reason... dont ask why.|Gabbin21111]]
+===
+title: Gabbin2221
+tags: 
+colorID: 3
+position: 3512,3073
+---
+There's something fishy going on here. No Goblin would ever have only one trench coat... maybe hes a hero in disguise!
+[[Yeah sure... go with that.|Gabbin22211]]
+===
+title: Gabbin2212
+tags: 
+colorID: 4
+position: 3516,2814
+---
+It's always nice to have a good laugh every once in a while.
+Especially since we are likely to die again every shift for the rest of eternity!
+HAaAhhaAaAHhhaAaAhhHA!
+
+<<set $talkedToGabbin to true>>
+
+
+<<EndInterview Gabbin>>
+===
+title: Gabbin2211
+tags: 
+colorID: 3
+position: 3540,2567
+---
+Well, if that were the case, that I might have to tear this place apart... I will not stand for children in the dungeon workplace...
+[[Good thing it was a joke... ha ha...|Gabbin22111]]
+===
+title: Gabbin2131
+tags: 
+colorID: 4
+position: 3526,2293
+---
+Yes, that's completely correct! Tragic and deep backstories makes everything better!
+===
+title: Gabbin2122
+tags: 
+colorID: 4
+position: 3500,1874
+---
+Nice one, I would know if you had turned Nilbog into three goblin children!
+You make up the funniest scenarios Mr. Time Wizard!
+
+<<set $talkedToGabbin to true>>
+
+<<if $gabbinScaryNote is false>>
+<<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
+<<set $gabbinScaryNote to true>>
+<<endif>>
+
+<<EndInterview Gabbin>>
+
+===
+title: Gabbin2121
+tags: 
+colorID: 4
+position: 3492,1619
+---
+Its best you not know...
+
+<<set $talkedToGabbin to true>>
+
+<<if $gabbinScaryNote is false>>
+<<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
+<<set $gabbinScaryNote to true>>
+<<endif>>
+
+<<EndInterview Gabbin>>
+===
+title: Nilbog22121
+tags: 
+colorID: 3
+position: -30,1498
+---
+Uhh... no I haven't... sure sounds scary for... the goblin children.
+What would your advice be for those poor golbin children in a dungeon?
+[[If there were goblin children in a dungeon, I would make sure they have a disguise, maybe a large trenchcoat they can hide in to appear as an adult. Also, they would need to make sure it can't come apart no matter what.|Nilbog221211]]
+===
+title: Nilbog221211
+tags: 
+colorID: 4
+position: 238,1493
+---
+Gotcha... we'll... I will make sure to relay that to any children I see running around here... speaking of which, Ill be right back.
+
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogScaredNote is false>>
+<<RevealText Nilbog I_have_scared_Nilbog_and_crew_into_making_sure_their_disguise_can't_come_apart,_hopefully_this_will_stop_Gabbin_from_seeing_them.>>
+<<set $nilbogScaredNote to true>>
+<<endif>>
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog22211
+tags: 
+colorID: 4
+position: -27,1748
+---
+Okay, we'll get right on that!
+
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogScaredNote is false>>
+<<RevealText Nilbog I_have_scared_Nilbog_and_crew_into_making_sure_their_disguise_can't_come_apart,_hopefully_this_will_stop_Gabbin_from_seeing_them.>>
+<<set $nilbogScaredNote to true>>
+<<endif>>
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog22221
+tags: 
+colorID: 3
+position: -32,2002
+---
+Yeah, we have a couple of spares. Why?
+[[I really want one! Not a bad look you guys have going on.|Nilbog222211]]
+[[You guys for now on are going to act as a team, not as a single goblin! Ill tell Gabbin that "Nilbog moves so fast, it looks like there's multiple copies of him!"|Nilbog222212]]
+===
+title: Nilbog222212
+tags: 
+colorID: 4
+position: 247,1997
+---
+We'll make sure to get each disguise ready, as long as you can convince Gabbin... this might just work.
+
+<<set $talkedToNilbog to true>>
+<<set $nilbogCloneExcuse to true>>
+
+<<if $nilbogCloneNote is false>>
+<<RevealText Nilbog I_have_came_up_with_a_plan_to_have_"Nilbog"_use_three_different_trench_coats_to_appear_as_if_he_is_moving_too_fast_for_the_eye._I_just_need_to_warn_Gabbin_now.>>
+<<set $nilbogCloneNote to true>>
+<<endif>>
+
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog222211
+tags: 
+colorID: 4
+position: 238,1739
+---
+Okay... we'll make sure to bring you one next time we come in.
+
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogTrenchCoatNote is false>>
+<<RevealText Nilbog I_have_acquired_a_cool_new_trench_coat.>>
+<<set $nilbogScaredNote to true>>
+<<endif>>
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog233
+tags: 
+colorID: 4
+position: -566,3256
+---
+I dont believe you.
+Either way, I think Gabbin wanted to talk to you.
+
+<<EndInterview Nilbog>>
+===
+title: Gabbin22211
+tags: 
+colorID: 4
+position: 3778,3064
+---
+I better call my buddy from Gondon, his name is Gerlock Golmes, the worlds greatest detective!
+He'll get to the bottom of this.
+
+<<set $talkedToGabbin to true>>
+
+<<if $gabbinDisguiseNote is false>>
+<<RevealText Gabbin Gabbin_seems_to_think_Nilbog_is_a_hero_in_disguise..._guess_that's_better_than_the_truth.>>
+<<set $gabbinDisguiseNote to true>>
+<<endif>>
+
+<<EndInterview Gabbin>>
+
+
+===
+title: Gabbin22111
+tags: 
+colorID: 4
+position: 3800,2579
+---
+It better be...
+
+<<set $talkedToGabbin to true>>
+
+<<if $gabbinScaryNote is false>>
+<<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
+<<set $gabbinScaryNote to true>>
+<<endif>>
+
+<<EndInterview Gabbin>>
+===
+title: Gabbin21111
+tags: 
+colorID: 4
+position: 3730,1126
+---
+Shorter! Taller! Doesn't make a differnce to me!
+Just proud that Nilbog is putting force such a great effort in order to make us better at our jobs!
+
+<<set $talkedToGabbin to true>>
+<<set $gabbinCloneConvinced
+
+<<if $gabbinCloneNote is false>>
+<<RevealText Gabbin Gabbin_is_now_convinced_that_Nilbog_can_use_a_new_technique_that_makes_him_appear_as_three_shorter_versions_of_himself.>>
+<<set $gabbinCloneNote to true>>
+<<endif>>
+
+<<EndInterview Gabbin>>
 ===
