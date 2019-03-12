@@ -14,8 +14,10 @@ public class Clock : MonoBehaviour {
 
     public void Run()
     {
+        AkSoundEngine.PostEvent("Rewind_Time", gameObject);
         running = true;
         gameObject.SetActive(true);
+        time = 0f;
     }
 
 	// Update is called once per frame
@@ -23,12 +25,12 @@ public class Clock : MonoBehaviour {
         if (!running)
             return;
 
-        float newScale = (-4f * Mathf.Pow(time, 2)) + (7.7f * time);
+        float newScale = (-7.1f * Mathf.Pow(time, 2)) + (10f * time);
         time += Time.deltaTime;
 
         gameObject.transform.localScale = new Vector2(newScale, newScale);
 
-        if (time >= 2f)
+        if (time >= 1.4f)
         {
             running = false;
             gameObject.SetActive(false);

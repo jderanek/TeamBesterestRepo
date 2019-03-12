@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -36,6 +36,7 @@
 				<Event Id="2067637633" Name="Jeff_Voice" ObjectPath="\Events\Voice Clips\Jeff_Voice"/>
 				<Event Id="1181445569" Name="Nilbog_Voice" ObjectPath="\Events\Voice Clips\Nilbog_Voice"/>
 				<Event Id="1223010781" Name="Pencil_Scratch" ObjectPath="\Events\Voice Clips\Pencil_Scratch"/>
+				<Event Id="3212434624" Name="Rewind_Time" ObjectPath="\Events\Voice Clips\Rewind_Time"/>
 				<Event Id="2972449336" Name="Text" ObjectPath="\Events\Voice Clips\Text"/>
 				<Event Id="818841426" Name="Voiceless" ObjectPath="\Events\Voice Clips\Voiceless"/>
 			</IncludedEvents>
@@ -283,6 +284,10 @@
 				<File Id="469714501" Language="SFX">
 					<ShortName>Steven Sounds\Steven_23.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_23_1C9C67B2.wem</Path>
+				</File>
+				<File Id="476345223" Language="SFX">
+					<ShortName>Batman Transition - Comical Sound Effect (HD).wav</ShortName>
+					<Path>SFX\Batman Transition - Comical Sound Effect (HD)_1C9C67B2.wem</Path>
 				</File>
 				<File Id="482960050" Language="SFX">
 					<ShortName>Steven Sounds\Steven_13.wav</ShortName>
