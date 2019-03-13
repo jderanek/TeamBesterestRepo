@@ -122,10 +122,11 @@ public class GameManager : MonoBehaviour
         {
             case "Start":
                 clock.Run();
+                phase = "Combat";
+                Invoke("StartPhase", 1.5f);
                 this.shift = 3;
                 ChangeShift();
                 canSkip = true;
-                phase = "Interview";
 
                 foreach (GameObject monster in monsterList)
                 {
@@ -141,9 +142,12 @@ public class GameManager : MonoBehaviour
                 this.SetCombatScore();
                 interviewing = false;
                 interviewCanvas.SetActive(false);
+                break;
+            case "Combat":
                 combatCanvas.SetActive(true);
                 combatManager.GetComponent<DialogueRunner>().StartDialogue("Shift11");
                 phaseButton.GetComponentInChildren<Text>().text = "Skip Combat";
+                phase = "Interview";
                 break;
             case "Interview":
                 canSkip = true;
@@ -270,7 +274,13 @@ public class GameManager : MonoBehaviour
                 option.SetActive(false);
             }
         }
-        
+        interviewCanvas.SetActive(false);
+        Invoke("EnableInterviewCanvas", 1.4f);
+    }
+
+    void EnableInterviewCanvas()
+    {
+        interviewCanvas.SetActive(true);
     }
 
     public void TutorialReset()
