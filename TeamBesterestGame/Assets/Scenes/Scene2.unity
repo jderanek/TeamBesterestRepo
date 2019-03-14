@@ -6580,6 +6580,42 @@ MonoBehaviour:
   - name: gabbinAnnoyingNote
     value: false
     type: 2
+  - name: nilbogRevealedNote
+    value: false
+    type: 2
+  - name: nilbogScaredNote
+    value: false
+    type: 2
+  - name: nilbogTrenchCoatNote
+    value: false
+    type: 2
+  - name: nilbogCloneNote
+    value: false
+    type: 2
+  - name: nilbogCloneExcuse
+    value: false
+    type: 2
+  - name: nilbogGabbinHope
+    value: false
+    type: 2
+  - name: nilbogReasonNote
+    value: false
+    type: 2
+  - name: gabbinDisguiseNote
+    value: false
+    type: 2
+  - name: gabbinKnowsTruth
+    value: false
+    type: 2
+  - name: gabbinScaryNote
+    value: false
+    type: 2
+  - name: gabbinCloneConvinced
+    value: false
+    type: 2
+  - name: gabbinCloneNote
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &594745391
 MonoBehaviour:

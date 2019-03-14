@@ -1606,7 +1606,7 @@ Shorter! Taller! Doesn't make a differnce to me!
 Just proud that Nilbog is putting force such a great effort in order to make us better at our jobs!
 
 <<set $talkedToGabbin to true>>
-<<set $gabbinCloneConvinced
+<<set $gabbinCloneConvinced to true>>
 
 <<if $gabbinCloneNote is false>>
 <<RevealText Gabbin Gabbin_is_now_convinced_that_Nilbog_can_use_a_new_technique_that_makes_him_appear_as_three_shorter_versions_of_himself.>>
