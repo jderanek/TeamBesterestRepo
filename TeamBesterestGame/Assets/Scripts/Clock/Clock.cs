@@ -14,10 +14,12 @@ public class Clock : MonoBehaviour {
 
     public void Run()
     {
+        AkSoundEngine.StopAll();
         AkSoundEngine.PostEvent("Rewind_Time", gameObject);
         running = true;
         gameObject.SetActive(true);
         time = 0f;
+        AkSoundEngine.PostEvent("Background_Music", gameObject);
     }
 
 	// Update is called once per frame

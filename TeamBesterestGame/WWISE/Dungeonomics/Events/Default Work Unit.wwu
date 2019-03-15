@@ -45,6 +45,20 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Rewind_Music" ID="{562F7E07-7FFC-4524-BB4C-283153733A07}">
+					<ChildrenList>
+						<Action Name="" ID="{E5167255-326D-40AB-B775-825C90336D1B}" ShortID="490285490">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Backwards_Music" ID="{E48E4512-0DE8-47AE-ABED-7EE80DBED4A1}" WorkUnitID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
