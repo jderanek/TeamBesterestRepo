@@ -28,6 +28,10 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         //set rtpc values to 100 here!
+        AkSoundEngine.SetRTPCValue("Master_Volume", 100);
+        AkSoundEngine.SetRTPCValue("Voice_Volume", 100);
+        AkSoundEngine.SetRTPCValue("Sound_Effects", 100);
+        AkSoundEngine.SetRTPCValue("Music_Volume", 100);
         gameManager = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         GetGoblinObjects();
     }
