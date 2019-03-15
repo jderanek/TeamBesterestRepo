@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -221,6 +221,10 @@
 				<File Id="358381613" Language="SFX">
 					<ShortName>Steven Sounds\Steven_14.wav</ShortName>
 					<Path>SFX\Steven Sounds\Steven_14_1C9C67B2.wem</Path>
+				</File>
+				<File Id="358686582" Language="SFX">
+					<ShortName>Outro Reversed2.wav</ShortName>
+					<Path>SFX\Outro Reversed2_F17FB28C.wem</Path>
 				</File>
 				<File Id="364923151" Language="SFX">
 					<ShortName>Raven Sounds\Raven_Audio_26.wav</ShortName>
@@ -585,10 +589,6 @@
 				<File Id="846789060" Language="SFX">
 					<ShortName>Pencil Scratch\Pencil_Scratch_5.wav</ShortName>
 					<Path>SFX\Pencil Scratch\Pencil_Scratch_5_1C9C67B2.wem</Path>
-				</File>
-				<File Id="850219613" Language="SFX">
-					<ShortName>Outro Reversed.wav</ShortName>
-					<Path>SFX\Outro Reversed_F17FB28C.wem</Path>
 				</File>
 				<File Id="855005715" Language="SFX">
 					<ShortName>Matt Sunds\Matt_21.wav</ShortName>
