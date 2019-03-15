@@ -1006,20 +1006,20 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<MusicTrack Name="Outro Reversed" ID="{6B4DE533-5575-4FA7-99F6-BCA69A269BF9}" ShortID="396416044">
+								<MusicTrack Name="Outro Reversed2" ID="{F4EE6A6C-F258-4739-904D-C105C95E8D0B}" ShortID="897289836">
 									<ReferenceList>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="Outro Reversed" ID="{295734D3-3E20-4694-B2CD-F7AEEF5DC20D}" ShortID="850219613">
+										<AudioFileSource Name="Outro Reversed2" ID="{0AD1E2B3-4292-43D9-953F-0335A5A1F2A3}" ShortID="358686582">
 											<Language>SFX</Language>
-											<AudioFile>Outro Reversed.wav</AudioFile>
+											<AudioFile>Outro Reversed2.wav</AudioFile>
 										</AudioFileSource>
 									</ChildrenList>
 									<TransitionList>
-										<MusicTransition Name="Root" ID="{3DEE37EC-9C42-4046-950A-4929A4D247C2}">
+										<MusicTransition Name="Root" ID="{664C3778-50F5-4F7D-ADF5-EA2A14CD4C5E}">
 											<PropertyList>
 												<Property Name="IsFolder" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1027,15 +1027,15 @@
 										</MusicTransition>
 									</TransitionList>
 									<SequenceList>
-										<MusicTrackSequence Name="" ID="{07148C6E-1B66-4639-B4B9-425BACA771B6}">
+										<MusicTrackSequence Name="" ID="{E170615A-5AF7-486E-AAFD-A1D1412AA4CA}">
 											<ClipList>
-												<MusicClip Name="Outro Reversed" ID="{8B133F24-5276-45DB-94B8-B6777B175534}">
+												<MusicClip Name="Outro Reversed2" ID="{A4DE9AB6-31A9-43C5-AB89-994C589698AB}">
 													<PropertyList>
-														<Property Name="EndTrimOffset" Type="Real64" Value="2357.14285714286"/>
+														<Property Name="EndTrimOffset" Type="Real64" Value="1767.86848072562"/>
 														<Property Name="FadeInMode" Type="int16" Value="0"/>
 														<Property Name="FadeOutMode" Type="int16" Value="0"/>
 													</PropertyList>
-													<AudioSourceRef Name="Outro Reversed" ID="{295734D3-3E20-4694-B2CD-F7AEEF5DC20D}"/>
+													<AudioSourceRef Name="Outro Reversed2" ID="{0AD1E2B3-4292-43D9-953F-0335A5A1F2A3}"/>
 												</MusicClip>
 											</ClipList>
 										</MusicTrackSequence>
@@ -1047,7 +1047,7 @@
 								<MusicCue Name="Exit Cue" ID="{271C8751-5552-4F3F-935D-10FCA646BE82}">
 									<PropertyList>
 										<Property Name="CueType" Type="int16" Value="1"/>
-										<Property Name="TimeMs" Type="Real64" Value="2357.14285714286"/>
+										<Property Name="TimeMs" Type="Real64" Value="1767.86848072562"/>
 									</PropertyList>
 								</MusicCue>
 							</CueList>
