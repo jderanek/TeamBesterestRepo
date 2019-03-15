@@ -743,6 +743,11 @@
 						<MusicSegment Name="Intro" ID="{3D39A947-21E5-42F5-BD17-29090094B419}" ShortID="995984055">
 							<PropertyList>
 								<Property Name="EndPosition" Type="Real64" Value="4616.76646706587"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -802,6 +807,11 @@
 						<MusicSegment Name="LoopA" ID="{DE713119-9712-4D15-8240-21070DC9EFBC}" ShortID="73883854">
 							<PropertyList>
 								<Property Name="EndPosition" Type="Real64" Value="52145.7085828343"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -861,6 +871,11 @@
 						<MusicSegment Name="LoopB" ID="{06515ACF-91A2-4AB7-8E33-CBF728B83C16}" ShortID="1059854130">
 							<PropertyList>
 								<Property Name="EndPosition" Type="Real64" Value="37894.2115768463"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -920,6 +935,11 @@
 						<MusicSegment Name="LoopC" ID="{FFB5BBC4-70BC-4E53-AC27-6472CD22259B}" ShortID="1031363266">
 							<PropertyList>
 								<Property Name="EndPosition" Type="Real64" Value="33838.3233532934"/>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">

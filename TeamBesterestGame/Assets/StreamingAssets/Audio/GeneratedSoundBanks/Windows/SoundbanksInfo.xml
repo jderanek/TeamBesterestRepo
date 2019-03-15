@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -246,10 +246,6 @@
 					<ShortName>James Sounds\James_19.wav</ShortName>
 					<Path>SFX\James Sounds\James_19_1C9C67B2.wem</Path>
 				</File>
-				<File Id="401985295" Language="SFX">
-					<ShortName>Intro Reversed.wav</ShortName>
-					<Path>SFX\Intro Reversed_F17FB28C.wem</Path>
-				</File>
 				<File Id="409767051" Language="SFX">
 					<ShortName>Outro.wav</ShortName>
 					<Path>SFX\Outro_F17FB28C.wem</Path>
@@ -337,10 +333,6 @@
 				<File Id="518377828" Language="SFX">
 					<ShortName>BUTTON_Click_Compressor_Small_02_stereo.wav</ShortName>
 					<Path>SFX\BUTTON_Click_Compressor_Small_02_stereo_1C9C67B2.wem</Path>
-				</File>
-				<File Id="518635956" Language="SFX">
-					<ShortName>Section B Reversed.wav</ShortName>
-					<Path>SFX\Section B Reversed_F17FB28C.wem</Path>
 				</File>
 				<File Id="520904094" Language="SFX">
 					<ShortName>Raven Sounds\Raven_Audio_27.wav</ShortName>
@@ -530,10 +522,6 @@
 					<ShortName>Matt Sunds\Matt_4.wav</ShortName>
 					<Path>SFX\Matt Sunds\Matt_4_1C9C67B2.wem</Path>
 				</File>
-				<File Id="771395929" Language="SFX">
-					<ShortName>Section A Reversed.wav</ShortName>
-					<Path>SFX\Section A Reversed_F17FB28C.wem</Path>
-				</File>
 				<File Id="779494104" Language="SFX">
 					<ShortName>Raven Sounds\Raven_Audio_13.wav</ShortName>
 					<Path>SFX\Raven Sounds\Raven_Audio_13_1C9C67B2.wem</Path>
@@ -697,10 +685,6 @@
 				<File Id="992144050" Language="SFX">
 					<ShortName>nick\gargle.wav</ShortName>
 					<Path>SFX\nick\gargle_1C9C67B2.wem</Path>
-				</File>
-				<File Id="1012430751" Language="SFX">
-					<ShortName>Section C Reversed.wav</ShortName>
-					<Path>SFX\Section C Reversed_F17FB28C.wem</Path>
 				</File>
 				<File Id="1016561363" Language="SFX">
 					<ShortName>Matt Sunds\Matt_12.wav</ShortName>

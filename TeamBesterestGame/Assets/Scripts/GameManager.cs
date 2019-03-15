@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 using System.IO;
+using System.Text;
 
 public class GameManager : MonoBehaviour
 {
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
     //Only works when canSkip is true
     public void StartPhase()
     {
+        SoundManager.StopDialogue();
         if (!canSkip)
             return;
 
