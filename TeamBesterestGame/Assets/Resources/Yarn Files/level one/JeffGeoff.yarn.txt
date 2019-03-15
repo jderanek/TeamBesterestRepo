@@ -12,11 +12,11 @@ position: 3878,-404
 [[A shame, I bet it was a tasty scone too.|Geoff13]]
 
 <<if $talkedToJeff is true>>
-[[I talked to Gorgo already.|Geoff14]]
+[[I talked to Gorgo already, if that's what you're going to ask.|Geoff14]]
 <<endif>>
 
-<<if $geoffReady2 and $talkedToGorgo2 is true>>
-[[Let's talk about Gorgo.|Geoff2]]
+<<if $talkedToGorgo2 is true>>
+[[Let's talk about something... intimate. About one of your coworkers.|Geoff2]]
 <<elseif $geoffReady2 is true>>
 [[Hold up a moment. Is there something going on between you and Gorgo?|Geoff3]]
 <<endif>>
@@ -171,11 +171,11 @@ position: -2016,504
 Hey, boss guy... what do you need?
 [[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
 
-<<if gorgoStart2 is true>>
+<<if $gorgoStart2 is true>>
 [[Word around here is that there's something going on between you and Geoff. Care to elaborate?|Gorgo2]]
 <<endif>>
 
-<<if talkedToGorgo2 is true>>
+<<if $talkedToGorgo2 is true>>
 [[Alright, I'll cut to the chase. I know more about you than you think. I'll give you a hypothetical situation, and you tell me how it sounds, ok?|Gorgo211121]]
 <<endif>>
 ===
@@ -1088,11 +1088,11 @@ tags:
 colorID: 1
 position: -476,3428
 ---
-<<set talkedToGorgo2 to true>>
+<<set $talkedToGorgo2 to true>>
 
-<<if gorgoStillSecretNote is false>>
+<<if $gorgoStillSecretNote is false>>
 <<RevealText Jeff Gorgo_is_hiding_something,_but_is_really_sensitive_about_it.>>
-<<set gorgoStillSecretNote to true>>
+<<set $gorgoStillSecretNote to true>>
 <<endif>>
 
 You can't force me to talk! I'm done with you, *and* your stupid powers!
@@ -1122,11 +1122,11 @@ tags:
 colorID: 1
 position: 147,4175
 ---
-<<set talkedToGorgo2 to true>>
+<<set $talkedToGorgo2 to true>>
 
-<<if gorgoStillSecretNote is false>>
+<<if $gorgoStillSecretNote is false>>
 <<RevealText Jeff Gorgo_is_hiding_something,_but_is_really_sensitive_about_it.>>
-<<set gorgoStillSecretNote to true>>
+<<set $gorgoStillSecretNote to true>>
 <<endif>>
 
 <<ChangeSpeaker SoundManager Voiceless>>
@@ -1222,11 +1222,11 @@ tags:
 colorID: 1
 position: 909,3700
 ---
-<<set talkedToGorgo2 to true>>
+<<set $talkedToGorgo2 to true>>
 
-<<if gorgoStillSecretNote is false>>
+<<if $gorgoStillSecretNote is false>>
 <<RevealText Jeff Gorgo_is_hiding_something,_but_is_really_sensitive_about_it.>>
-<<set gorgoStillSecretNote to true>>
+<<set $gorgoStillSecretNote to true>>
 <<endif>>
 
 <<ChangeSpeaker SoundManager Voiceless>>
@@ -1286,12 +1286,12 @@ tags:
 colorID: 1
 position: 1267,3146
 ---
-<<set talkedToGorgo2 to true>>
-<<set gorgoRomanceReady to true>>
+<<set $talkedToGorgo2 to true>>
+<<set $gorgoRomanceReady to true>>
 
-<<if gorgoRomanceReadyNote is false>>
+<<if $gorgoRomanceReadyNote is false>>
 <<RevealText Jeff Gorgo_is_hiding_a_crush_on_Geoff._I_wonder_if_playing_cupid_could work.>>
-<<set gorgoRomanceReadyNote to true>>
+<<set $gorgoRomanceReadyNote to true>>
 <<endif>>
 
 ...hmph. Ok. I'm putting my faith in you here! Don't disappoint me!
@@ -1303,12 +1303,12 @@ tags:
 colorID: 1
 position: 1270,2921
 ---
-<<set talkedToGorgo2 to true>>
-<<set gorgoRomanceReady to true>>
+<<set $talkedToGorgo2 to true>>
+<<set $gorgoRomanceReady to true>>
 
-<<if gorgoRomanceReadyNote is false>>
+<<if $gorgoRomanceReadyNote is false>>
 <<RevealText Jeff Gorgo_is_hiding_a_crush_on_Geoff._I_wonder_if_playing_cupid_could work.>>
-<<set gorgoRomanceReadyNote to true>>
+<<set $gorgoRomanceReadyNote to true>>
 <<endif>>
 
 You sound so certain... alright. I'll give it a shot tonight! I hope you're not lying!
@@ -1348,12 +1348,12 @@ tags:
 colorID: 1
 position: 1239,2683
 ---
-<<set talkedToGorgo2 to true>>
-<<set gorgoRomanceReady to true>>
+<<set $talkedToGorgo2 to true>>
+<<set $gorgoRomanceReady to true>>
 
-<<if gorgoRomanceReadyNote is false>>
+<<if $gorgoRomanceReadyNote is false>>
 <<RevealText Jeff Gorgo_is_hiding_a_crush_on_Geoff._I_wonder_if_playing_cupid_could work.>>
-<<set gorgoRomanceReadyNote to true>>
+<<set $gorgoRomanceReadyNote to true>>
 <<endif>>
 
 Hey buddy, I don't tell you how to live your life! Doing all those... wizard-y things you do.
@@ -1427,11 +1427,11 @@ tags:
 colorID: 1
 position: 142,5003
 ---
-<<set talkedToGorgo2 to true>>
+<<set $talkedToGorgo2 to true>>
 
-<<if gorgoStillSecretNote is false>>
+<<if $gorgoStillSecretNote is false>>
 <<RevealText Jeff Gorgo_is_hiding_something,_but_is_really_sensitive_about_it.>>
-<<set gorgoStillSecretNote to true>>
+<<set $gorgoStillSecretNote to true>>
 <<endif>>
 
 Alright, I know when I'm being made fun of! Go get your kicks somewhere else!
@@ -1452,14 +1452,20 @@ Shoot. Well, I appreciate the honesty I guess.
 title: Geoff2
 tags: 
 colorID: 3
-position: 4207,4648
+position: 4383,6527
 ---
-Empty Text
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo squints and eyes you tensely.]
+
+<<ChangeSpeaker SoundManager Geoff>>
+Intimate? You mean that scone thing, right? So you know what happened already?!
+
+[[No, different kind of intimate.|Geoff21]]
 ===
 title: Geoff3
 tags: 
 colorID: 3
-position: 3874,5580
+position: 4029,7115
 ---
 He ate my scone! I'm sure of it!
 
@@ -1470,7 +1476,7 @@ He ate my scone! I'm sure of it!
 title: Geoff33
 tags: 
 colorID: 3
-position: 4199,5787
+position: 4354,7322
 ---
 <<ChangeSpeaker SoundManager Voiceless>>
 [You're not 100% sure, but you could've sworn Gorgo is staring daggers at you right now.]
@@ -1485,17 +1491,523 @@ Why do you ask?
 title: Geoff331
 tags: 
 colorID: 1
-position: 4495,5790
+position: 4650,7325
 ---
 Uh... Ok.
 ===
 title: Geoff332
 tags: 
 colorID: 3
-position: 4497,6054
+position: 4652,7589
 ---
 Nope, can't say I have. 
 Whenever he's not being a rude jerk, he's usually giving me a funny look. I think he's just like that.
 
 [[Hmmm... I'll come back to you in a moment.|Geoff331]]
+===
+title: Geoff21
+tags: 
+colorID: 3
+position: 4662,6533
+---
+....uh... what? I'm confused...
+
+[[Let me use an analogy, you goblins seem to like those.|Geoff211]]
+[[Let's just say one of your coworkers may be... potentially interested in you.|Geoff212]]
+[[(Whispers) Gorgo likes you!|Geoff213]]
+[[Gorgo likes you!|Geoff214]]
+===
+title: Geoff214
+tags: 
+colorID: 1
+position: 4668,7021
+---
+<<if $iBlabbedNote is false>>
+<<RevealText Geoff I_announced_Gorgo's_affections_to_the_world,_and_he_seems_to_have_fallen_unconscious_from_sheer_embarrassment._Maybe_I_should_be_more_subtle_next_time.>>
+<<set $iBlabbedNote to true>>
+<<endif>>
+
+<<set $talkedToGeoff2 to true>>
+
+Wha-- Gorgo? I don't--
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo appears to lose all color, and collapses on the floor unconscious. Oops.]
+
+<<ChangeSpeaker SoundManager Geoff>>
+...Gorgo? ...I'm confused...
+
+<<EndInterview Geoff>>
+===
+title: Geoff212
+tags: 
+colorID: 3
+position: 4937,6525
+---
+Wait, really? Who would *that* be?
+Wait, no, let me guess! It's Nilbog, isn't it? Don't think I haven't noticed the way he looks at me!
+
+[[What? No, he looks at everyone like that. He's looking at *me* like that right now!|Geoff2121]]
+[[No... but it's someone particularly close to your scone incident.|Geoff2122]]
+[[It's Gorgo!|Geoff214]]
+===
+title: Geoff2121
+tags: 
+colorID: 3
+position: 5212,6526
+---
+You're right. He's wearing a trenchcoat, too. I bet he might be a bit of a... promiscuous goblin!
+I wouldn't be surprised if he was hiding something!
+
+<<if $talkedToNilbog2 is true>>
+[[You have no idea.|Geoff21211]]
+<<else>>
+[[You're probably right.|Geoff21212]]
+<<endif>>
+
+[[I am *not* having this conversation right now.|Geoff21213]]
+===
+title: Geoff21212
+tags: 
+colorID: 3
+position: 5507,6533
+---
+I've got a good hunch, what can I say? Now if only I knew of how to deal with Gorgo...
+
+[[Oh, right, about that..!|Geoff212121]]
+[[He likes you, by the way.|Geoff214]]
+===
+title: Geoff2122
+tags: 
+colorID: 3
+position: 5217,6269
+---
+...Uhh... me?
+
+[[No.|Geoff21221]]
+[[Yes. You solved it, congratulations!|Geoff21222]]
+===
+title: Geoff21222
+tags: 
+colorID: 3
+position: 5499,6265
+---
+Ha! I knew it!
+......wait. I knew that. Self-love is an important part of my wake-up routine! Why bring that up now?!
+
+[[I was being sarcastic.|Geoff21221]]
+[[I just wanted to mess with you.|Geoff212222]]
+===
+title: Geoff212222
+tags: 
+colorID: 1
+position: 5766,6263
+---
+<<if $geoffDoesntKnowYetNote is false>>
+<<RevealText Geoff I_tried_to_clue_in_Geoff,_but_he's_really,_really_dense._Maybe_I_should_try_being_going_at_it_another_way.>>
+<<set $geoffDoesntKnowYetNote to true>>
+<<endif>>
+
+<<set $talkedToGeoff2 to true>>
+
+Grrr! You're wasting my time! If you're not going to help solve my problems, I'll solve them myself!
+
+<<EndInterview Geoff>>
+===
+title: Geoff21221
+tags: 
+colorID: 3
+position: 5856,5787
+---
+...Ahhh. I think I catch your drift now.
+How do you figure that, by the way? The guy's nothing but mean to me at every turn!
+
+[[I think it's just a ploy to get your attention.|Geoff212211]]
+[[I've talked to the guy. I know.|Geoff2122133]]
+[[Call it a hunch.|Geoff212213]]
+===
+title: Geoff212121
+tags: 
+colorID: 3
+position: 5788,6535
+---
+..Huh? Oh yea, right. You were saying?
+
+[[I wasn't referring to Nilbog originally. Someone closer to the whole scone thing.|Geoff2122]]
+[[...Gorgo likes you!|Geoff214]]
+===
+title: Geoff212213
+tags: 
+colorID: 3
+position: 6180,6240
+---
+...a hunch? You want me to go out on a limb for a hunch?
+
+[[Yes. I'm a time-wizard, after all!|Geoff2122131]]
+[[Don't you want to stop failing against the heroes?|Geoff21221311]]
+[[I talked to the guy, I know what's up.|Geoff2122133]]
+===
+title: Geoff2122131
+tags: 
+colorID: 3
+position: 6487,6453
+---
+...Hey! I'm being serious here!
+
+[[So am I!|Geoff21221311]]
+[[Alright, alright, I talked to the guy, I know what's up.|Geoff2122133]]
+===
+title: Geoff21221311
+tags: 
+colorID: 1
+position: 6783,6234
+---
+<<if $geoffSensitiveNote is false>>
+<<RevealText Geoff Geoff_seems_to_take_relationships_rather_seriously._Maybe_I_shouldn't_be_so_flippant.>>
+<<set $geoffSensitiveNote to true>>
+<<endif>>
+
+<<set $talkedToGeoff2 to true>>
+
+Buzz off! Relationships are too complicated to be reduced like that so simply!
+You're not going to get anywhere being like that!
+
+<<EndInterview Geoff>>
+===
+title: Geoff2122133
+tags: 
+colorID: 3
+position: 6474,5770
+---
+...yea, I guess you did. I largely spaced out since I didn't think you weren't talking about me.
+
+[[He's real into you, you know. I think it could work.|Geoff21221332]]
+[[I noticed. The other goblins seem to be the same way. It's like nobody pays attention unless I say their names.|Geoff21221331]]
+[[Look at Gorgo and tell me what *you* think.|Geoff21221333]]
+===
+title: Geoff21221332
+tags: 
+colorID: 3
+position: 7015,5541
+---
+Alright, let's assume I take your word for it. How do I know he'll actually respect me? He hasn't so far!
+
+[[He just did that to get your attention. Once he has it, I'm sure the real Gorgo will appear.|Geoff212213321]]
+[[You never know until you try. I'm pretty sure he's ready to, if you are!|Geoff212213321]]
+[[Alright, don't go for it, and nothing around here will change.|Geoff212213322]]
+===
+title: Geoff21221333
+tags: 
+colorID: 3
+position: 6985,5805
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[Geoff looks over at Gorgo, who has been staring, fixated, at Geoff this whole time.]
+[You could swear he was a statue for how still he was sitting, were it not for how he was sweating bullets.]
+
+<<ChangeSpeaker SoundManager Geoff>>
+....I think I see what you mean.
+[[Geoff21221332]]
+===
+title: Geoff212213321
+tags: 
+colorID: 1
+position: 7413,5251
+---
+<<if $geoffRomanceReadyNote is false>>
+<<RevealText Geoff I_think_he's_ready_now._I_just_need_to_give_Gorgo_the_opportunity,_and_we'll_see_what_happens.>>
+<<set $geoffRomanceReadyNote to true>>
+<<endif>>
+
+<<set $geoffRomanceReady to true>>
+
+....I guess you really do have a point. Might be nice to have someone close, especially on the battlefield!
+If he makes a move, well... we'll see!
+
+<<EndInterview Geoff>>
+===
+title: Geoff21221331
+tags: 
+colorID: 3
+position: 7312,6081
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[All the other goblins perk up for a moment, on to your nonsense.]
+[...or so you think. They almost immediately notice the silence that follows and go back to tuning you out.]
+
+<<ChangeSpeaker SoundManager Geoff>>
+...Right.
+
+[[Anyway, I think the two of you could work.|Geoff21221332]]
+[[There's literally no reason *not* to date the guy.|Geoff212213312]]
+===
+title: Geoff212213312
+tags: 
+colorID: 3
+position: 7574,6017
+---
+I can think of a few reasons! Why do you think you were called in here in the first place?!
+
+[[Fine, be that way then!|Geoff2122133121]]
+[[Do you think I'd stick my neck out for a guy like Gorgo if he wasn't being honest?|Geoff2122133122]]
+[[Look at him for yourself!|Geoff21221333]]
+===
+title: Geoff2122133121
+tags: 
+colorID: 1
+position: 7884,6224
+---
+<<if $geoffSensitiveNote is false>>
+<<RevealText Geoff Geoff_seems_to_take_relationships_rather_seriously._Maybe_I_shouldn't_be_so_flippant.>>
+<<set $geoffSensitiveNote to true>>
+<<endif>>
+
+<<set $talkedToGeoff2 to true>>
+
+I will, thank you very much!
+These things are meant to be taken *very* seriously, in my opinion!
+
+<<EndInterview Geoff>>
+===
+title: Geoff2122133122
+tags: 
+colorID: 3
+position: 7876,5939
+---
+Yes. It's kinda your job to so we can kill heroes better, isn't it?
+
+[[I didn't do my doctoral thesis in time magic just to be pushed around by someone I just met minutes ago.|Geoff21221332]]
+[[Fine, be that way!|Geoff2122133121]]
+[[Wow. Low blow. I'm just trying to look out for you, and this is what I get?|Geoff21221332]]
+===
+title: Geoff212213322
+tags: 
+colorID: 1
+position: 7409,5540
+---
+<<if $geoffSensitiveNote is false>>
+<<RevealText Geoff Geoff_seems_to_take_relationships_rather_seriously._Maybe_I_shouldn't_be_so_flippant.>>
+<<set $geoffSensitiveNote to true>>
+<<endif>>
+
+<<set $talkedToGeoff2 to true>>
+
+I'm not looking for love just so I can do my job better, oh-so-omnipotent wizard!
+If you're not going to take this seriously, neither will I!
+
+<<EndInterview Geoff>>
+===
+title: Geoff212211
+tags: 
+colorID: 3
+position: 6182,5361
+---
+That's an awful way to get someone to notice you, in my opinion!
+Relationships are built upon respect!
+
+[[I'm just the messenger, I'm not going to argue whether or not his methods are effective!|Geoff21221332]]
+[[Maybe that's just how he is.|Geoff2122112]]
+[[Have you considered trying to do it back to him?|Geoff2122113]]
+===
+title: Geoff2122112
+tags: 
+colorID: 1
+position: 6182,5109
+---
+<<if $geoffSensitiveNote is false>>
+<<RevealText Geoff Geoff_seems_to_take_relationships_rather_seriously._Maybe_I_shouldn't_be_so_flippant.>>
+<<set $geoffSensitiveNote to true>>
+<<endif>>
+
+<<set $talkedToGeoff2 to true>>
+
+Well I don't need someone like that around!
+Don't waste my time!
+
+<<EndInterview Geoff>>
+===
+title: Geoff2122113
+tags: 
+colorID: 3
+position: 6586,5199
+---
+Yea, dummy. Why do you think you're here in the first place?!
+
+[[Oh, right.|Geoff21221131]]
+[[Can you blame me, you goblins are all the same!|Geoff21221132]]
+[[I just figured similarity would breed you together, since that's what he seems to want!|Geoff21221332]]
+===
+title: Geoff21221132
+tags: 
+colorID: 1
+position: 6590,4928
+---
+<<if $casualRacismNote is false>>
+<<RevealText Geoff Geoff_seemed_really_put_off_by_a_comment_I_said._I_should_choose_my_words_more_carefully_next_time._I_swear_I_was_raised_better_than_this!>>
+<<set $casualRacismNote to true>>
+<<endif>>
+
+<<set $talkedToGeoff2 to true>>
+
+Wow! I'm reporting you to HR for that! I hope you're real proud of yourself, you dirty racist!
+
+<<EndInterview Geoff>>
+===
+title: Geoff21221131
+tags: 
+colorID: 3
+position: 6956,5198
+---
+...why *are* we still speaking, exactly?
+
+[[So I can pair you two up so you can stop dying to heroes!|Geoff212213322]]
+[[Becuase I think you and Gorbo can work. Honest.|Geoff21221332]]
+[[Because I have to. Basically.|Geoff212211313]]
+===
+title: Geoff212211313
+tags: 
+colorID: 1
+position: 6952,4929
+---
+<<if $geoffSensitiveNote is false>>
+<<RevealText Geoff Geoff_seems_to_take_relationships_rather_seriously._Maybe_I_shouldn't_be_so_flippant.>>
+<<set $geoffSensitiveNote to true>>
+<<endif>>
+
+<<set $talkedToGeoff2 to true>>
+
+No you don't! You're just wasting both of our time!
+
+<<EndInterview Geoff>>
+===
+title: Geoff213
+tags: 
+colorID: 3
+position: 5179,5820
+---
+...you forget a "dis" there? Because I'm pretty sure he very much dislikes me.
+
+[[Dead serious. Very much like. Like-likes you, you could say.|Geoff21221]]
+[[Yep. I was just messing with you!|Geoff212222]]
+===
+title: Geoff211
+tags: 
+colorID: 3
+position: 4689,5025
+---
+...uh, ok.
+[[Let's say there's two goblins. Gorbo and Jeff.|Geoff2111]]
+===
+title: Geoff2111
+tags: 
+colorID: 3
+position: 4932,5027
+---
+Uh-huh.
+
+[[Gorbo was really mean to Jeff... but deep down...|Geoff21111]]
+===
+title: Geoff21111
+tags: 
+colorID: 3
+position: 5185,5025
+---
+Ya? What happened?
+
+[[...He had a sword in his chest. Because Jeff killed him for being mean.|Geoff211111]]
+[[...he was actually a human in disguise!|Geoff211112]]
+[[...Gorbo was actually madly in love with Jeff!|Geoff211113]]
+
+<<if talkedToGlenn2 is true>>
+[[...He was actually a coward because he had no friends.|Geoff211114]]
+<<endif>>
+===
+title: Geoff211111
+tags: 
+colorID: 3
+position: 5034,4720
+---
+Wow! I didn't see that coming. Good on that Jeff guy for taking the initiative!
+...but what does that have to do with anything..?
+
+[[Uhh... forget I said anything.|Geoff2111111]]
+===
+title: Geoff2111111
+tags: 
+colorID: 1
+position: 5194,4452
+---
+<<if $badAnalogy2Note is true>>
+<<RevealText Geoff I_got_carried_away_in_analogy_earlier..._I_need_to_learn_to_focus_better.>>
+<<set $badAnalogy2Note to true>>
+<<endif>>
+
+<<set talkedToGeoff2 to true>>
+
+....uh, ok then.
+
+<<EndInterview Geoff>>
+
+===
+title: Geoff211112
+tags: 
+colorID: 3
+position: 5279,4719
+---
+Wow! What a twist! Can't say I saw that coming a mile away!
+...wait. What does that story have to do with anything?
+
+[[Uhh... forget I said anything.|Geoff2111111]]
+===
+title: Geoff211114
+tags: 
+colorID: 3
+position: 5515,4715
+---
+<<ChangeSpeaker SoundManager Voiceless>>
+[You could swear you see Glenn glare at you. It'd be creepier were he not so wimpy looking.]
+
+<<ChangeSpeaker SoundManager Geoff>>
+Huh. That's oddly specific, and kinda sad. Hope he gets that worked out.
+...but what's that got to do with me?
+
+[[Uhh... forget I said anything.|Geoff2111111]]
+===
+title: Geoff211113
+tags: 
+colorID: 3
+position: 5474,5033
+---
+Oh! What a twist! What a sweet development!
+...But what does that have to do with me?
+
+[[Are you people thick? I was clearly talking about the two of you! *Again*!|Geoff21221]]
+[[Nothing. Nothing at all. Moron.|Geoff2111132]]
+[[(Subtly points at Gorgo) That's "Gorbo".|Geoff2111133]]
+===
+title: Geoff2111132
+tags: 
+colorID: 1
+position: 5777,4906
+---
+<<if $badAnalogy2Note is true>>
+<<RevealText Geoff I_got_carried_away_in_analogy_earlier..._I_need_to_learn_to_focus_better.>>
+<<set $badAnalogy2Note to true>>
+<<endif>>
+
+<<set talkedToGeoff2 to true>>
+
+Geesh, you act like I missed something obvious! You're being weird!
+Try cooling it next time you tell a story!
+
+<<EndInterview Geoff>>
+===
+title: Geoff2111133
+tags: 
+colorID: 3
+position: 5777,5137
+---
+...ok? Then who's this "Jeff" person?
+
+[[(Points not-so-subtly at Geoff)|Geoff21221]]
 ===
