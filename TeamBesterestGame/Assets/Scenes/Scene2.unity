@@ -21655,6 +21655,39 @@ MonoBehaviour:
   - name: jeffLittleInfoNote
     value: false
     type: 2
+  - name: gorgoStart2
+    value: false
+    type: 2
+  - name: gorgoStillSecretNote
+    value: false
+    type: 2
+  - name: gorgoRomanceReadyNote
+    value: false
+    type: 2
+  - name: gorgoRomanceReady
+    value: false
+    type: 2
+  - name: talkedToGorgo2
+    value: false
+    type: 2
+  - name: geoffDoesntKnowYetNote
+    value: false
+    type: 2
+  - name: iBlabbedNote
+    value: false
+    type: 2
+  - name: geoffSensitiveNote
+    value: false
+    type: 2
+  - name: geoffRomanceReadyNote
+    value: false
+    type: 2
+  - name: geoffRomanceReady
+    value: false
+    type: 2
+  - name: casualRacismNote
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!1001 &2085675266
 Prefab:
