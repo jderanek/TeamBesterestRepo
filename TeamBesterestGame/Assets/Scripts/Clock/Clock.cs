@@ -27,12 +27,12 @@ public class Clock : MonoBehaviour {
         if (!running)
             return;
 
-        float newScale = (-7.1f * Mathf.Pow(time, 2)) + (10f * time);
+        float newScale = (-5.6f * Mathf.Pow(time, 2)) + (10f * time);
         time += Time.deltaTime;
 
         gameObject.transform.localScale = new Vector2(newScale, newScale);
 
-        if (time >= 1.4f)
+        if (time >= 1.767f)
         {
             running = false;
             gameObject.SetActive(false);
