@@ -270,8 +270,10 @@ But *not* until then!
 title: JeffGeoffSolution1
 tags: 
 colorID: 2
-position: 2686,3312
+position: 2686,3425
 ---
+<<if $talkedToGeoff2 is true and $talkedToGorgo2 is false>>
+
 <<ChangeSpeaker SoundManager Jeff>>
 Well? What's it gonna be?
 
@@ -280,6 +282,9 @@ Yea, what's the deal, Boss?
 
 [[Geoff, you need to get over yourself. It wasn't that big of a deal.|JeffGeoffSolution11]]
 [[Jeff, apologize to Geoff already so we can get things working again.|JeffGeoffSolution12]]
+
+<<else>>
+[[Gorgo. Jeff. There anything you two want to say to each other?|GorgoGeoffSolution13]]
 ===
 title: Jeff113
 tags: 
@@ -1075,7 +1080,7 @@ Now.... N-now hold on just a second! Those thoughts are private!!
 title: Gorgo2111
 tags: 
 colorID: 3
-position: -740,3689
+position: -740,3686
 ---
 I shouldn't have opened my mouth...
 Stay out of my head, and we can deal with this like big goblins! ...and wizards, I guess.
@@ -1179,7 +1184,7 @@ What happens? What happens next?
 [[...Gorbo actually likes Jeff!|Gorgo211121112]]
 [[...Gorbo just really hated Jeff. So much that he exploded.|Gorgo211121113]]
 
-<<if $talkedToNilbog2 is true>>
+<<if talkedToNilbog2 is true>>
 [[...Gorbo was actually three goblins stacked on top of each other in a trench-coat all along!|Gorgo211121114]]
 <<endif>>
 ===
@@ -1275,7 +1280,7 @@ I-it's not like I like "Jeff" or anything... but how do you know it'll even work
 
 [[Well that's kind of your fault, don't you think?|Gorgo21112111211]]
 
-<<if $geoffRomanceReady is true>>
+<<if geoffRomanceReady is true>>
 [[Just trust me on this. It'll work out.|Gorgo21112111212]]
 <<else>>
 [[Only one way to find out. I'll see what I can do.|Gorgo21112111213]]
@@ -1537,6 +1542,7 @@ Wha-- Gorgo? I don't--
 <<ChangeSpeaker SoundManager Geoff>>
 ...Gorgo? ...I'm confused...
 
+<<DisableFollowup Jeff shift2>>
 <<EndInterview Geoff>>
 ===
 title: Geoff212
@@ -1720,6 +1726,7 @@ position: 7413,5251
 <<endif>>
 
 <<set $geoffRomanceReady to true>>
+<<set $talkedToGeoff2 to true>>
 
 ....I guess you really do have a point. Might be nice to have someone close, especially on the battlefield!
 If he makes a move, well... we'll see!
@@ -1918,7 +1925,7 @@ Ya? What happened?
 [[...he was actually a human in disguise!|Geoff211112]]
 [[...Gorbo was actually madly in love with Jeff!|Geoff211113]]
 
-<<if $talkedToGlenn2 is true>>
+<<if talkedToGlenn2 is true>>
 [[...He was actually a coward because he had no friends.|Geoff211114]]
 <<endif>>
 ===
@@ -1942,7 +1949,7 @@ position: 5194,4452
 <<set $badAnalogy2Note to true>>
 <<endif>>
 
-<<set $talkedToGeoff2 to true>>
+<<set talkedToGeoff2 to true>>
 
 ....uh, ok then.
 
@@ -1995,7 +2002,7 @@ position: 5777,4906
 <<set $badAnalogy2Note to true>>
 <<endif>>
 
-<<set $talkedToGeoff2 to true>>
+<<set talkedToGeoff2 to true>>
 
 Geesh, you act like I missed something obvious! You're being weird!
 Try cooling it next time you tell a story!
@@ -2010,4 +2017,94 @@ position: 5777,5137
 ...ok? Then who's this "Jeff" person?
 
 [[(Points not-so-subtly at Geoff)|Geoff21221]]
+===
+title: GorgoGeoffSolution13
+tags: 
+colorID: 2
+position: 3123,3733
+---
+<<if $geoffRomanceReady is true and $gorgoRomanceReady is true>>
+<<set $shift12Combat to 4>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[They both stare at each other intensely for a moment.]
+
+<<ChangeSpeaker SoundManager Jeff>>
+Geoff... I-- I'm sorry! For everything!
+
+<<ChangeSpeaker SoundManager Geoff>>
+Gorgo... were you really just doing all those things to get my attention?
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Another moment of silence.]
+
+<<ChangeSpeaker SoundManager Jeff>>
+Yes... it's true. Especially when I ate the scone. I figured if I ate your favorite food before you did, you'd be *sure* to notice me...
+I didn't mean to cause all this trouble...
+
+<<ChangeSpeaker SoundManager Geoff>>
+All that... for me... Oh Gorgo... how about after work tonight, we both go get our weapons sharpened together?
+
+<<ChangeSpeaker SoundManager Jeff>>
+Really? You mean it??
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[They both discuss their plans for the evening. It looks like things worked out! Now to see how things go once the heroes arrive.]
+
+//----------
+<<elseif $gorgoRomanceReady is true>>
+<<set $shift12Combat to 3>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo stares nervously at Geoff. Geoff looks at Gorgo expectantly.]
+
+<<ChangeSpeaker SoundManager Geoff>>
+Well? Something to say, Gorgo?!
+
+<<ChangeSpeaker SoundManager Jeff>>
+U-uhh... yea! I do!
+
+<<ChangeSpeaker SoundManager Geoff>>
+It best be an apology, or I don't want to hear it!
+
+<<ChangeSpeaker SoundManager Jeff>>
+Huh?? No, I was just going to say--
+
+<<ChangeSpeaker SoundManager Geoff>>
+No?! Then I don't want to hear it! I don't care how much you supposedly like me!!
+
+<<ChangeSpeaker SoundManager Jeff>>
+W-what?! You know about that?!
+
+<<ChangeSpeaker SoundManager Geoff>>
+Yup! I got a feeling ever since that Time-wizard started talkin' to me!
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Color seems to drain from Gorgo's face, and he falls on the floor, unconscious from sheer embarrassment.
+
+//------------------
+
+<<else>>
+<<set $shift12Combat to 2>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Gorgo and Geoff stare at each other, with confused faces.]
+
+<<ChangeSpeaker SoundManager Jeff>>
+I-I don't know what they're talking about! I don't got nothin' to say!
+
+<<ChangeSpeaker SoundManager Geoff>>
+Nothin'?! Not even an apology?!
+
+<<ChangeSpeaker SoundManager Jeff>>
+Apology? What for?!
+
+<<ChangeSpeaker SoundManager Geoff>>
+You mongrel! I'll clobber you!!
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[The two begin to argue once again, eerily similarly to before. You don't think this will end well.]
+
+<<endif>>
+<<DisableFollowup Jeff shift2>>
 ===
