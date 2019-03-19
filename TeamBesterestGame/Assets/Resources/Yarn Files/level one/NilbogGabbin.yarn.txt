@@ -557,6 +557,7 @@ tags:
 colorID: 0
 position: -1580,-1770
 ---
+<<ChangeSpeaker SoundManager Nilbog>>
 <<ChangeSpeaker SoundManager Voiceless>>
 ...
 
