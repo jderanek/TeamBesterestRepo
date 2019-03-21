@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: cf394b8e81dcff94eacb05dee6576af1
+timeCreated: 1553182746
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Daniel
+  fontNames:
+  - Daniel
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 72b9e58020692824e8d619fa782c435e, type: 3}
+  - {fileID: 12800000, guid: 6c415756491db3844bc3370b6bb9b602, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
