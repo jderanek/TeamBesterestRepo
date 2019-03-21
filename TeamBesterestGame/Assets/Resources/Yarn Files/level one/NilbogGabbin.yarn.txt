@@ -9,7 +9,10 @@ I hope you've had an excellent time with us all so far!
 [[You seem rather chipper.|Gabbin11]]
 [[Coming on a little strong, aren't you?|Gabbin12]]
 [[You seem pleasant, all things considered.|Gabbin13]]
+
+<<if $GabbinStart2 is true>>
 [[Its been great Gabbin! But before we get things moving, what's you opinion on kids working in the dungeon business?|Gabbin2]]
+<<endif>>
 ===
 title: Gabbin11
 tags: 
@@ -387,9 +390,9 @@ I'll figure him out, then this whole operation will turn around!
 title: NilbogGabbinSolution1
 tags: 
 colorID: 2
-position: 1491,719
+position: 1331,1140
 ---
-<<ChangeSpeaker SoundManager Voiceless>>
+<<ChangeSpeaker SoundManager Nilbog>>
 [Nilbog eyes you expectantly.]
 
 <<ChangeSpeaker SoundManager Gabbin>>
@@ -398,6 +401,11 @@ So, what's the plan?
 [[Nilbog, you need to come out of your shell and work with Gabbin to make this work.|NilbogGabbinSolution11]]
 [[Gabbin, you need to leave Nilbog alone during work.|NilbogGabbinSolution12]]
 [[Can't the two of you just be friends and work together?|NilbogGabbinSolution13]]
+
+<<if talkedtoNilbog2 and talkedtoGabbin2 is true>>
+[[|NilbogGabbinSolution14]]
+[[|NilbogGabbinSolution15]]
+[[|NilbogGabbinSolution16]]
 ===
 title: NilbogGabbinSolution11
 tags: 
@@ -407,6 +415,7 @@ position: 1814,425
 //IF Nilbog flagged Defeated or Patient:
 <<if $defeated is true>>
 <<set $shift13Combat to 1>>
+
 
 <<ChangeSpeaker SoundManager Nilbog>>
 ...fine.
@@ -564,7 +573,9 @@ position: -1580,-1770
 [[...|Nilbog11]]
 [[...Hello? You in there?|Nilbog12]]
 
-[[Look here, I need you to stop acting like CHILDREN!|Nilbog2]]
+<<if $NilbogStart2 is true>>
+[[Look here, I need you to stop acting like *children*!|Nilbog2]]
+<<endif>>
 ===
 title: Nilbog11
 tags: 
@@ -1088,20 +1099,15 @@ tags:
 colorID: 4
 position: 3201,3320
 ---
-What is it Nilbog?
-
-<<ChangeSpeaker SoundManager Nilbog>>
-I am Nilbog. But the "Nilbog" you know is actually three goblin children in a large trench coat... Please, dont be mad or freak out.
-
-<<ChangeSpeaker SoundManager Gabbin>>
-Wow... this is a suprise to say the least. I might need time to adjust to this... Please leave me alone for now. I should be good by next shift.
+Okay... I'll make sure to keep open arms if Nilbog ever wants reach out to me.
 
 
 <<set $talkedToGabbin to true>>
-<<set $gabbinKnowsTruth to true>>
+<<set $talkedToGabbin2 to true>>
+<<set $gabbinReadyForTruth to true>>
 
 <<if $gabbinDisguiseNote is false>>
-<<RevealText Gabbin Gabbin_seems_to_have_the_truth_poorly,_but_seems_likely_he'll_recover_before_next_shift.>>
+<<RevealText Gabbin Gabbin_seems_worried_about_Nilbog,_likely_the_best_time_to_have_Nilbog_tell_the_truth.>>
 <<set $gabbinDisguiseNote to true>>
 <<endif>>
 
@@ -1159,8 +1165,11 @@ position: 2907,3080
 ---
 What is it Mr. Time Wizard?
 [[Nilbog... hes actually three different goblin children in a trench coat.|Gabbin221]]
-[[I have this really nice trench coat now. Nilbog gave it to me!|Gabbin222]]
 [[Nilbog might actually be the better person to tell you.|Gabbin223]]
+
+<<if $nilbogTrenchCoat is true>>
+[[I have this really nice trench coat now. Nilbog gave it to me!|Gabbin222]]
+<<endif>>
 ===
 title: Gabbin21
 tags: 
@@ -1168,9 +1177,13 @@ colorID: 3
 position: 2892,2310
 ---
 Yeah good thing too, because I would do anything to make sure sweet innocent children aren't in danger of those heroes!
-[[Hey just letting you know, just a warning, Nilbog has shown me this new sweet technique! Want to hear about it?|Gabbin211]]
+
 [[What if I were to rewind time of... o' I dont know... Nilbog. Turn into a tiny goblin child, and cloned him as well, what would you do?|Gabbin212]]
 [[What makes you so protectful of children?|Gabbin213]]
+
+<< $nilbogCloneExcuse is true>>
+[[Hey just letting you know, just a warning, Nilbog has shown me this new sweet technique! Want to hear about it?|Gabbin211]]
+<<endif>>
 ===
 title: Nilbog23
 tags: 
@@ -1193,6 +1206,7 @@ O' No! How could you have done this to us!
 Boys, scram! There's nothing left for us here!
 
 <<set $talkedToNilbog to true>>
+<<set $talkedToNilbog2 to true>>
 
 <<if $nilbogRevealedNote is false>>
 <<RevealText Nilbog I_have_exposed_Nilbog_and_crew,_I_don't_think_that_was_the_best_way_to_solve_our_problems.>>
@@ -1347,6 +1361,7 @@ position: -193,4203
 Doesn't matter anymore, go ahead and tell Gabbin, maybe he'll be more understanding then I think.
 
 <<set $talkedToNilbog to true>>
+<<set $talkedToNilbog2 to true>>
 <<set $nilbogGabbinHope to true>>
 
 <<if $nilbogHopeNote is false>>
@@ -1366,6 +1381,7 @@ Finally someone who gets it.
 But then you must understand also why we try to avoid Gabbin, he's always a little to close to finding out.
 
 <<set $talkedToNilbog to true>>
+<<set $talkedToNilbog2 to true>>
 
 <<if $nilbogReasonNote is false>>
 <<RevealText Nilbog Nilbog_and_crew's_reason_for_doing_this_seems_to_be_because_"They_felt_like_it". But their secret is also why they try to avoid Gabbin.>>
@@ -1382,6 +1398,7 @@ position: -190,3757
 Nope. But my secret is why I try to avoid Gabbin, sometimes he get way to close and I get scared he'll somehow find out.
 
 <<set $talkedToNilbog to true>>
+<<set $talkedToNilbog2 to true>>
 
 <<if $nilbogReasonNote is false>>
 <<RevealText Nilbog Nilbog_and_crew's_reason_for_doing_this_seems_to_be_because_"They_felt_like_it". But their secret is also why they try to avoid Gabbin.>>
@@ -1416,6 +1433,7 @@ Especially since we are likely to die again every shift for the rest of eternity
 HAaAhhaAaAHhhaAaAhhHA!
 
 <<set $talkedToGabbin to true>>
+<<set $talkedToGabbin2 to true>>
 
 
 <<EndInterview Gabbin>>
@@ -1434,6 +1452,8 @@ colorID: 4
 position: 3526,2293
 ---
 Yes, that's completely correct! Tragic and deep backstories makes everything better!
+
+<<EndInterview Gabbin>>
 ===
 title: Gabbin2122
 tags: 
@@ -1444,6 +1464,7 @@ Nice one, I would know if you had turned Nilbog into three goblin children!
 You make up the funniest scenarios Mr. Time Wizard!
 
 <<set $talkedToGabbin to true>>
+<<set $talkedToGabbin2 to true>>
 
 <<if $gabbinScaryNote is false>>
 <<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
@@ -1461,6 +1482,7 @@ position: 3492,1619
 Its best you not know...
 
 <<set $talkedToGabbin to true>>
+<<set $talkedToGabbin2 to true>>
 
 <<if $gabbinScaryNote is false>>
 <<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
@@ -1483,9 +1505,10 @@ tags:
 colorID: 4
 position: 238,1493
 ---
-Gotcha... we'll... I will make sure to relay that to any children I see running around here... speaking of which, Ill be right back.
+Gotcha... we will... I will make sure to relay that to any children I see running around here... speaking of which, Ill be right back.
 
 <<set $talkedToNilbog to true>>
+<<set $talkedToNilbog2 to true>>
 
 <<if $nilbogScaredNote is false>>
 <<RevealText Nilbog I_have_scared_Nilbog_and_crew_into_making_sure_their_disguise_can't_come_apart,_hopefully_this_will_stop_Gabbin_from_seeing_them.>>
@@ -1502,6 +1525,7 @@ position: -27,1748
 Okay, we'll get right on that!
 
 <<set $talkedToNilbog to true>>
+<<set $talkedToNilbog2 to true>>
 
 <<if $nilbogScaredNote is false>>
 <<RevealText Nilbog I_have_scared_Nilbog_and_crew_into_making_sure_their_disguise_can't_come_apart,_hopefully_this_will_stop_Gabbin_from_seeing_them.>>
@@ -1527,6 +1551,7 @@ position: 247,1997
 We'll make sure to get each disguise ready, as long as you can convince Gabbin... this might just work.
 
 <<set $talkedToNilbog to true>>
+<<set $talkedToNilbog2 to true>>
 <<set $nilbogCloneExcuse to true>>
 
 <<if $nilbogCloneNote is false>>
@@ -1542,9 +1567,11 @@ tags:
 colorID: 4
 position: 238,1739
 ---
-Okay... we'll make sure to bring you one next time we come in.
+Okay... here you go... you can have one of our... my spares.
 
 <<set $talkedToNilbog to true>>
+<<set $talkedToNilbog2 to true>>
+<<set $nilbogTrenchCoat>>
 
 <<if $nilbogTrenchCoatNote is false>>
 <<RevealText Nilbog I_have_acquired_a_cool_new_trench_coat.>>
@@ -1572,6 +1599,7 @@ I better call my buddy from Gondon, his name is Gerlock Golmes, the worlds great
 He'll get to the bottom of this.
 
 <<set $talkedToGabbin to true>>
+<<set $talkedToGabbin2 to true>>
 
 <<if $gabbinDisguiseNote is false>>
 <<RevealText Gabbin Gabbin_seems_to_think_Nilbog_is_a_hero_in_disguise..._guess_that's_better_than_the_truth.>>
@@ -1590,6 +1618,7 @@ position: 3800,2579
 It better be...
 
 <<set $talkedToGabbin to true>>
+<<set $talkedToGabbin2 to true>>
 
 <<if $gabbinScaryNote is false>>
 <<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
@@ -1607,6 +1636,7 @@ Shorter! Taller! Doesn't make a differnce to me!
 Just proud that Nilbog is putting force such a great effort in order to make us better at our jobs!
 
 <<set $talkedToGabbin to true>>
+<<set $talkedToGabbin2 to true>>
 <<set $gabbinCloneConvinced to true>>
 
 <<if $gabbinCloneNote is false>>
@@ -1615,4 +1645,25 @@ Just proud that Nilbog is putting force such a great effort in order to make us 
 <<endif>>
 
 <<EndInterview Gabbin>>
+===
+title: NilbogGabbinSolution16
+tags: 
+colorID: 5
+position: 1802,1485
+---
+Empty Text
+===
+title: NilbogGabbinSolution15
+tags: 
+colorID: 5
+position: 1798,1719
+---
+Empty Text
+===
+title: NilbogGabbinSolution14
+tags: 
+colorID: 5
+position: 1810,1245
+---
+Empty Text
 ===
