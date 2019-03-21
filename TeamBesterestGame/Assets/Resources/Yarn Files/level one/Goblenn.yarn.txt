@@ -5,7 +5,7 @@ position: -606,-60
 ---
 <<ChangeSpeaker SoundManager Goblenn>>
 H-huh?
-Oh, yeah. I-I'm Goblenn...
+Oh, yeah. I-I'm Glenn...
 I'm the... front-line fighter around here.
 [[Front-line fighter? That is quite brave.|Coward11]]
 [[You must see a lot of combat then.|Coward12]]

@@ -7,7 +7,7 @@ position: 3878,-404
 
 *Grumble grumble* 'Ey, I'm Geoff...
 ...and I'm real mad right now! Some bonehead stole my scone and ate it! What kinda jerk does that?!
-[[Why was this scone so important to you?|Geoff11]]
+[[Don't you think that's a kind of ridiculous thing to be mad about?|Geoff11]]
 [[Who do you think did it?|Geoff12]]
 [[A shame, I bet it was a tasty scone too.|Geoff13]]
 
@@ -29,12 +29,12 @@ position: 4451,-791
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
 I was looking forward to eating it *all* day, and now it's gone!
-Jeff is gonna pay for that!!
+Gorgo is gonna pay for that!!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -47,7 +47,7 @@ tags:
 colorID: 0
 position: 4369,-384
 ---
-It was Jeff! It *has* to be!
+It was Gorgo! It *has* to be!
 Someone needs to get him taken care of!
 [[Nothing a little fisticuffs can't fix.|Geoff121]]
 [[Do you want me to talk to Jeff for you?|Geoff122]]
@@ -61,7 +61,7 @@ position: 4996,-800
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
@@ -76,7 +76,7 @@ tags:
 colorID: 0
 position: 4929,-430
 ---
-Long as Jeff gets what's coming to 'em, I don't care what you do!
+Long as Gorgo gets what's coming to 'em, I don't care what you do!
 
 [[Why do you hate Jeff so much?|Geoff1221]]
 ===
@@ -86,17 +86,17 @@ colorID: 0
 position: 5673,-348
 ---
 <<ChangeSpeaker SoundManager Geoff>>
-Why shouldn't I? Jeff is a dirty, no-good, scone-eating jerk!
+Why shouldn't I? Gorgo is a dirty, no-good, scone-eating jerk!
 
 <<ChangeSpeaker SoundManager Jeff>>
-Gesundheit, ya fool!
+Gesundheit!
 
 <<ChangeSpeaker SoundManager Geoff>>
 He needs to be stopped!
 
 [[Just make sure this is dealt with before the heroes arrive, ok?|Geoff12211]]
 [[Would you have prefered him at least asking first?|Geoff12212]]
-[[I will see what I can do about Jeff.|Geoff12213]]
+[[I will see what I can do about Gorgo.|Geoff12213]]
 ===
 title: Geoff12211
 tags: 
@@ -106,7 +106,7 @@ position: 6089,-137
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
@@ -133,12 +133,12 @@ And he knows scones are my favorite snack...
 title: Geoff12213
 tags: 
 colorID: 0
-position: 5959,260
+position: 5959,262
 ---
 Fine! ...But if you don't do anything about it, I will!
 
-[[What would you suggest, then?|Geoff122131]]
-[[Yea, yea.|Geoff122132]]
+[[If I can get an apology out of him, will you work with him again?|Geoff122131]]
+[[Yea, sure, whatever.|Geoff122132]]
 ===
 title: Geoff123
 tags: 
@@ -158,7 +158,7 @@ position: 4389,-54
 What was that, punk? 
 I don't settle for less than the best!
 
-[[Want me to talk to Jeff for you?|Geoff122]]
+[[Want me to talk to Gorgo for you?|Geoff122]]
 [[What do you plan on doing about it?|Geoff123]]
 
 ===
@@ -236,7 +236,7 @@ position: 6651,123
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
@@ -255,7 +255,7 @@ position: 6655,-164
 <<set $apologize2 to true>>
 
 <<if $geoffApologyReadyNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
 <<set $geoffApologyReadyNote to true>>
 <<endif>>
 
@@ -285,6 +285,7 @@ Yea, what's the deal, Boss?
 
 <<else>>
 [[Gorgo. Jeff. There anything you two want to say to each other?|GorgoGeoffSolution13]]
+<<endif>>
 ===
 title: Jeff113
 tags: 
@@ -710,7 +711,7 @@ Just like this conversation, pal. I think we're done.
 title: Geoff14
 tags: 
 colorID: 0
-position: 4220,2243
+position: 4220,2245
 ---
 Wait, what?
 
@@ -750,7 +751,7 @@ position: 5128,1627
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
@@ -781,7 +782,7 @@ position: 6321,1049
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
@@ -802,7 +803,7 @@ position: 6317,536
 <<set $talkedToGeoff to true>>
 
 <<if $geoffApologyReadyNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
 <<set $geoffApologyReadyNote to true>>
 <<endif>>
 
@@ -866,11 +867,11 @@ position: 4627,3509
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
-If you don't do anything about Geoff, I will! I don't need him!
+If you don't do anything about Gorgo, I will! I don't need him!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -900,12 +901,12 @@ position: 5019,3312
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
 <<ChangeSpeaker SoundManager Voiceless>>
-[Jeff and Geoff continue to bicker back and forth at each other.]
+[Gorgo and Geoff continue to bicker back and forth at each other.]
 [It occurs to you apathy may not have been the most helpful contribution.]
 [You don't think this is going to end well.]
 
@@ -919,7 +920,7 @@ colorID: 0
 position: 4772,2264
 ---
 He's the worst, right?
-Only one more useless around here is that Goblenn.
+Only one more useless around here is that Glenn.
 
 <<ChangeSpeaker SoundManager Goblenn>>
 ...thanks, pal.
@@ -938,7 +939,7 @@ position: 5416,2672
 ---
 Huh?? ...what does *that* mean?
 
-[[Jeff isn't the only problem here.|Geoff14221]]
+[[Gorgo isn't the only problem here.|Geoff14221]]
 [[You two need to work together. As in both of you.|Geoff14222]]
 ===
 title: Geoff14221
@@ -959,7 +960,7 @@ position: 6087,2468
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
@@ -1013,7 +1014,7 @@ position: 6122,3100
 <<set $apologize2 to true>>
 
 <<if $geoffApologyReadyNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone,_but_if_he_gets_an_apology,_I_might_be_able_to_get_this_to_work.>>
 <<set $geoffApologyReadyNote to true>>
 <<endif>>
 
@@ -1033,7 +1034,7 @@ position: 6127,3415
 <<set $talkedToGeoff to true>>
 
 <<if $geoffEscalatedNote is false>>
-<<RevealText Geoff Geoff_hates_Jeff_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
+<<RevealText Geoff Geoff_hates_Gorgo_for_stealing_his_scone._I_think_I_accidentally_escalated_the_situation.>>
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
@@ -1184,7 +1185,7 @@ What happens? What happens next?
 [[...Gorbo actually likes Jeff!|Gorgo211121112]]
 [[...Gorbo just really hated Jeff. So much that he exploded.|Gorgo211121113]]
 
-<<if talkedToNilbog2 is true>>
+<<if $talkedToNilbog2 is true>>
 [[...Gorbo was actually three goblins stacked on top of each other in a trench-coat all along!|Gorgo211121114]]
 <<endif>>
 ===
@@ -1280,7 +1281,7 @@ I-it's not like I like "Jeff" or anything... but how do you know it'll even work
 
 [[Well that's kind of your fault, don't you think?|Gorgo21112111211]]
 
-<<if geoffRomanceReady is true>>
+<<if $geoffRomanceReady is true>>
 [[Just trust me on this. It'll work out.|Gorgo21112111212]]
 <<else>>
 [[Only one way to find out. I'll see what I can do.|Gorgo21112111213]]
@@ -1925,7 +1926,7 @@ Ya? What happened?
 [[...he was actually a human in disguise!|Geoff211112]]
 [[...Gorbo was actually madly in love with Jeff!|Geoff211113]]
 
-<<if talkedToGlenn2 is true>>
+<<if $talkedToGlenn2 is true>>
 [[...He was actually a coward because he had no friends.|Geoff211114]]
 <<endif>>
 ===
@@ -1949,7 +1950,7 @@ position: 5194,4452
 <<set $badAnalogy2Note to true>>
 <<endif>>
 
-<<set talkedToGeoff2 to true>>
+<<set $talkedToGeoff2 to true>>
 
 ....uh, ok then.
 
@@ -2002,7 +2003,7 @@ position: 5777,4906
 <<set $badAnalogy2Note to true>>
 <<endif>>
 
-<<set talkedToGeoff2 to true>>
+<<set $talkedToGeoff2 to true>>
 
 Geesh, you act like I missed something obvious! You're being weird!
 Try cooling it next time you tell a story!

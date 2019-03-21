@@ -36,4 +36,9 @@ public class MainMenu : MonoBehaviour {
         load.SetActive(false);
         delete.SetActive(false);
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }
