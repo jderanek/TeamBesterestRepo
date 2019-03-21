@@ -272,7 +272,7 @@ tags:
 colorID: 2
 position: 2686,3425
 ---
-<<if $talkedToGeoff2 is true and $talkedToGorgo2 is false>>
+<<if $talkedToGeoff2 is false and $talkedToGorgo2 is false>>
 
 <<ChangeSpeaker SoundManager Jeff>>
 Well? What's it gonna be?
