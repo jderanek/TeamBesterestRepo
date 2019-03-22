@@ -21,10 +21,10 @@ position: 3878,-404
 [[Hold up a moment. Is there something going on between you and Gorgo?|Geoff3]]
 <<endif>>
 ===
-title: Geoff11
+title: Geoff111
 tags: 
 colorID: 1
-position: 4451,-791
+position: 4587,-1256
 ---
 <<set $talkedToGeoff to true>>
 
@@ -45,7 +45,7 @@ Gorgo is gonna pay for that!!
 title: Geoff12
 tags: 
 colorID: 0
-position: 4369,-384
+position: 4391,-293
 ---
 It was Gorgo! It *has* to be!
 Someone needs to get him taken care of!
@@ -56,7 +56,7 @@ Someone needs to get him taken care of!
 title: Geoff121
 tags: 
 colorID: 1
-position: 4996,-800
+position: 4817,-727
 ---
 <<set $talkedToGeoff to true>>
 
@@ -74,7 +74,7 @@ Ha! Finally, *someone* that understands! I'll cave his head in!
 title: Geoff122
 tags: 
 colorID: 0
-position: 4929,-430
+position: 5052,-321
 ---
 Long as Gorgo gets what's coming to 'em, I don't care what you do!
 
@@ -120,25 +120,25 @@ I'll show him, just watch me! He won't stand a chance!
 title: Geoff12212
 tags: 
 colorID: 0
-position: 6093,-431
+position: 6080,-436
 ---
 I would probably still say no...
 But he is just a thief!
 And he knows scones are my favorite snack...
 
 [[I'll see if I can get him to apologize.|Geoff122131]]
-[[That's still no excuse to attack him on the job.|Geoff122132]]
+[[Attacking him for taking food is fairly petty if you ask me.|Geoff122122]]
 
 ===
 title: Geoff12213
 tags: 
 colorID: 0
-position: 5959,262
+position: 5978,238
 ---
 Fine! ...But if you don't do anything about it, I will!
 
 [[If I can get an apology out of him, will you work with him again?|Geoff122131]]
-[[Yea, sure, whatever.|Geoff122132]]
+[[We all saw how that worked out last time.|Geoff122132]]
 ===
 title: Geoff123
 tags: 
@@ -231,7 +231,7 @@ Haha! He was so mad when he found out it was gone.
 title: Geoff122132
 tags: 
 colorID: 1
-position: 6651,123
+position: 6636,230
 ---
 <<set $talkedToGeoff to true>>
 
@@ -240,7 +240,8 @@ position: 6651,123
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
-...
+What was that?! I'll show you whose the stronger goblin around here!
+Soon as these "interviews" are over, Gorgo's toast!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -270,7 +271,7 @@ But *not* until then!
 title: JeffGeoffSolution1
 tags: 
 colorID: 2
-position: 2686,3425
+position: 2686,3426
 ---
 <<if $talkedToGeoff2 is false and $talkedToGorgo2 is false>>
 
@@ -281,10 +282,10 @@ Well? What's it gonna be?
 Yea, what's the deal, Boss?
 
 [[Geoff, you need to get over yourself. It wasn't that big of a deal.|JeffGeoffSolution11]]
-[[Jeff, apologize to Geoff already so we can get things working again.|JeffGeoffSolution12]]
+[[Gorgo, apologize to Geoff already so we can get things working again.|JeffGeoffSolution12]]
 
 <<else>>
-[[Gorgo. Jeff. There anything you two want to say to each other?|GorgoGeoffSolution13]]
+[[Geoff. Gorgo. There anything you two want to say to each other?|GorgoGeoffSolution13]]
 <<endif>>
 ===
 title: Jeff113
@@ -329,8 +330,8 @@ Haha!
 Settle down already, we gotta go get ready for those heroes.
 
 <<ChangeSpeaker SoundManager Voiceless>>
-As the two leave, you see Geoff staring daggers at you and Jeff.
-You're sure this isn't going to end well.
+[As the two leave, you see Geoff staring daggers at you and Jeff.]
+[You're sure this isn't going to end well.]
 
 //Default Case for combat
 //0 points
@@ -384,8 +385,8 @@ You want to say that to my face, tough guy?!
 It'll go just as well as it did last time. Try it! I dare you!
 
 <<ChangeSpeaker SoundManager Voiceless>>
-The two continue to bicker back and forth at each other until they leave.
-You're sure this isn't going to end well.
+[The two continue to bicker back and forth at each other until they leave.]
+[You're sure this isn't going to end well.]
 
 //Default Case
 //0 points
@@ -403,8 +404,8 @@ You wanna say that to my face, tough guy?!
 It'll go just as well as it did last time. Try it! I dare you!
 
 <<ChangeSpeaker SoundManager Voiceless>>
-The two continue to bicker back and forth at each other until they leave.
-You're sure this isn't going to end well.
+[The two continue to bicker back and forth at each other until they leave.]
+[You're sure this isn't going to end well.]
 
 //Default Case
 //0 points
@@ -734,19 +735,17 @@ We have to do something about him!
 title: Geoff141
 tags: 
 colorID: 0
-position: 4814,1239
+position: 4639,1530
 ---
-He admits it then, huh?!
-I'll clobber him!
+Wait... what?
+Really?!
 
-[[Can't you accept his apology and move on?|Geoff1411]]
-[[Wait, why would you do that?|Geoff1412]]
-[[Your first response to an apology is to attack him? How nice.|Geoff1413]]
+[[Really.|Geoff1411]]
 ===
-title: Geoff1413
+title: Geoff14113
 tags: 
 colorID: 1
-position: 5128,1627
+position: 5393,1183
 ---
 <<set $talkedToGeoff to true>>
 
@@ -755,7 +754,8 @@ position: 5128,1627
 <<set $geoffEscalatedNote to true>>
 <<endif>>
 
-I've fought Jeff for less! He's gonna get it this time!
+Wait, you're right! He's probably just trying to jump me when my guards down!
+Thanks for the heads up, he won't see me coming!
 
 <<EndInterview Geoff>>
 //Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
@@ -764,20 +764,19 @@ I've fought Jeff for less! He's gonna get it this time!
 title: Geoff1411
 tags: 
 colorID: 0
-position: 5190,685
+position: 5073,959
 ---
-How do I know he even means it?!
-This wouldn't be the first time things like this have happened!
+...Do you think he actually means it? Gorgo can be really mean sometimes!
 
-[[Because you need to trust people if you really want things to improve.|Geoff14111]]
-[[How do you know he doesn't?|Geoff14112]]
-[[If it keeps happening, you need to stand up for yourself!|Geoff14113]]
+[[Yes, he gave me his word.|Geoff14111]]
+[[Why wouldn't he? He has nothing to gain by lying now.|Geoff14112]]
+[[I don't know if I'd trust him. Gorgo seems pretty shady.|Geoff14113]]
 
 ===
-title: Geoff14113
+title: Geoff1412323
 tags: 
 colorID: 1
-position: 6321,1049
+position: 6531,1482
 ---
 <<set $talkedToGeoff to true>>
 
@@ -797,7 +796,7 @@ I don't need his help!
 title: Geoff14111
 tags: 
 colorID: 1
-position: 6317,536
+position: 6419,571
 ---
 <<set $apologize2 to true>>
 <<set $talkedToGeoff to true>>
@@ -807,9 +806,8 @@ position: 6317,536
 <<set $geoffApologyReadyNote to true>>
 <<endif>>
 
-*grumble grumble*
 Fine. If you're *sure* this is going to work!
-I don't have to like it, though!
+I'll keep my guard up, just in case...
 
 <<EndInterview Geoff>>
 
@@ -819,7 +817,7 @@ I don't have to like it, though!
 title: Geoff14112
 tags: 
 colorID: 0
-position: 6320,806
+position: 6415,898
 ---
 I--
 He--
@@ -828,28 +826,6 @@ I guess you might have a small point.
 
 [[Well?|Geoff14111]]
 ===
-title: Geoff1412
-tags: 
-colorID: 0
-position: 5178,1237
----
-He just admitted to eating my scone! Why shouldn't I?!
-
-[[Because he said he's ready to apologize!|Geoff14112]]
-[[Violence never solved anything.|Geoff14122]]
-[[...why *should* you?|Geoff14123]]
-===
-title: Geoff14123
-tags: 
-colorID: 0
-position: 5545,1419
----
-...uh...
-I asked first! ...and he ate my scone!
-[[Look, if he apologizes, you both can move past this.|Geoff14111]]
-[[Accept his apology or you can accept defeat by the heroes!|Geoff141232]]
-[[It's that or fight him, and seeing how that usually goes...|Geoff14113]]
-===
 title: Geoff141232
 tags: 
 colorID: 0
@@ -857,7 +833,7 @@ position: 5949,1473
 ---
 You don't know it'll end up like that!
 [[I'm a time wizard. Of course I do!|Geoff14112]]
-[[You want to tempt fate? Try it.|Geoff14113]]
+[[You want to tempt fate? Try it.|Geoff1412323]]
 ===
 title: Geoff144
 tags: 
@@ -2108,4 +2084,28 @@ You mongrel! I'll clobber you!!
 
 <<endif>>
 <<DisableFollowup Jeff shift2>>
+===
+title: Geoff11
+tags: 
+colorID: 0
+position: 4385,-638
+---
+No! How would *you* feel if someone raided the dungeon fridge while *you* weren't looking?!
+I *know* Gorgo did it, I just need something to be done about it!
+[[Still sounds petty to me.|Geoff111]]
+[[What did you plan on doing before I got here?|Geoff123]]
+[[If you're going to try to fight him again, I wouldn't recommend it.|Geoff1221]]
+[[Why don't you just try knocking him out? Can't eat if he's unconscious.|Geoff121]]
+===
+title: Geoff122122
+tags: 
+colorID: 0
+position: 6511,-603
+---
+If he gets away with it, he'll just keep doing it again and again!!
+Are you going to help me or not?!
+
+[[Guess again, chump!|Geoff1221221]]
+[[Fine, fine. I'll go see if I can get an apology out of him.|Geoff122131]]
+[[Just knock him out, then. Easy-peasy.|Geoff121]]
 ===
