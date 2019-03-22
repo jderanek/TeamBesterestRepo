@@ -398,14 +398,15 @@ position: 1331,1140
 <<ChangeSpeaker SoundManager Gabbin>>
 So, what's the plan?
 
+
 [[Nilbog, you need to come out of your shell and work with Gabbin to make this work.|NilbogGabbinSolution11]]
 [[Gabbin, you need to leave Nilbog alone during work.|NilbogGabbinSolution12]]
 [[Can't the two of you just be friends and work together?|NilbogGabbinSolution13]]
 
 <<if talkedtoNilbog2 and talkedtoGabbin2 is true>>
-[[|NilbogGabbinSolution14]]
-[[|NilbogGabbinSolution15]]
-[[|NilbogGabbinSolution16]]
+[[Gabbin, do you remember that cool new tactic I told you Nilbog worked on?|NilbogGabbinSolution14]]
+[[Nilbog and Gabbin, I want you both to run a thorough check-up on your uniforms. Especially you Nilbog, there seems to be some "flaws" I can point out right now.|NilbogGabbinSolution15]]
+[[Nilbog, I think it is time to tell Gabbin your secret. Go ahead. |NilbogGabbinSolution16]]
 ===
 title: NilbogGabbinSolution11
 tags: 
@@ -1509,6 +1510,7 @@ Gotcha... we will... I will make sure to relay that to any children I see runnin
 
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
+<<set $nilbogScared to true>>
 
 <<if $nilbogScaredNote is false>>
 <<RevealText Nilbog I_have_scared_Nilbog_and_crew_into_making_sure_their_disguise_can't_come_apart,_hopefully_this_will_stop_Gabbin_from_seeing_them.>>
@@ -1526,6 +1528,7 @@ Okay, we'll get right on that!
 
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
+<<set $nilbogScared to true>>
 
 <<if $nilbogScaredNote is false>>
 <<RevealText Nilbog I_have_scared_Nilbog_and_crew_into_making_sure_their_disguise_can't_come_apart,_hopefully_this_will_stop_Gabbin_from_seeing_them.>>
@@ -1651,19 +1654,132 @@ tags:
 colorID: 5
 position: 1802,1485
 ---
-Empty Text
+//IF Nilbog flagged Scared
+<<if $respectful and $patient is true>>
+<<set $shift13Combat to 5>>
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Right away Mr. Time Wizard! Of course we should make sure our uniforms are in order, or else the heroes wont respect our dungeon enough!
+
+<<ChangeSpeaker SoundManager Nilbog>>
+...
+...I'll do one more run through of our... *my* trenchcoat. Can't have any holes in this when the heroes hit me.
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[The two goblins begin to look all around their clothes for any signs of wear and tear.]
+[They both appear to be finding small knicks and holes in their clothes.]
+[Nilbog and crew seem to be satisfied with their trenchcoat.]
+[Hopefully now if the happen to fall, atleast Gabbin wont seem all of them.]
+
+//Ends conversation
+//4 points
+//------------------------
+
+<<else>>
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Right away Mr. Time Wizard! Of course we should make sure our uniforms are in or--
+
+<<ChangeSpeaker SoundManager Nilbog>>
+...stop. You're giving me a headache.
+I'm not going to deal with this...
+
+//ends conversation
+//Combat fails, default case
+//0 points
+
+<<endif>>
+<<DisableFollowup Nilbog shift3>>
 ===
 title: NilbogGabbinSolution15
 tags: 
 colorID: 5
 position: 1798,1719
 ---
-Empty Text
+//IF Gabbin flagged Ready AND Nilbog flagged Hope
+<<if $respectful and $patient is true>>
+<<set $shift13Combat to 6>>
+
+<<ChangeSpeaker SoundManager Nilbog>>
+Gabbin, there is something I... *we* need to tell you. The Nilbog you know, is actually us three kids in a big trenchcoat...
+
+<<ChangeSpeaker SoundManager Gabbin>>
+But... but... children shouldn't be here! Dungeons aren't the place for young ones!
+
+<<ChangeSpeaker SoundManager Nilbog>>
+You are right, but we aren't just any children. You wanted to become friends and close to the goblin "Nilbog".
+So why not become friends with the three goblins that make up "Nilbog"?
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Well... I still don't like the idea of kids fighting heroes in a dungeon...
+But if you guys are going to be here anyways, I should atleast try my best to help you out.
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[The group of 4 goblins appear to continue talking, all 3 children formally introducing themselves to Gabbin.]
+[Gabbin seems to not be too fazed by his new coworkers. Seems like everything will work out for the better.]
+
+//Ends conversation
+//4 points
+//------------------------
+
+<<else>>
+
+<<ChangeSpeaker SoundManager Nilbog>>
+Actually... on second though... this might not be the time to tell you Gabbin.
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Why not? No one's told me anything yet... I don't like being left out of these secrets!
+
+<<ChangeSpeaker SoundManager Nilbog>>
+We... *I* knew this wasn't the right choice...
+
+//ends conversation
+//Combat fails, default case
+//0 points
+
+<<endif>>
+<<DisableFollowup Nilbog shift3>>
 ===
 title: NilbogGabbinSolution14
 tags: 
 colorID: 5
 position: 1810,1245
 ---
-Empty Text
+//IF Gabbin flagged Convinced AND Nilbog flagged Excuse
+<<if $respectful and $patient is true>>
+<<set $shift13Combat to 4>>
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Why of course I do sir! It seemed super awesome! Can't to see it in action!
+
+<<ChangeSpeaker SoundManager Nilbog>>
+Well.. uh... just you wait Gabbin... it is going to blow you away. Both of us have never seen anything like it...
+If you dont mind, we... sorry, *I* must get back to practicing it, or else it may not be perfect.
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Dont worry Nilbog! I'm sure it is going to wow me anyways! Perfect or not!
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Nilbog begins shaking in his trenchcoat, the boys seem to be getting ready for their next *trick*.]
+[Gabbin seems to not be too fazed by the weird movements.]
+
+//Ends conversation
+//4 points
+//------------------------
+
+<<else>>
+
+<<ChangeSpeaker SoundManager Gabbin>>
+Actually I dont sir... I dont believe you ever told me about this technique.
+
+<<ChangeSpeaker SoundManager Nilbog>>
+...stop. We never... *I* never said anything about that Gabbin. Just ignore him. 
+We should be getting ready for our next shift anyways.
+
+//ends conversation
+//Combat fails, default case
+//0 points
+
+<<endif>>
+<<DisableFollowup Nilbog shift3>>
 ===
