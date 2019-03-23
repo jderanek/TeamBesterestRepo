@@ -403,10 +403,11 @@ So, what's the plan?
 [[Gabbin, you need to leave Nilbog alone during work.|NilbogGabbinSolution12]]
 [[Can't the two of you just be friends and work together?|NilbogGabbinSolution13]]
 
-<<if talkedtoNilbog2 and talkedtoGabbin2 is true>>
+<<if $talkedtoNilbog2 and $talkedtoGabbin2 is true>>
 [[Gabbin, do you remember that cool new tactic I told you Nilbog worked on?|NilbogGabbinSolution14]]
 [[Nilbog and Gabbin, I want you both to run a thorough check-up on your uniforms. Especially you Nilbog, there seems to be some "flaws" I can point out right now.|NilbogGabbinSolution15]]
 [[Nilbog, I think it is time to tell Gabbin your secret. Go ahead. |NilbogGabbinSolution16]]
+<<endif>>
 ===
 title: NilbogGabbinSolution11
 tags: 
@@ -1182,7 +1183,7 @@ Yeah good thing too, because I would do anything to make sure sweet innocent chi
 [[What if I were to rewind time of... o' I dont know... Nilbog. Turn into a tiny goblin child, and cloned him as well, what would you do?|Gabbin212]]
 [[What makes you so protectful of children?|Gabbin213]]
 
-<< $nilbogCloneExcuse is true>>
+<<if $nilbogCloneExcuse is true>>
 [[Hey just letting you know, just a warning, Nilbog has shown me this new sweet technique! Want to hear about it?|Gabbin211]]
 <<endif>>
 ===
@@ -1574,7 +1575,6 @@ Okay... here you go... you can have one of our... my spares.
 
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
-<<set $nilbogTrenchCoat>>
 
 <<if $nilbogTrenchCoatNote is false>>
 <<RevealText Nilbog I_have_acquired_a_cool_new_trench_coat.>>

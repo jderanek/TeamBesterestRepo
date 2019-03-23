@@ -6628,7 +6628,7 @@ MonoBehaviour:
   - name: gabbinDisguiseNote
     value: false
     type: 2
-  - name: gabbinKnowsTruth
+  - name: gabbinReadyForTruth
     value: false
     type: 2
   - name: gabbinScaryNote
@@ -6638,6 +6638,24 @@ MonoBehaviour:
     value: false
     type: 2
   - name: gabbinCloneNote
+    value: false
+    type: 2
+  - name: GabbinStart2
+    value: false
+    type: 2
+  - name: NilbogStart2
+    value: false
+    type: 2
+  - name: talkedToNilbog2
+    value: false
+    type: 2
+  - name: talkedToGabbin2
+    value: false
+    type: 2
+  - name: nilbogTrenchCoat
+    value: false
+    type: 2
+  - name: nilbogScared
     value: false
     type: 2
   debugTextView: {fileID: 0}
