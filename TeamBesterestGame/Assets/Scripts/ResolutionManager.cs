@@ -23,7 +23,7 @@ public class ResolutionManager : MonoBehaviour {
 
             resolutionDropdown.value = i;
 
-            resolutionDropdown.onValueChanged.AddListener(delegate { Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, true); });
+            resolutionDropdown.onValueChanged.AddListener(delegate { Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen); });
 
         }
     }

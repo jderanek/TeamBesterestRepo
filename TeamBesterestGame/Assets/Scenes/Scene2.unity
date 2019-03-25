@@ -12133,6 +12133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1031783965}
   - component: {fileID: 1031783964}
+  - component: {fileID: 1031783967}
   - component: {fileID: 1031783966}
   - component: {fileID: 1031783968}
   - component: {fileID: 1031783970}
@@ -12232,6 +12233,18 @@ MonoBehaviour:
   q2Text: {fileID: 1060937998}
   q3Text: {fileID: 516112911}
   responseText: {fileID: 288586099}
+--- !u!114 &1031783967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031783963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f237190b868da48926c84d98182177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 873572804}
 --- !u!114 &1031783968
 MonoBehaviour:
   m_ObjectHideFlags: 0
