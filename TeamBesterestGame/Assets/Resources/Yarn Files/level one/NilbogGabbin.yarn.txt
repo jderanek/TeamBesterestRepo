@@ -303,7 +303,6 @@ Only thing on my mind is getting Nilbog to cheer up!
 Being dead is a little inconvenient. But that's not unusual around here!
 [[What's up with Nilbog?|Gabbin1111]]
 [[Shouldn't you be focusing on what went wrong when the heroes arrived?|Gabbin132]]
-[[...Failure is the usual around here?|Gabbin133]]
 ===
 title: Gabbin132
 tags: 
@@ -596,8 +595,7 @@ colorID: 0
 position: -1119,-500
 ---
 <<ChangeSpeaker SoundManager Nilbog>>
-...Just because I'm not talking to you, doesn't mean I'm stupid.
-...I just prefer some isolation.
+...Just because I'm not responding doesn't mean Im not listening.
 
 [[Is this why there's been trouble at work?|Nilbog121]]
 [[Guess I'll just leave you alone then.|Nilbog122]]
