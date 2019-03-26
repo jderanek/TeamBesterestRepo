@@ -49,7 +49,7 @@ position: 1066,264
 ---
 <<if $shift13Combat is 0>>
 Gabbin runs around trying to find Nilbog, and is taken down by the heroes.
-<<ChangeStatus Gabbin_Gabbin_runs_around_trying_to_find_Nilbog,_and_is_taken_down_by_the_heroes.>>
+<<ChangeStatus Gabbin Gabbin_runs_around_trying_to_find_Nilbog,_and_is_taken_down_by_the_heroes.>>
 //Gabbin fades to black/white.
 Nilbog, hiding from Gabbin, is found and overwhelmed by the heroes.
 <<ChangeStatus Nilbog Nilbog,_hiding_from_Gabbin,_is_found_and_overwhelmed_by_the_heroes.>>
@@ -79,4 +79,5 @@ All the heroes are swiftly defeated.
 //4 points
 
 <<endif>>
+<<CombatOff Nilbog>>
 ===

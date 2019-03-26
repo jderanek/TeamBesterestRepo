@@ -423,6 +423,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    [YarnCommand("CombatOff")]
+    public void CombatOff()
+    {
+        this.combatCanvas.SetActive(false);
+    }
+
     public void ToggleNotebook()
     {
         notebook.SetActive(!notebook.activeInHierarchy);
