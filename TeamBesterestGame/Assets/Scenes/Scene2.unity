@@ -167,7 +167,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db50e6a4da092ae4f9a2799d7c8688a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 98879c2352c744d4b8360ff8498600d7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2325,7 +2325,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Glenn
+  m_Text: Gordon
 --- !u!222 &140566707
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7327,7 +7327,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Glenn
+  m_Text: Geoff
 --- !u!222 &617863839
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8219,7 +8219,7 @@ GameObject:
   - component: {fileID: 685864762}
   - component: {fileID: 685864761}
   m_Layer: 0
-  m_Name: GoblennPortrait (4)
+  m_Name: GabbinPortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9062,7 +9062,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db50e6a4da092ae4f9a2799d7c8688a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 96977c3d52f7d2f4e9be6108bb1756b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9337,7 +9337,7 @@ GameObject:
   - component: {fileID: 761308858}
   - component: {fileID: 761308857}
   m_Layer: 0
-  m_Name: GoblennPortrait (5)
+  m_Name: NilbogPortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11432,7 +11432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Glenn
+  m_Text: Nilbog
 --- !u!222 &871187300
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15867,7 +15867,7 @@ GameObject:
   - component: {fileID: 1229956863}
   - component: {fileID: 1229956862}
   m_Layer: 0
-  m_Name: GoblennPortrait (3)
+  m_Name: GeoffPortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18572,7 +18572,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db50e6a4da092ae4f9a2799d7c8688a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3e439c4d287e144fa90eb3ee8323656, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19311,7 +19311,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db50e6a4da092ae4f9a2799d7c8688a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: acd8f04f8ae85f64a9a51629f406a5ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21558,7 +21558,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: db50e6a4da092ae4f9a2799d7c8688a1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2579755c73ff0894ba988853679b0178, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22046,7 +22046,7 @@ GameObject:
   - component: {fileID: 1868994104}
   - component: {fileID: 1868994103}
   m_Layer: 0
-  m_Name: GoblennPortrait (2)
+  m_Name: GorgoPortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22807,7 +22807,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Glenn
+  m_Text: Gorgo
 --- !u!222 &1936884342
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22881,7 +22881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Glenn
+  m_Text: Gabbin
 --- !u!222 &1951338036
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23328,7 +23328,7 @@ GameObject:
   - component: {fileID: 2006088611}
   - component: {fileID: 2006088610}
   m_Layer: 0
-  m_Name: GoblennPortrait (1)
+  m_Name: GordonPortrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
