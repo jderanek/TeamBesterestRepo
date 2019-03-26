@@ -193,7 +193,7 @@ public abstract class BaseMonster : BaseEntity {
     [YarnCommand("ChangeStatus")]
     public void ChangeStatus(string status)
     {
-        this.statusText.text = status;
+        this.statusText.text = Scissors.UnderScoresToSentence(status);
     }
 
     /*[YarnCommand("ChangeShift")]
