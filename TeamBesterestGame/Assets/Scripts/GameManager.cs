@@ -21,16 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject combatCanvas;
 
     /*
-    public GameObject goblennPortrait;
-    public GameObject geoffPortrait;
-    public GameObject jeffPortrait;
-    public GameObject gabbinPortrait;
-    public GameObject nilbogPortrait;
-    */
-
     public GameObject shiftOnePortraits;
     public GameObject shiftTwoPortraits;
     public GameObject shiftThreePortraits;
+    */
 
     public GameObject combatManager;
 
@@ -127,7 +121,7 @@ public class GameManager : MonoBehaviour
                 phase = "Combat";
                 Invoke("StartPhase", 1.5f);
                 this.shift = 3;
-                ChangeShift();
+                //ChangeShift();
                 canSkip = true;
 
                 foreach (GameObject monster in monsterList)
@@ -165,7 +159,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [YarnCommand("ChangeShift")]
+    /*[YarnCommand("ChangeShift")] commenting out for now in case we revert back from wanted poster style
     public void ChangeShift()
     {
         if (this.shift < 3)
@@ -194,7 +188,7 @@ public class GameManager : MonoBehaviour
             shift = 1;
             this.interviewing = false;
         }
-    }
+    }*/
 
     public void SetGoblinPoints() //set the yarn variables according to each goblin's int point values
     {

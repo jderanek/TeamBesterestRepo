@@ -414,6 +414,7 @@ MonoBehaviour:
   followUpButton: {fileID: 378638433}
   notes: {fileID: 1975713363}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  statusText: {fileID: 832141945}
 --- !u!212 &14465736
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2524,6 +2525,7 @@ MonoBehaviour:
   followUpButton: {fileID: 0}
   notes: {fileID: 0}
   newNote: {fileID: 0}
+  statusText: {fileID: 0}
 --- !u!212 &186385155
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11936,6 +11938,7 @@ MonoBehaviour:
   followUpButton: {fileID: 80144917}
   notes: {fileID: 14202393}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  statusText: {fileID: 928304131}
 --- !u!212 &906177786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12262,6 +12265,7 @@ MonoBehaviour:
   followUpButton: {fileID: 992615139}
   notes: {fileID: 1877343969}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  statusText: {fileID: 59104156}
 --- !u!212 &951470859
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13431,9 +13435,6 @@ MonoBehaviour:
   - {fileID: 906177782}
   interviewing: 0
   combatCanvas: {fileID: 91116740}
-  shiftOnePortraits: {fileID: 0}
-  shiftTwoPortraits: {fileID: 0}
-  shiftThreePortraits: {fileID: 0}
   combatManager: {fileID: 984599859}
   phaseButton: {fileID: 984771302}
   interviewsRemaining: 0
@@ -17530,6 +17531,7 @@ MonoBehaviour:
   followUpButton: {fileID: 330468195}
   notes: {fileID: 2005550718}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  statusText: {fileID: 1089568749}
 --- !u!212 &1335600117
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21756,6 +21758,7 @@ MonoBehaviour:
   followUpButton: {fileID: 1485704802}
   notes: {fileID: 253172324}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
+  statusText: {fileID: 1745927358}
 --- !u!212 &1765382687
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24075,7 +24078,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.023715416}
   m_AnchorMax: {x: 1, y: 0.231}
-  m_AnchoredPosition: {x: 0.17505348, y: -11.812759}
+  m_AnchoredPosition: {x: 0.17505348, y: -11.812744}
   m_SizeDelta: {x: 0.35003662, y: -4}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2038538962

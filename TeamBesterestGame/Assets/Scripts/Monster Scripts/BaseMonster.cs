@@ -36,6 +36,8 @@ public abstract class BaseMonster : BaseEntity {
     public GameObject notes;
     public GameObject newNote;
 
+    public Text statusText;
+
     void Awake() {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         uiManager = gameManager.GetComponent<UIManager>();
@@ -188,11 +190,17 @@ public abstract class BaseMonster : BaseEntity {
         this.gameManager.LoadLevelOne();
     }
 
-    [YarnCommand("ChangeShift")]
+    [YarnCommand("ChangeStatus")]
+    public void ChangeStatus(string status)
+    {
+        this.statusText.text = status;
+    }
+
+    /*[YarnCommand("ChangeShift")]
     public void ChangeShift()
     {
         this.gameManager.ChangeShift();
-    }
+    }*/
 
     //Starts invoking flee movement, then disables it and the monster
     //Prevents disabling until movement finishes

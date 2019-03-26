@@ -6,66 +6,77 @@ position: 426,260
 <<ChangeSpeaker SoundManager Voiceless>>
 <<if $shift11Combat is 0>>
 Goblenn saw heroes enter the dungeon, and instantly fled.
+<<ChangeStatus Goblenn Goblenn_saw_heroes_enter_the_dungeon,_and_instantly_fled.>>
 //0 points
 
 <<elseif $shift11Combat is 1>>
 Goblenn saw heroes enter the dungeon, but they did not see him.
 He sneak attacks the heroes, defeating them!
+<<ChangeStatus Goblenn Goblenn_saw_heroes_enter_the_dungeon,_but_they_did_not_see_him._He_sneak_attacks_the_heroes,_defeating_them!>>
 //4 points
 
 <<endif>>
-<<ChangeShift Gabbin>>
 [[Shift12]]
 ===
 title: Shift12
 tags: 
 colorID: 0
-position: 742,260
+position: 743,260
 ---
 <<if $shift12Combat is 0>>
 Jeff is stabbed by Geoff.
+<<ChangeStatus Jeff Jeff_is_stabbed_by_Geoff.>>
 //Jeff fades to black/white
 Geoff is stabbed by Jeff.
+<<ChangeStatus Geoff Geoff_is_stabbed_by_Jeff.>>
 //Geoff fades to black/white
 //0 points
 
 <<elseif $shift12Combat is 1>>
 Jeff works with Geoff, and clobbers a hero.
+<<ChangeStatus Jeff Jeff_works_with_Geoff,_and_clobbers_a_hero.>>
 Geoff works with Jeff, and defeats a hero.
+<<ChangeStatus Geoff Geoff_works_with_Jeff,_and_defeats_a_hero.>>
 //4 points
 
 <<endif>>
-<<ChangeShift Gabbin>>
 [[Shift13]]
 ===
 title: Shift13
 tags: 
 colorID: 0
-position: 1066,262
+position: 1066,264
 ---
 <<if $shift13Combat is 0>>
 Gabbin runs around trying to find Nilbog, and is taken down by the heroes.
+<<ChangeStatus Gabbin_Gabbin_runs_around_trying_to_find_Nilbog,_and_is_taken_down_by_the_heroes.>>
 //Gabbin fades to black/white.
 Nilbog, hiding from Gabbin, is found and overwhelmed by the heroes.
+<<ChangeStatus Nilbog Nilbog,_hiding_from_Gabbin,_is_found_and_overwhelmed_by_the_heroes.>>
 //Nilbog fades to black/white.
 //0 points
 
 <<elseif $shift13Combat is 1>>
 Gabbin enthusiastically takes down some heroes with the help of Nilbog.
+<<ChangeStatus Gabbin Gabbin_enthusiastically_takes_down_some_heroes_with_the_help_of_Nilbog.>>
 Nilbog begrudgingly helps Gabbin, and takes down a hero.
+<<ChangeStatus Nilbog Nilbog_begrudgingly_helps_Gabbin,_and_takes_down_a_hero.>>
 //2 points
 
 <<elseif $shift13Combat is 2>>
 Gabbin focuses on fighting alone, and takes down some heroes.
+<<ChangeStatus Gabbin Gabbin_focuses_on_fighting_alone,_and_takes_down_some_heroes.>>
 Nilbog fights alone, taking down the other heroes.
+<<ChangeStatus Nilbog Nilbog_fights_alone,_taking_down_the_other_heroes.>>
 //2 points
 
 <<elseif $shift13Combat is 3>>
 Gabbin confidently attacks the heroes alone.
+<<ChangeStatus Gabbin Gabbin_confidently_attacks_the_heroes_alone.>>
 Gabbin isn't alone-- Nilbog attacks from the shadows!
 All the heroes are swiftly defeated.
+<<ChangeStatus Nilbog Nilbog_attacks_from_the_shadows!_All_the_heroes_are_swiftly_defeated.>>
 //4 points
 
 <<endif>>
-<<ChangeShift Gabbin>>
 ===
