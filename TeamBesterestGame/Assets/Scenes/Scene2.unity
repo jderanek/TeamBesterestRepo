@@ -726,6 +726,15 @@ MonoBehaviour:
   - name: goblennNinja
     value: false
     type: 2
+  - name: confidence
+    value: false
+    type: 2
+  - name: glennNoChangeNote
+    value: false
+    type: 2
+  - name: glennConfidenceNote
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &41062056
 MonoBehaviour:
@@ -764,7 +773,7 @@ MonoBehaviour:
   gameManager: {fileID: 1031783963}
   monster: {fileID: 1765382683}
   sourceText:
-  - {fileID: 4900000, guid: a26fbdf1693ccf1498b081c673dcec51, type: 3}
+  - {fileID: 4900000, guid: ad6d5fb07ccfa114494e6f45a16b2042, type: 3}
   stringGroups: []
   shouldOverrideLanguage: 0
   overrideLanguage: 10
@@ -1877,8 +1886,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.0554352, y: -28.308}
-  m_SizeDelta: {x: 0, y: 54.975}
+  m_AnchoredPosition: {x: -1.0554352, y: -0.67407095}
+  m_SizeDelta: {x: 0, y: -0.29285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128489253
 MonoBehaviour:

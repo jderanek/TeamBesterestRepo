@@ -235,8 +235,9 @@ I can dream...
 [[Yeah, that's me, what can I do for you?|Gordon11]]
 [[I saw what happened to you guys, not great..|Gordon12]]
 [[Why would you say that about Glenn?|Gordon13]]
-<< if $confidence ==1>>
+<< if $confidence == 1>>
 [[I actually already talked to Glenn, I think I may have solved your problem.|Gordon14]]
+<<endif>>
 ===
 title: Gordon13
 tags: 
