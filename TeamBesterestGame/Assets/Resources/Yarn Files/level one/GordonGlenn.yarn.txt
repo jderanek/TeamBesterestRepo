@@ -418,3 +418,389 @@ But yeah, good luck
 
 <<EndInterview Gordon>>
 ===
+title: Node38
+tags: 
+colorID: 0
+position: 6933,-1405
+---
+Empty Text
+===
+title: Node39
+tags: 
+colorID: 0
+position: 6955,-1799
+---
+Empty Text
+===
+title: Node40
+tags: 
+colorID: 0
+position: 6919,-2130
+---
+Empty Text
+===
+title: Node41
+tags: 
+colorID: 0
+position: 6926,-2475
+---
+Empty Text
+===
+title: Gordon233
+tags: 
+colorID: 0
+position: 6525,3947
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon232
+tags: 
+colorID: 0
+position: 6525,3631
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon231
+tags: 
+colorID: 0
+position: 6511,3321
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon23
+tags: 
+colorID: 0
+position: 6215,3645
+---
+
+[[|Gordon231]]
+[[|Gordon232]]
+[[|Gordon233]]
+===
+title: Gordon22
+tags: 
+colorID: 0
+position: 6215,2602
+---
+
+[[|Gordon221]]
+[[|Gordon222]]
+[[|Gordon223]]
+===
+title: Gordon223
+tags: 
+colorID: 0
+position: 6517,2933
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon222
+tags: 
+colorID: 0
+position: 6511,2631
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon221
+tags: 
+colorID: 0
+position: 6504,2321
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon213
+tags: 
+colorID: 0
+position: 6539,1891
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon212
+tags: 
+colorID: 0
+position: 6525,1546
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon211
+tags: 
+colorID: 0
+position: 6511,1152
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Gordon21
+tags: 
+colorID: 0
+position: 6243,1546
+---
+
+[[|Gordon211]]
+[[|Gordon212]]
+[[|Gordon213]]
+===
+title: Glenn233
+tags: 
+colorID: 0
+position: 6652,398
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn232
+tags: 
+colorID: 0
+position: 6659,11
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn231
+tags: 
+colorID: 0
+position: 6645,-362
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn223
+tags: 
+colorID: 0
+position: 6631,-708
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn222
+tags: 
+colorID: 0
+position: 6631,-1017
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn221
+tags: 
+colorID: 0
+position: 6595,-1398
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn213
+tags: 
+colorID: 0
+position: 6601,-1800
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn212
+tags: 
+colorID: 0
+position: 6587,-2109
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn211
+tags: 
+colorID: 0
+position: 6587,-2483
+---
+
+[[|]]
+[[|]]
+[[|]]
+===
+title: Glenn23
+tags: 
+colorID: 0
+position: 6286,18
+---
+
+[[|Glenn231]]
+[[|Glenn232]]
+[[|Glenn233]]
+===
+title: Glenn22
+tags: 
+colorID: 0
+position: 6328,-975
+---
+
+[[|Glenn221]]
+[[|Glenn222]]
+[[|Glenn223]]
+===
+title: Glenn21
+tags: 
+colorID: 0
+position: 6306,-2095
+---
+
+[[|Glenn211]]
+[[|Glenn212]]
+[[|Glenn213]]
+===
+title: Gordon2
+tags: 
+colorID: 0
+position: 5673,2525
+---
+
+[[|Gordon21]]
+[[|Gordon22]]
+[[|Gordon23]]
+===
+title: Glenn2
+tags: 
+colorID: 0
+position: 5679,-912
+---
+
+[[|Glenn21]]
+[[|Glenn22]]
+[[|Glenn23]]
+===
+title: Node68
+tags: 
+colorID: 0
+position: 6823,2940
+---
+Empty Text
+===
+title: Node69
+tags: 
+colorID: 0
+position: 6802,2645
+---
+Empty Text
+===
+title: Node70
+tags: 
+colorID: 0
+position: 6830,2335
+---
+Empty Text
+===
+title: Node71
+tags: 
+colorID: 0
+position: 6844,1912
+---
+Empty Text
+===
+title: Node72
+tags: 
+colorID: 0
+position: 6837,1574
+---
+Empty Text
+===
+title: Node73
+tags: 
+colorID: 0
+position: 6851,1173
+---
+Empty Text
+===
+title: Node74
+tags: 
+colorID: 0
+position: 6998,411
+---
+Empty Text
+===
+title: Node75
+tags: 
+colorID: 0
+position: 6985,18
+---
+Empty Text
+===
+title: Node76
+tags: 
+colorID: 0
+position: 6999,-362
+---
+Empty Text
+===
+title: Node77
+tags: 
+colorID: 0
+position: 6964,-708
+---
+Empty Text
+===
+title: Node78
+tags: 
+colorID: 0
+position: 6956,-1046
+---
+Empty Text
+===
+title: Node80
+tags: 
+colorID: 0
+position: 6809,3970
+---
+Empty Text
+===
+title: Node81
+tags: 
+colorID: 0
+position: 6802,3639
+---
+Empty Text
+===
+title: Node82
+tags: 
+colorID: 0
+position: 6837,3336
+---
+Empty Text
+===
