@@ -137,6 +137,9 @@ public class SoundManager : MonoBehaviour
             case "Voiceless":
                 goblinToTalk = 6;
                 break;
+            case "Gordon":
+                goblinToTalk = 7;
+                break;
             default:
                 break;
         }

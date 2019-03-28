@@ -63,11 +63,13 @@ public class GameManager : MonoBehaviour
     public Sprite nilbogSprite;
     public Sprite geoffSprite;
     public Sprite jeffSprite;
+    public Sprite gordonSprite;
     public GameObject goblennInterviewPortrait;
     public GameObject gabbinInterviewPortrait;
     public GameObject nilbogInterviewPortrait;
     public GameObject geoffInterviewPortrait;
     public GameObject jeffInterviewPortrait;
+    public GameObject gordonInterviewPortrait;
     public Clock clock;
 
     private DialogueRunner[] dialogueRunners;
@@ -469,6 +471,7 @@ public class GameManager : MonoBehaviour
                 nilbogInterviewPortrait.SetActive(true);
                 geoffInterviewPortrait.SetActive(true);
                 jeffInterviewPortrait.SetActive(true);
+                gordonInterviewPortrait.gameObject.SetActive(false);
                 currentSpeakerPortrait.gameObject.SetActive(false);
                 responseBubble.SetActive(false);
                 break;
@@ -478,6 +481,7 @@ public class GameManager : MonoBehaviour
                 nilbogInterviewPortrait.SetActive(false);
                 geoffInterviewPortrait.SetActive(false);
                 jeffInterviewPortrait.SetActive(false);
+                gordonInterviewPortrait.gameObject.SetActive(false);
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = goblennSprite;
                 responseBubble.SetActive(true);
@@ -489,6 +493,7 @@ public class GameManager : MonoBehaviour
                 nilbogInterviewPortrait.SetActive(false);
                 geoffInterviewPortrait.SetActive(false);
                 jeffInterviewPortrait.SetActive(false);
+                gordonInterviewPortrait.gameObject.SetActive(false);
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = gabbinSprite;
                 responseBubble.SetActive(true);
@@ -500,6 +505,7 @@ public class GameManager : MonoBehaviour
                 nilbogInterviewPortrait.SetActive(false);
                 geoffInterviewPortrait.SetActive(false);
                 jeffInterviewPortrait.SetActive(false);
+                gordonInterviewPortrait.gameObject.SetActive(false);
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = nilbogSprite;
                 responseBubble.SetActive(true);
@@ -511,6 +517,7 @@ public class GameManager : MonoBehaviour
                 nilbogInterviewPortrait.SetActive(false);
                 geoffInterviewPortrait.SetActive(false);
                 jeffInterviewPortrait.SetActive(false);
+                gordonInterviewPortrait.gameObject.SetActive(false);
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = geoffSprite;
                 responseBubble.SetActive(true);
@@ -522,11 +529,25 @@ public class GameManager : MonoBehaviour
                 nilbogInterviewPortrait.SetActive(false);
                 geoffInterviewPortrait.SetActive(false);
                 jeffInterviewPortrait.SetActive(false);
+                gordonInterviewPortrait.gameObject.SetActive(false);
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = jeffSprite;
                 responseBubble.SetActive(true);
-                nameTag.text = "Jeff";
+                nameTag.text = "Gorgo";
+                break;
+            case 6: //Gordon
+                goblennInterviewPortrait.SetActive(false);
+                gabbinInterviewPortrait.SetActive(false);
+                nilbogInterviewPortrait.SetActive(false);
+                geoffInterviewPortrait.SetActive(false);
+                jeffInterviewPortrait.SetActive(false);
+                gordonInterviewPortrait.gameObject.SetActive(false);
+                currentSpeakerPortrait.gameObject.SetActive(true);
+                currentSpeakerPortrait.sprite = gordonSprite;
+                responseBubble.SetActive(true);
+                nameTag.text = "Gordon";
                 break;
         }
     }
 }
+

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: de6bdb930aa68cc40bb0ffda5f787537
-timeCreated: 1552259490
+timeCreated: 1553787852
 licenseType: Free
 PluginImporter:
   externalObjects: {}
@@ -18,7 +18,7 @@ PluginImporter:
   - first:
       Editor: Editor
     second:
-      enabled: 0
+      enabled: 1
       settings:
         CPU: x86_64
         DefaultValueInitialized: true
