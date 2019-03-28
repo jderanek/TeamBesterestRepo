@@ -471,7 +471,7 @@ public class GameManager : MonoBehaviour
                 nilbogInterviewPortrait.SetActive(true);
                 geoffInterviewPortrait.SetActive(true);
                 jeffInterviewPortrait.SetActive(true);
-                gordonInterviewPortrait.gameObject.SetActive(false);
+                gordonInterviewPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.gameObject.SetActive(false);
                 responseBubble.SetActive(false);
                 break;
