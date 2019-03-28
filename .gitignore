@@ -20,3 +20,6 @@ TeamBesterestGame/Assets/Wwise/Deployment/Plugins/Mac/Debug/AkWaapiClient.bundle
 TeamBesterestGame/Assets/Wwise/Deployment/API/Handwritten/WAAPI.meta
 TeamBesterestGame/Assets/Wwise/Deployment/API/Handwritten/Mac.meta
 TeamBesterestGame/Assets/Wwise/Deployment/API/Handwritten/Common/WwiseTypes.meta
+TeamBesterestGame/Assets/Wwise/Deployment/Plugins/Mac/Profile/AkWaapiClient.bundle.meta
+TeamBesterestGame/Assets/Wwise/Deployment/Plugins/Mac/Release/AkWaapiClient.bundle.meta
+TeamBesterestGame/Assets/Wwise/Deployment/Plugins/Mac/Debug/AkWaapiClient.bundle.meta
