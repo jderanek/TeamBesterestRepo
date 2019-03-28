@@ -4,11 +4,11 @@ colorID: 0
 position: 611,517
 ---
 <<ChangeSpeaker SoundManager Boss>>
-Finally! Took you long enough! All of my goblins are dying to pillaging heroes! 
+Finally! Took you long enough! All the goblins are getting massacred, and necromancy costs are through the roof! 
 You have to fix this! You're a wizard, right?! Where did you study?
 
-[[School is for losers.|Tutorial11]]
 [[I was Magus Alumni at Albion U.|Tutorial12]]
+[[School is for losers.|Tutorial11]]
 
 <<if $timeMagicSpecific is true>>
 [[At Albion U, I did my graduate work in time magic.|Tutorial122]]
@@ -45,11 +45,12 @@ colorID: 1
 position: 1066,242
 ---
 <<if $bossFlippantNote is false>>
-<<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education.>>
+<<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education_next_time.>>
 <<set $bossFlippantNote to true>>
 <<endif>>
 
 What?! Then we're done here, find some other fool to hire you!
+[Perhaps I shouldn't be so flippant about my education next time.]
 ===
 title: Tutorial12
 tags: 
@@ -67,7 +68,7 @@ Albion U? That place is renowned for it's wizardry! What was your speciality?
 title: Tutorial1211
 tags: 
 colorID: 1
-position: 1740,427
+position: 1740,425
 ---
 <<set $timeMagicSpecific to true>>
 
@@ -77,6 +78,7 @@ position: 1740,427
 <<endif>>
 
 Then what's the point?! Come back when you learn something useful!
+[Maybe I should mention my doctoral work on time magic.]
 ===
 title: Tutorial1221
 tags: 
@@ -85,12 +87,13 @@ position: 1742,671
 ---
 <<set $guessProof to true>>
 <<if $bossGuessNote is false>>
-<<RevealText Boss Now_to_prove_him_wrong.>>
+<<RevealText Boss Now_to_prove_him_wrong!>>
 <<set $bossGuessNote to true>>
 <<endif>>
 
 Not even close! It was 24,601. 
 I was looking for a skilled wizard! Get out of here!
+[Now to prove him wrong!]
 
 ===
 title: Tutorial1222
