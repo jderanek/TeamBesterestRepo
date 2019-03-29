@@ -301,7 +301,7 @@ public class GameManager : MonoBehaviour
 
     public void EnableFollowup(string shift) //to be called in EndInterview, unlocks followup
     {
-        switch (shift)
+        /*switch (shift)
         {
             case "shift1": //Goblenn
                 if (!this.monsterList[3].GetComponent<BaseMonster>().interviewable)
@@ -328,12 +328,12 @@ public class GameManager : MonoBehaviour
                     this.monsterList[4].GetComponent<BaseMonster>().button.gameObject.SetActive(false);
                 }
                 break;
-        }
+        }*/
     }
 
     public void DisableFollowup(string shift) //to be called at end of followup conversation
     {
-        switch (shift)
+        /*switch (shift)
         {
             case "shift1": //Goblenn
                 this.monsterList[3].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
@@ -351,7 +351,7 @@ public class GameManager : MonoBehaviour
                 this.monsterList[4].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
                 this.monsterList[4].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
                 break;
-        }
+        }*/
     }
 
     public void LoadLevelOne()

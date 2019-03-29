@@ -139,6 +139,7 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Gordon":
                 goblinToTalk = 7;
+                gameManager.SetCurrentSpeaker(6);
                 break;
             default:
                 break;

@@ -213,13 +213,13 @@ namespace Yarn.Unity
         /// Start the dialogue from a given node
         public void StartDialogue (string startNode)
         {
+                // Stop any processes that might be running already
+                gameManager.GetComponent<GameManager>().interviewing = true;
+                StopAllCoroutines();
+                dialogueUI.StopAllCoroutines();
 
-            // Stop any processes that might be running already
-            StopAllCoroutines ();
-            dialogueUI.StopAllCoroutines ();
-
-            // Get it going
-            StartCoroutine (RunDialogue (startNode));
+                // Get it going
+                StartCoroutine(RunDialogue(startNode));
         }
 
         IEnumerator RunDialogue (string startNode = "Start")
