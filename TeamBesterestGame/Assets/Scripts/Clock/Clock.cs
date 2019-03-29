@@ -9,7 +9,8 @@ public class Clock : MonoBehaviour {
 
     public void Awake()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false); 
+        //this set the thing to false while it was already false
     }
 
     public void Run()
@@ -35,8 +36,8 @@ public class Clock : MonoBehaviour {
         if (time >= 1.767f)
         {
             running = false;
-            gameObject.SetActive(false);
             AkSoundEngine.PostEvent("Background_Music", gameObject);
+            gameObject.SetActive(false);
         }
 	}
 }
