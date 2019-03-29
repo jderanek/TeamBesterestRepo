@@ -5,15 +5,17 @@ position: 426,260
 ---
 <<ChangeSpeaker SoundManager Voiceless>>
 <<if $shift11Combat is 0>>
-Goblenn saw heroes enter the dungeon, and instantly fled.
-<<ChangeStatus Goblenn Goblenn_saw_heroes_enter_the_dungeon,_and_instantly_fled.>>
-//0 points
+Glenn saw heroes enter the dungeon, and instantly fled.
+<<ChangeStatus Goblenn Glenn_saw_heroes_enter_the_dungeon,_and_instantly_fled.>>
+
+Gordon faces the heroes alone, and is quickly defeated.
+<<ChangeStatus Gordon Gordon_faces_the_heroes_alone,_and_is_quickly_defeated.>>
+
 
 <<elseif $shift11Combat is 1>>
-Goblenn saw heroes enter the dungeon, but they did not see him.
+Glenn saw heroes enter the dungeon, but they did not see him.
 He sneak attacks the heroes, defeating them!
-<<ChangeStatus Goblenn Goblenn_saw_heroes_enter_the_dungeon,_but_they_did_not_see_him._He_sneak_attacks_the_heroes,_defeating_them!>>
-//4 points
+<<ChangeStatus Goblenn Glenn_saw_heroes_enter_the_dungeon,_but_they_did_not_see_him._He_sneak_attacks_the_heroes,_defeating_them!>>
 
 <<endif>>
 [[Shift12]]
@@ -24,19 +26,19 @@ colorID: 0
 position: 743,260
 ---
 <<if $shift12Combat is 0>>
-Jeff is stabbed by Geoff.
-<<ChangeStatus Jeff Jeff_is_stabbed_by_Geoff.>>
+Gorgo is stabbed by Geoff.
+<<ChangeStatus Jeff Gorgo_is_stabbed_by_Geoff.>>
 //Jeff fades to black/white
-Geoff is stabbed by Jeff.
-<<ChangeStatus Geoff Geoff_is_stabbed_by_Jeff.>>
+Geoff is stabbed by Gorgo.
+<<ChangeStatus Geoff Geoff_is_stabbed_by_Gorgo.>>
 //Geoff fades to black/white
 //0 points
 
 <<elseif $shift12Combat is 1>>
-Jeff works with Geoff, and clobbers a hero.
-<<ChangeStatus Jeff Jeff_works_with_Geoff,_and_clobbers_a_hero.>>
-Geoff works with Jeff, and defeats a hero.
-<<ChangeStatus Geoff Geoff_works_with_Jeff,_and_defeats_a_hero.>>
+Gorgo works with Geoff, and clobbers a hero.
+<<ChangeStatus Jeff Gorgo_works_with_Geoff,_and_clobbers_a_hero.>>
+Geoff works with Gorgo, and defeats a hero.
+<<ChangeStatus Geoff Geoff_works_with_Gorgo,_and_defeats_a_hero.>>
 //4 points
 
 <<endif>>
