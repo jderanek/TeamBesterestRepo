@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour
 {
     public GameManager gameManager;
     public static int goblinToTalk = 0;
+    public GameObject currentSpeaker;
+    public GameObject nameTag;
 
     //for speech bubble calling
     public GameObject GoblennDialogueMarker;
@@ -109,6 +111,7 @@ public class SoundManager : MonoBehaviour
     [YarnCommand("ChangeSpeaker")]
     public void ChangeSpeaker(string newSpeaker)
     {
+        nameTag.SetActive(true);
         switch (newSpeaker)
         {
             case "Goblenn":
@@ -131,15 +134,17 @@ public class SoundManager : MonoBehaviour
                 goblinToTalk = 4;
                 gameManager.SetCurrentSpeaker(3);
                 break;
+            case "Gordon":
+                goblinToTalk = 7;
+                gameManager.SetCurrentSpeaker(6);
+                break;
             case "Boss":
                 goblinToTalk = 5;
                 break;
             case "Voiceless":
                 goblinToTalk = 6;
-                break;
-            case "Gordon":
-                goblinToTalk = 7;
-                gameManager.SetCurrentSpeaker(6);
+                currentSpeaker.SetActive(false);
+                nameTag.SetActive(false);
                 break;
             default:
                 break;
