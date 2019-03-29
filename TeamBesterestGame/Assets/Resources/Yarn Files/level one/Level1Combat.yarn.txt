@@ -13,9 +13,10 @@ Gordon faces the heroes alone, and is quickly defeated.
 
 
 <<elseif $shift11Combat is 1>>
-Glenn saw heroes enter the dungeon, but they did not see him.
-He sneak attacks the heroes, defeating them!
-<<ChangeStatus Goblenn Glenn_saw_heroes_enter_the_dungeon,_but_they_did_not_see_him._He_sneak_attacks_the_heroes,_defeating_them!>>
+Glenn sticks around for the fight!  ...Until Gordon falls quickly, and once again fleas.
+<<ChangeStatus Goblenn Glenn_sticks_around_for_the_fight!_...Until_Gordon_falls_quickly,_and_once_again_fleas.>>
+Gordon takes to the front of the fray! ...and is quickly cut down, to his surprise!
+<<ChangeStatus Gordon Gordon_takes_to_the_front_of_the_fray!_...and_is_quickly_cut_down,_to_his_surprise!>>
 
 <<endif>>
 [[Shift12]]
@@ -23,7 +24,7 @@ He sneak attacks the heroes, defeating them!
 title: Shift12
 tags: 
 colorID: 0
-position: 743,260
+position: 760,260
 ---
 <<if $shift12Combat is 0>>
 Gorgo is stabbed by Geoff.
@@ -35,11 +36,14 @@ Geoff is stabbed by Gorgo.
 //0 points
 
 <<elseif $shift12Combat is 1>>
-Gorgo works with Geoff, and clobbers a hero.
-<<ChangeStatus Jeff Gorgo_works_with_Geoff,_and_clobbers_a_hero.>>
-Geoff works with Gorgo, and defeats a hero.
-<<ChangeStatus Geoff Geoff_works_with_Gorgo,_and_defeats_a_hero.>>
-//4 points
+
+
+
+Gorgo works with Geoff, and clobbers a hero... but he appears very distracted by Geoff, and is felled by a flanking hero.
+<<ChangeStatus Jeff Gorgo_works_with_Geoff,_and_clobbers_a_hero..._but_he_appears_very_distracted_by_Geoff,_and_is_felled_by_a_flanking_hero.>>
+Geoff works with Gorgo, and defeats a hero... but is defeated after Gorgo falls in battle.
+<<ChangeStatus Geoff Geoff_works_with_Gorgo,_and_defeats_a_hero..._but_is_defeated_after_Gorgo_falls_in_battle.>>
+
 
 <<endif>>
 [[Shift13]]

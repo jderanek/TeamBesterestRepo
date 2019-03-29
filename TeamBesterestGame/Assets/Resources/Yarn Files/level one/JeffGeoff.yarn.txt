@@ -345,6 +345,8 @@ position: 3128,3426
 //IF Jeff AND Geoff are flagged Apology:
 <<if $apologize1 is true and $apologize2 is true>>
 <<set $shift12Combat to 1>>
+<<set $gorgoStart2 to true>>
+<<set $geoffReady2 to true>>
 
 <<ChangeSpeaker SoundManager Jeff>>
 Alright, look, I'm sorry for taking your scone, ok?
