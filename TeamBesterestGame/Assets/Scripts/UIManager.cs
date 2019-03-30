@@ -116,15 +116,22 @@ public class UIManager : MonoBehaviour {
         notification.SetActive(!notification.activeInHierarchy);
     }
 
-    public void TogglePrompts(int prompt)
+    [YarnCommand ("TogglePrompts")]
+    public void TogglePrompts(string prompt)
     {
         switch(prompt)
         {
-            case 1:
+            case "1":
                 journalPrompt.SetActive(false);
                 break;
-            case 2:
+            case "2":
                 clockPrompt.SetActive(false);
+                break;
+            case "3":
+                journalPrompt.SetActive(true);
+                break;
+            case "4":
+                clockPrompt.SetActive(true);
                 break;
         }
     }
