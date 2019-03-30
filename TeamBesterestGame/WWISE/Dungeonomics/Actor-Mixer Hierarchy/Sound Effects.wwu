@@ -365,6 +365,203 @@
 						<ActiveSource Name="Batman Transition - Comical Sound Effect (HD)" ID="{5F1E0342-DF58-4532-944B-97DF7135FA91}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<RandomSequenceContainer Name="Page_Flips" ID="{1CDE5CA4-05B9-449C-8E27-A8FB7BDD6CF0}" ShortID="25837903">
+					<PropertyList>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{ED59A62B-751D-4C76-8E35-8147946B7F8D}" ShortID="912390448">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="Sound_Effects" ID="{513CFB15-65CD-4718-845B-DC90C30E8070}" WorkUnitID="{8DF70B49-8870-4ECA-A1AF-CE5CDAE30C76}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{2679F55C-7346-466F-9890-0E654016E0D8}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+								<RTPC Name="" ID="{7C691566-2362-4DA5-B24A-9B8494F8A07D}" ShortID="263866770">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="Master_Volume" ID="{22AECB9C-2F48-47D0-B732-6BE1F98641B6}" WorkUnitID="{8DF70B49-8870-4ECA-A1AF-CE5CDAE30C76}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{F966CDD9-9B95-467E-8518-B49DEB0397A7}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Flip1" ID="{7279C79F-605D-46E9-8DAC-042BF2F0E01A}" ShortID="897930453">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flip1" ID="{52B36150-EDB5-4A87-A9AB-B6EF59BFD4E5}" ShortID="401647735">
+									<Language>SFX</Language>
+									<AudioFile>Flip1.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flip1" ID="{52B36150-EDB5-4A87-A9AB-B6EF59BFD4E5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Flip2" ID="{91E9873F-CDA0-4145-B01A-635EE9A998C0}" ShortID="184417483">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flip2" ID="{0A9291B9-220C-468F-8A3C-A852BB3EAEAB}" ShortID="253091267">
+									<Language>SFX</Language>
+									<AudioFile>Flip2.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flip2" ID="{0A9291B9-220C-468F-8A3C-A852BB3EAEAB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Flip3" ID="{1661F439-5265-4649-A64A-EE83075EBCC3}" ShortID="1032565776">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Flip3" ID="{3AA43AAB-2382-4996-9F55-E84FF455AA18}" ShortID="457437588">
+									<Language>SFX</Language>
+									<AudioFile>Flip3.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Flip3" ID="{3AA43AAB-2382-4996-9F55-E84FF455AA18}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="Notebook_Open" ID="{E5141FB1-EB7F-4FA7-B971-27D0001C4CB1}" ShortID="739636151">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<RTPCList>
+								<RTPC Name="" ID="{551B3E57-50A1-4D7F-B606-720426029554}" ShortID="337871433">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="Sound_Effects" ID="{513CFB15-65CD-4718-845B-DC90C30E8070}" WorkUnitID="{8DF70B49-8870-4ECA-A1AF-CE5CDAE30C76}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{4E02B8D2-EA04-4950-AAFF-5DAE34B8261E}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+								<RTPC Name="" ID="{816114A8-7D4D-47FD-8975-D83EF856E9AA}" ShortID="952666713">
+									<ReferenceList>
+										<Reference Name="ControlInput">
+											<ObjectRef Name="Master_Volume" ID="{22AECB9C-2F48-47D0-B732-6BE1F98641B6}" WorkUnitID="{8DF70B49-8870-4ECA-A1AF-CE5CDAE30C76}"/>
+										</Reference>
+									</ReferenceList>
+									<Curve Name="" ID="{6FCD6602-3BA8-4751-B319-B456CF489345}">
+										<PropertyList>
+											<Property Name="Flags" Type="int32" Value="3"/>
+										</PropertyList>
+										<PointList>
+											<Point>
+												<XPos>0</XPos>
+												<YPos>-200</YPos>
+												<Flags>5</Flags>
+											</Point>
+											<Point>
+												<XPos>100</XPos>
+												<YPos>0</YPos>
+												<Flags>37</Flags>
+											</Point>
+										</PointList>
+									</Curve>
+								</RTPC>
+							</RTPCList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{42BBB925-C4D0-40D0-9939-47377DA7B122}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{67AE8F65-C630-4DFF-AF83-B4AF3F7B26AD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="NotebookOpening" ID="{D650E734-44BA-4DF5-AE7A-25CBB4C04CCF}" ShortID="73540789">
+							<Language>SFX</Language>
+							<AudioFile>NotebookOpening.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="NotebookOpening" ID="{D650E734-44BA-4DF5-AE7A-25CBB4C04CCF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

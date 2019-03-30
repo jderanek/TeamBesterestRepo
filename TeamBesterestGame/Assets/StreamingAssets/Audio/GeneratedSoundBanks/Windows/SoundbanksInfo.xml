@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\Raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -36,6 +36,8 @@
 				<Event Id="64054188" Name="Hero_Combat" ObjectPath="\Events\Default Work Unit\Hero_Combat"/>
 				<Event Id="2067637633" Name="Jeff_Voice" ObjectPath="\Events\Voice Clips\Jeff_Voice"/>
 				<Event Id="1181445569" Name="Nilbog_Voice" ObjectPath="\Events\Voice Clips\Nilbog_Voice"/>
+				<Event Id="417584769" Name="Notebook_Open" ObjectPath="\Events\Default Work Unit\Notebook_Open"/>
+				<Event Id="3989786198" Name="Page_Flip" ObjectPath="\Events\Default Work Unit\Page_Flip"/>
 				<Event Id="1223010781" Name="Pencil_Scratch" ObjectPath="\Events\Voice Clips\Pencil_Scratch"/>
 				<Event Id="1525674368" Name="Rewind_Music" ObjectPath="\Events\Default Work Unit\Rewind_Music"/>
 				<Event Id="3212434624" Name="Rewind_Time" ObjectPath="\Events\Voice Clips\Rewind_Time"/>
@@ -82,6 +84,10 @@
 				<File Id="58378598" Language="SFX">
 					<ShortName>Nate Sounds\Nate_19.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_19_1C9C67B2.wem</Path>
+				</File>
+				<File Id="73540789" Language="SFX">
+					<ShortName>NotebookOpening.wav</ShortName>
+					<Path>SFX\NotebookOpening_1C9C67B2.wem</Path>
 				</File>
 				<File Id="84950044" Language="SFX">
 					<ShortName>Nate Sounds\Nate_9.wav</ShortName>
@@ -215,6 +221,10 @@
 					<ShortName>Avery Sounds\nyaoh.wav</ShortName>
 					<Path>SFX\Avery Sounds\nyaoh_1C9C67B2.wem</Path>
 				</File>
+				<File Id="253091267" Language="SFX">
+					<ShortName>Flip2.wav</ShortName>
+					<Path>SFX\Flip2_1C9C67B2.wem</Path>
+				</File>
 				<File Id="261869840" Language="SFX">
 					<ShortName>Nate Sounds\Nate_25.wav</ShortName>
 					<Path>SFX\Nate Sounds\Nate_25_1C9C67B2.wem</Path>
@@ -275,6 +285,10 @@
 					<ShortName>James Sounds\James_19.wav</ShortName>
 					<Path>SFX\James Sounds\James_19_1C9C67B2.wem</Path>
 				</File>
+				<File Id="401647735" Language="SFX">
+					<ShortName>Flip1.wav</ShortName>
+					<Path>SFX\Flip1_1C9C67B2.wem</Path>
+				</File>
 				<File Id="403639939" Language="SFX">
 					<ShortName>Avery Sounds\Nyaaah_question.wav</ShortName>
 					<Path>SFX\Avery Sounds\Nyaaah_question_1C9C67B2.wem</Path>
@@ -306,6 +320,10 @@
 				<File Id="446250589" Language="SFX">
 					<ShortName>Raven Sounds\Raven_Audio_11.wav</ShortName>
 					<Path>SFX\Raven Sounds\Raven_Audio_11_1C9C67B2.wem</Path>
+				</File>
+				<File Id="457437588" Language="SFX">
+					<ShortName>Flip3.wav</ShortName>
+					<Path>SFX\Flip3_1C9C67B2.wem</Path>
 				</File>
 				<File Id="458896262" Language="SFX">
 					<ShortName>James Sounds\James_16.wav</ShortName>

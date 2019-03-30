@@ -3,7 +3,7 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{B2727B5F-564C-4D2C-9939-15335FDFD579}">
 			<PropertyList>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\raven\Documents\Dungeonomics\Dungeonomic Music"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\Raven\Documents\Dungonomics\notebook"/>
 				<Property Name="Event Action List\{10E9F541-D763-460D-8AE6-B191A9213CF7}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{18DAD7C5-3750-48FF-BE1A-7250F7FE4799}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1D0D387E-8B81-4235-86C6-44CBE602DB46}\x64_Expand States" Type="string" Value=""/>
@@ -11,6 +11,7 @@
 				<Property Name="Event Action List\{35A33D38-EED8-466B-B6B1-F04A20798D60}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{562F7E07-7FFC-4524-BB4C-283153733A07}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{5E433FC4-0108-4F53-8CB3-015F3FBA97B4}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{8F604040-9751-4A2C-AA86-F33F5176AC5C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{981B465B-A683-4CE2-9F49-D905BBECFC9D}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{989050BA-A30B-460F-8262-F0D35DA371C6}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9C4B780B-CE93-43E0-85BC-860CB1971736}\x64_Expand States" Type="string" Value=""/>

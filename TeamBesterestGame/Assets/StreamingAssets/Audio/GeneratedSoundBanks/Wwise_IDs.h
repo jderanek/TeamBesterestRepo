@@ -23,6 +23,8 @@ namespace AK
         static const AkUniqueID HERO_COMBAT = 64054188U;
         static const AkUniqueID JEFF_VOICE = 2067637633U;
         static const AkUniqueID NILBOG_VOICE = 1181445569U;
+        static const AkUniqueID NOTEBOOK_OPEN = 417584769U;
+        static const AkUniqueID PAGE_FLIP = 3989786198U;
         static const AkUniqueID PENCIL_SCRATCH = 1223010781U;
         static const AkUniqueID REWIND_MUSIC = 1525674368U;
         static const AkUniqueID REWIND_TIME = 3212434624U;

@@ -386,6 +386,8 @@ public class GameManager : MonoBehaviour
 
     public void ChangeTabs(int tab)
     {
+        AkSoundEngine.PostEvent("Page_Flip", gameObject);
+
         switch(tab)
         {
             case 1:
@@ -447,6 +449,7 @@ public class GameManager : MonoBehaviour
 
     public void ToggleNotebook()
     {
+        AkSoundEngine.PostEvent("Notebook_Open", gameObject);
         notebook.SetActive(!notebook.activeInHierarchy);
     }
 

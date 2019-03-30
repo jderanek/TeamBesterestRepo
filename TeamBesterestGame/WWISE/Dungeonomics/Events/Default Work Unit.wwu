@@ -59,6 +59,34 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Page_Flip" ID="{8F604040-9751-4A2C-AA86-F33F5176AC5C}">
+					<ChildrenList>
+						<Action Name="" ID="{A296C3B9-6B4E-4BFC-8830-28255DAB22B4}" ShortID="503297018">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Page_Flips" ID="{1CDE5CA4-05B9-449C-8E27-A8FB7BDD6CF0}" WorkUnitID="{2169E8BC-7269-4A78-BE25-BB79C4649A06}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Notebook_Open" ID="{EDA9576A-8F18-43EC-AADE-C3BB9391EDDB}">
+					<ChildrenList>
+						<Action Name="" ID="{BA688F24-BDC2-4CEE-AF4B-EE6FE84E2C4A}" ShortID="208884106">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Notebook_Open" ID="{E5141FB1-EB7F-4FA7-B971-27D0001C4CB1}" WorkUnitID="{2169E8BC-7269-4A78-BE25-BB79C4649A06}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
