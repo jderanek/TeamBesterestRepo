@@ -44,6 +44,9 @@ public class UIManager : MonoBehaviour {
 
     //List<InterviewUI> monsters = new List<InterviewUI>();
 
+    public GameObject journalPrompt;
+    public GameObject clockPrompt;
+
     private void Start()
     {
         monsters = FindObjectsOfType<InterviewUI>();
@@ -111,5 +114,18 @@ public class UIManager : MonoBehaviour {
             AkSoundEngine.PostEvent("Pencil_Scratch", notification);
         }
         notification.SetActive(!notification.activeInHierarchy);
+    }
+
+    public void TogglePrompts(int prompt)
+    {
+        switch(prompt)
+        {
+            case 1:
+                journalPrompt.SetActive(false);
+                break;
+            case 2:
+                clockPrompt.SetActive(false);
+                break;
+        }
     }
 }
