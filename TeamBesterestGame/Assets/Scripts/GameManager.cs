@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public GameObject geoffNotes;
     public GameObject jeffNotes;
     public GameObject gabbinNotes;
+    public GameObject gordonNotes;
 
     public Text nameTag;
     public GameObject responseBubble;
@@ -393,6 +394,7 @@ public class GameManager : MonoBehaviour
                 geoffNotes.SetActive(false);
                 jeffNotes.SetActive(false);
                 gabbinNotes.SetActive(false);
+                gordonNotes.SetActive(false);
                 break;
             case 2:
                 goblennNotes.SetActive(false);
@@ -400,6 +402,7 @@ public class GameManager : MonoBehaviour
                 geoffNotes.SetActive(false);
                 jeffNotes.SetActive(false);
                 gabbinNotes.SetActive(false);
+                gordonNotes.SetActive(false);
                 break;
             case 3:
                 goblennNotes.SetActive(false);
@@ -407,6 +410,7 @@ public class GameManager : MonoBehaviour
                 geoffNotes.SetActive(true);
                 jeffNotes.SetActive(false);
                 gabbinNotes.SetActive(false);
+                gordonNotes.SetActive(false);
                 break;
             case 4:
                 goblennNotes.SetActive(false);
@@ -414,6 +418,7 @@ public class GameManager : MonoBehaviour
                 geoffNotes.SetActive(false);
                 jeffNotes.SetActive(true);
                 gabbinNotes.SetActive(false);
+                gordonNotes.SetActive(false);
                 break;
             case 5:
                 goblennNotes.SetActive(false);
@@ -421,6 +426,15 @@ public class GameManager : MonoBehaviour
                 geoffNotes.SetActive(false);
                 jeffNotes.SetActive(false);
                 gabbinNotes.SetActive(true);
+                gordonNotes.SetActive(false);
+                break;
+            case 6:
+                goblennNotes.SetActive(false);
+                nilbogNotes.SetActive(false);
+                geoffNotes.SetActive(false);
+                jeffNotes.SetActive(false);
+                gabbinNotes.SetActive(false);
+                gordonNotes.SetActive(true);
                 break;
         }
     }
