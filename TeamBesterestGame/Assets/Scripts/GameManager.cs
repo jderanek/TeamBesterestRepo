@@ -127,17 +127,18 @@ public class GameManager : MonoBehaviour
                 //ChangeShift();
                 canSkip = true;
 
-                foreach (GameObject monster in monsterList)
+                if (interviewing)
                 {
-                    monster.GetComponent<BaseMonster>().EndInterview();
+                    foreach (GameObject monster in monsterList)
+                    {
+                        monster.GetComponent<BaseMonster>().EndInterview();
+                    }
                 }
 
                 this.DisableFollowup("shift1");
                 this.DisableFollowup("shift2");
                 this.DisableFollowup("shift3");
 
-                //EndInterview();
-                //this.SetGoblinPoints();
                 this.SetCombatScore();
                 interviewing = false;
                 interviewCanvas.SetActive(false);
@@ -162,69 +163,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    /*[YarnCommand("ChangeShift")] commenting out for now in case we revert back from wanted poster style
-    public void ChangeShift()
-    {
-        if (this.shift < 3)
-        {
-            shift++;
-            if (shift == 2) //second shift, enable second shift portraits (first is on by default)
-            {
-                shiftOnePortraits.SetActive(false);
-                shiftTwoPortraits.SetActive(true);
-                shiftThreePortraits.SetActive(false);
-            }
-            else //third shift
-            {
-                shiftOnePortraits.SetActive(false);
-                shiftTwoPortraits.SetActive(false);
-                shiftThreePortraits.SetActive(true);
-            }
-        }
-        else //resets shift to 1
-        {
-            shiftOnePortraits.SetActive(true);
-            shiftTwoPortraits.SetActive(false);
-            shiftThreePortraits.SetActive(false);
-            canSkip = true;
-            combatCanvas.SetActive(false);
-            shift = 1;
-            this.interviewing = false;
-        }
-    }*/
-
-    public void SetGoblinPoints() //set the yarn variables according to each goblin's int point values
-    {
-        foreach (GameObject monster in monsterList)
-        {
-            if (monster.GetComponent<BaseMonster>().monName == "Goblenn")
-            {
-                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$goblennPoints", varToSet);
-            }
-            if (monster.GetComponent<BaseMonster>().monName == "Geoff")
-            {
-                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$geoffPoints", varToSet);
-            }
-            if (monster.GetComponent<BaseMonster>().monName == "Jeff")
-            {
-                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$jeffPoints", varToSet);
-            }
-            if (monster.GetComponent<BaseMonster>().monName == "Gabbin")
-            {
-                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$gabbinPoints", varToSet);
-            }
-            if (monster.GetComponent<BaseMonster>().monName == "Nilbog")
-            {
-                var varToSet = new Yarn.Value((float)monster.GetComponent<BaseMonster>().points);
-                combatManager.GetComponent<InterviewVariableStorage>().SetValue("$nilbogPoints", varToSet);
-            }
-        }
-    }
-
     //set the combat manager's yarn variables according to each shifts points
     public void SetCombatScore()
     {
@@ -245,14 +183,6 @@ public class GameManager : MonoBehaviour
                 var varToSet = monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<InterviewVariableStorage>().GetValue("$shift13Combat");
                 combatManager.GetComponent<InterviewVariableStorage>().SetValue("$shift13Combat", varToSet);
             }
-        }
-    }
-
-    public void FinalScore() //accumulates all the monsters' points for the final score
-    {
-        foreach (GameObject monster in monsterList)
-        {
-            finalScore += monster.GetComponent<BaseMonster>().points;
         }
     }
 
