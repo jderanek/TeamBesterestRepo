@@ -14475,7 +14475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f237190b868da48926c84d98182177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolutionDropdown: {fileID: 0}
+  resolutionDropdown: {fileID: 642789841}
 --- !u!114 &1031783968
 MonoBehaviour:
   m_ObjectHideFlags: 0

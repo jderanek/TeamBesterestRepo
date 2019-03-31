@@ -1,12 +1,12 @@
 title: Shift11
 tags: 
 colorID: 0
-position: 426,260
+position: 421,255
 ---
 <<ChangeSpeaker SoundManager Voiceless>>
 <<if $shift11Combat is 0>>
 Glenn saw heroes enter the dungeon, and instantly fled.
-<<ChangeStatus Goblenn Glenn_saw_heroes_enter_the_dungeon,_and_instantly_fled.>>
+<<ChangeStatus Glenn Glenn_saw_heroes_enter_the_dungeon,_and_instantly_fled.>>
 
 Gordon faces the heroes alone, and is quickly defeated.
 <<ChangeStatus Gordon Gordon_faces_the_heroes_alone,_and_is_quickly_defeated.>>
@@ -14,7 +14,7 @@ Gordon faces the heroes alone, and is quickly defeated.
 
 <<elseif $shift11Combat is 1>>
 Glenn sticks around for the fight!  ...Until Gordon falls quickly, and once again fleas.
-<<ChangeStatus Goblenn Glenn_sticks_around_for_the_fight!_...Until_Gordon_falls_quickly,_and_once_again_fleas.>>
+<<ChangeStatus Glenn Glenn_sticks_around_for_the_fight!_...Until_Gordon_falls_quickly,_and_once_again_fleas.>>
 Gordon takes to the front of the fray! ...and is quickly cut down, to his surprise!
 <<ChangeStatus Gordon Gordon_takes_to_the_front_of_the_fray!_...and_is_quickly_cut_down,_to_his_surprise!>>
 
