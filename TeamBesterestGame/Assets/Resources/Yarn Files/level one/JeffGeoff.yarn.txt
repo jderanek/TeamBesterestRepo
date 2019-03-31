@@ -172,11 +172,11 @@ Hey, boss guy... what do you need?
 [[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
 
 <<if $gorgoStart2 is true>>
-[[Word around here is that there's something going on between you and Geoff. Care to elaborate?|Gorgo2]]
+[[Word around here is that there's something going on between you and Geoff.|Gorgo2]]
 <<endif>>
 
 <<if $talkedToGorgo2 is true>>
-[[Alright, I'll cut to the chase. I know more about you than you think. I'll give you a hypothetical situation, and you tell me how it sounds, ok?|Gorgo211121]]
+[[Let me give you a hypothetical situation of what I think's going on.|Gorgo211121]]
 <<endif>>
 ===
 title: Jeff11
@@ -1164,7 +1164,7 @@ What happens? What happens next?
 [[...Gorbo just really hated Jeff. So much that he exploded.|Gorgo211121113]]
 
 <<if $talkedToNilbog2 is true>>
-[[...Gorbo was actually three goblins stacked on top of each other in a trench-coat all along!|Gorgo211121114]]
+[[...Gorbo was actually three goblins stacked on top of each other in a trench-coat!|Gorgo211121114]]
 <<endif>>
 ===
 title: Gorgo211121114

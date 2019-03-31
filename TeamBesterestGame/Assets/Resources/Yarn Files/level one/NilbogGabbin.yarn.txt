@@ -10,7 +10,7 @@ I hope you've had an excellent time with us all so far!
 [[Coming on a little strong, aren't you?|Gabbin12]]
 [[You seem pleasant, all things considered.|Gabbin13]]
 
-<<if $GabbinStart2 is true>>
+<<if $gabbinStart2 is true>>
 [[Its been great Gabbin! But before we get things moving, what's you opinion on kids working in the dungeon business?|Gabbin2]]
 <<endif>>
 ===
@@ -416,6 +416,8 @@ position: 1814,425
 //IF Nilbog flagged Defeated or Patient:
 <<if $defeated is true>>
 <<set $shift13Combat to 1>>
+<<set $nilbogStart2 to true>>
+<<set $gabbinStart2 to true>>
 
 
 <<ChangeSpeaker SoundManager Nilbog>>
@@ -434,6 +436,8 @@ I've been thinking of a new combat technique, I can't wait to--
 
 <<elseif $patient is true>>
 <<set $shift13Combat to 1>>
+<<set $nilbogStart2 to true>>
+<<set $gabbinStart2 to true>>
 
 <<ChangeSpeaker SoundManager Nilbog>>
 ...fine.
@@ -480,6 +484,8 @@ position: 1817,733
 //IF Gabbin flagged Sad OR Respectful:
 <<if $sad is true>>
 <<set $shift13Combat to 2>>
+<<set $nilbogStart2 to true>>
+<<set $gabbinStart2 to true>>
 
 <<ChangeSpeaker SoundManager Gabbin>>
 ...alright... I'll step off.
@@ -487,7 +493,6 @@ position: 1817,733
 <<ChangeSpeaker SoundManager Voiceless>>
 [Nilbog gives you an approving look.]
 
-<<set $shift13Combat to 2>>
 
 <<elseif $respectful is true>>
 
@@ -525,6 +530,8 @@ position: 1809,997
 //IF Gabbin flagged Respectful AND Nilbog flagged Patient
 <<if $respectful and $patient is true>>
 <<set $shift13Combat to 3>>
+<<set $nilbogStart2 to true>>
+<<set $gabbinStart2 to true>>
 
 <<ChangeSpeaker SoundManager Nilbog>>
 ...If you'll give me some space when I ask, fine.
@@ -574,7 +581,7 @@ position: -1580,-1770
 [[...|Nilbog11]]
 [[...Hello? You in there?|Nilbog12]]
 
-<<if $NilbogStart2 is true>>
+<<if $nilbogStart2 is true>>
 [[Look here, I need you to stop acting like *children*!|Nilbog2]]
 <<endif>>
 ===
@@ -654,7 +661,6 @@ position: -533,-1491
 ...We're not going to be friends.
 
 [[Why not?|Nilbog12111]]
-[[Not with that attitude, you aren't.|Nilbog12112]]
 [[Did he do something to you?|Nilbog12113]]
 ===
 title: Nilbog1212
