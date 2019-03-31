@@ -19,18 +19,14 @@ public class UIManager : MonoBehaviour {
     public GameObject confirmationBox;
 
     private bool pauseMenuOpen = false;
-    public GameObject pauseMenu; //public to be assigned in editor
 
-   // public Text currencyText; //public to assign reference in editor
+    // public Text currencyText; //public to assign reference in editor
 
     public GameObject hourSwivel;
     //public EventSystem eventSystem;
 
-    public GameObject[] speechBubbles;
-
     public GameObject speaker = null;
 
-    public GameObject optionsMenu;
     public float slowTextSpeed;
     public Text slowText;
     public float mediumTextSpeed;
@@ -51,12 +47,6 @@ public class UIManager : MonoBehaviour {
     {
         monsters = FindObjectsOfType<InterviewUI>();
     }
-
-    //Opens any menu
-    public void ToggleMenu(int menuToOpen)
-    {
-        menus[menuToOpen].SetActive(!menus[menuToOpen].activeInHierarchy);
-    }
     
     public void ToggleMenusOff()
     {
@@ -66,10 +56,39 @@ public class UIManager : MonoBehaviour {
         }
     }
 
-    public void ToggleOptionsMenu()
+    public void OpenMenu(string menu)
     {
-        optionsMenu.SetActive(!optionsMenu.gameObject.activeInHierarchy);
-        pauseMenu.SetActive(!pauseMenu.gameObject.activeInHierarchy);
+        switch (menu)
+        {
+            case "Main":
+                ToggleMenusOff();
+                menus[0].SetActive(true);
+                break;
+            case "Options":
+                ToggleMenusOff();
+                menus[1].SetActive(true);
+                menus[2].SetActive(true);
+                break;
+            case "Gameplay":
+                ToggleMenusOff();
+                menus[1].SetActive(true);
+                menus[3].SetActive(true);
+                break;
+            case "Video":
+                ToggleMenusOff();
+                menus[1].SetActive(true);
+                menus[4].SetActive(true);
+                break;
+            case "Audio":
+                ToggleMenusOff();
+                menus[1].SetActive(true);
+                menus[5].SetActive(true);
+                break;
+            default:
+                ToggleMenusOff();
+                break;
+
+        }
     }
 
     public void SetTextSpeed(int textSpeed)
