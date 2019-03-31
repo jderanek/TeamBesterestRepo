@@ -92,7 +92,7 @@ public abstract class BaseMonster : BaseEntity {
         this.mood = 3;
         this.interviewable = true;
         picture.color = new Color(picture.color.r, picture.color.g, picture.color.b, 1.0f);
-        button.interactable = true;
+        //button.interactable = true;
     }
     
     //Clears list of previous traits, and adds the new trait
@@ -138,17 +138,15 @@ public abstract class BaseMonster : BaseEntity {
     {
         this.interviewable = false;
         this.gameManager.interviewing = false;
-        //use helper function to disable monster's dialogue options and grey out portrait
         foreach (GameObject option in interviewOptions)
         {
             option.SetActive(false);
         }
         response.SetActive(false);
-        //grey out portrait
         uiManager.speaker.SetActive(false);
         picture.color = new Color (picture.color.r, picture.color.g, picture.color.b, 0.5f);
-        button.interactable = false;
-        gameManager.SetCurrentSpeaker(0);
+        //button.interactable = false;
+        this.gameManager.SetCurrentSpeaker(0);
 
         switch (this.monName)
         {

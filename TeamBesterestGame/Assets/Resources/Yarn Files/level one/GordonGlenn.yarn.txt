@@ -141,7 +141,7 @@ I don't mind fighting, it is just the dying part that scares me...
 title: Coward1331
 tags: 
 colorID: 1
-position: 1346,1018
+position: 1342,1014
 ---
 <<if $glennNoChangeNote is false>>
 <<RevealText Glenn Glenn_seems_to_have_serious_self_confidence_issues.>>
@@ -189,7 +189,7 @@ position: 712,1100
 A-ambush? That seems scary... but also smart! 
 Maybe that will finally impress Gordon then! Let me think for a bit then.
 
-<<EndInterview Goblenn>>
+<<EndInterview Glenn>>
 ===
 title: Coward121
 tags: 
@@ -214,7 +214,7 @@ colorID: 1
 position: 1810,64
 ---
 You too? *Sigh* That is what Gordon says too... I thought you'd be different...
-<<EndInterview Goblenn>>
+<<EndInterview Glenn>>
 ===
 title: Gordon1
 tags: 
@@ -350,12 +350,12 @@ He is doing a poor job as I am not really inspired by him running away every bat
 title: Gordon1211
 tags: 
 colorID: 1
-position: 1288,2709
+position: 1284,2705
 ---
 I just hope he understands.
 I don't hate the guy, he just needs to learn about personal space.
 And to use his indoor voice...
-<<End Interview Gordon>>
+<<EndInterview Gordon>>
 ===
 title: Gordon1212
 tags: 
@@ -404,7 +404,7 @@ Although I am not sure how longer I can last with his incessant yammering...
 title: Gordon11111
 tags: 
 colorID: 1
-position: 857,1677
+position: 857,1673
 ---
 I am just messing with you.
 But yeah, good luck
