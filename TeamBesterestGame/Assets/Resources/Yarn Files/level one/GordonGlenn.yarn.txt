@@ -3,7 +3,7 @@ tags:
 colorID: 0
 position: -606,-75
 ---
-<<ChangeSpeaker SoundManager Goblenn>>
+<<ChangeSpeaker SoundManager Glenn>>
 H-huh?
 Oh, yeah. I-I'm Glenn...
 I'm the... front-line fighter around here.

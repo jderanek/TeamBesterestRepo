@@ -87,7 +87,7 @@ public class SoundManager : MonoBehaviour
     {
         goblins = new GameObject[8];
 
-        goblins[0] = GameObject.Find("Goblenn");
+        goblins[0] = GameObject.Find("Glenn");
         goblins[1] = GameObject.Find("Geoff");
         goblins[2] = GameObject.Find("Jeff");
         goblins[3] = GameObject.Find("Gabbin");
@@ -114,7 +114,7 @@ public class SoundManager : MonoBehaviour
         nameTag.SetActive(true);
         switch (newSpeaker)
         {
-            case "Goblenn":
+            case "Glenn":
                 goblinToTalk = 0;
                 gameManager.SetCurrentSpeaker(1);
                 break;
