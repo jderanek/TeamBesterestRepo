@@ -30,6 +30,8 @@ public abstract class BaseMonster : BaseEntity {
     public Button button;
     public Button followUpButton;
 
+    public GameObject responseBook;
+
     //bool to check if monster is fleeing
     private bool isFleeing = false;
 
@@ -41,6 +43,7 @@ public abstract class BaseMonster : BaseEntity {
     void Awake() {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         uiManager = gameManager.GetComponent<UIManager>();
+        responseBook = gameManager.responseBox;
         
         //moved damage text here bc it was throwing error on pre-instantiated monsters
         damageText = this.gameObject.GetComponentInChildren<Text>();
@@ -136,6 +139,7 @@ public abstract class BaseMonster : BaseEntity {
     [YarnCommand("EndInterview")]
     public void EndInterview()
     {
+        responseBook.GetComponent<NotepadAnimation>().ResetToStart();
         this.interviewable = false;
         this.gameManager.interviewing = false;
         foreach (GameObject option in interviewOptions)

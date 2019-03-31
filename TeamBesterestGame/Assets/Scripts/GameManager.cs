@@ -73,6 +73,8 @@ public class GameManager : MonoBehaviour
     public GameObject gordonInterviewPortrait;
     public Clock clock;
 
+    public GameObject responseBox;
+
     private DialogueRunner[] dialogueRunners;
     private InterviewVariableStorage[] storages;
 

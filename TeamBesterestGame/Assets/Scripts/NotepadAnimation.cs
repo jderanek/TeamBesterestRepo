@@ -12,12 +12,13 @@ public class NotepadAnimation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rectTrans = gameObject.GetComponent<RectTransform>();
-        //rectTrans.anchoredPosition = new Vector2(0, startY);
+        rectTrans.anchoredPosition = new Vector2(0, startY);
     }
 
     //Starts animation
-    void Run()
+    public void Run()
     {
+        ResetToStart();
         InvokeRepeating("Move", 0f, .025f);
     }
 	
@@ -31,7 +32,7 @@ public class NotepadAnimation : MonoBehaviour {
             CancelInvoke("Move");
     }
 
-    void ResetToStart()
+    public void ResetToStart()
     {
         rectTrans.anchoredPosition = new Vector2(0, startY);
     }

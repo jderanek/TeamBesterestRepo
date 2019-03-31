@@ -332,6 +332,7 @@ MonoBehaviour:
   picture: {fileID: 651484064}
   button: {fileID: 0}
   followUpButton: {fileID: 378638433}
+  responseBook: {fileID: 0}
   notes: {fileID: 1975713363}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 832141945}
@@ -2428,6 +2429,7 @@ MonoBehaviour:
   picture: {fileID: 0}
   button: {fileID: 0}
   followUpButton: {fileID: 0}
+  responseBook: {fileID: 0}
   notes: {fileID: 0}
   newNote: {fileID: 0}
   statusText: {fileID: 0}
@@ -4503,7 +4505,7 @@ RectTransform:
   - {fileID: 84610937}
   - {fileID: 1378236408}
   m_Father: {fileID: 1256514715}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.43875003, y: 0.09230052}
   m_AnchorMax: {x: 0.9872501, y: 0.86426246}
@@ -5622,6 +5624,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 594745392}
           m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -11754,6 +11767,7 @@ MonoBehaviour:
   picture: {fileID: 207332600}
   button: {fileID: 0}
   followUpButton: {fileID: 80144917}
+  responseBook: {fileID: 0}
   notes: {fileID: 14202393}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 928304131}
@@ -12081,6 +12095,7 @@ MonoBehaviour:
   picture: {fileID: 1180447157}
   button: {fileID: 0}
   followUpButton: {fileID: 323456808}
+  responseBook: {fileID: 0}
   notes: {fileID: 1877343969}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 59104156}
@@ -12945,6 +12960,7 @@ MonoBehaviour:
   jeffInterviewPortrait: {fileID: 84610934}
   gordonInterviewPortrait: {fileID: 1378236405}
   clock: {fileID: 1040508086}
+  responseBox: {fileID: 2041153207}
 --- !u!4 &1031783965
 Transform:
   m_ObjectHideFlags: 0
@@ -15005,6 +15021,17 @@ MonoBehaviour:
             m_StringArgument: Geoff1
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -15227,13 +15254,13 @@ RectTransform:
   - {fileID: 637157687}
   - {fileID: 1878310172}
   - {fileID: 1571043630}
-  m_Father: {fileID: 1256514715}
-  m_RootOrder: 4
+  m_Father: {fileID: 2041153208}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0275, y: 0.059594855}
   m_AnchorMax: {x: 0.41750002, y: 0.532}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
-  m_SizeDelta: {x: -0.000061035156, y: 23.070007}
+  m_AnchoredPosition: {x: 97.27751, y: 65.536644}
+  m_SizeDelta: {x: 183.01523, y: 125.282715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199675642
 MonoBehaviour:
@@ -15800,13 +15827,13 @@ RectTransform:
   - {fileID: 1651268506}
   - {fileID: 1364065097}
   - {fileID: 839498537}
-  m_Father: {fileID: 1256514715}
-  m_RootOrder: 3
+  m_Father: {fileID: 2041153208}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0275, y: 0.009834029}
   m_AnchorMax: {x: 0.41750002, y: 0.47900003}
-  m_AnchoredPosition: {x: -0.000061035156, y: 26.000008}
-  m_SizeDelta: {x: -0.000061035156, y: 25.070007}
+  m_AnchoredPosition: {x: 97.27751, y: 80.41966}
+  m_SizeDelta: {x: 183.01523, y: 126.58188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225716381
 MonoBehaviour:
@@ -16064,9 +16091,6 @@ RectTransform:
   m_Children:
   - {fileID: 2041153208}
   - {fileID: 369298017}
-  - {fileID: 2035122441}
-  - {fileID: 1225716380}
-  - {fileID: 1199675641}
   - {fileID: 1289316955}
   - {fileID: 363629754}
   - {fileID: 1560712351}
@@ -16480,7 +16504,7 @@ RectTransform:
   m_LocalScale: {x: 0.73437464, y: 0.7343746, z: 0.7343746}
   m_Children: []
   m_Father: {fileID: 1256514715}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.43875003, y: 0}
   m_AnchorMax: {x: 0.99600005, y: 0.97400004}
@@ -16550,6 +16574,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 41062057}
           m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -16892,6 +16927,7 @@ MonoBehaviour:
   picture: {fileID: 972676254}
   button: {fileID: 0}
   followUpButton: {fileID: 330468195}
+  responseBook: {fileID: 0}
   notes: {fileID: 2005550718}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 1089568749}
@@ -18160,6 +18196,17 @@ MonoBehaviour:
             m_StringArgument: Geoff1
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -19107,7 +19154,7 @@ RectTransform:
   - {fileID: 714831717}
   - {fileID: 1219348025}
   m_Father: {fileID: 1256514715}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.88525, y: 0.009834029}
   m_AnchorMax: {x: 0.99600005, y: 0.192}
@@ -20602,6 +20649,7 @@ MonoBehaviour:
   picture: {fileID: 1746504801}
   button: {fileID: 0}
   followUpButton: {fileID: 446019372}
+  responseBook: {fileID: 0}
   notes: {fileID: 1212473304}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 2033533793}
@@ -20803,6 +20851,17 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Gordon1
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -21023,6 +21082,17 @@ MonoBehaviour:
             m_StringArgument: Gabbin1
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -21108,6 +21178,7 @@ MonoBehaviour:
   picture: {fileID: 1442665526}
   button: {fileID: 0}
   followUpButton: {fileID: 1485704802}
+  responseBook: {fileID: 0}
   notes: {fileID: 253172324}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 1745927358}
@@ -23863,7 +23934,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2035122440}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.9, z: 1}
   m_Children:
@@ -23873,13 +23944,13 @@ RectTransform:
   - {fileID: 1663072201}
   - {fileID: 964969973}
   - {fileID: 256175003}
-  m_Father: {fileID: 1256514715}
-  m_RootOrder: 2
+  m_Father: {fileID: 2041153208}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0275, y: 0.009834029}
   m_AnchorMax: {x: 0.41750002, y: 0.47900003}
-  m_AnchoredPosition: {x: -0.000061035156, y: 26}
-  m_SizeDelta: {x: -0.000030518, y: 25.07}
+  m_AnchoredPosition: {x: 97.27751, y: 80.41964}
+  m_SizeDelta: {x: 183.01526, y: 126.58187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035122442
 MonoBehaviour:
@@ -24062,7 +24133,7 @@ GameObject:
   - component: {fileID: 2041153209}
   - component: {fileID: 2041153211}
   m_Layer: 5
-  m_Name: Notebook
+  m_Name: ResponseBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24077,7 +24148,10 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2035122441}
+  - {fileID: 1225716380}
+  - {fileID: 1199675641}
   m_Father: {fileID: 1256514715}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
