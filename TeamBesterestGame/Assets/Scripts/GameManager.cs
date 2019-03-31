@@ -120,9 +120,7 @@ public class GameManager : MonoBehaviour
         switch (phase)
         {
             case "Start":
-                clock.Run();
                 phase = "Combat";
-                Invoke("StartPhase", 1.5f);
                 this.shift = 3;
                 //ChangeShift();
                 canSkip = true;
@@ -153,8 +151,15 @@ public class GameManager : MonoBehaviour
                 combatManager.GetComponent<DialogueRunner>().Stop();
                 combatCanvas.SetActive(false);
                 ResetPhase();
+                phase = "Transition";
+                phaseButton.gameObject.SetActive(false);
+                clock.Run();
+                Invoke("StartPhase", 1.5f);
+                break;
+            case "Transition":
                 phase = "Start";
                 this.interviewsRemaining = 3;
+                phaseButton.gameObject.SetActive(true);
                 phaseButton.GetComponentInChildren<Text>().text = "Start Combat";
                 //phaseButton.gameObject.SetActive(false);
                 ToggleInterviewMenu();
@@ -274,7 +279,7 @@ public class GameManager : MonoBehaviour
             }
         }
         interviewCanvas.SetActive(false);
-        Invoke("EnableInterviewCanvas", 1.4f);
+        //Invoke("EnableInterviewCanvas", 1.4f);
     }
 
     void EnableInterviewCanvas()
