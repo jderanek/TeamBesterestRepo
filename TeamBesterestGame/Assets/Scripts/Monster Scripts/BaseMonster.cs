@@ -153,6 +153,9 @@ public abstract class BaseMonster : BaseEntity {
             case "Goblenn":
                 gameManager.GetComponent<GameManager>().EnableFollowup("shift1");
                 break;
+            case "Gordon":
+                gameManager.GetComponent<GameManager>().EnableFollowup("shift1");
+                break;
             case "Jeff":
                 gameManager.GetComponent<GameManager>().EnableFollowup("shift2");
                 break;
