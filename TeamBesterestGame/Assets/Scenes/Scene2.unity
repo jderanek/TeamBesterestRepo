@@ -332,6 +332,7 @@ MonoBehaviour:
   picture: {fileID: 651484064}
   button: {fileID: 0}
   followUpButton: {fileID: 378638433}
+  responseBook: {fileID: 0}
   notes: {fileID: 1975713363}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 832141945}
@@ -2334,6 +2335,7 @@ MonoBehaviour:
   picture: {fileID: 0}
   button: {fileID: 0}
   followUpButton: {fileID: 0}
+  responseBook: {fileID: 0}
   notes: {fileID: 0}
   newNote: {fileID: 0}
   statusText: {fileID: 0}
@@ -6227,6 +6229,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 594745392}
           m_MethodName: StartDialogue
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -13071,6 +13084,7 @@ MonoBehaviour:
   picture: {fileID: 207332600}
   button: {fileID: 0}
   followUpButton: {fileID: 80144917}
+  responseBook: {fileID: 0}
   notes: {fileID: 14202393}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 928304131}
@@ -13398,6 +13412,7 @@ MonoBehaviour:
   picture: {fileID: 1180447157}
   button: {fileID: 0}
   followUpButton: {fileID: 323456808}
+  responseBook: {fileID: 0}
   notes: {fileID: 1877343969}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 59104156}
@@ -14412,6 +14427,7 @@ MonoBehaviour:
   jeffInterviewPortrait: {fileID: 84610934}
   gordonInterviewPortrait: {fileID: 1378236405}
   clock: {fileID: 1040508086}
+  responseBox: {fileID: 2041153207}
 --- !u!4 &1031783965
 Transform:
   m_ObjectHideFlags: 0
@@ -16422,6 +16438,17 @@ MonoBehaviour:
             m_StringArgument: Geoff1
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -17970,6 +17997,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -18280,6 +18318,7 @@ MonoBehaviour:
   picture: {fileID: 972676254}
   button: {fileID: 0}
   followUpButton: {fileID: 330468195}
+  responseBook: {fileID: 0}
   notes: {fileID: 2005550718}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 1089568749}
@@ -19928,6 +19967,17 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Geoff1
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -22429,6 +22479,7 @@ MonoBehaviour:
   picture: {fileID: 1746504801}
   button: {fileID: 0}
   followUpButton: {fileID: 446019372}
+  responseBook: {fileID: 0}
   notes: {fileID: 1212473304}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 2033533793}
@@ -22632,6 +22683,17 @@ MonoBehaviour:
             m_StringArgument: Gordon1
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -22740,6 +22802,17 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Gabbin1
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2041153211}
+          m_MethodName: Run
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
@@ -22864,6 +22937,7 @@ MonoBehaviour:
   picture: {fileID: 1442665526}
   button: {fileID: 0}
   followUpButton: {fileID: 1485704802}
+  responseBook: {fileID: 0}
   notes: {fileID: 253172324}
   newNote: {fileID: 1764750694423944, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}
   statusText: {fileID: 1745927358}
@@ -25951,7 +26025,7 @@ GameObject:
   - component: {fileID: 2041153209}
   - component: {fileID: 2041153211}
   m_Layer: 5
-  m_Name: Notebook
+  m_Name: ResponseBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
