@@ -7900,6 +7900,7 @@ GameObject:
   - component: {fileID: 1031783966}
   - component: {fileID: 1031783967}
   - component: {fileID: 1031783968}
+  - component: {fileID: 1031783971}
   - component: {fileID: 1031783970}
   - component: {fileID: 1031783969}
   m_Layer: 0
@@ -8083,6 +8084,18 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &1031783971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031783963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f237190b868da48926c84d98182177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolutionDropdown: {fileID: 1192795965}
 --- !u!1 &1045012750
 GameObject:
   m_ObjectHideFlags: 0
