@@ -1,7 +1,7 @@
 title: Coward1Base
 tags: 
 colorID: 0
-position: -606,-75
+position: -615,-100
 ---
 <<ChangeSpeaker SoundManager Glenn>>
 H-huh?
@@ -10,10 +10,8 @@ I'm the... front-line fighter around here.
 [[Front-line fighter? That is quite brave.|Coward11]]
 [[You must see a lot of combat then.|Coward12]]
 [[Tell me about yourself.|Coward13]]
+[[I think I know a way to get Gordon to let you fight alongside him. Try ambushing the heroes!|Coward1332]]
 
-<<if $confidence == 1>>
-[[I get the feeling you know many stealthy spots in the dungeon, can you use them to ambush heroes and attack?|Coward1332]]
-<<endif>>
 ===
 title: Coward11
 tags: 
@@ -28,7 +26,7 @@ I guess I wouldn't exactly call myself brave, although I want to be...
 title: Coward111
 tags: 
 colorID: 0
-position: 928,-999
+position: 694,-1032
 ---
 I want to prove to Gordon I can pull my weight around here! But we always lose... 
 [[You two don't seem to work well together, I can see why I got asked to come here.|Coward1111]]
@@ -37,7 +35,7 @@ I want to prove to Gordon I can pull my weight around here! But we always lose..
 title: Coward1111
 tags: 
 colorID: 1
-position: 1235,-691
+position: 1232,-691
 ---
 <<if $glennNoChangeNote is false>>
 <<RevealText Glenn Glenn_seems_to_have_serious_self_confidence_issues.>>
@@ -52,18 +50,18 @@ I know you are trying your best but I think Gordon and I just need another try!
 title: Coward112
 tags: 
 colorID: 0
-position: 762,-676
+position: 762,-681
 ---
 I always hear remarks from Gordon like "Stay and fight coward!" and so on..
 [[Well, hopefully with me here, I can fix that for you.|Coward1111]]
-[[Maybe there is a way for you to change his opinion? Try fighting with him for once.|Coward11222]]
+[[Maybe there is a way for you to change his opinion? Try staying and fighting with him for once.|Coward11222]]
 ===
 title: Coward11222
 tags: 
 colorID: 1
-position: 1425,-228
+position: 1424,-229
 ---
-<<set $confidence to 1>>
+<<set $confidence to true>>
 
 <<if $glennConfidenceNote is false>>
 <<RevealText Glenn Hopefully_my_little_pep_talk_helped_Glenn_out.>>
@@ -80,16 +78,16 @@ colorID: 0
 position: 400,-145
 ---
 Well...
-not reaally...
+not really...
 not always...
 not usually, actually...
-[[Not actually? You are on the front line, how does that work?|Coward122]]
+[[But you are on the front line, how does that work?|Coward122]]
 [[So you are a coward, then?|Coward121]]
 ===
 title: Coward122
 tags: 
 colorID: 0
-position: 1041,66
+position: 1059,-36
 ---
 You could say that, I guess.. but I call it being smart!
 Heroes are so scary...
@@ -99,13 +97,12 @@ Heroes are so scary...
 title: Coward13
 tags: 
 colorID: 0
-position: 132,179
+position: 129,173
 ---
 W-well...
 I like to run...
 And I know all the best hiding spots in the dungeon!
 
-<<set $confidence to 1>>
 [[Hiding spots? Aren't you the front line fighter here?|Coward131]]
 [[I bet those skills are great for catching heroes off guard.|Coward132]]
 [[How do those spots help you kill heroes?|Coward133]]
@@ -132,16 +129,19 @@ You are right, but is also lets me get away safely when heroes arrive.
 title: Coward1321
 tags: 
 colorID: 0
-position: 1162,493
+position: 1159,493
 ---
 I don't mind fighting, it is just the dying part that scares me...
-[[That is understandable, but you still need to fight heroes, that is your job.|Coward13211]]
+[[That is understandable, but you still need to fight heroes, that is your job|Coward13211]]
 [[But how does hiding factor into your combat style?|Coward1322]]
+<<if $inspire is true>>
+[[Gordon is laying his life on the line everyday, you should follow his example|Coward1323]]
+<<endif>>
 ===
 title: Coward1331
 tags: 
 colorID: 1
-position: 1342,1014
+position: 1344,1014
 ---
 <<if $glennNoChangeNote is false>>
 <<RevealText Glenn Glenn_seems_to_have_serious_self_confidence_issues.>>
@@ -156,7 +156,7 @@ Just tell me when you think of something then!
 title: Coward13211
 tags: 
 colorID: 1
-position: 1648,491
+position: 1648,484
 ---
 <<if $glennNoChangeNote is false>>
 <<RevealText Glenn Glenn_seems_to_have_serious_self_confidence_issues.>>
@@ -170,31 +170,34 @@ I know that, b-but I still think my way is working out. Let me try again boss.
 title: Coward133
 tags: 
 colorID: 0
-position: 408,567
+position: 408,566
 ---
 I-I guess they technically don't...
 
 [[Perhaps not in the way you are utilizing them, but I have a few ideas.|Coward1331]]
-<<if $confidence == 1>>
+<<if $inspire is true>>
 [[Maybe we can discuss how they could. Perhaps during an ambush.|Coward1332]]
 <<endif>>
 ===
 title: Coward1332
 tags: 
 colorID: 1
-position: 712,1100
+position: 160,1016
 ---
-<<set $confidence to 1>>
 
+<<if $inspire is true>>
+<<set $confidence to true>>
 A-ambush? That seems scary... but also smart! 
 Maybe that will finally impress Gordon then! Let me think for a bit then.
-
+<<elsif>>
+I am not so sure about this, but I will give it a try...
+<<endif>>
 <<EndInterview Glenn>>
 ===
 title: Coward121
 tags: 
 colorID: 0
-position: 949,-280
+position: 949,-282
 ---
 I guess you could say that... Gordon says it too...
 [[He does? Can you tell me what he says exactly?|Coward112]]
@@ -202,7 +205,7 @@ I guess you could say that... Gordon says it too...
 title: Coward1322
 tags: 
 colorID: 0
-position: 1362,185
+position: 1362,182
 ---
 I think that stealth is important aspect of combat.
 Discretion is the better part of valor as they say.
@@ -235,7 +238,7 @@ I can dream...
 title: Gordon13
 tags: 
 colorID: 0
-position: -43,2871
+position: -46,2871
 ---
 That kid won't leave me alone!
 Well, until the heroes show up and he books it out of there.
@@ -247,7 +250,7 @@ But then we both die and I'm back to getting an earful...
 title: Gordon111
 tags: 
 colorID: 0
-position: 306,1921
+position: 194,1753
 ---
 Time manipulation? Could you use some of it and make me not apply to work here?
 *Sigh* If I didn't need the money, I would've quit weeks ago.
@@ -259,7 +262,7 @@ Glenn really needs to learn about privacy and personal space.
 title: Gordon11
 tags: 
 colorID: 0
-position: -34,2127
+position: -70,1978
 ---
 Get Glenn to leave me alone for starters.
 I think the dungeon master gets his kicks watching me get annoyed.
@@ -270,10 +273,10 @@ I think the dungeon master gets his kicks watching me get annoyed.
 title: Gordon12
 tags: 
 colorID: 0
-position: 83,2540
+position: 83,2539
 ---
 Yeah, that is the same thing everyday.
-Glenn won't shut up, heroes come in and kill us, rinse and repeat.
+Glenn runs away, heroes come in and kill us both, rinse and repeat.
 Or I guess revive and repeat in our case.
 
 [[What can I do to change that?|Gordon121]]
@@ -293,7 +296,7 @@ How could you tell?
 title: Gordon14
 tags: 
 colorID: 1
-position: -106,3289
+position: -104,3282
 ---
 You did?! I really hope it works.
 He can't talk my ear off while heroes are attacking.
@@ -332,13 +335,13 @@ position: 382,2517
 I already told you, a silence spell.
 But in all seriousness, I think the kid just needs some confidence.
 I guess he sees how gung-ho I am in battle and wants to emulate me.
-[[Thanks for the tip, I will talk to Glenn about that|Gordon1211]]
+[[Maybe Glenn views you as an inspiring figure, but can't muster the courage to join you. Maybe I could ask him instead?|Gordon1211]]
 [[Anything else you think needs changing?|Gordon1212]]
 ===
 title: Gordon122
 tags: 
 colorID: 0
-position: 563,2845
+position: 561,2816
 ---
 Are you kidding? That would only make it worse.
 I guess he is trying to impress me or whatever.
@@ -350,34 +353,41 @@ He is doing a poor job as I am not really inspired by him running away every bat
 title: Gordon1211
 tags: 
 colorID: 1
-position: 1284,2705
+position: 1281,2705
 ---
+That would work I think.
 I just hope he understands.
 I don't hate the guy, he just needs to learn about personal space.
 And to use his indoor voice...
+<<set $inspire to true>>
 <<EndInterview Gordon>>
 ===
 title: Gordon1212
 tags: 
 colorID: 1
-position: 932,2231
+position: 930,2227
 ---
-Yeah, the interior design of this place could use a tweak or two.
-Haha, but seriously that is the biggest issue I can think of. 
-I hope you can figure this all out.
+<<if $gordonInspireNote is false>>
+<<RevealText Gordon Gordon_thinks_that_you_could_convice_Glenn_to_stay_and_fight_via_inspiration.>>
+<<set $gordonInspireNote to true>>
+<<endif>>
+Glenn... inspired by me?
+I guess that makes sense in a way...
+Maybe try to work that angle on him, it might work!
+<<set $inpire to true>>
 
 <<EndInterview Gordon>>
 ===
 title: Gordon1221
 tags: 
 colorID: 0
-position: 892,2778
+position: 894,2773
 ---
 I mean I personally think he is a coward.
 But I think there is much more to it than that.
 He always goes on and on about wanting to be strong or such.
 
-[[Maybe I could go have a chat with him.|Gordon1211]]
+[[Maybe I could go have a chat with him. Inspire him a bit.|Gordon1211]]
 ===
 title: Gordon1111
 tags: 
@@ -393,7 +403,7 @@ If so, I apologize, I wouldn't wish that fate on my worst foe.
 title: Gordon1112
 tags: 
 colorID: 1
-position: 626,1995
+position: 628,1995
 ---
 At this point, I will take any help I could get.
 I will leave you to it then.
@@ -407,7 +417,88 @@ colorID: 1
 position: 857,1673
 ---
 I am just messing with you.
-But yeah, good luck
+But yeah, good luck, you will need it...
 
 <<EndInterview Gordon>>
+===
+title: GGF1
+tags: 
+colorID: 2
+position: 2206,601
+---
+<<ChangeSpeaker SoundManager Gordon>>
+Oh, hey! I was just talking to Glenn here
+<<ChangeSpeaker SoundManager Glenn>>
+Y-yes? What is it?
+<<if $confidence is true and $inspire is true>>
+[[Are you both prepared now to fight together?|GGF11]]
+<<else>>
+<<if $confidence is true and $inspire is false>>
+[[Feeling better now Glenn?|GGF12]]
+<<else>>
+<<if $confidence is false and $inspire is true>>
+[[Giving him that talk we discussed Gordon?|GGF13]]
+<<elseif>>
+[[That is odd, you two getting along|GGF14]]
+<<endif>>
+===
+title: GGF11
+tags: 
+colorID: 2
+position: 2762,352
+---
+<<ChangeSpeaker SoundManager Gordon>>
+I think so, this will work out!
+<<ChangeSpeaker SoundManager Glenn>>
+T-thanks for giving me chance Gordon, I won't let you down!
+<<ChangeSpeaker SoundManager Gordon>>
+I can tell you got the fire of battle in your eyes, I almost feel bad for the heroes now!
+
+===
+title: GGF14
+tags: 
+colorID: 2
+position: 2702,1075
+---
+<<ChangeSpeaker SoundManager Glenn>>
+Gordon is trying to help me out... but I am not so sure his ideas are correct...
+<<ChangeSpeaker SoundManager Gordon>>
+See?! I try to help and gets all cold feet like when he sees a hero>>
+<<ChangeSpeaker SoundManager Glenn>>
+I-I just don't see the reasoning behind it all... I am sorry!
+===
+title: Coward1323
+tags: 
+colorID: 0
+position: 1421,733
+---
+You are right! 
+Gordon should not have to face those heroes alone!
+He'll have me by his side now!
+<<set $confidence to true>>
+<<EndInterview Glenn>>
+===
+title: GGF13
+tags: 
+colorID: 2
+position: 2730,839
+---
+<<ChangeSpeaker SoundManager Gordon>>
+Sure am! Now repeat what I taught you Glenn
+<<ChangeSpeaker SoundManager Glenn>>
+U-uh... I have already forgot... sorry...
+<<ChangeSpeaker SoundManager Gordon>>
+Well, let me start again from the top!
+===
+title: GGF12
+tags: 
+colorID: 2
+position: 2722,602
+---
+<<ChangeSpeaker SoundManager Glenn>>
+Y-yeah! I can't wait to prove myself!
+<<ChangeSpeaker SoundManager Gordon>>
+Don't too cocky, you haven't fought anyone yet
+<<ChangeSpeaker SoundManager Glenn>>
+Y-you will see! I can take down heroes too!
 ===
