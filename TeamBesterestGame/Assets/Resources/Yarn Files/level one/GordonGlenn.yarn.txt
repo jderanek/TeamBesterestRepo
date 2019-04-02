@@ -432,13 +432,14 @@ Oh, hey! I was just talking to Glenn here
 Y-yes? What is it?
 <<if $confidence is true and $inspire is true>>
 [[Are you both prepared now to fight together?|GGF11]]
-<<else>>
+
 <<if $confidence is true and $inspire is false>>
 [[Feeling better now Glenn?|GGF12]]
-<<else>>
+
 <<if $confidence is false and $inspire is true>>
 [[Giving him that talk we discussed Gordon?|GGF13]]
-<<elseif>>
+
+
 [[That is odd, you two getting along|GGF14]]
 <<endif>>
 ===
