@@ -528,6 +528,21 @@ MonoBehaviour:
   - name: glennConfidenceNote
     value: false
     type: 2
+  - name: inspire
+    value: false
+    type: 2
+  - name: glennTree2Start
+    value: false
+    type: 2
+  - name: gordonTree2Start
+    value: false
+    type: 2
+  - name: gordonGlennHelp
+    value: false
+    type: 2
+  - name: glennGordonHelp
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &41062056
 MonoBehaviour:

@@ -14,7 +14,7 @@ I'm the... front-line fighter around here.
 
 <<if $glennTree2Start is true>>
 [[Look here Glenn, I think I know the deeper problem. You and Gordon both suck at fighting...|Glenn2]]
-
+<<endif>>
 ===
 title: Coward11
 tags: 
@@ -225,7 +225,7 @@ You too? *Sigh* That is what Gordon says too... I thought you'd be different...
 title: Gordon1
 tags: 
 colorID: 0
-position: -423,2450
+position: -411,2462
 ---
 <<ChangeSpeaker SoundManager Gordon>>
 Hey, you are the wizard guy the boss talked about? Hopefully you know your stuff.
@@ -237,10 +237,9 @@ I can dream...
 << if $confidence == 1>>
 [[I actually already talked to Glenn, I think I may have solved your problem.|Gordon14]]
 <<endif>>
-
 <<if $gordonTree2Start is true>>
 [[Look here Gordon, I think I know the deeper problem. You and Glenn both suck at fighting...|Gordon2]]
-
+<<endif>>
 ===
 title: Gordon13
 tags: 
@@ -431,22 +430,22 @@ But yeah, good luck, you will need it...
 title: GGF1
 tags: 
 colorID: 2
-position: 2206,601
+position: 2279,674
 ---
 <<ChangeSpeaker SoundManager Gordon>>
 Oh, hey! So what the deal Mr. Time-Wizard?
 <<ChangeSpeaker SoundManager Glenn>>
 Y-yes? What is it?
+
 <<if $confidence is true and $inspire is true>>
 [[Are you both prepared now to fight together?|GGF11]]
 
-<<if $confidence is true and $inspire is false>>
+<<elseif $confidence is true and $inspire is false>>
 [[Feeling better now Glenn?|GGF12]]
 
-<<if $confidence is false and $inspire is true>>
+<<elseif $confidence is false and $inspire is true>>
 [[Giving him that talk we discussed Gordon?|GGF13]]
-
-
+<<else>>
 [[That is odd, you two getting along?|GGF14]]
 <<endif>>
 ===
@@ -473,7 +472,7 @@ Y-you will see! I can take down heroes too!
 title: GGF14
 tags: 
 colorID: 2
-position: 2702,1075
+position: 2696,1075
 ---
 <<ChangeSpeaker SoundManager Glenn>>
 Gordon is trying to help me out... but I am not so sure his ideas are correct...
@@ -861,7 +860,7 @@ position: 932,-3321
 ---
 I dont know... if you think so... Ill try next time I can...
 
-<<set $glennGordonHelp true>>
+<<set $glennGordonHelp to true>>
 
 <<EndInterview>>
 ===
