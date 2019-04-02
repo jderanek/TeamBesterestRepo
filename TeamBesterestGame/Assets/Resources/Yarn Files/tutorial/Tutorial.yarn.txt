@@ -50,6 +50,8 @@ position: 1066,242
 <<endif>>
 
 What?! Then we're done here, find some other fool to hire you!
+
+<<ChangeSpeaker SoundManager Voiceless>>
 [Perhaps I shouldn't be so flippant about my education next time.]
 ===
 title: Tutorial12
@@ -78,6 +80,8 @@ position: 1740,425
 <<endif>>
 
 Then what's the point?! Come back when you learn something useful!
+
+<<ChangeSpeaker SoundManager Voiceless>>
 [Maybe I should mention my doctoral work on time magic.]
 ===
 title: Tutorial1221
@@ -93,6 +97,8 @@ position: 1742,671
 
 Not even close! It was 24,601. 
 I was looking for a skilled wizard! Get out of here!
+
+<<ChangeSpeaker SoundManager Voiceless>>
 [Now to prove him wrong!]
 
 ===
