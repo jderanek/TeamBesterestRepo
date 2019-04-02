@@ -660,7 +660,6 @@ position: -533,-1491
 ...We're not going to be friends.
 
 [[Why not?|Nilbog12111]]
-[[Did he do something to you?|Nilbog12113]]
 ===
 title: Nilbog1212
 tags: 
