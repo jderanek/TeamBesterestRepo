@@ -23,7 +23,12 @@ public class SoundManager : MonoBehaviour
     static GameObject[] goblins;
     static string[] goblinVoiceName;
 
-    public static bool MusicPlaying = false;
+    public static bool MusicPlaying;
+
+    public static float masterVolume;
+    public static float musicVolume;
+    public static float sfxVolume;
+    public static float voiceVolume;
 
     private float volume;
 
@@ -49,26 +54,29 @@ public class SoundManager : MonoBehaviour
 
     public void ChangeMasterVolume(GameObject scrollBar)
     {
-        print(scrollBar.GetComponent<Scrollbar>().value);
         AkSoundEngine.SetRTPCValue("Master_Volume", scrollBar.GetComponent<Scrollbar>().value * 100); //multiply by 100 because the float passed counts as a percent
+        masterVolume = scrollBar.GetComponent<Scrollbar>().value * 100;
         return;
     }
 
     public void ChangeVoiceVolume(GameObject scrollBar)
     {
         AkSoundEngine.SetRTPCValue("Voice_Volume", scrollBar.GetComponent<Scrollbar>().value * 100); //multiply by 100 because the float passed counts as a percent
+        voiceVolume = scrollBar.GetComponent<Scrollbar>().value * 100;
         return;
     }
 
     public void ChangeSFXVolume(GameObject scrollBar)
     {
         AkSoundEngine.SetRTPCValue("Sound_Effects", scrollBar.GetComponent<Scrollbar>().value * 100); //multiply by 100 because the float passed counts as a percent
+        sfxVolume = scrollBar.GetComponent<Scrollbar>().value * 100;
         return;
     }
 
     public void ChangeMusicVolume(GameObject scrollBar)
     {
         AkSoundEngine.SetRTPCValue("Music_Volume", scrollBar.GetComponent<Scrollbar>().value * 100); //multiply by 100 because the float passed counts as a percent
+        musicVolume = scrollBar.GetComponent<Scrollbar>().value * 100;
         return;
     }
 

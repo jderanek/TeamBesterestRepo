@@ -7902,7 +7902,6 @@ GameObject:
   - component: {fileID: 1031783968}
   - component: {fileID: 1031783971}
   - component: {fileID: 1031783970}
-  - component: {fileID: 1031783969}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -8041,28 +8040,6 @@ MonoBehaviour:
   notification: {fileID: 66976828}
   journalPrompt: {fileID: 32820546}
   clockPrompt: {fileID: 1338773030}
---- !u!114 &1031783969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1031783963}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2761a52f38fe5554fb6888b326a534e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  eventID: 1585661381
-  m_callbackData: {fileID: 0}
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  valueGuid: c5d7da185037ff48be1a7250f7fe4799
 --- !u!114 &1031783970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15834,6 +15811,12 @@ MonoBehaviour:
     value: false
     type: 2
   - name: bossGuessNote
+    value: false
+    type: 2
+  - name: hasJournaled
+    value: false
+    type: 2
+  - name: hasTimeTraveled
     value: false
     type: 2
   debugTextView: {fileID: 0}

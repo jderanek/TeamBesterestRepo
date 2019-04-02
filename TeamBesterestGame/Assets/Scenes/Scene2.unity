@@ -1736,7 +1736,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Goblenn
+  m_Text: Glenn
 --- !u!222 &121648020
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14242,7 +14242,7 @@ Prefab:
     - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_Text
-      value: "\u2022 Goblenn runs away"
+      value: "\u2022 Glenn runs away"
       objectReference: {fileID: 0}
     - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
@@ -14355,7 +14355,6 @@ GameObject:
   - component: {fileID: 1031783966}
   - component: {fileID: 1031783968}
   - component: {fileID: 1031783970}
-  - component: {fileID: 1031783969}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -14500,28 +14499,6 @@ MonoBehaviour:
   notification: {fileID: 597496082}
   journalPrompt: {fileID: 0}
   clockPrompt: {fileID: 0}
---- !u!114 &1031783969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1031783963}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2761a52f38fe5554fb6888b326a534e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  actionOnEventType: 0
-  curveInterpolation: 4
-  enableActionOnEvent: 0
-  eventID: 1585661381
-  m_callbackData: {fileID: 0}
-  playingId: 0
-  soundEmitterObject: {fileID: 0}
-  transitionDuration: 0
-  valueGuid: c5d7da185037ff48be1a7250f7fe4799
 --- !u!114 &1031783970
 MonoBehaviour:
   m_ObjectHideFlags: 0

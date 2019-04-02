@@ -47,12 +47,23 @@ position: 1066,242
 <<if $bossFlippantNote is false>>
 <<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education_next_time.>>
 <<set $bossFlippantNote to true>>
+
+<<if $hasJournaled is false>>
+<<TogglePrompts GameManager 3>>
+<<set $hasJournaled to true>>
+<<endif>>
+
 <<endif>>
 
 What?! Then we're done here, find some other fool to hire you!
 
 <<ChangeSpeaker SoundManager Voiceless>>
 [Perhaps I shouldn't be so flippant about my education next time.]
+
+<<if $hasTimeTraveled is false>>
+<<TogglePrompts GameManager 4>>
+<<set $hasTimeTraveled to true>>
+<<endif>>
 ===
 title: Tutorial12
 tags: 
@@ -77,12 +88,23 @@ position: 1740,425
 <<if $bossTimeMagicNote is false>>
 <<RevealText Boss Maybe_I_should_mention_my_doctoral_work_on_time_magic.>>
 <<set $bossTimeMagicNote to true>>
+
+<<if $hasJournaled is false>>
+<<TogglePrompts GameManager 3>>
+<<set $hasJournaled to true>>
+<<endif>>
+
 <<endif>>
 
 Then what's the point?! Come back when you learn something useful!
 
 <<ChangeSpeaker SoundManager Voiceless>>
 [Maybe I should mention my doctoral work on time magic.]
+
+<<if $hasTimeTraveled is false>>
+<<TogglePrompts GameManager 4>>
+<<set $hasTimeTraveled to true>>
+<<endif>>
 ===
 title: Tutorial1221
 tags: 
