@@ -1,7 +1,7 @@
 title: Gabbin1
 tags: 
 colorID: 0
-position: 1893,-983
+position: 2557,-2261
 ---
 <<ChangeSpeaker SoundManager Gabbin>>
 Hello! I'm Gabbin! Nice to meet you!
@@ -10,6 +10,10 @@ I hope you've had an excellent time with us all so far!
 [[Coming on a little strong, aren't you?|Gabbin12]]
 [[You seem pleasant, all things considered.|Gabbin13]]
 
+<<if $talkedToNilbog is true>>
+[[Absolutely. In fact, I've already talked to Nilbog.|Gabbin14]]
+<<endif>>
+
 <<if $gabbinStart2 is true>>
 [[Its been great Gabbin! But before we get things moving, what's you opinion on kids working in the dungeon business?|Gabbin2]]
 <<endif>>
@@ -17,7 +21,7 @@ I hope you've had an excellent time with us all so far!
 title: Gabbin11
 tags: 
 colorID: 0
-position: 2410,-1555
+position: 3074,-2833
 ---
 Yep! I love to keep things positive!
 Being positive makes everything better, easier, and more fun!
@@ -28,7 +32,7 @@ Being positive makes everything better, easier, and more fun!
 title: Gabbin111
 tags: 
 colorID: 0
-position: 2876,-2236
+position: 3540,-3514
 ---
 I like to think so!
 Nilbog doesn't seem to appreciate it very much, though.
@@ -40,7 +44,7 @@ Nilbog doesn't seem to appreciate it very much, though.
 title: Gabbin1111
 tags: 
 colorID: 0
-position: 3107,-2662
+position: 3771,-3940
 ---
 Nilbog likes to act like a lone wolf!
 He won't talk to me, or work as a team when heroes show up!
@@ -53,12 +57,12 @@ He'll listen eventually! I think!
 title: Gabbin11112
 tags: 
 colorID: 1
-position: 3713,-3087
+position: 4377,-4365
 ---
 <<set $talkedToGabbin to true>>
 
 <<if $gabbinAnnoyingNote is false>>
-<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
 <<set $gabbinAnnoyingNote to true>>
 <<endif>>
 
@@ -70,7 +74,7 @@ It'll work eventually, and everything will turn around!
 title: Gabbin11111
 tags: 
 colorID: 0
-position: 3604,-3440
+position: 4268,-4718
 ---
 Invasive! What do you mean?
 We have to become friends and work together!
@@ -81,7 +85,7 @@ We have to become friends and work together!
 title: Gabbin11113
 tags: 
 colorID: 0
-position: 3745,-2740
+position: 4409,-4018
 ---
 That's mean!
 Why would I do that?
@@ -92,7 +96,7 @@ Why would I do that?
 title: Gabbin111111
 tags: 
 colorID: 1
-position: 4088,-3671
+position: 4752,-4949
 ---
 <<set $talkedToGabbin to true>>
 <<set $respectful to true>>
@@ -114,7 +118,7 @@ I hope we can still work this out!
 title: Gabbin111112
 tags: 
 colorID: 1
-position: 4191,-3408
+position: 4855,-4686
 ---
 <<set $talkedToGabbin to true>>
 <<set $sad to true>>
@@ -134,12 +138,12 @@ That's kind of sad.
 title: Gabbin111113
 tags: 
 colorID: 1
-position: 4288,-3132
+position: 4952,-4410
 ---
 <<set $talkedToGabbin to true>>
 
 <<if $gabbinAnnoyingNote is false>>
-<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
 <<set $gabbinAnnoyingNote to true>>
 <<endif>>
 
@@ -152,7 +156,7 @@ Thanks for the confidence booster!
 title: Gabbin111132
 tags: 
 colorID: 1
-position: 4216,-2726
+position: 4880,-4004
 ---
 <<set $talkedToGabbin to true>>
 <<set $sad to true>>
@@ -173,7 +177,7 @@ That's a *very* negative way to look at things...
 title: Gabbin1112
 tags: 
 colorID: 0
-position: 3337,-2400
+position: 4001,-3678
 ---
 That's what Nilbog says a lot. I'm just like this!
 Things will work out if I stay positive, and keep talking to him! 
@@ -186,7 +190,7 @@ Nilbog will come around eventually!
 title: Gabbin11122
 tags: 
 colorID: 0
-position: 3860,-2400
+position: 4524,-3678
 ---
 What do you mean?
 [[Just because you're coworkers, doesn't mean you're friends. You're probably annoying him.|Gabbin111112]]
@@ -196,7 +200,7 @@ What do you mean?
 title: Gabbin111222
 tags: 
 colorID: 1
-position: 4240,-2410
+position: 4904,-3688
 ---
 <<set $talkedToGabbin to true>>
 <<set $respectful to true>>
@@ -216,7 +220,7 @@ There has to be some way we can fix things, though...
 title: Gabbin112
 tags: 
 colorID: 0
-position: 3098,-1542
+position: 3762,-2820
 ---
 Positivity can make any situation less bleak!
 ...Except maybe our success against Heroes.
@@ -228,7 +232,7 @@ But I'm sure I can get Nilbog to turn around if I can get him to talk!
 title: Gabbin1123
 tags: 
 colorID: 0
-position: 3407,-1543
+position: 4071,-2821
 ---
 Exactly! I just have to keep positive about it, and things *will* work!
 And if they dont, it's because we weren't positive enough!
@@ -239,12 +243,12 @@ And if they dont, it's because we weren't positive enough!
 title: Gabbin11231
 tags: 
 colorID: 1
-position: 3713,-1543
+position: 4377,-2821
 ---
 <<set $talkedToGabbin to true>>
 
 <<if $gabbinAnnoyingNote is false>>
-<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
 <<set $gabbinAnnoyingNote to true>>
 <<endif>>
 
@@ -258,7 +262,7 @@ position: 3713,-1543
 title: Gabbin113
 tags: 
 colorID: 0
-position: 2898,-1256
+position: 3562,-2534
 ---
 The necromancers are real professionals!
 I tend to feel a bit loopy afterwards, but it beats being dead!
@@ -270,7 +274,7 @@ If only Nilbog saw the benefits of working together with me!
 title: Gabbin1131
 tags: 
 colorID: 0
-position: 3505,-1234
+position: 4169,-2512
 ---
 What am I missing?
 Once Nilbog and I work together, the heroes won't stand a chance!
@@ -284,7 +288,7 @@ He just needs to actually talk to me so we can become friends!
 title: Gabbin12
 tags: 
 colorID: 0
-position: 2473,-983
+position: 3137,-2261
 ---
 If being positive made me strong, those heroes wouldn't stand a chance!
 Man, if only that were the case!
@@ -297,7 +301,7 @@ Once I get Nilbog to get with the program, we'll be unstoppable!
 title: Gabbin13
 tags: 
 colorID: 0
-position: 2949,-180
+position: 3613,-1458
 ---
 Only thing on my mind is getting Nilbog to cheer up!
 Being dead is a little inconvenient. But that's not unusual around here!
@@ -307,7 +311,7 @@ Being dead is a little inconvenient. But that's not unusual around here!
 title: Gabbin132
 tags: 
 colorID: 0
-position: 3313,-172
+position: 3864,-1454
 ---
 I am! I have to get Nilbog to cheer up, or we'll never work together!
 He refuses to talk to me, no matter how hard I try!
@@ -318,7 +322,7 @@ Usually positivity is contagious, but not with this guy!
 title: Gabbin1322
 tags: 
 colorID: 0
-position: 3649,-166
+position: 4313,-1444
 ---
 That wasn't very nice...
 ...but you might have a point!
@@ -330,7 +334,7 @@ Do you think it's possible I'm being too much?
 title: Gabbin13221
 tags: 
 colorID: 1
-position: 3901,-369
+position: 4565,-1647
 ---
 <<set $talkedToGabbin to true>>
 <<set $sad to true>>
@@ -352,7 +356,7 @@ position: 3901,-369
 title: Gabbin13222
 tags: 
 colorID: 1
-position: 3905,-136
+position: 4569,-1414
 ---
 <<set $talkedToGabbin to true>>
 <<set $respectful to true>>
@@ -371,12 +375,12 @@ Hopefully I can find a way to cheer him up while giving him some space!
 title: Gabbin13223
 tags: 
 colorID: 1
-position: 3911,91
+position: 4575,-1187
 ---
 <<set $talkedToGabbin to true>>
 
 <<if $gabbinAnnoyingNote is false>>
-<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_understandably_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
 <<set $gabbinAnnoyingNote to true>>
 <<endif>>
 
@@ -397,15 +401,17 @@ position: 1331,1140
 <<ChangeSpeaker SoundManager Gabbin>>
 So, what's the plan?
 
-
-[[Nilbog, you need to come out of your shell and work with Gabbin to make this work.|NilbogGabbinSolution11]]
-[[Gabbin, you need to leave Nilbog alone during work.|NilbogGabbinSolution12]]
-[[Can't the two of you just be friends and work together?|NilbogGabbinSolution13]]
-
-<<if $talkedtoNilbog2 and $talkedtoGabbin2 is true>>
+<<if $talkedToNilbog2 is true and $talkedToGabbin2 is true>>
 [[Gabbin, do you remember that cool new tactic I told you Nilbog worked on?|NilbogGabbinSolution14]]
 [[Nilbog and Gabbin, I want you both to run a thorough check-up on your uniforms. Especially you Nilbog, there seems to be some "flaws" I can point out right now.|NilbogGabbinSolution15]]
 [[Nilbog, I think it is time to tell Gabbin your secret. Go ahead. |NilbogGabbinSolution16]]
+
+<<else>>
+
+[[Nilbog, you need to come out of your shell and work with Gabbin to make this work.|NilbogGabbinSolution11]]
+[[Gabbin, you need to leave Nilbog alone during work.|NilbogGabbinSolution12]]
+[[I need you two to put aside your differences and work together.|NilbogGabbinSolution13]]
+
 <<endif>>
 ===
 title: NilbogGabbinSolution11
@@ -572,13 +578,17 @@ I'm not going to deal with this...
 title: Nilbog1
 tags: 
 colorID: 0
-position: -1580,-1770
+position: -1693,-3484
 ---
 <<ChangeSpeaker SoundManager Nilbog>>
 ...
 
 [[...|Nilbog11]]
 [[...Hello? You in there?|Nilbog12]]
+
+<<if $talkedToGabbin is true>>
+[[Hold your horses there pal, I talked to Gabbin already.|Nilbog13]]
+<<endif>>
 
 <<if $nilbogStart2 is true>>
 [[Look here, I need you to stop acting like *children*!|Nilbog2]]
@@ -587,7 +597,7 @@ position: -1580,-1770
 title: Nilbog11
 tags: 
 colorID: 0
-position: -867,-2744
+position: -980,-4458
 ---
 ......
 
@@ -598,7 +608,7 @@ position: -867,-2744
 title: Nilbog12
 tags: 
 colorID: 0
-position: -1119,-500
+position: -1232,-2214
 ---
 <<ChangeSpeaker SoundManager Nilbog>>
 ...Just because I'm not responding doesn't mean Im not listening.
@@ -610,7 +620,7 @@ position: -1119,-500
 title: Nilbog122
 tags: 
 colorID: 1
-position: -786,-484
+position: -899,-2198
 ---
 <<set $talkedToNilbog to true>>
 
@@ -626,7 +636,7 @@ position: -786,-484
 title: Nilbog111
 tags: 
 colorID: 0
-position: -542,-3475
+position: -655,-5189
 ---
 <<ChangeSpeaker SoundManager Nilbog>>
 ...You're definitely more pleasant to be around than Gabbin, that's for sure.
@@ -637,7 +647,7 @@ position: -542,-3475
 title: Nilbog121
 tags: 
 colorID: 0
-position: -887,-968
+position: -1000,-2682
 ---
 ...You could say that. Gabbin is a real pain.
 ...He doesn't stop bothering me... ever.
@@ -655,7 +665,7 @@ position: -887,-968
 title: Nilbog1211
 tags: 
 colorID: 0
-position: -533,-1491
+position: -646,-3205
 ---
 ...We're not going to be friends.
 
@@ -664,7 +674,7 @@ position: -533,-1491
 title: Nilbog1212
 tags: 
 colorID: 1
-position: -570,-1090
+position: -683,-2804
 ---
 <<set $talkedToNilbog to true>>
 
@@ -681,7 +691,7 @@ Nice.
 title: Nilbog1213
 tags: 
 colorID: 0
-position: -537,-820
+position: -650,-2534
 ---
 Then you know exactly what the problem is.
 He doesn't leave me alone. I like my space.
@@ -693,7 +703,7 @@ He doesn't leave me alone. I like my space.
 title: Nilbog112
 tags: 
 colorID: 1
-position: -577,-2940
+position: -690,-4654
 ---
 <<set $talkedToNilbog to true>>
 
@@ -711,7 +721,7 @@ position: -577,-2940
 title: Nilbog113
 tags: 
 colorID: 0
-position: -498,-2667
+position: -611,-4381
 ---
 <<ChangeSpeaker SoundManager Nilbog>>
 ...Darn, and here I thought we understood each other.
@@ -722,7 +732,7 @@ position: -498,-2667
 title: Nilbog1214
 tags: 
 colorID: 0
-position: -512,-391
+position: -625,-2105
 ---
 ...I just want Gabbin to leave me alone.
 The guy really pushes my buttons.
@@ -734,7 +744,7 @@ The guy really pushes my buttons.
 title: Nilbog12111
 tags: 
 colorID: 0
-position: -216,-1712
+position: -329,-3426
 ---
 ...Because he annoys me. Simple as that.
 He doesn't respect my personal space, and never stops talking.
@@ -747,7 +757,7 @@ He doesn't respect my personal space, and never stops talking.
 title: Nilbog12131
 tags: 
 colorID: 1
-position: -134,-1086
+position: -247,-2800
 ---
 <<set $talkedToNilbog to true>>
 <<set $patient to true>>
@@ -765,7 +775,7 @@ I doubt such a thing is possible, though.
 title: Nilbog1111
 tags: 
 colorID: 0
-position: -217,-3638
+position: -330,-5352
 ---
 The guy will simply *not* leave me alone.
 ...I can't work like this. I need my space.
@@ -776,7 +786,7 @@ The guy will simply *not* leave me alone.
 title: Nilbog11111
 tags: 
 colorID: 0
-position: 99,-3797
+position: -14,-5511
 ---
 ...Why?
 ...I don't want to do that.
@@ -787,7 +797,7 @@ position: 99,-3797
 title: Nilbog111111
 tags: 
 colorID: 1
-position: 586,-4047
+position: 473,-5761
 ---
 <<set $talkedToNilbog to true>>
 <<set $defeated to true>>
@@ -797,9 +807,7 @@ position: 586,-4047
 <<set $nilbogDefeatedNote to true>>
 <<endif>>
 
-<<ChangeSpeaker SoundManager Voiceless>>
 ...
-<<ChangeSpeaker SoundManager Nilbog>>
 ...You're right. We've really been getting our butts handed to us.
 ...If I *have* to, I guess I'll go along with it...
 
@@ -808,7 +816,7 @@ position: 586,-4047
 title: Nilbog111112
 tags: 
 colorID: 1
-position: 787,-3733
+position: 674,-5447
 ---
 <<set $talkedToNilbog to true>>
 <<set $patient to true>>
@@ -830,7 +838,7 @@ But Gabbin is going to be hard to control, good luck.
 title: Nilbog11112
 tags: 
 colorID: 1
-position: 278,-3380
+position: 165,-5094
 ---
 <<set $talkedToNilbog to true>>
 
@@ -849,7 +857,7 @@ position: 278,-3380
 title: Nilbog1113
 tags: 
 colorID: 0
-position: -153,-3271
+position: -266,-4985
 ---
 ...Nevermind.
 ...Since you're here, can you get Nilbog off my back?
@@ -861,7 +869,7 @@ position: -153,-3271
 title: Nilbog1132
 tags: 
 colorID: 0
-position: -169,-2672
+position: -282,-4386
 ---
 <<ChangeSpeaker SoundManager Voiceless>>
 ....
@@ -874,7 +882,7 @@ position: -169,-2672
 title: Nilbog121111
 tags: 
 colorID: 1
-position: 190,-1874
+position: 77,-3588
 ---
 <<set $talkedToNilbog to true>>
 
@@ -892,7 +900,7 @@ position: 190,-1874
 title: Nilbog121113
 tags: 
 colorID: 1
-position: 194,-1592
+position: 81,-3306
 ---
 <<set $talkedToNilbog to true>>
 <<set $defeated to true>>
@@ -915,7 +923,7 @@ position: 194,-1592
 title: Nilbog12132
 tags: 
 colorID: 1
-position: -136,-825
+position: -249,-2539
 ---
 <<set $talkedToNilbog to true>>
 
@@ -932,7 +940,7 @@ position: -136,-825
 title: Nilbog12133
 tags: 
 colorID: 0
-position: 245,-485
+position: 132,-2199
 ---
 ...I work alone.
 
@@ -943,7 +951,7 @@ position: 245,-485
 title: Nilbog121331
 tags: 
 colorID: 1
-position: 503,-486
+position: 498,-2206
 ---
 <<set $talkedToNilbog to true>>
 
@@ -960,7 +968,7 @@ position: 503,-486
 title: Nilbog123
 tags: 
 colorID: 0
-position: -1144,-95
+position: -1257,-1809
 ---
 ....Fine. I'll spell it out for you.
 Gabbin is a pain. I need him to leave me alone.
@@ -973,7 +981,7 @@ Until that happens, things aren't going to work.
 title: Nilbog1231
 tags: 
 colorID: 1
-position: -754,-121
+position: -867,-1835
 ---
 <<set $talkedToNilbog to true>>
 
@@ -997,7 +1005,7 @@ position: -754,-121
 title: Nilbog1233
 tags: 
 colorID: 1
-position: -727,227
+position: -840,-1487
 ---
 <<set $talkedToNilbog to true>>
 
@@ -1014,7 +1022,7 @@ The sooner you deal with him, the better.
 title: Nilbog1232
 tags: 
 colorID: 0
-position: -463,62
+position: -576,-1652
 ---
 ...Easy. Get him to respect my personal space.
 ...Or just get him to leave me alone, period. Either works for me.
@@ -1026,7 +1034,7 @@ position: -463,62
 title: Nilbog12321
 tags: 
 colorID: 1
-position: -81,-151
+position: -194,-1865
 ---
 <<set $talkedToNilbog to true>>
 <<set $patient to true>>
@@ -1045,7 +1053,7 @@ position: -81,-151
 title: Nilbog12322
 tags: 
 colorID: 1
-position: 46,404
+position: -67,-1310
 ---
 <<set $talkedToNilbog to true>>
 
@@ -1061,7 +1069,7 @@ position: 46,404
 title: Nilbog12323
 tags: 
 colorID: 0
-position: 389,-53
+position: 276,-1767
 ---
 ...How do you figure that?
 
@@ -1103,9 +1111,6 @@ tags:
 colorID: 4
 position: 3201,3320
 ---
-Okay... I'll make sure to keep open arms if Nilbog ever wants reach out to me.
-
-
 <<set $talkedToGabbin to true>>
 <<set $talkedToGabbin2 to true>>
 <<set $gabbinReadyForTruth to true>>
@@ -1114,6 +1119,8 @@ Okay... I'll make sure to keep open arms if Nilbog ever wants reach out to me.
 <<RevealText Gabbin Gabbin_seems_worried_about_Nilbog,_likely_the_best_time_to_have_Nilbog_tell_the_truth.>>
 <<set $gabbinDisguiseNote to true>>
 <<endif>>
+
+Okay... I'll make sure to keep open arms if Nilbog ever wants reach out to me.
 
 <<EndInterview Gabbin>>
 ===
@@ -1197,8 +1204,6 @@ position: -855,2761
 You've found us out haven't you...
 [[Yes.|Nilbog231]]
 [[No.|Nilbog232]]
-[[Yes...|Nilbog233]]
-[[Who's "us"?|Nilbog234]]
 [[*Push Nilbog*|Nilbog21]]
 ===
 title: Nilbog21
@@ -1206,9 +1211,6 @@ tags:
 colorID: 4
 position: -680,976
 ---
-O' No! How could you have done this to us!
-Boys, scram! There's nothing left for us here!
-
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
 
@@ -1216,6 +1218,13 @@ Boys, scram! There's nothing left for us here!
 <<RevealText Nilbog I_have_exposed_Nilbog_and_crew,_I_don't_think_that_was_the_best_way_to_solve_our_problems.>>
 <<set $nilbogRevealedNote to true>>
 <<endif>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Nilbog falls right off the chair, revealing three small, child-like goblins that were underneath the trenchcoat.]
+
+<<ChangeSpeaker SoundManager Nilbog>>
+Oh No! How could you have done this to us!
+Boys, scram! There's nothing left for us here!
 
 <<EndInterview Nilbog>>
 ===
@@ -1259,22 +1268,12 @@ What type of deal are you thinking of?
 [[Look, there's still a good chance you guys get beaten next shift, just make sure that if you guys fall over, the disguise wont come apart ok? You dont want to know what happens if Gabbin finds out...|Nilbog22211]]
 [[You guys for now on are going to act as a team, not as a single goblin! Ill tell Gabbin that "Nilbog moves so fast, it looks like there's multiple copies of him!"|Nilbog222212]]
 ===
-title: Nilbog234
-tags: 
-colorID: 4
-position: -569,3499
----
-Nevermind... ignore what I said... you heard nothing.
-I think Gabbin needed you.
-
-<<EndInterview Nilbog>>
-===
 title: Nilbog243
 tags: 
 colorID: 3
 position: -560,4192
 ---
-Why? Do you just find join in exposing other people's secrets!
+Why? Do you just find joy in exposing other people's secrets!
 [[No.|Nilbog2431]]
 [[No, but also yes.|Nilbog2431]]
 [[Yes.|Nilbog2431]]
@@ -1284,6 +1283,8 @@ tags:
 colorID: 4
 position: -565,3020
 ---
+<<set $talkedToNilbog2 to true>>
+
 I like how upront you are, appreciate the honesty.
 But good thing you dont know... it would be too much for you to handle.
 
@@ -1362,8 +1363,6 @@ tags:
 colorID: 4
 position: -193,4203
 ---
-Doesn't matter anymore, go ahead and tell Gabbin, maybe he'll be more understanding then I think.
-
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
 <<set $nilbogGabbinHope to true>>
@@ -1373,6 +1372,7 @@ Doesn't matter anymore, go ahead and tell Gabbin, maybe he'll be more understand
 <<set $nilbogHopeNote to true>>
 <<endif>>
 
+Doesn't matter anymore, go ahead and tell Gabbin, maybe he'll be more understanding then I think.
 
 <<EndInterview Nilbog>>
 ===
@@ -1381,9 +1381,6 @@ tags:
 colorID: 4
 position: -192,3974
 ---
-Finally someone who gets it.
-But then you must understand also why we try to avoid Gabbin, he's always a little to close to finding out.
-
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
 
@@ -1391,6 +1388,9 @@ But then you must understand also why we try to avoid Gabbin, he's always a litt
 <<RevealText Nilbog Nilbog_and_crew's_reason_for_doing_this_seems_to_be_because_"They_felt_like_it". But their secret is also why they try to avoid Gabbin.>>
 <<set $nilbogReasonNote to true>>
 <<endif>>
+
+Finally someone who gets it.
+But then you must understand also why we try to avoid Gabbin, he's always a little to close to finding out.
 
 <<EndInterview Nilbog>>
 ===
@@ -1399,8 +1399,6 @@ tags:
 colorID: 4
 position: -190,3757
 ---
-Nope. But my secret is why I try to avoid Gabbin, sometimes he get way to close and I get scared he'll somehow find out.
-
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
 
@@ -1408,6 +1406,8 @@ Nope. But my secret is why I try to avoid Gabbin, sometimes he get way to close 
 <<RevealText Nilbog Nilbog_and_crew's_reason_for_doing_this_seems_to_be_because_"They_felt_like_it". But their secret is also why they try to avoid Gabbin.>>
 <<set $nilbogReasonNote to true>>
 <<endif>>
+
+Nope. But my secret is why I try to avoid Gabbin, sometimes he get way to close and I get scared he'll somehow find out.
 
 <<EndInterview Nilbog>>
 ===
@@ -1432,13 +1432,11 @@ tags:
 colorID: 4
 position: 3516,2814
 ---
-It's always nice to have a good laugh every once in a while.
-Especially since we are likely to die again every shift for the rest of eternity!
-HAaAhhaAaAHhhaAaAhhHA!
-
 <<set $talkedToGabbin to true>>
 <<set $talkedToGabbin2 to true>>
 
+It's always nice to have a good laugh every once in a while!
+Frequent revival tends to dampen my mood a little bit, so thanks for that!
 
 <<EndInterview Gabbin>>
 ===
@@ -1455,6 +1453,8 @@ tags:
 colorID: 4
 position: 3526,2293
 ---
+<<set $talkedToGabbin2 to true>>
+
 Yes, that's completely correct! Tragic and deep backstories makes everything better!
 
 <<EndInterview Gabbin>>
@@ -1464,9 +1464,6 @@ tags:
 colorID: 4
 position: 3500,1874
 ---
-Nice one, I would know if you had turned Nilbog into three goblin children!
-You make up the funniest scenarios Mr. Time Wizard!
-
 <<set $talkedToGabbin to true>>
 <<set $talkedToGabbin2 to true>>
 
@@ -1474,6 +1471,9 @@ You make up the funniest scenarios Mr. Time Wizard!
 <<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
 <<set $gabbinScaryNote to true>>
 <<endif>>
+
+Nice one, I would know if you had turned Nilbog into three goblin children!
+You make up the funniest scenarios Mr. Time Wizard!
 
 <<EndInterview Gabbin>>
 
@@ -1483,8 +1483,6 @@ tags:
 colorID: 4
 position: 3492,1619
 ---
-Its best you not know...
-
 <<set $talkedToGabbin to true>>
 <<set $talkedToGabbin2 to true>>
 
@@ -1492,6 +1490,8 @@ Its best you not know...
 <<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
 <<set $gabbinScaryNote to true>>
 <<endif>>
+
+Its best you not know...
 
 <<EndInterview Gabbin>>
 ===
@@ -1509,8 +1509,6 @@ tags:
 colorID: 4
 position: 238,1493
 ---
-Gotcha... we will... I will make sure to relay that to any children I see running around here... speaking of which, Ill be right back.
-
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
 <<set $nilbogScared to true>>
@@ -1519,6 +1517,8 @@ Gotcha... we will... I will make sure to relay that to any children I see runnin
 <<RevealText Nilbog I_have_scared_Nilbog_and_crew_into_making_sure_their_disguise_can't_come_apart,_hopefully_this_will_stop_Gabbin_from_seeing_them.>>
 <<set $nilbogScaredNote to true>>
 <<endif>>
+
+Gotcha... we will... I will make sure to relay that to any children I see running around here... speaking of which, Ill be right back.
 
 <<EndInterview Nilbog>>
 ===
@@ -1554,8 +1554,6 @@ tags:
 colorID: 4
 position: 247,1997
 ---
-We'll make sure to get each disguise ready, as long as you can convince Gabbin... this might just work.
-
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
 <<set $nilbogCloneExcuse to true>>
@@ -1565,6 +1563,8 @@ We'll make sure to get each disguise ready, as long as you can convince Gabbin..
 <<set $nilbogCloneNote to true>>
 <<endif>>
 
+We'll make sure to get each disguise ready, as long as you can convince Gabbin... this might just work.
+
 
 <<EndInterview Nilbog>>
 ===
@@ -1573,8 +1573,6 @@ tags:
 colorID: 4
 position: 238,1739
 ---
-Okay... here you go... you can have one of our... my spares.
-
 <<set $talkedToNilbog to true>>
 <<set $talkedToNilbog2 to true>>
 
@@ -1583,15 +1581,7 @@ Okay... here you go... you can have one of our... my spares.
 <<set $nilbogScaredNote to true>>
 <<endif>>
 
-<<EndInterview Nilbog>>
-===
-title: Nilbog233
-tags: 
-colorID: 4
-position: -566,3256
----
-I dont believe you.
-Either way, I think Gabbin wanted to talk to you.
+Okay... here you go... you can have one of our... my spares.
 
 <<EndInterview Nilbog>>
 ===
@@ -1600,9 +1590,6 @@ tags:
 colorID: 4
 position: 3778,3064
 ---
-I better call my buddy from Gondon, his name is Gerlock Golmes, the worlds greatest detective!
-He'll get to the bottom of this.
-
 <<set $talkedToGabbin to true>>
 <<set $talkedToGabbin2 to true>>
 
@@ -1610,6 +1597,9 @@ He'll get to the bottom of this.
 <<RevealText Gabbin Gabbin_seems_to_think_Nilbog_is_a_hero_in_disguise..._guess_that's_better_than_the_truth.>>
 <<set $gabbinDisguiseNote to true>>
 <<endif>>
+
+I better call my buddy from Gondon, his name is Gerlock Golmes, the worlds greatest detective!
+He'll get to the bottom of this.
 
 <<EndInterview Gabbin>>
 
@@ -1620,8 +1610,6 @@ tags:
 colorID: 4
 position: 3800,2579
 ---
-It better be...
-
 <<set $talkedToGabbin to true>>
 <<set $talkedToGabbin2 to true>>
 
@@ -1629,6 +1617,8 @@ It better be...
 <<RevealText Gabbin If_we_reveal_Nilbog's_truth_to_Gabbin,_definitely_need_to_find_a_better_way_to_do_it.>>
 <<set $gabbinScaryNote to true>>
 <<endif>>
+
+It better be...
 
 <<EndInterview Gabbin>>
 ===
@@ -1784,4 +1774,350 @@ We should be getting ready for our next shift anyways.
 
 <<endif>>
 <<DisableFollowup Nilbog shift3>>
+===
+title: Gabbin14
+tags: 
+colorID: 0
+position: 2898,-1141
+---
+Oh? Sorry, I didn't want to eavesdrop, so I kind of missed out on that whole bit.
+What'd he say??
+
+[[Not a lot, actually.|Gabbin141]]
+
+<<if $defeated is true>>
+[[Suffice to say, I think he'll be working with you now.|Gabbin142]]
+
+<<elseif $patient is true>>
+[[He'll work with you... on one condition.|Gabbin143]]
+
+<<else>>
+[[I think it'd just be best to leave him alone.|Gabbin144]]
+
+<<endif>>
+===
+title: Gabbin141
+tags: 
+colorID: 0
+position: 3196,-1481
+---
+Sounds like Nilbog, haha! He doesn't say a thing to me either!
+Which is a problem, because we need to be friends so we can work together and defeat those heroes!
+The sooner I can get him to open up, the better!!
+
+[[That sounds rather invasive.|Gabbin11111]]
+[[I'm sure if you keep at it, he'll come around!|Gabbin11112]]
+[[You need to cut that out. It's probably annoying.|Gabbin11113]]
+===
+title: Gabbin142
+tags: 
+colorID: 1
+position: 3206,-1228
+---
+<<set $talkedToGabbin to true>>
+
+<<if $gabbinAnnoyingNote is false>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<set $gabbinAnnoyingNote to true>>
+<<endif>>
+
+Wait, really?? Oh, that's absolutely excellent!
+Thanks a bunch, cool-wizard-person!
+
+<<EndInterview Gabbin>>
+===
+title: Gabbin143
+tags: 
+colorID: 0
+position: 3197,-985
+---
+One condition? What's that?
+
+[[You have to respect his personal space, thats all.|Gabbin1431]]
+[[You have to be as obnoxiously positive as possible, starting now!|Gabbin1432]]
+===
+title: Gabbin1431
+tags: 
+colorID: 1
+position: 3467,-1140
+---
+<<set $talkedToGabbin to true>>
+<<set $respectful to true>>
+
+<<if $gabbinRespectNote is false>>
+<<RevealText Gabbin Gabbin_said_he'll_respect_Nilbog's_boundaries_now._Hope_this_can_mend_their_relationship.>>
+<<set $gabbinRepectNote to true>>
+<<endif>>
+
+...hmm. Yea, I guess I could do that. Beats getting beat every day trying to find him when he hides!
+I'll try not to come off too strong!
+
+<<EndInterview Gabbin>>
+===
+title: Gabbin1432
+tags: 
+colorID: 1
+position: 3465,-918
+---
+<<set $talkedToGabbin to true>>
+
+<<if $gabbinAnnoyingNote is false>>
+<<RevealText Gabbin Gabbin_seems_unusually_friendly,_which_annoys_Nilbog._Maybe_I_can_get_Nilbog_to_open_up_to_Gabbin.>>
+<<set $gabbinAnnoyingNote to true>>
+<<endif>>
+
+That's weird, but ok! Being obnoxiously positive is one of my strongest points!
+I'll be more insistant than I ever have before! Thanks for the tip!
+
+<<EndInterview Gabbin>>
+===
+title: Gabbin144
+tags: 
+colorID: 0
+position: 3591,-502
+---
+Huh? Why is that? Did he trick you into thinking it was a bad idea or something?
+I have to be friends with him or else we're never going to beat those heroes! 
+
+[[Just because you're coworkers, doesn't mean you're friends. You're probably annoying him.|Gabbin111112]]
+[[Whatever you're trying, it obviously hasn't worked so far.|Gabbin111132]]
+[[Invading someone's personal space isn't a good way to befriend someone.|Gabbin111111]]
+===
+title: Nilbog13
+tags: 
+colorID: 0
+position: -1303,-410
+---
+<<if $sad is true or $respectful is true>>
+...I saw that. Thanks for handling Gabbin for me. Hopefully he'll be less ridiculous now.
+
+<<if $respectful is true>>
+[[Not so fast. You both need to work together.|Nilbog131]]
+<<endif>>
+[[No problem.|Nilbog132]]
+
+<<else>>
+
+...I saw that. Not that it looks like you did much to change anything.
+Now he's just going to continue to pester me like he always has. Thanks for that.
+
+[[That's because Gabbin's not the one who has to change around here.|Nilbog133]]
+[[Any time!|Nilbog132]]
+
+<<endif>>
+===
+title: Nilbog131
+tags: 
+colorID: 0
+position: -902,-837
+---
+...oh? Why would I want to do that?
+
+[[He's already agreed to respect your boundaries. You just need to work with him.|Nilbog1311]]
+[[Because your "stealth tactics" clearly aren't doing any good around here.|Nilbog1312]]
+[[I didn't go to wizard college to be second guessed by some shut-in goblin, work with me here.|Nilbog1313]]
+===
+title: Nilbog1311
+tags: 
+colorID: 1
+position: -618,-1166
+---
+<<set $talkedToNilbog to true>>
+<<set $patient to true>>
+
+<<if $nilbogPatientNote is false>>
+<<RevealText Nilbog Nilbog_is_willing_to_cooperate_with_Gabbin_now_if_Gabbin_would_just_cool_it_down.>>
+<<set $nilbogPatientNote to true>>
+<<endif>>
+
+.....Hmm. Ok, fine. I'll give it a try.
+...but he best let me have my space...
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog1312
+tags: 
+colorID: 1
+position: -613,-849
+---
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
+
+...it's worked just fine for *me*, actually. Gabbin hasn't found me yet.
+...and he never will.
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog1313
+tags: 
+colorID: 0
+position: -624,-578
+---
+Oh? Why *are* you here then? Just fancy a stroll through a failing dungeon for giggles?
+
+[[Just-- forget I said anything.|Nilbog13131]]
+[[I don't have to take that from you, you know!|Nilbog13132]]
+===
+title: Nilbog13131
+tags: 
+colorID: 1
+position: -352,-759
+---
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
+
+.....
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog13132
+tags: 
+colorID: 0
+position: -352,-503
+---
+Then why are you still here, continuing this conversation?
+
+[[Just-- forget I said anything.|Nilbog13131]]
+[[Honestly I just like to pick snarky options to see what kind of response I'll get.|Nilbog131322]]
+===
+title: Nilbog131322
+tags: 
+colorID: 0
+position: -110,-551
+---
+What in the world are you talking about?
+
+[[Just-- forget I said anything.|Nilbog13131]]
+===
+title: Nilbog132
+tags: 
+colorID: 1
+position: -914,-547
+---
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
+
+...
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog133
+tags: 
+colorID: 0
+position: -937,21
+---
+Oh? What do you mean by that?
+
+[[Gabbin's trying his best to defeat the heroes, you need to do the same!|Nilbog1331]]
+[[What do you mean what do I mean? I thought it was obvious.|Nilbog1332]]
+===
+title: Nilbog1331
+tags: 
+colorID: 0
+position: -661,-138
+---
+Working with him gives me a serious headache. I won't do it.
+
+[[Then accept that you'll never beat the heroes again, and you'll be stuck here forever.|Nilbog13311]]
+[[Then don't, see what I care! I'm not here to pander every goblins whims!|Nilbog1313]]
+===
+title: Nilbog13311
+tags: 
+colorID: 1
+position: -398,-138
+---
+<<set $talkedToNilbog to true>>
+<<set $defeated to true>>
+
+<<if $nilbogDefeatedNote is false>>
+<<RevealText Nilbog Nilbog_seems_defeated,_maybe_he'll_go_along_with_my_suggestions_better_now.>>
+<<set $nilbogDefeatedNote to true>>
+<<endif>>
+
+...
+...You're right. We've really been getting our butts handed to us.
+...If I *have* to, I guess I'll go along with it...
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog1332
+tags: 
+colorID: 0
+position: -682,254
+---
+...what do *you* mean what do I mean what do you mean?
+
+[[Just... work with Gabbin. Hiding doesn't help anything, you'll just die by yourself.|Nilbog13321]]
+[[I'm confused.|Nilbog13322]]
+===
+title: Nilbog13322
+tags: 
+colorID: 0
+position: -417,432
+---
+Ditto.
+
+[[Let's just forget this whole thing happened.|Nilbog133221]]
+[[Just... work with Gabbin. Hiding doesn't help anything, you'll just die by yourself.|Nilbog13321]]
+===
+title: Nilbog13321
+tags: 
+colorID: 0
+position: -415,146
+---
+...what makes you so sure?
+
+[[I'm a time wizard. Consider how many times I've watched combat play out.|Nilbog133211]]
+[[Wild guess!|Nilbog133212]]
+[[Keep this up, and you'll be stuck with Glenn forever.|Nilbog133211]]
+===
+title: Nilbog133211
+tags: 
+colorID: 1
+position: -138,143
+---
+<<set $talkedToNilbog to true>>
+<<set $defeated to true>>
+
+<<if $nilbogDefeatedNote is false>>
+<<RevealText Nilbog Nilbog_seems_defeated,_maybe_he'll_go_along_with_my_suggestions_better_now.>>
+<<set $nilbogDefeatedNote to true>>
+<<endif>>
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Nilbog furrows his brow intensely.]
+
+<<ChangeSpeaker SoundManager Nilbog>>
+.....darn it all, you're right...
+...fine. I'll do whatever it takes to change things around here.
+
+<<EndInterview Nilbog>>
+===
+title: Nilbog133221
+tags: 
+colorID: 1
+position: -158,430
+---
+<<set $talkedToNilbog to true>>
+
+<<if $nilbogChangeGabbinNote is false>>
+<<RevealText Nilbog Nilbog_seems_to_think_that_the_problem_lies_solely_Gabbin.>>
+<<set $nilbogChangeGabbinNote to true>>
+<<endif>>
+
+...
+
+<<EndInterview Nilbog>>
 ===
