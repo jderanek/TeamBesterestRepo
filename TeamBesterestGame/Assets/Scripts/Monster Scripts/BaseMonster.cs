@@ -148,7 +148,7 @@ public abstract class BaseMonster : BaseEntity {
         }
         response.SetActive(false);
         uiManager.speaker.SetActive(false);
-        picture.color = new Color (picture.color.r, picture.color.g, picture.color.b, 0.5f);
+        picture.color = new Color (picture.color.r, picture.color.g, picture.color.b, 0.25f);
         //button.interactable = false;
         this.gameManager.SetCurrentSpeaker(0);
 
