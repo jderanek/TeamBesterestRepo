@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
     public GameObject jeffNotes;
     public GameObject gabbinNotes;
     public GameObject gordonNotes;
+    public GameObject exitMenu;
 
     public Text nameTag;
     public GameObject responseBubble;
@@ -293,6 +294,11 @@ public class GameManager : MonoBehaviour
         print("loading level 1");
         AkSoundEngine.StopAll();
         SceneManager.LoadScene("Scene2");
+    }
+
+    public void ExitToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void ExitGame()

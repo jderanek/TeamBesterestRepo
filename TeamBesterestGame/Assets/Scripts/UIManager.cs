@@ -84,6 +84,11 @@ public class UIManager : MonoBehaviour {
                 menus[1].SetActive(true);
                 menus[5].SetActive(true);
                 break;
+            case "Exit":
+                ToggleMenusOff();
+                menus[1].SetActive(true);
+                menus[6].SetActive(true);
+                break;
             default:
                 ToggleMenusOff();
                 break;
