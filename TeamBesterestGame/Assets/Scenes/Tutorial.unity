@@ -4692,6 +4692,63 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &648765831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 648765833}
+  - component: {fileID: 648765832}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &648765832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648765831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223c4a425957dbd47b475d03e3f0c3b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+  canvas: {fileID: 0}
+  arial: {fileID: 0}
+  menus: []
+  confirmationBox: {fileID: 0}
+  hourSwivel: {fileID: 0}
+  speaker: {fileID: 0}
+  slowTextSpeed: 0
+  slowText: {fileID: 0}
+  mediumTextSpeed: 0
+  mediumText: {fileID: 0}
+  fastTextSpeed: 0
+  fastText: {fileID: 0}
+  monsters: []
+  notification: {fileID: 66976828}
+  journalPrompt: {fileID: 32820546}
+  clockPrompt: {fileID: 1338773030}
+--- !u!4 &648765833
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648765831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 706.4768, y: 310.63498, z: 3.4331758}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &654211011
 GameObject:
   m_ObjectHideFlags: 0
