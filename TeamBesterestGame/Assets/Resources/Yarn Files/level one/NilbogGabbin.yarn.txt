@@ -2227,7 +2227,7 @@ position: 3277,3871
 ---
 Huh? What was that?
 
-[[Uh.... nevermind. Forget I said anything at all.|]]
+[[Uh.... nevermind. Forget I said anything at all.|Gabbin2211131112]]
 [[Good thing the advice came from Nilbog, and not someone shady!|Gabbin221]]
 [[Good thing I was talking about Spy Wizards, and not someone shady!|Gabbin222]]
 ===
