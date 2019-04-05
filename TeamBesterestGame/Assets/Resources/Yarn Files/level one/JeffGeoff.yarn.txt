@@ -1453,9 +1453,8 @@ position: 4029,7115
 ---
 He ate my scone! I'm sure of it!
 
-[[No no, I mean like. Something. Between you two.|Geoff31]]
-[[That's not important right now, Geoff. Work with me.|Geoff32]]
-[[Does Gorgo like you?|Geoff33]]
+[[No no, I mean like. Something. Between you two.|Geoff33]]
+
 ===
 title: Geoff33
 tags: 

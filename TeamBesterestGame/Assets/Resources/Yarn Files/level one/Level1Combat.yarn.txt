@@ -56,32 +56,60 @@ position: 1066,264
 <<if $shift13Combat is 0>>
 Gabbin runs around trying to find Nilbog, and is taken down by the heroes.
 <<ChangeStatus Gabbin Gabbin_runs_around_trying_to_find_Nilbog,_and_is_taken_down_by_the_heroes.>>
-//Gabbin fades to black/white.
+
 Nilbog, hiding from Gabbin, is found and overwhelmed by the heroes.
 <<ChangeStatus Nilbog Nilbog,_hiding_from_Gabbin,_is_found_and_overwhelmed_by_the_heroes.>>
-//Nilbog fades to black/white.
-//0 points
+
 
 <<elseif $shift13Combat is 1>>
 Gabbin enthusiastically takes down some heroes with the help of Nilbog... but dies from shock when Nilbog's secret is revealed!
 <<ChangeStatus Gabbin Gabbin_enthusiastically_takes_down_some_heroes_with_the_help_of_Nilbog..._but_dies_from_shock_when_Nilbog's_secret_is_revealed!>>
 Nilbog begrudgingly helps Gabbin, and takes down a hero... but is knocked down in combat, revealing Nilbog was three small goblins in a trenchcoat!
 <<ChangeStatus Nilbog Nilbog_begrudgingly_helps_Gabbin,_and_takes_down_a_hero..._but_he_is_knocked_down_in_combat,_revealing_Nilbog_was_three_small_goblins_in_a_trenchcoat!>>
-//2 points
+
 
 <<elseif $shift13Combat is 2>>
 Gabbin focuses on fighting alone, and takes down some heroes... but dies from shock when Nilbog's secret is revealed!
 <<ChangeStatus Gabbin Gabbin_focuses_on_fighting_alone,_and_takes_down_some_heroes..._but_dies_from_shock_when_Nilbog's_secret_is_revealed!>>
 Nilbog fights alone, taking down the other heroes... but is knocked down in combat, revealing Nilbog was three small goblins in a trenchcoat!
 <<ChangeStatus Nilbog Nilbog_fights_alone,_taking_down_the_other_heroes..._but_he_is_knocked_down_in_combat,_revealing_Nilbog_was_three_small_goblins_in_a_trenchcoat!>>
-//2 points
+
 
 <<elseif $shift13Combat is 3>>
 Gabbin confidently attacks the heroes alone... but dies from shock when Nilbog's secret is revealed!
 <<ChangeStatus Gabbin Gabbin_confidently_attacks_the_heroes_alone..._but_dies_from_shock_when_Nilbog's_secret_is_revealed!>>
 Gabbin isn't alone-- Nilbog attacks from the shadows! ...until he is knocked down in combat, revealing Nilbog was three small goblins in a trenchcoat!
 <<ChangeStatus Nilbog Nilbog_attacks_from_the_shadows!_...until_he_is_knocked_down_in_combat,_revealing_Nilbog_was_three_small_goblins_in_a_trenchcoat!>>
-//4 points
+
+
+<<elseif $shift13Combat is 4>>
+Gabbin bravely faces the heroes alone, but is slaughtered quickly.
+<<ChangeStatus Gabbin Gabbin_bravely_faces_the_heroes_alone,_but_is_slaughtered_quickly.>>
+"Nilbog" is nowhere to be seen.
+<<ChangeStatus Nilbog "Nilbog"_is_nowhere_to_be_seen.>>
+
+
+<<elseif $shift13Combat is 5>>
+Gabbin fights well in his new trenchcoat... but dies from shock when Nilbog's secret is revealed!
+<<ChangeStatus Gabbin Gabbin_fights_well_in_his_new_trenchcoat..._but_dies_from_shock_when_Nilbog's_secret_is_revealed!>>
+Nilbog tries to fight normally. ...until he is knocked down in combat, revealing Nilbog was three small goblins in a trenchcoat!
+<<ChangeStatus Nilbog Nilbog_tries_to_fight_normally._...until_he_is_knocked_down_in_combat,_revealing_Nilbog_was_three_small_goblins_in_a_trenchcoat!>>
+
+
+<<elseif $shift13Combat is 6>>
+Gabbin fights confidently with the Nilbogs, and defeats a group of heroes!
+<<ChangeStatus Gabbin Gabbin_fights_confidently_with_the_Nilbogs,_and_defeats_a_group_of_heroes!>>
+The Nilbogs fight as a team and defeat another group of heroes!
+<<ChangeStatus Nilbog The_Nilbogs_fight_as_a_team_and_defeat_another_group_of_heroes!>>
+The heroes for Shift 3 are defeated!
+
+
+<<elseif $shift13Combat is 7>>
+Gabbin fights proudly in his new trenchcoat. Despite not being able to see too well, he takes down a hero!
+<<ChangeStatus Gabbin Gabbin_fights_proudly_in_his_new_trenchcoat._Despite_not_being_able_to_see_too_well,_he_takes_down_a_hero!>>
+The Nilbogs split up and take down a group of heroes, avoiding Gabbin's restricted gaze!
+<<ChangeStatus Nilbog The_Nilbogs_split_up_and_take_down_a_group_of_heroes,_avoiding_Gabbin's_restricted_gaze!>>
+The heroes for Shift 3 are defeated!
 
 <<endif>>
 <<CombatOff Nilbog>>

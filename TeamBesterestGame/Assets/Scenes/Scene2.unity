@@ -7993,31 +7993,31 @@ MonoBehaviour:
   - name: nilbogRevealedNote
     value: false
     type: 2
-  - name: nilbogScaredNote
+  - name: nilbogDenialNote
     value: false
     type: 2
-  - name: nilbogTrenchCoatNote
+  - name: nilbogCoatNote
     value: false
     type: 2
   - name: nilbogCloneNote
     value: false
     type: 2
-  - name: nilbogCloneExcuse
+  - name: nilbogCloneReady
     value: false
     type: 2
-  - name: nilbogGabbinHope
+  - name: gabbinCoatReady
     value: false
     type: 2
-  - name: nilbogReasonNote
+  - name: gabbinNonsenseNote
     value: false
     type: 2
-  - name: gabbinDisguiseNote
+  - name: gabbinCoatNote
     value: false
     type: 2
-  - name: gabbinReadyForTruth
+  - name: gabbinCloneReady
     value: false
     type: 2
-  - name: gabbinScaryNote
+  - name: iLostMyCoolNote
     value: false
     type: 2
   - name: gabbinCloneConvinced
@@ -8041,7 +8041,7 @@ MonoBehaviour:
   - name: nilbogTrenchCoat
     value: false
     type: 2
-  - name: nilbogScared
+  - name: nilbogCoatReady
     value: false
     type: 2
   debugTextView: {fileID: 0}
