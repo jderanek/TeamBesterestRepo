@@ -245,7 +245,7 @@ public class GameManager : MonoBehaviour
             case "shift1": //Goblenn and Gordon
                 if (!this.monsterList[3].GetComponent<BaseMonster>().interviewable && !this.monsterList[5].GetComponent<BaseMonster>().interviewable && this.phase != "Combat")
                 {
-
+                    this.monsterList[3].GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().StartDialogue("GGF1");
                 }
                 break;
             case "shift2": //Jeff and Geoff
@@ -267,25 +267,7 @@ public class GameManager : MonoBehaviour
 
     public void DisableFollowup(string shift) //to be called at end of followup conversation
     {
-        /*switch (shift)
-        {
-            case "shift1": //Goblenn
-                this.monsterList[3].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
-                this.monsterList[3].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
-                break;
-            case "shift2": //Jeff and Geoff
-                this.monsterList[0].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
-                this.monsterList[0].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
-                this.monsterList[1].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
-                this.monsterList[1].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
-                break;
-            case "shift3": //Nilbog and Gabbin
-                this.monsterList[2].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
-                this.monsterList[2].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
-                this.monsterList[4].GetComponent<BaseMonster>().followUpButton.gameObject.SetActive(false);
-                this.monsterList[4].GetComponent<BaseMonster>().button.gameObject.SetActive(true);
-                break;
-        }*/
+        
     }
 
     public void LoadLevelOne()
