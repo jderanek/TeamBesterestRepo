@@ -135,6 +135,21 @@ public abstract class BaseMonster : BaseEntity {
         this.EndInterview();
     }
 
+    [YarnCommand("ExitInterview")]
+    public void ExitInterview()
+    {
+        responseBook.GetComponent<NotepadAnimation>().ResetToStart();
+        this.interviewable = true;
+        this.gameManager.interviewing = false;
+        foreach (GameObject option in interviewOptions)
+        {
+            option.SetActive(false);
+        }
+        response.SetActive(false);
+        uiManager.speaker.SetActive(false);
+        this.gameManager.SetCurrentSpeaker(0);
+    }
+
     //ends conversation and makes monster uninterviewable till next day with no penalty
     [YarnCommand("EndInterview")]
     public void EndInterview()
@@ -149,7 +164,6 @@ public abstract class BaseMonster : BaseEntity {
         response.SetActive(false);
         uiManager.speaker.SetActive(false);
         picture.color = new Color (picture.color.r, picture.color.g, picture.color.b, 0.25f);
-        //button.interactable = false;
         this.gameManager.SetCurrentSpeaker(0);
 
         switch (this.monName)

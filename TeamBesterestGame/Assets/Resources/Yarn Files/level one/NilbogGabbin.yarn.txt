@@ -1878,6 +1878,7 @@ colorID: 4
 position: 2555,3141
 ---
 Uh... ok! Have fun then!
+<<ExitInterview Gabbin>>
 ===
 title: Gabbin2
 tags: 
