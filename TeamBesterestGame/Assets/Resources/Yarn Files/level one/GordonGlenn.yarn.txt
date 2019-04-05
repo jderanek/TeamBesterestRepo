@@ -542,7 +542,7 @@ position: 674,-3328
 ---
 *Sigh* I know... just...
 Can I be alone for a bit?
-<<EndInterview>>
+<<EndInterview Glenn>>
 ===
 title: Glenn223
 tags: 
@@ -602,7 +602,7 @@ position: 256,-1746
 That is rude! J-just leave me alone!
 
 
-<<EndInterview>>
+<<EndInterview Glenn>>
 ===
 title: Glenn2
 tags: 
@@ -629,13 +629,13 @@ rephrase that...
 title: Gordon2222
 tags: 
 colorID: 4
-position: 883,5382
+position: 881,5382
 ---
 HAHAHAHAHAHAHA!!
 Wait, you were serious?
 No thank you, never gonna happen.
 
-<<EndInterview>>
+<<EndInterview Gordon>>
 ===
 title: Gordon2221
 tags: 
@@ -645,7 +645,7 @@ position: 887,5120
 Agreed, but it is a great defensive tool otherwise
 Maybe I could do some stretching beforehand...
 
-<<EndInterview>>
+<<EndInterview Gordon>>
 ===
 title: Gordon2131
 tags: 
@@ -657,7 +657,7 @@ You really think so?
 I wonder how shocked he will be when I tell him
 <<set $gordonGlennHelp to true>>
 
-<<EndInterview>>
+<<EndInterview Gordon>>
 ===
 title: Gordon211
 tags: 
@@ -666,7 +666,7 @@ position: 562,4250
 ---
 See? Was that too hard?
 Now if you'll excuse me, I need to train more
-<<EndInterview>>
+<<EndInterview Gordon>>
 ===
 title: Gordon223
 tags: 
@@ -742,7 +742,7 @@ position: 881,5638
 Do you know how embarassing that would be?!
 I will take my chances with the heroes instead
 
-<<EndInterview>>
+<<EndInterview Gordon>>
 ===
 title: Glenn2331
 tags: 
@@ -762,7 +762,7 @@ I guess it wouldn't hurt to try!
 Let us hope he is not mad at me too much...
 
 <<set $glennGordonHelp to true>>
-<<EndInterview>>
+<<EndInterview Glenn>>
 ===
 title: Glenn2321
 tags: 
@@ -774,7 +774,7 @@ Gordon can be.. abrasive.. but I think he wouldn't say no if I persist!
 
 <<set $glennGordonHelp to true>>
 
-<<EndInterview>>
+<<EndInterview Glenn>>
 ===
 title: Glenn2211
 tags: 
@@ -787,7 +787,7 @@ I hope he agrees to do do...
 
 <<set $glennGordonHelp to true>>
 
-<<EndInterview>>
+<<EndInterview Glenn>>
 ===
 title: Glenn2221
 tags: 
@@ -796,7 +796,7 @@ position: 930,-2808
 ---
 Yeah... I dont belong here... go help the useful Goblins...
 
-<<EndInterview>>
+<<EndInterview Glenn>>
 ===
 title: Glenn2232
 tags: 
@@ -809,7 +809,7 @@ But I will take your advice into consideration!
 
 <<set $glennGordonHelp to true>>
 
-<<EndInterview>>
+<<EndInterview Glenn>>
 ===
 title: Glenn2231
 tags: 
@@ -819,5 +819,5 @@ position: 925,-3060
 Perhaps you are right...
 Maybe we just need yet another try...
 
-<<EndInterview>>
+<<EndInterview Glenn>>
 ===
