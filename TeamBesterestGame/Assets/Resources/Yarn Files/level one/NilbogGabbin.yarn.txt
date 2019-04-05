@@ -1168,7 +1168,7 @@ position: -757,2104
 <<ChangeSpeaker SoundManager Voiceless>>
 [Nilbog looks at himself, and at you with a rather uneasy expression.]
 
-<<ChangeSpeaker SoundManager Voiceless>>
+<<ChangeSpeaker SoundManager Nilbog>>
 Alright, alright, not so loud! Do you want everyone to hear you?
 What do you want from us?!
 
