@@ -1,7 +1,7 @@
 title: Coward1Base
 tags: 
 colorID: 0
-position: -615,-100
+position: -618,-100
 ---
 <<ChangeSpeaker SoundManager Glenn>>
 H-huh?
@@ -192,7 +192,7 @@ position: 160,1016
 <<set $confidence to true>>
 A-ambush? That seems scary... but also smart! 
 Maybe that will finally impress Gordon then! Let me think for a bit then.
-<<elsif>>
+<<elseif>>
 I am not so sure about this, but I will give it a try...
 <<endif>>
 <<EndInterview Glenn>>
