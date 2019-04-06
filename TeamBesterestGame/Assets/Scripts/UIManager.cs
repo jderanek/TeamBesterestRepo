@@ -65,48 +65,43 @@ public class UIManager : MonoBehaviour {
 
     public void OpenMenu(string menu)
     {
+        ToggleMenusOff();
+        GameManager.paused = true;
+        AkSoundEngine.PostEvent("Pause", gameObject);
         switch (menu)
         {
             case "Main":
-                ToggleMenusOff();
-                GameManager.paused = true;
                 menus[0].SetActive(true);
                 break;
             case "Options":
-                ToggleMenusOff();
-                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[2].SetActive(true);
                 break;
             case "Gameplay":
-                ToggleMenusOff();
-                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[3].SetActive(true);
                 break;
             case "Video":
-                ToggleMenusOff();
-                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[4].SetActive(true);
                 break;
             case "Audio":
-                ToggleMenusOff();
-                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[5].SetActive(true);
                 break;
             case "Exit":
-                ToggleMenusOff();
-                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[6].SetActive(true);
                 break;
             default:
-                ToggleMenusOff();
                 break;
 
         }
+    }
+
+    public void UnpauseWwise()
+    {
+        AkSoundEngine.PostEvent("Resume", gameObject);
     }
 
     public void SetTextSpeed(int textSpeed)
