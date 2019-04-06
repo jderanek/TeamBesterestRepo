@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    public static bool paused;
+
     public GameObject notebook;
     public GameObject goblennNotes;
     public GameObject nilbogNotes;

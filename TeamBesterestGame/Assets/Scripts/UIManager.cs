@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour {
     public GameObject confirmationBox;
 
     private bool pauseMenuOpen = false;
+    public static bool eligibleForClick = true;
 
     // public Text currencyText; //public to assign reference in editor
 
@@ -47,9 +48,15 @@ public class UIManager : MonoBehaviour {
     {
         monsters = FindObjectsOfType<InterviewUI>();
     }
+
+    public void SetEligibleForClick(bool c)
+    {
+        eligibleForClick = c;
+    }
     
     public void ToggleMenusOff()
     {
+        GameManager.paused = false;
         foreach (GameObject menu in menus)
         {
             menu.SetActive(false);
@@ -62,30 +69,36 @@ public class UIManager : MonoBehaviour {
         {
             case "Main":
                 ToggleMenusOff();
+                GameManager.paused = true;
                 menus[0].SetActive(true);
                 break;
             case "Options":
                 ToggleMenusOff();
+                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[2].SetActive(true);
                 break;
             case "Gameplay":
                 ToggleMenusOff();
+                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[3].SetActive(true);
                 break;
             case "Video":
                 ToggleMenusOff();
+                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[4].SetActive(true);
                 break;
             case "Audio":
                 ToggleMenusOff();
+                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[5].SetActive(true);
                 break;
             case "Exit":
                 ToggleMenusOff();
+                GameManager.paused = true;
                 menus[1].SetActive(true);
                 menus[6].SetActive(true);
                 break;

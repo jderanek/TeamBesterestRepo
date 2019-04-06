@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Text;
 using System.Collections.Generic;
 using Yarn.Unity;
+using UnityEngine.EventSystems;
 
 namespace Yarn.Unity
 {
@@ -51,7 +52,7 @@ namespace Yarn.Unity
 
         public static bool voicePlaying = false;
 
-        
+        public EventSystem eventSystem;
     
 
         private void Awake()
@@ -70,14 +71,13 @@ namespace Yarn.Unity
             // Hide the continue prompt if it exists
             if (continuePrompt != null)
                 continuePrompt.SetActive(false);
+
+            eventSystem = FindObjectOfType<EventSystem>();
         }
 
         private void Update()
         {
-            //if (isTalking)
-            {
-                timer += Time.deltaTime;
-            }
+            timer += Time.deltaTime;
         }
 
 
@@ -102,15 +102,16 @@ namespace Yarn.Unity
                 {
                     stringBuilder.Append(c);
                     responseText.text = stringBuilder.ToString();
-
-                    if (Input.GetMouseButtonDown(0))
+                    
+                    
+                    if (Input.GetMouseButtonDown(0) && !GameManager.paused && UIManager.eligibleForClick)
                     {
                         responseText.text = line.text;
                         yield return new WaitForSeconds(.025f);
                         break;
                     }
                     timer = 0f;
-                    yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || (timer >= textSpeed));
+                    yield return new WaitUntil(() => (Input.GetMouseButtonDown(0) && !GameManager.paused && UIManager.eligibleForClick) || (timer >= textSpeed)); //
                 }
             }
             else
@@ -128,7 +129,7 @@ namespace Yarn.Unity
                 continuePrompt.SetActive(true);
 
             // Wait for any user input
-            yield return new WaitUntil(() => Input.anyKeyDown);
+            yield return new WaitUntil(() => (Input.anyKeyDown && !GameManager.paused && UIManager.eligibleForClick));
 
             // Hide the text and prompt
             //responseText.gameObject.SetActive(false); //Commented out so that player can see the dialogue while choosing answer

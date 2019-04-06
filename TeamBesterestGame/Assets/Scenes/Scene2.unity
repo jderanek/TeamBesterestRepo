@@ -567,6 +567,7 @@ MonoBehaviour:
   - {fileID: 1878310173}
   - {fileID: 1571043631}
   gameControlsContainer: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!114 &41062057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6153,9 +6154,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 417940539}
-          m_MethodName: OnMouseEnter
-          m_Mode: 1
+        - m_Target: {fileID: 1031783968}
+          m_MethodName: SetEligibleForClick
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6170,16 +6171,16 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 417940539}
-          m_MethodName: OnMouseExit
-          m_Mode: 1
+        - m_Target: {fileID: 1031783968}
+          m_MethodName: SetEligibleForClick
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -8068,6 +8069,7 @@ MonoBehaviour:
   - {fileID: 1364065098}
   - {fileID: 839498538}
   gameControlsContainer: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!114 &594745392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11984,9 +11986,9 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 417940539}
-          m_MethodName: OnMouseEnter
-          m_Mode: 1
+        - m_Target: {fileID: 1031783968}
+          m_MethodName: SetEligibleForClick
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12001,16 +12003,16 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 417940539}
-          m_MethodName: OnMouseExit
-          m_Mode: 1
+        - m_Target: {fileID: 1031783968}
+          m_MethodName: SetEligibleForClick
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -14380,6 +14382,7 @@ MonoBehaviour:
   optionButtons:
   - {fileID: 813791960}
   gameControlsContainer: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!114 &984599862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14955,6 +14958,7 @@ MonoBehaviour:
   - {fileID: 1606443102}
   confirmationBox: {fileID: 1804654129374390, guid: 35fdba197ead2cd4ea2aa0fc2b99be2a,
     type: 2}
+  eligibleForClick: 0
   hourSwivel: {fileID: 1219348024}
   speaker: {fileID: 1523513163}
   slowTextSpeed: 0.04
@@ -27043,6 +27047,7 @@ MonoBehaviour:
   - {fileID: 964969974}
   - {fileID: 256175004}
   gameControlsContainer: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!114 &2082834033
 MonoBehaviour:
   m_ObjectHideFlags: 0
