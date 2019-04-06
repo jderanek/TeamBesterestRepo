@@ -34,6 +34,7 @@ public class NotepadAnimation : MonoBehaviour {
 
     public void ResetToStart()
     {
-        rectTrans.anchoredPosition = new Vector2(0, startY);
+        if (rectTrans != null)
+            rectTrans.anchoredPosition = new Vector2(0, startY);
     }
 }

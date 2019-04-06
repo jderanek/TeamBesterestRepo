@@ -166,7 +166,7 @@ public class GameManager : MonoBehaviour
                 phaseButton.gameObject.SetActive(true);
                 phaseButton.GetComponentInChildren<Text>().text = "Start Combat";
                 //phaseButton.gameObject.SetActive(false);
-                ToggleInterviewMenu();
+                EnableInterviewCanvas();
                 break;
         }
     }
@@ -201,6 +201,7 @@ public class GameManager : MonoBehaviour
         this.interviewing = false;
         foreach (GameObject monster in monsterList)
         {
+            monster.GetComponent<BaseMonster>().ExitInterview();
             monster.GetComponent<BaseMonster>().Reset();
         }
         foreach (GameObject monster in monsterList)
@@ -212,7 +213,7 @@ public class GameManager : MonoBehaviour
             }
         }
         interviewCanvas.SetActive(false);
-        //Invoke("EnableInterviewCanvas", 1.4f);
+        Invoke("EnableInterviewCanvas", 1.4f);
     }
 
     void EnableInterviewCanvas()
