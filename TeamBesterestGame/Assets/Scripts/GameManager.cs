@@ -249,20 +249,21 @@ public class GameManager : MonoBehaviour
                 if (!this.monsterList[3].GetComponent<BaseMonster>().interviewable && !this.monsterList[5].GetComponent<BaseMonster>().interviewable && this.phase != "Combat")
                 {
                     this.monsterList[3].GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().StartDialogue("GGF1");
+                    this.responseBox.GetComponent<NotepadAnimation>().Run();
                 }
                 break;
             case "shift2": //Jeff and Geoff
                 if (!this.monsterList[0].GetComponent<BaseMonster>().interviewable && !this.monsterList[1].GetComponent<BaseMonster>().interviewable && this.phase != "Combat")
                 {
                     this.monsterList[0].GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().StartDialogue("JeffGeoffSolution1");
-
+                    this.responseBox.GetComponent<NotepadAnimation>().Run();
                 }
                 break;
             case "shift3": //Nilbog and Gabbin
                 if (!this.monsterList[2].GetComponent<BaseMonster>().interviewable && !this.monsterList[4].GetComponent<BaseMonster>().interviewable && this.phase != "Combat")
                 {
                     this.monsterList[2].GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().StartDialogue("NilbogGabbinSolution1");
-
+                    this.responseBox.GetComponent<NotepadAnimation>().Run();
                 }
                 break;
         }
@@ -270,7 +271,7 @@ public class GameManager : MonoBehaviour
 
     public void DisableFollowup(string shift) //to be called at end of followup conversation
     {
-        
+        this.responseBox.GetComponent<NotepadAnimation>().ResetToStart();
     }
 
     public void LoadLevelOne()
