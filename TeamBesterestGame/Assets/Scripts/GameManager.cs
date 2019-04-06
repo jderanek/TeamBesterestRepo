@@ -374,8 +374,17 @@ public class GameManager : MonoBehaviour
 
     public void ToggleNotebook()
     {
-        AkSoundEngine.PostEvent("Notebook_Open", gameObject);
         notebook.SetActive(!notebook.activeInHierarchy);
+        if (notebook.activeInHierarchy)
+        {
+            AkSoundEngine.PostEvent("Pause", gameObject);
+            paused = true;
+        }
+        else
+        {
+            paused = false;
+        }
+        AkSoundEngine.PostEvent("Notebook_Open", gameObject);
     }
 
     //Loads or saves all variable storages
