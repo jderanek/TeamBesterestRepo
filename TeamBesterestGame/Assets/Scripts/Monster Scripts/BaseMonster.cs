@@ -141,6 +141,7 @@ public abstract class BaseMonster : BaseEntity {
         responseBook.GetComponent<NotepadAnimation>().ResetToStart();
         this.interviewable = true;
         this.gameManager.interviewing = false;
+        this.dialogueRunner.GetComponent<DialogueRunner>().Stop();
         foreach (GameObject option in interviewOptions)
         {
             option.SetActive(false);
