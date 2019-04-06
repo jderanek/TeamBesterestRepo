@@ -185,14 +185,14 @@ I-I guess they technically don't...
 title: Coward1332
 tags: 
 colorID: 1
-position: 160,1016
+position: 160,1013
 ---
 
 <<if $inspire is true>>
 <<set $confidence to true>>
 A-ambush? That seems scary... but also smart! 
 Maybe that will finally impress Gordon then! Let me think for a bit then.
-<<elseif>>
+<<else>>
 I am not so sure about this, but I will give it a try...
 <<endif>>
 <<EndInterview Glenn>>
