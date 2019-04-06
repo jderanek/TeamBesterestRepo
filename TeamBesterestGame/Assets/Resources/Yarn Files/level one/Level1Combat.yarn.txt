@@ -37,13 +37,25 @@ Geoff is stabbed by Gorgo.
 
 <<elseif $shift12Combat is 1>>
 
-
-
 Gorgo works with Geoff, and clobbers a hero... but he appears very distracted by Geoff, and is felled by a flanking hero.
 <<ChangeStatus Jeff Gorgo_works_with_Geoff,_and_clobbers_a_hero..._but_he_appears_very_distracted_by_Geoff,_and_is_felled_by_a_flanking_hero.>>
 Geoff works with Gorgo, and defeats a hero... but is defeated after Gorgo falls in battle.
 <<ChangeStatus Geoff Geoff_works_with_Gorgo,_and_defeats_a_hero..._but_is_defeated_after_Gorgo_falls_in_battle.>>
 
+
+<<elseif $shift12Combat is 3>>
+Gorgo, still unconscious from sheer embarrassment, is completely useless against the heroes.
+<<ChangeStatus Jeff Gorgo,_still_unconscious_from_sheer_embarrassment,_is_completely_useless_against_the_heroes.>>
+Geoff falls prey to the rampaging heroes all alone.
+<<ChangeStatus Geoff Geoff_falls_prey_to_the_rampaging_heroes_all_alone.>>
+
+
+<<elseif $shift12Combat is 4>>
+Gorgo works seemlessly with Geoff! Their coordination is legendary!
+<<ChangeStatus Jeff Gorgo_works_seemlessly_with_Geoff!_Their_coordination_is_legendary!>>
+Geoff works seemlessly with Gorgo! Their love is unconquerable!
+<<ChangeStatus Geoff Geoff_works_seemlessly_with_Gorgo!_Their_love_is_unconquerable!>>
+The heroes for Shift 2 are defeated!
 
 <<endif>>
 [[Shift13]]

@@ -322,6 +322,8 @@ colorID: 2
 position: 3126,3127
 ---
 <<ChangeSpeaker SoundManager Geoff>>
+<<set $shift12Combat to 0>>
+
 Wait, what?!
 He stole from me! I don't care how minor it was!
 
@@ -367,9 +369,9 @@ Well... alright. I bet we'll really mess them up this time!
 <<ChangeSpeaker SoundManager Jeff>>
 Yea, sure, whatever.
 
-//4 points
 //------------------
-<<elseif $apologize1 is true and $apologize2 is true>>
+<<elseif $apologize1 is true and $apologize2 is false>>
+<<set $shift12Combat to 0>>
 //IF ONLY Jeff is flagged Apology:
 <<ChangeSpeaker SoundManager Jeff>>
 Alright, look, I'm sorry for taking your scone, ok?
@@ -395,6 +397,7 @@ It'll go just as well as it did last time. Try it! I dare you!
 
 //------------------
 <<else>>
+<<set $shift12Combat to 0>>
 
 <<ChangeSpeaker SoundManager Jeff>>
 What? No. If he's got a problem, he can solve it himself.
@@ -1667,7 +1670,7 @@ position: 6474,5770
 ...yea, I guess you did. I largely spaced out since I didn't think you weren't talking about me.
 
 [[He's real into you, you know. I think it could work.|Geoff21221332]]
-[[I noticed. The other goblins seem to be the same way. It's like nobody pays attention unless I say their names.|Geoff21221331]]
+[[I noticed. The other goblins seem to be the same way. Nobody pays attention!|Geoff21221331]]
 [[Look at Gorgo and tell me what *you* think.|Geoff21221333]]
 ===
 title: Geoff21221332
@@ -1677,7 +1680,7 @@ position: 7015,5541
 ---
 Alright, let's assume I take your word for it. How do I know he'll actually respect me? He hasn't so far!
 
-[[He just did that to get your attention. Once he has it, I'm sure the real Gorgo will appear.|Geoff212213321]]
+[[He just did that to get your attention. He'll likely change if you talk to him!|Geoff212213321]]
 [[You never know until you try. I'm pretty sure he's ready to, if you are!|Geoff212213321]]
 [[Alright, don't go for it, and nothing around here will change.|Geoff212213322]]
 ===
@@ -1762,7 +1765,7 @@ position: 7876,5939
 ---
 Yes. It's kinda your job to so we can kill heroes better, isn't it?
 
-[[I didn't do my doctoral thesis in time magic just to be pushed around by someone I just met minutes ago.|Geoff21221332]]
+[[I didn't do my doctoral thesis in time magic to be pushed around by someone I just met!|Geoff21221332]]
 [[Fine, be that way!|Geoff2122133121]]
 [[Wow. Low blow. I'm just trying to look out for you, and this is what I get?|Geoff21221332]]
 ===
@@ -1791,7 +1794,7 @@ position: 6182,5361
 That's an awful way to get someone to notice you, in my opinion!
 Relationships are built upon respect!
 
-[[I'm just the messenger, I'm not going to argue whether or not his methods are effective!|Geoff21221332]]
+[[I'm just the messenger, I won't to argue whether or not his methods are effective!|Geoff21221332]]
 [[Maybe that's just how he is.|Geoff2122112]]
 [[Have you considered trying to do it back to him?|Geoff2122113]]
 ===
@@ -1821,7 +1824,7 @@ Yea, dummy. Why do you think you're here in the first place?!
 
 [[Oh, right.|Geoff21221131]]
 [[Can you blame me, you goblins are all the same!|Geoff21221132]]
-[[I just figured similarity would breed you together, since that's what he seems to want!|Geoff21221332]]
+[[I just figured similarity would breed you together.|Geoff21221332]]
 ===
 title: Geoff21221132
 tags: 
@@ -2064,7 +2067,7 @@ Yup! I got a feeling ever since that Time-wizard started talkin' to me!
 //------------------
 
 <<else>>
-<<set $shift12Combat to 2>>
+<<set $shift12Combat to 0>>
 
 <<ChangeSpeaker SoundManager Voiceless>>
 [Gorgo and Geoff stare at each other, with confused faces.]
