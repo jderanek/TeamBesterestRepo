@@ -111,7 +111,7 @@ namespace Yarn.Unity
                         break;
                     }
                     timer = 0f;
-                    yield return new WaitUntil(() => (Input.GetMouseButtonDown(0) && !GameManager.paused && UIManager.eligibleForClick) || (timer >= textSpeed)); //
+                    yield return new WaitUntil(() => ((Input.GetMouseButtonDown(0) && UIManager.eligibleForClick) || (timer >= textSpeed)) && !GameManager.paused); //
                 }
             }
             else
