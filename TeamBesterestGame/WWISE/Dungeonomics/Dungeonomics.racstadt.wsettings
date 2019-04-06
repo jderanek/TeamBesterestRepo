@@ -6,14 +6,17 @@
 				<Property Name="AudioFilesImporter\Path" Type="string" Value="C:\Users\racstadt\Music\Dungeonomics Splits"/>
 				<Property Name="Event Action List\{18DAD7C5-3750-48FF-BE1A-7250F7FE4799}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1D0D387E-8B81-4235-86C6-44CBE602DB46}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{264215AA-A884-4ED1-AB8F-FA2DD9EE68BF}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{35A33D38-EED8-466B-B6B1-F04A20798D60}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{562F7E07-7FFC-4524-BB4C-283153733A07}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{5E433FC4-0108-4F53-8CB3-015F3FBA97B4}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{710A3122-1B52-4057-854B-7148D75D90E9}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{981B465B-A683-4CE2-9F49-D905BBECFC9D}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9E0EA4D5-E18F-4EDB-9E23-808A0240BFAE}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{A8095B10-DA9E-49CE-8091-9AFF795CB802}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{C25EE9C6-71BF-45C8-A25D-DD2F6D3A1DDF}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{E4C02630-A450-4499-A07A-A5955AE57212}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{EDA9576A-8F18-43EC-AADE-C3BB9391EDDB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F6608D57-A9CD-4FE2-93B7-421DB701E859}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">

@@ -87,6 +87,46 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Pause" ID="{264215AA-A884-4ED1-AB8F-FA2DD9EE68BF}">
+					<ChildrenList>
+						<Action Name="" ID="{F04BE9FD-2C8F-4A84-96DA-487009A3ACD2}" ShortID="728068102">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="8"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+							<ChildrenList>
+								<EventActionException Name="" ID="{593EF632-946B-4344-9DCC-B1C0E4B3D512}">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{D7EE6ED1-1F1D-450D-BBB5-D9271E0C0D89}" WorkUnitID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}"/>
+										</Reference>
+									</ReferenceList>
+								</EventActionException>
+							</ChildrenList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Resume" ID="{710A3122-1B52-4057-854B-7148D75D90E9}">
+					<ChildrenList>
+						<Action Name="" ID="{9D7A3E4D-9727-47A0-891C-29264CC4B858}" ShortID="820369043">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="10"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+							<ChildrenList>
+								<EventActionException Name="" ID="{F119CB47-4800-4A45-BD41-65707432497E}">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Music" ID="{D7EE6ED1-1F1D-450D-BBB5-D9271E0C0D89}" WorkUnitID="{AED773D0-6DEC-4887-A80A-B1E166937A3A}"/>
+										</Reference>
+									</ReferenceList>
+								</EventActionException>
+							</ChildrenList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -25,7 +25,9 @@ namespace AK
         static const AkUniqueID NILBOG_VOICE = 1181445569U;
         static const AkUniqueID NOTEBOOK_OPEN = 417584769U;
         static const AkUniqueID PAGE_FLIP = 3989786198U;
+        static const AkUniqueID PAUSE = 3092587493U;
         static const AkUniqueID PENCIL_SCRATCH = 1223010781U;
+        static const AkUniqueID RESUME = 953277036U;
         static const AkUniqueID REWIND_MUSIC = 1525674368U;
         static const AkUniqueID REWIND_TIME = 3212434624U;
         static const AkUniqueID TEXT = 2972449336U;
