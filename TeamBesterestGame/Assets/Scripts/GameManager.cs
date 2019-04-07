@@ -301,12 +301,12 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-            Save();
+            this.ToggleNotebook();
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        /*if (Input.GetKeyDown(KeyCode.K))
         {
             Load();
-        }
+        }*/
     }
 
     public void ChangeTabs(int tab)
