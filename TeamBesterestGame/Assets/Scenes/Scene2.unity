@@ -6182,7 +6182,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 34.346672}
+  m_SizeDelta: {x: 34.31, y: 34.35}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &414567833
 MonoBehaviour:
@@ -6201,7 +6201,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -6256,7 +6256,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 192a7bebbfc7e214e9f34ce4637a9a1b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5358f6e233b2ad4439cce70285fcf9c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11991,7 +11991,7 @@ GameObject:
   - component: {fileID: 813261850}
   - component: {fileID: 813261851}
   m_Layer: 5
-  m_Name: Monsters Button
+  m_Name: Journal Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12014,7 +12014,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 34.35}
+  m_SizeDelta: {x: 37.07, y: 34.347}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &813261847
 MonoBehaviour:
@@ -12033,7 +12033,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -12088,7 +12088,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 557f8ce4907c908489895e0eae93156a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 495485dd3a39570488eea5af35b8e3b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14876,6 +14876,21 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_Alignment
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.39705884
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.3999784
+      objectReference: {fileID: 0}
+    - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.3999784
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 712d34d1e5c5eb44c842bf916cbc4ca8, type: 2}

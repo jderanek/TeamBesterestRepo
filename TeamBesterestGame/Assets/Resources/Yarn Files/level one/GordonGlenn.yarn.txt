@@ -452,7 +452,7 @@ Y-yes? What is it?
 title: GGF11
 tags: 
 colorID: 2
-position: 2762,352
+position: 2759,352
 ---
 <<set $shift1combat to 1>>
 
@@ -480,6 +480,7 @@ Gordon is trying to help me out... but I am not so sure his ideas are correct...
 See?! I try to help and gets all cold feet like when he sees a hero>>
 <<ChangeSpeaker SoundManager Glenn>>
 I-I just don't see the reasoning behind it all... I am sorry!
+<<DisableFollowup Glenn shift1>>
 ===
 title: Coward1323
 tags: 
@@ -503,6 +504,7 @@ Sure am! Now repeat what I taught you Glenn
 U-uh... I have already forgot... sorry...
 <<ChangeSpeaker SoundManager Gordon>>
 Well, let me start again from the top!
+<<DisableFollowup Glenn shift1>>
 ===
 title: GGF12
 tags: 
@@ -515,6 +517,7 @@ Y-yeah! I can't wait to prove myself!
 Don't too cocky, you haven't fought anyone yet
 <<ChangeSpeaker SoundManager Glenn>>
 Y-you will see! I can take down heroes too!
+<<DisableFollowup Glenn shift1>>
 ===
 title: Glenn233
 tags: 
