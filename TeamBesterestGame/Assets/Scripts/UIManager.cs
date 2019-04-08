@@ -154,15 +154,20 @@ public class UIManager : MonoBehaviour {
         switch(prompt)
         {
             case "1":
+                GameManager.paused = false;
                 journalPrompt.SetActive(false);
                 break;
             case "2":
+                GameManager.paused = false;
                 clockPrompt.SetActive(false);
                 break;
             case "3":
+                GameManager.paused = true;
+                notification.SetActive(false);
                 journalPrompt.SetActive(true);
                 break;
             case "4":
+                GameManager.paused = true;
                 clockPrompt.SetActive(true);
                 break;
         }
