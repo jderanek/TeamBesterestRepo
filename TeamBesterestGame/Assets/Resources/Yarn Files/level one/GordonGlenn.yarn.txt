@@ -524,13 +524,14 @@ tags:
 colorID: 3
 position: 659,-3799
 ---
-Nothing I use ever works on them!
+Nothing I do fazes them!
+It is like I am not even there...
 [[Have you talked to Gordon about working on your combat skills?|Glenn2331]]
 ===
 title: Glenn232
 tags: 
 colorID: 3
-position: 659,-3579
+position: 659,-3581
 ---
 T-that is true!
 But I am still worried about not holding my own in combat...
@@ -541,7 +542,7 @@ Gordon can fight much better...
 title: Glenn231
 tags: 
 colorID: 4
-position: 674,-3328
+position: 672,-3334
 ---
 *Sigh* I know... just...
 Can I be alone for a bit?
@@ -560,9 +561,9 @@ But maybe I could learn something from Gordon's style...
 title: Glenn222
 tags: 
 colorID: 3
-position: 670,-2808
+position: 670,-2806
 ---
-Not sure... maybe the punching and killing hero part...
+Not sure... maybe the punching and killing heroes part...
 [[You know thats a big part of this business right?|Glenn2221]]
 ===
 title: Glenn221
@@ -570,9 +571,9 @@ tags:
 colorID: 3
 position: 670,-2557
 ---
-Maybe if I had a deathwish...
+Maybe if I had a deathwish!
 I am sure he'd yell at me again if I did so...
-[[Why don't you offer him help in return then? Teach him your evasive tactics.|Glenn2211]]
+[[Maybe offer him advice in return then? Teach him your evasive tactics.|Glenn2211]]
 ===
 title: Glenn23
 tags: 
@@ -590,11 +591,11 @@ tags:
 colorID: 3
 position: 226,-2538
 ---
-I think we both have our own fighting style!
-But we don't really mash well together...
+I think both of us have our own fighting style!
+But they don't really mash well together...
 [[Is running away truly a special technique?|Glenn221]]
-[[So what would help you guys work better?|Glenn222]]
-[[You could always ask for help from Gordon|Glenn223]]
+[[So what would make things work better?|Glenn222]]
+[[You could always ask for help from Gordon.|Glenn223]]
 
 ===
 title: Glenn21
@@ -610,11 +611,11 @@ That is rude! J-just leave me alone!
 title: Glenn2
 tags: 
 colorID: 3
-position: -659,-1751
+position: -659,-1756
 ---
 Yeah, that is pretty obvious huh...
 [[You two are hopeless...|Glenn21]]
-[[Blatently in fact|Glenn22]]
+[[Blatently in fact.|Glenn22]]
 [[What do you think is the reason you two are still failing?|Glenn23]]
 ===
 title: Gordon2
@@ -625,8 +626,8 @@ position: -492,4809
 Say that again?
 You might want to...
 rephrase that...
-[[You play the tough guy act well, I admit, but it can only get you so far|Gordon21]]
-[[Where did you learn to fight? It is very sloppy|Gordon22]]
+[[You play the tough guy act well, I admit, but it can only get you so far.|Gordon21]]
+[[Where did you learn to fight? It is very sloppy.|Gordon22]]
 
 ===
 title: Gordon2222
@@ -636,16 +637,16 @@ position: 881,5382
 ---
 HAHAHAHAHAHAHA!!
 Wait, you were serious?
-No thank you, never gonna happen.
+No thank you, that is never going to happen.
 
 <<EndInterview Gordon>>
 ===
 title: Gordon2221
 tags: 
 colorID: 4
-position: 887,5120
+position: 887,5117
 ---
-Agreed, but it is a great defensive tool otherwise
+Agreed, but it is a great defensive tool otherwise.
 Maybe I could do some stretching beforehand...
 
 <<EndInterview Gordon>>
@@ -656,8 +657,8 @@ colorID: 4
 position: 835,4730
 ---
 You really think so?
-*Sigh* I guess I will go apologize to him and admit it all
-I wonder how shocked he will be when I tell him
+*Sigh* I guess I will go apologize to him and admit it all...
+I wonder how shocked he will be when I tell him.
 <<set $gordonGlennHelp to true>>
 
 <<EndInterview Gordon>>
@@ -665,30 +666,30 @@ I wonder how shocked he will be when I tell him
 title: Gordon211
 tags: 
 colorID: 4
-position: 562,4250
+position: 562,4248
 ---
 See? Was that too hard?
-Now if you'll excuse me, I need to train more
+Now if you'll excuse me, I need to train more.
 <<EndInterview Gordon>>
 ===
 title: Gordon223
 tags: 
 colorID: 3
-position: 454,5546
+position: 454,5544
 ---
-The guy needs to help out for once, but he is rather quick on his feet
-I didn't think the poindexter had it in him to be honest
+The guy needs to help out for once, but he is rather quick on his feet.
+I didn't think the poindexter had it in him to be honest...
 
 [[Maybe he could give you some tips in speed?|Gordon2231]]
 ===
 title: Gordon222
 tags: 
 colorID: 3
-position: 494,5250
+position: 494,5248
 ---
-This armor tends to slow me down, leaving me a easy target when I am alone
-Maybe I could use some help in agility
-[[I am not sure how you could move at all in that armor|Gordon2221]]
+This armor tends to slow me down, leaving me a easy target when I am alone.
+Maybe I could use some help in agility.
+[[I am not sure how you could move at all in that armor.|Gordon2221]]
 [[Glenn seems to know a bit about moving fast, why not ask him?|Gordon2222]]
 ===
 title: Gordon221
@@ -697,7 +698,7 @@ colorID: 3
 position: 499,5005
 ---
 H-hey.. don't be so drastic...
-Alright fine, a little help wouldn't hurt
+Alright fine, a little help wouldn't hurt!
 I would listen to anyone, even Glenn!
 I doubt he'd be receptive to the idea...
 
@@ -710,7 +711,7 @@ position: 432,4657
 ---
 W-well...
 Alright fine, I can't really fight that well ok?!
-but I can't let people think I am weak!
+But I can't let people think I am weak!
 Especially not Glenn... he'd laugh at me...
 
 [[I think he'd do the opposite, I think he would help you.|Gordon2131]]
@@ -718,13 +719,13 @@ Especially not Glenn... he'd laugh at me...
 title: Gordon22
 tags: 
 colorID: 3
-position: 68,5110
+position: 68,5108
 ---
 I-I am self taught! 
 I know how good I am!
 I don't need any help!
-[[Then maybe I will tell the necromancers not to "help" you then|Gordon221]]
-[[Obviously you do. What will make you better at combat?|Gordon222]]
+[[Then maybe I will tell the necromancers not to "help" you then.|Gordon221]]
+[[Obviously you do. What will make you do better in combat?|Gordon222]]
 [[What do you think of Glenn's fighting style?|Gordon223]]
 ===
 title: Gordon21
@@ -732,7 +733,7 @@ tags:
 colorID: 3
 position: 53,4323
 ---
-Are you serious? This is all Glenn's issue, not me
+Are you serious? This is all Glenn's issue, not me!
 [[He IS the one who refuses to fight, at least you do so|Gordon211]]
 [[Then why are you still dying all the time? You claim to be so strong!|Gordon212]]
 
@@ -740,20 +741,21 @@ Are you serious? This is all Glenn's issue, not me
 title: Gordon2231
 tags: 
 colorID: 4
-position: 881,5638
+position: 878,5635
 ---
 Do you know how embarassing that would be?!
-I will take my chances with the heroes instead
+I will take my chances with the heroes instead.
 
 <<EndInterview Gordon>>
 ===
 title: Glenn2331
 tags: 
 colorID: 3
-position: 927,-3790
+position: 927,-3792
 ---
-Ask Gordon!? I-I know you are trying to help and all but that is still crazy...
-[[You won't know his answer unless you ask him Glenn|Glenn23311]]
+Ask Gordon!? 
+I-I know you are trying to help and all but that is still crazy...
+[[You won't know his reply unless you ask him Glenn.|Glenn23311]]
 ===
 title: Glenn23311
 tags: 
@@ -773,7 +775,8 @@ colorID: 4
 position: 942,-3552
 ---
 G-good idea!
-Gordon can be.. abrasive.. but I think he wouldn't say no if I persist!
+Gordon can be abrasive.. 
+But I think he wouldn't say no if I persist!
 
 <<set $glennGordonHelp to true>>
 
@@ -782,11 +785,11 @@ Gordon can be.. abrasive.. but I think he wouldn't say no if I persist!
 title: Glenn2211
 tags: 
 colorID: 4
-position: 940,-2566
+position: 938,-2566
 ---
 That is a great idea!
-Why didn't I think of that...
-I hope he agrees to do do...
+Why didn't I think of that?
+I hope he agrees to do so...
 
 <<set $glennGordonHelp to true>>
 
@@ -795,16 +798,18 @@ I hope he agrees to do do...
 title: Glenn2221
 tags: 
 colorID: 4
-position: 930,-2808
+position: 932,-2808
 ---
-Yeah... I dont belong here... go help the useful Goblins...
+Yeah... 
+Maybe I don't belong here... 
+Go help the useful Goblins...
 
 <<EndInterview Glenn>>
 ===
 title: Glenn2232
 tags: 
 colorID: 4
-position: 932,-3321
+position: 928,-3323
 ---
 I just hope I don't appear to be fawning over him...
 He really isn't my type after all...
@@ -817,10 +822,10 @@ But I will take your advice into consideration!
 title: Glenn2231
 tags: 
 colorID: 4
-position: 925,-3060
+position: 926,-3062
 ---
 Perhaps you are right...
-Maybe we just need yet another try...
+Maybe we just need yet another try!
 
 <<EndInterview Glenn>>
 ===
