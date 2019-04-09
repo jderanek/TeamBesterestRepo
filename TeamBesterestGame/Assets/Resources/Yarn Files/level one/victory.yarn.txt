@@ -1,4 +1,4 @@
-title: victory
+title: victory1
 tags: 
 colorID: 0
 position: 540,260
@@ -8,4 +8,34 @@ I don't know how you did it, but you did it! Those goblins are a killing machine
 ...it's like you've already met them before, somehow!
 Skills like yours could get you far in an industry like this. I'll pass your performance report along to some people who could also use the help.
 Thanks for the help! I know who to call if I need a skilled wizard's help again!
+
+[[All I need now is my fee.|victory2]]
+===
+title: victory2
+tags: 
+colorID: 0
+position: 858,260
+---
+Your fee? I already agreed to pass your report along to other professionals in the industry.
+Surely you don't need a fee when you can find work much easier with my help!
+
+[[Just because I'm a Time Wizard doesn't mean I don't have to eat! I need the money!|victory3]]
+===
+title: victory3
+tags: 
+colorID: 0
+position: 1175,262
+---
+That's just being greedy! I'm not paying you when I'm already doing you such a service!
+
+[[Forget this, I'm going back to before I even accepted this job!|victory4]]
+===
+title: victory4
+tags: 
+colorID: 0
+position: 1489,257
+---
+Wait, what?! No, you can't do that! What am I supposed to do about those useless goblins now?!
+Noooooo!!
+//Insert animation here followed by credits
 ===
