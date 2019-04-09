@@ -10,7 +10,10 @@ I'm the... front-line fighter around here.
 [[Front-line fighter? That is quite brave.|Coward11]]
 [[You must see a lot of combat then.|Coward12]]
 [[Tell me about yourself.|Coward13]]
+
+<<if $inspire is true>>
 [[I think I know a way to get Gordon to let you fight alongside him. Try ambushing the heroes!|Coward1332]]
+<<endif>>
 
 <<if $glennTree2Start is true>>
 [[Look here Glenn, I think I know the deeper problem. You and Gordon both suck at fighting...|Glenn2]]
@@ -187,14 +190,9 @@ tags:
 colorID: 1
 position: 160,1013
 ---
-
-<<if $inspire is true>>
 <<set $confidence to true>>
 A-ambush? That seems scary... but also smart! 
 Maybe that will finally impress Gordon then! Let me think for a bit then.
-<<else>>
-I am not so sure about this, but I will give it a try...
-<<endif>>
 <<EndInterview Glenn>>
 ===
 title: Coward121
@@ -430,7 +428,7 @@ But yeah, good luck, you will need it...
 title: GGF1
 tags: 
 colorID: 2
-position: 2279,674
+position: 2239,-171
 ---
 <<ChangeSpeaker SoundManager Gordon>>
 Oh, hey! So what the deal Mr. Time-Wizard?
@@ -454,7 +452,7 @@ tags:
 colorID: 2
 position: 2759,352
 ---
-<<set $shift1combat to 1>>
+<<set $shift11Combat to 1>>
 
 <<ChangeSpeaker SoundManager Glenn>>
 Y-yeah! I can't wait to prove myself!
@@ -472,14 +470,17 @@ Y-you will see! I can take down heroes too!
 title: GGF14
 tags: 
 colorID: 2
-position: 2696,1075
+position: 2727,1088
 ---
 <<ChangeSpeaker SoundManager Glenn>>
 Gordon is trying to help me out... but I am not so sure his ideas are correct...
+
 <<ChangeSpeaker SoundManager Gordon>>
 See?! I try to help and gets all cold feet like when he sees a hero>>
+
 <<ChangeSpeaker SoundManager Glenn>>
 I-I just don't see the reasoning behind it all... I am sorry!
+
 <<DisableFollowup Glenn shift1>>
 ===
 title: Coward1323
@@ -503,7 +504,7 @@ Sure am! Now repeat what I taught you Glenn
 <<ChangeSpeaker SoundManager Glenn>>
 U-uh... I have already forgot... sorry...
 <<ChangeSpeaker SoundManager Gordon>>
-Well, let me start again from the top!
+Eugh... nevermind...
 <<DisableFollowup Glenn shift1>>
 ===
 title: GGF12
@@ -514,9 +515,12 @@ position: 2722,602
 <<ChangeSpeaker SoundManager Glenn>>
 Y-yeah! I can't wait to prove myself!
 <<ChangeSpeaker SoundManager Gordon>>
-Don't too cocky, you haven't fought anyone yet
+Don't too cocky, you haven't fought anyone yet!
 <<ChangeSpeaker SoundManager Glenn>>
 Y-you will see! I can take down heroes too!
+
+<<ChangeSpeaker SoundManager Voiceless>>
+[Despite his posturing, Glenn still looks rather shaky. You're not sure how this will play out.]
 <<DisableFollowup Glenn shift1>>
 ===
 title: Glenn233
