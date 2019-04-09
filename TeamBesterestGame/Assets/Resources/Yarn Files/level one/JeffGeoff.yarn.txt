@@ -7,11 +7,8 @@ position: 3878,-404
 
 *Grumble grumble* 'Ey, I'm Geoff...
 ...and I'm real mad right now! Some bonehead stole my scone and ate it! What kinda jerk does that?!
-[[Don't you think that's a kind of ridiculous thing to be mad about?|Geoff11]]
-[[Who do you think did it?|Geoff12]]
-[[A shame, I bet it was a tasty scone too.|Geoff13]]
 
-<<if $talkedToJeff is true>>
+<<if $talkedToJeff is true and $geoffReady2 is false>>
 [[I talked to Gorgo already, if that's what you're going to ask.|Geoff14]]
 <<endif>>
 
@@ -20,6 +17,14 @@ position: 3878,-404
 <<elseif $geoffReady2 is true>>
 [[Hold up a moment. Is there something going on between you and Gorgo?|Geoff3]]
 <<endif>>
+
+[[Don't you think that's a kind of ridiculous thing to be mad about?|Geoff11]]
+[[Who do you think did it?|Geoff12]]
+[[A shame, I bet it was a tasty scone too.|Geoff13]]
+
+
+
+
 ===
 title: Geoff111
 tags: 
@@ -169,15 +174,20 @@ position: -2016,504
 ---
 <<ChangeSpeaker SoundManager Jeff>>
 Hey, boss guy... what do you need?
-[[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
+
+<<if $talkedToGorgo2 is true>>
+[[Let me give you a hypothetical situation of what I think's going on.|Gorgo211121]]
+<<endif>>
 
 <<if $gorgoStart2 is true>>
 [[Word around here is that there's something going on between you and Geoff.|Gorgo2]]
 <<endif>>
 
-<<if $talkedToGorgo2 is true>>
-[[Let me give you a hypothetical situation of what I think's going on.|Gorgo211121]]
-<<endif>>
+[[I saw what happened in the dungeon earlier. It wasn't pretty.|Jeff11]]
+
+
+
+
 ===
 title: Jeff11
 tags: 
@@ -188,11 +198,15 @@ I don't know what you're talkin' about.
 [[I can just ask anyone else, I'm sure they'll talk.|Jeff111]]
 [[There were two goblins one second, none the next. You know what I meant.|Jeff112]]
 
-<<if $talkedToGeoff is true>>
+<<if $talkedToGeoff is true and $gorgoStart2 is false>>
 [[Whatever you did, Geoff is pretty riled up about it.|Jeff114]]
 
-<<else>>
+<<elseif $gorgoStart2 is false>>
 [[You and Geoff got some sort of beef, and I'm going to figure it out.|Jeff113]]
+
+<<else>>
+[[Word around here is that there's something going on between you and Geoff.|Gorgo2]]
+
 <<endif>>
 ===
 title: Jeff112

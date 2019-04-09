@@ -7,17 +7,22 @@ position: -618,-100
 H-huh?
 Oh, yeah. I-I'm Glenn...
 I'm the... front-line fighter around here.
+
+<<if $inspire is true and $glennTree2Start is false>>
+[[I talked to Gordon. Have you tried working with Gordon and ambushing the heroes?|Coward1332]]
+<<endif>>
+
+<<if $glennTree2Start is true>>
+[[Look here Glenn, I think I know the deeper problem.|Glenn2]]
+<<endif>>
+
 [[Front-line fighter? That is quite brave.|Coward11]]
 [[You must see a lot of combat then.|Coward12]]
 [[Tell me about yourself.|Coward13]]
 
-<<if $inspire is true>>
-[[I think I know a way to get Gordon to let you fight alongside him. Try ambushing the heroes!|Coward1332]]
-<<endif>>
 
-<<if $glennTree2Start is true>>
-[[Look here Glenn, I think I know the deeper problem. You and Gordon both suck at fighting...|Glenn2]]
-<<endif>>
+
+
 ===
 title: Coward11
 tags: 
@@ -229,15 +234,19 @@ position: -411,2462
 Hey, you are the wizard guy the boss talked about? Hopefully you know your stuff.
 Maybe you knowing a silence spell you could cast on Glenn.
 I can dream...
+
+<< if $confidence == 1 and $gordonTree2Start is false>>
+[[I actually already talked to Glenn, I think I may have solved your problem.|Gordon14]]
+<<endif>>
+
+<<if $gordonTree2Start is true>>
+[[Look here Gordon, I think I know the deeper problem at work here.|Gordon2]]
+<<endif>>
+
 [[Yeah, that's me, what can I do for you?|Gordon11]]
 [[I saw what happened to you guys, not great..|Gordon12]]
 [[Why would you say that about Glenn?|Gordon13]]
-<< if $confidence == 1>>
-[[I actually already talked to Glenn, I think I may have solved your problem.|Gordon14]]
-<<endif>>
-<<if $gordonTree2Start is true>>
-[[Look here Gordon, I think I know the deeper problem. You and Glenn both suck at fighting...|Gordon2]]
-<<endif>>
+
 ===
 title: Gordon13
 tags: 
@@ -627,9 +636,7 @@ tags:
 colorID: 3
 position: -492,4809
 ---
-Say that again?
-You might want to...
-rephrase that...
+Say that again? You might want to rephrase that...
 [[You play the tough guy act well, I admit, but it can only get you so far.|Gordon21]]
 [[Where did you learn to fight? It is very sloppy.|Gordon22]]
 
@@ -725,9 +732,7 @@ tags:
 colorID: 3
 position: 68,5108
 ---
-I-I am self taught! 
-I know how good I am!
-I don't need any help!
+I-I am self taught! I know how good I am! I don't need any help!
 [[Then maybe I will tell the necromancers not to "help" you then.|Gordon221]]
 [[Obviously you do. What will make you do better in combat?|Gordon222]]
 [[What do you think of Glenn's fighting style?|Gordon223]]

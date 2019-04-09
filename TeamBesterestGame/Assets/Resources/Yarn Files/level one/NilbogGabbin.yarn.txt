@@ -6,21 +6,27 @@ position: 2557,-2261
 <<ChangeSpeaker SoundManager Gabbin>>
 Hello! I'm Gabbin! Nice to meet you!
 I hope you've had an excellent time with us all so far!
-[[You seem rather chipper.|Gabbin11]]
-[[Coming on a little strong, aren't you?|Gabbin12]]
-[[You seem pleasant, all things considered.|Gabbin13]]
 
-<<if $talkedToNilbog is true and $talkedToNilbog2 is false>>
+<<if $talkedToNilbog is true and $gabbinStart2 is false>>
 [[Absolutely. In fact, I've already talked to Nilbog.|Gabbin14]]
+<<endif>>
+
+<<if $talkedToNilbog2 is true>>
+[[Hey Gabbin, I was just talking to Nilbog, and I've got an idea for you!|Gabbin2]]
 <<endif>>
 
 <<if $gabbinStart2 is true>>
 [[Just curious, if Nilbog theoretically was three little goblins, how would you react?|Gabbin3]]
 <<endif>>
 
-<<if $talkedToNilbog2 is true>>
-[[Hey Gabbin, I was just talking to Nilbog, and I've got an idea for you!|Gabbin2]]
-<<endif>>
+[[You seem rather chipper.|Gabbin11]]
+[[Coming on a little strong, aren't you?|Gabbin12]]
+[[You seem pleasant, all things considered.|Gabbin13]]
+
+
+
+
+
 ===
 title: Gabbin11
 tags: 
@@ -592,21 +598,22 @@ position: -2313,-3278
 ---
 <<ChangeSpeaker SoundManager Nilbog>>
 ...
-
-[[...|Nilbog11]]
-[[...Hello? You in there?|Nilbog12]]
-
-<<if $talkedToGabbin is true>>
-[[Hold your horses there pal, I talked to Gabbin already.|Nilbog13]]
+<<if $talkedToNilbog2 is true>>
+[[I know your secret, Nilbog, but don't worry, I have a plan.|Nilbog3]]
 <<endif>>
 
 <<if $nilbogStart2 is true>>
 [[Look here, I need you to stop acting like *children*!|Nilbog2]]
 <<endif>>
 
-<<if $talkedToNilbog2 is true>>
-[[I know your secret, Nilbog, but don't worry, I have a plan.|Nilbog3]]
+<<if $talkedToGabbin is true and $nilbogStart2 is false>>
+[[Hold your horses there pal, I talked to Gabbin already.|Nilbog13]]
 <<endif>>
+
+[[...|Nilbog11]]
+[[...Hello? You in there?|Nilbog12]]
+
+
 ===
 title: Nilbog11
 tags: 
