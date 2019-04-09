@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0e51bf87e7aaeae41a8a534da71a5fd9
+timeCreated: 1554784779
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fundamental  Brigade Condensed
+  fontNames:
+  - Fundamental  Brigade Condensed
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

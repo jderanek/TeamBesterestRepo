@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 1a7aa49d502ce6c4dac9a448a784fcfc
+timeCreated: 1554784779
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fundamental  Brigade Scvhlank
+  fontNames:
+  - Fundamental  Brigade Scvhlank
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

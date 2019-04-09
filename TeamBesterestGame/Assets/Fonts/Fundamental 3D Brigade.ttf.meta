@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 0cc50832a3a86bd469388f8acaaf3e25
+timeCreated: 1554784779
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fundamental 3D  Brigade
+  fontNames:
+  - Fundamental 3D  Brigade
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
