@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class FlashingColor : MonoBehaviour {
 
+    public float speed;
     private bool increasing = false;
-    public Image img;
+    private Image img;
 
 	// Use this for initialization
 	void Start () {
@@ -16,24 +17,23 @@ public class FlashingColor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        /*if (increasing)
+        if (increasing)
         {
-            img.color = new Color(img.color.r, img.color.g, img.color.b, img.color.a += 1.0);
-            //img.color.a += 1.0f;
-            if (img.color.a >= 255)
+            img.color = new Color(img.color.r, img.color.g, img.color.b, img.color.a + speed);
+            if (img.color.a >= 0.99f)
             {
                 increasing = false;
             }
+            
         }
         else
         {
-            img.color = new Color(img.color.r, img.color.g, img.color.b, img.color.a += 1.0);
-            //img.color.a -= 1.0f;
-            if (img.color.a <= 0)
+            img.color = new Color(img.color.r, img.color.g, img.color.b, img.color.a - speed);
+            if (img.color.a <= 0.01f)
             {
                 increasing = true;
             }
-        }*/
+        }
         
 
 	}
