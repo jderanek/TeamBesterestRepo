@@ -302,6 +302,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             this.ToggleNotebook();
+            uiManager.TogglePrompts("1");
         }
         /*if (Input.GetKeyDown(KeyCode.K))
         {
