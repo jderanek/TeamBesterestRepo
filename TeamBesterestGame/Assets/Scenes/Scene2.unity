@@ -24211,7 +24211,7 @@ Prefab:
     - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}
       propertyPath: m_Text
-      value: "\u2022 Gordon is pwned"
+      value: "\u2022 Gordon was overwhelmed"
       objectReference: {fileID: 0}
     - target: {fileID: 114924651191381492, guid: 712d34d1e5c5eb44c842bf916cbc4ca8,
         type: 2}

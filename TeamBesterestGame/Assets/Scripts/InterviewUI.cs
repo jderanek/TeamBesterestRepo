@@ -104,14 +104,14 @@ namespace Yarn.Unity
                     responseText.text = stringBuilder.ToString();
                     
                     
-                    if (Input.GetMouseButtonDown(0) && !GameManager.paused && UIManager.eligibleForClick)
+                    if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("j")) && !GameManager.paused && UIManager.eligibleForClick)
                     {
                         responseText.text = line.text;
                         yield return new WaitForSeconds(.025f);
                         break;
                     }
                     timer = 0f;
-                    yield return new WaitUntil(() => ((Input.GetMouseButtonDown(0) && UIManager.eligibleForClick) || (timer >= textSpeed)) && !GameManager.paused); //
+                    yield return new WaitUntil(() => (((Input.GetMouseButtonDown(0) || Input.GetKeyDown("j")) && UIManager.eligibleForClick) || (timer >= textSpeed)) && !GameManager.paused); //
                 }
             }
             else

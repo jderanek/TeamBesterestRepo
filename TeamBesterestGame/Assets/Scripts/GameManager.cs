@@ -225,6 +225,7 @@ public class GameManager : MonoBehaviour
     public void TutorialReset()
     {
         this.interviewing = false;
+        
         foreach (GameObject monster in monsterList)
         {
             monster.GetComponent<BaseMonster>().interviewable = true;
