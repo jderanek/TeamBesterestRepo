@@ -34,7 +34,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        //set rtpc values to 100 here!
+        //set rtpc values to 100 here! this is probably causing the volume scene load bug...
         AkSoundEngine.SetRTPCValue("Master_Volume", 100);
         AkSoundEngine.SetRTPCValue("Voice_Volume", 100);
         AkSoundEngine.SetRTPCValue("Sound_Effects", 100);
@@ -91,6 +91,11 @@ public class SoundManager : MonoBehaviour
         AkSoundEngine.StopAll(goblins[goblinToTalk]);
     }
 
+    public void StopVoices()
+    {
+        AkSoundEngine.PostEvent("Stop_Voices", gameObject);
+    }
+
     public static void GetGoblinObjects()
     {
         goblins = new GameObject[8];
@@ -142,10 +147,7 @@ public class SoundManager : MonoBehaviour
                 goblinToTalk = 4;
                 gameManager.SetCurrentSpeaker(3);
                 break;
-            case "Gordon":
-                goblinToTalk = 7;
-                gameManager.SetCurrentSpeaker(6);
-                break;
+
             case "Boss":
                 goblinToTalk = 5;
                 break;
@@ -156,6 +158,10 @@ public class SoundManager : MonoBehaviour
                 }
                 goblinToTalk = 6;
                 nameTag.SetActive(false);
+                break;
+            case "Gordon":
+                goblinToTalk = 7;
+                gameManager.SetCurrentSpeaker(6);
                 break;
             default:
                 break;

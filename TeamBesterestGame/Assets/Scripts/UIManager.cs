@@ -154,14 +154,18 @@ public class UIManager : MonoBehaviour {
         switch(prompt)
         {
             case "1":
+                UnpauseWwise();
                 GameManager.paused = false;
                 journalPrompt.SetActive(false);
                 break;
             case "2":
+                UnpauseWwise();
                 GameManager.paused = false;
                 clockPrompt.SetActive(false);
                 break;
             case "3":
+                print("sounds should be paused");
+                AkSoundEngine.PostEvent("Pause", gameObject);
                 GameManager.paused = true;
                 notification.SetActive(false);
                 journalPrompt.SetActive(true);
