@@ -444,7 +444,10 @@ Oh, hey! So what the deal Mr. Time-Wizard?
 <<ChangeSpeaker SoundManager Glenn>>
 Y-yes? What is it?
 
-<<if $confidence is true and $inspire is true>>
+<<if $glennGordonHelp and $gordonGlennHelp is true>>
+[[So how is the training going along you two?|GGF15]]
+
+<<elseif $confidence is true and $inspire is true>>
 [[Are you both prepared now to fight together?|GGF11]]
 
 <<elseif $confidence is true and $inspire is false>>
@@ -485,7 +488,7 @@ position: 2727,1088
 Gordon is trying to help me out... but I am not so sure his ideas are correct...
 
 <<ChangeSpeaker SoundManager Gordon>>
-See?! I try to help and gets all cold feet like when he sees a hero>>
+See?! I try to help and gets all cold feet like when he sees a hero!
 
 <<ChangeSpeaker SoundManager Glenn>>
 I-I just don't see the reasoning behind it all... I am sorry!
@@ -837,4 +840,37 @@ Perhaps you are right...
 Maybe we just need yet another try!
 
 <<EndInterview Glenn>>
+===
+title: GGF15
+tags: 
+colorID: 2
+position: 2781,-243
+---
+<<ChangeSpeaker SoundManager Gordon>>
+We are learning a lot from each other!
+I think I misjudged you earlier Glenn...
+You have potential as a fighter, if only I saw it sooner!
+Thank you for allowing me to learn some of your dodging skills.
+Can you show off that move I just taught you?
+<<ChangeSpeaker SoundManager Glenn>>
+S-sure! Here I go!
+<<ChangeSpeaker SoundManager Voiceless>>
+(Glenn positions himself next to a strawman with a bucket helmet)
+(He strikes a combat stance, ready to attack)
+<<ChangeSpeaker SoundManager Glenn>>
+HIYAH!!
+<<ChangeSpeaker SoundManager Voiceless>>
+(The strawman's head comes clean off, the bucket completely destroyed)
+<<ChangeSpeaker SoundManager Glenn>>
+I-I may have overdid it...
+<<ChangeSpeaker SoundManager Gordon>>
+That was incredible! Nice work!
+You are a natural!
+<<ChangeSpeaker SoundManager Glenn>>
+Y-you really think so? 
+That means a lot coming from you!
+So what move is next?
+<<ChangeSpeaker SoundManager Voiceless>>
+(You leave Gordon and Glenn alone, allowing them to train more)
+(Besides a few broken office supplies, everything seems like it will work out)
 ===
