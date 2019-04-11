@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
 	<RootPaths>
-		<ProjectRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\racstadt\Documents\Dungeonomics\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>C:\Users\raven\Documents\TeamBesterestRepo\TeamBesterestGame\WWISE\Dungeonomics\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -43,6 +43,7 @@
 				<Event Id="953277036" Name="Resume" ObjectPath="\Events\Default Work Unit\Resume" MaxAttenuation="0.000000"/>
 				<Event Id="1525674368" Name="Rewind_Music" ObjectPath="\Events\Default Work Unit\Rewind_Music"/>
 				<Event Id="3212434624" Name="Rewind_Time" ObjectPath="\Events\Voice Clips\Rewind_Time"/>
+				<Event Id="4236324481" Name="Stop_Voices" ObjectPath="\Events\Default Work Unit\Stop_Voices" MaxAttenuation="0.000000"/>
 				<Event Id="2972449336" Name="Text" ObjectPath="\Events\Voice Clips\Text"/>
 				<Event Id="818841426" Name="Voiceless" ObjectPath="\Events\Voice Clips\Voiceless"/>
 			</IncludedEvents>

@@ -30,6 +30,7 @@ namespace AK
         static const AkUniqueID RESUME = 953277036U;
         static const AkUniqueID REWIND_MUSIC = 1525674368U;
         static const AkUniqueID REWIND_TIME = 3212434624U;
+        static const AkUniqueID STOP_VOICES = 4236324481U;
         static const AkUniqueID TEXT = 2972449336U;
         static const AkUniqueID VOICELESS = 818841426U;
     } // namespace EVENTS

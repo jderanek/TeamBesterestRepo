@@ -23,6 +23,7 @@
 						<ObjectRef Name="Text" ID="{B4E10076-6AA4-48F4-AF09-94D7B884F7DE}" WorkUnitID="{9E346FC2-0773-491E-83F4-2F205A43138B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="BackGround_Music" ID="{18DAD7C5-3750-48FF-BE1A-7250F7FE4799}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Page_Flip" ID="{8F604040-9751-4A2C-AA86-F33F5176AC5C}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Stop_Voices" ID="{599384AA-EE5A-4A7E-B5F9-AD30C59A0E93}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Hero_Combat" ID="{981B465B-A683-4CE2-9F49-D905BBECFC9D}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Rewind_Time" ID="{F84303CD-BFA2-4D33-9AA8-A3FE98C08A56}" WorkUnitID="{9E346FC2-0773-491E-83F4-2F205A43138B}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Pause" ID="{264215AA-A884-4ED1-AB8F-FA2DD9EE68BF}" WorkUnitID="{4767B389-CCFF-48E4-B0B9-A4273F33B05E}" Filter="7" Origin="Manual"/>

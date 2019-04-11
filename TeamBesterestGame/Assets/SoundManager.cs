@@ -150,12 +150,10 @@ public class SoundManager : MonoBehaviour
                 goblinToTalk = 5;
                 break;
             case "Voiceless":
-
                 if (currentSpeaker != null)
                 {
                     currentSpeaker.SetActive(false);
                 }
-                
                 goblinToTalk = 6;
                 nameTag.SetActive(false);
                 break;

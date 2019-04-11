@@ -127,6 +127,87 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Stop_Voices" ID="{599384AA-EE5A-4A7E-B5F9-AD30C59A0E93}">
+					<ChildrenList>
+						<Action Name="" ID="{68A5F61A-3CA0-4F52-A7EE-B1858D9400BF}" ShortID="632981798">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Avery_Sounds" ID="{58B4712E-B4E6-41EF-BDD1-E865B7EFAA78}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{1DCC5E66-60C4-4CBF-81A0-3048FA13F306}" ShortID="951398672">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="James_Sounds" ID="{6627C514-29CC-4E83-8E9E-CBE07B2DF566}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{95B4263C-58AD-40D1-820B-610F1D79D30D}" ShortID="187828792">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Matt_Sounds" ID="{E1F5A28D-B78E-4885-9165-620DAA05F934}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{F92580CB-6BD7-4000-9BD0-4D795AFECA18}" ShortID="745666919">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nate_Sounds" ID="{763BF81B-6FF3-492A-AFA8-A685FC92619B}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{94576382-349D-45E2-913D-A2C5E2AEE8E0}" ShortID="597994909">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Nick_Sounds" ID="{CABF354E-3B02-4CAB-8CCC-A59D74924FB9}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{3F38D82C-5B58-4A5A-917B-FF09AD083059}" ShortID="30563926">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Raven_Sounds" ID="{467DB85E-EC4B-4872-AA7A-71B676EEAFF7}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{44B83BDE-664E-4496-B2CA-379AFF8DC65B}" ShortID="942539486">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Steven_Sounds" ID="{BE8B4485-6BB4-4212-8612-5E608B05A71D}" WorkUnitID="{E9E6F943-5FC4-4EC9-BBE1-2C0CC08A2C17}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
