@@ -437,7 +437,7 @@ But yeah, good luck, you will need it...
 title: GGF1
 tags: 
 colorID: 2
-position: 2239,-171
+position: 2217,600
 ---
 <<ChangeSpeaker SoundManager Gordon>>
 Oh, hey! So what the deal Mr. Time-Wizard?
@@ -464,20 +464,21 @@ tags:
 colorID: 2
 position: 2759,352
 ---
+<<set $glennTree2Start to true>>
+<<set $gordonTree2Start to true>>
+
 <<set $shift11Combat to 1>>
 
 <<ChangeSpeaker SoundManager Glenn>>
 Y-yeah! I can't wait to prove myself!
+
 <<ChangeSpeaker SoundManager Gordon>>
 That's the spirit, I'm beginning to see that fire in your eye!
+
 <<ChangeSpeaker SoundManager Glenn>>
 Y-you will see! I can take down heroes too!
 
-<<set $glennTree2Start to true>>
-<<set $gordonTree2Start to true>>
-
 <<DisableFollowup Glenn shift1>>
-<<DisableFollowup Gordon shift1>>
 ===
 title: GGF14
 tags: 
@@ -513,10 +514,13 @@ position: 2730,839
 ---
 <<ChangeSpeaker SoundManager Gordon>>
 Sure am! Now repeat what I taught you Glenn
+
 <<ChangeSpeaker SoundManager Glenn>>
 U-uh... I have already forgot... sorry...
+
 <<ChangeSpeaker SoundManager Gordon>>
 Eugh... nevermind...
+
 <<DisableFollowup Glenn shift1>>
 ===
 title: GGF12
@@ -526,13 +530,16 @@ position: 2722,602
 ---
 <<ChangeSpeaker SoundManager Glenn>>
 Y-yeah! I can't wait to prove myself!
+
 <<ChangeSpeaker SoundManager Gordon>>
 Don't too cocky, you haven't fought anyone yet!
+
 <<ChangeSpeaker SoundManager Glenn>>
 Y-you will see! I can take down heroes too!
 
 <<ChangeSpeaker SoundManager Voiceless>>
 [Despite his posturing, Glenn still looks rather shaky. You're not sure how this will play out.]
+
 <<DisableFollowup Glenn shift1>>
 ===
 title: Glenn233
@@ -641,7 +648,7 @@ position: -492,4809
 ---
 Say that again? You might want to rephrase that...
 [[You play the tough guy act well, I admit, but it can only get you so far.|Gordon21]]
-[[Where did you learn to fight? It is very sloppy.|Gordon22]]
+[[Where did you learn to fight? Your form is sloppy.|Gordon22]]
 
 ===
 title: Gordon2222
@@ -649,8 +656,7 @@ tags:
 colorID: 4
 position: 881,5382
 ---
-HAHAHAHAHAHAHA!!
-Wait, you were serious?
+Haha! Good joke. ...Wait, you were serious?
 No thank you, that is never going to happen.
 
 <<EndInterview Gordon>>
@@ -746,7 +752,7 @@ colorID: 3
 position: 53,4323
 ---
 Are you serious? This is all Glenn's issue, not me!
-[[He IS the one who refuses to fight, at least you do so|Gordon211]]
+[[True, you do at *least* fight...|Gordon211]]
 [[Then why are you still dying all the time? You claim to be so strong!|Gordon212]]
 
 ===
@@ -763,7 +769,7 @@ I will take my chances with the heroes instead.
 title: Glenn2331
 tags: 
 colorID: 3
-position: 927,-3792
+position: 1010,-3792
 ---
 Ask Gordon!? 
 I-I know you are trying to help and all but that is still crazy...
@@ -772,45 +778,46 @@ I-I know you are trying to help and all but that is still crazy...
 title: Glenn23311
 tags: 
 colorID: 4
-position: 1210,-3784
+position: 1332,-3796
 ---
+<<set $glennGordonHelp to true>>
+
 You are right...
 I guess it wouldn't hurt to try!
 Let us hope he is not mad at me too much...
 
-<<set $glennGordonHelp to true>>
 <<EndInterview Glenn>>
 ===
 title: Glenn2321
 tags: 
 colorID: 4
-position: 942,-3552
+position: 1010,-3572
 ---
+<<set $glennGordonHelp to true>>
+
 G-good idea!
 Gordon can be abrasive.. 
 But I think he wouldn't say no if I persist!
-
-<<set $glennGordonHelp to true>>
 
 <<EndInterview Glenn>>
 ===
 title: Glenn2211
 tags: 
 colorID: 4
-position: 938,-2566
+position: 1021,-2562
 ---
+<<set $glennGordonHelp to true>>
+
 That is a great idea!
 Why didn't I think of that?
 I hope he agrees to do so...
-
-<<set $glennGordonHelp to true>>
 
 <<EndInterview Glenn>>
 ===
 title: Glenn2221
 tags: 
 colorID: 4
-position: 932,-2808
+position: 1015,-2810
 ---
 Yeah... 
 Maybe I don't belong here... 
@@ -821,20 +828,20 @@ Go help the useful Goblins...
 title: Glenn2232
 tags: 
 colorID: 4
-position: 928,-3323
+position: 1011,-3312
 ---
+<<set $glennGordonHelp to true>>
+
 I just hope I don't appear to be fawning over him...
 He really isn't my type after all...
 But I will take your advice into consideration!
-
-<<set $glennGordonHelp to true>>
 
 <<EndInterview Glenn>>
 ===
 title: Glenn2231
 tags: 
 colorID: 4
-position: 926,-3062
+position: 1015,-3064
 ---
 Perhaps you are right...
 Maybe we just need yet another try!
@@ -844,33 +851,39 @@ Maybe we just need yet another try!
 title: GGF15
 tags: 
 colorID: 2
-position: 2781,-243
+position: 2746,-63
 ---
 <<ChangeSpeaker SoundManager Gordon>>
-We are learning a lot from each other!
-I think I misjudged you earlier Glenn...
+We're learning a lot from each other! I think I misjudged you earlier Glenn...
 You have potential as a fighter, if only I saw it sooner!
-Thank you for allowing me to learn some of your dodging skills.
-Can you show off that move I just taught you?
+Thank you for allowing me to learn some of your dodging skills. Can you show off that move I just taught you?
+
 <<ChangeSpeaker SoundManager Glenn>>
 S-sure! Here I go!
+
 <<ChangeSpeaker SoundManager Voiceless>>
 (Glenn positions himself next to a strawman with a bucket helmet)
 (He strikes a combat stance, ready to attack)
+
 <<ChangeSpeaker SoundManager Glenn>>
 HIYAH!!
+
 <<ChangeSpeaker SoundManager Voiceless>>
 (The strawman's head comes clean off, the bucket completely destroyed)
+
 <<ChangeSpeaker SoundManager Glenn>>
 I-I may have overdid it...
+
 <<ChangeSpeaker SoundManager Gordon>>
-That was incredible! Nice work!
-You are a natural!
+That was incredible! Nice work! You're a natural!
+
 <<ChangeSpeaker SoundManager Glenn>>
-Y-you really think so? 
-That means a lot coming from you!
+Y-you really think so? That means a lot coming from you!
 So what move is next?
+
 <<ChangeSpeaker SoundManager Voiceless>>
 (You leave Gordon and Glenn alone, allowing them to train more)
 (Besides a few broken office supplies, everything seems like it will work out)
+
+<<DisableFollowup Glenn shift1>>
 ===
