@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        phaseButton.GetComponentInChildren<Text>().text = "Start";
+        phaseButton.GetComponentInChildren<Text>().text = "Start Interview";
         uiManager = this.GetComponent<UIManager>();
 
         dialogueRunners = FindObjectsOfType<DialogueRunner>();
@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
 
                 combatCanvas.SetActive(true);
                 combatManager.GetComponent<DialogueRunner>().StartDialogue("Shift11");
-                phaseButton.GetComponentInChildren<Text>().text = "Skip Combat";
+                phaseButton.GetComponentInChildren<Text>().text = "Start Interview";
                 phase = "Interview";
                 break;
             case "Interview":
@@ -233,6 +233,11 @@ public class GameManager : MonoBehaviour
         foreach (GameObject monster in monsterList)
         {
             monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().Stop();
+            foreach (GameObject option in monster.GetComponent<BaseMonster>().interviewOptions)
+            {
+                option.SetActive(false);
+            }
+            monster.GetComponent<BaseMonster>().response.SetActive(false);
         }
         foreach (GameObject monster in monsterList)
         {
