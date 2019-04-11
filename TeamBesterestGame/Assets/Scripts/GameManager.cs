@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     //Current phase of the game, as well as the enemies to spawn next combat
     public Button phaseButton;
-    string phase = "Interview";
+    public string phase = "Interview";
     bool canSkip = true;
     public readonly int maxInterviews = 3;
     public int interviewsRemaining;
@@ -45,8 +45,6 @@ public class GameManager : MonoBehaviour
     public int strikes = 0;
     public int shift = 1;
     int finalScore = 0;
-
-    #endregion
 
     public static bool paused;
 
@@ -80,6 +78,8 @@ public class GameManager : MonoBehaviour
 
     private DialogueRunner[] dialogueRunners;
     private InterviewVariableStorage[] storages;
+    public GameObject interviewPrompt;
+    #endregion
 
     void Awake()
     {
@@ -124,8 +124,7 @@ public class GameManager : MonoBehaviour
 
         switch (phase)
         {
-            case "Start":
-                phase = "Combat";
+           case "Start":
                 this.shift = 3;
                 //ChangeShift();
                 canSkip = true;
@@ -145,8 +144,7 @@ public class GameManager : MonoBehaviour
                 this.SetCombatScore();
                 interviewing = false;
                 interviewCanvas.SetActive(false);
-                break;
-            case "Combat":
+
                 combatCanvas.SetActive(true);
                 combatManager.GetComponent<DialogueRunner>().StartDialogue("Shift11");
                 phaseButton.GetComponentInChildren<Text>().text = "Skip Combat";
@@ -426,6 +424,7 @@ public class GameManager : MonoBehaviour
                 gordonInterviewPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.gameObject.SetActive(false);
                 responseBubble.SetActive(false);
+                interviewPrompt.SetActive(true);
                 break;
             case 1: //Goblenn
                 goblennInterviewPortrait.SetActive(false);
@@ -437,6 +436,7 @@ public class GameManager : MonoBehaviour
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = goblennSprite;
                 responseBubble.SetActive(true);
+                interviewPrompt.SetActive(false);
                 nameTag.text = "Goblenn";
                 break;
             case 2: //Gabbin
@@ -449,6 +449,7 @@ public class GameManager : MonoBehaviour
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = gabbinSprite;
                 responseBubble.SetActive(true);
+                interviewPrompt.SetActive(false);
                 nameTag.text = "Gabbin";
                 break;
             case 3: //Nilbog
@@ -461,6 +462,7 @@ public class GameManager : MonoBehaviour
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = nilbogSprite;
                 responseBubble.SetActive(true);
+                interviewPrompt.SetActive(false);
                 nameTag.text = "Nilbog";
                 break;
             case 4: //Geoff
@@ -473,6 +475,7 @@ public class GameManager : MonoBehaviour
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = geoffSprite;
                 responseBubble.SetActive(true);
+                interviewPrompt.SetActive(false);
                 nameTag.text = "Geoff";
                 break;
             case 5: //Jeff
@@ -485,6 +488,7 @@ public class GameManager : MonoBehaviour
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = jeffSprite;
                 responseBubble.SetActive(true);
+                interviewPrompt.SetActive(false);
                 nameTag.text = "Gorgo";
                 break;
             case 6: //Gordon
@@ -497,6 +501,7 @@ public class GameManager : MonoBehaviour
                 currentSpeakerPortrait.gameObject.SetActive(true);
                 currentSpeakerPortrait.sprite = gordonSprite;
                 responseBubble.SetActive(true);
+                interviewPrompt.SetActive(false);
                 nameTag.text = "Gordon";
                 break;
         }
