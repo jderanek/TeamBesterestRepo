@@ -253,5 +253,7 @@ public abstract class BaseMonster : BaseEntity {
         char bulletPoint = '•';
         note.GetComponent<Text>().text = bulletPoint + " " + Scissors.UnderScoresToSentence(text);
         uiManager.ToggleNotification();
+        Debug.Log("Calling Paper Anim");
+        gameManager.RunPaperAnim();
     }
 }

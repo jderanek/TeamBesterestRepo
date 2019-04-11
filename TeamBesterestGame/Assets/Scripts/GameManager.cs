@@ -73,6 +73,7 @@ public class GameManager : MonoBehaviour
     public GameObject jeffInterviewPortrait;
     public GameObject gordonInterviewPortrait;
     public Clock clock;
+    public PaperAnimation paperAnim;
 
     public GameObject responseBox;
 
@@ -505,6 +506,12 @@ public class GameManager : MonoBehaviour
                 nameTag.text = "Gordon";
                 break;
         }
+    }
+
+    public void RunPaperAnim()
+    {
+        paperAnim.gameObject.SetActive(true);
+        paperAnim.Run();
     }
 }
 
