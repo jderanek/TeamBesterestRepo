@@ -2554,7 +2554,7 @@ position: 3100,4774
 Those laws keep growing goblins safe, and not exposed to the violence of office life!
 Keep those thoughts to yourself, or I'll report you to inHumane Resources! Sheesh.
 
-<<EndInterview>>
+<<EndInterview Gabbin>>
 ===
 title: Gabbin242
 tags: 
