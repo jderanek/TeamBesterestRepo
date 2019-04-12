@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
                 {
                     foreach (GameObject monster in monsterList)
                     {
-                        monster.GetComponent<BaseMonster>().EndInterview();
+                        monster.GetComponent<BaseMonster>().ExitInterview();
                     }
                 }
 
