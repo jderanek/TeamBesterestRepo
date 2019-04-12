@@ -47,6 +47,7 @@ namespace Yarn.Unity
     {
         public GameObject gameManager;
         public GameObject monster;
+        public GameObject secondMonster;
         /// The JSON files to load the conversation from
         public TextAsset[] sourceText;
 
@@ -220,6 +221,20 @@ namespace Yarn.Unity
 
                 // Get it going
                 StartCoroutine(RunDialogue(startNode));
+        }
+
+        public void StartDialogue2(string startNode)
+        {
+            if (secondMonster.GetComponent<BaseMonster>().interviewable && !gameManager.GetComponent<GameManager>().interviewing)
+            {
+                // Stop any processes that might be running already
+                gameManager.GetComponent<GameManager>().interviewing = true;
+                StopAllCoroutines();
+                dialogueUI.StopAllCoroutines();
+
+                // Get it going
+                StartCoroutine(RunDialogue(startNode));
+            }
         }
 
         IEnumerator RunDialogue (string startNode = "Start")
