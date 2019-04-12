@@ -39,17 +39,11 @@ So you can you cast fireballs or something, right?
 
 [[W-well... not actually.|Tutorial1211]]
 ===
-title: Tutorial11
+title: Tutorial111
 tags: 
 colorID: 1
-position: 1066,242
+position: 1081,-44
 ---
-<<if $bossFlippantNote is false>>
-<<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education_next_time.>>
-<<set $bossFlippantNote to true>>
-
-<<endif>>
-
 What?! Then we're done here, find some other fool to hire you!
 
 <<ChangeSpeaker SoundManager Voiceless>>
@@ -60,7 +54,7 @@ What?! Then we're done here, find some other fool to hire you!
 <<set $hasTimeTraveled to true>>
 <<endif>>
 
-[[Tutorial111]]
+
 ===
 title: Tutorial12
 tags: 
@@ -123,18 +117,6 @@ That... how did you? Was that luck?!
 You have one meeting to make this work, or I'm going to get my money back out of your hide.
 <<EndTutorial Boss>>
 ===
-title: Tutorial111
-tags: 
-colorID: 2
-position: 1067,-2
----
-<<if $hasJournaled is false>>
-<<TogglePrompts UIManager 3>>
-<<set $hasJournaled to true>>
-<<endif>>
-
-[[Tutorial1111]]
-===
 title: Tutorial12111
 tags: 
 colorID: 2
@@ -147,16 +129,6 @@ position: 1739,182
 
 [[Tutorial121111]]
 ===
-title: Tutorial1111
-tags: 
-colorID: 2
-position: 1066,-255
----
-<<if $hasTimeTraveled is false>>
-<<TogglePrompts UIManager 4>>
-<<set $hasTimeTraveled to true>>
-<<endif>>
-===
 title: Tutorial121111
 tags: 
 colorID: 2
@@ -166,4 +138,22 @@ position: 1736,-108
 <<TogglePrompts UIManager 4>>
 <<set $hasTimeTraveled to true>>
 <<endif>>
+===
+title: Tutorial11
+tags: 
+colorID: 0
+position: 909,222
+---
+<<if $bossFlippantNote is false>>
+<<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education_next_time.>>
+<<set $bossFlippantNote to true>>
+<<endif>>
+
+<<if $hasJournaled is false>>
+<<TogglePrompts UIManager 3>>
+<<set $hasJournaled to true>>
+<<endif>>
+
+[[Tutorial111]]
+
 ===
