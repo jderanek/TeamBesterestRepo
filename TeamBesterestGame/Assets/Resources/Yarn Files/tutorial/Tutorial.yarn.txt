@@ -48,11 +48,6 @@ position: 1066,242
 <<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education_next_time.>>
 <<set $bossFlippantNote to true>>
 
-<<if $hasJournaled is false>>
-<<TogglePrompts UIManager 3>>
-<<set $hasJournaled to true>>
-<<endif>>
-
 <<endif>>
 
 What?! Then we're done here, find some other fool to hire you!
@@ -64,6 +59,8 @@ What?! Then we're done here, find some other fool to hire you!
 <<TogglePrompts UIManager 4>>
 <<set $hasTimeTraveled to true>>
 <<endif>>
+
+[[Tutorial111]]
 ===
 title: Tutorial12
 tags: 
@@ -89,11 +86,6 @@ position: 1740,425
 <<RevealText Boss Maybe_I_should_mention_my_doctoral_work_on_time_magic.>>
 <<set $bossTimeMagicNote to true>>
 
-<<if $hasJournaled is false>>
-<<TogglePrompts UIManager 3>>
-<<set $hasJournaled to true>>
-<<endif>>
-
 <<endif>>
 
 Then what's the point?! Come back when you learn something useful!
@@ -101,10 +93,7 @@ Then what's the point?! Come back when you learn something useful!
 <<ChangeSpeaker SoundManager Voiceless>>
 [Maybe I should mention my doctoral work on time magic.]
 
-<<if $hasTimeTraveled is false>>
-<<TogglePrompts UIManager 4>>
-<<set $hasTimeTraveled to true>>
-<<endif>>
+[[Tutorial12111]]
 ===
 title: Tutorial1221
 tags: 
@@ -133,4 +122,48 @@ That... how did you? Was that luck?!
 ...Nevermind, those heroes are likely on their way back soon, I'll show you to the goblins!
 You have one meeting to make this work, or I'm going to get my money back out of your hide.
 <<EndTutorial Boss>>
+===
+title: Tutorial111
+tags: 
+colorID: 2
+position: 1067,-2
+---
+<<if $hasJournaled is false>>
+<<TogglePrompts UIManager 3>>
+<<set $hasJournaled to true>>
+<<endif>>
+
+[[Tutorial1111]]
+===
+title: Tutorial12111
+tags: 
+colorID: 2
+position: 1739,182
+---
+<<if $hasJournaled is false>>
+<<TogglePrompts UIManager 3>>
+<<set $hasJournaled to true>>
+<<endif>>
+
+[[Tutorial121111]]
+===
+title: Tutorial1111
+tags: 
+colorID: 2
+position: 1066,-255
+---
+<<if $hasTimeTraveled is false>>
+<<TogglePrompts UIManager 4>>
+<<set $hasTimeTraveled to true>>
+<<endif>>
+===
+title: Tutorial121111
+tags: 
+colorID: 2
+position: 1736,-108
+---
+<<if $hasTimeTraveled is false>>
+<<TogglePrompts UIManager 4>>
+<<set $hasTimeTraveled to true>>
+<<endif>>
 ===
