@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour {
     public GameObject load;
     public GameObject delete;
 
+    public Scene scene;
+
     private void Start()
     {
         if (PlayerPrefs.GetString("scene") == "") {
@@ -27,7 +29,19 @@ public class MainMenu : MonoBehaviour {
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Tutorial");
+        StartCoroutine(LoadLevel());
+    }
+
+    IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(3);
+
+        AsyncOperation async = SceneManager.LoadSceneAsync(scene.buildIndex);
+
+        while (!async.isDone)
+        {
+            yield return null;
+        }
     }
 
     public void Delete()
