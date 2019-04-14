@@ -7,6 +7,9 @@ public class ColorChanger : MonoBehaviour
 {
     public float speed;
 
+    public Color Color1;
+    public Color Color2;
+
     void Start()
     {
         
@@ -18,7 +21,7 @@ public class ColorChanger : MonoBehaviour
         Color gabbinGreen = new Color(0.3f, 0.4f, 0.6f, 1f);
 
         float t = (float)((Mathf.Sin(Time.time * speed) + 1) / 2.0);
-        Color c = Color.Lerp(glennGreen, Color.white, t);
+        Color c = Color.Lerp(Color1, Color2, t);
         
         GetComponent<Image>().color = c;
     }
