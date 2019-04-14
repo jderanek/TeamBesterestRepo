@@ -13977,6 +13977,15 @@ MonoBehaviour:
   - name: shift13Combat
     value: 0
     type: 0
+  - name: shift1Success
+    value: false
+    type: 2
+  - name: shift2Success
+    value: false
+    type: 2
+  - name: shift3Success
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &984599861
 MonoBehaviour:

@@ -195,6 +195,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //set the combat manager's yarn variables according to each shifts points
+    public void Win()
+    {
+         if (this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift1Success").AsBool == true && 
+            this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift2Success").AsBool == true && 
+            this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift3Success").AsBool == true)
+         {
+            //play victory yarn file
+         }
+    }
+
     //Resets the dungeon to the original state, but keeps monster changes
     public void ResetPhase()
     {
