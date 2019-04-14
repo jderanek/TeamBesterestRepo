@@ -193,6 +193,8 @@ public abstract class BaseMonster : BaseEntity {
     [YarnCommand("DisableFollowup")]
     public void DisableFollowup(string shift)
     {
+        this.interviewable = false;
+        this.gameManager.interviewing = false;
         foreach (GameObject option in interviewOptions)
         {
             option.SetActive(false);
