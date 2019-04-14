@@ -853,6 +853,8 @@ tags:
 colorID: 2
 position: 2746,-63
 ---
+<<set $shift11Combat to 2>>
+
 <<ChangeSpeaker SoundManager Gordon>>
 We're learning a lot from each other! I think I misjudged you earlier Glenn...
 You have potential as a fighter, if only I saw it sooner!

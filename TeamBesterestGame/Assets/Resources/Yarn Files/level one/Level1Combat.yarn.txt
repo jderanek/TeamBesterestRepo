@@ -1,10 +1,11 @@
 title: Shift11
 tags: 
 colorID: 0
-position: 421,255
+position: 420,254
 ---
 <<ChangeSpeaker SoundManager Voiceless>>
 <<if $shift11Combat is 0>>
+<<set $shift1Success to false>>
 
 Glenn saw heroes enter the dungeon, and instantly fled.
 <<ChangeStatus Glenn Glenn_saw_heroes_enter_the_dungeon,_and_instantly_fled.>>
@@ -14,12 +15,25 @@ Gordon faces the heroes alone, and is quickly defeated.
 
 
 <<elseif $shift11Combat is 1>>
+<<set $shift1Success to false>>
 
 Glenn sticks around for the fight!  ...Until Gordon falls quickly, and once again fleas.
 <<ChangeStatus Glenn Glenn_sticks_around_for_the_fight!_...Until_Gordon_falls_quickly,_and_once_again_fleas.>>
 
 Gordon takes to the front of the fray! ...and is quickly cut down, to his surprise!
 <<ChangeStatus Gordon Gordon_takes_to_the_front_of_the_fray!_...and_is_quickly_cut_down,_to_his_surprise!>>
+
+
+<<elseif $shift11Combat is 2>>
+<<set $shift1Success to true>>
+
+Glenn fights by Gordon's side, and helps fend off the heroes!
+<<ChangeStatus Glenn Glenn_fights_by_Gordon's_side,_and_helps_fend_off_the_heroes!>>
+
+Gordon fights by Glenn's side, and together they eliminate all the heroes!
+<<ChangeStatus Gordon Gordon_fights_by_Glenn's_side,_and_together_they_eliminate_all_the_heroes!>>
+
+All the heroes for Shift 1 are defeated!
 
 <<endif>>
 [[Shift12]]
@@ -30,6 +44,8 @@ colorID: 0
 position: 760,260
 ---
 <<if $shift12Combat is 0>>
+<<set $shift2Success to false>>
+
 Gorgo is stabbed by Geoff.
 <<ChangeStatus Jeff Gorgo_is_stabbed_by_Geoff.>>
 //Jeff fades to black/white
@@ -39,6 +55,7 @@ Geoff is stabbed by Gorgo.
 //0 points
 
 <<elseif $shift12Combat is 1>>
+<<set $shift2Success to false>>
 
 Gorgo works with Geoff, and clobbers a hero... but he appears very distracted by Geoff, and is felled by a flanking hero.
 <<ChangeStatus Jeff Gorgo_works_with_Geoff,_and_clobbers_a_hero..._but_he_appears_very_distracted_by_Geoff,_and_is_felled_by_a_flanking_hero.>>
@@ -47,6 +64,8 @@ Geoff works with Gorgo, and defeats a hero... but is defeated after Gorgo falls 
 
 
 <<elseif $shift12Combat is 3>>
+<<set $shift2Success to false>>
+
 Gorgo, still unconscious from sheer embarrassment, is completely useless against the heroes.
 <<ChangeStatus Jeff Gorgo,_still_unconscious_from_sheer_embarrassment,_is_completely_useless_against_the_heroes.>>
 Geoff falls prey to the rampaging heroes all alone.
@@ -54,6 +73,7 @@ Geoff falls prey to the rampaging heroes all alone.
 
 
 <<elseif $shift12Combat is 4>>
+<<set $shift2Success to true>>
 Gorgo works seemlessly with Geoff! Their coordination is legendary!
 <<ChangeStatus Jeff Gorgo_works_seemlessly_with_Geoff!_Their_coordination_is_legendary!>>
 Geoff works seemlessly with Gorgo! Their love is unconquerable!
@@ -66,9 +86,11 @@ The heroes for Shift 2 are defeated!
 title: Shift13
 tags: 
 colorID: 0
-position: 1066,264
+position: 1123,258
 ---
 <<if $shift13Combat is 0>>
+<<set $shift3Success to false>>
+
 Gabbin runs around trying to find Nilbog, and is taken down by the heroes.
 <<ChangeStatus Gabbin Gabbin_runs_around_trying_to_find_Nilbog,_and_is_taken_down_by_the_heroes.>>
 
@@ -77,6 +99,8 @@ Nilbog, hiding from Gabbin, is found and overwhelmed by the heroes.
 
 
 <<elseif $shift13Combat is 1>>
+<<set $shift3Success to false>>
+
 Gabbin enthusiastically takes down some heroes with the help of Nilbog... but dies from shock when Nilbog's secret is revealed!
 <<ChangeStatus Gabbin Gabbin_enthusiastically_takes_down_some_heroes_with_the_help_of_Nilbog..._but_dies_from_shock_when_Nilbog's_secret_is_revealed!>>
 Nilbog begrudgingly helps Gabbin, and takes down a hero... but is knocked down in combat, revealing Nilbog was three small goblins in a trenchcoat!
@@ -84,6 +108,8 @@ Nilbog begrudgingly helps Gabbin, and takes down a hero... but is knocked down i
 
 
 <<elseif $shift13Combat is 2>>
+<<set $shift3Success to false>>
+
 Gabbin focuses on fighting alone, and takes down some heroes... but dies from shock when Nilbog's secret is revealed!
 <<ChangeStatus Gabbin Gabbin_focuses_on_fighting_alone,_and_takes_down_some_heroes..._but_dies_from_shock_when_Nilbog's_secret_is_revealed!>>
 Nilbog fights alone, taking down the other heroes... but is knocked down in combat, revealing Nilbog was three small goblins in a trenchcoat!
@@ -91,6 +117,8 @@ Nilbog fights alone, taking down the other heroes... but is knocked down in comb
 
 
 <<elseif $shift13Combat is 3>>
+<<set $shift3Success to false>>
+
 Gabbin confidently attacks the heroes alone... but dies from shock when Nilbog's secret is revealed!
 <<ChangeStatus Gabbin Gabbin_confidently_attacks_the_heroes_alone..._but_dies_from_shock_when_Nilbog's_secret_is_revealed!>>
 Gabbin isn't alone-- Nilbog attacks from the shadows! ...until he is knocked down in combat, revealing Nilbog was three small goblins in a trenchcoat!
@@ -98,6 +126,8 @@ Gabbin isn't alone-- Nilbog attacks from the shadows! ...until he is knocked dow
 
 
 <<elseif $shift13Combat is 4>>
+<<set $shift3Success to false>>
+
 Gabbin bravely faces the heroes alone, but is slaughtered quickly.
 <<ChangeStatus Gabbin Gabbin_bravely_faces_the_heroes_alone,_but_is_slaughtered_quickly.>>
 "Nilbog" is nowhere to be seen.
@@ -105,6 +135,8 @@ Gabbin bravely faces the heroes alone, but is slaughtered quickly.
 
 
 <<elseif $shift13Combat is 5>>
+<<set $shift3Success to false>>
+
 Gabbin fights well in his new trenchcoat... but dies from shock when Nilbog's secret is revealed!
 <<ChangeStatus Gabbin Gabbin_fights_well_in_his_new_trenchcoat..._but_dies_from_shock_when_Nilbog's_secret_is_revealed!>>
 Nilbog tries to fight normally. ...until he is knocked down in combat, revealing Nilbog was three small goblins in a trenchcoat!
@@ -112,6 +144,8 @@ Nilbog tries to fight normally. ...until he is knocked down in combat, revealing
 
 
 <<elseif $shift13Combat is 6>>
+<<set $shift3Success to true>>
+
 Gabbin fights confidently with the Nilbogs, and defeats a group of heroes!
 <<ChangeStatus Gabbin Gabbin_fights_confidently_with_the_Nilbogs,_and_defeats_a_group_of_heroes!>>
 The Nilbogs fight as a team and defeat another group of heroes!
@@ -120,6 +154,8 @@ The heroes for Shift 3 are defeated!
 
 
 <<elseif $shift13Combat is 7>>
+<<set $shift3Success to true>>
+
 Gabbin fights proudly in his new trenchcoat. Despite not being able to see too well, he takes down a hero!
 <<ChangeStatus Gabbin Gabbin_fights_proudly_in_his_new_trenchcoat._Despite_not_being_able_to_see_too_well,_he_takes_down_a_hero!>>
 The Nilbogs split up and take down a group of heroes, avoiding Gabbin's restricted gaze!
