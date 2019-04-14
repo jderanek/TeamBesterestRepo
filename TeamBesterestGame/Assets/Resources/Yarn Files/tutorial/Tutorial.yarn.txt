@@ -33,7 +33,7 @@ Really now? So what number am I thinking of?
 title: Tutorial121
 tags: 
 colorID: 0
-position: 1395,466
+position: 1344,485
 ---
 So you can you cast fireballs or something, right?
 
@@ -44,6 +44,7 @@ tags:
 colorID: 1
 position: 1081,-44
 ---
+<<ChangeSpeaker SoundManager Boss>>
 What?! Then we're done here, find some other fool to hire you!
 
 <<ChangeSpeaker SoundManager Voiceless>>
@@ -71,9 +72,10 @@ Albion U? That place is renowned for it's wizardry! What was your speciality?
 ===
 title: Tutorial1211
 tags: 
-colorID: 1
+colorID: 0
 position: 1740,425
 ---
+
 <<set $timeMagicSpecific to true>>
 
 <<if $bossTimeMagicNote is false>>
@@ -82,10 +84,10 @@ position: 1740,425
 
 <<endif>>
 
-Then what's the point?! Come back when you learn something useful!
-
-<<ChangeSpeaker SoundManager Voiceless>>
-[Maybe I should mention my doctoral work on time magic.]
+<<if $hasJournaled is false>>
+<<TogglePrompts UIManager 3>>
+<<set $hasJournaled to true>>
+<<endif>>
 
 [[Tutorial12111]]
 ===
@@ -119,21 +121,15 @@ You have one meeting to make this work, or I'm going to get my money back out of
 ===
 title: Tutorial12111
 tags: 
-colorID: 2
-position: 1739,182
+colorID: 1
+position: 1745,132
 ---
-<<if $hasJournaled is false>>
-<<TogglePrompts UIManager 3>>
-<<set $hasJournaled to true>>
-<<endif>>
+<<ChangeSpeaker SoundManager Boss>>
+Then what's the point?! Come back when you learn something useful!
 
-[[Tutorial121111]]
-===
-title: Tutorial121111
-tags: 
-colorID: 2
-position: 1736,-108
----
+<<ChangeSpeaker SoundManager Voiceless>>
+[Maybe I should mention my doctoral work on time magic.]
+
 <<if $hasTimeTraveled is false>>
 <<TogglePrompts UIManager 4>>
 <<set $hasTimeTraveled to true>>
@@ -142,7 +138,7 @@ position: 1736,-108
 title: Tutorial11
 tags: 
 colorID: 0
-position: 909,222
+position: 836,225
 ---
 <<if $bossFlippantNote is false>>
 <<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education_next_time.>>

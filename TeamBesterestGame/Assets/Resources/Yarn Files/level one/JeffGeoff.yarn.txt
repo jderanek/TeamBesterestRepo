@@ -55,7 +55,7 @@ position: 4391,-293
 It was Gorgo! It *has* to be!
 Someone needs to get him taken care of!
 [[Nothing a little fisticuffs can't fix.|Geoff121]]
-[[Do you want me to talk to Jeff for you?|Geoff122]]
+[[Do you want me to talk to Gorgo for you?|Geoff122]]
 [[What were you thinking about doing?|Geoff123]]
 ===
 title: Geoff121
@@ -73,8 +73,6 @@ position: 4817,-727
 Ha! Finally, *someone* that understands! I'll cave his head in!
 
 <<EndInterview Geoff>>
-//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
-//escalated the situation.
 ===
 title: Geoff122
 tags: 
@@ -199,7 +197,7 @@ I don't know what you're talkin' about.
 [[There were two goblins one second, none the next. You know what I meant.|Jeff112]]
 
 <<if $talkedToGeoff is true and $gorgoStart2 is false>>
-[[Whatever you did, Geoff is pretty riled up about it.|Jeff114]]
+[[Geoff is pretty riled up about what you did.|Jeff114]]
 
 <<elseif $gorgoStart2 is false>>
 [[You and Geoff got some sort of beef, and I'm going to figure it out.|Jeff113]]
@@ -258,8 +256,7 @@ What was that?! I'll show you whose the stronger goblin around here!
 Soon as these "interviews" are over, Gorgo's toast!
 
 <<EndInterview Geoff>>
-//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
-//escalated the situation.
+
 ===
 title: Geoff122131
 tags: 
@@ -310,13 +307,14 @@ position: -898,881
 Beef? With Geoff? Who could *possibly* be mad at someone so ridiculous?
 He complains about food all day then picks fights with me when things don't work out. He gets what's comin' to him.
 
-[[What was he complaining about?|Jeff1121]]
-[[And you're the picture of perfection?|Jeff1132]]
-
-//IF you have talked to Geoff already
 <<if $talkedToGeoff is true>>
 [[Quite a thing to say considering you stole it.|Jeff1133]]
 <<endif>>
+
+[[What was he complaining about?|Jeff1121]]
+[[And you're the picture of perfection?|Jeff1132]]
+
+
 ===
 title: Jeff114
 tags: 
@@ -906,8 +904,6 @@ position: 5019,3312
 [You don't think this is going to end well.]
 
 <<EndInterview Geoff>>
-//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
-//escalated the situation.
 ===
 title: Geoff142
 tags: 
@@ -1018,8 +1014,6 @@ I'm *definitely* the bigger Goblin here...
 
 <<EndInterview Geoff>>
 
-//Journal Note: Geoff hates Jeff for stealing his scone, but if he gets an apology,
-//I might be able to get this to work.
 ===
 title: Geoff142223
 tags: 
@@ -1036,8 +1030,7 @@ position: 6127,3415
 I'll show him, just watch me!
 
 <<EndInterview Geoff>>
-//Journal Note: Geoff hates Jeff for stealing his scone. I think I accidentally
-//escalated the situation.
+
 ===
 title: Gorgo2
 tags: 
@@ -1051,7 +1044,7 @@ Ha... haha... you mean that deal with Geoff's scone, right?
 title: Gorgo21
 tags: 
 colorID: 3
-position: -1549,4491
+position: -1556,4491
 ---
 Y-You think just because you're a wizard you can read minds? You ain't got nothin' on me!
 
