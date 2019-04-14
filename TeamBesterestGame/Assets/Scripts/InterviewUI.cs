@@ -84,6 +84,10 @@ namespace Yarn.Unity
         /// Show a line of dialogue, gradually
         public override IEnumerator RunLine(Yarn.Line line)
         {
+            while (GameManager.paused)
+            {
+                yield return null;
+            }
             // Show the text
             responseText.gameObject.SetActive(true);
             yield return new WaitForSeconds(.1f);
