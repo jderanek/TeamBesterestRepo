@@ -8,6 +8,7 @@ public class NotepadAnimation : MonoBehaviour {
     float startY = -300f;
     float endY = 0f;
     float speed = 10f;
+    public GameObject gameManager;
 
 	// Use this for initialization
 	void Start () {
@@ -18,8 +19,11 @@ public class NotepadAnimation : MonoBehaviour {
     //Starts animation
     public void Run()
     {
-        ResetToStart();
-        InvokeRepeating("Move", 0f, .025f);
+        if (this.gameManager.GetComponent<GameManager>().interviewing == true)
+        {
+            ResetToStart();
+            InvokeRepeating("Move", 0f, .025f);
+        }
     }
 	
     // Move notepad up into interview position

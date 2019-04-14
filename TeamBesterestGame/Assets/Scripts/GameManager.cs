@@ -203,6 +203,7 @@ public class GameManager : MonoBehaviour
             this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift3Success").AsBool == true)
          {
             //play victory yarn file
+
          }
     }
 
