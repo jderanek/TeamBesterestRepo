@@ -13,7 +13,7 @@ I'm the... front-line fighter around here.
 <<endif>>
 
 <<if $glennTree2Start is true>>
-[[Look here Glenn, I think I know the deeper problem.|Glenn2]]
+[[Look here Glenn, I think I know the deeper problem here.|Glenn2]]
 <<endif>>
 
 [[Front-line fighter? That is quite brave.|Coward11]]
@@ -354,7 +354,7 @@ I guess he sees how gung-ho I am in battle and wants to emulate me.
 title: Gordon122
 tags: 
 colorID: 0
-position: 561,2816
+position: 561,2815
 ---
 Are you kidding? That would only make it worse.
 I guess he is trying to impress me or whatever.
@@ -454,7 +454,7 @@ Y-yes? What is it?
 [[Feeling better now Glenn?|GGF12]]
 
 <<elseif $confidence is false and $inspire is true>>
-[[Giving him that talk we discussed Gordon?|GGF13]]
+[[How are you two doing Gordon?|GGF13]]
 <<else>>
 [[That is odd, you two getting along?|GGF14]]
 <<endif>>
@@ -462,7 +462,7 @@ Y-yes? What is it?
 title: GGF11
 tags: 
 colorID: 2
-position: 2759,352
+position: 2759,353
 ---
 <<set $glennTree2Start to true>>
 <<set $gordonTree2Start to true>>
@@ -489,7 +489,7 @@ position: 2727,1088
 Gordon is trying to help me out... but I am not so sure his ideas are correct...
 
 <<ChangeSpeaker SoundManager Gordon>>
-See?! I try to help and gets all cold feet like when he sees a hero!
+See?! I try to help and he gets all cold feet like when he sees a hero!
 
 <<ChangeSpeaker SoundManager Glenn>>
 I-I just don't see the reasoning behind it all... I am sorry!
@@ -510,16 +510,16 @@ He'll have me by his side now!
 title: GGF13
 tags: 
 colorID: 2
-position: 2730,839
+position: 2730,838
 ---
 <<ChangeSpeaker SoundManager Gordon>>
-Sure am! Now repeat what I taught you Glenn
+Great so far! Now repeat what I taught you Glenn.
 
 <<ChangeSpeaker SoundManager Glenn>>
 U-uh... I have already forgot... sorry...
 
 <<ChangeSpeaker SoundManager Gordon>>
-Eugh... nevermind...
+Well... maybe not great after all.
 
 <<DisableFollowup Glenn shift1>>
 ===
@@ -535,10 +535,10 @@ Y-yeah! I can't wait to prove myself!
 Don't too cocky, you haven't fought anyone yet!
 
 <<ChangeSpeaker SoundManager Glenn>>
-Y-you will see! I can take down heroes too!
+I-I can do it! No worries!
 
 <<ChangeSpeaker SoundManager Voiceless>>
-[Despite his posturing, Glenn still looks rather shaky. You're not sure how this will play out.]
+[Despite his eagerness, Glenn still looks a bit nervous. You're not sure how this will play out.]
 
 <<DisableFollowup Glenn shift1>>
 ===
@@ -565,7 +565,7 @@ Gordon can fight much better...
 title: Glenn231
 tags: 
 colorID: 4
-position: 672,-3334
+position: 933,-3341
 ---
 *Sigh* I know... just...
 Can I be alone for a bit?
@@ -612,49 +612,44 @@ I-I am not sure why exactly, but neither I nor the heroes can hurt each other ea
 title: Glenn22
 tags: 
 colorID: 3
-position: 226,-2538
+position: 393,-2819
 ---
-I think both of us have our own fighting style!
+Both of us have our own fighting style!
 But they don't really mash well together...
 [[Is running away truly a special technique?|Glenn221]]
 [[So what would make things work better?|Glenn222]]
 [[You could always ask for help from Gordon.|Glenn223]]
 
 ===
-title: Glenn21
-tags: 
-colorID: 4
-position: 256,-1746
----
-That is rude! J-just leave me alone!
-
-
-<<EndInterview Glenn>>
-===
 title: Glenn2
 tags: 
 colorID: 3
-position: -659,-1756
+position: -219,-2866
 ---
-Yeah, that is pretty obvious huh...
-[[You two are hopeless...|Glenn21]]
-[[Blatently in fact.|Glenn22]]
-[[What do you think is the reason you two are still failing?|Glenn23]]
+Let me guess, Gordon and I not getting along?
+Yeah, I know...
+Maybe if there was someway we could work together...
+[[How do you two differ when it comes to battling heroes?|Glenn22]]
+[[What is the reason you two are failing?|Glenn23]]
+<<if $glennTraining is true>>
+[[How about asking Gordon to train? I think he'd be willing if you asked|Glenn21]]
+<<endif>>
 ===
 title: Gordon2
 tags: 
 colorID: 3
-position: -492,4809
+position: -490,4806
 ---
 Say that again? You might want to rephrase that...
 [[You play the tough guy act well, I admit, but it can only get you so far.|Gordon21]]
 [[Where did you learn to fight? Your form is sloppy.|Gordon22]]
-
+<<if $GordonSecret is true>>
+[[I know your problem Gordon, you put on a facade of bravery to hide your weakness|Gordon23]]
 ===
 title: Gordon2222
 tags: 
 colorID: 4
-position: 881,5382
+position: 1235,5383
 ---
 Haha! Good joke. ...Wait, you were serious?
 No thank you, that is never going to happen.
@@ -664,7 +659,7 @@ No thank you, that is never going to happen.
 title: Gordon2221
 tags: 
 colorID: 4
-position: 887,5117
+position: 1247,5125
 ---
 Agreed, but it is a great defensive tool otherwise.
 Maybe I could do some stretching beforehand...
@@ -674,13 +669,13 @@ Maybe I could do some stretching beforehand...
 title: Gordon2131
 tags: 
 colorID: 4
-position: 835,4730
+position: 832,4732
 ---
 You really think so?
 *Sigh* I guess I will go apologize to him and admit it all...
 I wonder how shocked he will be when I tell him.
 <<set $gordonGlennHelp to true>>
-
+<<set $gordonSecret to true>>
 <<EndInterview Gordon>>
 ===
 title: Gordon211
@@ -695,7 +690,7 @@ Now if you'll excuse me, I need to train more.
 title: Gordon223
 tags: 
 colorID: 3
-position: 454,5544
+position: 579,5600
 ---
 The guy needs to help out for once, but he is rather quick on his feet.
 I didn't think the poindexter had it in him to be honest...
@@ -705,7 +700,7 @@ I didn't think the poindexter had it in him to be honest...
 title: Gordon222
 tags: 
 colorID: 3
-position: 494,5248
+position: 501,5306
 ---
 This armor tends to slow me down, leaving me a easy target when I am alone.
 Maybe I could use some help in agility.
@@ -759,7 +754,7 @@ Are you serious? This is all Glenn's issue, not me!
 title: Gordon2231
 tags: 
 colorID: 4
-position: 878,5635
+position: 1284,5659
 ---
 Do you know how embarassing that would be?!
 I will take my chances with the heroes instead.
@@ -778,10 +773,10 @@ I-I know you are trying to help and all but that is still crazy...
 title: Glenn23311
 tags: 
 colorID: 4
-position: 1332,-3796
+position: 1332,-3798
 ---
 <<set $glennGordonHelp to true>>
-
+<<set $glennTraining to true>>
 You are right...
 I guess it wouldn't hurt to try!
 Let us hope he is not mad at me too much...
@@ -791,10 +786,10 @@ Let us hope he is not mad at me too much...
 title: Glenn2321
 tags: 
 colorID: 4
-position: 1010,-3572
+position: 1228,-3564
 ---
 <<set $glennGordonHelp to true>>
-
+<<set $glennTraining to true>>
 G-good idea!
 Gordon can be abrasive.. 
 But I think he wouldn't say no if I persist!
@@ -804,10 +799,10 @@ But I think he wouldn't say no if I persist!
 title: Glenn2211
 tags: 
 colorID: 4
-position: 1021,-2562
+position: 1021,-2564
 ---
 <<set $glennGordonHelp to true>>
-
+<<set $glennTraining to true>>
 That is a great idea!
 Why didn't I think of that?
 I hope he agrees to do so...
@@ -817,7 +812,7 @@ I hope he agrees to do so...
 title: Glenn2221
 tags: 
 colorID: 4
-position: 1015,-2810
+position: 1226,-2816
 ---
 Yeah... 
 Maybe I don't belong here... 
@@ -828,10 +823,10 @@ Go help the useful Goblins...
 title: Glenn2232
 tags: 
 colorID: 4
-position: 1011,-3312
+position: 1228,-3321
 ---
 <<set $glennGordonHelp to true>>
-
+<<set $glennTraining to true>>
 I just hope I don't appear to be fawning over him...
 He really isn't my type after all...
 But I will take your advice into consideration!
@@ -841,7 +836,7 @@ But I will take your advice into consideration!
 title: Glenn2231
 tags: 
 colorID: 4
-position: 1015,-3064
+position: 1229,-3066
 ---
 Perhaps you are right...
 Maybe we just need yet another try!
@@ -888,4 +883,27 @@ So what move is next?
 (Besides a few broken office supplies, everything seems like it will work out)
 
 <<DisableFollowup Glenn shift1>>
+===
+title: Gordon23
+tags: 
+colorID: 4
+position: -295,5463
+---
+W-what? How do you know about that?
+L-listen, I will work with Glenn, I will say sorry or something.
+Just please keep that to yourself alright?
+I'm begging you!
+<<set $gordonGlennHelp to true>>
+<<EndInterview Gordon>>
+===
+title: Glenn21
+tags: 
+colorID: 4
+position: 230,-2478
+---
+If you are so sure he'd be receptive to that....
+I will go ahead and ask him then
+Hopefully it'll all work out...
+<<set $glennGordonHelp to true>>
+<<endInterview Glenn>>
 ===
