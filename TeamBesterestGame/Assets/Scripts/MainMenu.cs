@@ -9,7 +9,9 @@ public class MainMenu : MonoBehaviour {
     public GameObject load;
     public GameObject delete;
 
-    public Scene scene;
+    public GameObject transition;
+
+    //public Scene scene;
 
     private void Start()
     {
@@ -24,7 +26,7 @@ public class MainMenu : MonoBehaviour {
         load.SetActive(false);
         string scene = PlayerPrefs.GetString("scene");
         GlobalVariables.loading = true;
-        SceneManager.LoadScene(scene);
+        //SceneManager.LoadScene(scene);
     }
 
     public void StartGame()
@@ -34,9 +36,10 @@ public class MainMenu : MonoBehaviour {
 
     IEnumerator LoadLevel()
     {
+        transition.SetActive(true);
         yield return new WaitForSeconds(3);
 
-        AsyncOperation async = SceneManager.LoadSceneAsync(scene.buildIndex);
+        AsyncOperation async = SceneManager.LoadSceneAsync(1);
 
         while (!async.isDone)
         {
