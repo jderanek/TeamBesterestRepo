@@ -369,7 +369,7 @@ Alright, look, I'm sorry for taking your scone, ok?
 ...Do you really mean it?
 
 <<ChangeSpeaker SoundManager Voiceless>>
-Jeff shoots you a dirty look, and sighs heavily.
+Gorgo shoots you a dirty look, and sighs heavily.
 
 <<ChangeSpeaker SoundManager Jeff>>
 Yes. Really. Can we please get back to work so we can clobber those heroes already?
