@@ -675,6 +675,12 @@ MonoBehaviour:
   - name: glennGordonHelp
     value: false
     type: 2
+  - name: glennTraining
+    value: false
+    type: 2
+  - name: gordonSecret
+    value: false
+    type: 2
   debugTextView: {fileID: 0}
 --- !u!114 &41062056
 MonoBehaviour:
