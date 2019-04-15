@@ -70,7 +70,7 @@ I always hear remarks from Gordon like "Stay and fight coward!" and so on..
 title: Coward11222
 tags: 
 colorID: 1
-position: 1424,-229
+position: 1424,-235
 ---
 <<set $confidence to true>>
 
@@ -368,11 +368,13 @@ tags:
 colorID: 1
 position: 1281,2705
 ---
+<<set $inspire to true>>
+
 That would work I think.
 I just hope he understands.
 I don't hate the guy, he just needs to learn about personal space.
 And to use his indoor voice...
-<<set $inspire to true>>
+
 <<EndInterview Gordon>>
 ===
 title: Gordon1212
@@ -384,10 +386,13 @@ position: 930,2227
 <<RevealText Gordon Gordon_thinks_that_you_could_convice_Glenn_to_stay_and_fight_via_inspiration.>>
 <<set $gordonInspireNote to true>>
 <<endif>>
+
+<<set $inpire to true>>
+
 Glenn... inspired by me?
 I guess that makes sense in a way...
 Maybe try to work that angle on him, it might work!
-<<set $inpire to true>>
+
 
 <<EndInterview Gordon>>
 ===
@@ -645,6 +650,7 @@ Say that again? You might want to rephrase that...
 [[Where did you learn to fight? Your form is sloppy.|Gordon22]]
 <<if $GordonSecret is true>>
 [[I know your problem Gordon, you put on a facade of bravery to hide your weakness|Gordon23]]
+<<endif>>
 ===
 title: Gordon2222
 tags: 
@@ -671,11 +677,13 @@ tags:
 colorID: 4
 position: 832,4732
 ---
+<<set $gordonGlennHelp to true>>
+<<set $gordonSecret to true>>
+
 You really think so?
 *Sigh* I guess I will go apologize to him and admit it all...
 I wonder how shocked he will be when I tell him.
-<<set $gordonGlennHelp to true>>
-<<set $gordonSecret to true>>
+
 <<EndInterview Gordon>>
 ===
 title: Gordon211
@@ -889,11 +897,13 @@ tags:
 colorID: 4
 position: -295,5463
 ---
+<<set $gordonGlennHelp to true>>
+
 W-what? How do you know about that?
 L-listen, I will work with Glenn, I will say sorry or something.
 Just please keep that to yourself alright?
 I'm begging you!
-<<set $gordonGlennHelp to true>>
+
 <<EndInterview Gordon>>
 ===
 title: Glenn21
