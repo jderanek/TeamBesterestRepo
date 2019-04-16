@@ -14688,11 +14688,11 @@ MonoBehaviour:
   hourSwivel: {fileID: 1219348024}
   speaker: {fileID: 1523513163}
   slowTextSpeed: 0.04
-  slowText: {fileID: 0}
+  slowText: {fileID: 1399069866}
   mediumTextSpeed: 0.025
-  mediumText: {fileID: 0}
+  mediumText: {fileID: 208795120}
   fastTextSpeed: 0.01
-  fastText: {fileID: 0}
+  fastText: {fileID: 1835127905}
   monsters: []
   notification: {fileID: 597496082}
   journalPrompt: {fileID: 0}
@@ -26015,7 +26015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
   m_AnchorMin: {x: 0.9178218, y: 0.6606436}
   m_AnchorMax: {x: 0.98817825, y: 0.8143134}
-  m_AnchoredPosition: {x: 0, y: 0.100000024}
+  m_AnchoredPosition: {x: 0, y: 0.099998474}
   m_SizeDelta: {x: 28.979996, y: -27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1990316240
