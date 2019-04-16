@@ -21,14 +21,15 @@ position: 1124,836
 ---
 Really now? So what number am I thinking of?
 
+<<if $guessProof is true>>
+[[24,601.|Tutorial1222]]
+<<endif>>
+
 [[Uh.. 42?|Tutorial1221]]
 [[It is 7 for sure.|Tutorial1221]]
 [[Let me guess, 410?|Tutorial1221]]
 [[1066, definitely.|Tutorial1221]]
 
-<<if $guessProof is true>>
-[[24,601.|Tutorial1222]]
-<<endif>>
 ===
 title: Tutorial121
 tags: 
@@ -89,6 +90,7 @@ position: 1740,425
 <<set $hasJournaled to true>>
 <<endif>>
 
+...
 [[Tutorial12111]]
 ===
 title: Tutorial1221
@@ -98,7 +100,7 @@ position: 1742,671
 ---
 <<set $guessProof to true>>
 <<if $bossGuessNote is false>>
-<<RevealText Boss Now_to_prove_him_wrong!>>
+<<RevealText Boss Now_to_prove_him_wrong._The_number_is_24601!>>
 <<set $bossGuessNote to true>>
 <<endif>>
 
@@ -150,6 +152,7 @@ position: 836,225
 <<set $hasJournaled to true>>
 <<endif>>
 
+...
 [[Tutorial111]]
 
 ===

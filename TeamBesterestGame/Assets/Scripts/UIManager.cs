@@ -109,6 +109,7 @@ public class UIManager : MonoBehaviour {
         switch(textSpeed)
         {
             case 1: //slow
+                print("beep");
                 slowText.fontStyle = FontStyle.Bold;
                 mediumText.fontStyle = FontStyle.Normal;
                 fastText.fontStyle = FontStyle.Normal;
@@ -154,23 +155,23 @@ public class UIManager : MonoBehaviour {
         switch(prompt)
         {
             case "1":
-                UnpauseWwise();
                 GameManager.paused = false;
+                UnpauseWwise();
                 journalPrompt.SetActive(false);
                 break;
             case "2":
-                UnpauseWwise();
                 GameManager.paused = false;
+                UnpauseWwise();
                 clockPrompt.SetActive(false);
                 break;
             case "3":
-                print("sounds should be paused");
-                AkSoundEngine.PostEvent("Pause", gameObject);
+                //AkSoundEngine.PostEvent("Pause", gameObject);
                 GameManager.paused = true;
                 notification.SetActive(false);
                 journalPrompt.SetActive(true);
                 break;
             case "4":
+                //AkSoundEngine.PostEvent("Pause", gameObject);
                 GameManager.paused = true;
                 clockPrompt.SetActive(true);
                 break;

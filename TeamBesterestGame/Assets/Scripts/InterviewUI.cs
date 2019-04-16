@@ -86,6 +86,7 @@ namespace Yarn.Unity
         {
             while (GameManager.paused)
             {
+                AkSoundEngine.PostEvent("Stop_Voices", gameObject);
                 yield return null;
             }
             // Show the text
