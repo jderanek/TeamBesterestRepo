@@ -37,7 +37,7 @@ I guess I wouldn't exactly call myself brave, although I want to be...
 title: Coward111
 tags: 
 colorID: 0
-position: 694,-1032
+position: 777,-1035
 ---
 I want to prove to Gordon I can pull my weight around here! But we always lose... 
 [[You two don't seem to work well together, I can see why I got asked to come here.|Coward1111]]
@@ -102,6 +102,7 @@ position: 1059,-36
 ---
 You could say that, I guess.. but I call it being smart!
 Heroes are so scary...
+
 [[Are you adverse to fighting them too?|Coward1321]]
 [[Smart? How so?|Coward1322]]
 ===
@@ -123,14 +124,13 @@ tags:
 colorID: 0
 position: 730,101
 ---
-Well...
-yes...technically.
+Well... yes...technically.
 [[Are you afraid of fighting?|Coward1321]]
 ===
 title: Coward132
 tags: 
 colorID: 0
-position: 802,373
+position: 745,367
 ---
 You are right, but is also lets me get away safely when heroes arrive.
 [[You are the first line of defense, but yet you run away?|Coward1321]]
@@ -186,6 +186,7 @@ position: 408,566
 I-I guess they technically don't...
 
 [[Perhaps not in the way you are utilizing them, but I have a few ideas.|Coward1331]]
+
 <<if $inspire is true>>
 [[Maybe we can discuss how they could. Perhaps during an ambush.|Coward1332]]
 <<endif>>
@@ -196,6 +197,12 @@ colorID: 1
 position: 160,1013
 ---
 <<set $confidence to true>>
+
+<<if $glennConfidenceNote is false>>
+<<RevealText Glenn Hopefully_my_little_pep_talk_helped_Glenn_out.>>
+<<set $glennConfidenceNote to true>>
+<<endif>>
+
 A-ambush? That seems scary... but also smart! 
 Maybe that will finally impress Gordon then! Let me think for a bit then.
 <<EndInterview Glenn>>
@@ -220,8 +227,13 @@ Discretion is the better part of valor as they say.
 title: Coward13222
 tags: 
 colorID: 1
-position: 1810,64
+position: 1808,62
 ---
+<<if $glennNoChangeNote is false>>
+<<RevealText Glenn Glenn_seems_to_have_serious_self_confidence_issues.>>
+<<set $glennNoChangeNote to true>>
+<<endif>>
+
 You too? *Sigh* That is what Gordon says too... I thought you'd be different...
 <<EndInterview Glenn>>
 ===
@@ -244,7 +256,7 @@ I can dream...
 <<endif>>
 
 [[Yeah, that's me, what can I do for you?|Gordon11]]
-[[I saw what happened to you guys, not great..|Gordon12]]
+[[I saw what happened to you guys, wasn't too promising.|Gordon12]]
 [[Why would you say that about Glenn?|Gordon13]]
 
 ===
@@ -269,28 +281,29 @@ Time manipulation? Could you use some of it and make me not apply to work here?
 *Sigh* If I didn't need the money, I would've quit weeks ago.
 Glenn really needs to learn about privacy and personal space.
 
-[[I will pull him aside and talk to him about it|Gordon1111]]
-[[Unfortunately, I can only go back so far, but I can try to use it to help you guys|Gordon1112]]
+[[You two not working together too well?|Gordon12]]
+[[I will pull him aside and talk to him about it.|Gordon1111]]
+[[Unfortunately, I can only go back so far, but I can try to use it to help you guys.|Gordon1112]]
 ===
 title: Gordon11
 tags: 
 colorID: 0
-position: -70,1978
+position: -67,1974
 ---
 Get Glenn to leave me alone for starters.
 I think the dungeon master gets his kicks watching me get annoyed.
 
-[[I don't really use magic like that, I focus on time manipulation|Gordon111]]
-[[Glenn and you are really not the best pair, that is obvious|Gordon112]]
+[[I don't really use magic like that, I focus on time manipulation.|Gordon111]]
+[[You two not working together too well?|Gordon12]]
+[[Glenn and you are obviously not the best pair.|Gordon112]]
 ===
 title: Gordon12
 tags: 
 colorID: 0
 position: 83,2539
 ---
-Yeah, that is the same thing everyday.
-Glenn runs away, heroes come in and kill us both, rinse and repeat.
-Or I guess revive and repeat in our case.
+Yeah, it's the same thing everyday...
+Glenn runs away, heroes come in and kill us both, rinse and repeat. ...or I guess revive and repeat in our case.
 
 [[What can I do to change that?|Gordon121]]
 [[Have you tried talking to him?|Gordon122]]
@@ -298,29 +311,28 @@ Or I guess revive and repeat in our case.
 title: Gordon112
 tags: 
 colorID: 0
-position: 334,2199
+position: 294,2151
 ---
-Does your magic give you enhanced perception or something?
-How could you tell?
+Does your magic give you enhanced perception or something? How could you tell?
 *Sigh* I am not sure what you could really do here to help.
 
+[[What would you recommend, then?|Gordon121]]
 [[I will do my best, that is all I can offer. I was brought in for a reason.|Gordon1112]]
 ===
 title: Gordon14
 tags: 
-colorID: 1
-position: -104,3282
+colorID: 0
+position: 13,3349
 ---
-You did?! I really hope it works.
-He can't talk my ear off while heroes are attacking.
-No wait, I am sure he could find a way...
-Anyway, let us hope.
-<<EndInterview Gordon>>
+You did?! I really hope it works. He can't talk my ear off while heroes are attacking.
+No wait, I am sure he could find a way... Anyway, let us hope.
+
+[[He finds you inspiring, you know.|Gordon1212]]
 ===
 title: Gordon1222
 tags: 
 colorID: 0
-position: 728,3151
+position: 776,3206
 ---
 I think it is because he isn't the most confident person.
 Maybe you could talk to him about it?
@@ -354,7 +366,7 @@ I guess he sees how gung-ho I am in battle and wants to emulate me.
 title: Gordon122
 tags: 
 colorID: 0
-position: 561,2815
+position: 631,2851
 ---
 Are you kidding? That would only make it worse.
 I guess he is trying to impress me or whatever.
@@ -369,10 +381,13 @@ colorID: 1
 position: 1281,2705
 ---
 <<set $inspire to true>>
+<<if $gordonInspireNote is false>>
+<<RevealText Gordon Gordon_thinks_that_you_could_convice_Glenn_to_stay_and_fight_via_inspiration.>>
+<<set $gordonInspireNote to true>>
+<<endif>>
 
 That would work I think.
-I just hope he understands.
-I don't hate the guy, he just needs to learn about personal space.
+I just hope he understands. I don't hate the guy, he just needs to learn about personal space.
 And to use his indoor voice...
 
 <<EndInterview Gordon>>
@@ -399,7 +414,7 @@ Maybe try to work that angle on him, it might work!
 title: Gordon1221
 tags: 
 colorID: 0
-position: 894,2773
+position: 916,2813
 ---
 I mean I personally think he is a coward.
 But I think there is much more to it than that.
@@ -416,16 +431,15 @@ I hope he takes it well.
 Maybe he'll get attached to you instead.
 If so, I apologize, I wouldn't wish that fate on my worst foe.
 
-[[T-that is not very helpful. Let us BOTH hope that he doesn't do that|Gordon11111]]
+[[T-that is not very helpful. Let us *both* hope that he doesn't do that.|Gordon11111]]
 ===
 title: Gordon1112
 tags: 
 colorID: 1
 position: 628,1995
 ---
-At this point, I will take any help I could get.
-I will leave you to it then.
-Although I am not sure how longer I can last with his incessant yammering...
+At this point, I will take any help I could get. I'l leave you to it then.
+...Although I am not sure how longer I can last with his incessant yammering...
 
 <<EndInterview Gordon>>
 ===
@@ -503,13 +517,20 @@ I-I just don't see the reasoning behind it all... I am sorry!
 ===
 title: Coward1323
 tags: 
-colorID: 0
+colorID: 1
 position: 1421,733
 ---
+<<set $confidence to true>>
+
+<<if $glennConfidenceNote is false>>
+<<RevealText Glenn Hopefully_my_little_pep_talk_helped_Glenn_out.>>
+<<set $glennConfidenceNote to true>>
+<<endif>>
+
 You are right! 
 Gordon should not have to face those heroes alone!
 He'll have me by his side now!
-<<set $confidence to true>>
+
 <<EndInterview Glenn>>
 ===
 title: GGF13
@@ -576,12 +597,12 @@ position: 933,-3341
 Can I be alone for a bit?
 <<EndInterview Glenn>>
 ===
-title: Glenn223
+title: Glenn221
 tags: 
 colorID: 3
 position: 671,-3055
 ---
-I-in certain traditions yes!
+I-in certain circumstances yes!
 But maybe I could learn something from Gordon's style...
 [[I don't think he would be very welcoming of that idea...|Glenn2231]]
 [[Butter him up a bit before doing so, it might help.|Glenn2232]]
@@ -594,13 +615,12 @@ position: 670,-2806
 Not sure... maybe the punching and killing heroes part...
 [[You know thats a big part of this business right?|Glenn2221]]
 ===
-title: Glenn221
+title: Glenn223
 tags: 
 colorID: 3
 position: 670,-2557
 ---
-Maybe if I had a deathwish!
-I am sure he'd yell at me again if I did so...
+Maybe if I had a deathwish! I am sure he'd yell at me again if I did so...
 [[Maybe offer him advice in return then? Teach him your evasive tactics.|Glenn2211]]
 ===
 title: Glenn23
@@ -649,18 +669,19 @@ Say that again? You might want to rephrase that...
 [[You play the tough guy act well, I admit, but it can only get you so far.|Gordon21]]
 [[Where did you learn to fight? Your form is sloppy.|Gordon22]]
 <<if $GordonSecret is true>>
-[[I know your problem Gordon, you put on a facade of bravery to hide your weakness|Gordon23]]
+[[I know your problem Gordon, you put on a facade of bravery to hide your weakness.|Gordon23]]
 <<endif>>
 ===
 title: Gordon2222
 tags: 
-colorID: 4
-position: 1235,5383
+colorID: 3
+position: 974,5376
 ---
 Haha! Good joke. ...Wait, you were serious?
 No thank you, that is never going to happen.
 
-<<EndInterview Gordon>>
+[[Nevermind, then.|Gordon22221]]
+[[Admitting your weak points has to be better than losing to the heroes.|Gordon2131]]
 ===
 title: Gordon2221
 tags: 
@@ -698,12 +719,12 @@ Now if you'll excuse me, I need to train more.
 title: Gordon223
 tags: 
 colorID: 3
-position: 579,5600
+position: 500,5663
 ---
 The guy needs to help out for once, but he is rather quick on his feet.
 I didn't think the poindexter had it in him to be honest...
 
-[[Maybe he could give you some tips in speed?|Gordon2231]]
+[[Maybe he could give you some tips in speed?|Gordon2222]]
 ===
 title: Gordon222
 tags: 
@@ -712,6 +733,7 @@ position: 501,5306
 ---
 This armor tends to slow me down, leaving me a easy target when I am alone.
 Maybe I could use some help in agility.
+
 [[I am not sure how you could move at all in that armor.|Gordon2221]]
 [[Glenn seems to know a bit about moving fast, why not ask him?|Gordon2222]]
 ===
@@ -745,6 +767,7 @@ colorID: 3
 position: 68,5108
 ---
 I-I am self taught! I know how good I am! I don't need any help!
+
 [[Then maybe I will tell the necromancers not to "help" you then.|Gordon221]]
 [[Obviously you do. What will make you do better in combat?|Gordon222]]
 [[What do you think of Glenn's fighting style?|Gordon223]]
@@ -758,16 +781,6 @@ Are you serious? This is all Glenn's issue, not me!
 [[True, you do at *least* fight...|Gordon211]]
 [[Then why are you still dying all the time? You claim to be so strong!|Gordon212]]
 
-===
-title: Gordon2231
-tags: 
-colorID: 4
-position: 1284,5659
----
-Do you know how embarassing that would be?!
-I will take my chances with the heroes instead.
-
-<<EndInterview Gordon>>
 ===
 title: Glenn2331
 tags: 
@@ -785,6 +798,7 @@ position: 1332,-3798
 ---
 <<set $glennGordonHelp to true>>
 <<set $glennTraining to true>>
+
 You are right...
 I guess it wouldn't hurt to try!
 Let us hope he is not mad at me too much...
@@ -798,6 +812,7 @@ position: 1228,-3564
 ---
 <<set $glennGordonHelp to true>>
 <<set $glennTraining to true>>
+
 G-good idea!
 Gordon can be abrasive.. 
 But I think he wouldn't say no if I persist!
@@ -811,6 +826,7 @@ position: 1021,-2564
 ---
 <<set $glennGordonHelp to true>>
 <<set $glennTraining to true>>
+
 That is a great idea!
 Why didn't I think of that?
 I hope he agrees to do so...
@@ -835,6 +851,7 @@ position: 1228,-3321
 ---
 <<set $glennGordonHelp to true>>
 <<set $glennTraining to true>>
+
 I just hope I don't appear to be fawning over him...
 He really isn't my type after all...
 But I will take your advice into consideration!
@@ -911,9 +928,20 @@ tags:
 colorID: 4
 position: 230,-2478
 ---
+<<set $glennGordonHelp to true>>
+
 If you are so sure he'd be receptive to that....
 I will go ahead and ask him then
 Hopefully it'll all work out...
-<<set $glennGordonHelp to true>>
+
 <<endInterview Glenn>>
+===
+title: Gordon22221
+tags: 
+colorID: 4
+position: 1258,5379
+---
+Anyway, I'll get back to prepping my swing for the heroes to arrive!
+
+<<EndInterview Gordon>>
 ===
