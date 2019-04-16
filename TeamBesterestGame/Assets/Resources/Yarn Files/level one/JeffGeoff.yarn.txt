@@ -284,7 +284,7 @@ tags:
 colorID: 2
 position: 2686,3426
 ---
-<<if $talkedToGeoff2 is false and $talkedToGorgo2 is false>>
+
 
 <<ChangeSpeaker SoundManager Jeff>>
 Well? What's it gonna be?
@@ -292,6 +292,7 @@ Well? What's it gonna be?
 <<ChangeSpeaker SoundManager Geoff>>
 Yea, what's the deal, Boss?
 
+<<if $talkedToGeoff2 is false and $talkedToGorgo2 is false>>
 [[Geoff, you need to get over yourself. It wasn't that big of a deal.|JeffGeoffSolution11]]
 [[Gorgo, apologize to Geoff already so we can get things working again.|JeffGeoffSolution12]]
 
