@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
     private DialogueRunner[] dialogueRunners;
     private InterviewVariableStorage[] storages;
     public GameObject interviewPrompt;
+    public GameObject transition;
     #endregion
 
     void Awake()
@@ -291,12 +292,25 @@ public class GameManager : MonoBehaviour
         this.responseBox.GetComponent<NotepadAnimation>().ResetToStart();
     }
 
+    IEnumerator LoadLevel()
+    {
+        transition.SetActive(true);
+        yield return new WaitForSeconds(3);
+
+        AsyncOperation async = SceneManager.LoadSceneAsync(2);
+
+        while (!async.isDone)
+        {
+            yield return null;
+        }
+    }
+
     public void LoadLevelOne()
     {
         //AkSoundEngine.StopAll();
         print("loading level 1");
         AkSoundEngine.StopAll();
-        SceneManager.LoadScene("Scene2");
+        StartCoroutine(LoadLevel());
     }
 
     public void ExitToMenu()
