@@ -397,12 +397,12 @@ tags:
 colorID: 1
 position: 930,2227
 ---
+<<set $inpire to true>>
+
 <<if $gordonInspireNote is false>>
 <<RevealText Gordon Gordon_thinks_that_you_could_convice_Glenn_to_stay_and_fight_via_inspiration.>>
 <<set $gordonInspireNote to true>>
 <<endif>>
-
-<<set $inpire to true>>
 
 Glenn... inspired by me?
 I guess that makes sense in a way...
