@@ -395,9 +395,9 @@ And to use his indoor voice...
 title: Gordon1212
 tags: 
 colorID: 1
-position: 930,2227
+position: 942,2266
 ---
-<<set $inpire to true>>
+<<set $inspire to true>>
 
 <<if $gordonInspireNote is false>>
 <<RevealText Gordon Gordon_thinks_that_you_could_convice_Glenn_to_stay_and_fight_via_inspiration.>>
