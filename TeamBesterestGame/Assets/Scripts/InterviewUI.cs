@@ -109,14 +109,14 @@ namespace Yarn.Unity
                     responseText.text = stringBuilder.ToString();
                     
                     
-                    if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("j")) && !GameManager.paused && UIManager.eligibleForClick)
+                    if (Input.GetMouseButtonDown(0) && !GameManager.paused && UIManager.eligibleForClick)
                     {
                         responseText.text = line.text;
                         yield return new WaitForSeconds(.025f);
                         break;
                     }
                     timer = 0f;
-                    yield return new WaitUntil(() => (((Input.GetMouseButtonDown(0) || Input.GetKeyDown("j")) && UIManager.eligibleForClick) || (timer >= textSpeed)) && !GameManager.paused); //
+                    yield return new WaitUntil(() => (((Input.GetMouseButtonDown(0) && UIManager.eligibleForClick) || (timer >= textSpeed)) && !GameManager.paused)); //
                 }
             }
             else
@@ -134,7 +134,7 @@ namespace Yarn.Unity
                 continuePrompt.SetActive(true);
 
             // Wait for any user input
-            yield return new WaitUntil(() => (Input.anyKeyDown && !GameManager.paused && UIManager.eligibleForClick));
+            yield return new WaitUntil(() => (Input.GetMouseButtonDown(0) && !GameManager.paused && UIManager.eligibleForClick));
 
             // Hide the text and prompt
             //responseText.gameObject.SetActive(false); //Commented out so that player can see the dialogue while choosing answer

@@ -116,10 +116,18 @@ public class GameManager : MonoBehaviour
         this.gameObject.GetComponentInChildren<InterviewManager>().ExitInterview();
     }
 
+    IEnumerator ShortDelay()
+    {
+        phaseButton.interactable = false;
+        yield return new WaitForSeconds(0.5f);
+        phaseButton.interactable= true;
+    }
+
     //Starts the next phase when the button is clicked.
     //Only works when canSkip is true
     public void StartPhase()
     {
+        StartCoroutine(ShortDelay());
         SoundManager.StopDialogue();
         if (!canSkip)
             return;
@@ -199,13 +207,23 @@ public class GameManager : MonoBehaviour
     //set the combat manager's yarn variables according to each shifts points
     public void Win()
     {
+         
          if (this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift1Success").AsBool == true && 
             this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift2Success").AsBool == true && 
             this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift3Success").AsBool == true)
          {
             //play victory yarn file
+            StartCoroutine(LoadWin());
+        }
+    }
 
-         }
+    
+
+    IEnumerator LoadWin()
+    {
+        transition.SetActive(true);
+        yield return new WaitForSeconds(3);
+        transition.SetActive(false);
     }
 
     //Resets the dungeon to the original state, but keeps monster changes
@@ -330,9 +348,15 @@ public class GameManager : MonoBehaviour
         {
             ToggleInterviewMenu();
         }
+        if (Input.GetKeyDown("w"))
+        {
+            Win();
+        }
+
+        /*
         if (Input.GetKeyDown(KeyCode.J))
         {
-            this.ToggleNotebook();
+            ToggleNotebook();
             uiManager.TogglePrompts("1");
         }
         /*if (Input.GetKeyDown(KeyCode.K))
