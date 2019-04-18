@@ -1302,7 +1302,7 @@ position: 1270,2921
 <<set $gorgoRomanceReady to true>>
 
 <<if $gorgoRomanceReadyNote is false>>
-<<RevealText Jeff Gorgo_is_hiding_a_crush_on_Geoff._I_wonder_if_playing_cupid_could work.>>
+<<RevealText Jeff Gorgo_is_hiding_a_crush_on_Geoff._I_wonder_if_playing_cupid_could_work.>>
 <<set $gorgoRomanceReadyNote to true>>
 <<endif>>
 

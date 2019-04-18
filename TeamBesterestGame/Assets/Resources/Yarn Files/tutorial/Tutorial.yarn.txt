@@ -143,7 +143,7 @@ colorID: 0
 position: 836,225
 ---
 <<if $bossFlippantNote is false>>
-<<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_sbout_my_education_next_time.>>
+<<RevealText Boss Perhaps_I_shouldn't_be_so_flippant_about_my_education_next_time.>>
 <<set $bossFlippantNote to true>>
 <<endif>>
 

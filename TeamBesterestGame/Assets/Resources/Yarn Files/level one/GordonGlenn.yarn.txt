@@ -65,7 +65,7 @@ position: 762,-681
 ---
 I always hear remarks from Gordon like "Stay and fight coward!" and so on..
 [[Well, hopefully with me here, I can fix that for you.|Coward1111]]
-[[Maybe there is a way for you to change his opinion? Try staying and fighting with him for once.|Coward11222]]
+[[Maybe you could try staying and fighting with him.|Coward11222]]
 ===
 title: Coward11222
 tags: 
@@ -247,7 +247,7 @@ Hey, you are the wizard guy the boss talked about? Hopefully you know your stuff
 Maybe you knowing a silence spell you could cast on Glenn.
 I can dream...
 
-<< if $confidence == 1 and $gordonTree2Start is false>>
+<< if $confidence is true and $gordonTree2Start is false>>
 [[I actually already talked to Glenn, I think I may have solved your problem.|Gordon14]]
 <<endif>>
 
@@ -395,14 +395,14 @@ And to use his indoor voice...
 title: Gordon1212
 tags: 
 colorID: 1
-position: 930,2227
+position: 942,2266
 ---
+<<set $inspire to true>>
+
 <<if $gordonInspireNote is false>>
 <<RevealText Gordon Gordon_thinks_that_you_could_convice_Glenn_to_stay_and_fight_via_inspiration.>>
 <<set $gordonInspireNote to true>>
 <<endif>>
-
-<<set $inpire to true>>
 
 Glenn... inspired by me?
 I guess that makes sense in a way...
