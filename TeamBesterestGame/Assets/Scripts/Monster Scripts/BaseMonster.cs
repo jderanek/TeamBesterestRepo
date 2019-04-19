@@ -212,6 +212,12 @@ public abstract class BaseMonster : BaseEntity {
         this.gameManager.LoadLevelOne();
     }
 
+    [YarnCommand("RollCredits")]
+    public void RollCredits()
+    {
+        this.gameManager.RollCredits();
+    }
+
     [YarnCommand("ChangeStatus")]
     public void ChangeStatus(string status)
     {

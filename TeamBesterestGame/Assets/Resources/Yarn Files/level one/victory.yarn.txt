@@ -38,4 +38,5 @@ position: 1489,257
 Wait, what?! No, you can't do that! What am I supposed to do about those useless goblins now?!
 Noooooo!!
 //Insert animation here followed by credits
+<<RollCredits Boss>>
 ===

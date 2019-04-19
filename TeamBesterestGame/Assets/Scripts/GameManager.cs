@@ -208,6 +208,11 @@ public class GameManager : MonoBehaviour
          }
     }
 
+    public void RollCredits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
     //Resets the dungeon to the original state, but keeps monster changes
     public void ResetPhase()
     {
