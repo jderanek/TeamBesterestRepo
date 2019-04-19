@@ -46,7 +46,7 @@ I want to prove to Gordon I can pull my weight around here! But we always lose..
 title: Coward1111
 tags: 
 colorID: 1
-position: 1232,-691
+position: 1232,-692
 ---
 <<if $glennNoChangeNote is false>>
 <<RevealText Glenn Glenn_seems_to_have_serious_self_confidence_issues.>>
@@ -86,7 +86,7 @@ You think so? Maybe I can do this after all!
 title: Coward12
 tags: 
 colorID: 0
-position: 400,-145
+position: 399,-148
 ---
 Well...
 not really...
@@ -140,13 +140,13 @@ You are right, but is also lets me get away safely when heroes arrive.
 title: Coward1321
 tags: 
 colorID: 0
-position: 1159,493
+position: 1159,492
 ---
 I don't mind fighting, it is just the dying part that scares me...
-[[That is understandable, but you still need to fight heroes, that is your job|Coward13211]]
+[[That is understandable, but you still need to fight heroes, that is your job.|Coward13211]]
 [[But how does hiding factor into your combat style?|Coward1322]]
 <<if $inspire is true>>
-[[Gordon is laying his life on the line everyday, you should follow his example|Coward1323]]
+[[Gordon is laying his life on the line everyday, you should follow his example.|Coward1323]]
 <<endif>>
 ===
 title: Coward1331
@@ -220,7 +220,7 @@ tags:
 colorID: 0
 position: 1362,182
 ---
-I think that stealth is important aspect of combat.
+I think that stealth is an important aspect of combat.
 Discretion is the better part of valor as they say.
 [[Seems to me that you are just a coward.|Coward13222]]
 ===
@@ -240,7 +240,7 @@ You too? *Sigh* That is what Gordon says too... I thought you'd be different...
 title: Gordon1
 tags: 
 colorID: 0
-position: -411,2462
+position: -413,2462
 ---
 <<ChangeSpeaker SoundManager Gordon>>
 Hey, you are the wizard guy the boss talked about? Hopefully you know your stuff.
@@ -252,7 +252,7 @@ I can dream...
 <<endif>>
 
 <<if $gordonTree2Start is true>>
-[[Look here Gordon, I think I know the deeper problem at work here.|Gordon2]]
+[[Look Gordon, I think I know the deeper problem at work here.|Gordon2]]
 <<endif>>
 
 [[Yeah, that's me, what can I do for you?|Gordon11]]
@@ -283,7 +283,7 @@ Glenn really needs to learn about privacy and personal space.
 
 [[You two not working together too well?|Gordon12]]
 [[I will pull him aside and talk to him about it.|Gordon1111]]
-[[Unfortunately, I can only go back so far, but I can try to use it to help you guys.|Gordon1112]]
+[[I can only go back so far, but I can try to use it to help you guys.|Gordon1112]]
 ===
 title: Gordon11
 tags: 
@@ -300,7 +300,7 @@ I think the dungeon master gets his kicks watching me get annoyed.
 title: Gordon12
 tags: 
 colorID: 0
-position: 83,2539
+position: 83,2537
 ---
 Yeah, it's the same thing everyday...
 Glenn runs away, heroes come in and kill us both, rinse and repeat. ...or I guess revive and repeat in our case.
@@ -322,7 +322,7 @@ Does your magic give you enhanced perception or something? How could you tell?
 title: Gordon14
 tags: 
 colorID: 0
-position: 13,3349
+position: 14,3349
 ---
 You did?! I really hope it works. He can't talk my ear off while heroes are attacking.
 No wait, I am sure he could find a way... Anyway, let us hope.
@@ -337,16 +337,16 @@ position: 776,3206
 I think it is because he isn't the most confident person.
 Maybe you could talk to him about it?
 
-[[Yeah, I could do that|Gordon1211]]
+[[Yeah, I could do that.|Gordon1211]]
 ===
 title: Gordon131
 tags: 
 colorID: 0
-position: 251,2885
+position: 251,2883
 ---
 I think he is impressed by my combat skills, he keeps telling me to "show me your moves!"
 I told him once that I didn't believe he could pull them off.
-That was a big mistake on my part as he kept trying the moves over and over, making sure I acted as guide.
+That was a big mistake on my part as he kept trying the moves over and over, making sure I acted as his guide.
 To be honest, being dead is the best part of the job, as Glenn can't annoy me then.
 
 [[What do you think is the best option going forward?|Gordon121]]
@@ -395,7 +395,7 @@ And to use his indoor voice...
 title: Gordon1212
 tags: 
 colorID: 1
-position: 942,2266
+position: 940,2266
 ---
 <<set $inspire to true>>
 
@@ -456,7 +456,7 @@ But yeah, good luck, you will need it...
 title: GGF1
 tags: 
 colorID: 2
-position: 2217,600
+position: 2214,600
 ---
 <<ChangeSpeaker SoundManager Gordon>>
 Oh, hey! So what the deal Mr. Time-Wizard?
@@ -518,7 +518,7 @@ I-I just don't see the reasoning behind it all... I am sorry!
 title: Coward1323
 tags: 
 colorID: 1
-position: 1421,733
+position: 1421,732
 ---
 <<set $confidence to true>>
 
@@ -663,7 +663,7 @@ Maybe if there was someway we could work together...
 title: Gordon2
 tags: 
 colorID: 3
-position: -490,4806
+position: -490,4807
 ---
 Say that again? You might want to rephrase that...
 [[You play the tough guy act well, I admit, but it can only get you so far.|Gordon21]]
@@ -675,7 +675,7 @@ Say that again? You might want to rephrase that...
 title: Gordon2222
 tags: 
 colorID: 3
-position: 974,5376
+position: 972,5376
 ---
 Haha! Good joke. ...Wait, you were serious?
 No thank you, that is never going to happen.
@@ -696,7 +696,7 @@ Maybe I could do some stretching beforehand...
 title: Gordon2131
 tags: 
 colorID: 4
-position: 832,4732
+position: 833,4730
 ---
 <<set $gordonGlennHelp to true>>
 <<set $gordonSecret to true>>
@@ -729,7 +729,7 @@ I didn't think the poindexter had it in him to be honest...
 title: Gordon222
 tags: 
 colorID: 3
-position: 501,5306
+position: 501,5304
 ---
 This armor tends to slow me down, leaving me a easy target when I am alone.
 Maybe I could use some help in agility.
@@ -775,7 +775,7 @@ I-I am self taught! I know how good I am! I don't need any help!
 title: Gordon21
 tags: 
 colorID: 3
-position: 53,4323
+position: 51,4321
 ---
 Are you serious? This is all Glenn's issue, not me!
 [[True, you do at *least* fight...|Gordon211]]
@@ -794,7 +794,7 @@ I-I know you are trying to help and all but that is still crazy...
 title: Glenn23311
 tags: 
 colorID: 4
-position: 1332,-3798
+position: 1330,-3798
 ---
 <<set $glennGordonHelp to true>>
 <<set $glennTraining to true>>
@@ -919,7 +919,6 @@ position: -295,5463
 W-what? How do you know about that?
 L-listen, I will work with Glenn, I will say sorry or something.
 Just please keep that to yourself alright?
-I'm begging you!
 
 <<EndInterview Gordon>>
 ===
