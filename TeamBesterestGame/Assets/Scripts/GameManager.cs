@@ -204,7 +204,7 @@ public class GameManager : MonoBehaviour
             this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift3Success").AsBool == true)
          {
             //play victory yarn file
-            SceneManager.LoadScene("Victory");
+            LoadLevel(3);
          }
     }
 
@@ -292,12 +292,12 @@ public class GameManager : MonoBehaviour
         this.responseBox.GetComponent<NotepadAnimation>().ResetToStart();
     }
 
-    IEnumerator LoadLevel()
+    IEnumerator LoadLevel(int level)
     {
         transition.SetActive(true);
         yield return new WaitForSeconds(3);
 
-        AsyncOperation async = SceneManager.LoadSceneAsync(2);
+        AsyncOperation async = SceneManager.LoadSceneAsync(level);
 
         while (!async.isDone)
         {
@@ -310,7 +310,7 @@ public class GameManager : MonoBehaviour
         //AkSoundEngine.StopAll();
         print("loading level 1");
         AkSoundEngine.StopAll();
-        StartCoroutine(LoadLevel());
+        StartCoroutine(LoadLevel(2));
     }
 
     public void ExitToMenu()
@@ -330,6 +330,7 @@ public class GameManager : MonoBehaviour
         {
             ToggleInterviewMenu();
         }
+        /*
         if (Input.GetKeyDown(KeyCode.J))
         {
             this.ToggleNotebook();
