@@ -164,5 +164,4 @@ The heroes for Shift 3 are defeated!
 
 <<endif>>
 <<Win Nilbog>>
-<<CombatOff Nilbog>>
 ===
