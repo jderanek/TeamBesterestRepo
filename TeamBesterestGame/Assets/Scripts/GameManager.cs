@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
         }
         foreach (GameObject monster in monsterList)
         {
-            monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().StartDialogue();
+            monster.GetComponent<BaseMonster>().dialogueRunner.GetComponent<DialogueRunner>().StartDialogue("Tutorial0");
         }
 
     }
