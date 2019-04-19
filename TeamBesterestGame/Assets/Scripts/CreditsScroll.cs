@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CreditsScroll : MonoBehaviour {
 
-    float speed = 1f;
+    float speed = -1f;
     RectTransform rectTrans;
     float endX = 0f;
     float endY = -1000f;
