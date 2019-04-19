@@ -933,7 +933,7 @@ If you are so sure he'd be receptive to that....
 I will go ahead and ask him then
 Hopefully it'll all work out...
 
-<<endInterview Glenn>>
+<<EndInterview Glenn>>
 ===
 title: Gordon22221
 tags: 

@@ -81,7 +81,7 @@ position: 5052,-321
 ---
 Long as Gorgo gets what's coming to 'em, I don't care what you do!
 
-[[Why do you hate Jeff so much?|Geoff1221]]
+[[Why do you hate Gorgo so much?|Geoff1221]]
 ===
 title: Geoff1221
 tags: 

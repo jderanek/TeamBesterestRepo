@@ -163,5 +163,6 @@ The Nilbogs split up and take down a group of heroes, avoiding Gabbin's restrict
 The heroes for Shift 3 are defeated!
 
 <<endif>>
+<<Win Nilbog>>
 <<CombatOff Nilbog>>
 ===
