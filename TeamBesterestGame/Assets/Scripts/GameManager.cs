@@ -199,13 +199,14 @@ public class GameManager : MonoBehaviour
     //set the combat manager's yarn variables according to each shifts points
     public void Win()
     {
-         if (this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift1Success").AsBool == true && 
+        if (this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift1Success").AsBool == true && 
              this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift2Success").AsBool == true && 
              this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift3Success").AsBool == true)
-                {
-                   //play victory yarn file
-                   LoadLevel(3);
-                }
+            {
+            AkSoundEngine.StopAll();
+            //play victory yarn file
+            StartCoroutine(LoadLevel(3));
+            }
     }
 
     public void RollCredits()
@@ -331,9 +332,10 @@ public class GameManager : MonoBehaviour
     //Debug controls. Disable for full builds
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        /*if (Input.GetKeyDown(KeyCode.S))
         {
-            ToggleInterviewMenu();
+            SceneManager.LoadScene("Victory");
+           print("boop");
         }
         /*
         if (Input.GetKeyDown(KeyCode.J))

@@ -266,7 +266,7 @@ public abstract class BaseMonster : BaseEntity {
     }
 
     [YarnCommand("Win")]
-    public void Win(string text)
+    public void Win()
     {
         gameManager.Win();
     }

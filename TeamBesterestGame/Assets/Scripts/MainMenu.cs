@@ -23,6 +23,8 @@ public class MainMenu : MonoBehaviour {
 
 	public void Load()
     {
+        transition.SetActive(true);
+
         load.SetActive(false);
         string scene = PlayerPrefs.GetString("scene");
         GlobalVariables.loading = true;
