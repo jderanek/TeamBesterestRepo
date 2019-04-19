@@ -90,7 +90,6 @@ public class UIManager : MonoBehaviour {
                 menus[5].SetActive(true);
                 break;
             case "Exit":
-                menus[1].SetActive(true);
                 menus[6].SetActive(true);
                 break;
             default:

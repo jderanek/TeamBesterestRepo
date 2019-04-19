@@ -200,12 +200,12 @@ public class GameManager : MonoBehaviour
     public void Win()
     {
          if (this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift1Success").AsBool == true && 
-            this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift2Success").AsBool == true && 
-            this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift3Success").AsBool == true)
-         {
-            //play victory yarn file
-            LoadLevel(3);
-         }
+             this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift2Success").AsBool == true && 
+             this.combatManager.GetComponent<InterviewVariableStorage>().GetValue("$shift3Success").AsBool == true)
+                {
+                   //play victory yarn file
+                   LoadLevel(3);
+                }
     }
 
     public void RollCredits()

@@ -264,4 +264,10 @@ public abstract class BaseMonster : BaseEntity {
         Debug.Log("Calling Paper Anim");
         gameManager.RunPaperAnim();
     }
+
+    [YarnCommand("Win")]
+    public void Win(string text)
+    {
+        gameManager.Win();
+    }
 }

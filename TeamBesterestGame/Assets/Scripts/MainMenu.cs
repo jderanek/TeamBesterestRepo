@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour {
 
     public GameObject transition;
 
-    //public Scene scene;
+    public Scene scene;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class MainMenu : MonoBehaviour {
         load.SetActive(false);
         string scene = PlayerPrefs.GetString("scene");
         GlobalVariables.loading = true;
-        //SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene);
     }
 
     public void StartGame()
